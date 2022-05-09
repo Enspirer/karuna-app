@@ -1,0 +1,511 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Apex";
+  src: url("../fonts/custom/apex.woff2") format("woff2"), url("../fonts/custom/apex.woff") format("woff"), url("../fonts/custom/apex.ttf") format("truetype");
+}
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #1FC39E;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 3px;
+  width: fit-content;
+}
+.btn-outline:hover, .btn-outline:focus {
+  text-decoration: none;
+  outline: none;
+}
+.btn-outline .btn-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.btn-outline .bi {
+  font-size: 1rem;
+}
+.btn-outline .btn-text {
+  color: #1FC39E;
+}
+.btn-outline .bi {
+  color: #1FC39E;
+}
+
+.btn-fill {
+  background-color: #1FC39E;
+  border: 1px solid #1FC39E;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 3px;
+  width: fit-content;
+}
+.btn-fill:hover, .btn-fill:focus {
+  text-decoration: none;
+  outline: none;
+}
+.btn-fill .btn-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.btn-fill .bi {
+  font-size: 1rem;
+}
+.btn-fill .btn-text {
+  color: #fff;
+}
+.btn-fill .bi {
+  color: #fff;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+*::-moz-selection {
+  color: #fff;
+  background: #1FC39E;
+}
+*::selection {
+  color: #fff;
+  background: #1FC39E;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #1FC39E;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 3px;
+  width: fit-content;
+}
+.btn-outline:hover, .btn-outline:focus {
+  text-decoration: none;
+  outline: none;
+}
+.btn-outline .btn-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.btn-outline .bi {
+  font-size: 1rem;
+}
+.btn-outline .btn-text {
+  color: #1FC39E;
+}
+.btn-outline .bi {
+  color: #1FC39E;
+}
+
+.btn-fill {
+  background-color: #1FC39E;
+  border: 1px solid #1FC39E;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 3px;
+  width: fit-content;
+}
+.btn-fill:hover, .btn-fill:focus {
+  text-decoration: none;
+  outline: none;
+}
+.btn-fill .btn-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.btn-fill .bi {
+  font-size: 1rem;
+}
+.btn-fill .btn-text {
+  color: #fff;
+}
+.btn-fill .bi {
+  color: #fff;
+}
+
+.hero-section .hero-slider .slide-arrows .slide-arrow {
+  background-color: #1FC39E;
+  height: 2.5em;
+  width: 2.5em;
+  position: absolute;
+}
+.hero-section .hero-slider .slide-arrows .slide-arrow .bi {
+  fill: #fff;
+}
+.hero-section .hero-slider .slide-arrows .slide-arrow.slide-arrow-next {
+  height: 3.5em;
+  width: 3.5em;
+  right: 5rem;
+}
+.hero-section .hero-slider .slide-arrows .slide-arrow.slide-arrow-next .bi {
+  width: 1.75em;
+  height: 1.75em;
+}
+.hero-section .hero-slider .slide-arrows .slide-arrow.slide-arrow-prev {
+  right: 9.5rem;
+  left: unset;
+}
+.hero-section .hero-slider .splide__slide .slide {
+  position: relative;
+}
+.hero-section .hero-slider .splide__slide .slide .hero-img {
+  width: 100%;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+  max-width: 540px;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block .title-block {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block .title-block .title {
+  font-family: apex;
+  font-size: 75px;
+  color: #333;
+  position: relative;
+  z-index: 1;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block .title-block .title .dc {
+  font-family: apex;
+  font-size: 140px;
+  color: #333;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block .title-block .subtitle {
+  font-size: 1.75rem;
+  position: absolute;
+  color: #333;
+  font-weight: 400;
+  z-index: 1;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block .title-block .subtitle.subtitle-1 {
+  bottom: 5%;
+  left: 18%;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block .title-block .subtitle.subtitle-2 {
+  color: #1FC39E;
+  bottom: 5%;
+  left: 67%;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block .title-block img {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  z-index: 0;
+  width: 300px;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block .text {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block .button-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.hero-section .hero-slider .splide__slide .slide .content-block .button-block .cta-btn {
+  width: 175px;
+}
+.hero-section .hero-slider .splide__pagination {
+  bottom: 5%;
+  right: 5%;
+  left: unset;
+  gap: 0.25em;
+}
+.hero-section .hero-slider .splide__pagination .splide__pagination__page {
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+}
+.hero-section .hero-slider .splide__pagination .splide__pagination__page.is-active {
+  background-color: #1FC39E;
+}
+
+.feature-section {
+  margin: 5rem 0 10rem;
+}
+.feature-section .title-block {
+  position: relative;
+  margin-bottom: 5rem;
+}
+.feature-section .title-block .title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #333;
+  position: relative;
+  z-index: 1;
+}
+.feature-section .title-block .title span {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #1FC39E;
+}
+.feature-section .title-block img {
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  z-index: 0;
+}
+.feature-section .content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.feature-section .content .feature-block {
+  position: relative;
+  flex: 1;
+}
+.feature-section .content .feature-block .feature-icon {
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+.feature-section .content .feature-block .feature-back {
+  position: absolute;
+  z-index: 0;
+  bottom: -15%;
+  right: 20%;
+  width: 300px;
+}
+.feature-section .content .feature-block .title-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+.feature-section .content .feature-block .title-block .text {
+  font-size: 22px;
+  font-weight: 400;
+  color: #333;
+}
+.feature-section .content .feature-block .title-block .icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+}
+.feature-section .content .feature-block .title-block .icon.blue {
+  background-color: #00BDC4;
+}
+.feature-section .content .feature-block .title-block .icon.purple {
+  background-color: #C4004E;
+}
+.feature-section .content .feature-block .title-block .icon.green {
+  background-color: #3AC400;
+}
+.feature-section .content .feature-block .text {
+  color: #767676;
+  font-size: 0.9rem;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.gratitude-section {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, rgba(36, 38, 50, 0.92), rgba(36, 38, 50, 0.92)), url("../../images/landing-page/home/gratitude-back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.gratitude-section .inner-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.gratitude-section .inner-wrapper .image-block {
+  flex: 0 0 55%;
+}
+.gratitude-section .inner-wrapper .image-block img {
+  width: 100%;
+}
+.gratitude-section .inner-wrapper .content-block {
+  flex: 0 0 45%;
+  padding: 0 2rem;
+}
+.gratitude-section .inner-wrapper .content-block .title-block {
+  position: relative;
+  margin-bottom: 5rem;
+}
+.gratitude-section .inner-wrapper .content-block .title-block .title {
+  font-family: "Apex";
+  font-size: 100px;
+  text-align: right;
+  margin-right: 5rem;
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  left: 50%;
+  width: fit-content;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+.gratitude-section .inner-wrapper .content-block .title-block .subtitle {
+  font-family: "Apex";
+  font-size: 65px;
+  text-align: right;
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+.gratitude-section .inner-wrapper .content-block .title-block img {
+  position: absolute;
+  z-index: 0;
+  width: 200px;
+  left: 40%;
+  bottom: -20%;
+}
+.gratitude-section .inner-wrapper .content-block .text {
+  text-align: right;
+  font-weight: 200;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.kindness-section {
+  margin: 5rem 0;
+}
+.kindness-section .title-block {
+  position: relative;
+  margin: 0 auto 5rem;
+  width: fit-content;
+}
+.kindness-section .title-block .title {
+  font-family: "Apex";
+  font-size: 50px;
+  color: #333;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.kindness-section .title-block .subtitle {
+  font-size: 22px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.kindness-section .title-block .subtitle span {
+  color: #333;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+}
+.kindness-section .title-block img {
+  position: absolute;
+  bottom: -15%;
+  left: 0;
+  width: 200px;
+  z-index: 0;
+}
+.kindness-section .card-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.kindness-section .card-block .card {
+  flex: 0 0 30%;
+  border-radius: 10px;
+  padding: 20px;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  overflow: hidden;
+}
+.kindness-section .card-block .card.active {
+  border: 2px solid #1FC39E;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+}
+.kindness-section .card-block .card .icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 auto 1rem;
+}
+.kindness-section .card-block .card .icon.blue {
+  background-color: #00BDC4;
+}
+.kindness-section .card-block .card .icon.purple {
+  background-color: #C4004E;
+}
+.kindness-section .card-block .card .icon.green {
+  background-color: #3AC400;
+}
+.kindness-section .card-block .card .name {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+}
+.kindness-section .card-block .card .location {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.kindness-section .card-block .card .text {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #767676;
+}
+.kindness-section .card-block .card .btn-fill {
+  margin: auto;
+}
+
+/*# sourceMappingURL=main.css.map */
