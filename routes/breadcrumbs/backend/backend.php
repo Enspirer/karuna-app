@@ -35,4 +35,37 @@ Breadcrumbs::for('admin.contactus_thanks', function ($trail) {
     $trail->push('Contact Us Thanks Email', route('admin.contactus_thanks'));
 });
 
+Breadcrumbs::for('admin.package.index', function ($trail) {
+    $trail->push('Packages', route('admin.package.index'));
+});
+
+Breadcrumbs::for('admin.package.create', function ($trail) {
+    $trail->push('Create Package', route('admin.package.create'));
+});
+Breadcrumbs::for('admin.package.edit', function ($trail) {
+    $trail->push('Edit Package', route('admin.package.edit',1));
+});
+
+Breadcrumbs::for('admin.country.index', function ($trail) {
+    $trail->push('Country', route('admin.country.index'));
+});
+Breadcrumbs::for('admin.country.create', function ($trail) {
+    $trail->push('Create Country', route('admin.country.create'));
+});
+Breadcrumbs::for('admin.country.edit', function ($trail) {
+    $trail->push('Edit Country', route('admin.country.edit',1));
+});
+
+Breadcrumbs::for('admin.city.index', function ($trail) {
+    $trail->push('City', route('admin.city.index'));
+});
+Breadcrumbs::for('admin.city.create', function ($trail) {
+    $trail->push('Create City', route('admin.city.create'));
+});
+Breadcrumbs::for('admin.city.edit', function ($trail) {
+    $trail->push('Edit City', route('admin.city.edit',1));
+});
+
+
+
 
