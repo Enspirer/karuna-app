@@ -449,7 +449,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 3rem;
 }
 .kindness-section .card-block .card {
@@ -757,6 +757,7 @@
   align-items: center;
   gap: 1rem;
   font-size: 0.9rem;
+  font-weight: 300;
   margin-bottom: 0.5em;
   text-decoration: none;
   color: #fff;
