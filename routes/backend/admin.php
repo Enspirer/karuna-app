@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\ModuleExplorerController;
 use App\Http\Controllers\Backend\PackagesController;
 use App\Http\Controllers\Backend\CountryController;
 use App\Http\Controllers\Backend\CityController;
+use App\Http\Controllers\Backend\ListController;
 
 
 // All route names are prefixed with 'admin.'.
@@ -65,3 +66,14 @@ Route::get('city/getdetails', [CityController::class, 'getdetails'])->name('city
 Route::get('city/edit/{id}', [CityController::class, 'edit'])->name('city.edit');
 Route::post('city/update', [CityController::class, 'update'])->name('city.update');
 Route::get('city/delete/{id}', [CityController::class, 'destroy'])->name('city.destroy');
+
+
+Route::get('agent', [ListController::class, 'agent'])->name('agent.index');
+Route::get('donor', [ListController::class, 'donor'])->name('donor.index');
+Route::get('agent/getdetails', [ListController::class, 'get_agent_details'])->name('agent.getdetails');
+Route::get('donor/getdetails', [ListController::class, 'get_donor_details'])->name('donor.getdetails');
+
+
+
+
+

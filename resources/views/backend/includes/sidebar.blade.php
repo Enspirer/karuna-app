@@ -163,6 +163,18 @@
                                 @lang('labels.backend.access.roles.management')
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/agent'))}}" href="{{ route('admin.agent.index') }}">                        
+                                Agent List
+                            </a>  
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/donor'))}}" href="{{ route('admin.donor.index') }}">
+                                Donar List
+                            </a>
+                        </li>    
+
                     </ul>
                 </li>
 
