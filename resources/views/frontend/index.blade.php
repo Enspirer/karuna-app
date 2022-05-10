@@ -167,6 +167,11 @@
                 </a>
             </div>
         </div>
+        <div class="button-block">
+            <a href="#" class="cta-btn btn-outline">
+                <div class="btn-text">View All</div>
+            </a>
+        </div>
     </div>
 </section>
 
@@ -178,11 +183,52 @@
             <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
         </div>
         <div class="content-block">
-            <div class="feature-news"></div>
+            <div class="feature-news">
+                <div class="splide news-slider" id="newsSlider">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="news-slide">
+                                    <a href="#" class="slide-link">
+                                        <img src="{{url('images/landing-page/home/news-slide-1.png')}}" alt="" class="feature-img">
+                                        <div class="content">
+                                            <div class="title">Latest event topic here</div>
+                                            <div class="date">02 nd January 2022</div>
+                                            <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="splide__slide">Slide 02</li>
+                            <li class="splide__slide">Slide 03</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="news-list">
                 <div class="news-item">
                     <a href="#" class="news-link">
-                        <img src="" alt="" class="news-img">
+                        <img src="{{url('images/landing-page/home/news-item-1.png')}}" alt="" class="news-img">
+                        <div class="content">
+                            <div class="date">02 nd January 2022</div>
+                            <div class="title">Latest event topic here</div>
+                            <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="news-item">
+                    <a href="#" class="news-link">
+                        <img src="{{url('images/landing-page/home/news-item-2.png')}}" alt="" class="news-img">
+                        <div class="content">
+                            <div class="date">02 nd January 2022</div>
+                            <div class="title">Latest event topic here</div>
+                            <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="news-item">
+                    <a href="#" class="news-link">
+                        <img src="{{url('images/landing-page/home/news-item-3.png')}}" alt="" class="news-img">
                         <div class="content">
                             <div class="date">02 nd January 2022</div>
                             <div class="title">Latest event topic here</div>

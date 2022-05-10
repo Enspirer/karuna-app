@@ -1,0 +1,45 @@
+@import "../utilities/variables";
+@import "../utilities/utilities";
+
+.navigation-bar {
+    background-color: rgba($color: #fff, $alpha: 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &.active {
+        background-color: rgba($color: #fff, $alpha: 1);
+    }
+
+    .navbar-brand {
+        .logo {
+            width: 120px;
+        }
+    }
+
+    .navbar-collapse {
+        .navbar-nav {
+            gap: 2rem;
+
+            .nav-item {
+                .nav-link {
+                    font-size: .9rem;
+                    font-weight: 400;
+                    color: $text-black;
+                    transition: all .2s ease-in-out;
+
+                    &.active {
+                        color: $primary-green;
+                    }
+
+                    &.cta-btn {
+                        width: 125px;
+                        text-align: center;
+                    }
+
+                    &:hover {
+                        color: $primary-green;
+                    }
+                }
+            }
+        }
+    }
+}
