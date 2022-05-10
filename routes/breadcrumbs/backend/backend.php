@@ -66,6 +66,14 @@ Breadcrumbs::for('admin.city.edit', function ($trail) {
     $trail->push('Edit City', route('admin.city.edit',1));
 });
 
+Breadcrumbs::for('admin.agent.index', function ($trail) {
+    $trail->push('Agent List', route('admin.agent.index'));
+});
+
+Breadcrumbs::for('admin.donor.index', function ($trail) {
+    $trail->push('Donor List', route('admin.donor.index'));
+});
+
 
 
 
