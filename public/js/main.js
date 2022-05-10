@@ -4,6 +4,12 @@
 var heroSlider = new Splide('#heroSlider', {
     type: 'loop',
     width: '100%',
+    autoplay: true,
+    breakpoints: {
+        991: {
+            arrows: false,
+        },
+    },
 });
 
 heroSlider.mount();

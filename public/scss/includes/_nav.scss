@@ -43,3 +43,17 @@
         }
     }
 }
+
+@media screen and (max-width: 991px) {
+    .navigation-bar {
+        background-color: rgba($color: #fff, $alpha: 1);
+
+        .navbar-collapse {
+            margin: 1rem 0;
+
+            .navbar-nav {
+                gap: .5rem;
+            }
+        }
+    }
+}

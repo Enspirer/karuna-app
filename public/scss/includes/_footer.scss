@@ -108,3 +108,25 @@
         display: block;
     }
 }
+
+@media screen and (max-width: 991px) {
+    .footer-section {
+        .content-block {
+            flex-direction: column;
+
+            .footer-col {
+                text-align: center;
+
+                .contact-info {
+                    .contact-link {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            text-align: center;
+        }
+    }
+}
