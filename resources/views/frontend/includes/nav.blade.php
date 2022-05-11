@@ -39,23 +39,38 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown nav-drop">
-          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-            <div class="drop-profile">
-              <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
-              <div class="name">Kamal</div>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-arrow-left-right"></i> Donation History</div></a></li>
-            <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-credit-card"></i> My Card</div></a></li>
-            <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-person-fill"></i> Profile</div></a></li>
-            <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-gear"></i> Settings</div></a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-box-arrow-right"></i> Sign Out</div></a></li>
-          </ul>
-        </li>
+        @auth()
+          <li class="nav-item dropdown nav-drop">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+              <div class="drop-profile">
+                <img src="{{auth()->user()->picture}}" alt="">
+                <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-arrow-left-right"></i> Donation History</div></a></li>
+              <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-credit-card"></i> My Card</div></a></li>
+              <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-person-fill"></i> Profile</div></a></li>
+              <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-gear"></i> Settings</div></a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{{url('logout')}}"><div class="profile-link"><i class="bi bi-box-arrow-right"></i> Sign Out</div></a></li>
+            </ul>
+          </li>
+        @else
+          <li class="nav-item dropdown nav-drop">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+              <div class="drop-profile">
+                <div class="name">Login or Register</div>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="{{url('login')}}"><div class="profile-link"><i class="bi bi-arrow-left-right"></i> Login</div></a></li>
+              <li><a class="dropdown-item" href="{{url('register')}}"><div class="profile-link"><i class="bi bi-credit-card"></i> Register</div></a></li>
+            </ul>
+          </li>
+        @endif
       </ul>
     </div>
   </div>
