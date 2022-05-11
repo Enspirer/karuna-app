@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-light navigation-bar">
+<nav class="navbar navbar-expand-xl fixed-top navbar-light navigation-bar">
   <div class="container">
     <a class="navbar-brand" href="#">
         <img src="{{url('images/logo/logo.svg')}}" alt="" class="logo">
