@@ -39,6 +39,7 @@ abstract class BaseUser extends Authenticatable implements Recordable
         'user_type',
         'country',
         'city',
+        'assigned_agent_id',        
         'contact_number',
         'contact_number_two',
         'address',

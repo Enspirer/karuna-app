@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', __('Agent List'))
+@section('title', __('Receivers'))
 
 @section('content')
     
@@ -10,8 +10,8 @@
 
             <div class="card">
                 <div class="card-header">
-                    <strong>Agent List&nbsp;</strong>
-
+                    <strong>Receivers&nbsp;</strong>
+                   
                 </div><!--card-header-->
 
                 <div class="card-body">
@@ -24,11 +24,6 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Country</th>
                                 <th scope="col">City</th>
-                                <th scope="col">Contact Number</th>
-                                <th scope="col">Contact Number Two</th>
-                                <th scope="col">Occupation</th>
-                                <th scope="col">NIC Number</th>
-                                <th scope="col">Option</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,7 +70,7 @@
         $(function () {
             var table = $('#villadatatable').DataTable({
                 processing: true,
-                ajax: "{{route('admin.agent.getdetails')}}",
+                ajax: "{{route('admin.receivers_details',$agent->id)}}",
                 serverSide: true,
                 order: [[0, "desc"]],
                 columns: [
@@ -85,11 +80,6 @@
                     {data: 'email', name: 'email'},
                     {data: 'country', name: 'country'},
                     {data: 'city', name: 'city'},
-                    {data: 'contact_number', name: 'contact_number'},
-                    {data: 'contact_number_two', name: 'contact_number_two'},
-                    {data: 'occupation', name: 'occupation'},
-                    {data: 'nic_number', name: 'nic_number'},
-                    {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
  

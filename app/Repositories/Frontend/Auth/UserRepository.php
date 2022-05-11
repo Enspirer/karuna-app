@@ -100,6 +100,7 @@ class UserRepository extends BaseRepository
                 'user_type' => $data['user_type'],
                 'country' => $data['country'],
                 'city' => $data['city'],
+                'assigned_agent_id' => $data['assigned_agent_id'],                
                 'contact_number' => $data['contact_number'],
                 'contact_number_two' => $data['contact_number_two'],
                 'address' => $data['address'],

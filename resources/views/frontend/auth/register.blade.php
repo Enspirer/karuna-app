@@ -60,6 +60,7 @@
                                     <label>User Type</label>
                                     <select class="form-control custom-select" name="user_type" onchange="user_type_check(this);">
                                         <option value="" selected disabled>Select...</option> 
+                                        <option value="Receiver">Receiver</option>                                
                                         <option value="Agent">Agent</option>   
                                         <option value="Donor">Donor</option>                                
                                     </select>
@@ -326,11 +327,26 @@
                             <div class="col-12 col-md-6" id="agent_city" style="display: none;">
                                 <div class="form-group">
                                     <label for="state" class="form-label">City</label>
-                                    <select class="form-control mb-2 areas custom-select" aria-label="Default select example" name="city">
+                                    <select class="form-control mb-2 areas custom-select" id="city" aria-label="Default select example" name="city">
+
                                     </select>
                                 </div>
                             </div><!--col-->
                         </div><!--row-->
+
+
+                        <div class="row">
+                            <div class="col" id="receiver_assigned_agent" style="display: none;">
+                                <div class="form-group">
+                                    <label>Agents</label>
+                                    <select class="form-control custom-select" name="assigned_agent_id" id="assigned_agent_id">
+
+                                    </select>
+                                </div>
+                            </div><!--col-->
+                        </div><!--row-->
+
+                        
 
                         <div class="row">
                             <div class="col-12 col-md-6" id="agent_nic" style="display: none;">
@@ -477,13 +493,13 @@
                 document.getElementById("agent_contact_number").style.display = "none";
             }
 
-            if (that.value == 'Agent') {
+            if (that.value == 'Agent' || that.value == 'Receiver') {
                 document.getElementById("agent_country").style.display = "block";
             } else {
                 document.getElementById("agent_country").style.display = "none";
             }
 
-            if (that.value == 'Agent') {
+            if (that.value == 'Agent' || that.value == 'Receiver') {
                 document.getElementById("agent_city").style.display = "block";
             } else {
                 document.getElementById("agent_city").style.display = "none";
@@ -508,7 +524,15 @@
                 document.getElementById("agent_address").style.display = "none";
             }
 
+
+            if (that.value == 'Receiver') {
+                document.getElementById("receiver_assigned_agent").style.display = "block";
+            } else {
+                document.getElementById("receiver_assigned_agent").style.display = "none";
+            }
+
            
+            
             
         }
     </script> 
@@ -550,5 +574,40 @@
     });
     
 </script>
+
+
+<script>
+         $(document).ready(function() {
+        $('#city').on('change', function() {
+            var City = $(this).val();
+            // console.log(City);
+
+                $.ajax({
+                    
+                    url: "{{url('/')}}/api/find_agent_details/" + City,
+                    method: "GET",
+                    dataType: "json",
+                    success:function(data) {
+                        // console.log(data);
+                    if(data){
+                        $('#assigned_agent_id').empty();
+                        $('#assigned_agent_id').focus;
+                        $('#assigned_agent_id').append('<option value="" selected disabled>-- Select An Agent --</option>'); 
+                        $.each(data, function(key, value){
+                            // console.log(key);
+                            // console.log(value);
+                        $('select[name="assigned_agent_id"]').append('<option value="'+ value.agent_user_id +'">' + value.agent_user_name+ '</option>');
+                        
+                    });
+
+                    }else{
+                        $('#assigned_agent_id').empty();
+                    }
+                  }
+                });
+            
+        });
+    });
+    </script>
     
 @endpush

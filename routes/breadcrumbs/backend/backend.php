@@ -74,6 +74,8 @@ Breadcrumbs::for('admin.donor.index', function ($trail) {
     $trail->push('Donor List', route('admin.donor.index'));
 });
 
-
+Breadcrumbs::for('admin.receivers_list', function ($trail) {
+    $trail->push('Receivers', route('admin.receivers_list',1));
+});
 
 

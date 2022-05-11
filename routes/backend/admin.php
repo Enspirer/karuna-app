@@ -69,9 +69,12 @@ Route::get('city/delete/{id}', [CityController::class, 'destroy'])->name('city.d
 
 
 Route::get('agent', [ListController::class, 'agent'])->name('agent.index');
+Route::get('receivers_list/{id}', [ListController::class, 'receivers_list'])->name('receivers_list');
 Route::get('donor', [ListController::class, 'donor'])->name('donor.index');
 Route::get('agent/getdetails', [ListController::class, 'get_agent_details'])->name('agent.getdetails');
+Route::get('receivers_details/{id}', [ListController::class, 'receivers_details'])->name('receivers_details');
 Route::get('donor/getdetails', [ListController::class, 'get_donor_details'])->name('donor.getdetails');
+
 
 
 
