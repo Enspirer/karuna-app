@@ -5,6 +5,7 @@
     background-size: cover;
     background-position: right bottom;
     background-repeat: no-repeat;
+    overflow: hidden;
 
     .inner-wrapper {
         display: flex;
@@ -70,7 +71,6 @@
             img {
                 position: absolute;
                 bottom: 0;
-                right: -50%;
             }
         }
     }
@@ -123,6 +123,7 @@
                 overflow: hidden;
                 max-width: 325px;
                 position: relative;
+                margin: auto;
 
                 .circle {
                     position: absolute;
@@ -435,6 +436,158 @@
                     font-size: .8rem;
                     font-weight: 300;
                     color: $text-black;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .support-hero-section {
+        background-position: center bottom;
+        height: auto;
+
+        .inner-wrapper {
+            flex-direction: column-reverse;
+            align-items: center;
+            padding: 5rem 0;
+            height: auto;
+
+            .content-block {
+                max-width: 540px;
+                width: 100%;
+
+                .title-block {
+                    text-align: center;
+
+                    img {
+                        left: 30%;
+                    }
+                }
+
+                .text {
+                    text-align: center;
+                }
+
+                .button-block {
+                    justify-content: center;
+                }
+            }
+
+            .image-block {
+                margin-bottom: 3rem;
+
+                img {
+                    position: unset;
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    .campaign-section {
+        .campaign-slider {
+            .slide-arrows {
+                .slide-arrow {
+
+                    &.slide-arrow-next {
+                        left: 53.5%;
+                    }
+
+                    &.slide-arrow-prev {
+                        left: 46.5%;
+                    }
+                }
+            }
+        }
+    }
+
+    .package-section {
+
+        .inner-wrapper {
+            flex-direction: column;
+            gap: 5rem;
+
+            .content-block {
+                text-align: center;
+                max-width: 540px;
+
+                .cta-btn {
+                    margin: auto;
+                }
+            }
+
+            .package-block {
+                max-width: 540px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .campaign-section {
+        .campaign-slider {
+            .slide-arrows {
+                .slide-arrow {
+
+                    &.slide-arrow-next {
+                        left: 56.5%;
+                    }
+
+                    &.slide-arrow-prev {
+                        left: 43.5%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .support-hero-section {
+        .inner-wrapper {
+            .content-block {
+                .title-block {
+                    .title {
+                        font-size: 1.5rem;
+
+                        span {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    img {
+                        left: 20%;
+                        bottom: -35%;
+                    }
+                }
+
+                .button-block {
+                    flex-direction: column;
+                }
+            }
+
+            .image-block {
+                img {
+                    position: unset;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .campaign-section {
+        .campaign-slider {
+            .slide-arrows {
+                .slide-arrow {
+
+                    &.slide-arrow-next {
+                        left: 60%;
+                    }
+
+                    &.slide-arrow-prev {
+                        left: 40%;
+                    }
                 }
             }
         }

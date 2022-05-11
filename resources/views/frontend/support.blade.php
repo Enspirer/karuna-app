@@ -193,6 +193,14 @@
         perPage: 3,
         focus  : 'center',
         pagination: false,
+        breakpoints: {
+            991: {
+                perPage: 2,
+            },
+            767: {
+                perPage: 1,
+            },
+        },
     });
 
     campaignSlider.mount();
