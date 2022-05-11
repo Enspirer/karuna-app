@@ -1,0 +1,442 @@
+.support-hero-section {
+    width: 100%;
+    height: 100vh;
+    background: url('../../images/landing-page/support/hero-back.png');
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+
+    .inner-wrapper {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+
+        .content-block {
+            flex: 0 0 45%;
+            align-self: center;
+
+            .title-block {
+                position: relative;
+                margin-bottom: 3rem;
+
+                .title {
+                    font-size: 2.5rem;
+                    font-weight: 400;
+                    color: $text-black;
+                    position: relative;
+                    z-index: 1;
+
+                    span {
+                        font-size: 2.5rem;
+                        font-weight: 400;
+                        color: $primary-green;
+                    }
+                }
+
+                img {
+                    width: 225px;
+                    position: absolute;
+                    bottom: -20%;
+                    left: 0;
+                    z-index: 0;
+                }
+            }
+
+            .text {
+                font-size: 1rem;
+                font-weight: 300;
+                line-height: 1.8;
+                margin-bottom: 2rem;
+                color: $text-black;
+            }
+
+            .button-block {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+
+                .cta-btn {
+                    width: 175px;
+                }
+            }
+        }
+
+        .image-block {
+            flex: 1;
+            align-self: flex-end;
+            position: relative;
+
+            img {
+                position: absolute;
+                bottom: 0;
+                right: -50%;
+            }
+        }
+    }
+}
+
+.campaign-section {
+    margin: 5rem 0;
+
+    .title-block {
+        position: relative;
+        margin-bottom: 5rem;
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
+            color: $text-black;
+            position: relative;
+            z-index: 1;
+
+            span {
+                font-size: 2.5rem;
+                font-weight: 400;
+                color: $primary-green;
+            }
+        }
+
+        img {
+            position: absolute;
+            width: 200px;
+            left: 50%;
+            bottom: -15%;
+            transform: translate(-50%, 0);
+            z-index: 0;
+        }
+    }
+
+    .campaign-slider {
+        .splide__slide {
+
+            &.is-active {
+                .campaign-slide {
+                    .campaign-card {
+                        filter: drop-shadow(0 0 5px rgba($color: $primary-green, $alpha: 0.25));
+                    }
+                }
+            }
+
+            .campaign-slide {
+                overflow: hidden;
+                max-width: 325px;
+                position: relative;
+
+                .circle {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    color: $white;
+                    font-size: 32px;
+                    font-weight: 300;
+
+                    &.purple {
+                        background-color: $purple;
+                    }
+
+                    &.blue {
+                        background-color: $blue;
+                    }
+
+                    &.green {
+                        background-color: $green;
+                    }
+                }
+
+                .campaign-card {
+                    margin: 37px 1rem 1rem;
+                    padding: 37px 1rem 1rem;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    position: relative;
+                    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+
+                    &::before {
+                        content: '';
+                        width: 75px;
+                        height: 75px;
+                        border-radius: 50%;
+                        display: block;
+                        margin: -80px auto 0;
+                        box-shadow: 0 0 0 3000px $white;
+                    }
+
+                    .title {
+                        text-align: center;
+                        font-size: 1rem;
+                        font-weight: 300;
+                        margin: 1.5rem 0 1rem;
+                        color: $text-black;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                    }
+
+                    .text {
+                        font-size: .8rem;
+                        font-weight: 300;
+                        text-align: center;
+                        color: $text-black;
+                        margin-bottom: 2.5rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+
+                    .range-bar {
+                        width: 100%;
+                        height: 4px;
+                        border-radius: 50px;
+                        background-color: $light-gray;
+
+                        .range {
+                            width: 85%;
+                            height: 100%;
+                            border-radius: 50px;
+                            background-color: $primary-green;
+                            position: relative;
+
+                            &::before {
+                                content: '85%';
+                                font-size: .7rem;
+                                font-weight: 400;
+                                color: $text-black;
+                                position: absolute;
+                                right: -5px;
+                                top: -20px;
+                            }
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                transform: translate(0, -50%);
+                                width: 15px;
+                                height: 15px;
+                                background-color: $primary-green;
+                                border-radius: 50%;
+                                border: 2px solid #fff;
+                            }
+                        }
+                    }
+
+                    .campaign-info {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 2rem 0 1.5rem;
+
+                        .info-block {
+                            flex: 1;
+                            padding: 5px;
+
+                            &:not(:nth-last-child(1)) {
+                                border-right: 1px solid $light-gray;
+                            }
+
+                            &.green>* {
+                                color: $primary-green;
+                            }
+
+                            &.blue>* {
+                                color: $blue;
+                            }
+
+                            &.gray>* {
+                                color: $gray;
+                            }
+
+                            .title {
+                                margin: 0;
+                                font-size: 0.7rem;
+                                font-weight: 300;
+                                text-align: left;
+                            }
+
+                            .amount {
+                                font-size: 1rem;
+                                font-weight: 300;
+
+                                .currency {
+                                    font-size: 0.7rem;
+                                    font-weight: 300;
+                                    margin-right: .5em;
+                                }
+                            }
+                        }
+                    }
+
+                    .cta-btn {
+                        margin: auto;
+                    }
+                }
+            }
+        }
+
+        .slide-arrows {
+            .slide-arrow {
+                background-color: $primary-green;
+                height: 2.5em;
+                width: 2.5em;
+                position: absolute;
+                border: 1px solid $primary-green;
+
+                .bi {
+                    fill: $white;
+                }
+
+                &.slide-arrow-next {
+                    height: 3.5em;
+                    width: 3.5em;
+                    left: 52.5%;
+                    transform: translate(-50%, 0);
+                    bottom: -5rem;
+                    top: unset;
+
+                    .bi {
+                        width: 1.75em;
+                        height: 1.75em;
+                    }
+                }
+
+                &.slide-arrow-prev {
+                    left: 47.5%;
+                    transform: translate(-50%, -6px);
+                    bottom: -5rem;
+                    top: unset;
+                    background-color: transparent;
+                    border: 1px solid $text-black;
+
+                    .bi {
+                        fill: $text-black;
+                    }
+                }
+            }
+        }
+    }
+
+    .button-block {
+        margin-top: 7rem;
+
+        .cta-btn {
+            margin: auto;
+        }
+    }
+}
+
+.package-section {
+    padding: 5rem 0 10rem;
+
+    .inner-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+
+        .content-block {
+            flex: 1;
+
+            .subtitle {
+                font-size: 1.1rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                margin-bottom: .25rem;
+                color: $text-black;
+            }
+
+            .title {
+                font-size: 2rem;
+                font-weight: 400;
+                color: $text-black;
+                margin-bottom: 2rem;
+
+                span {
+                    font-size: 2rem;
+                    font-weight: 400;
+                    color: $primary-green;
+                }
+            }
+
+            .text {
+                font-size: 1rem;
+                font-weight: 300;
+                color: $text-black;
+                margin-bottom: 3rem;
+            }
+        }
+
+        .package-block {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+
+            .package-card {
+                max-width: 250px;
+                padding: 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+
+                .icon {
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 22px;
+                    font-weight: 400;
+                    color: $white;
+                    margin: 0 auto 1rem;
+
+                    &.blue {
+                        background-color: $blue;
+                        box-shadow: 0 0 0 5px rgba($color: $blue, $alpha: .25);
+                    }
+
+                    &.purple {
+                        background-color: $purple;
+                        box-shadow: 0 0 0 5px rgba($color: $purple, $alpha: .25);
+                    }
+
+                    &.green {
+                        background-color: $green;
+                        box-shadow: 0 0 0 5px rgba($color: $green, $alpha: .25);
+                    }
+                }
+
+                .title {
+                    font-size: 1rem;
+                    font-weight: 300;
+                    margin-bottom: .5rem;
+                    color: $text-black;
+                }
+
+                .text {
+                    font-size: .8rem;
+                    font-weight: 300;
+                    color: $text-black;
+                }
+            }
+        }
+    }
+}
