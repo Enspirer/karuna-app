@@ -1,3 +1,31 @@
+<style>
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .notification {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    }
+
+    .notification:hover {
+    background: red;
+    }
+
+    .notification .badge {
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    }
+</style>
+
+
 <div class="sidebar">
     <nav class="sidebar-nav">
         <ul class="nav">
@@ -166,12 +194,12 @@
 
                         <li class="nav-item">
                             <a class="nav-link {{active_class(Route::is('admin/agent'))}}" href="{{ route('admin.agent.index') }}">                        
-                                Agent List
+                                Agent List <span class="notification badge">{{App\Models\Auth\User::where('user_type','Agent')->get()->count()}}</span>
                             </a>  
                         </li>  
                         <li class="nav-item">
                             <a class="nav-link {{active_class(Route::is('admin/donor'))}}" href="{{ route('admin.donor.index') }}">
-                                Donar List
+                                Donar List <span class="notification badge">{{App\Models\Auth\User::where('user_type','Donor')->get()->count()}}</span>
                             </a>
                         </li>    
 

@@ -19,15 +19,11 @@
                         <thead>
                             <tr>
                                 <th scope="col">#ID</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Last Name</th>
+                                <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Country</th>
                                 <th scope="col">City</th>
                                 <th scope="col">Contact Number</th>
-                                <th scope="col">Contact Number Two</th>
-                                <th scope="col">Occupation</th>
-                                <th scope="col">NIC Number</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -80,15 +76,11 @@
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'first_name', name: 'first_name'},
-                    {data: 'last_name', name: 'last_name'},
+                    {data: 'name', name: 'name'},
                     {data: 'email', name: 'email'},
                     {data: 'country', name: 'country'},
                     {data: 'city', name: 'city'},
                     {data: 'contact_number', name: 'contact_number'},
-                    {data: 'contact_number_two', name: 'contact_number_two'},
-                    {data: 'occupation', name: 'occupation'},
-                    {data: 'nic_number', name: 'nic_number'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

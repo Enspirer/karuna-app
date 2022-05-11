@@ -78,4 +78,8 @@ Breadcrumbs::for('admin.receivers_list', function ($trail) {
     $trail->push('Receivers', route('admin.receivers_list',1));
 });
 
+Breadcrumbs::for('admin.agent.show', function ($trail) {
+    $trail->push('Show', route('admin.agent.show',1));
+});
+
 
