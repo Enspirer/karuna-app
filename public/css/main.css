@@ -529,6 +529,15 @@
 .kindness-section .button-block .cta-btn {
   margin: auto;
 }
+.kindness-section .pagination-block {
+  margin-top: 5rem;
+}
+.kindness-section .pagination-block .pagination .page-item .page-link {
+  color: #1FC39E;
+}
+.kindness-section .pagination-block .pagination .page-item.disabled .page-link {
+  color: #767676;
+}
 
 .news-section {
   padding: 5rem 0;
@@ -1080,7 +1089,7 @@
   color: #333;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1199px) {
   .navigation-bar {
     background-color: white;
   }

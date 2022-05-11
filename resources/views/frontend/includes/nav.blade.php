@@ -9,19 +9,19 @@
     <div class="collapse navbar-collapse" id="navContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link {{ Request::segment(1) == '' ? 'active' : null }}" href="{{route('frontend.index')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link {{ Request::segment(1) == 'about' ? 'active' : null }}" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Our Works</a>
+          <a class="nav-link {{ Request::segment(1) == 'works' ? 'active' : null }}" href="#">Our Works</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Support Us</a>
+          <a class="nav-link {{ Request::segment(1) == 'support' ? 'active' : null }}" href="{{route('frontend.support')}}">Support Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact Us</a>
+          <a class="nav-link {{ Request::segment(1) == 'contact' ? 'active' : null }}" href="#">Contact Us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link cta-btn btn-fill" href="#">

@@ -414,6 +414,24 @@
             margin: auto;
         }
     }
+
+    .pagination-block {
+        margin-top: 5rem;
+
+        .pagination {
+            .page-item {
+                .page-link {
+                    color: $primary-green;
+                }
+
+                &.disabled {
+                    .page-link {
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .news-section {
