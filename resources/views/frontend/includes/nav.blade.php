@@ -28,6 +28,34 @@
               <div class="btn-text">Donate Now</div>
           </a>
         </li>
+        <li class="nav-item dropdown nav-drop">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+            <img src="{{url('images/landing-page/nav/notification.png')}}" alt="">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown nav-drop">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+            <div class="drop-profile">
+              <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+              <div class="name">Kamal</div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-arrow-left-right"></i> Donation History</div></a></li>
+            <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-credit-card"></i> My Card</div></a></li>
+            <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-person-fill"></i> Profile</div></a></li>
+            <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-gear"></i> Settings</div></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-box-arrow-right"></i> Sign Out</div></a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
