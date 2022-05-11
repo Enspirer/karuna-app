@@ -130,7 +130,7 @@
             gap: 0.25em;
 
             .splide__pagination__page {
-                background-color: #ccc;
+                background-color: $light-gray;
                 width: 10px;
                 height: 10px;
 
@@ -141,6 +141,8 @@
         }
 
         .splide__progress {
+            background-color: $light-gray;
+
             .splide__progress__bar {
                 background-color: $orange;
             }

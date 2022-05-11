@@ -250,12 +250,15 @@
   gap: 0.25em;
 }
 .hero-section .hero-slider .splide__pagination .splide__pagination__page {
-  background-color: #ccc;
+  background-color: #ddd;
   width: 10px;
   height: 10px;
 }
 .hero-section .hero-slider .splide__pagination .splide__pagination__page.is-active {
   background-color: #1FC39E;
+}
+.hero-section .hero-slider .splide__progress {
+  background-color: #ddd;
 }
 .hero-section .hero-slider .splide__progress .splide__progress__bar {
   background-color: #E78834;
