@@ -18,6 +18,16 @@ class HomeController extends Controller
         return view('frontend.index');
     }
 
+    public function receivers()
+    {
+        return view('frontend.receivers');
+    }
+
+    public function support()
+    {
+        return view('frontend.support');
+    }
+
     public function find_agent_details($city)
     {
         // dd($city);

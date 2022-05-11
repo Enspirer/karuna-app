@@ -172,7 +172,7 @@
             </div>
         </div>
         <div class="button-block">
-            <a href="#" class="cta-btn btn-outline">
+            <a href="{{route('frontend.receivers')}}" class="cta-btn btn-outline">
                 <div class="btn-text">View All</div>
             </a>
         </div>
@@ -246,3 +246,31 @@
 </section>
 
 @endsection
+
+@push('after-scripts')
+
+<script>
+    // Hero Slider
+    var heroSlider = new Splide('#heroSlider', {
+        type: 'loop',
+        width: '100%',
+        autoplay: true,
+        breakpoints: {
+            991: {
+                arrows: false,
+            },
+        },
+    });
+
+    heroSlider.mount();
+
+    // News Slider
+    var newsSlider = new Splide('#newsSlider', {
+        type: 'loop',
+        pagination: false,
+    });
+
+    newsSlider.mount();
+</script>
+
+@endpush
