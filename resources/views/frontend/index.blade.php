@@ -21,7 +21,7 @@
         <div class="splide__track">
             <ul class="splide__list">
                 <li class="splide__slide">
-                    <div class="slide slide-1">
+                    <div class="slide slide-1" style="background: url('../../images/landing-page/home/hero-slide-back-1.png');">
                         <div class="content-block">
                             <div class="title-block">
                                 <div class="title"><span class="dc">w</span>ms Tn fjkqfjka</div>
