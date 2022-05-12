@@ -92,26 +92,79 @@ class UserRepository extends BaseRepository
      */
     public function create(array $data)
     {
+        // dd($data);
         return DB::transaction(function () use ($data) {
-            $user = $this->model::create([
-                'first_name' => $data['first_name'],
-                'last_name' => $data['last_name'],
-                'email' => $data['email'],
-                'user_type' => $data['user_type'],
-                'country' => $data['country'],
-                'city' => $data['city'],
-                'assigned_agent_id' => $data['assigned_agent_id'],                
-                'contact_number' => $data['contact_number'],
-                'contact_number_two' => $data['contact_number_two'],
-                'address' => $data['address'],
-                'occupation' => $data['occupation'],
-                'nic_number' => $data['nic_number'],
-                'confirmation_code' => md5(uniqid(mt_rand(), true)),
-                'active' => true,
-                'password' => $data['password'],
-                // If users require approval or needs to confirm email
-                'confirmed' => ! (config('access.users.requires_approval') || config('access.users.confirm_email')),
-            ]);
+
+            if(isset($data['assigned_agent_id']) != null){
+
+                $user = $this->model::create([
+                    'first_name' => $data['first_name'],
+                    'last_name' => $data['last_name'],
+                    'email' => $data['email'],
+                    'user_type' => $data['user_type'],
+                    'country' => $data['country'],
+                    'city' => $data['city'],
+                    'assigned_agent_id' => $data['assigned_agent_id'],                
+                    'contact_number' => null,
+                    'contact_number_two' => null,
+                    'address' => null,
+                    'occupation' => null,
+                    'nic_number' => null,
+                    'confirmation_code' => md5(uniqid(mt_rand(), true)),
+                    'active' => true,
+                    'password' => $data['password'],
+                    // If users require approval or needs to confirm email
+                    'confirmed' => ! (config('access.users.requires_approval') || config('access.users.confirm_email')),
+                ]);
+
+            }
+            elseif(isset($data['assigned_agent_id']) == null && isset($data['country']) != null){
+
+                $user = $this->model::create([
+                    'first_name' => $data['first_name'],
+                    'last_name' => $data['last_name'],
+                    'email' => $data['email'],
+                    'user_type' => $data['user_type'],
+                    'country' => $data['country'],
+                    'city' => $data['city'],
+                    'assigned_agent_id' => null,                
+                    'contact_number' => $data['contact_number'],
+                    'contact_number_two' => $data['contact_number_two'],
+                    'address' => $data['address'],
+                    'occupation' => $data['occupation'],
+                    'nic_number' => $data['nic_number'],
+                    'confirmation_code' => md5(uniqid(mt_rand(), true)),
+                    'active' => true,
+                    'password' => $data['password'],
+                    // If users require approval or needs to confirm email
+                    'confirmed' => ! (config('access.users.requires_approval') || config('access.users.confirm_email')),
+                ]);
+
+            }
+            else{
+                $user = $this->model::create([
+                    'first_name' => $data['first_name'],
+                    'last_name' => $data['last_name'],
+                    'email' => $data['email'],
+                    'user_type' => $data['user_type'],
+                    'country' => null,
+                    'city' => null,
+                    'assigned_agent_id' => null,                
+                    'contact_number' => null,
+                    'contact_number_two' => null,
+                    'address' => null,
+                    'occupation' => null,
+                    'nic_number' => null,
+                    'confirmation_code' => md5(uniqid(mt_rand(), true)),
+                    'active' => true,
+                    'password' => $data['password'],
+                    // If users require approval or needs to confirm email
+                    'confirmed' => ! (config('access.users.requires_approval') || config('access.users.confirm_email')),
+                ]);
+
+            }
+            
+            // dd($user);
 
             if ($user) {
                 // Add the default site role to the new user
