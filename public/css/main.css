@@ -115,7 +115,7 @@
   padding: 5rem 0;
 }
 .hero-section .hero-slider .splide__slide .slide.slide-1 {
-
+  background: url("../../images/landing-page/home/hero-slide-back-1.png");
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
@@ -1241,6 +1241,51 @@
 }
 .section-join .inner-wrapper .content-block .join-form .join-form-row .iti--allow-dropdown {
   width: 100%;
+}
+.section-join .inner-wrapper .content-block .join-form .join-form-row .wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-join .inner-wrapper .content-block .join-form .join-form-row .wrapper .form-check {
+  margin: 0;
+}
+.section-join .inner-wrapper .content-block .join-form .join-form-row .wrapper .form-check .form-check-input {
+  cursor: pointer;
+}
+.section-join .inner-wrapper .content-block .join-form .join-form-row .wrapper .form-check .form-check-input:active, .section-join .inner-wrapper .content-block .join-form .join-form-row .wrapper .form-check .form-check-input:focus {
+  box-shadow: none;
+  outline: none;
+  border: 1px solid #1FC39E;
+}
+.section-join .inner-wrapper .content-block .join-form .join-form-row .wrapper .form-check .form-check-input:checked {
+  background-color: #1FC39E;
+  border: 1px solid #1FC39E;
+}
+.section-join .inner-wrapper .content-block .join-form .join-form-row .wrapper .form-check .form-check-label {
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.section-join .inner-wrapper .content-block .join-form .join-form-row .wrapper a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #1FC39E;
+  text-decoration: none;
+}
+.section-join .inner-wrapper .content-block .join-form .join-form-row .alert {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #ff0000;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+}
+.section-join .inner-wrapper .content-block .join-form .join-form-row .alert .close {
+  display: none;
 }
 .section-join .inner-wrapper .content-block .not-join {
   text-align: center;

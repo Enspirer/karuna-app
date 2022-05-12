@@ -794,8 +794,11 @@
                         </div>
                         <div class="join-form-row">
                             <button type="submit" class="cta-btn btn-fill pull-right">
-                                <div class="btn-text">Sign in</div>
+                                <div class="btn-text">Sign Up</div>
                             </button>
+                        </div>
+                        <div class="join-form-row">
+                            @include('includes.partials.messages')
                         </div>
                     </div>
                 {{ html()->form()->close() }}

@@ -69,6 +69,61 @@
                     .iti--allow-dropdown {
                         width: 100%;
                     }
+
+                    .wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .form-check {
+                            margin: 0;
+
+                            .form-check-input {
+                                cursor: pointer;
+
+                                &:active,
+                                &:focus {
+                                    box-shadow: none;
+                                    outline: none;
+                                    border: 1px solid $primary-green;
+                                }
+
+                                &:checked {
+                                    background-color: $primary-green;
+                                    border: 1px solid $primary-green;
+                                }
+                            }
+
+                            .form-check-label {
+                                cursor: pointer;
+                                font-size: .9rem;
+                                font-weight: 400;
+                                color: $text-black;
+                            }
+                        }
+
+                        a {
+                            font-size: .9rem;
+                            font-weight: 400;
+                            color: $primary-green;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .alert {
+                        font-size: .8rem;
+                        font-weight: 400;
+                        color: #ff0000;
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                        background-color: transparent;
+
+                        .close {
+                            display: none;
+                        }
+                    }
                 }
             }
 
