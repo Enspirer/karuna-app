@@ -1,0 +1,87 @@
+.section-payment {
+    padding: 10rem 0;
+
+    .inner-wrapper {
+        background-color: #F4F8FF;
+        padding: 2rem 3rem;
+        border-radius: 10px;
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: $text-black;
+        }
+
+        .content-block {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+
+            .card-block {
+                flex: 1;
+
+                .row-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+
+                    .card-row {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 1rem;
+
+                        &:nth-child(1) {
+                            flex-wrap: wrap;
+
+                            .form-control {
+                                flex: 0 0 100%;
+                            }
+                        }
+
+                        .label-group {
+                            flex: 1;
+
+                            .label {
+                                font-size: 1rem;
+                                font-weight: 300;
+                                color: $text-black;
+                            }
+
+                            .sub-label {
+                                font-size: .8rem;
+                                font-weight: 300;
+                                color: $text-black;
+                            }
+                        }
+
+                        .form-control,
+                        .card-input-group,
+                        .package-slider {
+                            flex: 0 0 55%;
+                        }
+
+                        .card-input-group {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            gap: 1rem;
+
+                            span {
+                                font-size: 1rem;
+                                font-weight: 400;
+                                color: $text-black;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .info-block {
+                flex: 0 0 30%;
+            }
+        }
+    }
+}

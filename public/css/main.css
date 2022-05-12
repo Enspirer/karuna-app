@@ -1335,6 +1335,79 @@
     width: 70%;
   }
 }
+.section-payment {
+  padding: 10rem 0;
+}
+.section-payment .inner-wrapper {
+  background-color: #F4F8FF;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+}
+.section-payment .inner-wrapper .title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: #333;
+}
+.section-payment .inner-wrapper .content-block {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.section-payment .inner-wrapper .content-block .card-block {
+  flex: 1;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row:nth-child(1) {
+  flex-wrap: wrap;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row:nth-child(1) .form-control {
+  flex: 0 0 100%;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .label-group {
+  flex: 1;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .label-group .label {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .label-group .sub-label {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #333;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .form-control,
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .card-input-group,
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .package-slider {
+  flex: 0 0 55%;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .card-input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .card-input-group span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+}
+.section-payment .inner-wrapper .content-block .info-block {
+  flex: 0 0 30%;
+}
+
 .footer-section {
   padding: 5rem 0 0;
   background-color: #353334;
