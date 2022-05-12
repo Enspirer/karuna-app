@@ -82,4 +82,14 @@ Breadcrumbs::for('admin.agent.show', function ($trail) {
     $trail->push('Show', route('admin.agent.show',1));
 });
 
+Breadcrumbs::for('admin.donate_gigs', function ($trail) {
+    $trail->push('Donate Gigs', route('admin.donate_gigs',1));
+});
+
+Breadcrumbs::for('admin.donate_gigs_view', function ($trail) {
+    $trail->push('Donate Gigs View', route('admin.donate_gigs_view',1));
+});
+
+
+
 

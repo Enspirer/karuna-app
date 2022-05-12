@@ -18,7 +18,7 @@ class CreateDonateGigsTable extends Migration
             $table->text('user_id');
             $table->text('agent_id');
             $table->text('package_id')->nullable();
-            $table->text('assigned_donor_id')->nullable();
+            $table->text('fund')->nullable();
             $table->text('title')->nullable();
             $table->text('description')->nullable();
             $table->text('otp_code')->nullable();
