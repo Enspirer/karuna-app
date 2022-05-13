@@ -21,7 +21,7 @@
         <div class="splide__track">
             <ul class="splide__list">
                 <li class="splide__slide">
-                    <div class="slide slide-1">
+                    <div class="slide slide-1" style="background: url('{{url('images/landing-page/home/hero-slide-back-1.png')}}');">
                         <div class="content-block">
                             <div class="title-block">
                                 <div class="title"><span class="dc">w</span>ms Tn fjkqfjka</div>
@@ -43,8 +43,6 @@
                         <img src="{{url('images/landing-page/home/hero-slide-1.png')}}" alt="" class="hero-img">
                     </div>
                 </li>
-                <li class="splide__slide">Slide 02</li>
-                <li class="splide__slide">Slide 03</li>
             </ul>
         </div>
         <div class="splide__progress">
