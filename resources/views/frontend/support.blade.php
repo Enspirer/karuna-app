@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="support-hero-section">
+<section class="support-hero-section" style="background: url('{{url('images/landing-page/support/hero-back.png')}}');">
     <div class="container">
         <div class="inner-wrapper">
             <div class="content-block">
