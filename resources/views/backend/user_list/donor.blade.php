@@ -23,6 +23,8 @@
                                 <th scope="col">First Name</th>
                                 <th scope="col">Last Name</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Confirmed</th>
+                                <th scope="col">Option</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,6 +65,9 @@
             </div>
         </div>
     </div>
+
+
+
     
 
     <script type="text/javascript">
@@ -77,30 +82,12 @@
                     {data: 'first_name', name: 'first_name'},
                     {data: 'last_name', name: 'last_name'},
                     {data: 'email', name: 'email'},
+                    {data: 'confirmed', name: 'confirmed'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
  
 
-            var user_id;
-
-            $(document).on('click', '.delete', function(){
-            user_id = $(this).attr('id');
-            $('#confirmModal').modal('show');
-            });
-
-            $('#ok_button').click(function(){
-            $.ajax({
-            url:"country/delete/"+user_id,
-            
-            success:function(data)
-            {
-                setTimeout(function(){
-                $('#confirmModal').modal('hide');
-                $('#villadatatable').DataTable().ajax.reload();
-                });
-            }
-            })
-            });
 
           
         });

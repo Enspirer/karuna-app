@@ -24,6 +24,7 @@
                                 <th scope="col">Country</th>
                                 <th scope="col">City</th>
                                 <th scope="col">Contact Number</th>
+                                <th scope="col">Confirmed</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -81,6 +82,7 @@
                     {data: 'country', name: 'country'},
                     {data: 'city', name: 'city'},
                     {data: 'contact_number', name: 'contact_number'},
+                    {data: 'confirmed', name: 'confirmed'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

@@ -10,7 +10,32 @@
 
             <div class="card">
                 <div class="card-header">
+                    <h5 class="mt-3 fw-600">Agent Informations&nbsp;</h5>                   
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <h6 > Name: {{$agent->first_name}} {{$agent->last_name}}</h6>
+                            <h6 > Email: {{$agent->email}}</h6>
+                            <h6 > Country: {{$agent->country}}</h6>
+                        </div>
+                        <div class="col-3">
+                            <h6 > City: {{$agent->city}}</h6>
+                            <h6 > Contact Number: {{$agent->contact_number}}</h6>
+                            <h6 > Alternate Contact Number: {{$agent->contact_number_two}}</h6>
+                        </div>
+                        <div class="col-6 text-right mt-3">
+                        <a href="{{route('admin.agent.index')}}" type="button" class="btn rounded-pill px-4 py-2 me-2 btn-secondary">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
                     <strong>Receivers&nbsp;</strong>
+
+                    <a href="{{route('admin.receiver.create',$agent->id)}}" class="btn btn-success pull-right ml-4">Add New</a>
                    
                 </div><!--card-header-->
 
@@ -24,6 +49,8 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Country</th>
                                 <th scope="col">City</th>
+                                <th scope="col">Confirmed</th>                                
+                                <th scope="col">Options</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -80,6 +107,8 @@
                     {data: 'email', name: 'email'},
                     {data: 'country', name: 'country'},
                     {data: 'city', name: 'city'},
+                    {data: 'confirmed', name: 'confirmed'},                    
+                    {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
  
