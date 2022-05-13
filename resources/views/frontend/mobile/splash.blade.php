@@ -45,10 +45,10 @@
             <div class="text">Explore all the existing donor lists and receivers based on your interest.</div>
         </div>
         <div class="button-block">
-            <a href="#" class="cta-btn btn-fill">
+            <a href="{{route('frontend.mobile.login')}}" class="cta-btn btn-fill">
                 <div class="btn-text">Sign in</div>
             </a>
-            <a href="#" class="cta-btn btn-outline">
+            <a href="{{route('frontend.mobile.register')}}" class="cta-btn btn-outline">
                 <div class="btn-text">Register</div>
             </a>
         </div>

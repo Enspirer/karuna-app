@@ -11,4 +11,14 @@ class MobileController extends Controller
     {
         return view('frontend.mobile.splash');
     }
+
+    public function login()
+    {
+        return view('frontend.mobile.login');
+    }
+
+    public function register()
+    {
+        return view('frontend.mobile.register');
+    }
 }

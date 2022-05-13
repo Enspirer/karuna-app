@@ -32,5 +32,10 @@
     }
 }
 
+body {
+    background-color: #F9F9FB !important;
+}
+
 // Pages
 @import "mobile/splash";
+@import "mobile/join";

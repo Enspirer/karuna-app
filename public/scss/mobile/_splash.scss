@@ -69,7 +69,7 @@
             font-size: 1.75rem;
             font-weight: 400;
             color: $text-black;
-            margin-bottom: 1rem;
+            margin-bottom: .75rem;
         }
 
         .text {
@@ -84,7 +84,7 @@
         flex-direction: row;
         align-items: center;
         background-color: #F6F9FF;
-        border: 2px solid #F6F9FF;
+        border: 2px solid $white;
         border-radius: 8px;
         overflow: hidden;
         position: absolute;
