@@ -1428,6 +1428,16 @@
   margin: 0;
   top: 5px;
   left: 5px;
+  border: none;
+  width: 10px;
+  height: 10px;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .package-slider .splide__slide .package .form-check-input:checked {
+  background: none;
+  background-color: #1FC39E;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .package-slider .splide__slide .package .form-check-input:active, .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .package-slider .splide__slide .package .form-check-input:focus, .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .package-slider .splide__slide .package .form-check-input:checked {
+  box-shadow: none;
 }
 .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .package-slider .splide__slide .package .header {
   background-color: #F8F8F8;

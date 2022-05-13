@@ -106,6 +106,20 @@
                                         margin: 0;
                                         top: 5px;
                                         left: 5px;
+                                        border: none;
+                                        width: 10px;
+                                        height: 10px;
+
+                                        &:checked {
+                                            background: none;
+                                            background-color: $primary-green;
+                                        }
+
+                                        &:active,
+                                        &:focus,
+                                        &:checked {
+                                            box-shadow: none;
+                                        }
                                     }
 
                                     .header {
