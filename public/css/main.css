@@ -1663,6 +1663,73 @@
     gap: 1rem;
   }
 }
+.payment-status-section {
+  padding: 10rem 0;
+}
+.payment-status-section .inner-wrapper {
+  position: relative;
+}
+.payment-status-section .inner-wrapper img {
+  position: absolute;
+  z-index: 1;
+}
+.payment-status-section .inner-wrapper .img-left {
+  left: 0;
+  bottom: 0;
+}
+.payment-status-section .inner-wrapper .img-right {
+  right: 0;
+  bottom: 0;
+}
+.payment-status-section .inner-wrapper .status-block {
+  background-color: #F4F8FF;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: auto;
+  max-width: 540px;
+  width: 100%;
+  position: relative;
+}
+.payment-status-section .inner-wrapper .status-block svg {
+  font-size: 4rem;
+  display: block;
+  margin: 0 auto 2rem;
+  color: #1FC39E;
+}
+.payment-status-section .inner-wrapper .status-block .title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.payment-status-section .inner-wrapper .status-block .amount {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #333;
+}
+.payment-status-section .inner-wrapper .status-block .text {
+  width: 90%;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+}
+.payment-status-section .inner-wrapper .status-block .cta-btn {
+  margin: auto;
+  width: 100px;
+}
+
+@media screen and (max-width: 991px) {
+  .payment-status-section .inner-wrapper img {
+    width: 100%;
+  }
+  .payment-status-section .inner-wrapper .status-block {
+    z-index: 2;
+  }
+}
 .footer-section {
   padding: 5rem 0 0;
   background-color: #353334;

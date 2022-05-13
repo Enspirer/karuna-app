@@ -1,0 +1,84 @@
+.payment-status-section {
+    padding: 10rem 0;
+
+    .inner-wrapper {
+        position: relative;
+
+        img {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .img-left {
+            left: 0;
+            bottom: 0;
+        }
+
+        .img-right {
+            right: 0;
+            bottom: 0;
+        }
+
+        .status-block {
+            background-color: #F4F8FF;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: auto;
+            max-width: 540px;
+            width: 100%;
+            position: relative;
+
+            svg {
+                font-size: 4rem;
+                display: block;
+                margin: 0 auto 2rem;
+                color: $primary-green;
+            }
+
+            .title {
+                text-align: center;
+                font-size: 1.75rem;
+                font-weight: 300;
+                margin-bottom: .5rem;
+                color: $text-black;
+            }
+
+            .amount {
+                text-align: center;
+                font-size: 1.75rem;
+                font-weight: 400;
+                color: $text-black;
+            }
+
+            .text {
+                width: 90%;
+                margin: 1rem auto;
+                text-align: center;
+                font-size: .9rem;
+                font-weight: 300;
+                color: $text-black;
+            }
+
+            .cta-btn {
+                margin: auto;
+                width: 100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .payment-status-section {
+
+        .inner-wrapper {
+
+            img {
+                width: 100%;
+            }
+
+            .status-block {
+                z-index: 2;
+            }
+        }
+    }
+}

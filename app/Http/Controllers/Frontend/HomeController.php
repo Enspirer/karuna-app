@@ -33,6 +33,11 @@ class HomeController extends Controller
         return view('frontend.payment');
     }
 
+    public function payment_status()
+    {
+        return view('frontend.payment_status');
+    }
+
     public function find_agent_details($city)
     {
         // dd($city);
