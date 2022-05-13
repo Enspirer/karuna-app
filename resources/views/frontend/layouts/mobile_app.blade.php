@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.16/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <!-- Custom CSS-->
-        <link rel="stylesheet" href="{{url('css/main.css')}}">
+        <link rel="stylesheet" href="{{url('css/mobile_main.css')}}">
 
         {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
         @stack('before-styles')
@@ -47,9 +47,7 @@
 
         <div id="app">
             @include('includes.partials.logged-in-as')
-            @include('frontend.includes.nav')
             @yield('content')
-            @include('frontend.includes.footer')
         </div><!-- #app -->
 
         <!-- Scripts -->
@@ -63,5 +61,5 @@
     </body>
 
     <!-- Custom JS -->
-    <script src="{{url('js/main.js')}}"></script>
+    <script src="{{url('js/mobile_main.js')}}"></script>
 </html>

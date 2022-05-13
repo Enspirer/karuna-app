@@ -65,6 +65,11 @@
   color: #fff;
 }
 
+.mobile-container {
+  width: 90%;
+  margin: auto;
+}
+
 *,
 *::after,
 *::before {
