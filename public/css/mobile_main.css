@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Apex";
+  src: url("../fonts/custom/apex.woff2") format("woff2"), url("../fonts/custom/apex.woff") format("woff"), url("../fonts/custom/apex.ttf") format("truetype");
+}
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #1FC39E;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 3px;
+  width: fit-content;
+}
+.btn-outline:hover, .btn-outline:focus {
+  text-decoration: none;
+  outline: none;
+}
+.btn-outline .btn-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.btn-outline .bi {
+  font-size: 1rem;
+}
+.btn-outline .btn-text {
+  color: #1FC39E;
+}
+.btn-outline .bi {
+  color: #1FC39E;
+}
+
+.btn-fill {
+  background-color: #1FC39E;
+  border: 1px solid #1FC39E;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 3px;
+  width: fit-content;
+}
+.btn-fill:hover, .btn-fill:focus {
+  text-decoration: none;
+  outline: none;
+}
+.btn-fill .btn-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.btn-fill .bi {
+  font-size: 1rem;
+}
+.btn-fill .btn-text {
+  color: #fff;
+}
+.btn-fill .bi {
+  color: #fff;
+}
+
+.mobile-container {
+  width: 90%;
+  margin: auto;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+*::-moz-selection {
+  color: #fff;
+  background: #1FC39E;
+}
+*::selection {
+  color: #fff;
+  background: #1FC39E;
+}
+
+.splash-hero-section .splash-slider .splide__slide .slide {
+  width: 100%;
+  height: 50vh;
+  background-position: bottom center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+}
+.splash-hero-section .splash-slider .splide__slide .slide .caption {
+  position: absolute;
+  right: 15%;
+  bottom: 15%;
+}
+.splash-hero-section .splash-slider .splide__slide .slide .caption .subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #971930;
+  text-align: right;
+}
+.splash-hero-section .splash-slider .splide__slide .slide .caption .title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #971930;
+  letter-spacing: 5px;
+  text-align: right;
+  line-height: 1;
+}
+.splash-hero-section .splash-slider .pagination .indicator {
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.splash-hero-section .splash-slider .pagination .indicator.is-active {
+  background-color: #971930;
+  transform: scale(1);
+  width: 35px;
+  border-radius: 50px;
+  opacity: 1;
+}
+
+.splash-body-section {
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+.splash-body-section .text-block {
+  text-align: center;
+  margin: 3rem 0 0;
+}
+.splash-body-section .text-block .subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #333;
+}
+.splash-body-section .text-block .title {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.splash-body-section .text-block .text {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+}
+.splash-body-section .button-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #F6F9FF;
+  border: 2px solid #F6F9FF;
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  bottom: 15%;
+  transform: translate(-50%, 0);
+}
+.splash-body-section .button-block .cta-btn {
+  flex: 1 1 100%;
+  height: 50px;
+  border-radius: 8px;
+}
+.splash-body-section .button-block .btn-outline {
+  border: 1px solid transparent;
+  background-color: #F6F9FF;
+}
+.splash-body-section .button-block .btn-outline .btn-text {
+  color: #ACACAC;
+}
+
+/*# sourceMappingURL=mobile_main.css.map */

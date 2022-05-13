@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\ProfileController;
+use App\Http\Controllers\Frontend\MobileController;
 
 /*
  * Frontend Controllers
@@ -15,8 +16,12 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('receivers', [HomeController::class, 'receivers'])->name('receivers');
 Route::get('support', [HomeController::class, 'support'])->name('support');
 Route::get('payment', [HomeController::class, 'payment'])->name('payment');
+Route::get('payment/payment-status', [HomeController::class, 'payment_status'])->name('payment_status');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
+
+// Mobile Routes
+Route::get('mobile/splash', [MobileController::class, 'splash'])->name('splash');
 
 Route::post('/aiz-uploader', [AizUploadController::class, 'show_uploader']);
 Route::post('/aiz-uploader/upload', [AizUploadController::class, 'upload']);
