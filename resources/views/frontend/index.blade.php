@@ -4,6 +4,27 @@
 
 @section('content')
 
+
+@if(session()->get('flash_success'))
+    <div class="modal fade form-submit-modal" id="overlay" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <i class="bi bi-x-lg" data-bs-dismiss="modal"></i>
+                    <div class="image-block">
+                        <img src="{{url('images/landing_page/contact_us/success.png')}}" alt="">
+                    </div>
+                    <div class="content-block">
+                        <div class="title">Success !</div>
+                        <p class="text">Your account was successfully created and is pending approval.</p>
+                        <p class="text">An e-mail will be sent when your account is approved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
+
 <section class="hero-section">
     <div class="splide hero-slider" id="heroSlider">
         <div class="splide__arrows slide-arrows">
@@ -270,5 +291,16 @@
 
     newsSlider.mount();
 </script>
+
+
+<script>
+    $(window).on('load', function () {
+        $('#overlay').modal('show');
+    });
+    $("#close-btn").click(function () {
+        $('#overlay').modal('hide');
+    });
+</script>
+
 
 @endpush

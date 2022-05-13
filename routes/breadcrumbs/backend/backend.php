@@ -90,6 +90,16 @@ Breadcrumbs::for('admin.donate_gigs_view', function ($trail) {
     $trail->push('Donate Gigs View', route('admin.donate_gigs_view',1));
 });
 
+Breadcrumbs::for('admin.donor_status.edit', function ($trail) {
+    $trail->push('Donor Status', route('admin.donor_status.edit',1));
+});
 
+Breadcrumbs::for('admin.receiver.create', function ($trail) {
+    $trail->push('Create', route('admin.receiver.create',1));
+});
+
+Breadcrumbs::for('admin.receiver.edit', function ($trail) {
+    $trail->push('Title Here', route('admin.receiver.edit',1));
+});
 
 

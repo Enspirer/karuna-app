@@ -69,16 +69,25 @@ Route::get('city/delete/{id}', [CityController::class, 'destroy'])->name('city.d
 
 
 Route::get('agent', [ListController::class, 'agent'])->name('agent.index');
-Route::get('agent.show/{id}', [ListController::class, 'agent_show'])->name('agent.show');
-Route::get('receivers_list/{id}', [ListController::class, 'receivers_list'])->name('receivers_list');
+Route::get('agent/show/{id}', [ListController::class, 'agent_show'])->name('agent.show');
+Route::post('agent_status/update', [ListController::class, 'agent_status_update'])->name('agent_status.update');
 Route::get('donor', [ListController::class, 'donor'])->name('donor.index');
+Route::get('donor_status/edit/{id}', [ListController::class, 'donor_status_edit'])->name('donor_status.edit');
+Route::post('donor_status/update', [ListController::class, 'donor_status_update'])->name('donor_status.update');
 Route::get('donate_gigs/{id}', [ListController::class, 'donate_gigs'])->name('donate_gigs');
 Route::get('donate_gigs_view/{id}', [ListController::class, 'donate_gigs_view'])->name('donate_gigs_view');
 Route::post('donate_gigs/update', [ListController::class, 'donate_gigs_update'])->name('donate_gigs.update');
 
+Route::get('receivers_list/{id}', [ListController::class, 'receivers_list'])->name('receivers_list');
+Route::get('receiver/create/{id}', [ListController::class, 'receivers_create'])->name('receiver.create');
+Route::post('receiver/store', [ListController::class, 'register'])->name('receiver.store');
+Route::get('receivers_details/{id}', [ListController::class, 'receivers_details'])->name('receivers_details');
+Route::get('receiver/edit/{id}', [ListController::class, 'receivers_edit'])->name('receiver.edit');
+Route::post('receiver/update', [ListController::class, 'receivers_update'])->name('receiver.update');
+Route::get('receiver/delete/{id}', [ListController::class, 'receivers_destroy'])->name('receiver.destroy');
+
 
 Route::get('agent/getdetails', [ListController::class, 'get_agent_details'])->name('agent.getdetails');
-Route::get('receivers_details/{id}', [ListController::class, 'receivers_details'])->name('receivers_details');
 Route::get('donor/getdetails', [ListController::class, 'get_donor_details'])->name('donor.getdetails');
 Route::get('donate_gigs_details/{id}', [ListController::class, 'donate_gigs_details'])->name('donate_gigs_details');
 
