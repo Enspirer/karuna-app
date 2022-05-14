@@ -331,4 +331,98 @@ body {
   color: #2699FB;
 }
 
+.top-nav-section {
+  background-color: #F9F9FB;
+  padding: 10px 0;
+  position: static;
+  top: 0;
+}
+.top-nav-section .inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-nav-section .inner-wrapper .brand {
+  text-decoration: none;
+}
+.top-nav-section .inner-wrapper .brand img {
+  width: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+.top-nav-section .inner-wrapper .profile {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  background-color: #EFEFF0;
+  padding: 5px 5px 5px 15px;
+  border-radius: 50px;
+}
+.top-nav-section .inner-wrapper .profile .bi {
+  font-size: 1.1rem;
+  color: #FF4747;
+}
+.top-nav-section .inner-wrapper .profile .text {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.top-nav-section .inner-wrapper .profile img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.filter-section {
+  margin: 0.5rem 0;
+}
+.filter-section .inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.filter-section .inner-wrapper .bi-search {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(0, -50%);
+  font-size: 1.1rem;
+  color: #ddd;
+}
+.filter-section .inner-wrapper .form-control {
+  height: 40px;
+  border-radius: 50px;
+  padding: 0.375rem 0.75rem 0.375rem 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+.filter-section .inner-wrapper .form-control::placeholder {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #ddd;
+}
+.filter-section .inner-wrapper .form-control:focus, .filter-section .inner-wrapper .form-control:active {
+  box-shadow: none;
+  outline: none;
+}
+.filter-section .inner-wrapper .btn-filter {
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+}
+.filter-section .inner-wrapper .btn-filter .bi {
+  color: #767676;
+}
+.filter-section .inner-wrapper .btn-filter .bi::before {
+  font-size: 1.75rem;
+}
+
 /*# sourceMappingURL=mobile_main.css.map */

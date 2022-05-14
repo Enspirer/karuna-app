@@ -24,6 +24,7 @@ Route::post('contact/send', [ContactController::class, 'send'])->name('contact.s
 Route::get('mobile/splash', [MobileController::class, 'splash'])->name('mobile.splash');
 Route::get('mobile/login', [MobileController::class, 'login'])->name('mobile.login');
 Route::get('mobile/register', [MobileController::class, 'register'])->name('mobile.register');
+Route::get('mobile', [MobileController::class, 'index'])->name('mobile.index');
 
 Route::post('/aiz-uploader', [AizUploadController::class, 'show_uploader']);
 Route::post('/aiz-uploader/upload', [AizUploadController::class, 'upload']);

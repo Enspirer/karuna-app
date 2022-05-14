@@ -21,4 +21,9 @@ class MobileController extends Controller
     {
         return view('frontend.mobile.register');
     }
+
+    public function index()
+    {
+        return view('frontend.mobile.index');
+    }
 }
