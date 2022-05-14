@@ -180,6 +180,15 @@ class SettingsSeeder extends Seeder
             'user_id' => 1,
             ]
         );  
+        DB::table('settings')
+        ->insert(
+            [             
+            'key' => 'donation_per_agent',
+            'value' => 5, 
+            'user_id' => 1,
+            ]
+        );  
+        
         
     }
 }

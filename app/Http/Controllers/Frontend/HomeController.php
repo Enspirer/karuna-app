@@ -15,6 +15,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(is_mobile(request()->header('user-agent')) == true){                
+   
+            return redirect()->route('frontend.mobile.splash');
+        }
+
         return view('frontend.index');
     }
 

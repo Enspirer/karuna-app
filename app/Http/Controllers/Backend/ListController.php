@@ -313,8 +313,7 @@ class ListController extends Controller
 
     public function receivers_update(Request $request) {   
 
-        $email = $request->email;  
-        $password = $request->password;     
+        $email = $request->email;             
         $hidden_id = $request->hidden_id;     
 
         $user = User::where('id',$hidden_id)->first();  
@@ -324,27 +323,27 @@ class ListController extends Controller
             return back()->withErrors('No any record.'); 
         }
         else{
-            $hash_pw = Hash::check($password, $user->password);
-            // dd($hash_pw);
-
-            if($hash_pw === true){              
-
-                $users = DB::table('users') ->where('id', '=', $user->id)->update(
-                    [
-                        'first_name' => $request->first_name,
-                        'last_name' => $request->last_name,
-                        'email' => $request->email,
-                        'country' => $request->country,
-                        'city' => $request->city,
-                        'confirmed' => $request->confirmed
-                    ]
-                );
-
-                return redirect()->route('admin.receivers_list',$request->agent_hidden_id)->withFlashSuccess('Updated Successfully');
+           
+            if($request->city != null){
+                $city = $request->city;     
             }
             else{
-                return back()->withErrors('These credentials do not match our records.');
-            }                      
+                $city = $user->city;     
+            }
+
+            $users = DB::table('users') ->where('id', '=', $user->id)->update(
+                [
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'email' => $request->email,
+                    'country' => $request->country,
+                    'city' => $city,
+                    'confirmed' => $request->confirmed
+                ]    
+            );
+
+            return redirect()->route('admin.receivers_list',$request->agent_hidden_id)->withFlashSuccess('Updated Successfully');
+                                
         }   
 
     }

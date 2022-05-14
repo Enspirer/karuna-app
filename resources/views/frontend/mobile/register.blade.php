@@ -14,7 +14,7 @@
 
 <section class="join-form-section">
     <div class="mobile-container">
-        <form action="">
+        {{ html()->form('POST', route('frontend.auth.register.post'))->open() }}
             <div class="join-form">
                 <div class="join-form-row">
                     <input type="text" name="first_name" maxlength="191" class="form-control" id="first_name" placeholder="First Name" required>
@@ -317,7 +317,8 @@
                     </button>
                 </div>
             </div>
-        </form>
+        {{ html()->form()->close() }}
+
         <div class="not-join">Are you member? <a href="{{route('frontend.mobile.login')}}">Sign in now</a></div>
     </div>
 </section>
@@ -389,4 +390,76 @@
    const telInput2 = window.intlTelInput(tel2);
 </script>   
 
+
+<script>
+
+    $(document).on('change','#country',function(){
+
+        let country = $('#country').val();
+            // console.log(country);
+
+        let name;
+        let template;
+       
+        if(country.includes('-')){
+            name = country.replace("-", " ");
+        } else {
+            name = country;
+        }
+
+        $.ajax({
+            "type": "POST",
+            "url": "https://countriesnow.space/api/v0.1/countries/cities",
+            "data": {
+                "country": name
+            }
+        }).done(function (d) {
+
+            for(let i = 0; i < d['data'].length; i++) {
+                template+= `
+                    <option value="${d['data'][i]}">${d['data'][i]}</option>
+                `
+            }
+
+            $(".areas").html(template);
+            // console.log(d);
+        });
+    });
+    
+</script>
+
+
+<script>
+         $(document).ready(function() {
+        $('#city').on('change', function() {
+            var City = $(this).val();
+            // console.log(City);
+
+                $.ajax({
+                    
+                    url: "{{url('/')}}/api/find_agent_details/" + City,
+                    method: "GET",
+                    dataType: "json",
+                    success:function(data) {
+                        // console.log(data);
+                    if(data){
+                        $('#assigned_agent_id').empty();
+                        $('#assigned_agent_id').focus;
+                        $('#assigned_agent_id').append('<option value="" selected disabled>-- Select An Agent --</option>'); 
+                        $.each(data, function(key, value){
+                            // console.log(key);
+                            // console.log(value);
+                        $('select[name="assigned_agent_id"]').append('<option value="'+ value.agent_user_id +'">' + value.agent_user_name+ '</option>');
+                        
+                    });
+
+                    }else{
+                        $('#assigned_agent_id').empty();
+                    }
+                  }
+                });
+            
+        });
+    });
+</script>
 @endpush

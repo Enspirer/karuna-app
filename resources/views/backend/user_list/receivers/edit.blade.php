@@ -323,31 +323,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        {{ html()->label(__('validation.attributes.frontend.password'))->for('password') }}
-
-                                        {{ html()->password('password')
-                                            ->class('form-control')
-                                            ->placeholder(__('validation.attributes.frontend.password'))
-                                            ->required() }}
-                                    </div>
-                                </div>
-                            
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        {{ html()->label(__('validation.attributes.frontend.password_confirmation'))->for('password_confirmation') }}
-
-                                        {{ html()->password('password_confirmation')
-                                            ->class('form-control')
-                                            ->placeholder(__('validation.attributes.frontend.password_confirmation'))
-                                            ->required() }}
-                                    </div>
-                                </div>
-                            </div>
-
-                           
+                                                     
 
 
                         </div>

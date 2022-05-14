@@ -14,7 +14,7 @@
 
 <section class="join-form-section">
     <div class="mobile-container">
-        <form action="">
+        {{ html()->form('POST', route('frontend.auth.login.post'))->open() }}
             <div class="join-form">
                 <div class="join-form-row">
                     <input type="email" name="email" maxlength="191" class="form-control" id="email" placeholder="Enter email" required>
@@ -37,7 +37,8 @@
                     </div>
                 </div>
             </div>
-        </form>
+        {{ html()->form()->close() }}
+
         <div class="devider">
             <div class="text">Or continue with</div>
         </div>

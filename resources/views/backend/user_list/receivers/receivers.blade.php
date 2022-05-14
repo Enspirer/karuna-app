@@ -35,8 +35,11 @@
                 <div class="card-header">
                     <strong>Receivers&nbsp;</strong>
 
-                    <a href="{{route('admin.receiver.create',$agent->id)}}" class="btn btn-success pull-right ml-4">Add New</a>
-                   
+                    @if(get_settings('donation_per_agent') <= count(App\Models\Auth\User::where('assigned_agent_id',$agent->id)->where('user_type','Receiver')->get()) )
+                        <a  class="btn btn-warning pull-right ml-4" disabled>Maximum 5</a>                   
+                    @else
+                        <a href="{{route('admin.receiver.create',$agent->id)}}" class="btn btn-success pull-right ml-4">Add New</a>
+                    @endif
                 </div><!--card-header-->
 
                 <div class="card-body">

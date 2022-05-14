@@ -33,6 +33,11 @@ if (! function_exists('home_route')) {
     function home_route()
     {
         if (auth()->check()) {
+
+            if(is_mobile(request()->header('user-agent')) == true){                
+                return 'frontend.mobile.index';
+            }
+            
             if (auth()->user()->can('view backend')) {
                 return 'admin.dashboard';
             }
