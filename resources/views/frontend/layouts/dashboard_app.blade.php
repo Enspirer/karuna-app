@@ -34,7 +34,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
         <!-- Custom CSS-->
-        <link rel="stylesheet" href="{{url('css/main.css')}}">
+        <link rel="stylesheet" href="{{url('css/dashboard_main.css')}}">
 
         {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
         @stack('before-styles')
@@ -49,10 +49,18 @@
         @include('includes.partials.read-only')
 
         <div id="app">
-            @include('includes.partials.logged-in-as')
-            @include('frontend.includes.nav')
-            @yield('content')
-            @include('frontend.includes.footer')
+            <div class="dashboard-layout">
+
+                @include('frontend.user.includes.nav')
+
+                <div class="dashboard-body">
+                    <div class="dashboard-container">
+                        @include('frontend.user.includes.header')
+                        @include('includes.partials.logged-in-as')
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
         </div><!-- #app -->
 
         <!-- Scripts -->
@@ -66,5 +74,5 @@
     </body>
 
     <!-- Custom JS -->
-    <script src="{{url('js/main.js')}}"></script>
+    <script src="{{url('js/dashboard_main.js')}}"></script>
 </html>

@@ -148,7 +148,7 @@
 @push('after-scripts')
 
 <script>
-    // Hero Slider
+    // Package Slider
     var packageSlider = new Splide('#packageSlider', {
         type: 'loop',
         pagination: false,

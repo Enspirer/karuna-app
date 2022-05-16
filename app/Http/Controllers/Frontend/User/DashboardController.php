@@ -16,4 +16,9 @@ class DashboardController extends Controller
     {
         return view('frontend.user.dashboard');
     }
+
+    public function receiver()
+    {
+        return view('frontend.user.receiver');
+    }
 }

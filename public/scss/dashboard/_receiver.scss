@@ -1,0 +1,199 @@
+.receiver-profile-section {
+    display: flex;
+    flex-direction: row;
+    margin: 2rem 0;
+    gap: 2rem;
+
+    .profile-summery-block {
+        background-color: $white;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 340px;
+
+        .header {
+            position: relative;
+            background: url('../../images/dashboard/receiver-back.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            height: 150px;
+            margin-bottom: 3rem;
+
+            @mixin edit-image {
+                text-decoration: none;
+                color: $white;
+                background-color: $primary-green;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                border: 1px solid $white;
+                position: absolute;
+            }
+
+            .back-edit {
+                @include edit-image;
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+
+            .dp-block {
+                width: fit-content;
+                position: absolute;
+                bottom: -35px;
+                left: 50%;
+                transform: translate(-50%, 0);
+
+                img {
+                    width: 90px;
+                    height: 90px;
+                    object-position: center;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    border: 2px solid $white;
+                }
+
+                .dp-edit {
+                    @include edit-image;
+                    top: 0;
+                    right: 0;
+                }
+            }
+        }
+
+        .name {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 400;
+            color: $text-black;
+            margin-bottom: 0.35rem;
+        }
+
+        .status {
+            background-color: #FFBB00;
+            width: fit-content;
+            font-size: .7rem;
+            font-weight: 400;
+            color: white;
+            line-height: 1;
+            padding: 0.5em 1em;
+            border-radius: 20px;
+            margin: auto;
+        }
+
+        .info-table-wrapper {
+            margin: 2rem 0;
+            border-width: 1px 0 1px 0;
+            border-style: solid;
+            border-color: $light-gray;
+            padding: 1rem 0;
+
+            .info-table {
+                border-collapse: collapse;
+                width: 100%;
+
+                tbody {
+                    tr {
+                        td {
+                            font-size: 0.8rem;
+                            font-weight: 300;
+                            color: $text-black;
+                            padding: 0.3rem;
+
+                            &:nth-last-child(1) {
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+
+    .edit-profile-block {
+        background-color: $white;
+        padding: 1rem;
+        border-radius: 10px;
+        flex: 1;
+
+        .inner-wrapper {
+            width: 95%;
+            margin: auto;
+
+            .title {
+                font-size: 1.1rem;
+                font-weight: 400;
+                margin-bottom: 1rem;
+            }
+
+            .pro-label {
+                font-size: .9rem;
+                font-weight: 300;
+                color: $text-black;
+
+                span {
+                    font-size: .7rem;
+                    font-weight: 400;
+                    color: $gray;
+                }
+            }
+
+            .form-control {
+                height: 40px;
+                font-size: .9rem;
+                font-weight: 400;
+                color: $text-black;
+
+                &:active,
+                &:focus {
+                    box-shadow: none;
+                    outline: none;
+                }
+            }
+
+            .tooltip-block {
+                position: relative;
+
+                .bi {
+                    color: $gray;
+                    cursor: pointer;
+                    position: absolute;
+                }
+
+                .pro-tooltip {
+                    background-color: #1B2B3C;
+                    display: none;
+                    position: absolute;
+
+                    .header {
+                        font-size: .9rem;
+                        font-weight: 400;
+                        background-color: #263948;
+                        color: white;
+                        padding: 0.5em 1em;
+                    }
+
+                    .body {
+                        font-size: .75rem;
+                        font-weight: 300;
+                        color: white;
+                        padding: 1em;
+                    }
+                }
+            }
+
+        }
+    }
+}

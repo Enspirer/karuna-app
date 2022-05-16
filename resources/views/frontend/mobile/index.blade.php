@@ -4,6 +4,29 @@
 
 @section('content')
 
+<section class="thank-section">
+    <div class="mobile-container">
+        <div class="inner-wrapper">
+            <a href="{{route('frontend.mobile.index')}}" class="brand">
+                <img src="{{url('images/mobile/logo/karuna-logo-white.svg')}}" alt="">
+            </a>
+            <a href="#" class="profile">
+                <i class="bi bi-suit-heart-fill"></i>
+                <div class="text">1578</div>
+                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+            </a>
+        </div>
+        <div class="title">Receive a small thank<br>for your efforts!</div>
+        <div class="thank-block">
+            <div class="text">Your package sent successfully and Saman reacted your support</div>
+            <div class="image-block">
+                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                <i class="bi bi-suit-heart-fill"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="top-nav-section">
     <div class="mobile-container">
       <div class="inner-wrapper">
@@ -63,17 +86,83 @@
     </div>
 </section>
 
+<section class="donate-list-section">
+    <div class="mobile-container">
+        <div class="header">
+            <div class="title">Donate List</div>
+            <a href="{{route('frontend.mobile.donation_list')}}">See All <i class="bi bi-chevron-right"></i></a>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="receiver">
+                    <div class="content-block">
+                        <div class="icon blue">F</div>
+                        <div class="text-block">
+                            <div class="name">Amila Nandiak</div>
+                            <div class="location">Ampara</div>
+                        </div>
+                    </div>
+                    <div class="button-block">
+                        <a href="{{route('frontend.mobile.donation_info')}}" class="cta-btn btn-fill">
+                            <div class="btn-text">Donate</div>
+                        </a>
+                        <a href="#" class="cta-link">View more</a>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="receiver">
+                    <div class="content-block">
+                        <div class="icon purple">M</div>
+                        <div class="text-block">
+                            <div class="name">Amila Nandiak</div>
+                            <div class="location">Ampara</div>
+                        </div>
+                    </div>
+                    <div class="button-block">
+                        <a href="#" class="cta-btn btn-fill">
+                            <div class="btn-text">Donate</div>
+                        </a>
+                        <a href="#" class="cta-link">View more</a>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="receiver">
+                    <div class="content-block">
+                        <div class="icon green">S</div>
+                        <div class="text-block">
+                            <div class="name">Amila Nandiak</div>
+                            <div class="location">Ampara</div>
+                        </div>
+                    </div>
+                    <div class="button-block">
+                        <a href="#" class="cta-btn btn-fill">
+                            <div class="btn-text">Donate</div>
+                        </a>
+                        <a href="#" class="cta-link">View more</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+@include('frontend.mobile.includes.bottom_nav')
+
 @endsection
 
 @push('after-scripts')
 
 <script>
     // Hero Slider
-    var heroSlider = new Splide('#heroSlider', {
+    var homeSlider = new Splide('#homeSlider', {
         type: 'loop',
+        arrows: false,
+        autoplay: true,
     });
 
-    heroSlider.mount();
+    homeSlider.mount();
 </script>
 
 @endpush

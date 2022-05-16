@@ -1,0 +1,123 @@
+.donation-info-section {
+    margin: 1rem 0;
+
+    .inner-wrapper {
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: $white;
+
+        .profile-block {
+
+            &:nth-child(1) {
+                border-bottom: 2px solid #E6E6FF;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .title {
+                font-size: 1rem;
+                font-weight: 400;
+                text-align: center;
+                margin-bottom: 1rem;
+                color: $text-black;
+            }
+
+            .profile-info {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1rem;
+
+                .dp {
+                    width: 45px;
+                    height: 45px;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 50%;
+                    margin: 1rem;
+                }
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+
+                    li {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        &:nth-child(1) {
+
+                            span {
+                                font-size: .9rem;
+                                font-weight: 500;
+                                color: $text-black;
+                            }
+                        }
+
+                        span {
+                            font-size: .8rem;
+                            font-weight: 300;
+                            color: $text-black;
+                        }
+
+                        .th {
+                            width: 60px;
+                            display: inline-block;
+                        }
+
+                        .td {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                        }
+                    }
+                }
+            }
+
+            .cta-link {
+                text-align: center;
+                font-size: .8rem;
+                font-weight: 300;
+                text-decoration: underline;
+                color: $dark-blue;
+                margin: 1rem 0 1rem calc(45px + 3rem);
+            }
+
+            .cat-icon {
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                font-size: 22px;
+                font-weight: 400;
+                color: $white;
+                margin: 1rem 0 2.5rem calc(45px + 3rem);
+
+                &.blue {
+                    background-color: $blue;
+                }
+
+                &.purple {
+                    background-color: $purple;
+                }
+
+                &.green {
+                    background-color: $green;
+                }
+            }
+
+            .cta-btn {
+                width: 90%;
+                margin: auto;
+            }
+        }
+    }
+}

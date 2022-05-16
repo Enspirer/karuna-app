@@ -1,0 +1,37 @@
+.bottom-nav-section {
+    height: 56px;
+
+    .inner-wrapper {
+        background-color: $white;
+        padding: 0.5rem 0;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .nav-item {
+                .nav-link {
+                    svg {
+                        path {
+                            fill: #b7b7b7;
+                        }
+                    }
+
+                    &.active {
+                        svg {
+                            path {
+                                fill: $primary-green;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

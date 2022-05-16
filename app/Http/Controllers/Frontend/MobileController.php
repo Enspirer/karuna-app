@@ -26,4 +26,19 @@ class MobileController extends Controller
     {
         return view('frontend.mobile.index');
     }
+
+    public function donation_info()
+    {
+        return view('frontend.mobile.donation_info');
+    }
+
+    public function donation_list()
+    {
+        return view('frontend.mobile.donation_list');
+    }
+
+    public function payment()
+    {
+        return view('frontend.mobile.payment');
+    }
 }

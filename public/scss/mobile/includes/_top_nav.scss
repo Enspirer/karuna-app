@@ -1,0 +1,29 @@
+.app-bar-section {
+    padding: 0.75rem 0;
+
+    .inner-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .back-btn {
+            text-decoration: none;
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translate(0, -50%);
+
+            svg {
+                color: $text-black;
+            }
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 400;
+            color: $text-black;
+        }
+    }
+}
