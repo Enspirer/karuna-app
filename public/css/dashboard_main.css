@@ -705,6 +705,12 @@
   align-items: flex-start;
   margin-bottom: 2rem;
 }
+.notification-submit-section .notification-block .image-block img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+}
 .notification-submit-section .notification-block .text-block {
   flex: 1;
 }

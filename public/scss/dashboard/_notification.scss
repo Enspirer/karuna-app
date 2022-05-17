@@ -82,6 +82,15 @@
         align-items: flex-start;
         margin-bottom: 2rem;
 
+        .image-block {
+            img {
+                width: 120px;
+                height: 80px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
         .text-block {
             flex: 1;
 
