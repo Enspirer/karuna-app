@@ -37,6 +37,8 @@ Route::get('dashboard/receiver-request', [DashboardController::class, 'receiver_
 Route::get('dashboard/profile/agent', [DashboardController::class, 'agent_profile'])->name('dashboard.agent_profile');
 Route::get('dashboard/notification', [DashboardController::class, 'notification'])->name('dashboard.notification');
 Route::get('dashboard/notification/submit', [DashboardController::class, 'notification_submit'])->name('dashboard.notification_submit');
+Route::get('dashboard/payment-history', [DashboardController::class, 'payment_history'])->name('dashboard.payment_history');
+Route::get('dashboard/donation-complete', [DashboardController::class, 'donation_complete'])->name('dashboard.donation_complete');
 
 Route::post('/aiz-uploader', [AizUploadController::class, 'show_uploader']);
 Route::post('/aiz-uploader/upload', [AizUploadController::class, 'upload']);

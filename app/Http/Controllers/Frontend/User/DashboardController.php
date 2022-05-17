@@ -46,4 +46,14 @@ class DashboardController extends Controller
     {
         return view('frontend.user.notification_submit');
     }
+
+    public function payment_history()
+    {
+        return view('frontend.user.payment_history');
+    }
+
+    public function donation_complete()
+    {
+        return view('frontend.user.donation_complete');
+    }
 }
