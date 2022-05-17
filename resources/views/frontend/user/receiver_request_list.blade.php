@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="table-container">
-    <table class="db-table receiver-table">
+    <table class="db-table receiver-list-table">
         <thead>
             <tr class="db-tr">
                 <th class="db-th"></th>
