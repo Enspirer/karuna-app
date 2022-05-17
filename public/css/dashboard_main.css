@@ -794,6 +794,78 @@
   height: 45px;
 }
 
+.donation-complete-section {
+  margin: 2rem 0;
+}
+.donation-complete-section .inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.donation-complete-section .inner-wrapper .thank-block {
+  background-color: #F6FAFF;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 1px 2px 8px rgba(31, 195, 158, 0.25);
+}
+.donation-complete-section .inner-wrapper .thank-block img {
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.donation-complete-section .inner-wrapper .thank-block .title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 1rem 0;
+  color: #333;
+}
+.donation-complete-section .inner-wrapper .thank-block .text {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: #767676;
+}
+.donation-complete-section .inner-wrapper .thank-block .cta-btn {
+  margin: auto;
+  border-radius: 50px;
+}
+.donation-complete-section .inner-wrapper .content-block {
+  background-color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+}
+.donation-complete-section .inner-wrapper .content-block .title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #3AC400;
+}
+.donation-complete-section .inner-wrapper .content-block .text {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: #767676;
+}
+.donation-complete-section .inner-wrapper .content-block .media {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 80%;
+  margin: auto;
+}
+
 .dashboard-nav {
   width: 270px;
   background-color: #161819;
