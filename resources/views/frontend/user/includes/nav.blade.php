@@ -45,7 +45,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('frontend.dashboard.payment_history')}}" class="nav-link">
                     <div class="nav-nav">
                         <i class="bi bi-credit-card"></i>
                         <i class="bi active bi-credit-card-fill"></i>

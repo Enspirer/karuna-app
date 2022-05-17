@@ -146,6 +146,9 @@
   color: #767676;
   border-bottom: 1px solid #ddd;
 }
+.table-container .db-table .db-tr .db-td .bi {
+  color: #1FC39E;
+}
 .table-container .db-table .db-tr .db-td .text {
   font-size: 0.9rem;
   font-weight: 300;
@@ -178,6 +181,27 @@
   box-shadow: none;
   outline: none;
 }
+.table-container .db-table .db-tr .db-td .package {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+}
+.table-container .db-table .db-tr .db-td .package.medicine {
+  background-color: #C4004E;
+}
+.table-container .db-table .db-tr .db-td .package.school-items {
+  background-color: #3AC400;
+}
+.table-container .db-table .db-tr .db-td .package.food {
+  background-color: #00BDC4;
+}
 .table-container .db-table .db-tr .db-td .db-timg {
   width: 40px;
   height: 40px;
@@ -209,8 +233,95 @@
 .table-container .db-table .db-tr .db-td .status-block .indicator.red {
   background-color: #FF0000;
 }
+.table-container .db-table .db-tr .db-td .status-block .bi.completed {
+  color: #3AC400;
+}
+.table-container .db-table .db-tr .db-td .status-block .bi.pending {
+  color: #FEA419;
+}
 .table-container .db-table .db-tr .db-td .status-block .status {
   font-size: 0.9rem;
+  font-weight: 300;
+  color: #767676;
+}
+
+.receiver-dashboard-section {
+  background-color: white;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+.receiver-dashboard-section .accordion .accordion-item {
+  border: 1px solid #1FC39E;
+  border-radius: 10px;
+}
+.receiver-dashboard-section .accordion .accordion-item:not(:nth-last-child(1)) {
+  margin-bottom: 1.5rem;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button {
+  border-bottom: 1px solid #ddd;
+  box-shadow: none;
+  background-color: transparent;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button::after {
+  content: none;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button.collapsed {
+  border: none;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button:focus, .receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button:active {
+  box-shadow: none;
+  outline: none;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button .header-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button .header-block .no {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button .header-block .text {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.orange {
+  background-color: #E78834;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.red {
+  background-color: #FF0000;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.green {
+  background-color: #3AC400;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-collapse .accordion-body .title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+.receiver-dashboard-section .accordion .accordion-item .accordion-collapse .accordion-body .text {
+  font-size: 0.8rem;
   font-weight: 300;
   color: #767676;
 }
@@ -594,6 +705,12 @@
   align-items: flex-start;
   margin-bottom: 2rem;
 }
+.notification-submit-section .notification-block .image-block img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+}
 .notification-submit-section .notification-block .text-block {
   flex: 1;
 }
@@ -675,6 +792,78 @@
 .notification-submit-section .comment-block .cta-btn {
   width: 15%;
   height: 45px;
+}
+
+.donation-complete-section {
+  margin: 2rem 0;
+}
+.donation-complete-section .inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.donation-complete-section .inner-wrapper .thank-block {
+  background-color: #F6FAFF;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 1px 2px 8px rgba(31, 195, 158, 0.25);
+}
+.donation-complete-section .inner-wrapper .thank-block img {
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.donation-complete-section .inner-wrapper .thank-block .title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 1rem 0;
+  color: #333;
+}
+.donation-complete-section .inner-wrapper .thank-block .text {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: #767676;
+}
+.donation-complete-section .inner-wrapper .thank-block .cta-btn {
+  margin: auto;
+  border-radius: 50px;
+}
+.donation-complete-section .inner-wrapper .content-block {
+  background-color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+}
+.donation-complete-section .inner-wrapper .content-block .title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #3AC400;
+}
+.donation-complete-section .inner-wrapper .content-block .text {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: #767676;
+}
+.donation-complete-section .inner-wrapper .content-block .media {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 80%;
+  margin: auto;
 }
 
 .dashboard-nav {

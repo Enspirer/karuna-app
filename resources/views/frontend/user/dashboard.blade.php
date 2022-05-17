@@ -235,6 +235,132 @@
     </table>
 </div>
 
+<div class="table-container">
+    <table class="db-table doner-table">
+        <thead>
+            <tr class="db-tr">
+                <th class="db-th">Agent Name</th>
+                <th class="db-th">Receiver Name</th>
+                <th class="db-th">Date</th>
+                <th class="db-th">Package</th>
+                <th class="db-th">Donation Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="db-tr">
+                <td class="db-td">
+                    <div class="text">Mr. Kamal Kusum</div>
+                </td>
+                <td class="db-td">
+                    <div class="text">Kamani Jayathilaka</div>
+                </td>
+                <td class="db-td">22/05/2022</td>
+                <td class="db-td">
+                    <div class="package medicine">M</div>
+                </td>
+                <td class="db-td">
+                    <div class="status-block">
+                        <i class="bi completed bi-check-circle-fill"></i>
+                        <div class="status">Completed</div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="db-tr">
+                <td class="db-td">
+                    <div class="text">Mr. Kamal Kusum</div>
+                </td>
+                <td class="db-td">
+                    <div class="text">Kamani Jayathilaka</div>
+                </td>
+                <td class="db-td">22/05/2022</td>
+                <td class="db-td">
+                    <div class="package school-items">S</div>
+                </td>
+                <td class="db-td">
+                    <div class="status-block">
+                        <i class="bi pending bi-exclamation-circle-fill"></i>
+                        <div class="status">Pending</div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="db-tr">
+                <td class="db-td">
+                    <div class="text">Mr. Kamal Kusum</div>
+                </td>
+                <td class="db-td">
+                    <div class="text">Kamani Jayathilaka</div>
+                </td>
+                <td class="db-td">22/05/2022</td>
+                <td class="db-td">
+                    <div class="package food">F</div>
+                </td>
+                <td class="db-td">
+                    <div class="status-block">
+                        <i class="bi pending bi-exclamation-circle-fill"></i>
+                        <div class="status">Pending</div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<section class="receiver-dashboard-section">
+    <div class="accordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pendingReq" aria-expanded="true" aria-controls="pendingReq">
+                <div class="header-block">
+                    <div class="no">1</div>
+                    <div class="text">Pending Request</div>
+                    <div class="indicator orange"></div>
+                </div>
+            </button>
+            </h2>
+            <div id="pendingReq" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+                <div class="title">Description</div>
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
+            </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#approvedReq" aria-expanded="true" aria-controls="approvedReq">
+                <div class="header-block">
+                    <div class="no">2</div>
+                    <div class="text">Approved Request</div>
+                    <div class="indicator green"></div>
+                </div>
+            </button>
+            </h2>
+            <div id="approvedReq" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <div class="title">Description</div>
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
+            </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cancelReq" aria-expanded="true" aria-controls="cancelReq">
+                <div class="header-block">
+                    <div class="no">3</div>
+                    <div class="text">Canceled  Request</div>
+                    <div class="indicator red"></div>
+                </div>
+            </button>
+            </h2>
+            <div id="cancelReq" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <div class="title">Description</div>
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection
 
 @push('after-scripts')
