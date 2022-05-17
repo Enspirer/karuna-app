@@ -1,0 +1,185 @@
+.notification-section {
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+    background-color: $white;
+
+    .list-group {
+        .list-group-item {
+            .not-item {
+                text-decoration: none;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 2rem;
+
+                .bi {
+                    color: $light-gray;
+
+                    &::before {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .text-block {
+                    flex: 1;
+
+                    .subject {
+                        font-size: 1rem;
+                        font-weight: 300;
+                        margin-bottom: .25rem;
+
+                        &.red {
+                            color: $red;
+                        }
+
+                        &.green {
+                            color: $green;
+                        }
+                    }
+
+                    .text {
+                        font-size: .8rem;
+                        font-weight: 400;
+                        color: $gray;
+                    }
+                }
+
+                .time-block {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 0.75rem;
+
+                    .bi {
+                        color: $light-gray;
+
+                        &::before {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    .text {
+                        font-size: .9rem;
+                        font-weight: 300;
+                        color: $light-gray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.notification-submit-section {
+    background-color: white;
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+
+    .notification-block {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+
+        .text-block {
+            flex: 1;
+
+            .subject {
+                font-size: 1rem;
+                font-weight: 300;
+                margin-bottom: .25rem;
+
+                &.red {
+                    color: $red;
+                }
+
+                &.green {
+                    color: $green;
+                }
+            }
+
+            .text {
+                font-size: .8rem;
+                font-weight: 400;
+                color: $gray;
+            }
+        }
+
+        .time-block {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.75rem;
+
+            .bi {
+                color: $light-gray;
+
+                &::before {
+                    font-size: 1rem;
+                }
+            }
+
+            .text {
+                font-size: .9rem;
+                font-weight: 300;
+                color: $light-gray;
+            }
+        }
+    }
+
+    .media-upload-block {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin-bottom: 2rem;
+
+        .media-block {
+            background-color: #F9F9F9;
+            padding: 1rem;
+            border-radius: 5px;
+
+            .header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+
+                .title {
+                    font-size: .8rem;
+                    font-weight: 500;
+                    color: $text-black;
+                }
+
+                .text {
+                    font-size: .7rem;
+                    font-weight: 400;
+                    color: $gray;
+                }
+            }
+        }
+    }
+
+    .comment-block {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        .comment-input {
+            flex: 0 0 75%;
+
+            label {
+                font-size: .9rem;
+                font-weight: 300;
+                color: $text-black;
+            }
+        }
+
+        .cta-btn {
+            width: 15%;
+            height: 45px;
+        }
+    }
+}

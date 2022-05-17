@@ -157,6 +157,27 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+.table-container .db-table .db-tr .db-td .db-tlink {
+  text-decoration: none;
+  color: #1FC39E;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1;
+}
+.table-container .db-table .db-tr .db-td .form-select {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.table-container .db-table .db-tr .db-td .form-select option {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.table-container .db-table .db-tr .db-td .form-select:active, .table-container .db-table .db-tr .db-td .form-select:focus {
+  box-shadow: none;
+  outline: none;
+}
 .table-container .db-table .db-tr .db-td .db-timg {
   width: 40px;
   height: 40px;
@@ -264,6 +285,46 @@
   top: 0;
   right: 0;
 }
+.receiver-profile-section .profile-summery-block .dp-block {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.receiver-profile-section .profile-summery-block .dp-block img {
+  width: 120px;
+  height: 120px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.receiver-profile-section .profile-summery-block .dp-block .dp-edit {
+  text-decoration: none;
+  color: #fff;
+  background-color: #1FC39E;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.receiver-profile-section .profile-summery-block .star-rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.receiver-profile-section .profile-summery-block .star-rating .bi {
+  color: #FFC400;
+}
 .receiver-profile-section .profile-summery-block .name {
   text-align: center;
   font-size: 1rem;
@@ -301,6 +362,24 @@
 }
 .receiver-profile-section .profile-summery-block .info-table-wrapper .info-table tbody tr td:nth-last-child(1) {
   text-align: right;
+}
+.receiver-profile-section .profile-summery-block .sign-out-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  margin: auto;
+  text-decoration: none;
+}
+.receiver-profile-section .profile-summery-block .sign-out-btn .bi {
+  color: #767676;
+}
+.receiver-profile-section .profile-summery-block .sign-out-btn .btn-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
 }
 .receiver-profile-section .profile-summery-block .gallery {
   display: flex;
@@ -445,6 +524,157 @@
   width: 100%;
   height: 45px;
   border-radius: 5px;
+}
+
+.notification-section {
+  padding: 1rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.notification-section .list-group .list-group-item .not-item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.notification-section .list-group .list-group-item .not-item .bi {
+  color: #ddd;
+}
+.notification-section .list-group .list-group-item .not-item .bi::before {
+  font-size: 1.5rem;
+}
+.notification-section .list-group .list-group-item .not-item .text-block {
+  flex: 1;
+}
+.notification-section .list-group .list-group-item .not-item .text-block .subject {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+}
+.notification-section .list-group .list-group-item .not-item .text-block .subject.red {
+  color: #FF0000;
+}
+.notification-section .list-group .list-group-item .not-item .text-block .subject.green {
+  color: #3AC400;
+}
+.notification-section .list-group .list-group-item .not-item .text-block .text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #767676;
+}
+.notification-section .list-group .list-group-item .not-item .time-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+.notification-section .list-group .list-group-item .not-item .time-block .bi {
+  color: #ddd;
+}
+.notification-section .list-group .list-group-item .not-item .time-block .bi::before {
+  font-size: 1rem;
+}
+.notification-section .list-group .list-group-item .not-item .time-block .text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #ddd;
+}
+
+.notification-submit-section {
+  background-color: white;
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+.notification-submit-section .notification-block {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.notification-submit-section .notification-block .text-block {
+  flex: 1;
+}
+.notification-submit-section .notification-block .text-block .subject {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+}
+.notification-submit-section .notification-block .text-block .subject.red {
+  color: #FF0000;
+}
+.notification-submit-section .notification-block .text-block .subject.green {
+  color: #3AC400;
+}
+.notification-submit-section .notification-block .text-block .text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #767676;
+}
+.notification-submit-section .notification-block .time-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+.notification-submit-section .notification-block .time-block .bi {
+  color: #ddd;
+}
+.notification-submit-section .notification-block .time-block .bi::before {
+  font-size: 1rem;
+}
+.notification-submit-section .notification-block .time-block .text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #ddd;
+}
+.notification-submit-section .media-upload-block {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.notification-submit-section .media-upload-block .media-block {
+  background-color: #F9F9F9;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.notification-submit-section .media-upload-block .media-block .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.notification-submit-section .media-upload-block .media-block .header .title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+}
+.notification-submit-section .media-upload-block .media-block .header .text {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #767676;
+}
+.notification-submit-section .comment-block {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.notification-submit-section .comment-block .comment-input {
+  flex: 0 0 75%;
+}
+.notification-submit-section .comment-block .comment-input label {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+}
+.notification-submit-section .comment-block .cta-btn {
+  width: 15%;
+  height: 45px;
 }
 
 .dashboard-nav {

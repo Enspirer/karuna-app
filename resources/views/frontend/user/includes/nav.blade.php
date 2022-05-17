@@ -14,7 +14,7 @@
         <div class="title">Overview</div>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="{{url('dashboard')}}" class="nav-link active">
                     <div class="nav-nav">
                         <i class="bi bi-grid"></i>
                         <i class="bi active bi-grid-fill"></i>
@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('frontend.dashboard.agent_profile')}}" class="nav-link">
                     <div class="nav-nav">
                         <i class="bi bi-person"></i>
                         <i class="bi active bi-person-fill"></i>
@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('frontend.dashboard.notification')}}" class="nav-link">
                     <div class="nav-nav">
                         <i class="bi bi-bell"></i>
                         <i class="bi active bi-bell-fill"></i>
