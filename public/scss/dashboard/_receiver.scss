@@ -51,6 +51,40 @@
             }
         }
 
+        .dp-block {
+            width: fit-content;
+            margin: auto;
+            position: relative;
+            margin-bottom: 1rem;
+
+            img {
+                width: 120px;
+                height: 120px;
+                object-position: center;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 2px solid $white;
+            }
+
+            .dp-edit {
+                @include edit-image;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        .star-rating {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            .bi {
+                color: #FFC400;
+            }
+        }
+
         .name {
             text-align: center;
             font-size: 1rem;
@@ -96,6 +130,27 @@
                         }
                     }
                 }
+            }
+        }
+
+        .sign-out-btn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            width: fit-content;
+            margin: auto;
+            text-decoration: none;
+
+            .bi {
+                color: $gray;
+            }
+
+            .btn-text {
+                font-size: .9rem;
+                font-weight: 300;
+                color: $text-black;
             }
         }
 

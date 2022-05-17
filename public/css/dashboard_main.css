@@ -285,6 +285,46 @@
   top: 0;
   right: 0;
 }
+.receiver-profile-section .profile-summery-block .dp-block {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.receiver-profile-section .profile-summery-block .dp-block img {
+  width: 120px;
+  height: 120px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.receiver-profile-section .profile-summery-block .dp-block .dp-edit {
+  text-decoration: none;
+  color: #fff;
+  background-color: #1FC39E;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.receiver-profile-section .profile-summery-block .star-rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.receiver-profile-section .profile-summery-block .star-rating .bi {
+  color: #FFC400;
+}
 .receiver-profile-section .profile-summery-block .name {
   text-align: center;
   font-size: 1rem;
@@ -322,6 +362,24 @@
 }
 .receiver-profile-section .profile-summery-block .info-table-wrapper .info-table tbody tr td:nth-last-child(1) {
   text-align: right;
+}
+.receiver-profile-section .profile-summery-block .sign-out-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  margin: auto;
+  text-decoration: none;
+}
+.receiver-profile-section .profile-summery-block .sign-out-btn .bi {
+  color: #767676;
+}
+.receiver-profile-section .profile-summery-block .sign-out-btn .btn-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
 }
 .receiver-profile-section .profile-summery-block .gallery {
   display: flex;

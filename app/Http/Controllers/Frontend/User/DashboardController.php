@@ -31,4 +31,9 @@ class DashboardController extends Controller
     {
         return view('frontend.user.receiver_request');
     }
+
+    public function agent_profile()
+    {
+        return view('frontend.user.agent_profile');
+    }
 }
