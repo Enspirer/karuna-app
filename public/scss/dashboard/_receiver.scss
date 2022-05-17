@@ -21,21 +21,6 @@
             height: 150px;
             margin-bottom: 3rem;
 
-            @mixin edit-image {
-                text-decoration: none;
-                color: $white;
-                background-color: $primary-green;
-                width: 30px;
-                height: 30px;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                border-radius: 50%;
-                border: 1px solid $white;
-                position: absolute;
-            }
-
             .back-edit {
                 @include edit-image;
                 top: 0.5rem;
@@ -128,92 +113,147 @@
         padding: 1rem;
         border-radius: 10px;
         flex: 1;
+    }
+}
 
-        .inner-wrapper {
-            width: 95%;
-            margin: auto;
+.db-form {
+    width: 95%;
+    margin: auto;
 
-            .title {
-                font-size: 1.1rem;
-                font-weight: 400;
-                margin-bottom: 1rem;
-            }
+    .title {
+        font-size: 1.1rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
 
-            .pro-label {
-                font-size: .9rem;
-                font-weight: 300;
-                color: $text-black;
+    .dp-block {
+        position: relative;
+        width: fit-content;
+        margin: auto;
 
-                span {
-                    font-size: .7rem;
-                    font-weight: 400;
-                    color: $gray;
-                }
-            }
+        img {
+            width: 150px;
+            height: 150px;
+            object-position: center;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid $white;
+        }
 
-            .form-control {
-                height: 40px;
-                font-size: .9rem;
-                font-weight: 400;
-                color: $text-black;
-
-                &:active,
-                &:focus {
-                    box-shadow: none;
-                    outline: none;
-                }
-            }
-
-            .form-select {
-                height: 40px;
-                font-size: .9rem;
-                font-weight: 400;
-                color: $text-black;
-
-                &:active,
-                &:focus {
-                    box-shadow: none;
-                    outline: none;
-                }
-            }
-
-            .tooltip-block {
-                position: relative;
-
-                .bi {
-                    color: $gray;
-                    cursor: pointer;
-                    position: absolute;
-                }
-
-                .pro-tooltip {
-                    background-color: #1B2B3C;
-                    display: none;
-                    position: absolute;
-
-                    .header {
-                        font-size: .9rem;
-                        font-weight: 400;
-                        background-color: #263948;
-                        color: white;
-                        padding: 0.5em 1em;
-                    }
-
-                    .body {
-                        font-size: .75rem;
-                        font-weight: 300;
-                        color: white;
-                        padding: 1em;
-                    }
-                }
-            }
-
-            .cta-btn {
-                width: 100%;
-                height: 45px;
-                border-radius: 5px;
-            }
-
+        .dp-edit {
+            @include edit-image;
+            top: .5rem;
+            right: .5rem;
         }
     }
+
+    .cover-block {
+        width: 100%;
+        height: 150px;
+        background-color: $light-gray;
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .back-edit {
+            text-decoration: none;
+            color: $white;
+            background-color: $primary-green;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 1px solid $white;
+        }
+    }
+
+    .pro-label {
+        font-size: .9rem;
+        font-weight: 300;
+        color: $text-black;
+
+        span {
+            font-size: .7rem;
+            font-weight: 400;
+            color: $gray;
+        }
+    }
+
+    .form-control {
+        height: 40px;
+        font-size: .9rem;
+        font-weight: 400;
+        color: $text-black;
+
+        &:active,
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    .form-select {
+        height: 40px;
+        font-size: .9rem;
+        font-weight: 400;
+        color: $text-black;
+
+        &:active,
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    .tooltip-block {
+        position: relative;
+
+        .bi {
+            color: $gray;
+            cursor: pointer;
+            position: absolute;
+
+            &:hover+.pro-tooltip {
+                display: block;
+            }
+        }
+
+        .pro-tooltip {
+            background-color: #1B2B3C;
+            display: none;
+            position: absolute;
+            width: 250px;
+            top: 1.5rem;
+            right: 2.5rem;
+            z-index: 1;
+
+            .header {
+                font-size: .9rem;
+                font-weight: 400;
+                background-color: #263948;
+                color: white;
+                padding: 0.5em 1em;
+            }
+
+            .body {
+                font-size: .75rem;
+                font-weight: 300;
+                color: white;
+                padding: 1em;
+            }
+        }
+    }
+
+    .cta-btn {
+        width: 100%;
+        height: 45px;
+        border-radius: 5px;
+    }
+
 }

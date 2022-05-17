@@ -84,6 +84,21 @@
     }
 }
 
+@mixin edit-image {
+    text-decoration: none;
+    color: $white;
+    background-color: $primary-green;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid $white;
+    position: absolute;
+}
+
 .btn-outline {
     background-color: transparent;
     border: 1px solid $primary-green;

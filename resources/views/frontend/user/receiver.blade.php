@@ -68,7 +68,7 @@
     </div>
     <div class="edit-profile-block">
         <form action="">
-            <div class="inner-wrapper">
+            <div class="inner-wrapper db-form">
                 <div class="row g-0">
                     <div class="col">
                         <div class="title">Edit this receiver profile</div>

@@ -315,72 +315,133 @@
   border-radius: 10px;
   flex: 1;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper {
+
+.db-form {
   width: 95%;
   margin: auto;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .title {
+.db-form .title {
   font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 1rem;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .pro-label {
+.db-form .dp-block {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+.db-form .dp-block img {
+  width: 150px;
+  height: 150px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.db-form .dp-block .dp-edit {
+  text-decoration: none;
+  color: #fff;
+  background-color: #1FC39E;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.db-form .cover-block {
+  width: 100%;
+  height: 150px;
+  background-color: #ddd;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.db-form .cover-block .back-edit {
+  text-decoration: none;
+  color: #fff;
+  background-color: #1FC39E;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.db-form .pro-label {
   font-size: 0.9rem;
   font-weight: 300;
   color: #333;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .pro-label span {
+.db-form .pro-label span {
   font-size: 0.7rem;
   font-weight: 400;
   color: #767676;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .form-control {
+.db-form .form-control {
   height: 40px;
   font-size: 0.9rem;
   font-weight: 400;
   color: #333;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .form-control:active, .receiver-profile-section .edit-profile-block .inner-wrapper .form-control:focus {
+.db-form .form-control:active, .db-form .form-control:focus {
   box-shadow: none;
   outline: none;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .form-select {
+.db-form .form-select {
   height: 40px;
   font-size: 0.9rem;
   font-weight: 400;
   color: #333;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .form-select:active, .receiver-profile-section .edit-profile-block .inner-wrapper .form-select:focus {
+.db-form .form-select:active, .db-form .form-select:focus {
   box-shadow: none;
   outline: none;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .tooltip-block {
+.db-form .tooltip-block {
   position: relative;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .tooltip-block .bi {
+.db-form .tooltip-block .bi {
   color: #767676;
   cursor: pointer;
   position: absolute;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .tooltip-block .pro-tooltip {
+.db-form .tooltip-block .bi:hover + .pro-tooltip {
+  display: block;
+}
+.db-form .tooltip-block .pro-tooltip {
   background-color: #1B2B3C;
   display: none;
   position: absolute;
+  width: 250px;
+  top: 1.5rem;
+  right: 2.5rem;
+  z-index: 1;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .tooltip-block .pro-tooltip .header {
+.db-form .tooltip-block .pro-tooltip .header {
   font-size: 0.9rem;
   font-weight: 400;
   background-color: #263948;
   color: white;
   padding: 0.5em 1em;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .tooltip-block .pro-tooltip .body {
+.db-form .tooltip-block .pro-tooltip .body {
   font-size: 0.75rem;
   font-weight: 300;
   color: white;
   padding: 1em;
 }
-.receiver-profile-section .edit-profile-block .inner-wrapper .cta-btn {
+.db-form .cta-btn {
   width: 100%;
   height: 45px;
   border-radius: 5px;
