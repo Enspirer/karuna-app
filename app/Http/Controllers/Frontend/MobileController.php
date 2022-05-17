@@ -14,16 +14,28 @@ class MobileController extends Controller
 
     public function login()
     {
+        if(!empty( auth()->user()->id) === true ){
+            return redirect()->route('frontend.mobile.index');
+        } 
+
         return view('frontend.mobile.login');
     }
 
     public function register()
     {
+        if(!empty( auth()->user()->id) === true ){
+            return redirect()->route('frontend.mobile.index');
+        } 
+
         return view('frontend.mobile.register');
     }
 
     public function index()
     {
+        if(!empty( auth()->user()->id) === false ){
+            return redirect()->route('frontend.mobile.login');
+        } 
+
         return view('frontend.mobile.index');
     }
 
