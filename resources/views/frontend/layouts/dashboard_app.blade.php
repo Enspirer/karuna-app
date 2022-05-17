@@ -147,4 +147,24 @@
     });
     
 </script>
+
+<script>
+    function package_type(that) {
+        if (that.value == 'Other') {
+            document.getElementById("other_description_hide").style.display = "block";
+        } else {
+            document.getElementById("other_description_hide").style.display = "none";
+        }
+    
+        if (that.value == 'Other') {
+            document.getElementById("account_details").style.display = "block";
+        } else {
+            document.getElementById("account_details").style.display = "none";
+        }
+        
+    }
+</script> 
+
+
+
 </html>

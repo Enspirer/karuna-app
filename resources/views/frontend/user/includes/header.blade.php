@@ -99,7 +99,7 @@
                             </div>
                             <div class="col-md-1">
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="name_toggle" role="switch">
+                                    <input class="form-check-input" type="checkbox" name="name_toggle" value="yes" role="switch">
                                 </div>
                             </div>
                             <div class="col-md-1">
@@ -126,7 +126,7 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <input type="text" class="form-control" name="nick_name">
+                                <input type="text" class="form-control" name="nick_name" required>
                             </div>
                             <div class="col-md-1">
                                 <div class="tooltip-block">
@@ -149,18 +149,12 @@
                             <!-- Age -->
                             <div class="col-md-6">
                                 <label class="pro-label">Age</label>
-                                <select class="form-select" name="age">
-                                    <option selected disabled>Choose...</option>
-                                    <option value="Below 18">Below 18</option>
-                                    <option value="18 - 30">18 - 30</option>
-                                    <option value="30 - 50">30 - 50</option>
-                                    <option value="Above 50">Above 50</option>
-                                </select>
+                                <input type="number" class="form-control" name="age" min="10" max="100" required>
                             </div>
                             <!-- Gender -->
                             <div class="col-md-5">
                                 <label class="pro-label">Gender</label>
-                                <select class="form-select" name="gender">
+                                <select class="form-select" name="gender" required>
                                     <option selected disabled>Choose...</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -172,7 +166,7 @@
                             <!-- City -->
                             <div class="col-md-5">
                                 <label class="pro-label">Country</label>
-                                <select class="form-select" name="country" id="country">
+                                <select class="form-select" name="country" id="country" required>
                                     <option value="" selected disabled hidden>Choose Country</option>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Albania">Albania</option>
@@ -434,14 +428,14 @@
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
                                 <label class="pro-label">NIC</label>
-                                <input type="text" class="form-control" name="nic_number">
+                                <input type="text" class="form-control" name="nic_number" required>
                             </div>
                         </div>
                         <!-- Address -->
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
                                 <label class="pro-label">Address</label>
-                                <input type="text" class="form-control" name="address">
+                                <input type="text" class="form-control" name="address" required>
                             </div>
                         </div>
                         <!-- Phone, Job -->
@@ -449,12 +443,12 @@
                             <!-- Phone -->
                             <div class="col-md-5">
                                 <label class="pro-label">Phone Number</label>
-                                <input type="text" class="form-control" name="phone_number">
+                                <input type="text" class="form-control" name="phone_number" required>
                             </div>
                             <!-- Job -->
                             <div class="col-md-6">
                                 <label class="pro-label">Job</label>
-                                <input type="text" class="form-control" name="occupation">
+                                <input type="text" class="form-control" name="occupation" required>
                             </div>
                         </div>
                         <!-- Bio -->
@@ -465,7 +459,7 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <textarea class="form-control" rows="8" name="bio"></textarea>
+                                <textarea class="form-control" style="height:150px;" name="bio" required></textarea>
                             </div>
                             <div class="col-md-1">
                                 <div class="tooltip-block">
@@ -500,7 +494,7 @@
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                                 </div>
                                 <div class="form-group">
-                                        <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                        <div class="input-group" data-multiple="true" data-toggle="aizuploader" data-type="image">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                                             </div>
@@ -545,7 +539,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                        <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                        <div class="input-group" data-toggle="aizuploader" data-type="video">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                                             </div>
@@ -586,7 +580,7 @@
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                                 </div>
                                 <div class="form-group">
-                                        <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                        <div class="input-group" data-toggle="aizuploader" data-type="audio">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                                             </div>
@@ -621,11 +615,14 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" name="requirement" onchange="package_type(this);" required>
                                     <option selected disabled>Choose...</option>
-                                    <option>One</option>
-                                    <option>Two</option>
-                                    <option>Three</option>
+                                    @if(count(App\Models\Packages::where('status','Enabled')->get()) != 0)
+                                        @foreach(App\Models\Packages::where('status','Enabled')->get() as $package)
+                                            <option value="{{$package->id}}">{{$package->name}}</option>
+                                        @endforeach
+                                    @endif
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
                             <div class="col-md-1">
@@ -644,6 +641,17 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- About the donation -->
+                      
+                        <div class="row g-0 mb-3" id="other_description_hide" style="display: none;">
+                            <div class="col-md-11">
+                                <label class="pro-label">Other Description</label>
+                                <textarea class="form-control" style="height:150px;" name="other_description"></textarea>
+                            </div>
+                        </div>
+
+
                         <!-- About the donation -->
                         <div class="row g-0">
                             <div class="col-md-11">
@@ -652,7 +660,7 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <textarea class="form-control" rows="5" name="about_donation"></textarea>
+                                <textarea class="form-control" style="height:150px;" name="about_donation" required></textarea>
                             </div>
                             <div class="col-md-1">
                                 <div class="tooltip-block">
@@ -669,38 +677,39 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Account Number -->
-                        <div class="row g-0">
-                            <div class="col-md-11">
-                                <label class="pro-label">Account Number</label>
-                            </div>
-                        </div>
-                        <div class="row g-0 mb-5">
-                            <div class="col-md-11">
-                                <input type="text" class="form-control" name="account_number">
-                            </div>
-                            <div class="col-md-1">
-                                <div class="tooltip-block">
-                                    <i class="bi bi-question-circle"></i>
-                                    <div class="pro-tooltip">
-                                        <div class="header">About toggle</div>
-                                        <div class="body">You can choose whether your name display everyone or not. If
-                                            you
-                                            want to hide your name and profile picture you must tick this toggle. After
-                                            you
-                                            tick this toggle your profile picture and name will hide from your listing.
-                                        </div>
+
+
+                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; display: none;" id="account_details">
+                            <h5 class="card-header">Account Details</h5>
+                            <div class="card-body">
+                                <div class="row g-0 mb-4">
+                                    <div class="col-md-6">
+                                        <label class="pro-label">Account Number</label>
+                                        <input type="text" class="form-control" name="account_number">
                                     </div>
+                                    <div class="col-md-4">
+                                        <label class="pro-label">Bank Name</label>
+                                        <input type="text" class="form-control" name="bank_name">
+                                    </div>                            
                                 </div>
+                                <div class="row g-0 mb-5">
+                                    <div class="col-md-11">
+                                        <label class="pro-label">Branch Name</label>
+                                        <input type="text" class="form-control" name="branch_name">
+                                    </div>                          
+                                </div>                                
                             </div>
                         </div>
+
                         <div class="row g-0">
                             <div class="col-md-11">
-                                <a href="#" class="cta-btn btn-fill" type="submit">
+                                <button class="cta-btn btn-fill" type="submit">
                                     <div class="btn-text">Create</div>
-                                </a>
+                                </button>
                             </div>
                         </div>
+                        
+
                     </div>
                 </form>
             </div>

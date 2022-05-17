@@ -36,6 +36,8 @@ class CreateReceiversTable extends Migration
             $table->text('account_number')->nullable();            
             $table->text('profile_image')->nullable();
             $table->text('cover_image')->nullable();
+            $table->text('other_description')->nullable();
+            $table->text('account_details')->nullable();            
             $table->text('email')->nullable();
             $table->text('status')->nullable();
             $table->timestamps();
