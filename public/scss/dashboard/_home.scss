@@ -57,6 +57,32 @@
                     -webkit-box-orient: vertical;
                 }
 
+                .db-tlink {
+                    text-decoration: none;
+                    color: $primary-green;
+                    font-size: .9rem;
+                    font-weight: 300;
+                    line-height: 1;
+                }
+
+                .form-select {
+                    font-size: .9rem;
+                    font-weight: 400;
+                    color: $text-black;
+
+                    option {
+                        font-size: .9rem;
+                        font-weight: 400;
+                        color: $text-black;
+                    }
+
+                    &:active,
+                    &:focus {
+                        box-shadow: none;
+                        outline: none;
+                    }
+                }
+
                 .db-timg {
                     width: 40px;
                     height: 40px;

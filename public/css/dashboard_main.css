@@ -157,6 +157,27 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+.table-container .db-table .db-tr .db-td .db-tlink {
+  text-decoration: none;
+  color: #1FC39E;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1;
+}
+.table-container .db-table .db-tr .db-td .form-select {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.table-container .db-table .db-tr .db-td .form-select option {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.table-container .db-table .db-tr .db-td .form-select:active, .table-container .db-table .db-tr .db-td .form-select:focus {
+  box-shadow: none;
+  outline: none;
+}
 .table-container .db-table .db-tr .db-td .db-timg {
   width: 40px;
   height: 40px;

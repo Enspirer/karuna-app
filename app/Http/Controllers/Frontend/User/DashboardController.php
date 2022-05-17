@@ -21,4 +21,9 @@ class DashboardController extends Controller
     {
         return view('frontend.user.receiver');
     }
+
+    public function receiver_request()
+    {
+        return view('frontend.user.receiver_request');
+    }
 }
