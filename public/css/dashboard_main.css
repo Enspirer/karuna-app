@@ -344,6 +344,16 @@
   box-shadow: none;
   outline: none;
 }
+.receiver-profile-section .edit-profile-block .inner-wrapper .form-select {
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.receiver-profile-section .edit-profile-block .inner-wrapper .form-select:active, .receiver-profile-section .edit-profile-block .inner-wrapper .form-select:focus {
+  box-shadow: none;
+  outline: none;
+}
 .receiver-profile-section .edit-profile-block .inner-wrapper .tooltip-block {
   position: relative;
 }
@@ -369,6 +379,11 @@
   font-weight: 300;
   color: white;
   padding: 1em;
+}
+.receiver-profile-section .edit-profile-block .inner-wrapper .cta-btn {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
 }
 
 .dashboard-nav {

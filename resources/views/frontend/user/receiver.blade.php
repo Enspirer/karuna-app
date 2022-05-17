@@ -344,7 +344,7 @@
                         <label class="pro-label">Account Number</label>
                     </div>
                 </div>
-                <div class="row g-0 mb-3">
+                <div class="row g-0 mb-5">
                     <div class="col-md-11">
                         <input type="text" class="form-control">
                     </div>

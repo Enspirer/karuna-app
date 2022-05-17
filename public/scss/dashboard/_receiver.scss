@@ -164,6 +164,19 @@
                 }
             }
 
+            .form-select {
+                height: 40px;
+                font-size: .9rem;
+                font-weight: 400;
+                color: $text-black;
+
+                &:active,
+                &:focus {
+                    box-shadow: none;
+                    outline: none;
+                }
+            }
+
             .tooltip-block {
                 position: relative;
 
@@ -193,6 +206,12 @@
                         padding: 1em;
                     }
                 }
+            }
+
+            .cta-btn {
+                width: 100%;
+                height: 45px;
+                border-radius: 5px;
             }
 
         }
