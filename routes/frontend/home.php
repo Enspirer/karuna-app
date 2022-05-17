@@ -35,6 +35,8 @@ Route::get('dashboard/receiver', [DashboardController::class, 'receiver'])->name
 Route::get('dashboard/receiver-request-list', [DashboardController::class, 'receiver_request_list'])->name('dashboard.receiver_request_list');
 Route::get('dashboard/receiver-request', [DashboardController::class, 'receiver_request'])->name('dashboard.receiver_request');
 Route::get('dashboard/profile/agent', [DashboardController::class, 'agent_profile'])->name('dashboard.agent_profile');
+Route::get('dashboard/notification', [DashboardController::class, 'notification'])->name('dashboard.notification');
+Route::get('dashboard/notification/submit', [DashboardController::class, 'notification_submit'])->name('dashboard.notification_submit');
 
 Route::post('/aiz-uploader', [AizUploadController::class, 'show_uploader']);
 Route::post('/aiz-uploader/upload', [AizUploadController::class, 'upload']);

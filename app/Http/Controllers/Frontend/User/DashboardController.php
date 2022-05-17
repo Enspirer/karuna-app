@@ -36,4 +36,14 @@ class DashboardController extends Controller
     {
         return view('frontend.user.agent_profile');
     }
+
+    public function notification()
+    {
+        return view('frontend.user.notification');
+    }
+
+    public function notification_submit()
+    {
+        return view('frontend.user.notification_submit');
+    }
 }

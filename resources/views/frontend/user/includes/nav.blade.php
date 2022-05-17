@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('frontend.dashboard.notification')}}" class="nav-link">
                     <div class="nav-nav">
                         <i class="bi bi-bell"></i>
                         <i class="bi active bi-bell-fill"></i>
