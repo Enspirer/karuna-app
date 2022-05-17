@@ -18,10 +18,10 @@
         </a>
     </div>
     <div class="button-block">
-        <a href="{{route('frontend.dashboard.receiver')}}" class="nav-btn active">
+        <a href="{{url('dashboard')}}" class="nav-btn active">
             <div class="btn-text">My Receivers</div>
         </a>
-        <a href="{{route('frontend.dashboard.receiver_request')}}" class="nav-btn">
+        <a href="{{route('frontend.dashboard.receiver_request_list')}}" class="nav-btn">
             <div class="btn-text">Receivers Request</div>
             <div class="status">75</div>
         </a>

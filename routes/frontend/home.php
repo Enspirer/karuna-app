@@ -32,6 +32,7 @@ Route::get('mobile/payment', [MobileController::class, 'payment'])->name('mobile
 // Dashboard
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 Route::get('dashboard/receiver', [DashboardController::class, 'receiver'])->name('dashboard.receiver');
+Route::get('dashboard/receiver-request-list', [DashboardController::class, 'receiver_request_list'])->name('dashboard.receiver_request_list');
 Route::get('dashboard/receiver-request', [DashboardController::class, 'receiver_request'])->name('dashboard.receiver_request');
 
 Route::post('/aiz-uploader', [AizUploadController::class, 'show_uploader']);
