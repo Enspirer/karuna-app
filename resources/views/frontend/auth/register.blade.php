@@ -499,7 +499,7 @@
                             <label for="" class="form-label">User Type</label>
                             <select class="form-control custom-select" name="user_type" onchange="user_type_check(this);" required>
                                 <option value="" selected disabled>Select...</option> 
-                                <option value="Receiver">Receiver</option>                                
+                                <option value="Receiver" disabled>Receiver</option>                                
                                 <option value="Agent">Agent</option>   
                                 <option value="Donor">Donor</option>                                
                             </select>
