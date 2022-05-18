@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Auth\RegisterRequest;
 use App\Repositories\Frontend\Auth\UserRepository;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Models\Auth\User;
 
 /**
  * Class RegisterController.
@@ -61,9 +62,17 @@ class RegisterController extends Controller
     public function register(RegisterRequest $request)
     {
         // dd($request);
+
+        $user_agent = User::where('first_name', 'like', '%'.$request->referral_name.'%')->orWhere('last_name', 'like', '%'.$request->referral_name.'%')->where('nic_number',$request->referral_nic_number)->first();
+        // dd($user_agent);
+
+        if($user_agent == null){
+            return back()->withErrors('Incorrect Referrel');
+        }
+
         abort_unless(config('access.registration'), 404);
 
-        $user = $this->userRepository->create($request->only('first_name', 'last_name', 'email', 'password', 'user_type', 'country', 'city', 'assigned_agent_id', 'contact_number', 'contact_number_two', 'address', 'occupation', 'nic_number'));
+        $user = $this->userRepository->create($request->only('first_name', 'last_name', 'email', 'password', 'user_type', 'country', 'city', 'assigned_agent_id', 'contact_number', 'contact_number_two', 'address', 'occupation', 'nic_number','referral_name','referral_nic_number'));
         // dd($user);
 
         // If the user must confirm their email or their account requires approval,

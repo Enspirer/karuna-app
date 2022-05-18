@@ -311,6 +311,24 @@
                 <div class="join-form-row">
                     <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirm Password" required>
                 </div>
+                <div class="card" style="display: none;" id="referral_details">
+                    <h5 class="card-header">Referral Details</h5>
+                    <div class="card-body">
+                        <div class="row g-0 mb-4">
+                            <div class="col-md-12">
+                                <label class="pro-label">Referral Name</label>
+                                <input type="text" class="form-control" name="referral_name">
+                            </div>                           
+                        </div>
+                        <div class="row g-0 mb-5">                                    
+                            <div class="col-md-12">
+                                <label class="pro-label">Referral NIC Number</label>
+                                <input type="text" class="form-control" name="referral_nic_number">
+                            </div>                          
+                        </div>                                
+                    </div>
+                </div>
+
                 <div class="join-form-row">
                     <button type="submit" class="cta-btn btn-fill pull-right">
                         <div class="btn-text">Register</div>
@@ -335,7 +353,12 @@
             document.getElementById("agent_nic").style.display = "none";
         }
 
-    
+        if (that.value == 'Agent') {
+            document.getElementById("referral_details").style.display = "block";
+        } else {
+            document.getElementById("referral_details").style.display = "none";
+        }  
+        
         if (that.value == 'Agent') {
             document.getElementById("agent_contact_number").style.display = "block";
         } else {
@@ -462,4 +485,6 @@
         });
     });
 </script>
+
+
 @endpush
