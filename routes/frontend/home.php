@@ -40,6 +40,8 @@ Route::get('mobile/receiver', [MobileController::class, 'receiver'])->name('mobi
 Route::get('mobile/receiver-request-list', [MobileController::class, 'receiver_request_list'])->name('mobile.receiver_request_list');
 Route::get('mobile/receiver-request-approve', [MobileController::class, 'receiver_request_approve'])->name('mobile.receiver_request_approve');
 Route::get('mobile/confirmation', [MobileController::class, 'confirmation'])->name('mobile.confirmation');
+Route::get('mobile/receiver-edit', [MobileController::class, 'receiver_edit'])->name('mobile.receiver_edit');
+Route::get('mobile/view-profile', [MobileController::class, 'view_profile'])->name('mobile.view_profile');
 
 // Dashboard
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

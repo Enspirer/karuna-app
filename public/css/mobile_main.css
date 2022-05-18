@@ -1730,7 +1730,7 @@ body .mobile-body {
 .profile-section .inner-wrapper .header .dp-block {
   width: fit-content;
   position: absolute;
-  bottom: -35px;
+  bottom: -50px;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -1794,6 +1794,7 @@ body .mobile-body {
   justify-content: center;
   align-items: center;
   gap: 5px;
+  margin-bottom: 0.5rem;
 }
 .profile-section .inner-wrapper .star-rating .bi {
   color: #FFC400;
@@ -1806,7 +1807,6 @@ body .mobile-body {
   margin-bottom: 0.35rem;
 }
 .profile-section .inner-wrapper .status {
-  background-color: #FFBB00;
   width: fit-content;
   font-size: 0.7rem;
   font-weight: 400;
@@ -1815,6 +1815,22 @@ body .mobile-body {
   padding: 0.5em 1em;
   border-radius: 20px;
   margin: auto;
+}
+.profile-section .inner-wrapper .status.yellow {
+  background-color: #FFBB00;
+}
+.profile-section .inner-wrapper .status.green {
+  background-color: #3AC400;
+}
+.profile-section .inner-wrapper .status.maroon {
+  background-color: #971930;
+}
+.profile-section .inner-wrapper .profile-info {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #767676;
+  text-align: center;
+  margin-top: 0.75rem;
 }
 .profile-section .inner-wrapper .btn-edit {
   text-decoration: none;
@@ -1873,6 +1889,96 @@ body .mobile-body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+}
+.profile-section .inner-wrapper .charity-block {
+  margin: 2rem 0;
+}
+.profile-section .inner-wrapper .charity-block .title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item {
+  border: 1px solid #1FC39E;
+  border-radius: 10px;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item:not(:nth-last-child(1)) {
+  margin-bottom: 0.75rem;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button::after {
+  content: none;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button.collapsed {
+  border: none;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button:focus, .profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button:active {
+  box-shadow: none;
+  outline: none;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button .header-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button .header-block .no {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button .header-block .text {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.orange {
+  background-color: #E78834;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.red {
+  background-color: #FF0000;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.green {
+  background-color: #3AC400;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-collapse .accordion-body {
+  border-top: 1px solid #ddd;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-collapse .accordion-body .title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+.profile-section .inner-wrapper .charity-block .accordion .accordion-item .accordion-collapse .accordion-body .text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #767676;
+}
+.profile-section .inner-wrapper .cta-btn {
+  width: 100%;
+  height: 45px;
 }
 
 /*# sourceMappingURL=mobile_main.css.map */

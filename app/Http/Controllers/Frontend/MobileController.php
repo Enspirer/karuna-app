@@ -123,4 +123,9 @@ class MobileController extends Controller
     {
         return view('frontend.mobile.confirmation');
     }
+
+    public function view_profile()
+    {
+        return view('frontend.mobile.view_profile');
+    }
 }
