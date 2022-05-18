@@ -142,6 +142,7 @@
     </div>
 </div> -->
 
+@if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Agent')
 <div class="table-container">
     <table class="db-table receiver-table">
         <thead>
@@ -197,6 +198,9 @@
         </tbody>
     </table>
 </div>
+@endif
+
+@if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')
 
 <div class="table-container">
     <table class="db-table doner-table">
@@ -267,6 +271,9 @@
         </tbody>
     </table>
 </div>
+@endif
+
+@if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Receiver')
 
 <section class="receiver-dashboard-section">
     <div class="accordion">
@@ -323,6 +330,8 @@
         </div>
     </div>
 </section>
+@endif
+
 
 @endsection
 
