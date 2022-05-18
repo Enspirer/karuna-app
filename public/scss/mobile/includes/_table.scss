@@ -1,0 +1,52 @@
+.table-section {
+    margin: 2rem 0;
+
+    .mobile-table {
+        width: 100%;
+        border-collapse: collapse;
+
+        tbody {
+            .m-tr {
+                &:not(:nth-last-child(1)) {
+                    .m-td {
+                        border-bottom: 1px solid $light-gray;
+                    }
+                }
+
+                .m-td {
+                    padding: 0.5rem 0.25rem;
+
+                    .bi {
+                        &.orange {
+                            color: $orange;
+                        }
+
+                        &.green {
+                            color: $green;
+                        }
+                    }
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+
+                    .name {
+                        font-size: .9rem;
+                        font-weight: 400;
+                        color: $text-black;
+                    }
+
+                    .text {
+                        font-size: .8rem;
+                        font-weight: 300;
+                        color: $text-black;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -35,6 +35,7 @@ Route::get('mobile/profile', [MobileController::class, 'profile'])->name('mobile
 Route::get('mobile/donation-history', [MobileController::class, 'donation_history'])->name('mobile.donation_history');
 Route::get('mobile/notification', [MobileController::class, 'notification'])->name('mobile.notification');
 Route::get('mobile/thanks', [MobileController::class, 'thanks'])->name('mobile.thanks');
+Route::get('mobile/payment-history', [MobileController::class, 'payment_history'])->name('mobile.payment_history');
 
 // Dashboard
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

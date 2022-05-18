@@ -1389,4 +1389,41 @@ body .mobile-body {
   height: 45px;
 }
 
+.table-section {
+  margin: 2rem 0;
+}
+.table-section .mobile-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-section .mobile-table tbody .m-tr:not(:nth-last-child(1)) .m-td {
+  border-bottom: 1px solid #ddd;
+}
+.table-section .mobile-table tbody .m-tr .m-td {
+  padding: 0.5rem 0.25rem;
+}
+.table-section .mobile-table tbody .m-tr .m-td .bi.orange {
+  color: #E78834;
+}
+.table-section .mobile-table tbody .m-tr .m-td .bi.green {
+  color: #3AC400;
+}
+.table-section .mobile-table tbody .m-tr .m-td img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.table-section .mobile-table tbody .m-tr .m-td .name {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.table-section .mobile-table tbody .m-tr .m-td .text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #333;
+}
+
 /*# sourceMappingURL=mobile_main.css.map */
