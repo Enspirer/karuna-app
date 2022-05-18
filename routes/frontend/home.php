@@ -37,6 +37,9 @@ Route::get('mobile/notification', [MobileController::class, 'notification'])->na
 Route::get('mobile/thanks', [MobileController::class, 'thanks'])->name('mobile.thanks');
 Route::get('mobile/receivers-list', [MobileController::class, 'receivers_list'])->name('mobile.receivers_list');
 Route::get('mobile/receiver', [MobileController::class, 'receiver'])->name('mobile.receiver');
+Route::get('mobile/receiver-request-list', [MobileController::class, 'receiver_request_list'])->name('mobile.receiver_request_list');
+Route::get('mobile/receiver-request-approve', [MobileController::class, 'receiver_request_approve'])->name('mobile.receiver_request_approve');
+Route::get('mobile/confirmation', [MobileController::class, 'confirmation'])->name('mobile.confirmation');
 
 // Dashboard
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

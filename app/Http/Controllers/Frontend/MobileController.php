@@ -103,4 +103,24 @@ class MobileController extends Controller
     {
         return view('frontend.mobile.receiver');
     }
+
+    public function receiver_edit()
+    {
+        return view('frontend.mobile.receiver_edit');
+    }
+
+    public function receiver_request_list()
+    {
+        return view('frontend.mobile.receiver_request_list');
+    }
+
+    public function receiver_request_approve()
+    {
+        return view('frontend.mobile.receiver_request_approve');
+    }
+
+    public function confirmation()
+    {
+        return view('frontend.mobile.confirmation');
+    }
 }
