@@ -98,4 +98,9 @@ class MobileController extends Controller
     {
         return view('frontend.mobile.receivers_list');
     }
+
+    public function receiver()
+    {
+        return view('frontend.mobile.receiver');
+    }
 }

@@ -1380,6 +1380,10 @@ body .mobile-body {
 
 .app-bar-section {
   padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  background-color: #F9F9FB;
+  z-index: 99;
 }
 .app-bar-section .inner-wrapper {
   display: flex;
@@ -1529,6 +1533,183 @@ body .mobile-body {
 }
 .table-section .mobile-table tbody .m-tr .m-td .indicator.black {
   background-color: #222;
+}
+
+.profile-section {
+  margin: 1rem 0;
+}
+.profile-section .inner-wrapper .header {
+  position: relative;
+  background: url("../../images/dashboard/receiver-back.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  height: 150px;
+  margin-bottom: 3rem;
+}
+.profile-section .inner-wrapper .header .back-edit {
+  text-decoration: none;
+  color: #fff;
+  background-color: #1FC39E;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.profile-section .inner-wrapper .header .dp-block {
+  width: fit-content;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.profile-section .inner-wrapper .header .dp-block img {
+  width: 90px;
+  height: 90px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.profile-section .inner-wrapper .header .dp-block .dp-edit {
+  text-decoration: none;
+  color: #fff;
+  background-color: #1FC39E;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.profile-section .inner-wrapper .dp-block {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.profile-section .inner-wrapper .dp-block img {
+  width: 120px;
+  height: 120px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.profile-section .inner-wrapper .dp-block .dp-edit {
+  text-decoration: none;
+  color: #fff;
+  background-color: #1FC39E;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.profile-section .inner-wrapper .star-rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.profile-section .inner-wrapper .star-rating .bi {
+  color: #FFC400;
+}
+.profile-section .inner-wrapper .name {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 0.35rem;
+}
+.profile-section .inner-wrapper .status {
+  background-color: #FFBB00;
+  width: fit-content;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: white;
+  line-height: 1;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  margin: auto;
+}
+.profile-section .inner-wrapper .btn-edit {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  width: fit-content;
+  margin: 0.75rem auto 0;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.profile-section .inner-wrapper .btn-edit .bi {
+  margin-right: 0.25rem;
+}
+.profile-section .inner-wrapper .info-table-wrapper {
+  margin: 2rem 0;
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #ddd;
+  padding: 1rem 0;
+}
+.profile-section .inner-wrapper .info-table-wrapper .info-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.profile-section .inner-wrapper .info-table-wrapper .info-table tbody tr td {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #333;
+  padding: 0.3rem;
+}
+.profile-section .inner-wrapper .info-table-wrapper .info-table tbody tr td:nth-last-child(1) {
+  text-align: right;
+}
+.profile-section .inner-wrapper .sign-out-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  margin: auto;
+  text-decoration: none;
+}
+.profile-section .inner-wrapper .sign-out-btn .bi {
+  color: #767676;
+}
+.profile-section .inner-wrapper .sign-out-btn .btn-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+}
+.profile-section .inner-wrapper .gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 /*# sourceMappingURL=mobile_main.css.map */

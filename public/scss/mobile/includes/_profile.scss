@@ -1,0 +1,172 @@
+.profile-section {
+    margin: 1rem 0;
+
+    .inner-wrapper {
+
+        .header {
+            position: relative;
+            background: url('../../images/dashboard/receiver-back.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            height: 150px;
+            margin-bottom: 3rem;
+
+            .back-edit {
+                @include edit-image;
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+
+            .dp-block {
+                width: fit-content;
+                position: absolute;
+                bottom: -35px;
+                left: 50%;
+                transform: translate(-50%, 0);
+
+                img {
+                    width: 90px;
+                    height: 90px;
+                    object-position: center;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    border: 2px solid $white;
+                }
+
+                .dp-edit {
+                    @include edit-image;
+                    top: 0;
+                    right: 0;
+                }
+            }
+        }
+
+        .dp-block {
+            width: fit-content;
+            margin: auto;
+            position: relative;
+            margin-bottom: 1rem;
+
+            img {
+                width: 120px;
+                height: 120px;
+                object-position: center;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 2px solid $white;
+            }
+
+            .dp-edit {
+                @include edit-image;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        .star-rating {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            .bi {
+                color: #FFC400;
+            }
+        }
+
+        .name {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 400;
+            color: $text-black;
+            margin-bottom: 0.35rem;
+        }
+
+        .status {
+            background-color: #FFBB00;
+            width: fit-content;
+            font-size: .7rem;
+            font-weight: 400;
+            color: white;
+            line-height: 1;
+            padding: 0.5em 1em;
+            border-radius: 20px;
+            margin: auto;
+        }
+
+        .btn-edit {
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            width: fit-content;
+            margin: 0.75rem auto 0;
+            color: $text-black;
+            font-size: 0.9rem;
+            font-weight: 300;
+
+            .bi {
+                margin-right: .25rem;
+            }
+        }
+
+        .info-table-wrapper {
+            margin: 2rem 0;
+            border-width: 1px 0 1px 0;
+            border-style: solid;
+            border-color: $light-gray;
+            padding: 1rem 0;
+
+            .info-table {
+                border-collapse: collapse;
+                width: 100%;
+
+                tbody {
+                    tr {
+                        td {
+                            font-size: 0.8rem;
+                            font-weight: 300;
+                            color: $text-black;
+                            padding: 0.3rem;
+
+                            &:nth-last-child(1) {
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .sign-out-btn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            width: fit-content;
+            margin: auto;
+            text-decoration: none;
+
+            .bi {
+                color: $gray;
+            }
+
+            .btn-text {
+                font-size: .9rem;
+                font-weight: 300;
+                color: $text-black;
+            }
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+}
