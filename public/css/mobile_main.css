@@ -1290,6 +1290,94 @@ body .mobile-body {
   fill: #1FC39E;
 }
 
+.agent-bottom-nav-section {
+  height: 56px;
+}
+.agent-bottom-nav-section .inner-wrapper {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.agent-bottom-nav-section .inner-wrapper .add-btn {
+  text-decoration: none;
+  background-color: #1FC39E;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: -27.5px;
+  transform: translate(-50%, 0);
+  line-height: 1;
+}
+.agent-bottom-nav-section .inner-wrapper .nav-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.agent-bottom-nav-section .inner-wrapper .nav-container::before {
+  content: "";
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: block;
+  margin: -35px auto 26px;
+  box-shadow: 0 0 0 3000px #fff;
+}
+.agent-bottom-nav-section .inner-wrapper .nav-container .nav-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+.agent-bottom-nav-section .inner-wrapper .nav-container .nav-block .navs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 37.5%;
+}
+.agent-bottom-nav-section .inner-wrapper .nav-container .nav-block .navs .nav-link svg path {
+  fill: #b7b7b7;
+}
+.agent-bottom-nav-section .inner-wrapper .nav-container .nav-block .navs .nav-link.active svg path {
+  fill: #1FC39E;
+}
+.agent-bottom-nav-section .inner-wrapper .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.agent-bottom-nav-section .inner-wrapper .navbar-nav::before {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: block;
+  margin: -80px auto 0;
+  box-shadow: 0 0 0 3000px #fff;
+}
+.agent-bottom-nav-section .inner-wrapper .navbar-nav .nav-item .nav-link svg path {
+  fill: #b7b7b7;
+}
+.agent-bottom-nav-section .inner-wrapper .navbar-nav .nav-item .nav-link.active svg path {
+  fill: #1FC39E;
+}
+
 .app-bar-section {
   padding: 0.75rem 0;
 }
