@@ -1,0 +1,78 @@
+.notification-section {
+    margin: 1rem 0;
+
+    .list-group {
+        .list-group-item {
+            background-color: transparent;
+            border: none;
+            position: relative;
+            padding: 0.75rem 0.5rem;
+
+            &::after {
+                content: '';
+                width: 70%;
+                height: 1px;
+                background-color: $light-gray;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+            .nav-link {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0.25rem;
+                gap: 1rem;
+
+                img {
+                    width: 75px;
+                    height: 50px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                .text-block {
+                    .subject {
+                        font-size: .8rem;
+                        font-weight: 300;
+                        line-height: 1;
+                        margin-bottom: 0.35rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+
+                        &.red {
+                            color: $red;
+                        }
+
+                        &.green {
+                            color: $green;
+                        }
+                    }
+
+                    .text {
+                        font-size: .7rem;
+                        font-weight: 300;
+                        color: $gray;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+                }
+
+                .bi {
+                    color: $text-black;
+
+                    &::before {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+}

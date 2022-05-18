@@ -78,4 +78,9 @@ class MobileController extends Controller
     {
         return view('frontend.mobile.donation_history');
     }
+
+    public function notification()
+    {
+        return view('frontend.mobile.notification');
+    }
 }
