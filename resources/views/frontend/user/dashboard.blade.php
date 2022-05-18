@@ -155,18 +155,33 @@
             </tr>
         </thead>
         <tbody>
+
+        @if(count(App\Models\Receivers::where('assigned_agent',auth()->user()->id)->get()) == 0)
+			@include('frontend.includes.not_found',[
+				'not_found_title' => 'No any receivers found',
+				'not_found_description' => null,
+				'not_found_button_caption' => null
+			])
+        @else
+            @foreach(App\Models\Receivers::where('assigned_agent',auth()->user()->id)->get() as $key => $receiver)
             <tr class="db-tr clickable-tr" data-href="{{route('frontend.dashboard.receiver')}}">
                 <td class="db-td">
                     <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
                 </td>
                 <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
+                    <div class="text">{{$receiver->name}}</div>
                 </td>
-                <td class="db-td">42</td>
+                <td class="db-td">{{$receiver->age}}</td>
                 <td class="db-td">
-                    <div class="text">584/C, Colombo Rd, Wattala.</div>
+                    <div class="text">{{$receiver->address}}</div>
                 </td>
-                <td class="db-td">Health Food</td>
+                <td class="db-td">
+                    @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
+                        {{App\Models\Packages::where('id',$receiver->requirement)->first()->name}}
+                    @else
+                        Other
+                    @endif
+                </td>
                 <td class="db-td">
                     <div class="status-block">
                         <div class="indicator orange"></div>
@@ -174,63 +189,11 @@
                     </div>
                 </td>
             </tr>
-            <tr class="db-tr clickable-tr" data-href="#">
-                <td class="db-td">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">42</td>
-                <td class="db-td">
-                    <div class="text">584/C, Colombo Rd, Wattala.</div>
-                </td>
-                <td class="db-td">Health Food</td>
-                <td class="db-td">
-                    <div class="status-block">
-                        <div class="indicator green"></div>
-                        <div class="status">In Progress</div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="db-tr clickable-tr" data-href="#">
-                <td class="db-td">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">42</td>
-                <td class="db-td">
-                    <div class="text">584/C, Colombo Rd, Wattala.</div>
-                </td>
-                <td class="db-td">Health Food</td>
-                <td class="db-td">
-                    <div class="status-block">
-                        <div class="indicator black"></div>
-                        <div class="status">Closed</div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="db-tr clickable-tr" data-href="#">
-                <td class="db-td">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">42</td>
-                <td class="db-td">
-                    <div class="text">584/C, Colombo Rd, Wattala.</div>
-                </td>
-                <td class="db-td">Health Food</td>
-                <td class="db-td">
-                    <div class="status-block">
-                        <div class="indicator red"></div>
-                        <div class="status">Cancel</div>
-                    </div>
-                </td>
-            </tr>
+            @endforeach
+		@endif
+
+            
+            
         </tbody>
     </table>
 </div>
