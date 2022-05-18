@@ -4,19 +4,18 @@
 
 @section('content')
 
+@if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')
 <section class="thank-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
             <a href="{{route('frontend.mobile.index')}}" class="brand">
                 <img src="{{url('images/mobile/logo/karuna-logo-white.svg')}}" alt="">
-            </a>
-            @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')
-                <a href="#" class="profile">
-                    <i class="bi bi-suit-heart-fill"></i>
-                    <div class="text">1578</div>
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
-                </a>
-            @endif
+            </a>            
+            <a href="#" class="profile"> 
+                <i class="bi bi-suit-heart-fill"></i>
+                <div class="text">1578</div>
+                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+            </a>            
         </div>
         <div class="title">Receive a small thank<br>for your efforts!</div>
         <div class="thank-block">
@@ -28,6 +27,7 @@
         </div>
     </div>
 </section>
+@endif
 
 <section class="top-nav-section">
     <div class="mobile-container">
@@ -83,6 +83,89 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-no-data">
+    <div class="mobile-container">
+        <div class="inner-wrapper">
+            <img src="{{url('images/not-found.png')}}" alt="">
+            <div class="text">No data foud</div>
+        </div>
+    </div>
+</section>
+
+<section class="request-list-section">
+    <div class="mobile-container">
+        <div class="header">
+            <div class="title">Donate List</div>
+            <a href="#">See All <i class="bi bi-chevron-right"></i></a>
+        </div>
+        <div class="accordion" id="requestList">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="reqHead1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#req1"
+                        aria-expanded="true" aria-controls="req1">
+                        <div class="header-block">
+                            <div class="no">1</div>
+                            <div class="text">Pending Request</div>
+                            <div class="indicator orange"></div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="req1" class="accordion-collapse collapse show" aria-labelledby="reqHead1"
+                    data-bs-parent="#requestList">
+                    <div class="accordion-body">
+                        <div class="title">Description</div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
+                            exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
+                            reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="reqHead2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#req2" aria-expanded="false" aria-controls="req2">
+                        <div class="header-block">
+                            <div class="no">2</div>
+                            <div class="text">Approved Request</div>
+                            <div class="indicator green"></div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="req2" class="accordion-collapse collapse" aria-labelledby="reqHead2"
+                    data-bs-parent="#requestList">
+                    <div class="accordion-body">
+                        <div class="title">Description</div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
+                            exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
+                            reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="reqHead3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#req3" aria-expanded="false" aria-controls="req3">
+                        <div class="header-block">
+                            <div class="no">3</div>
+                            <div class="text">Canceled Request</div>
+                            <div class="indicator red"></div>
+                        </div>
+                    </button>
+                </h2>
+                <div id="req3" class="accordion-collapse collapse" aria-labelledby="reqHead3"
+                    data-bs-parent="#requestList">
+                    <div class="accordion-body">
+                        <div class="title">Description</div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
+                            exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
+                            reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

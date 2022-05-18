@@ -424,3 +424,159 @@
         }
     }
 }
+
+.section-no-data {
+    margin: 1rem 0;
+
+    .inner-wrapper {
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: $white;
+        position: relative;
+
+        img {
+            width: 100%;
+            max-width: 318px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            margin: auto;
+        }
+
+        .text {
+            font-size: .9rem;
+            font-weight: 400;
+            color: $primary-green;
+            position: absolute;
+            left: 50%;
+            bottom: 10%;
+            transform: translate(-50%, 0);
+        }
+    }
+}
+
+.request-list-section {
+    margin: 1rem 0;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .title {
+            font-size: 1rem;
+            font-weight: 400;
+            color: $text-black;
+        }
+
+        a {
+            text-decoration: none;
+            color: $text-black;
+            font-weight: 300;
+            font-size: 1rem;
+        }
+    }
+
+    .accordion {
+        .accordion-item {
+            border: 1px solid $primary-green;
+            border-radius: 10px;
+
+            &:not(:nth-last-child(1)) {
+                margin-bottom: .75rem;
+            }
+
+            .accordion-header {
+
+                .accordion-button {
+                    border: none;
+                    box-shadow: none;
+                    background-color: transparent;
+
+                    &::after {
+                        content: none;
+                    }
+
+                    &.collapsed {
+                        border: none;
+                    }
+
+                    &:focus,
+                    &:active {
+                        box-shadow: none;
+                        outline: none;
+                    }
+
+                    .header-block {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 2rem;
+                        width: 100%;
+
+                        .no {
+                            background-color: $white;
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 50%;
+                            border: 1px solid $light-gray;
+                            font-size: 1rem;
+                            font-weight: 300;
+                            color: $text-black;
+                        }
+
+                        .text {
+                            flex: 1;
+                            font-size: .9rem;
+                            font-weight: 300;
+                            color: $text-black;
+                        }
+
+                        .indicator {
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+
+                            &.orange {
+                                background-color: $orange;
+                            }
+
+                            &.red {
+                                background-color: $red;
+                            }
+
+                            &.green {
+                                background-color: $green;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .accordion-collapse {
+                .accordion-body {
+                    border-top: 1px solid $light-gray;
+
+                    .title {
+                        font-size: .9rem;
+                        font-weight: 400;
+                        margin-bottom: 0.25rem;
+                        color: $text-black;
+                    }
+
+                    .text {
+                        font-size: .8rem;
+                        font-weight: 300;
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -690,6 +690,132 @@ body .mobile-body {
   border-color: #ddd;
 }
 
+.section-no-data {
+  margin: 1rem 0;
+}
+.section-no-data .inner-wrapper {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+}
+.section-no-data .inner-wrapper img {
+  width: 100%;
+  max-width: 318px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: auto;
+}
+.section-no-data .inner-wrapper .text {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #1FC39E;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+}
+
+.request-list-section {
+  margin: 1rem 0;
+}
+.request-list-section .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.request-list-section .header .title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+}
+.request-list-section .header a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 300;
+  font-size: 1rem;
+}
+.request-list-section .accordion .accordion-item {
+  border: 1px solid #1FC39E;
+  border-radius: 10px;
+}
+.request-list-section .accordion .accordion-item:not(:nth-last-child(1)) {
+  margin-bottom: 0.75rem;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button::after {
+  content: none;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button.collapsed {
+  border: none;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button:focus, .request-list-section .accordion .accordion-item .accordion-header .accordion-button:active {
+  box-shadow: none;
+  outline: none;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button .header-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button .header-block .no {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button .header-block .text {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.orange {
+  background-color: #E78834;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.red {
+  background-color: #FF0000;
+}
+.request-list-section .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.green {
+  background-color: #3AC400;
+}
+.request-list-section .accordion .accordion-item .accordion-collapse .accordion-body {
+  border-top: 1px solid #ddd;
+}
+.request-list-section .accordion .accordion-item .accordion-collapse .accordion-body .title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+.request-list-section .accordion .accordion-item .accordion-collapse .accordion-body .text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #767676;
+}
+
 .donation-info-section {
   margin: 1rem 0;
 }
