@@ -28,6 +28,13 @@ Route::get('mobile', [MobileController::class, 'index'])->name('mobile.index');
 Route::get('mobile/donation-info', [MobileController::class, 'donation_info'])->name('mobile.donation_info');
 Route::get('mobile/donation-list', [MobileController::class, 'donation_list'])->name('mobile.donation_list');
 Route::get('mobile/payment', [MobileController::class, 'payment'])->name('mobile.payment');
+Route::get('mobile/success', [MobileController::class, 'success'])->name('mobile.success');
+Route::get('mobile/profile-menu', [MobileController::class, 'profile_menu'])->name('mobile.profile_menu');
+Route::get('mobile/donation', [MobileController::class, 'donation'])->name('mobile.donation');
+Route::get('mobile/profile', [MobileController::class, 'profile'])->name('mobile.profile');
+Route::get('mobile/donation-history', [MobileController::class, 'donation_history'])->name('mobile.donation_history');
+Route::get('mobile/notification', [MobileController::class, 'notification'])->name('mobile.notification');
+Route::get('mobile/thanks', [MobileController::class, 'thanks'])->name('mobile.thanks');
 
 // Dashboard
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
