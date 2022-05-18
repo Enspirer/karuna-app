@@ -1513,5 +1513,22 @@ body .mobile-body {
   font-weight: 300;
   color: #333;
 }
+.table-section .mobile-table tbody .m-tr .m-td .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.table-section .mobile-table tbody .m-tr .m-td .indicator.orange {
+  background-color: #E78834;
+}
+.table-section .mobile-table tbody .m-tr .m-td .indicator.green {
+  background-color: #3AC400;
+}
+.table-section .mobile-table tbody .m-tr .m-td .indicator.red {
+  background-color: #FF0000;
+}
+.table-section .mobile-table tbody .m-tr .m-td .indicator.black {
+  background-color: #222;
+}
 
 /*# sourceMappingURL=mobile_main.css.map */
