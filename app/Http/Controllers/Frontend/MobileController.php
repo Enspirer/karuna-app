@@ -83,4 +83,14 @@ class MobileController extends Controller
     {
         return view('frontend.mobile.notification');
     }
+
+    public function thanks()
+    {
+        return view('frontend.mobile.thanks');
+    }
+
+    public function payment_history()
+    {
+        return view('frontend.mobile.payment_history');
+    }
 }

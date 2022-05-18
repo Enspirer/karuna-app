@@ -35,3 +35,121 @@
         }
     }
 }
+
+.agent-bottom-nav-section {
+    height: 56px;
+
+    .inner-wrapper {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+
+        .add-btn {
+            text-decoration: none;
+            background-color: $primary-green;
+            color: $white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: -27.5px;
+            transform: translate(-50%, 0);
+            line-height: 1;
+        }
+
+        .nav-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+
+            &::before {
+                content: "";
+                width: 65px;
+                height: 65px;
+                border-radius: 50%;
+                display: block;
+                margin: -35px auto 26px;
+                box-shadow: 0 0 0 3000px $white;
+            }
+
+            .nav-block {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 90%;
+
+                .navs {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 37.5%;
+
+                    .nav-link {
+                        svg {
+                            path {
+                                fill: #b7b7b7;
+                            }
+                        }
+
+                        &.active {
+                            svg {
+                                path {
+                                    fill: $primary-green;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+
+            &::before {
+                content: "";
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+                display: block;
+                margin: -80px auto 0;
+                box-shadow: 0 0 0 3000px #fff;
+            }
+
+            .nav-item {
+                .nav-link {
+                    svg {
+                        path {
+                            fill: #b7b7b7;
+                        }
+                    }
+
+                    &.active {
+                        svg {
+                            path {
+                                fill: $primary-green;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
