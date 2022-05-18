@@ -73,6 +73,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
         Route::post('create_receiver', [DashboardController::class, 'create_receiver'])->name('create_receiver');
+        Route::post('update_agent', [DashboardController::class, 'update_agent'])->name('update_agent');
 
     });
 });

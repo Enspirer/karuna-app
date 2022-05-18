@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Frontend\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Receivers;
+use App\Models\Auth\User;
+use DB;
+
 /**
  * Class DashboardController.
  */
@@ -102,5 +105,42 @@ class DashboardController extends Controller
 
     }
 
+    public function update_agent(Request $request) {   
+
+        $email = $request->email;             
+        $hidden_id = $request->hidden_id;     
+
+        $user = User::where('id',$hidden_id)->first();  
+        // dd($user);
+   
+           
+        if($request->city != null){
+            $city = $request->city;     
+        }
+        else{
+            $city = $user->city;     
+        }
+
+        $users = DB::table('users') ->where('id', '=', $user->id)->update(
+            [
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'country' => $request->country,
+                'city' => $city,
+                'nic_number' => $request->nic_number,
+                'occupation' => $request->occupation,
+                'contact_number' => $request->contact_number,
+                'contact_number_two' => $request->contact_number_two,
+                'address' => $request->address
+            ]    
+        );
+
+        return back()->withFlashSuccess('Updated Successfully');
+                                
+       
+    }
+
+    
 
 }

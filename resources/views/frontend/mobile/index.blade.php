@@ -96,24 +96,35 @@
                 <a href="{{route('frontend.mobile.donation_list')}}">See All <i class="bi bi-chevron-right"></i></a>
             </div>
             <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="receiver">
-                        <div class="content-block">
-                            <div class="icon blue">F</div>
-                            <div class="text-block">
-                                <div class="name">Amila Nandiak</div>
-                                <div class="location">Ampara</div>
+
+                @if(count(App\Models\Receivers::where('assigned_agent',auth()->user()->id)->get()) != 0)
+                    @foreach(App\Models\Receivers::where('assigned_agent',auth()->user()->id)->take(3)->latest()->get() as $receiver)
+                        <li class="list-group-item">
+                            <div class="receiver">
+                                <div class="content-block">
+                                    @if($receiver->requirement == 'Other')
+                                        <div class="icon blue">O</div>
+                                    @else
+                                        @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
+                                            <img src="{{uploaded_asset(App\Models\Packages::where('id',$receiver->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
+                                        @endif
+                                    @endif
+                                    <div class="text-block">
+                                        <div class="name">{{$receiver->name}}</div>
+                                        <div class="location">{{$receiver->city}}</div>
+                                    </div>
+                                </div>
+                                <div class="button-block">
+                                    <a href="{{route('frontend.mobile.donation_info')}}" class="cta-btn btn-fill">
+                                        <div class="btn-text">Donate</div>
+                                    </a>
+                                    <a href="#" class="cta-link">View more</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="button-block">
-                            <a href="{{route('frontend.mobile.donation_info')}}" class="cta-btn btn-fill">
-                                <div class="btn-text">Donate</div>
-                            </a>
-                            <a href="#" class="cta-link">View more</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
+                        </li>
+                    @endforeach
+                @endif
+                <!-- <li class="list-group-item">
                     <div class="receiver">
                         <div class="content-block">
                             <div class="icon purple">M</div>
@@ -146,7 +157,7 @@
                             <a href="#" class="cta-link">View more</a>
                         </div>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
     </section>
