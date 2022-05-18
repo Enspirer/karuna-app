@@ -1,0 +1,101 @@
+.profile-menu-section {
+    .inner-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid $light-gray;
+            padding: 1rem 0;
+
+            img {
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+            }
+
+            .text-block {
+                flex: 1;
+
+                .text {
+                    font-size: .75rem;
+                    font-weight: 300;
+                    color: $text-black;
+                }
+
+                .name {
+                    font-size: .9rem;
+                    font-weight: 400;
+                    color: $text-black;
+                }
+            }
+
+            .btn-sign-out {
+                text-decoration: none;
+
+                .bi {
+                    color: $gray;
+
+                    &::before {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+
+        .profile-menu {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            .nav-item {
+                .nav-link {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 1.5rem;
+
+                    .text {
+                        font-size: .9rem;
+                        font-weight: 300;
+                        color: $text-black;
+                    }
+                }
+            }
+        }
+
+        .help-btn {
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            background-color: rgba($color: $primary-green, $alpha: 0.2);
+            width: fit-content;
+            margin: auto;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+
+            .bi {
+                color: $primary-green;
+
+                &::before {
+                    font-size: 2rem;
+                }
+            }
+
+            .btn-text {
+                font-weight: 300;
+                font-size: 1rem;
+                color: $primary-green;
+            }
+        }
+    }
+}

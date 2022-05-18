@@ -1,0 +1,54 @@
+.success-msg-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 105px);
+
+    .inner-wrapper {
+        width: 300px;
+        margin: auto;
+        text-align: center;
+
+        .bi {
+            color: $green;
+
+            &::before {
+                font-size: 4rem;
+            }
+        }
+
+        .title {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: $text-black;
+            margin: 1.5rem 0 .25rem;
+        }
+
+        .amount {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: $text-black;
+            margin-bottom: .5rem;
+
+            span {
+                font-size: .9rem;
+                font-weight: 300;
+                color: $text-black;
+            }
+        }
+
+        .text {
+            font-size: .8rem;
+            font-weight: 300;
+            color: $gray;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-btn {
+            margin: auto;
+            width: 90px;
+            border-radius: 5px;
+        }
+    }
+}

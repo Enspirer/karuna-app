@@ -1,0 +1,84 @@
+.form-section {
+    margin: 1rem 0;
+
+    .frm-row {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.25rem;
+
+        &:not(:nth-last-child(1)) {
+            margin-bottom: 1.25rem;
+        }
+
+        .frm-col {
+            position: relative;
+            flex: 1;
+        }
+
+        .frm-col-10 {
+            position: relative;
+            flex: 0 0 80%;
+        }
+
+        .frm-col-2 {
+            position: relative;
+            flex: 0 0 20%;
+        }
+
+        .form-switch {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+
+            .form-check-input {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .form-label {
+            font-size: 0.7rem;
+            font-weight: 300;
+            background-color: #F9F9FB;
+            padding: 0 0.5rem;
+            margin: 0;
+            position: absolute;
+            top: -8px;
+            left: 1rem;
+
+            span {
+                font-size: 0.7rem;
+                font-weight: 300;
+            }
+        }
+
+        .form-control,
+        .form-select {
+            font-size: .9rem;
+            font-weight: 300;
+            height: 45px;
+            background-color: transparent;
+
+            &:focus,
+            &:active {
+                border-color: $primary-green;
+                box-shadow: none;
+            }
+        }
+
+        .form-group {
+            margin: 0;
+            padding: 1rem 0;
+        }
+
+        .cta-btn {
+            width: 100%;
+            border-radius: 5px;
+            height: 45px;
+        }
+    }
+}
