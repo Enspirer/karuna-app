@@ -93,4 +93,9 @@ class MobileController extends Controller
     {
         return view('frontend.mobile.payment_history');
     }
+
+    public function receivers_list()
+    {
+        return view('frontend.mobile.receivers_list');
+    }
 }

@@ -45,6 +45,28 @@
                         font-weight: 300;
                         color: $text-black;
                     }
+
+                    .indicator {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+
+                        &.orange {
+                            background-color: $orange;
+                        }
+
+                        &.green {
+                            background-color: $green;
+                        }
+
+                        &.red {
+                            background-color: $red;
+                        }
+
+                        &.black {
+                            background-color: $black;
+                        }
+                    }
                 }
             }
         }
