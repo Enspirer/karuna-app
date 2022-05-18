@@ -27,6 +27,44 @@
             flex: 0 0 20%;
         }
 
+        .title {
+            text-align: center;
+            font-size: .9rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+
+            &.red {
+                color: $red;
+            }
+        }
+
+        .text {
+            font-size: .8rem;
+            font-weight: 300;
+            color: $gray;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto .5rem;
+        }
+
+        .name {
+            font-size: .9rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .star-rating {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            .bi {
+                color: #FFC400;
+            }
+        }
+
         .form-switch {
             display: flex;
             flex-direction: row;

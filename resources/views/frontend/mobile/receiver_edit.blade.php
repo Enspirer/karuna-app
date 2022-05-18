@@ -9,33 +9,6 @@
 <section class="form-section">
     <div class="mobile-container">
         <form action="">
-            <!-- Profile Picture -->
-            <div class="frm-row">
-                <label class="form-label">Upload Profile Picture <span>(Optional)</span></label>
-                <div class="form-group">
-                    <div class="input-group" data-toggle="aizuploader" data-type="image">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
-                        </div>
-                        <div class="form-control file-amount">Choose File</div>
-                        <input type="hidden" name="cover_image" class="selected-files" >
-                    </div>
-                    <div class="file-preview box sm">
-                    </div>
-                </div> 
-            </div>
-            <div class="frm-row">
-                <div class="frm-col">
-                    <div class="name">Mis. Inoka Perera</div>
-                    <div class="star-rating">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star"></i>
-                    </div>
-                </div>
-            </div>
             <!-- Name -->
             <div class="frm-row">
                 <div class="frm-col-10">
@@ -113,6 +86,71 @@
                 <label class="form-label">ID</label>
                 <input type="text" class="form-control" name="nic" value="541248742#" readonly>
             </div>
+            <!-- Add Images -->
+            <div class="frm-row">
+                <div class="border-wrappre">
+                    <label class="form-label">Add Images <span>(Optional)</span></label>
+                    <div class="form-group">
+                        <div class="input-group" data-toggle="aizuploader" data-type="image">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                            </div>
+                            <div class="form-control file-amount">Choose File</div>
+                            <input type="hidden" name="cover_image" class="selected-files" >
+                        </div>
+                        <div class="file-preview box sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add short video clips -->
+            <div class="frm-row">
+                <div class="border-wrappre">
+                    <label class="form-label">Add short video clips <span>(Optional)</span></label>
+                    <div class="form-group">
+                        <div class="input-group" data-toggle="aizuploader" data-type="image">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                            </div>
+                            <div class="form-control file-amount">Choose File</div>
+                            <input type="hidden" name="cover_image" class="selected-files" >
+                        </div>
+                        <div class="file-preview box sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Voice Out -->
+            <div class="frm-row">
+                <div class="border-wrappre">
+                    <label class="form-label">Add Voice Out <span>(Optional)</span></label>
+                    <div class="form-group">
+                        <div class="input-group" data-toggle="aizuploader" data-type="image">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                            </div>
+                            <div class="form-control file-amount">Choose File</div>
+                            <input type="hidden" name="cover_image" class="selected-files" >
+                        </div>
+                        <div class="file-preview box sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Requirement -->
+            <div class="frm-row">
+                <label class="form-label">Requirement</label>
+                <select class="form-select">
+                    <option selected disabled>Choose...</option>
+                    <option>Medicine</option>
+                    <option>Food</option>
+                </select>
+            </div>
+            <!-- About the donation -->
+            <div class="frm-row">
+                <label class="form-label">About the donation</label>
+                <textarea class="form-control" name="donation_about" rows="3"></textarea>
+            </div>
             <!-- Submit Button -->
             <div class="frm-row">
                 <button type="submit" class="cta-btn btn-fill">
@@ -123,7 +161,7 @@
     </div>
 </section>
 
-@include('frontend.mobile.includes.bottom_nav')
+@include('frontend.mobile.includes.agent_bottom_nav')
 
 @endsection
 

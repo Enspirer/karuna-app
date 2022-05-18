@@ -1291,7 +1291,7 @@ body .mobile-body {
 }
 
 .agent-bottom-nav-section {
-  height: 56px;
+  height: 80px;
 }
 .agent-bottom-nav-section .inner-wrapper {
   position: fixed;
@@ -1433,6 +1433,38 @@ body .mobile-body {
   position: relative;
   flex: 0 0 20%;
 }
+.form-section .frm-row .title {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+.form-section .frm-row .title.red {
+  color: #FF0000;
+}
+.form-section .frm-row .text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #767676;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 0.5rem;
+}
+.form-section .frm-row .name {
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: center;
+}
+.form-section .frm-row .star-rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.form-section .frm-row .star-rating .bi {
+  color: #FFC400;
+}
 .form-section .frm-row .form-switch {
   display: flex;
   flex-direction: row;
@@ -1516,6 +1548,11 @@ body .mobile-body {
   font-size: 0.8rem;
   font-weight: 300;
   color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .table-section .mobile-table tbody .m-tr .m-td .indicator {
   width: 10px;
