@@ -1056,6 +1056,8 @@
   gap: 1rem;
   width: 100%;
   max-width: 350px;
+  max-height: 350px;
+  overflow-y: scroll;
   margin: auto;
 }
 .section-join .inner-wrapper .content-block .join-form .join-form-row.hidden-row {
@@ -2145,6 +2147,279 @@
   }
   .navigation-bar .navbar-collapse .navbar-nav {
     gap: 0.5rem;
+  }
+}
+.profile-section {
+  margin: 7rem 0;
+}
+.profile-section .inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.profile-section .inner-wrapper .info-block {
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid #1FC39E;
+  position: relative;
+  flex: 0 0 35%;
+}
+.profile-section .inner-wrapper .info-block .receiver-header {
+  text-align: center;
+}
+.profile-section .inner-wrapper .info-block .receiver-header .image-block {
+  position: relative;
+  margin-bottom: 3rem;
+}
+.profile-section .inner-wrapper .info-block .receiver-header .image-block .cover {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.profile-section .inner-wrapper .info-block .receiver-header .image-block .dp {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.profile-section .inner-wrapper .info-block .receiver-header .title {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+  color: #333;
+}
+.profile-section .inner-wrapper .info-block .receiver-header .status {
+  width: fit-content;
+  margin: 0.5rem auto 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  padding: 0.5em 0.75em;
+  border-radius: 30px;
+  background-color: #FFBB00;
+}
+.profile-section .inner-wrapper .info-block .receiver-header .text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #767676;
+  margin-bottom: 2rem;
+}
+.profile-section .inner-wrapper .info-block .receiver-header .cta-btn {
+  position: absolute;
+  height: 40px;
+  bottom: -20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.profile-section .inner-wrapper .info-block .header {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+.profile-section .inner-wrapper .info-block .header .dp {
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.profile-section .inner-wrapper .info-block .header .title {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+  color: #333;
+}
+.profile-section .inner-wrapper .info-block .header .star-rating .bi {
+  color: #FFBB00;
+}
+.profile-section .inner-wrapper .info-block .header .status {
+  width: fit-content;
+  margin: 0.5rem auto 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  padding: 0.5em 0.75em;
+  border-radius: 30px;
+}
+.profile-section .inner-wrapper .info-block .header .status.donor {
+  background-color: #3AC400;
+}
+.profile-section .inner-wrapper .info-block .header .status.agent {
+  background-color: #971930;
+}
+.profile-section .inner-wrapper .info-block .header .text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #767676;
+}
+.profile-section .inner-wrapper .info-block .info {
+  padding: 1.25rem 0 1rem;
+}
+.profile-section .inner-wrapper .info-block .info .label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+}
+.profile-section .inner-wrapper .info-block .info .text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+.profile-section .inner-wrapper .content-block {
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  border: 1px solid #1FC39E;
+  flex: 1;
+}
+.profile-section .inner-wrapper .content-block .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.profile-section .inner-wrapper .content-block .header .title {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+}
+.profile-section .inner-wrapper .content-block .header .cta-link {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #1FC39E;
+  text-decoration: none;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item {
+  border: 1px solid #1FC39E;
+  border-radius: 10px;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item:not(:nth-last-child(1)) {
+  margin-bottom: 0.75rem;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button::after {
+  content: none;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button.collapsed {
+  border: none;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button:focus, .profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button:active {
+  box-shadow: none;
+  outline: none;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button .header-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button .header-block .no {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button .header-block .text {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.orange {
+  background-color: #E78834;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.red {
+  background-color: #FF0000;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-header .accordion-button .header-block .indicator.green {
+  background-color: #3AC400;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-collapse .accordion-body {
+  border-top: 1px solid #ddd;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-collapse .accordion-body .title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-collapse .accordion-body .text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #767676;
+}
+.profile-section .inner-wrapper .content-block .accordion .accordion-item .accordion-collapse .accordion-body .media {
+  margin: 1rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.profile-section .inner-wrapper .content-block .info {
+  padding: 0 0 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.profile-section .inner-wrapper .content-block .info .label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+}
+.profile-section .inner-wrapper .content-block .info .text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+.profile-section .inner-wrapper .content-block .profile-slider {
+  margin: 1rem 0;
+}
+.profile-section .inner-wrapper .content-block .profile-slider .splide__slide .slider-link {
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 991px) {
+  .profile-section .inner-wrapper {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 575px) {
+  .profile-section .inner-wrapper .info-block .info {
+    text-align: center;
+  }
+  .profile-section .inner-wrapper .content-block .header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .profile-section .inner-wrapper .content-block .info {
+    text-align: center;
   }
 }
 

@@ -53,6 +53,21 @@ class HomeController extends Controller
         return view('frontend.about_us');
     }
 
+    public function donor_profile()
+    {
+        return view('frontend.donor_profile');
+    }
+
+    public function agent_profile()
+    {
+        return view('frontend.agent_profile');
+    }
+
+    public function receiver_profile()
+    {
+        return view('frontend.receiver_profile');
+    }
+
     public function find_agent_details($city)
     {
         // dd($city);

@@ -1,0 +1,345 @@
+.profile-section {
+    margin: 7rem 0;
+
+    .inner-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+        .info-block {
+            border-radius: 10px;
+            padding: 1rem;
+            border: 1px solid $primary-green;
+            position: relative;
+            flex: 0 0 35%;
+
+            .receiver-header {
+                text-align: center;
+
+                .image-block {
+                    position: relative;
+                    margin-bottom: 3rem;
+
+                    .cover {
+                        width: 100%;
+                        height: 150px;
+                        object-fit: cover;
+                        object-position: center;
+                        border-radius: 10px;
+                    }
+
+                    .dp {
+                        width: 90px;
+                        height: 90px;
+                        object-fit: cover;
+                        object-position: center;
+                        border: 2px solid white;
+                        border-radius: 50%;
+                        position: absolute;
+                        bottom: -35px;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                    }
+                }
+
+                .title {
+                    font-size: 1rem;
+                    line-height: 1;
+                    font-weight: 400;
+                    color: $text-black;
+                }
+
+                .status {
+                    width: fit-content;
+                    margin: 0.5rem auto 0.75rem;
+                    font-size: .8rem;
+                    font-weight: 400;
+                    color: $white;
+                    line-height: 1;
+                    padding: 0.5em 0.75em;
+                    border-radius: 30px;
+                    background-color: $yellow;
+                }
+
+                .text {
+                    font-size: .8rem;
+                    font-weight: 300;
+                    color: $gray;
+                    margin-bottom: 2rem;
+                }
+
+                .cta-btn {
+                    position: absolute;
+                    height: 40px;
+                    bottom: -20px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                }
+            }
+
+            .header {
+                padding: 1rem;
+                border-bottom: 1px solid $light-gray;
+                text-align: center;
+
+                .dp {
+                    display: block;
+                    margin: auto;
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 50%;
+                    margin-bottom: 1rem;
+                }
+
+                .title {
+                    font-size: 1rem;
+                    line-height: 1;
+                    font-weight: 400;
+                    color: $text-black;
+                }
+
+                .star-rating {
+                    .bi {
+                        color: $yellow;
+                    }
+                }
+
+                .status {
+                    width: fit-content;
+                    margin: 0.5rem auto 0.75rem;
+                    font-size: .8rem;
+                    font-weight: 400;
+                    color: $white;
+                    line-height: 1;
+                    padding: 0.5em 0.75em;
+                    border-radius: 30px;
+
+                    &.donor {
+                        background-color: $green;
+                    }
+
+                    &.agent {
+                        background-color: $maroon;
+                    }
+                }
+
+                .text {
+                    font-size: .8rem;
+                    font-weight: 300;
+                    color: $gray;
+                }
+            }
+
+            .info {
+                padding: 1.25rem 0 1rem;
+
+                .label {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: $text-black;
+                }
+
+                .text {
+                    font-size: .9rem;
+                    font-weight: 300;
+                    margin-bottom: 0.75rem;
+                }
+            }
+        }
+
+        .content-block {
+            border-radius: 10px;
+            padding: 1.5rem 2rem;
+            border: 1px solid $primary-green;
+            flex: 1;
+
+            .header {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 1rem;
+
+                .title {
+                    font-size: 1rem;
+                    font-weight: 300;
+                    color: $text-black;
+                }
+
+                .cta-link {
+                    font-size: .8rem;
+                    font-weight: 400;
+                    color: $primary-green;
+                    text-decoration: none;
+                }
+            }
+
+            .accordion {
+                .accordion-item {
+                    border: 1px solid $primary-green;
+                    border-radius: 10px;
+
+                    &:not(:nth-last-child(1)) {
+                        margin-bottom: .75rem;
+                    }
+
+                    .accordion-header {
+
+                        .accordion-button {
+                            border: none;
+                            box-shadow: none;
+                            background-color: transparent;
+
+                            &::after {
+                                content: none;
+                            }
+
+                            &.collapsed {
+                                border: none;
+                            }
+
+                            &:focus,
+                            &:active {
+                                box-shadow: none;
+                                outline: none;
+                            }
+
+                            .header-block {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                gap: 2rem;
+                                width: 100%;
+
+                                .no {
+                                    background-color: $white;
+                                    width: 30px;
+                                    height: 30px;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 50%;
+                                    border: 1px solid $light-gray;
+                                    font-size: 1rem;
+                                    font-weight: 300;
+                                    color: $text-black;
+                                }
+
+                                .text {
+                                    flex: 1;
+                                    font-size: .9rem;
+                                    font-weight: 300;
+                                    color: $text-black;
+                                }
+
+                                .indicator {
+                                    width: 10px;
+                                    height: 10px;
+                                    border-radius: 50%;
+
+                                    &.orange {
+                                        background-color: $orange;
+                                    }
+
+                                    &.red {
+                                        background-color: $red;
+                                    }
+
+                                    &.green {
+                                        background-color: $green;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .accordion-collapse {
+                        .accordion-body {
+                            border-top: 1px solid $light-gray;
+
+                            .title {
+                                font-size: .9rem;
+                                font-weight: 400;
+                                margin-bottom: 0.25rem;
+                                color: $text-black;
+                            }
+
+                            .text {
+                                font-size: .8rem;
+                                font-weight: 300;
+                                color: $gray;
+                            }
+
+                            .media {
+                                margin: 1rem 0;
+                                gap: 0.5rem;
+                                flex-wrap: wrap;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .info {
+                padding: 0 0 1rem;
+                border-bottom: 1px solid $light-gray;
+
+                .label {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: $text-black;
+                }
+
+                .text {
+                    font-size: .9rem;
+                    font-weight: 300;
+                    margin-bottom: 0.75rem;
+                }
+            }
+
+            .profile-slider {
+                margin: 1rem 0;
+
+                .splide__slide {
+                    .slider-link {
+                        padding: .5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .profile-section {
+        .inner-wrapper {
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .profile-section {
+        .inner-wrapper {
+            .info-block {
+                .info {
+                    text-align: center;
+                }
+            }
+
+            .content-block {
+                .header {
+                    flex-direction: column;
+                    gap: .5rem;
+                }
+
+                .info {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
