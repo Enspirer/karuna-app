@@ -2,7 +2,7 @@
     <div class="profile-block">
         <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
         <div class="content-block">
-            <div class="name">Mr. Nadika Perera</div>
+            <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
             <div class="status agent">Agent</div>
         </div>
     </div>

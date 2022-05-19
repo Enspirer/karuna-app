@@ -12,7 +12,7 @@
         </li>
     </ul>
     <div class="greating-block">
-        <div class="message">Good Morning, Mr. Nadika</div>
+        <div class="message">Good Morning, {{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
         <a  type="button" href="#" class="cta-btn btn-fill" data-bs-toggle="modal" data-bs-target="#createDonation">
             <div class="btn-text">Create Donation</div>
         </a>
@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="file-preview box sm">
                                         </div>
-                                    </div> 
+                                    </div>
 
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                                         </div>
                                         <div class="file-preview box sm">
                                         </div>
-                                    </div> 
+                                    </div>
 
                                 </div>
                             </div>
@@ -503,7 +503,7 @@
                                         </div>
                                         <div class="file-preview box sm">
                                         </div>
-                                    </div> 
+                                    </div>
                             </div>
                             <div class="col-md-1">
                                 <div class="tooltip-block">
@@ -548,7 +548,7 @@
                                         </div>
                                         <div class="file-preview box sm">
                                         </div>
-                                    </div> 
+                                    </div>
                             </div>
                             <div class="col-md-1">
                                 <div class="tooltip-block">
@@ -589,7 +589,7 @@
                                         </div>
                                         <div class="file-preview box sm">
                                         </div>
-                                    </div> 
+                                    </div>
                             </div>
                             <div class="col-md-1">
                                 <div class="tooltip-block">
@@ -643,7 +643,7 @@
                         </div>
 
                         <!-- About the donation -->
-                      
+
                         <div class="row g-0 mb-3" id="other_description_hide" style="display: none;">
                             <div class="col-md-11">
                                 <label class="pro-label">Other Description</label>
@@ -690,14 +690,14 @@
                                     <div class="col-md-4">
                                         <label class="pro-label">Bank Name</label>
                                         <input type="text" class="form-control" name="bank_name">
-                                    </div>                            
+                                    </div>
                                 </div>
                                 <div class="row g-0 mb-5">
                                     <div class="col-md-11">
                                         <label class="pro-label">Branch Name</label>
                                         <input type="text" class="form-control" name="branch_name">
-                                    </div>                          
-                                </div>                                
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -708,7 +708,7 @@
                                 </button>
                             </div>
                         </div>
-                        
+
 
                     </div>
                 </form>
