@@ -207,95 +207,85 @@
 }
 
 .feature-section {
-  margin: 5rem 0 10rem;
+  padding: 5rem 0 10rem;
+  background: url("../../images/landing-page/home/feature-back.png");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: repeat;
 }
-.feature-section .title-block {
+.feature-section .inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.feature-section .inner-wrapper .content-block {
+  flex: 1;
+}
+.feature-section .inner-wrapper .content-block .content-wrapper {
+  width: 80%;
+}
+.feature-section .inner-wrapper .content-block .content-wrapper .title-block {
   position: relative;
-  margin-bottom: 5rem;
+  margin-bottom: 1.5rem;
 }
-.feature-section .title-block .title {
-  text-align: center;
+.feature-section .inner-wrapper .content-block .content-wrapper .title-block .subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #333;
+  position: relative;
+  z-index: 1;
+}
+.feature-section .inner-wrapper .content-block .content-wrapper .title-block .title {
   font-size: 2rem;
   font-weight: 400;
   color: #333;
   position: relative;
   z-index: 1;
 }
-.feature-section .title-block .title span {
-  font-size: 2.5rem;
+.feature-section .inner-wrapper .content-block .content-wrapper .title-block .title span {
+  font-size: 2rem;
   font-weight: 400;
   color: #1FC39E;
 }
-.feature-section .title-block img {
+.feature-section .inner-wrapper .content-block .content-wrapper .title-block img {
   position: absolute;
-  width: 200px;
-  left: 50%;
-  bottom: -15%;
-  transform: translate(-50%, 0);
+  width: 175px;
+  right: 5%;
+  top: 40%;
   z-index: 0;
 }
-.feature-section .content {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
+.feature-section .inner-wrapper .content-block .content-wrapper .text {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 2rem;
 }
-.feature-section .content .feature-block {
-  position: relative;
+.feature-section .inner-wrapper .card-block {
   flex: 1;
-}
-.feature-section .content .feature-block .feature-icon {
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 1;
-}
-.feature-section .content .feature-block .feature-back {
-  position: absolute;
-  z-index: 0;
-  bottom: -15%;
-  right: 20%;
-  width: 300px;
-}
-.feature-section .content .feature-block .title-block {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 1;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
-.feature-section .content .feature-block .title-block .text {
-  font-size: 22px;
+.feature-section .inner-wrapper .card-block .package-card {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  flex: 0 0 45%;
+}
+.feature-section .inner-wrapper .card-block .package-card .title {
+  font-size: 1rem;
   font-weight: 400;
+  margin: 1rem 0 0.25rem;
   color: #333;
 }
-.feature-section .content .feature-block .title-block .icon {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  font-weight: 400;
-  color: #fff;
-}
-.feature-section .content .feature-block .title-block .icon.blue {
-  background-color: #00BDC4;
-}
-.feature-section .content .feature-block .title-block .icon.purple {
-  background-color: #C4004E;
-}
-.feature-section .content .feature-block .title-block .icon.green {
-  background-color: #3AC400;
-}
-.feature-section .content .feature-block .text {
-  color: #767676;
+.feature-section .inner-wrapper .card-block .package-card .text {
   font-size: 0.9rem;
   font-weight: 300;
-  position: relative;
-  z-index: 1;
+  color: #767676;
 }
 
 .gratitude-section {
@@ -638,19 +628,6 @@
   .hero-section .hero-slider .splide__pagination {
     right: 50%;
     transform: translate(50%, 0);
-  }
-
-  .feature-section .content {
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-    gap: 3rem;
-  }
-  .feature-section .content .feature-block {
-    text-align: center;
-  }
-  .feature-section .content .feature-block .title-block {
-    justify-content: center;
   }
 
   .gratitude-section .inner-wrapper {

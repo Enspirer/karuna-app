@@ -75,35 +75,41 @@
 
 <section class="feature-section">
     <div class="container">
-        <div class="title-block">
-            <div class="title">Bring <span>JOY</span> to those around you</div>
-            <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
-        </div>
-        <div class="content">
-            <div class="feature-block">
-                <img src="{{url('images/landing-page/home/food-icon.png')}}" alt="" class="feature-icon">
-                <div class="title-block">
-                    <div class="text">Food</div>
-                    <div class="icon blue">F</div>
+        <div class="inner-wrapper">
+            <div class="content-block">
+                <div class="content-wrapper">
+                    <div class="title-block">
+                        <div class="subtitle">Packages</div>
+                        <div class="title">This is Karuna <span>Packages</span><br>that you can give</div>
+                        <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
+                    </div>
+                    <div class="text">Karuna project is a digital platform for collecting donations to be distributed to people in need. We build strength, stability, and self-reliance through shelter.</div>
+                    <a href="#" class="cta-btn btn-fill">
+                        <div class="btn-text">Donate Now</div>
+                    </a>
                 </div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever</div>
             </div>
-            <div class="feature-block">
-                <img src="{{url('images/landing-page/home/medic-icon.png')}}" alt="" class="feature-icon">
-                <img src="{{url('images/landing-page/home/medic-background.svg')}}" alt="" class="feature-back">
-                <div class="title-block">
-                    <div class="text">Medicine</div>
-                    <div class="icon purple">M</div>
+            <div class="card-block">
+                <div class="package-card">
+                    <img src="{{url('images/landing-page/home/food-icon.png')}}" alt="">
+                    <div class="title">Healthy Food</div>
+                    <div class="text">The assistance provided ishealthy food used for cooking and eating</div>
                 </div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever</div>
-            </div>
-            <div class="feature-block">
-                <img src="{{url('images/landing-page/home/school-icon.png')}}" alt="" class="feature-icon">
-                <div class="title-block">
-                    <div class="text">School Items</div>
-                    <div class="icon green">S</div>
+                <div class="package-card">
+                    <img src="{{url('images/landing-page/home/medic-icon.png')}}" alt="">
+                    <div class="title">Medicine</div>
+                    <div class="text">The assistance provided is some of medicine for various diseases</div>
                 </div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever</div>
+                <div class="package-card">
+                    <img src="{{url('images/landing-page/home/school-icon.png')}}" alt="">
+                    <div class="title">School Items</div>
+                    <div class="text">The assistance provided is School Items for poor family.</div>
+                </div>
+                <div class="package-card">
+                    <img src="{{url('images/landing-page/home/other-icon.png')}}" alt="">
+                    <div class="title">Other</div>
+                    <div class="text">The assistance provided is any other product if you can</div>
+                </div>
             </div>
         </div>
     </div>

@@ -147,86 +147,95 @@
 }
 
 .feature-section {
-    margin: 5rem 0 10rem;
+    padding: 5rem 0 10rem;
+    background: url('../../images/landing-page/home/feature-back.png');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: repeat;
 
-    .title-block {
-        position: relative;
-        margin-bottom: 5rem;
-
-        .title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 400;
-            color: $text-black;
-            position: relative;
-            z-index: 1;
-
-            span {
-                font-size: 2.5rem;
-                font-weight: 400;
-                color: $primary-green;
-            }
-        }
-
-        img {
-            position: absolute;
-            width: 200px;
-            left: 50%;
-            bottom: -15%;
-            transform: translate(-50%, 0);
-            z-index: 0;
-        }
-    }
-
-    .content {
+    .inner-wrapper {
         display: flex;
         flex-direction: row;
-        gap: 2rem;
+        align-items: center;
 
-        .feature-block {
-            position: relative;
+        .content-block {
             flex: 1;
 
-            .feature-icon {
-                margin-bottom: .5rem;
-                position: relative;
-                z-index: 1;
-            }
+            .content-wrapper {
+                width: 80%;
 
-            .feature-back {
-                position: absolute;
-                z-index: 0;
-                bottom: -15%;
-                right: 20%;
-                width: 300px;
-            }
+                .title-block {
+                    position: relative;
+                    margin-bottom: 1.5rem;
 
-            .title-block {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 2rem;
-                margin-bottom: .5rem;
-                position: relative;
-                z-index: 1;
+                    .subtitle {
+                        font-size: 1.1rem;
+                        font-weight: 300;
+                        text-transform: uppercase;
+                        color: $text-black;
+                        position: relative;
+                        z-index: 1;
+                    }
+
+                    .title {
+                        font-size: 2rem;
+                        font-weight: 400;
+                        color: $text-black;
+                        position: relative;
+                        z-index: 1;
+
+                        span {
+                            font-size: 2rem;
+                            font-weight: 400;
+                            color: $primary-green;
+                        }
+                    }
+
+                    img {
+                        position: absolute;
+                        width: 175px;
+                        right: 5%;
+                        top: 40%;
+                        z-index: 0;
+                    }
+                }
 
                 .text {
-                    font-size: 22px;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    color: $text-black;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        .card-block {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 3rem;
+
+            .package-card {
+                padding: 1rem;
+                background-color: $white;
+                border-radius: 3px;
+                text-align: center;
+                box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+                flex: 0 0 45%;
+
+                .title {
+                    font-size: 1rem;
                     font-weight: 400;
+                    margin: 1rem 0 0.25rem;
                     color: $text-black;
                 }
 
-                .icon {
-                    @include icon;
+                .text {
+                    font-size: .9rem;
+                    font-weight: 300;
+                    color: $gray;
                 }
-            }
-
-            .text {
-                color: $gray;
-                font-size: .9rem;
-                font-weight: 300;
-                position: relative;
-                z-index: 1;
             }
         }
     }
@@ -549,6 +558,8 @@
     }
 }
 
+@media screen and (max-width: 1199px) {}
+
 @media screen and (max-width: 991px) {
     .hero-section {
         .hero-slider {
@@ -570,23 +581,6 @@
             .splide__pagination {
                 right: 50%;
                 transform: translate(50%, 0);
-            }
-        }
-    }
-
-    .feature-section {
-        .content {
-            flex-direction: column;
-            max-width: 400px;
-            margin: auto;
-            gap: 3rem;
-
-            .feature-block {
-                text-align: center;
-
-                .title-block {
-                    justify-content: center;
-                }
             }
         }
     }
