@@ -558,7 +558,36 @@
     }
 }
 
-@media screen and (max-width: 1199px) {}
+@media screen and (max-width: 1199px) {
+    .feature-section {
+        .inner-wrapper {
+            flex-direction: column;
+            gap: 4rem;
+
+            .content-block {
+                .content-wrapper {
+                    margin: auto;
+                    text-align: center;
+
+                    .title-block {
+
+                        img {
+                            right: 15%;
+                        }
+                    }
+
+                    .cta-btn {
+                        margin: auto;
+                    }
+                }
+            }
+
+            .card-block {
+                justify-content: center;
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 991px) {
     .hero-section {
@@ -653,6 +682,21 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .feature-section {
+        .inner-wrapper {
+
+            .content-block {
+                .content-wrapper {
+                    width: 100%;
+                }
+            }
+
+            .card-block {
+                gap: 1rem;
             }
         }
     }
