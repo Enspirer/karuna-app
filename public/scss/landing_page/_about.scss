@@ -1,0 +1,259 @@
+.about-hero-section {
+    height: 100vh;
+    background: url('../../images/landing-page/about/about-back.png');
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .inner-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(0, -50%);
+        width: 35%;
+
+        .title-block {
+            position: relative;
+            margin-bottom: 0.75rem;
+
+            .title {
+                font-size: 3rem;
+                font-weight: 400;
+                color: $text-black;
+                position: relative;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                width: 200px;
+                top: 25%;
+                left: 5%;
+                z-index: 0;
+            }
+        }
+
+        .text {
+            font-size: 1rem;
+            font-weight: 400;
+            color: $gray;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.hero-img-section {
+    margin-top: -15%;
+    margin-bottom: 5rem;
+    position: relative;
+
+    .image-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        img {
+            &:nth-child(1) {
+                width: 52%;
+            }
+
+            &:nth-child(2) {
+                width: 40%;
+            }
+        }
+    }
+}
+
+.mission-section {
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid $light-gray;
+
+    .inner-wrapper {
+        text-align: center;
+        width: 70%;
+        margin: auto;
+
+        .title {
+            font-size: .9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: $primary-green;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.1rem;
+            color: $text-black;
+        }
+
+        .text {
+            font-size: 1rem;
+            font-weight: 300;
+            color: $text-black;
+        }
+    }
+}
+
+.text-section {
+    position: relative;
+    margin-bottom: 5rem;
+
+    .inner-wrapper {
+        width: 50%;
+        margin-left: auto;
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1.25rem;
+            color: $text-black;
+        }
+
+        .text {
+            font-size: .9rem;
+            font-weight: 300;
+            color: $text-black;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.about-feature-section {
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
+    .image-block {
+        flex: 1;
+        position: relative;
+
+        .main {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .grid-img {
+            position: absolute;
+            z-index: 0;
+
+            &.top {
+                top: -10%;
+                left: 15%;
+            }
+
+            &.bottom {
+                bottom: -10%;
+                right: -10%;
+            }
+        }
+    }
+
+    .content-block {
+        flex: 1;
+
+        .content-wrapper {
+            width: 70%;
+            margin: auto;
+
+            .title {
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin-bottom: 1.25rem;
+                color: $text-black;
+            }
+
+            .text {
+                font-size: .9rem;
+                font-weight: 300;
+                color: $text-black;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+.agent-section {
+    padding: 5rem 0;
+
+    .title-block {
+        position: relative;
+        margin-bottom: 3rem;
+
+        .title {
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 400;
+            color: $text-black;
+            position: relative;
+            z-index: 1;
+        }
+
+        img {
+            position: absolute;
+            width: 200px;
+            left: 50%;
+            bottom: -20%;
+            transform: translate(-50%, 0);
+            z-index: 0;
+        }
+    }
+
+    .text {
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        font-weight: 300;
+        color: $text-black;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-btn {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-hero-section {
+        .inner-wrapper {
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 60%;
+
+            .title-block {
+                img {
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                }
+            }
+        }
+    }
+
+    .text-section {
+        .inner-wrapper {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+    }
+
+    .about-feature-section {
+        flex-direction: column;
+        gap: 5rem;
+        overflow: hidden;
+
+        .content-block {
+            .content-wrapper {
+                text-align: center;
+            }
+        }
+    }
+}
