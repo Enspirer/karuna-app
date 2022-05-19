@@ -3,7 +3,11 @@
         <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
         <div class="content-block">
             <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
-            <div class="status agent">Agent</div>
+            @if(auth()->user()->user_type == 'Agent')
+                <div class="status agent">{{auth()->user()->user_type}}</div>
+            @elseif(auth()->user()->user_type == 'Donor')
+                <div class="status donor">{{auth()->user()->user_type}}</div>
+            @endif
         </div>
     </div>
     <div class="nav-search">
@@ -82,9 +86,17 @@
             <div class="text">Sign Out</div>
         </a>
         <div class="title">Onboarding</div>
-        <a href="#" class="create-donation">
-            <i class="bi bi-plus-lg"></i>
-            <div class="text">Create Donation</div>
-        </a>
+        @if(auth()->user()->user_type == 'Donor')
+            <a href="#" class="create-donation">
+                <i class="bi bi-plus-lg"></i>
+                <div class="text">Donate Now</div>
+            </a>
+        @elseif (auth()->user()->user_type == 'Agent')
+            <a href="#" class="create-donation">
+                <i class="bi bi-plus-lg"></i>
+                <div class="text">Create Donation</div>
+            </a>
+        @endif
+
     </div>
 </div>
