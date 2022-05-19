@@ -14,7 +14,7 @@
         <div class="title">Overview</div>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="{{url('dashboard/index')}}" class="nav-link {{Request::segment(2)=='index' ? 'active' :null }}">
+                <a href="{{url('dashboard/index')}}" class="nav-link {{Request::segment(2)=='index' ? 'active' :(Request::segment(2)=='receiver' ? 'active' :null) }}">
                     <div class="nav-nav">
                         <i class="bi bi-grid"></i>
                         <i class="bi active bi-grid-fill"></i>
