@@ -24,15 +24,20 @@
         @endif
 
     </div>
-    <div class="button-block">
-        <a href="{{url('dashboard/index')}}" class="nav-btn active">
-            <div class="btn-text">My Receivers</div>
-        </a>
-        <a href="{{route('frontend.dashboard.receiver_request_list')}}" class="nav-btn">
-            <div class="btn-text">Receivers Request</div>
-            <div class="status">75</div>
-        </a>
-    </div>
+    @if(auth()->user()->user_type == 'Agent')
+        <div class="button-block">
+            <a href="{{url('dashboard/index')}}" class="nav-btn active">
+                <div class="btn-text">My Receivers</div>
+            </a>
+            <a href="{{route('frontend.dashboard.receiver_request_list')}}" class="nav-btn">
+                <div class="btn-text">Receivers Request</div>
+                <div class="status">75</div>
+            </a>
+        </div>
+    @else
+
+    @endif
+
 </div>
 
 <!-- Create Donation Modal -->
