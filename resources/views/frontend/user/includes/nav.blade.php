@@ -43,20 +43,31 @@
                         <i class="bi bi-bell"></i>
                         <i class="bi active bi-bell-fill"></i>
                         <div class="text">Notification</div>
-                        <div class="status">15</div>
+                        <div class="status">{{\App\Models\Notification::where('user_id',auth()->user()->id)->count()}}</div>
                         <i class="bi flx active bi-chevron-right"></i>
                     </div>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('frontend.dashboard.payment_history')}}" class="nav-link {{Request::segment(2)=='payment-history' ? 'active' :null }}">
-                    <div class="nav-nav">
-                        <i class="bi bi-credit-card"></i>
-                        <i class="bi active bi-credit-card-fill"></i>
-                        <div class="text">Payment History</div>
-                        <i class="bi flx active bi-chevron-right"></i>
-                    </div>
-                </a>
+                @if(auth()->user()->user_type == 'Donor')
+                    <a href="{{route('frontend.dashboard.payment_history')}}" class="nav-link {{Request::segment(2)=='payment-history' ? 'active' :null }}">
+                        <div class="nav-nav">
+                            <i class="bi bi-credit-card"></i>
+                            <i class="bi active bi-credit-card-fill"></i>
+                            <div class="text">My Donate History</div>
+                            <i class="bi flx active bi-chevron-right"></i>
+                        </div>
+                    </a>
+                @elseif(auth()->user()->user_type == 'Agent')
+                    <a href="{{route('frontend.dashboard.payment_history')}}" class="nav-link {{Request::segment(2)=='payment-history' ? 'active' :null }}">
+                        <div class="nav-nav">
+                            <i class="bi bi-credit-card"></i>
+                            <i class="bi active bi-credit-card-fill"></i>
+                            <div class="text">Payment History</div>
+                            <i class="bi flx active bi-chevron-right"></i>
+                        </div>
+                    </a>
+                @endif
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
