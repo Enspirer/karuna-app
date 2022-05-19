@@ -61,34 +61,39 @@
 
     @elseif(auth()->user()->user_type == 'Agent')
         <section class="notification-section">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <a href="{{route('frontend.dashboard.notification_submit')}}" class="not-item">
-                        <i class="bi bi-x-circle-fill"></i>
-                        <div class="text-block">
-                            <div class="subject red">Waiting for you confirmation</div>
-                            <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+            @if(\App\Models\Notification::where('user_id',auth()->user()->id)->count() == 0)
+                <div class="table-container">
+                    <div class="row" style="margin: 50px 0px;">
+                        <div class="container">
+                            <div style="text-align: center;">
+                                <div style="background-image: url(&quot;http://localhost:8000/img/no_data.png&quot;); height: 300px; background-position: center center; background-repeat: no-repeat; background-size: contain;"></div>
+                                <h3>No any Notification found</h3>
+                            </div>
                         </div>
-                        <div class="time-block">
-                            <i class="bi bi-clock"></i>
-                            <div class="text">24 Apr 2022 at 9.30 AM</div>
-                        </div>
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="not-item">
-                        <i class="bi bi-x-circle-fill"></i>
-                        <div class="text-block">
-                            <div class="subject green">Waiting for you confirmation</div>
-                            <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
-                        </div>
-                        <div class="time-block">
-                            <i class="bi bi-clock"></i>
-                            <div class="text">24 Apr 2022 at 9.30 AM</div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+                    </div>
+                </div>
+            @else
+                <ul class="list-group list-group-flush">
+                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->get() as $notificatiosn)
+                        <li class="list-group-item">
+                            <a href="{{route('frontend.dashboard.notification_submit')}}" class="not-item">
+                                <i class="bi bi-x-circle-fill"></i>
+                                <div class="text-block">
+                                    <div class="subject red">{{$notificatiosn->title}}</div>
+                                    <div class="text">{{$notificatiosn->content}}</div>
+                                </div>
+                                <div class="time-block">
+                                    <i class="bi bi-clock"></i>
+                                    <div class="text">24 Apr 2022 at 9.30 AM</div>
+                                </div>
+                            </a>
+                        </li>
+                    @endforeach
+
+
+                </ul>
+            @endif
+
         </section>
     @endif
 
