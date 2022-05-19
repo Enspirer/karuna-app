@@ -111,7 +111,7 @@
     <script src="{{url('js/vendors.js')}}"></script>
     <script src="{{url('js/aiz-core.js')}}"></script>
 
-    <script>
+    <!-- <script>
 
     $(document).on('change','#country',function(){
 
@@ -146,7 +146,7 @@
         });
     });
     
-</script>
+</script> -->
 
 <script>
     function package_type(that) {
