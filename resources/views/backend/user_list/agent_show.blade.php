@@ -69,6 +69,16 @@
                                     </select>
                                 </div>
 
+                                <div class="form-group">
+                                    <label>Level</label>
+                                    <select class="form-control" name="level" required>
+                                        <option value="Level 1" {{$agent->level == 'Level 1' ? "selected" : ""}}>Level 1</option>   
+                                        <option value="Level 2" {{$agent->level == 'Level 2' ? "selected" : ""}}>Level 2</option>               
+                                        <option value="Level 3" {{$agent->level == 'Level 3' ? "selected" : ""}}>Level 3</option>               
+                                        <option value="Level 4" {{$agent->level == 'Level 4' ? "selected" : ""}}>Level 4</option>
+                                    </select>
+                                </div>
+
                                 <div class="row">
                                     <div class="col-6 mt-5 text-left">
                                         <a href="{{route('admin.agent.index')}}" type="button" class="btn rounded-pill text-light px-4 py-2 me-2 btn-primary">Back</a>

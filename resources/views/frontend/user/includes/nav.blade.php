@@ -14,7 +14,7 @@
         <div class="title">Overview</div>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="{{url('dashboard')}}" class="nav-link active">
+                <a href="{{url('dashboard/index')}}" class="nav-link {{Request::segment(2)=='index' ? 'active' :null }}">
                     <div class="nav-nav">
                         <i class="bi bi-grid"></i>
                         <i class="bi active bi-grid-fill"></i>
@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('frontend.dashboard.agent_profile')}}" class="nav-link">
+                <a href="{{route('frontend.dashboard.agent_profile')}}" class="nav-link {{Request::segment(3)=='agent' ? 'active' :null }}">
                     <div class="nav-nav">
                         <i class="bi bi-person"></i>
                         <i class="bi active bi-person-fill"></i>
@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('frontend.dashboard.notification')}}" class="nav-link">
+                <a href="{{route('frontend.dashboard.notification')}}" class="nav-link {{Request::segment(2)=='notification' ? 'active' :null }}">
                     <div class="nav-nav">
                         <i class="bi bi-bell"></i>
                         <i class="bi active bi-bell-fill"></i>
@@ -45,7 +45,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('frontend.dashboard.payment_history')}}" class="nav-link">
+                <a href="{{route('frontend.dashboard.payment_history')}}" class="nav-link {{Request::segment(2)=='payment-history' ? 'active' :null }}">
                     <div class="nav-nav">
                         <i class="bi bi-credit-card"></i>
                         <i class="bi active bi-credit-card-fill"></i>

@@ -44,7 +44,7 @@ Route::get('mobile/receiver-edit', [MobileController::class, 'receiver_edit'])->
 Route::get('mobile/view-profile', [MobileController::class, 'view_profile'])->name('mobile.view_profile');
 
 // Dashboard
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+// Route::get('dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
 Route::get('dashboard/receiver', [DashboardController::class, 'receiver'])->name('dashboard.receiver');
 Route::get('dashboard/receiver-request-list', [DashboardController::class, 'receiver_request_list'])->name('dashboard.receiver_request_list');
 Route::get('dashboard/receiver-request', [DashboardController::class, 'receiver_request'])->name('dashboard.receiver_request');
@@ -69,7 +69,7 @@ Route::get('uploads/all/{file_name}',[AizUploadController::class,'get_image_cont
 Route::group(['middleware' => ['auth', 'password_expires']], function () {
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         // User Dashboard Specific
-        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('dashboard/index', [DashboardController::class, 'index'])->name('dashboard');
 
         // User Account Specific
         Route::get('account', [AccountController::class, 'index'])->name('account');

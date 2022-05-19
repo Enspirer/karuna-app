@@ -5,7 +5,7 @@
     </a>
     <ul class="breadcrumb-nav">
         <li class="br-item">
-            <a href="{{url('dashboard')}}" class="br-link">Home</a>
+            <a href="{{url('dashboard/index')}}" class="br-link">Home</a>
         </li>
         <li class="br-item">
             <a href="#" class="br-link active">current</a>
@@ -18,7 +18,7 @@
         </a>
     </div>
     <div class="button-block">
-        <a href="{{url('dashboard')}}" class="nav-btn active">
+        <a href="{{url('dashboard/index')}}" class="nav-btn active">
             <div class="btn-text">My Receivers</div>
         </a>
         <a href="{{route('frontend.dashboard.receiver_request_list')}}" class="nav-btn">

@@ -22,6 +22,11 @@ class ListController extends Controller
         return view('backend.user_list.agent');
     }
 
+    public function agent_create()
+    {
+        return view('backend.user_list.agent_create');
+    }
+
     public function agent_show($id)
     {
         $agent = User::where('user_type','Agent')->where('id',$id)->first();
@@ -31,12 +36,55 @@ class ListController extends Controller
         ]);
     }
 
+    public function agent_store(RegisterRequest $request)
+    {
+        // dd($request);
+
+        $password = $request->password;
+        $password_confirmation = $request->password_confirmation;
+
+        if($password != $password_confirmation){
+            return back()->withErrors('The password confirmation does not match.'); 
+        }
+
+        $password_count = strlen($password);
+
+        if($password_count < 8){
+            return back()->withErrors('The password must be at least 8 characters.');          
+        }
+
+        $hashed_password = Hash::make($password);
+       
+        $add = new User;
+
+        $add->first_name=$request->first_name;
+        $add->last_name=$request->last_name;
+        $add->email=$request->email;
+        $add->user_type=$request->user_type;
+        $add->country=$request->country;
+        $add->city=$request->city;
+        $add->nic_number=$request->nic_number;
+        $add->occupation=$request->occupation;
+        $add->contact_number=$request->contact_number;
+        $add->contact_number_two=$request->contact_number_two;
+        $add->level='Level 1';
+        $add->address=$request->address;
+        $add->password=$hashed_password;
+        $add->confirmed=1; 
+
+        $add->save();
+
+        return redirect()->route('admin.agent.index')->withFlashSuccess('Added Successfully');
+    }
+
+
     public function agent_status_update(Request $request)
     {    
         // dd($request);
 
         $update = new DonateGigs;
         $update->confirmed=$request->confirmed;
+        $update->level=$request->level;
         
         User::whereId($request->hidden_id)->update($update->toArray());
 
@@ -77,6 +125,10 @@ class ListController extends Controller
         }
         return back();
     }
+
+
+
+    // **********************************************************************************************
 
     public function donor()
     {

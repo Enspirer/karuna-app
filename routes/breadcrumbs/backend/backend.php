@@ -102,4 +102,6 @@ Breadcrumbs::for('admin.receiver.edit', function ($trail) {
     $trail->push('Title Here', route('admin.receiver.edit',1));
 });
 
-
+Breadcrumbs::for('admin.agent.create', function ($trail) {
+    $trail->push('Create Agent', route('admin.agent.create'));
+});

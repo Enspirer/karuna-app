@@ -12,6 +12,8 @@
                 <div class="card-header">
                     <strong>Agent List&nbsp;</strong>
 
+                    <a href="{{route('admin.agent.create')}}" class="btn btn-info pull-right ml-4">Create New</a>
+
                 </div><!--card-header-->
 
                 <div class="card-body">
