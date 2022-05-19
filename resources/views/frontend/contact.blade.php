@@ -3,14 +3,15 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.contact.box_title'))
 
 @section('content')
-    <div class="row justify-content-center">
+
+    <!-- <div class="row justify-content-center">
         <div class="col col-sm-8 align-self-center">
             <div class="card">
                 <div class="card-header">
                     <strong>
                         @lang('labels.frontend.contact.box_title')
                     </strong>
-                </div><!--card-header-->
+                </div>
 
                 <div class="card-body">
                     {{ html()->form('POST', route('frontend.contact.send'))->open() }}
@@ -25,9 +26,9 @@
                                         ->attribute('maxlength', 191)
                                         ->required()
                                         ->autofocus() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col">
@@ -39,9 +40,9 @@
                                         ->placeholder(__('validation.attributes.frontend.email'))
                                         ->attribute('maxlength', 191)
                                         ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col">
@@ -53,9 +54,9 @@
                                         ->placeholder(__('validation.attributes.frontend.phone'))
                                         ->attribute('maxlength', 191)
                                         ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col">
@@ -67,35 +68,131 @@
                                         ->placeholder(__('validation.attributes.frontend.message'))
                                         ->attribute('rows', 3)
                                         ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
+                                </div>
+                            </div>
+                        </div>
 
                         @if(config('access.captcha.contact'))
                             <div class="row">
                                 <div class="col">
                                     @captcha
                                     {{ html()->hidden('captcha_status', 'true') }}
-                                </div><!--col-->
-                            </div><!--row-->
+                                </div>
+                            </div>
                         @endif
 
                         <div class="row">
                             <div class="col">
                                 <div class="form-group mb-0 clearfix">
                                     {{ form_submit(__('labels.frontend.contact.button')) }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
+                                </div>
+                            </div>
+                        </div>
                     {{ html()->form()->close() }}
-                </div><!--card-body-->
-            </div><!--card-->
-        </div><!--col-->
-    </div><!--row-->
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+<section class="contact-section">
+    <div class="header">
+        <div class="container">
+            <div class="text-block">
+                <div class="title">Get in Touch</div>
+                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+            </div>
+            <img src="{{url('images/landing-page/contact/grid.png')}}" alt="" class="grid-left">
+            <img src="{{url('images/landing-page/contact/grid.png')}}" alt="" class="grid-right">
+        </div>
+    </div>
+    <div class="body">
+        <div class="container">
+            <div class="contact-block">
+                <div class="contact-info">
+                    <div class="title">Contact Information</div>
+                    <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                    <ul class="contact-info">
+                        <li>
+                            <a href="tel:+947700000" class="contact-link">
+                                <i class="fa-solid fa-phone"></i>
+                                +94 77 00000
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@karuna.com" class="contact-link">
+                                <i class="fa-solid fa-at"></i>
+                                info@karuna.com
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="social-media">
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fa-brands fa-google-plus-g"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <img src="{{url('images/landing-page/contact/pattern.svg')}}" alt="">
+                </div>
+                <div class="contact-form">
+                    {{ html()->form('POST', route('frontend.contact.send'))->open() }}
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Your Email</label>
+                                <input type="email" class="form-control" name="email" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Your Subject</label>
+                                <input type="text" class="form-control" name="subject" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label message">Message</label>
+                                <textarea class="form-control" name="message" rows="3" placeholder="Write your message here" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="g-recaptcha" data-callback="checked" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" ></div>
+                            </div>
+                            <div class="col-12">
+                                <button class="cta-btn btn-fill form-submit-btn">
+                                    <div class="btn-text">Send Message</div>
+                                </button>
+                            </div>
+                        </div>
+                    {{ html()->form()->close() }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection
 
 @push('after-scripts')
     @if(config('access.captcha.contact'))
         @captchaScripts
     @endif
+
+<script>
+    window.oncontextmenu = () => {
+        var captcha = grecaptcha.getResponse();
+    };
+
+    function checked() {
+        $('.form-submit-btn').removeAttr('disabled');
+    };
+</script>
 @endpush
