@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\Settings; 
+use App\Models\Settings;
+use App\Models\Notification;
 
 if (! function_exists('app_name')) {
     /**
@@ -34,10 +35,10 @@ if (! function_exists('home_route')) {
     {
         if (auth()->check()) {
 
-            if(is_mobile(request()->header('user-agent')) == true){                
+            if(is_mobile(request()->header('user-agent')) == true){
                 return 'frontend.mobile.index';
             }
-            
+
             if (auth()->user()->can('view backend')) {
                 return 'admin.dashboard';
             }
@@ -56,18 +57,18 @@ if (!function_exists('isHttps')) {
         return !empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS']);
     }
 }
-        
+
 if (!function_exists('getBaseURL')) {
     function getBaseURL()
     {
         $root = (isHttps() ? "https://" : "http://").$_SERVER['HTTP_HOST'];
         $root .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
-        
+
         return $root;
     }
 }
-        
-        
+
+
 if (!function_exists('getFileBaseURL')) {
     function getFileBaseURL()
     {
@@ -101,7 +102,7 @@ if (! function_exists('my_asset')) {
      */
     function my_asset($path, $secure = null)
     {
-         return app('url')->asset(''.$path, $secure);        
+         return app('url')->asset(''.$path, $secure);
     }
 }
 
@@ -112,7 +113,7 @@ if (! function_exists('get_settings')) {
      * @return string
      */
     function get_settings($key)
-    {       
+    {
         $settings = Settings::where('key',$key)->first();
         if($settings == null){
             return null;
@@ -136,6 +137,23 @@ if (! function_exists('is_mobile')) {
     }
 }
 
+
+if (! function_exists('create_notification')) {
+    /**
+     * Agent Function By Sanjaya Senevirathne - Enspirer
+     *
+     */
+    function create_notification($user_id,$title,$content,$link)
+    {
+        $notification = new Notification;
+        $notification->user_name = $user_id;
+        $notification->title = $title;
+        $notification->link = $link;
+        $notification->content =$content;
+        $notification->save();
+        return 'notification_created';
+    }
+}
 
 
 

@@ -13,9 +13,16 @@
     </ul>
     <div class="greating-block">
         <div class="message">Good Morning, {{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
-        <a  type="button" href="#" class="cta-btn btn-fill" data-bs-toggle="modal" data-bs-target="#createDonation">
-            <div class="btn-text">Create Donation</div>
-        </a>
+        @if(auth()->user()->user_type == "Donor")
+            <a  type="button" href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
+                <div class="btn-text">Donate Now</div>
+            </a>
+        @elseif(auth()->user()->user_type == "Agent")
+            <a  type="button" href="#" class="cta-btn btn-fill" data-bs-toggle="modal" data-bs-target="#createDonation">
+                <div class="btn-text">Create Donation</div>
+            </a>
+        @endif
+
     </div>
     <div class="button-block">
         <a href="{{url('dashboard/index')}}" class="nav-btn active">
@@ -177,7 +184,7 @@
                             </div>
                         </div>
 
-                       
+
                         <!-- NIC -->
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
