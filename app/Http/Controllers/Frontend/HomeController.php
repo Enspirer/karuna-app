@@ -48,6 +48,11 @@ class HomeController extends Controller
         return view('frontend.campaigns');
     }
 
+    public function about_us()
+    {
+        return view('frontend.about_us');
+    }
+
     public function find_agent_details($city)
     {
         // dd($city);
