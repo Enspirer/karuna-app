@@ -77,7 +77,7 @@
         </ul>
     </div>
     <div class="nav-footer">
-        <a href="#" class="sign-out">
+        <a href="{{route('frontend.auth.logout')}}" class="sign-out">
             <i class="bi bi-box-arrow-right"></i>
             <div class="text">Sign Out</div>
         </a>
