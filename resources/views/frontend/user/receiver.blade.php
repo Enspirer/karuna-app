@@ -24,35 +24,37 @@
                 <tbody>
                     <tr>
                         <td>Nick Name</td>
-                        <td>Kamani Jayanthi</td>
+                        <td>{{$receiver->name}}</td>
                     </tr>
                     <tr>
                         <td>Age</td>
-                        <td>50</td>
+                        <td>{{$receiver->age}}</td>
                     </tr>
                     <tr>
                         <td>Gender</td>
-                        <td>Female</td>
+                        <td>{{$receiver->gender}}</td>
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td>584/C, Colombo Rd, Wattala.</td>
+                        <td>{{$receiver->address}}</td>
                     </tr>
                     <tr>
                         <td>Phone Number</td>
-                        <td>+94 77 44 25 235</td>
+                        <td>{{$receiver->phone_number}}</td>
                     </tr>
-                    <tr>
-                        <td>Account Number</td>
-                        <td>*************584</td>
-                    </tr>
+                    @if($receiver->requirement == 'Other')
+                        <tr>
+                            <td>Account Number</td>
+                            <td>{{json_decode($receiver->account_details)->account_number}}</td>
+                        </tr>
+                    @endif
                     <tr>
                         <td>City</td>
-                        <td>Waththala</td>
+                        <td>{{$receiver->city}}</td>
                     </tr>
                     <tr>
-                        <td>ID</td>
-                        <td>541248742#</td>
+                        <td>NIC</td>
+                        <td>{{$receiver->nic_number}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -67,7 +69,8 @@
         </div>
     </div>
     <div class="edit-profile-block">
-        <form action="">
+        <form action="{{route('frontend.user.update_receiver')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
             <div class="inner-wrapper db-form">
                 <div class="row g-0">
                     <div class="col">
@@ -82,11 +85,15 @@
                 </div>
                 <div class="row g-0 mb-3">
                     <div class="col-md-10">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="name" value="{{$receiver->name}}">
                     </div>
                     <div class="col-md-1">
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch">
+                            @if($receiver->name_toggle == 'yes')
+                                <input class="form-check-input" type="checkbox" name="name_toggle" value="yes" role="switch" checked>
+                            @else
+                                <input class="form-check-input" type="checkbox" name="name_toggle" value="yes" role="switch">
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-1">
@@ -109,7 +116,7 @@
                 </div>
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">                        
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="nick_name" value="{{$receiver->nick_name}}" required>
                     </div>
                     <div class="col-md-1">
                         <div class="tooltip-block">
@@ -126,47 +133,48 @@
                 <!-- Age, Gender, City -->
                 <div class="row g-3 mb-3">
                     <!-- Age -->
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <label class="pro-label">Age</label>
-                        <select class="form-select">
-                            <option selected disabled>Choose...</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                        </select>
+                        <input type="number" class="form-control" value="{{$receiver->age}}" name="age" min="10" max="100" required>
                     </div>
                     <!-- Gender -->
-                    <div class="col-md-3">
-                        <label class="pro-label">Gender</label>
-                        <select class="form-select">
-                            <option selected disabled>Choose...</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                        </select>
-                    </div>
-                    <!-- City -->
                     <div class="col-md-5">
-                        <label class="pro-label">City</label>
-                        <select class="form-select">
+                        <label class="pro-label">Gender</label>
+                        <select class="form-select" name="gender" required>
                             <option selected disabled>Choose...</option>
-                            <option>Maharagama</option>
-                            <option>Nugegoda</option>
-                            <option>Kottawa</option>
+                            <option value="Male" {{$receiver->gender == 'Male' ? "selected" : ""}}>Male</option>
+                            <option value="Female" {{$receiver->gender == 'Female' ? "selected" : ""}}>Female</option>
                         </select>
                     </div>
                 </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label class="pro-label">Country</label>
+                            <input type="text" name="country" maxlength="191" class="form-control" value="{{auth()->user()->country}}" id="country" readonly>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <div class="form-group">
+                            <label class="pro-label">City</label>
+                            <input type="text" name="city" maxlength="191" class="form-control" value="{{auth()->user()->city}}" id="city" readonly>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- NIC -->
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">
                         <label class="pro-label">NIC</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" value="{{$receiver->nic_number}}" name="nic_number" required>
                     </div>
                 </div>
                 <!-- Address -->
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">
                         <label class="pro-label">Address</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" value="{{$receiver->address}}" name="address" required>
                     </div>
                 </div>
                 <!-- Phone, Job -->
@@ -174,12 +182,12 @@
                     <!-- Phone -->
                     <div class="col-md-5">
                         <label class="pro-label">Phone Number</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" value="{{$receiver->phone_number}}" name="phone_number" required>
                     </div>
                     <!-- Job -->
                     <div class="col-md-6">
                         <label class="pro-label">Job</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" value="{{$receiver->occupation}}" name="occupation" required>
                     </div>
                 </div>
                 <!-- Bio -->
@@ -190,20 +198,11 @@
                 </div>
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="tooltip-block">
-                            <i class="bi bi-question-circle"></i>
-                            <div class="pro-tooltip">
-                                <div class="header">About toggle</div>
-                                <div class="body">You can choose whether your name display everyone or not. If you want
-                                    to hide your name and profile picture you must tick this toggle. After you tick this
-                                    toggle your profile picture and name will hide from your listing.</div>
-                            </div>
-                        </div>
-                    </div>
+                        <textarea class="form-control" style="height:150px;" name="bio" required>{{$receiver->bio}}</textarea>
+                    </div>                    
                 </div>
+
+            
                 <!-- Add Images -->
                 <div class="row g-0">
                     <div class="col-md-6">
@@ -219,6 +218,17 @@
                             <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                             <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                             <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group" data-multiple="true" data-toggle="aizuploader" data-type="image">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="images" value="{{$receiver->images}}" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-1">
@@ -249,6 +259,17 @@
                             <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                             <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                         </div>
+                        <div class="form-group">
+                            <div class="input-group" data-toggle="aizuploader" data-type="video">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="videos" value="{{$receiver->videos}}" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-1">
                         <div class="tooltip-block">
@@ -275,6 +296,17 @@
                             <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                             <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                         </div>
+                        <div class="form-group">
+                            <div class="input-group" data-toggle="aizuploader" data-type="audio">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="audios" value="{{$receiver->audios}}" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-1">
                         <div class="tooltip-block">
@@ -296,11 +328,14 @@
                 </div>
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" aria-label="Default select example" id="requirement_edit" name="requirement" onchange="package_type_edit(this);" required>
                             <option selected disabled>Choose...</option>
-                            <option>One</option>
-                            <option>Two</option>
-                            <option>Three</option>
+                            @if(count(App\Models\Packages::where('status','Enabled')->get()) != 0)
+                                @foreach(App\Models\Packages::where('status','Enabled')->get() as $package)
+                                    <option value="{{$package->id}}" {{$receiver->requirement == $package->id ? "selected" : ""}}>{{$package->name}}</option>
+                                @endforeach
+                            @endif
+                            <option value="Other" {{$receiver->requirement == 'Other' ? "selected" : ""}}>Other</option>
                         </select>
                     </div>
                     <div class="col-md-1">
@@ -315,6 +350,14 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row g-0 mb-3" id="other_description_hide_edit" style="display: none;">
+                    <div class="col-md-11">
+                        <label class="pro-label">Other Description</label>
+                        <textarea class="form-control" style="height:150px;" name="other_description">{{$receiver->other_description}}</textarea>
+                    </div>
+                </div>
+
                 <!-- About the donation -->
                 <div class="row g-0">
                     <div class="col-md-11">
@@ -323,7 +366,7 @@
                 </div>
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea class="form-control" style="height:150px;" name="about_donation" required>{{$receiver->about_donation}}</textarea>
                     </div>
                     <div class="col-md-1">
                         <div class="tooltip-block">
@@ -338,34 +381,38 @@
                         </div>
                     </div>
                 </div>
-                <!-- Account Number -->
-                <div class="row g-0">
-                    <div class="col-md-11">
-                        <label class="pro-label">Account Number</label>
-                    </div>
-                </div>
-                <div class="row g-0 mb-5">
-                    <div class="col-md-11">
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="col-md-1">
-                        <div class="tooltip-block">
-                            <i class="bi bi-question-circle"></i>
-                            <div class="pro-tooltip">
-                                <div class="header">About toggle</div>
-                                <div class="body">You can choose whether your name display everyone or not. If you
-                                    want to hide your name and profile picture you must tick this toggle. After you
-                                    tick this toggle your profile picture and name will hide from your listing.
+                
+
+                <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; display: none;" id="account_details_edit">
+                    <h5 class="card-header">Account Details</h5>
+                    @if($receiver->account_details != null)
+                        <div class="card-body">
+                            <div class="row g-0 mb-4">
+                                <div class="col-md-6">
+                                    <label class="pro-label">Account Number</label>
+                                    <input type="text" class="form-control" name="account_number" value="{{json_decode($receiver->account_details)->account_number}}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="pro-label">Bank Name</label>
+                                    <input type="text" class="form-control" name="bank_name" value="{{json_decode($receiver->account_details)->bank_name}}">
+                                </div>
+                            </div>
+                            <div class="row g-0 mb-5">
+                                <div class="col-md-11">
+                                    <label class="pro-label">Branch Name</label>
+                                    <input type="text" class="form-control" name="branch_name" value="{{json_decode($receiver->account_details)->branch_name}}">
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
+
                 <div class="row g-0">
                     <div class="col-md-11">
-                        <a href="#" class="cta-btn btn-fill">
-                            <div class="btn-text">Save</div>
-                        </a>
+                        <input type="hidden" class="form-control" name="hidden_id" value="{{$receiver->id}}">
+                        <button type="submit" class="cta-btn btn-fill">
+                            <div class="btn-text">Update</div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -376,5 +423,6 @@
 @endsection
 
 @push('after-scripts')
+
 
 @endpush

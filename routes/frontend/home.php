@@ -47,7 +47,7 @@ Route::get('mobile/view-profile', [MobileController::class, 'view_profile'])->na
 
 // Dashboard
 // Route::get('dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
-Route::get('dashboard/receiver', [DashboardController::class, 'receiver'])->name('dashboard.receiver');
+Route::get('dashboard/receiver/{id}', [DashboardController::class, 'receiver'])->name('dashboard.receiver');
 Route::get('dashboard/receiver-request-list', [DashboardController::class, 'receiver_request_list'])->name('dashboard.receiver_request_list');
 Route::get('dashboard/receiver-request', [DashboardController::class, 'receiver_request'])->name('dashboard.receiver_request');
 Route::get('dashboard/profile/agent', [DashboardController::class, 'agent_profile'])->name('dashboard.agent_profile');
@@ -80,7 +80,10 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
         Route::post('create_receiver', [DashboardController::class, 'create_receiver'])->name('create_receiver');
+        Route::post('update_receiver', [DashboardController::class, 'update_receiver'])->name('update_receiver');
         Route::post('update_agent', [DashboardController::class, 'update_agent'])->name('update_agent');
+
+        Route::post('receiver_request_update', [DashboardController::class, 'receiver_request_update'])->name('receiver_request_update');
 
     });
 });

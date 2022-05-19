@@ -16,111 +16,42 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="db-tr">
-                <td class="db-td">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">
-                    <div class="text">Ask to change the profile picture and Bio</div>
-                </td>
-                <td class="db-td">
-                    <a href="{{route('frontend.dashboard.receiver_request')}}" class="db-tlink">View Changes</a>
-                </td>
-                <td class="db-td">
-                    <select class="form-select">
-                        <option selected disabled>Choose...</option>
-                        <option>Approve</option>
-                        <option>Cancel</option>
-                    </select>
-                </td>
-            </tr>
-            <tr class="db-tr">
-                <td class="db-td">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">
-                    <div class="text">Ask to change the profile picture and Bio</div>
-                </td>
-                <td class="db-td">
-                    <a href="#" class="db-tlink">View Changes</a>
-                </td>
-                <td class="db-td">
-                    <select class="form-select">
-                        <option selected disabled>Choose...</option>
-                        <option>Approve</option>
-                        <option>Cancel</option>
-                    </select>
-                </td>
-            </tr>
-            <tr class="db-tr">
-                <td class="db-td">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">
-                    <div class="text">Ask to change the profile picture and Bio</div>
-                </td>
-                <td class="db-td">
-                    <a href="#" class="db-tlink">View Changes</a>
-                </td>
-                <td class="db-td">
-                    <select class="form-select">
-                        <option selected disabled>Choose...</option>
-                        <option>Approve</option>
-                        <option>Cancel</option>
-                    </select>
-                </td>
-            </tr>
-            <tr class="db-tr">
-                <td class="db-td">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">
-                    <div class="text">Ask to change the profile picture and Bio</div>
-                </td>
-                <td class="db-td">
-                    <a href="#" class="db-tlink">View Changes</a>
-                </td>
-                <td class="db-td">
-                    <select class="form-select">
-                        <option selected disabled>Choose...</option>
-                        <option>Approve</option>
-                        <option>Cancel</option>
-                    </select>
-                </td>
-            </tr>
-            <tr class="db-tr">
-                <td class="db-td">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">
-                    <div class="text">Ask to change the profile picture and Bio</div>
-                </td>
-                <td class="db-td">
-                    <a href="#" class="db-tlink">View Changes</a>
-                </td>
-                <td class="db-td">
-                    <select class="form-select">
-                        <option selected disabled>Choose...</option>
-                        <option>Approve</option>
-                        <option>Cancel</option>
-                    </select>
-                </td>
-            </tr>
+            
+            @if(count(App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->get()) == 0)
+                @include('frontend.includes.not_found',[
+                    'not_found_title' => 'No any request found',
+                    'not_found_description' => null,
+                    'not_found_button_caption' => null
+                ])
+            @else
+                @foreach(App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->orderBy('id','desc')->get() as $key => $receiver)
+                    <tr class="db-tr">
+                        <td class="db-td">
+                            <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
+                        </td>
+                        <td class="db-td">
+                            <div class="text">{{$receiver->name}}</div>
+                        </td>
+                        <td class="db-td">
+                            <div class="text">{{$receiver->request}}</div>
+                        </td>
+                        <td class="db-td">
+                            <a href="#" class="db-tlink">View Changes</a>
+                        </td>
+                        <td class="db-td">
+                        <form action="{{route('frontend.user.receiver_request_update')}}" method="post" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                            <select class="form-select" name="status" onchange="this.form.submit()">
+                                <option selected disabled>Pending...</option>
+                                <option value="Approved" {{$receiver->status == 'Approved' ? "selected" : ""}}>Approve</option>
+                                <option value="Cancel" {{$receiver->status == 'Cancel' ? "selected" : ""}}>Cancel</option>
+                            </select>
+                            <input type="hidden" name="hidden_id" value="{{$receiver->id}}">
+                        </td>
+                    </tr>
+                @endforeach
+            @endif                      
+           
         </tbody>
     </table>
 </div>

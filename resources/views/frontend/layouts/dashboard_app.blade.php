@@ -150,6 +150,7 @@
 
 <script>
     function package_type(that) {
+        
         if (that.value == 'Other') {
             document.getElementById("other_description_hide").style.display = "block";
         } else {
@@ -165,6 +166,36 @@
     }
 </script> 
 
+<script>
+    function package_type_edit(that) {
+        
+        if (that.value == 'Other') {
+            document.getElementById("other_description_hide_edit").style.display = "block";
+        } else {
+            document.getElementById("other_description_hide_edit").style.display = "none";
+        }
+    
+        if (that.value == 'Other') {
+            document.getElementById("account_details_edit").style.display = "block";
+        } else {
+            document.getElementById("account_details_edit").style.display = "none";
+        }
+        
+    }
+</script> 
+
+<script>
+    $(document).ready(function(){
+        if($('#requirement_edit').val() == 'Other'){
+            $('#other_description_hide_edit').css('display','block');
+            $('#account_details_edit').css('display','block');
+        }
+        else{
+            $('#other_description_hide_edit').css('display','none');
+            $('#account_details_edit').css('display','none');
+        }            
+    });
+</script>
 
 
 </html>

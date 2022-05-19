@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Receivers;
+use App\Models\ReceiversRequest;
 use App\Models\Auth\User;
 use DB;
 
@@ -21,9 +22,14 @@ class DashboardController extends Controller
         return view('frontend.user.dashboard');
     }
 
-    public function receiver()
+    public function receiver($id)
     {
-        return view('frontend.user.receiver');
+        // dd($id);
+        $receiver = Receivers::where('id',$id)->first();
+
+        return view('frontend.user.receiver',[
+            'receiver' => $receiver
+        ]);
     }
 
     public function receiver_request_list()
@@ -136,11 +142,73 @@ class DashboardController extends Controller
             ]    
         );
 
-        return back()->withFlashSuccess('Updated Successfully');
-                                
+        return back()->withFlashSuccess('Updated Successfully');                                
        
     }
 
+
+    public function update_receiver(Request $request)
+    {        
+        // dd($request);
+       
+        $account_details = [
+            'account_number' => $request->account_number,
+            'bank_name' => $request->bank_name,
+            'branch_name' => $request->branch_name
+        ];
+
+        $update = new Receivers;
+
+        $update->profile_image=$request->profile_image;
+        $update->cover_image=$request->cover_image;
+        $update->name=$request->name; 
+        if(isset($request->name_toggle)){
+            $update->name_toggle=$request->name_toggle; 
+        }else{
+            $update->name_toggle='no'; 
+        }
+        $update->nick_name=$request->nick_name; 
+        $update->age=$request->age; 
+        $update->gender=$request->gender; 
+        $update->country=$request->country; 
+        $update->city=$request->city; 
+        $update->nic_number=$request->nic_number; 
+        $update->address=$request->address; 
+        $update->phone_number=$request->phone_number; 
+        $update->occupation=$request->occupation; 
+        $update->bio=$request->bio; 
+        $update->images=$request->images; 
+        $update->videos=$request->videos; 
+        $update->audios=$request->audios; 
+        $update->about_donation=$request->about_donation; 
+        $update->account_number=$request->account_number; 
+        $update->requirement=$request->requirement;
+        $update->other_description=$request->other_description;
+        if($request->account_number != null){
+            $update->account_details=json_encode($account_details);  
+        }
+        $update->assigned_agent = auth()->user()->id;
+        $update->status='Approved';
+
+        Receivers::whereId($request->hidden_id)->update($update->toArray());
+        
+        return back();
+
+
+    }
+    
+    public function receiver_request_update(Request $request)
+    {    
+        // dd($request);
+
+        $update = new ReceiversRequest;
+        $update->status=$request->status;
+        
+        ReceiversRequest::whereId($request->hidden_id)->update($update->toArray());
+
+        return redirect()->route('frontend.dashboard.receiver_request_list');                      
+
+    }
     
 
 }
