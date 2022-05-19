@@ -1799,6 +1799,158 @@
     text-align: center;
   }
 }
+.contact-section .header {
+  padding: 8rem 0 17.5rem;
+  background-color: rgba(31, 195, 158, 0.7);
+  position: relative;
+}
+.contact-section .header .text-block {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.contact-section .header .text-block .title {
+  font-size: 2.25rem;
+  margin-bottom: 0.25rem;
+  font-weight: 400;
+  color: #fff;
+}
+.contact-section .header .text-block .text {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+}
+.contact-section .header .grid-left {
+  position: absolute;
+  left: 5%;
+  bottom: 15%;
+}
+.contact-section .header .grid-right {
+  position: absolute;
+  right: 1%;
+  bottom: -25%;
+}
+.contact-section .body .contact-block {
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(31, 195, 158, 0.25);
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  margin-top: -12.5rem;
+  margin-bottom: 5rem;
+}
+.contact-section .body .contact-block .contact-info {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #1FC39E;
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 35%;
+}
+.contact-section .body .contact-block .contact-info .title {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.contact-section .body .contact-block .contact-info .text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.contact-section .body .contact-block .contact-info .contact-info {
+  padding: 0;
+  list-style: none;
+  margin: 2rem 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+.contact-section .body .contact-block .contact-info .contact-info .contact-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.5em;
+  text-decoration: none;
+  color: #fff;
+}
+.contact-section .body .contact-block .contact-info .social-media {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+.contact-section .body .contact-block .contact-info .social-media .social-link {
+  text-decoration: none;
+  color: #1FC39E;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.contact-section .body .contact-block .contact-info img {
+  position: absolute;
+  transform: rotate(270deg);
+  bottom: -10%;
+  right: -10%;
+  width: 300px;
+  opacity: 0.45;
+  z-index: 0;
+}
+.contact-section .body .contact-block .contact-form {
+  padding: 2rem 0;
+}
+.contact-section .body .contact-block .contact-form .form-label {
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #767676;
+}
+.contact-section .body .contact-block .contact-form .form-label.message {
+  text-transform: uppercase;
+  color: #1FC39E;
+}
+.contact-section .body .contact-block .contact-form .form-control {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 300;
+  resize: none;
+}
+.contact-section .body .contact-block .contact-form .form-control:focus, .contact-section .body .contact-block .contact-form .form-control:active {
+  box-shadow: none;
+  outline: none;
+  border-bottom: 1px solid #1FC39E;
+}
+.contact-section .body .contact-block .contact-form .form-control::placeholder {
+  color: #767676;
+}
+
+@media screen and (max-width: 991px) {
+  .contact-section .body .contact-block {
+    flex-direction: column;
+  }
+}
 .footer-section {
   padding: 5rem 0 0;
   background-color: #353334;

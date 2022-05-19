@@ -33,6 +33,9 @@
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+        <!-- Recaptcha -->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        
         <!-- Custom CSS-->
         <link rel="stylesheet" href="{{url('css/main.css')}}">
 
