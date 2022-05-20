@@ -359,7 +359,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 50% !important;
   border: 1px solid #fff;
   position: absolute;
   top: 0.5rem;
@@ -390,7 +390,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 50% !important;
   border: 1px solid #fff;
   position: absolute;
   top: 0;
@@ -420,7 +420,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 50% !important;
   border: 1px solid #fff;
   position: absolute;
   top: 0;
@@ -518,17 +518,13 @@
 .db-form .dp-block {
   position: relative;
   width: fit-content;
-  margin: auto;
 }
-.db-form .dp-block img {
-  width: 150px;
-  height: 150px;
-  object-position: center;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
+.db-form .dp-block .choose-dp {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-.db-form .dp-block .dp-edit {
+.db-form .dp-block .choose-dp .dp-edit {
   text-decoration: none;
   color: #fff;
   background-color: #1FC39E;
@@ -538,11 +534,42 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 50% !important;
   border: 1px solid #fff;
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+}
+.db-form .dp-block .choose-dp .file-preview .file-preview-item {
+  margin: 0 !important;
+  border: none;
+  width: unset;
+}
+.db-form .dp-block .choose-dp .file-preview .file-preview-item .thumb {
+  background-color: transparent;
+  overflow: visible;
+  max-width: unset;
+  max-height: unset;
+  height: 150px;
+  width: 150px;
+}
+.db-form .dp-block .choose-dp .file-preview .file-preview-item .col.body {
+  display: none;
+}
+.db-form .dp-block .choose-dp .file-preview .file-preview-item .remove .remove-attachment {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+}
+.db-form .dp-block img {
+  width: 150px;
+  height: 150px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
 }
 .db-form .cover-block {
   width: 100%;
@@ -554,8 +581,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
-.db-form .cover-block .back-edit {
+.db-form .cover-block .choose-cover .back-edit {
   text-decoration: none;
   color: #fff;
   background-color: #1FC39E;
@@ -565,8 +593,36 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 50% !important;
   border: 1px solid #fff;
+}
+.db-form .cover-block .choose-cover .file-preview {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.db-form .cover-block .choose-cover .file-preview .file-preview-item {
+  margin: 0 !important;
+  border: none;
+  width: unset;
+}
+.db-form .cover-block .choose-cover .file-preview .file-preview-item .thumb {
+  background-color: transparent;
+  overflow: visible;
+  max-width: unset;
+  max-height: unset;
+  height: 100%;
+  width: 100%;
+}
+.db-form .cover-block .choose-cover .file-preview .file-preview-item .col.body {
+  display: none;
+}
+.db-form .cover-block .choose-cover .file-preview .file-preview-item .remove {
+  top: 1.75rem;
+  right: 0.5rem;
 }
 .db-form .pro-label {
   font-size: 0.9rem;

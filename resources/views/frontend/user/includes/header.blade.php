@@ -59,19 +59,15 @@
                                 <label class="pro-label">Upload Profile Picture <span>(Optional)</span></label>
                                 <div class="dp-block">
                                     <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
-                                    <a href="#" class="dp-edit">
-                                        <i class="bi bi-camera"></i>
-                                    </a>
 
-                                    <div class="form-group">
+                                    <div class="form-group choose-dp">
                                         <div class="input-group" data-toggle="aizuploader" data-type="image">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
-                                            </div>
-                                            <div class="form-control file-amount">Choose File</div>
+                                            <button type="button" class="dp-edit">
+                                                <i class="bi bi-camera"></i>
+                                            </button>
                                             <input type="hidden" name="profile_image" class="selected-files" >
                                         </div>
-                                        <div class="file-preview box sm">
+                                        <div class="file-preview box sm">                                     
                                         </div>
                                     </div>
 
@@ -80,16 +76,12 @@
                             <div class="col-md-6">
                                 <label class="pro-label">Upload Cover Picture <span>(Optional)</span></label>
                                 <div class="cover-block">
-                                    <a href="#" class="back-edit">
-                                        <i class="bi bi-camera"></i>
-                                    </a>
 
-                                    <div class="form-group">
+                                    <div class="form-group choose-cover">
                                         <div class="input-group" data-toggle="aizuploader" data-type="image">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
-                                            </div>
-                                            <div class="form-control file-amount">Choose File</div>
+                                        <button type="button" class="back-edit">
+                                            <i class="bi bi-camera"></i>
+                                        </button>
                                             <input type="hidden" name="cover_image" class="selected-files" >
                                         </div>
                                         <div class="file-preview box sm">
@@ -254,11 +246,11 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <div class="media-block">
+                                <!-- <div class="media-block">
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                         <div class="input-group" data-multiple="true" data-toggle="aizuploader" data-type="image">
                                             <div class="input-group-prepend">
@@ -298,11 +290,11 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <div class="media-block">
+                                <!-- <div class="media-block">
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                                </div>
+                                </div> -->
 
                                 <div class="form-group">
                                         <div class="input-group" data-toggle="aizuploader" data-type="video">
@@ -340,11 +332,11 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <div class="media-block">
+                                <!-- <div class="media-block">
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
                                     <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                         <div class="input-group" data-toggle="aizuploader" data-type="audio">
                                             <div class="input-group-prepend">

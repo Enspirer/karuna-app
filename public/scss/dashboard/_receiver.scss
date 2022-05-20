@@ -184,7 +184,52 @@
     .dp-block {
         position: relative;
         width: fit-content;
-        margin: auto;
+
+        .choose-dp {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            .dp-edit {
+                @include edit-image;
+                top: .5rem;
+                right: .5rem;
+            }
+
+            .file-preview {
+
+                .file-preview-item {
+                    margin: 0 !important;
+                    border: none;
+                    width: unset;
+
+                    .thumb {
+                        background-color: transparent;
+                        overflow: visible;
+                        max-width: unset;
+                        max-height: unset;
+                        height: 150px;
+                        width: 150px;
+                    }
+
+                    .col {
+                        &.body {
+                            display: none;
+                        }
+                    }
+
+                    .remove {
+                        .remove-attachment {
+                            position: absolute;
+                            top: 12px;
+                            right: 12px;
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
 
         img {
             width: 150px;
@@ -193,12 +238,6 @@
             object-fit: cover;
             border-radius: 50%;
             border: 2px solid $white;
-        }
-
-        .dp-edit {
-            @include edit-image;
-            top: .5rem;
-            right: .5rem;
         }
     }
 
@@ -212,19 +251,59 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
 
-        .back-edit {
-            text-decoration: none;
-            color: $white;
-            background-color: $primary-green;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            border: 1px solid $white;
+        .choose-cover {
+
+            .back-edit {
+                text-decoration: none;
+                color: $white;
+                background-color: $primary-green;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50% !important;
+                border: 1px solid $white;
+            }
+
+            .file-preview {
+                position: absolute;
+                z-index: 1;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+
+                .file-preview-item {
+                    margin: 0 !important;
+                    border: none;
+                    width: unset;
+
+                    .thumb {
+                        background-color: transparent;
+                        overflow: visible;
+                        max-width: unset;
+                        max-height: unset;
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                    .col {
+                        &.body {
+                            display: none;
+                        }
+                    }
+
+                    .remove {
+                        top: 1.75rem;
+                        right: 0.5rem;
+                    }
+                }
+            }
+
         }
     }
 
