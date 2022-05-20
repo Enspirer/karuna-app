@@ -97,13 +97,14 @@
             <div class="text">Sign Out</div>
         </a>
         <div class="title">Onboarding</div>
+        
         @if(auth()->user()->user_type == 'Donor')
-            <a href="#" class="create-donation">
+            <a href="#" type="button" class="create-donation">
                 <i class="bi bi-plus-lg"></i>
                 <div class="text">Donate Now</div>
             </a>
         @elseif (auth()->user()->user_type == 'Agent')
-            <a href="#" class="create-donation">
+            <a href="#" type="button" class="create-donation" data-bs-toggle="modal" data-bs-target="#createDonation">
                 <i class="bi bi-plus-lg"></i>
                 <div class="text">Create Donation</div>
             </a>

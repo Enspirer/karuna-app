@@ -202,75 +202,62 @@
 
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')
 
-<div class="table-container">
-    <table class="db-table doner-table">
-        <thead>
-            <tr class="db-tr">
-                <th class="db-th">Agent Name</th>
-                <th class="db-th">Receiver Name</th>
-                <th class="db-th">Date</th>
-                <th class="db-th">Package</th>
-                <th class="db-th">Donation Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="db-tr">
-                <td class="db-td">
-                    <div class="text">Mr. Kamal Kusum</div>
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">22/05/2022</td>
-                <td class="db-td">
-                    <div class="package medicine">M</div>
-                </td>
-                <td class="db-td">
-                    <div class="status-block">
-                        <i class="bi completed bi-check-circle-fill"></i>
-                        <div class="status">Completed</div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="db-tr">
-                <td class="db-td">
-                    <div class="text">Mr. Kamal Kusum</div>
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">22/05/2022</td>
-                <td class="db-td">
-                    <div class="package school-items">S</div>
-                </td>
-                <td class="db-td">
-                    <div class="status-block">
-                        <i class="bi pending bi-exclamation-circle-fill"></i>
-                        <div class="status">Pending</div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="db-tr">
-                <td class="db-td">
-                    <div class="text">Mr. Kamal Kusum</div>
-                </td>
-                <td class="db-td">
-                    <div class="text">Kamani Jayathilaka</div>
-                </td>
-                <td class="db-td">22/05/2022</td>
-                <td class="db-td">
-                    <div class="package food">F</div>
-                </td>
-                <td class="db-td">
-                    <div class="status-block">
-                        <i class="bi pending bi-exclamation-circle-fill"></i>
-                        <div class="status">Pending</div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    @if(count(App\Models\Receivers::orderBy('id','desc')->get()) == 0)
+        @include('frontend.includes.not_found',[
+            'not_found_title' => 'No any receivers found',
+            'not_found_description' => null,
+            'not_found_button_caption' => null
+        ])
+    @else
+        <div class="table-container">
+            <table class="db-table doner-table">
+                <thead>
+                    <tr class="db-tr">
+                        <th class="db-th">Agent Name</th>
+                        <th class="db-th">Receiver Name</th>
+                        <th class="db-th">Date</th>
+                        <th class="db-th">Package</th>
+                        <th class="db-th">Donation Status</th>
+                    </tr>
+                </thead>
+                <tbody>                    
+                    @foreach(App\Models\Receivers::orderBy('id','desc')->get() as $key => $receiver)
+                        <tr class="db-tr">
+                            <td class="db-td">
+                                @if(App\Models\Auth\User::where('id',$receiver->assigned_agent)->first() != null)
+                                    <div class="text">{{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->first_name}} {{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->last_name}}</div>
+                                @else
+                                    <p>Agent Not Found</p>
+                                @endif
+                            </td>
+                            <td class="db-td">
+                                <div class="text">{{$receiver->name}}</div>
+                            </td>
+                            <td class="db-td">{{$receiver->created_at}}</td>
+                            <td class="db-td">
+                                @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
+                                    <div class="">{{App\Models\Packages::where('id',$receiver->requirement)->first()->name}}</div>
+                                    <!-- <div class="package medicine"> -->
+                                @else
+                                    Other
+                                @endif
+                            </td>
+                            <td class="db-td">
+                                <div class="status-block">
+                                    <i class="bi completed bi-check-circle-fill"></i>
+                                    <div class="status">Completed</div>
+                                    <!-- <i class="bi pending bi-exclamation-circle-fill"></i>
+                                    <div class="status">Pending</div> -->
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach                    
+                </tbody>
+            </table>
+        </div>
+
+    @endif
+
 @endif
 
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Receiver')

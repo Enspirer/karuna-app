@@ -88,14 +88,14 @@
     </div>
 </section>
 
-<section class="section-no-data">
+<!-- <section class="section-no-data">
     <div class="mobile-container">
         <div class="inner-wrapper">
             <img src="{{url('images/not-found.png')}}" alt="">
             <div class="text">No data foud</div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="request-list-section">
     <div class="mobile-container">
@@ -206,45 +206,23 @@
                             </div>
                         </li>
                     @endforeach
+                @else
+                    <section class="section-no-data">
+                        <div class="mobile-container">
+                            <div class="inner-wrapper">
+                                <img src="{{url('images/not-found.png')}}" alt="">
+                                <div class="text">No data foud</div>
+                            </div>
+                        </div>
+                    </section>
                 @endif
-                <!-- <li class="list-group-item">
-                    <div class="receiver">
-                        <div class="content-block">
-                            <div class="icon purple">M</div>
-                            <div class="text-block">
-                                <div class="name">Amila Nandiak</div>
-                                <div class="location">Ampara</div>
-                            </div>
-                        </div>
-                        <div class="button-block">
-                            <a href="#" class="cta-btn btn-fill">
-                                <div class="btn-text">Donate</div>
-                            </a>
-                            <a href="#" class="cta-link">View more</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="receiver">
-                        <div class="content-block">
-                            <div class="icon green">S</div>
-                            <div class="text-block">
-                                <div class="name">Amila Nandiak</div>
-                                <div class="location">Ampara</div>
-                            </div>
-                        </div>
-                        <div class="button-block">
-                            <a href="#" class="cta-btn btn-fill">
-                                <div class="btn-text">Donate</div>
-                            </a>
-                            <a href="#" class="cta-link">View more</a>
-                        </div>
-                    </div>
-                </li> -->
+               
             </ul>
         </div>
     </section>
 @endif
+
+
 
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Agent')
     @include('frontend.mobile.includes.agent_bottom_nav')
