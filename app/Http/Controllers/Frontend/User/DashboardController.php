@@ -71,6 +71,16 @@ class DashboardController extends Controller
         return view('frontend.user.donation_complete');
     }
 
+    public function settings()
+    {
+        return view('frontend.user.settings');
+    }
+
+    public function help()
+    {
+        return view('frontend.user.help');
+    }
+
     public function create_receiver(Request $request)
     {        
         // dd($request);

@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 use App\Http\Controllers\Frontend\MobileController;
+use App\Http\Controllers\Frontend\PaymentController;
 
 /*
  * Frontend Controllers
@@ -24,6 +25,9 @@ Route::get('profile/receiver', [HomeController::class, 'receiver_profile'])->nam
 Route::get('payment/payment-status', [HomeController::class, 'payment_status'])->name('payment_status');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
+
+Route::get('donation-payment',[PaymentController::class,'index'])->name('donation_payment');
+Route::post('donation-post-getway',[PaymentController::class,'post_getway'])->name('post_getway');
 
 // Mobile Routes
 Route::get('mobile/splash', [MobileController::class, 'splash'])->name('mobile.splash');
@@ -58,6 +62,8 @@ Route::get('dashboard/notification', [DashboardController::class, 'notification'
 Route::get('dashboard/notification/submit', [DashboardController::class, 'notification_submit'])->name('dashboard.notification_submit');
 Route::get('dashboard/payment-history', [DashboardController::class, 'payment_history'])->name('dashboard.payment_history');
 Route::get('dashboard/donation-complete', [DashboardController::class, 'donation_complete'])->name('dashboard.donation_complete');
+Route::get('dashboard/settings', [DashboardController::class, 'settings'])->name('dashboard.settings');
+Route::get('dashboard/help', [DashboardController::class, 'help'])->name('dashboard.help');
 
 Route::post('/aiz-uploader', [AizUploadController::class, 'show_uploader']);
 Route::post('/aiz-uploader/upload', [AizUploadController::class, 'upload']);
