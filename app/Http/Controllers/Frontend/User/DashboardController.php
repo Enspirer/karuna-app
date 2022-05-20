@@ -37,9 +37,13 @@ class DashboardController extends Controller
         return view('frontend.user.receiver_request_list');
     }
 
-    public function receiver_request()
+    public function receiver_request($id)
     {
-        return view('frontend.user.receiver_request');
+        $receiver = ReceiversRequest::where('id',$id)->first();
+
+        return view('frontend.user.receiver_request',[
+            'receiver' => $receiver
+        ]);
     }
 
     public function agent_profile()

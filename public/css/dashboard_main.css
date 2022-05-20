@@ -341,7 +341,6 @@
 }
 .receiver-profile-section .profile-summery-block .header {
   position: relative;
-  background: url("../../images/dashboard/receiver-back.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

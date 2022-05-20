@@ -6,25 +6,21 @@
 
 <section class="receiver-profile-section">
     <div class="profile-summery-block">
-        <div class="header">
-            <a href="#" class="back-edit">
-                <i class="bi bi-camera"></i>
-            </a>
+        <div class="header" style="background-image: url('{{uploaded_asset($receiver->cover_image)}}');">
+            
             <div class="dp-block">
-                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
-                <a href="#" class="dp-edit">
-                    <i class="bi bi-camera"></i>
-                </a>
+                <img src="{{ uploaded_asset($receiver->profile_image) }}" alt="">
+               
             </div>
         </div>
-        <div class="name">Mis. Kamani Jayathilaka</div>
+        <div class="name">{{$receiver->name}}</div>
         <div class="status">Receiver</div>
         <div class="info-table-wrapper">
             <table class="info-table">
                 <tbody>
                     <tr>
                         <td>Nick Name</td>
-                        <td>{{$receiver->name}}</td>
+                        <td>{{$receiver->nick_name}}</td>
                     </tr>
                     <tr>
                         <td>Age</td>
@@ -202,7 +198,50 @@
                     </div>                    
                 </div>
 
-            
+
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <label class="pro-label">Add Profile Image</label>
+                    </div>
+                </div>
+                <div class="row g-0 mb-3">
+                    <div class="col-md-11">
+                        <div class="form-group">
+                            <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="profile_image" value="{{$receiver->profile_image}}" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <label class="pro-label">Add Cover Image</label>
+                    </div>
+                </div>
+                <div class="row g-0 mb-3">
+                    <div class="col-md-11">
+                        <div class="form-group">
+                            <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="cover_image" value="{{$receiver->cover_image}}" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <!-- Add Images -->
                 <div class="row g-0">
                     <div class="col-md-6">
@@ -214,11 +253,6 @@
                 </div>
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">
-                        <div class="media-block">
-                            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                        </div>
                         <div class="form-group">
                             <div class="input-group" data-multiple="true" data-toggle="aizuploader" data-type="image">
                                 <div class="input-group-prepend">
@@ -249,7 +283,7 @@
                         <label class="pro-label">Add short video clips<span>(Optional)</span></label>
                     </div>
                     <div class="col-md-5 text-md-end">
-                        <label class="pro-label">Add 3 or more </label>
+                        <label class="pro-label">Add 1 </label>
                     </div>
                 </div>
                 <div class="row g-0 mb-3">
@@ -291,11 +325,6 @@
                 </div>
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">
-                        <div class="media-block">
-                            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                        </div>
                         <div class="form-group">
                             <div class="input-group" data-toggle="aizuploader" data-type="audio">
                                 <div class="input-group-prepend">

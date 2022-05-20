@@ -36,7 +36,7 @@
                             <div class="text">{{$receiver->request}}</div>
                         </td>
                         <td class="db-td">
-                            <a href="#" class="db-tlink">View Changes</a>
+                            <a href="{{route('frontend.dashboard.receiver_request',$receiver->id)}}" class="db-tlink">View Changes</a>
                         </td>
                         <td class="db-td">
                         <form action="{{route('frontend.user.receiver_request_update')}}" method="post" enctype="multipart/form-data">
