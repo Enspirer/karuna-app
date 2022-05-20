@@ -11,8 +11,8 @@
                 <th class="db-th"></th>
                 <th class="db-th">Name</th>
                 <th class="db-th">Request</th>
-                <th class="db-th"></th>
-                <th class="db-th"></th>
+                <th class="db-th">View</th>
+                <th class="db-th">Status</th>
             </tr>
         </thead>
         <tbody>
@@ -38,16 +38,24 @@
                         <td class="db-td">
                             <a href="{{route('frontend.dashboard.receiver_request',$receiver->id)}}" class="db-tlink">View Changes</a>
                         </td>
-                        <td class="db-td">
-                        <form action="{{route('frontend.user.receiver_request_update')}}" method="post" enctype="multipart/form-data">
-                        {{csrf_field()}}
-                            <select class="form-select" name="status" onchange="this.form.submit()">
-                                <option selected disabled>Pending...</option>
-                                <option value="Approved" {{$receiver->status == 'Approved' ? "selected" : ""}}>Approve</option>
-                                <option value="Cancel" {{$receiver->status == 'Cancel' ? "selected" : ""}}>Cancel</option>
-                            </select>
-                            <input type="hidden" name="hidden_id" value="{{$receiver->id}}">
-                        </td>
+
+                        @if($receiver->status != 'Approved')
+                            <td class="db-td">
+                            <form action="{{route('frontend.user.receiver_request_update')}}" method="post" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                                <select class="form-select" name="status" onchange="this.form.submit()">
+                                    <option selected disabled>Pending...</option>
+                                    <option value="Approved" {{$receiver->status == 'Approved' ? "selected" : ""}}>Approve</option>
+                                    <option value="Cancel" {{$receiver->status == 'Cancel' ? "selected" : ""}}>Cancel</option>
+                                </select>
+                                <input type="hidden" name="hidden_id" value="{{$receiver->id}}">
+                            </td>
+                        @else
+                            <td class="db-td">
+                                <div class="text">{{$receiver->status}}</div>
+                            </td>
+                        @endif
+
                     </tr>
                 @endforeach
             @endif                      

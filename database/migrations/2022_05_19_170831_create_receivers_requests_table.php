@@ -16,6 +16,7 @@ class CreateReceiversRequestsTable extends Migration
         Schema::create('receivers_requests', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('assigned_agent');
+            $table->text('receiver_id');
             $table->text('name')->nullable();
             $table->text('name_toggle')->nullable();
             $table->text('nick_name')->nullable();
