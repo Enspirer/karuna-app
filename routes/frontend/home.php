@@ -58,6 +58,8 @@ Route::get('dashboard/notification', [DashboardController::class, 'notification'
 Route::get('dashboard/notification/submit', [DashboardController::class, 'notification_submit'])->name('dashboard.notification_submit');
 Route::get('dashboard/payment-history', [DashboardController::class, 'payment_history'])->name('dashboard.payment_history');
 Route::get('dashboard/donation-complete', [DashboardController::class, 'donation_complete'])->name('dashboard.donation_complete');
+Route::get('dashboard/settings', [DashboardController::class, 'settings'])->name('dashboard.settings');
+Route::get('dashboard/help', [DashboardController::class, 'help'])->name('dashboard.help');
 
 Route::post('/aiz-uploader', [AizUploadController::class, 'show_uploader']);
 Route::post('/aiz-uploader/upload', [AizUploadController::class, 'upload']);

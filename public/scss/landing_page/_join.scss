@@ -28,6 +28,24 @@
                 max-height: 350px;
                 overflow-y: scroll;
                 margin: auto;
+                padding: 1rem;
+
+                /* Works on Firefox */
+                scrollbar-width: thin;
+                scrollbar-color: #f4f4f4 $light-gray;
+
+                /* Works on Chrome, Edge, and Safari */
+                &::-webkit-scrollbar {
+                    width: 5px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #f4f4f4;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: $light-gray;
+                }
 
                 .join-form-row {
 

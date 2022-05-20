@@ -1059,6 +1059,20 @@
   max-height: 350px;
   overflow-y: scroll;
   margin: auto;
+  padding: 1rem;
+  /* Works on Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #f4f4f4 #ddd;
+  /* Works on Chrome, Edge, and Safari */
+}
+.section-join .inner-wrapper .content-block .join-form::-webkit-scrollbar {
+  width: 5px;
+}
+.section-join .inner-wrapper .content-block .join-form::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+.section-join .inner-wrapper .content-block .join-form::-webkit-scrollbar-thumb {
+  background-color: #ddd;
 }
 .section-join .inner-wrapper .content-block .join-form .join-form-row.hidden-row {
   display: none;
