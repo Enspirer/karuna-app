@@ -34,6 +34,11 @@
                         justify-content: space-between;
                         gap: 1rem;
 
+                        &.card {
+                            background-color: transparent;
+                            border: none;
+                        }
+
                         &:nth-child(1) {
                             flex-wrap: wrap;
 
@@ -321,12 +326,12 @@
                             }
 
                             .amount {
-                                font-size: 2rem;
+                                font-size: 1.2rem;
                                 font-weight: 400;
                                 color: $text-black;
 
                                 span {
-                                    font-size: 1.2rem;
+                                    font-size: 2rem;
                                     font-weight: 400;
                                     color: $text-black;
                                 }
