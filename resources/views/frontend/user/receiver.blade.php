@@ -17,14 +17,14 @@
                 </a>
             </div>
         </div>
-        <div class="name">Mis. Kamani Jayathilaka</div>
+        <div class="name">{{$receiver->name}}</div>
         <div class="status">Receiver</div>
         <div class="info-table-wrapper">
             <table class="info-table">
                 <tbody>
                     <tr>
                         <td>Nick Name</td>
-                        <td>{{$receiver->name}}</td>
+                        <td>{{$receiver->nick_name}}</td>
                     </tr>
                     <tr>
                         <td>Age</td>
@@ -115,7 +115,7 @@
                     </div>
                 </div>
                 <div class="row g-0 mb-3">
-                    <div class="col-md-11">                        
+                    <div class="col-md-11">
                         <input type="text" class="form-control" name="nick_name" value="{{$receiver->nick_name}}" required>
                     </div>
                     <div class="col-md-1">
@@ -162,7 +162,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- NIC -->
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">
@@ -199,10 +199,10 @@
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">
                         <textarea class="form-control" style="height:150px;" name="bio" required>{{$receiver->bio}}</textarea>
-                    </div>                    
+                    </div>
                 </div>
 
-            
+
                 <!-- Add Images -->
                 <div class="row g-0">
                     <div class="col-md-6">
@@ -381,7 +381,7 @@
                         </div>
                     </div>
                 </div>
-                
+
 
                 <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; display: none;" id="account_details_edit">
                     <h5 class="card-header">Account Details</h5>
