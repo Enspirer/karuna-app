@@ -1235,6 +1235,10 @@
   justify-content: space-between;
   gap: 1rem;
 }
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row.card {
+  background-color: transparent;
+  border: none;
+}
 .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row:nth-child(1) {
   flex-wrap: wrap;
 }
@@ -1470,12 +1474,12 @@
   color: #353334;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .footer .text-block .amount {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: #333;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .footer .text-block .amount span {
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 400;
   color: #333;
 }

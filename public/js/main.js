@@ -12,3 +12,14 @@ const navActive = window.addEventListener('load', function () {
         }
     })
 })
+
+// Package Changer
+const packagesSlider = document.getElementById("packageSlider")
+const packages = packagesSlider.querySelectorAll(".package")
+const radios = packagesSlider.querySelectorAll(".form-check-input")
+
+packages.forEach(function (item) {
+    item.addEventListener('click', function () {
+        console.log('clicked');
+    })
+})
