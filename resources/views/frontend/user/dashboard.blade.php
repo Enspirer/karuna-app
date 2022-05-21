@@ -202,7 +202,7 @@
 
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')
 
-    @if(count(App\Models\Receivers::orderBy('id','desc')->get()) == 0)
+    @if(count(App\Models\Receivers::orderBy('id','desc')->where('donor_id',auth()->user()->id)->get()) == 0)
         @include('frontend.includes.not_found',[
             'not_found_title' => 'No any receivers found',
             'not_found_description' => null,
@@ -221,14 +221,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(App\Models\Receivers::orderBy('id','desc')->get() as $key => $receiver)
+                    @foreach(App\Models\Receivers::orderBy('id','desc')->where('donor_id',auth()->user()->id)->get() as $key => $receiver)
                         <tr class="db-tr">
                             <td class="db-td">
-                                @if(App\Models\Auth\User::where('id',$receiver->donor_id)->first() != null)
-                                    <div class="text">{{App\Models\Auth\User::where('id',$receiver->donor_id)->first()->first_name}}
-                                        {{App\Models\Auth\User::where('id',$receiver->donor_id)->first()->last_name}}</div>
+                                @if(App\Models\Auth\User::where('id',$receiver->assigned_agent)->first() != null)
+                                    <div class="text">{{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->first_name}}
+                                        {{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->last_name}}</div>
                                 @else
-                                    <p>Agent Not Found</p>
+                                    <div class="text">Agent Not Found</div>
                                 @endif
                             </td>
                             <td class="db-td">
@@ -246,7 +246,7 @@
                             <td class="db-td">
                                 <div class="status-block">
                                     <i class="bi completed bi-check-circle-fill"></i>
-                                    <div class="status">Completed</div>
+                                    <div class="status">{{$receiver->payment_status}}</div>
                                     <!-- <i class="bi pending bi-exclamation-circle-fill"></i>
                                     <div class="status">Pending</div> -->
                                 </div>
