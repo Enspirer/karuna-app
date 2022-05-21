@@ -105,3 +105,10 @@ Breadcrumbs::for('admin.receiver.edit', function ($trail) {
 Breadcrumbs::for('admin.agent.create', function ($trail) {
     $trail->push('Create Agent', route('admin.agent.create'));
 });
+
+Breadcrumbs::for('admin.donate_notification.index', function ($trail) {
+    $trail->push('Notification', route('admin.donate_notification.index'));
+});
+Breadcrumbs::for('admin.donate_notification.edit', function ($trail) {
+    $trail->push('Status', route('admin.donate_notification.edit',1));
+});

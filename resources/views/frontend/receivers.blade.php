@@ -12,44 +12,45 @@
             <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
         </div>
         <div class="card-block">
-            @foreach(\App\Models\Receivers::all() as $receivers)
-                @if($receivers->requirement == 'Other')
-
-                    <div class="card">
-                        <div class="icon purple">{{substr( $receivers->requirement, 0, 1)}}</div>
-                        <div class="name">{{$receivers->name}}</div>
-                        <div class="location">{{$receivers->city}}</div>
-                        <div class="text">{{$receivers->bio}}</div>
-                        @auth()
-                            <button href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill" disabled>
-                                <div class="btn-text">Donate Now</div>
-                            </button>
-                        @else
-                            <button href="{{route('frontend.auth.register')}}" class="btn-fill" disabled>
-                                <div class="btn-text">Donate Now</div>
-                            </button>
-                        @endauth
-                    </div>
-                @else
-                    <div class="card">
-                        @if(App\Models\Packages::where('id',$receivers->requirement)->first() != null)
-                            <div class="icon purple">{{substr( App\Models\Packages::where('id',$receivers->requirement)->first()->name, 0, 1)}}</div>
-                        @else
-                            <div class="name">Package not found</div>
-                        @endif
-                        <div class="name">{{$receivers->name}}</div>
-                        <div class="location">{{$receivers->city}}</div>
-                        <div class="text">{{$receivers->bio}}</div>
-                        @auth()
-                            <a href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill">
-                                <div class="btn-text">Donate Now</div>
-                            </a>
-                        @else
-                            <a href="{{route('frontend.auth.register')}}" class="btn-fill">
-                                <div class="btn-text">Donate Now</div>
-                            </a>
-                        @endauth
-                    </div>
+            @foreach(App\Models\Receivers::get() as $receivers)
+                @if($receivers->payment_status != 'Payment Completed')
+                    @if($receivers->requirement == 'Other')
+                        <div class="card">
+                            <div class="icon purple">{{substr( $receivers->requirement, 0, 1)}}</div>
+                            <div class="name">{{$receivers->name}}</div>
+                            <div class="location">{{$receivers->city}}</div>
+                            <div class="text">{{$receivers->bio}}</div>
+                            @auth()
+                                <button href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill" disabled>
+                                    <div class="btn-text">Donate Now</div>
+                                </button>
+                            @else
+                                <button href="{{route('frontend.auth.register')}}" class="btn-fill" disabled>
+                                    <div class="btn-text">Donate Now</div>
+                                </button>
+                            @endauth
+                        </div>
+                    @else
+                        <div class="card">
+                            @if(App\Models\Packages::where('id',$receivers->requirement)->first() != null)
+                                <div class="icon purple">{{substr( App\Models\Packages::where('id',$receivers->requirement)->first()->name, 0, 1)}}</div>
+                            @else
+                                <div class="name">Package not found</div>
+                            @endif
+                            <div class="name">{{$receivers->name}}</div>
+                            <div class="location">{{$receivers->city}}</div>
+                            <div class="text">{{$receivers->bio}}</div>
+                            @auth()
+                                <a href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill">
+                                    <div class="btn-text">Donate Now</div>
+                                </a>
+                            @else
+                                <a href="{{route('frontend.auth.register')}}" class="btn-fill">
+                                    <div class="btn-text">Donate Now</div>
+                                </a>
+                            @endauth
+                        </div>
+                    @endif
                 @endif
 
             @endforeach

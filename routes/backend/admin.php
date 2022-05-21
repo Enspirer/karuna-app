@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\PackagesController;
 use App\Http\Controllers\Backend\CountryController;
 use App\Http\Controllers\Backend\CityController;
 use App\Http\Controllers\Backend\ListController;
+use App\Http\Controllers\Backend\NotificationController;
 
 
 // All route names are prefixed with 'admin.'.
@@ -87,6 +88,23 @@ Route::get('receivers_details/{id}', [ListController::class, 'receivers_details'
 Route::get('receiver/edit/{id}', [ListController::class, 'receivers_edit'])->name('receiver.edit');
 Route::post('receiver/update', [ListController::class, 'receivers_update'])->name('receiver.update');
 Route::get('receiver/delete/{id}', [ListController::class, 'receivers_destroy'])->name('receiver.destroy');
+
+
+Route::get('receivers_list/{id}', [ListController::class, 'receivers_list'])->name('receivers_list');
+Route::get('receiver/create/{id}', [ListController::class, 'receivers_create'])->name('receiver.create');
+Route::post('receiver/store', [ListController::class, 'register'])->name('receiver.store');
+Route::get('receivers_details/{id}', [ListController::class, 'receivers_details'])->name('receivers_details');
+Route::get('receiver/edit/{id}', [ListController::class, 'receivers_edit'])->name('receiver.edit');
+Route::post('receiver/update', [ListController::class, 'receivers_update'])->name('receiver.update');
+Route::get('receiver/delete/{id}', [ListController::class, 'receivers_destroy'])->name('receiver.destroy');
+
+
+Route::get('donate_notification', [NotificationController::class, 'index'])->name('donate_notification.index');
+Route::get('donate_notification/getdetails', [NotificationController::class, 'getdetails'])->name('donate_notification.getdetails');
+Route::get('donate_notification/edit/{id}', [NotificationController::class, 'edit'])->name('donate_notification.edit');
+Route::post('donate_notification/update', [NotificationController::class, 'update'])->name('donate_notification.update');
+
+
 
 
 Route::get('agent/getdetails', [ListController::class, 'get_agent_details'])->name('agent.getdetails');

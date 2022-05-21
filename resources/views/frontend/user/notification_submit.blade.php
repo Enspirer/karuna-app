@@ -5,7 +5,8 @@
 @section('content')
 
 <section class="notification-submit-section">
-    <form action="">
+    <form action="{{route('frontend.user.notification.submit.store')}}" method="post" enctype="multipart/form-data">
+    {{csrf_field()}}
         <div class="notification-block">
             <div class="text-block">
                 <div class="subject red">Waiting for you confirmation</div>
@@ -23,43 +24,34 @@
                     <div class="text">(Optional)</div>
                 </div>
                 <div class="body">
-                    <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                    <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                    <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
+
+                    <div class="form-group">
+                        <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="true">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                            </div>
+                            <div class="form-control file-amount">Choose File</div>
+                            <input type="hidden" name="images" class="selected-files" >
+                        </div>
+                        <div class="file-preview box sm">
+                        </div>
+                    </div> 
+
                 </div>
-            </div>
-            <div class="media-block">
-                <div class="header">
-                    <div class="title">Proof Images</div>
-                    <div class="text">(Optional)</div>
-                </div>
-                <div class="body">
-                    <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                    <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                    <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                </div>
-            </div>
-            <div class="media-block">
-                <div class="header">
-                    <div class="title">Proof Images</div>
-                    <div class="text">(Optional)</div>
-                </div>
-                <div class="body">
-                    <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                    <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                    <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                </div>
-            </div>
+            </div>            
         </div>
+            
         <div class="comment-block">
             <div class="comment-input">
                 <label>Special Note</label>
-                <textarea class="form-control" rows="5"></textarea>
+                <textarea class="form-control" rows="5" name="thankyou_message" required></textarea>
             </div>
-            <a href="#" class="cta-btn btn-fill">
+            <input type="hidden" value="{{$receiver->id}}" name="hidden_id">
+            <button type="submit" class="cta-btn btn-fill">
                 <div class="btn-text">Submit</div>
-            </a>
+            </button>
         </div>
+
     </form>
 </section>
 

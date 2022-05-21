@@ -34,7 +34,8 @@ class PaymentController extends Controller
 
             $update = new Receivers;        
             $update->paid_at = Carbon::now();
-            $update->donor_id = auth()->user()->id;
+            $update->donor_id = auth()->user()->id;            
+            $update->amount = $request->package;
             $update->payment_status = 'Payment Completed';
             Receivers::whereId($receiver->id)->update($update->toArray());
 

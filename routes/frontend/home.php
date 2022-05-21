@@ -59,7 +59,7 @@ Route::get('dashboard/receiver-request-list', [DashboardController::class, 'rece
 Route::get('dashboard/receiver-request/{id}', [DashboardController::class, 'receiver_request'])->name('dashboard.receiver_request');
 Route::get('dashboard/profile/agent', [DashboardController::class, 'agent_profile'])->name('dashboard.agent_profile');
 Route::get('dashboard/notification', [DashboardController::class, 'notification'])->name('dashboard.notification');
-Route::get('dashboard/notification/submit', [DashboardController::class, 'notification_submit'])->name('dashboard.notification_submit');
+Route::get('dashboard/notification/submit/{id}', [DashboardController::class, 'notification_submit'])->name('dashboard.notification_submit');
 Route::get('dashboard/payment-history', [DashboardController::class, 'payment_history'])->name('dashboard.payment_history');
 Route::get('dashboard/donation-complete/{receiver_id}', [DashboardController::class, 'donation_complete'])->name('dashboard.donation_complete');
 Route::get('dashboard/settings', [DashboardController::class, 'settings'])->name('dashboard.settings');
@@ -93,6 +93,9 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::post('update_agent', [DashboardController::class, 'update_agent'])->name('update_agent');
 
         Route::post('receiver_request_update', [DashboardController::class, 'receiver_request_update'])->name('receiver_request_update');
+    
+        Route::post('notification/submit/store', [DashboardController::class, 'notification_store'])->name('notification.submit.store');
 
+        
     });
 });

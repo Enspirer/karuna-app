@@ -200,6 +200,7 @@
 </div>
 @endif
 
+
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')
 
     @if(count(App\Models\Receivers::orderBy('id','desc')->where('donor_id',auth()->user()->id)->get()) == 0)

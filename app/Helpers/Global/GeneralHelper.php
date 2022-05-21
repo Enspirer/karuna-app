@@ -146,7 +146,7 @@ if (! function_exists('create_notification')) {
     function create_notification($user_id,$title,$content,$link)
     {
         $notification = new Notification;
-        $notification->user_name = $user_id;
+        $notification->user_id = $user_id;
         $notification->title = $title;
         $notification->link = $link;
         $notification->content =$content;

@@ -58,9 +58,13 @@ class DashboardController extends Controller
         return view('frontend.user.notification');
     }
 
-    public function notification_submit()
+    public function notification_submit($id)
     {
-        return view('frontend.user.notification_submit');
+        $receiver = Receivers::where('id',$id)->first();
+
+        return view('frontend.user.notification_submit',[
+            'receiver' => $receiver
+        ]);
     }
 
     public function payment_history()
@@ -259,6 +263,24 @@ class DashboardController extends Controller
         return redirect()->route('frontend.dashboard.receiver_request_list');
 
     }
+
+    public function notification_store(Request $request)
+    {
+        $update = new Receivers;
+        $update->thankyou_message=$request->thankyou_message;
+        $update->images=$request->images;
+        Receivers::whereId($request->hidden_id)->update($update->toArray());
+
+
+        $rec = Receivers::where('id',$request->hidden_id)->first();
+        $donor = User::where('id',$rec->donor_id)->first();
+    
+        create_notification($rec->donor_id, 'Donation Successful. Thanks for your support', $donor->first_name.' '.$donor->last_name.' donated USD '.$rec->amount.' to '.$rec->name, url('dashboard/notification/submit',$rec->id));
+
+        return redirect()->route('frontend.dashboard.notification');
+        
+    }
+        
 
 
 }

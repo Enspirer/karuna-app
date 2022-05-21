@@ -26,6 +26,7 @@
         "nwidart/laravel-modules": "^8.2",
         "spatie/laravel-html": "^2.22",
         "spatie/laravel-permission": "^3.0",
+        "stripe/stripe-php": "^8.2",
         "torann/geoip": "^1.0",
         "yajra/laravel-datatables-oracle": "^9.18"
     },

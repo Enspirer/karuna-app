@@ -76,7 +76,7 @@
                 <ul class="list-group list-group-flush">
                     @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->get() as $notificatiosn)
                         <li class="list-group-item">
-                            <a href="{{route('frontend.dashboard.notification_submit')}}" class="not-item">
+                            <a href="{{$notificatiosn->link}}" class="not-item">
                                 <i class="bi bi-x-circle-fill"></i>
                                 <div class="text-block">
                                     <div class="subject red">{{$notificatiosn->title}}</div>
@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="time-block">
                                     <i class="bi bi-clock"></i>
-                                    <div class="text">24 Apr 2022 at 9.30 AM</div>
+                                    <div class="text">{{$notificatiosn->created_at}}</div>
                                 </div>
                             </a>
                         </li>
