@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Receivers;
+use Composer\Package\Package;
 use Illuminate\Http\Request;
 use DataTables;
 use DB;
@@ -13,7 +15,7 @@ use App\Http\Requests\Frontend\Auth\RegisterRequest;
 use App\Repositories\Frontend\Auth\UserRepository;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-
+use App\Models\Packages;
 
 class ListController extends Controller
 {
@@ -44,17 +46,17 @@ class ListController extends Controller
         $password_confirmation = $request->password_confirmation;
 
         if($password != $password_confirmation){
-            return back()->withErrors('The password confirmation does not match.'); 
+            return back()->withErrors('The password confirmation does not match.');
         }
 
         $password_count = strlen($password);
 
         if($password_count < 8){
-            return back()->withErrors('The password must be at least 8 characters.');          
+            return back()->withErrors('The password must be at least 8 characters.');
         }
 
         $hashed_password = Hash::make($password);
-       
+
         $add = new User;
 
         $add->first_name=$request->first_name;
@@ -70,7 +72,7 @@ class ListController extends Controller
         $add->level='Level 1';
         $add->address=$request->address;
         $add->password=$hashed_password;
-        $add->confirmed=1; 
+        $add->confirmed=1;
 
         $add->save();
 
@@ -79,16 +81,16 @@ class ListController extends Controller
 
 
     public function agent_status_update(Request $request)
-    {    
+    {
         // dd($request);
 
         $update = new DonateGigs;
         $update->confirmed=$request->confirmed;
         $update->level=$request->level;
-        
+
         User::whereId($request->hidden_id)->update($update->toArray());
 
-        return redirect()->route('admin.agent.index')->withFlashSuccess('Updated Successfully');                      
+        return redirect()->route('admin.agent.index')->withFlashSuccess('Updated Successfully');
 
     }
 
@@ -98,16 +100,16 @@ class ListController extends Controller
         if($request->ajax())
         {
             $data = User::where('user_type','Agent')->get();
-            return DataTables::of($data)     
-            
-            ->addColumn('action', function($data){                   
+            return DataTables::of($data)
+
+            ->addColumn('action', function($data){
                 $button = '<a href="'.route('admin.donate_gigs',$data->id).'" name="donate_gigs" id="'.$data->id.'" class="edit btn btn-success btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-funnel-dollar"></i> Donate Gigs ('.count(DonateGigs::where('agent_id',$data->id)->get()).')</a>';
                 $button .= '<a href="'.route('admin.agent.show',$data->id).'" name="show" id="'.$data->id.'" class="edit btn btn-primary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
                 $button .= '<a href="'.route('admin.receivers_list',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm ml-3 mr-3"><i class="fas fa-user-friends"></i> Receivers ('.count(User::where('assigned_agent_id',$data->id)->where('user_type','Receiver')->get()).')</a>';
                 return $button;
             })
-            ->addColumn('name', function($data){                
-                $name = $data->first_name.' '.$data->last_name ;             
+            ->addColumn('name', function($data){
+                $name = $data->first_name.' '.$data->last_name ;
                 return $name;
             })
             ->addColumn('confirmed', function($data){
@@ -116,10 +118,10 @@ class ListController extends Controller
                 }
                 else{
                     $confirmed = '<span class="badge badge-danger">Disabled</span>';
-                }   
+                }
                 return $confirmed;
-            })   
-                    
+            })
+
             ->rawColumns(['action','name','confirmed'])
             ->make(true);
         }
@@ -135,29 +137,29 @@ class ListController extends Controller
         return view('backend.user_list.donor');
     }
 
-    
+
 
     public function donor_status_edit($id)
-    {        
+    {
         $donor_details = User::where('id',$id)->first();
 
         return view('backend.user_list.donor_details',[
             'donor_details' => $donor_details
         ]);
-     
+
     }
 
-    
+
     public function donor_status_update(Request $request)
-    {    
+    {
         // dd($request);
 
         $update = new DonateGigs;
         $update->confirmed=$request->confirmed;
-        
+
         User::whereId($request->hidden_id)->update($update->toArray());
 
-        return redirect()->route('admin.donor.index')->withFlashSuccess('Updated Successfully');                      
+        return redirect()->route('admin.donor.index')->withFlashSuccess('Updated Successfully');
 
     }
 
@@ -166,29 +168,29 @@ class ListController extends Controller
         if($request->ajax())
         {
             $data = User::where('user_type','Donor')->get();
-            return DataTables::of($data)  
+            return DataTables::of($data)
 
             ->addColumn('action', function($data){
                 $button = '<a href="'.route('admin.donor_status.edit',$data->id).'" name="donate_gigs" id="'.$data->id.'" class="edit btn btn-info btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
                 return $button;
-            })    
+            })
             ->addColumn('confirmed', function($data){
                 if($data->confirmed == 'true'){
                     $confirmed = '<span class="badge badge-success">Enabled</span>';
                 }
                 else{
                     $confirmed = '<span class="badge badge-danger">Disabled</span>';
-                }   
+                }
                 return $confirmed;
-            })                     
-                    
+            })
+
             ->rawColumns(['action','confirmed'])
             ->make(true);
         }
         return back();
     }
 
-   
+
 
     public function donate_gigs($id)
     {
@@ -204,9 +206,9 @@ class ListController extends Controller
         if($request->ajax())
         {
             $data = DonateGigs::where('agent_id',$id)->get();
-            return DataTables::of($data)                           
-                    
-            ->addColumn('action', function($data){                   
+            return DataTables::of($data)
+
+            ->addColumn('action', function($data){
                 $button = '<a href="'.route('admin.donate_gigs_view',$data->id).'" name="show" id="'.$data->id.'" class="edit btn btn-primary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
                 return $button;
             })
@@ -216,7 +218,7 @@ class ListController extends Controller
                 }
                 else{
                     $is_paid = '<span class="badge badge-danger">No</span>';
-                }   
+                }
                 return $is_paid;
             })
             ->addColumn('status', function($data){
@@ -225,10 +227,10 @@ class ListController extends Controller
                 }
                 elseif($data->status == 'Approved'){
                     $status = '<span class="badge badge-success">Approved</span>';
-                }  
+                }
                 else{
                     $status = '<span class="badge badge-danger">Disapproved</span>';
-                }   
+                }
                 return $status;
             })
             ->rawColumns(['action','is_paid','status'])
@@ -250,19 +252,19 @@ class ListController extends Controller
 
 
     public function donate_gigs_update(Request $request)
-    {    
+    {
         // dd($request);
 
         $update = new DonateGigs;
         $update->status=$request->status;
-        
+
         DonateGigs::whereId($request->hidden_id)->update($update->toArray());
 
-        return redirect()->route('admin.donate_gigs',$request->hidden_agent_id)->withFlashSuccess('Updated Successfully');                      
+        return redirect()->route('admin.donate_gigs',$request->hidden_agent_id)->withFlashSuccess('Updated Successfully');
 
     }
-    
-    
+
+
 
 
 
@@ -277,29 +279,26 @@ class ListController extends Controller
         return view('backend.user_list.receivers.receivers',[
             'agent' => $agent
         ]);
-    }       
+    }
 
     public function receivers_details(Request $request,$id)
     {
         if($request->ajax())
         {
-            $data = User::where('assigned_agent_id',$id)->where('user_type','Receiver')->get();
-            return DataTables::of($data)                           
-                    
+            $data = Receivers::where('assigned_agent',$id)->get();
+            return DataTables::of($data)
+            ->editColumn('requirement',function ($data){
+                if($data->requirement == 'Other'){
+                    return 'Other';
+                }else{
+                    $packageDetails = Packages::where('id',$data->requirement)->first();
+                    return $packageDetails->name;
+                }
+            })
             ->addColumn('action', function($data){
                 $button = '<a href="'.route('admin.receiver.edit',$data->id).'" name="donate_gigs" id="'.$data->id.'" class="edit btn btn-info btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> View </a>';
                 return $button;
-            })    
-            ->addColumn('confirmed', function($data){
-                if($data->confirmed == 'true'){
-                    $confirmed = '<span class="badge badge-success">Enabled</span>';
-                }
-                else{
-                    $confirmed = '<span class="badge badge-danger">Disabled</span>';
-                }   
-                return $confirmed;
-            })                     
-               
+            })
             ->rawColumns(['action','confirmed'])
             ->make(true);
         }
@@ -313,7 +312,7 @@ class ListController extends Controller
         return view('backend.user_list.receivers.create',[
             'agent' => $agent
         ]);
-    }  
+    }
 
     public function receivers_edit($id)
     {
@@ -324,7 +323,7 @@ class ListController extends Controller
             'receiver' => $receiver,
             'agent' => $agent
         ]);
-    } 
+    }
 
 
     public function register(RegisterRequest $request)
@@ -335,17 +334,17 @@ class ListController extends Controller
         $password_confirmation = $request->password_confirmation;
 
         if($password != $password_confirmation){
-            return back()->withErrors('The password confirmation does not match.'); 
+            return back()->withErrors('The password confirmation does not match.');
         }
 
         $password_count = strlen($password);
 
         if($password_count < 8){
-            return back()->withErrors('The password must be at least 8 characters.');          
+            return back()->withErrors('The password must be at least 8 characters.');
         }
 
         $hashed_password = Hash::make($password);
-       
+
         $add = new User;
 
         $add->first_name=$request->first_name;
@@ -356,31 +355,31 @@ class ListController extends Controller
         $add->city=$request->city;
         $add->assigned_agent_id=$request->assigned_agent_id;
         $add->password=$hashed_password;
-        $add->confirmed=1; 
+        $add->confirmed=1;
 
         $add->save();
 
         return redirect()->route('admin.receivers_list',$request->assigned_agent_id)->withFlashSuccess('Added Successfully');
     }
 
-    public function receivers_update(Request $request) {   
+    public function receivers_update(Request $request) {
 
-        $email = $request->email;             
-        $hidden_id = $request->hidden_id;     
+        $email = $request->email;
+        $hidden_id = $request->hidden_id;
 
-        $user = User::where('id',$hidden_id)->first();  
+        $user = User::where('id',$hidden_id)->first();
         // dd($user);
 
-        if($user == null){           
-            return back()->withErrors('No any record.'); 
+        if($user == null){
+            return back()->withErrors('No any record.');
         }
         else{
-           
+
             if($request->city != null){
-                $city = $request->city;     
+                $city = $request->city;
             }
             else{
-                $city = $user->city;     
+                $city = $user->city;
             }
 
             $users = DB::table('users') ->where('id', '=', $user->id)->update(
@@ -391,17 +390,17 @@ class ListController extends Controller
                     'country' => $request->country,
                     'city' => $city,
                     'confirmed' => $request->confirmed
-                ]    
+                ]
             );
 
             return redirect()->route('admin.receivers_list',$request->agent_hidden_id)->withFlashSuccess('Updated Successfully');
-                                
-        }   
+
+        }
 
     }
 
 
-    
+
 
 }
 

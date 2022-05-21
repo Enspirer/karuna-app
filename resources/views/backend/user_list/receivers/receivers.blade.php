@@ -3,14 +3,14 @@
 @section('title', __('Receivers'))
 
 @section('content')
-    
+
 
 <div class="row">
         <div class="col">
 
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mt-3 fw-600">Agent Informations&nbsp;</h5>                   
+                    <h5 class="mt-3 fw-600">Agent Informations&nbsp;</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -36,7 +36,7 @@
                     <strong>Receivers&nbsp;</strong>
 
                     @if(get_settings('donation_per_agent') <= count(App\Models\Auth\User::where('assigned_agent_id',$agent->id)->where('user_type','Receiver')->get()) )
-                        <a  class="btn btn-warning pull-right ml-4" disabled>Maximum 5</a>                   
+                        <a  class="btn btn-warning pull-right ml-4" disabled>Maximum 5</a>
                     @else
                         <a href="{{route('admin.receiver.create',$agent->id)}}" class="btn btn-success pull-right ml-4">Add New</a>
                     @endif
@@ -47,12 +47,10 @@
                         <thead>
                             <tr>
                                 <th scope="col">#ID</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">Name</th>
                                 <th scope="col">Country</th>
                                 <th scope="col">City</th>
-                                <th scope="col">Confirmed</th>                                
+                                <th scope="col">Requirement/Package</th>
                                 <th scope="col">Options</th>
                             </tr>
                         </thead>
@@ -64,7 +62,7 @@
             </div><!--card-->
         </div><!--col-->
     </div><!--row-->
-    
+
 
      <!-- Modal delete -->
      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
@@ -81,20 +79,20 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <h5>Are you sure you want to remove this?</h5>
-                        </div>                        
+                        </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-danger" name="ok_button" id="ok_button">Delete</button>
-                       
+
                     </div>
                 </form>
 
             </div>
         </div>
     </div>
-    
+
 
     <script type="text/javascript">
         $(function () {
@@ -105,16 +103,14 @@
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'first_name', name: 'first_name'},
-                    {data: 'last_name', name: 'last_name'},
-                    {data: 'email', name: 'email'},
+                    {data: 'name', name: 'name'},
                     {data: 'country', name: 'country'},
                     {data: 'city', name: 'city'},
-                    {data: 'confirmed', name: 'confirmed'},                    
+                    {data: 'requirement', name: 'requirement'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
- 
+
 
             var user_id;
 
@@ -126,7 +122,7 @@
             $('#ok_button').click(function(){
             $.ajax({
             url:"country/delete/"+user_id,
-            
+
             success:function(data)
             {
                 setTimeout(function(){
@@ -137,7 +133,7 @@
             })
             });
 
-          
+
         });
     </script>
 
