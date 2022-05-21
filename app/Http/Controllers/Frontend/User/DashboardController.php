@@ -68,7 +68,7 @@ class DashboardController extends Controller
         return view('frontend.user.payment_history');
     }
 
-    public function donation_complete()
+    public function donation_complete($receiver_id)
     {
         return view('frontend.user.donation_complete');
     }
@@ -84,9 +84,9 @@ class DashboardController extends Controller
     }
 
     public function create_receiver(Request $request)
-    {        
+    {
         // dd($request);
-       
+
         $account_details = [
             'account_number' => $request->account_number,
             'bank_name' => $request->bank_name,
@@ -97,27 +97,27 @@ class DashboardController extends Controller
 
         $add->profile_image=$request->profile_image;
         $add->cover_image=$request->cover_image;
-        $add->name=$request->name; 
-        $add->name_toggle=$request->name_toggle; 
-        $add->nick_name=$request->nick_name; 
-        $add->age=$request->age; 
-        $add->gender=$request->gender; 
-        $add->country=$request->country; 
-        $add->city=$request->city; 
-        $add->nic_number=$request->nic_number; 
-        $add->address=$request->address; 
-        $add->phone_number=$request->phone_number; 
-        $add->occupation=$request->occupation; 
-        $add->bio=$request->bio; 
-        $add->images=$request->images; 
-        $add->videos=$request->videos; 
-        $add->audios=$request->audios; 
-        $add->about_donation=$request->about_donation; 
-        $add->account_number=$request->account_number; 
+        $add->name=$request->name;
+        $add->name_toggle=$request->name_toggle;
+        $add->nick_name=$request->nick_name;
+        $add->age=$request->age;
+        $add->gender=$request->gender;
+        $add->country=$request->country;
+        $add->city=$request->city;
+        $add->nic_number=$request->nic_number;
+        $add->address=$request->address;
+        $add->phone_number=$request->phone_number;
+        $add->occupation=$request->occupation;
+        $add->bio=$request->bio;
+        $add->images=$request->images;
+        $add->videos=$request->videos;
+        $add->audios=$request->audios;
+        $add->about_donation=$request->about_donation;
+        $add->account_number=$request->account_number;
         $add->requirement=$request->requirement;
         $add->other_description=$request->other_description;
         if($request->account_number != null){
-            $add->account_details=json_encode($account_details);  
+            $add->account_details=json_encode($account_details);
         }
         $add->assigned_agent = auth()->user()->id;
         $add->status='Approved';
@@ -127,20 +127,20 @@ class DashboardController extends Controller
 
     }
 
-    public function update_agent(Request $request) {   
+    public function update_agent(Request $request) {
 
-        $email = $request->email;             
-        $hidden_id = $request->hidden_id;     
+        $email = $request->email;
+        $hidden_id = $request->hidden_id;
 
-        $user = User::where('id',$hidden_id)->first();  
+        $user = User::where('id',$hidden_id)->first();
         // dd($user);
-   
-           
+
+
         if($request->city != null){
-            $city = $request->city;     
+            $city = $request->city;
         }
         else{
-            $city = $user->city;     
+            $city = $user->city;
         }
 
         $users = DB::table('users') ->where('id', '=', $user->id)->update(
@@ -155,18 +155,18 @@ class DashboardController extends Controller
                 'contact_number' => $request->contact_number,
                 'contact_number_two' => $request->contact_number_two,
                 'address' => $request->address
-            ]    
+            ]
         );
 
-        return back()->withFlashSuccess('Updated Successfully');                                
-       
+        return back()->withFlashSuccess('Updated Successfully');
+
     }
 
 
     public function update_receiver(Request $request)
-    {        
+    {
         // dd($request);
-       
+
         $account_details = [
             'account_number' => $request->account_number,
             'bank_name' => $request->bank_name,
@@ -177,48 +177,48 @@ class DashboardController extends Controller
 
         $update->profile_image=$request->profile_image;
         $update->cover_image=$request->cover_image;
-        $update->name=$request->name; 
+        $update->name=$request->name;
         if(isset($request->name_toggle)){
-            $update->name_toggle=$request->name_toggle; 
+            $update->name_toggle=$request->name_toggle;
         }else{
-            $update->name_toggle='no'; 
+            $update->name_toggle='no';
         }
-        $update->nick_name=$request->nick_name; 
-        $update->age=$request->age; 
-        $update->gender=$request->gender; 
-        $update->country=$request->country; 
-        $update->city=$request->city; 
-        $update->nic_number=$request->nic_number; 
-        $update->address=$request->address; 
-        $update->phone_number=$request->phone_number; 
-        $update->occupation=$request->occupation; 
-        $update->bio=$request->bio; 
-        $update->images=$request->images; 
-        $update->videos=$request->videos; 
-        $update->audios=$request->audios; 
-        $update->about_donation=$request->about_donation; 
-        $update->account_number=$request->account_number; 
+        $update->nick_name=$request->nick_name;
+        $update->age=$request->age;
+        $update->gender=$request->gender;
+        $update->country=$request->country;
+        $update->city=$request->city;
+        $update->nic_number=$request->nic_number;
+        $update->address=$request->address;
+        $update->phone_number=$request->phone_number;
+        $update->occupation=$request->occupation;
+        $update->bio=$request->bio;
+        $update->images=$request->images;
+        $update->videos=$request->videos;
+        $update->audios=$request->audios;
+        $update->about_donation=$request->about_donation;
+        $update->account_number=$request->account_number;
         $update->requirement=$request->requirement;
         $update->other_description=$request->other_description;
         if($request->account_number != null){
-            $update->account_details=json_encode($account_details);  
+            $update->account_details=json_encode($account_details);
         }
         $update->assigned_agent = auth()->user()->id;
         $update->status='Approved';
 
         Receivers::whereId($request->hidden_id)->update($update->toArray());
-        
+
         return back();
 
 
     }
-    
+
     public function receiver_request_update(Request $request)
-    {    
+    {
         // dd($request);
 
         $update = new ReceiversRequest;
-        $update->status=$request->status;        
+        $update->status=$request->status;
         ReceiversRequest::whereId($request->hidden_id)->update($update->toArray());
 
         if($request->status == 'Approved'){
@@ -228,37 +228,37 @@ class DashboardController extends Controller
             $update = new Receivers;
             $update->profile_image=$rec_req->profile_image;
             $update->cover_image=$rec_req->cover_image;
-            $update->name=$rec_req->name; 
+            $update->name=$rec_req->name;
             if(isset($rec_req->name_toggle)){
-                $update->name_toggle=$rec_req->name_toggle; 
+                $update->name_toggle=$rec_req->name_toggle;
             }
-            $update->nick_name=$rec_req->nick_name; 
-            $update->age=$rec_req->age; 
-            $update->gender=$rec_req->gender; 
-            $update->country=$rec_req->country; 
-            $update->city=$rec_req->city; 
-            $update->nic_number=$rec_req->nic_number; 
-            $update->address=$rec_req->address; 
-            $update->phone_number=$rec_req->phone_number; 
-            $update->occupation=$rec_req->occupation; 
-            $update->bio=$rec_req->bio; 
-            $update->images=$rec_req->images; 
-            $update->videos=$rec_req->videos; 
-            $update->audios=$rec_req->audios; 
-            $update->about_donation=$rec_req->about_donation; 
-            $update->account_number=$rec_req->account_number; 
+            $update->nick_name=$rec_req->nick_name;
+            $update->age=$rec_req->age;
+            $update->gender=$rec_req->gender;
+            $update->country=$rec_req->country;
+            $update->city=$rec_req->city;
+            $update->nic_number=$rec_req->nic_number;
+            $update->address=$rec_req->address;
+            $update->phone_number=$rec_req->phone_number;
+            $update->occupation=$rec_req->occupation;
+            $update->bio=$rec_req->bio;
+            $update->images=$rec_req->images;
+            $update->videos=$rec_req->videos;
+            $update->audios=$rec_req->audios;
+            $update->about_donation=$rec_req->about_donation;
+            $update->account_number=$rec_req->account_number;
             $update->requirement=$rec_req->requirement;
             $update->other_description=$rec_req->other_description;
-            $update->account_details=$rec_req->account_details;  
+            $update->account_details=$rec_req->account_details;
             $update->assigned_agent = auth()->user()->id;
             $update->status='Approved';
             Receivers::whereId($rec_req->receiver_id)->update($update->toArray());
 
         }
 
-        return redirect()->route('frontend.dashboard.receiver_request_list');                      
+        return redirect()->route('frontend.dashboard.receiver_request_list');
 
     }
-    
+
 
 }

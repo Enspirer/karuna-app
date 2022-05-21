@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Auth\User;
+use App\Models\Packages;
+use App\Models\Receivers;
+use Composer\Package\Package;
 
 /**
  * Class HomeController.
@@ -15,8 +18,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(is_mobile(request()->header('user-agent')) == true){                
-   
+        if(is_mobile(request()->header('user-agent')) == true){
+
             return redirect()->route('frontend.mobile.splash');
         }
 
@@ -33,9 +36,23 @@ class HomeController extends Controller
         return view('frontend.support');
     }
 
-    public function payment()
+    public function payment($receiver_id)
     {
-        return view('frontend.payment');
+        $receiverDetails = Receivers::where('id',$receiver_id)->first();
+        $agentDetails = User::where('id',$receiverDetails->assigned_agent)->first();
+
+
+        if($receiverDetails->requirement == 'Other'){
+            $packageDetails = null;
+        }else{
+            $packageDetails = Packages::where('id',$receiverDetails->requirement)->first();
+        }
+
+        return view('frontend.payment',[
+            'agentDetails' => $agentDetails,
+            'packageDetails' => $packageDetails,
+            'receiverDetails' => $receiverDetails
+        ]);
     }
 
     public function payment_status()
@@ -71,7 +88,7 @@ class HomeController extends Controller
     public function find_agent_details($city)
     {
         // dd($city);
-        $agent_details = User::where('city',$city)->where('user_type','Agent')->get();   
+        $agent_details = User::where('city',$city)->where('user_type','Agent')->get();
 
         $output_array = [];
 

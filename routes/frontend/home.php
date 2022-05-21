@@ -16,7 +16,7 @@ use App\Http\Controllers\Frontend\PaymentController;
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('receivers', [HomeController::class, 'receivers'])->name('receivers');
 Route::get('support', [HomeController::class, 'support'])->name('support');
-Route::get('payment', [HomeController::class, 'payment'])->name('payment');
+Route::get('payment/{receiver_id}', [HomeController::class, 'payment'])->name('payment');
 Route::get('campaigns', [HomeController::class, 'campaigns'])->name('campaigns');
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us');
 Route::get('profile/donor', [HomeController::class, 'donor_profile'])->name('donor_profile');
@@ -61,7 +61,7 @@ Route::get('dashboard/profile/agent', [DashboardController::class, 'agent_profil
 Route::get('dashboard/notification', [DashboardController::class, 'notification'])->name('dashboard.notification');
 Route::get('dashboard/notification/submit', [DashboardController::class, 'notification_submit'])->name('dashboard.notification_submit');
 Route::get('dashboard/payment-history', [DashboardController::class, 'payment_history'])->name('dashboard.payment_history');
-Route::get('dashboard/donation-complete', [DashboardController::class, 'donation_complete'])->name('dashboard.donation_complete');
+Route::get('dashboard/donation-complete/{receiver_id}', [DashboardController::class, 'donation_complete'])->name('dashboard.donation_complete');
 Route::get('dashboard/settings', [DashboardController::class, 'settings'])->name('dashboard.settings');
 Route::get('dashboard/help', [DashboardController::class, 'help'])->name('dashboard.help');
 

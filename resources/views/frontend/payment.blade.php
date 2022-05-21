@@ -20,8 +20,15 @@
                           data-cc-on-file="false"
                           data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
                           id="payment-form">
-                        @csrf
+                        {{csrf_field()}}
                         <div class="row-wrapper">
+                            <div class='form-row row'>
+                                <div class='col-xs-12 form-group required'>
+                                    <label class='control-label'>Name on Card</label>
+                                    <input class='form-control' size='4' type='text'>
+                                </div>
+                            </div>
+
                             <div class="card-row card required">
                                 <div class="label-group">
                                     <div class="label">Card Number</div>
@@ -43,48 +50,16 @@
                                 </div>
                                 <div class="card-input-group">
                                     <input type="text" name="exp-month" class="form-control card-expiry-month" placeholder='MM' size='2'>
-                                    <span>/</span> 
+                                    <span>/</span>
+                                    <input type="hidden" name="receiver_id" value="{{$receiverDetails->id}}">
                                     <input type="text" name="exp-year" class="form-control card-expiry-year" placeholder='YYYY' size='4'>
                                 </div>
                             </div>
                             <div class="card-row">
                                 <div class="label-group">
-                                    <div class="label">Package</div>
-                                    <div class="sub-label">Choose package you hope to donate</div>
+                                    <div class="label">Package Type : {{$packageDetails->name}}</div>
                                 </div>
-                                <div class="splide package-slider" role="group" id="packageSlider">
-                                    <div class="splide__track">
-                                        <ul class="splide__list">
-                                            <li class="splide__slide">
-                                                <div class="package">
-                                                    <input type="radio" class="form-check-input" name="package" value="5000">
-                                                    <div class="header">
-                                                        <div class="amount"><span>Rs.</span> 5000</div>
-                                                    </div>
-                                                    <div class="body">Donate</div>
-                                                </div>
-                                            </li>
-                                            <li class="splide__slide">
-                                                <div class="package">
-                                                    <input type="radio" class="form-check-input" name="package" value="10000">
-                                                    <div class="header">
-                                                        <div class="amount"><span>Rs.</span> 10000</div>
-                                                    </div>
-                                                    <div class="body">Donate</div>
-                                                </div>
-                                            </li>
-                                            <li class="splide__slide">
-                                                <div class="package">
-                                                    <input type="radio" class="form-check-input" name="package" value="15000">
-                                                    <div class="header">
-                                                        <div class="amount"><span>Rs.</span> 15000</div>
-                                                    </div>
-                                                    <div class="body">Donate</div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <input type="text" class="form-control" name="package" value="{{$packageDetails->price}}">
                             </div>
                             <div class="card-row">
                                 <button type="submit" class="cta-btn btn-fill">
@@ -103,15 +78,15 @@
                                 <ul>
                                     <li>
                                         <span class="th">Name :</span>
-                                        <span class="td">Kamal</span>
+                                        <span class="td">{{$agentDetails->name}}</span>
                                     </li>
                                     <li>
                                         <span class="th">Area :</span>
-                                        <span class="td">Colombo</span>
+                                        <span class="td">{{$agentDetails->city}}</span>
                                     </li>
                                     <li>
                                         <span class="th">ID :</span>
-                                        <span class="td">45784154545</span>
+                                        <span class="td">{{$agentDetails->nic_number}}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -124,15 +99,15 @@
                                 <ul>
                                     <li>
                                         <span class="th">Name :</span>
-                                        <span class="td">Kamal</span>
+                                        <span class="td">{{$receiverDetails->name}}</span>
                                     </li>
                                     <li>
                                         <span class="th">Area :</span>
-                                        <span class="td">Colombo</span>
+                                        <span class="td">{{$receiverDetails->city}}</span>
                                     </li>
                                     <li>
                                         <span class="th">ID :</span>
-                                        <span class="td">45784154545</span>
+                                        <span class="td">{{$receiverDetails->nic_number}}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -142,7 +117,7 @@
                         <div class="footer">
                             <div class="text-block">
                                 <div class="text">Your Donate amount is</div>
-                                <div class="amount">Rs.<span> 5000</span></div>
+                                <div class="amount">Rs.<span> {{number_format($packageDetails->price,2)}}</span></div>
                             </div>
                             <img src="{{url('images/landing-page/payment/payment.svg')}}" alt="">
                         </div>

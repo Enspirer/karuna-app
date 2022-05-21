@@ -18,9 +18,16 @@
                     <div class="name">{{$receivers->name}}</div>
                     <div class="location">{{$receivers->city}}</div>
                     <div class="text">{{$receivers->bio}}</div>
-                    <a href="#" class="btn-fill">
-                        <div class="btn-text">Donate Now</div>
-                    </a>
+                    @auth()
+                        <a href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill">
+                            <div class="btn-text">Donate Now</div>
+                        </a>
+                    @else
+                        <a href="{{route('frontend.auth.register')}}" class="btn-fill">
+                            <div class="btn-text">Donate Now</div>
+                        </a>
+                    @endauth
+
                 </div>
             @endforeach
         </div>

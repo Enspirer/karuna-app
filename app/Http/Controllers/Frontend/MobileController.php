@@ -16,7 +16,7 @@ class MobileController extends Controller
     {
         if(!empty( auth()->user()->id) === true ){
             return redirect()->route('frontend.mobile.index');
-        } 
+        }
 
         return view('frontend.mobile.login');
     }
@@ -25,7 +25,7 @@ class MobileController extends Controller
     {
         if(!empty( auth()->user()->id) === true ){
             return redirect()->route('frontend.mobile.index');
-        } 
+        }
 
         return view('frontend.mobile.register');
     }
@@ -34,7 +34,7 @@ class MobileController extends Controller
     {
         if(!empty( auth()->user()->id) === false ){
             return redirect()->route('frontend.mobile.login');
-        } 
+        }
 
         return view('frontend.mobile.index');
     }

@@ -137,7 +137,7 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
 </div> -->
@@ -193,8 +193,8 @@
             @endforeach
 		@endif
 
-            
-            
+
+
         </tbody>
     </table>
 </div>
@@ -220,12 +220,13 @@
                         <th class="db-th">Donation Status</th>
                     </tr>
                 </thead>
-                <tbody>                    
+                <tbody>
                     @foreach(App\Models\Receivers::orderBy('id','desc')->get() as $key => $receiver)
                         <tr class="db-tr">
                             <td class="db-td">
-                                @if(App\Models\Auth\User::where('id',$receiver->assigned_agent)->first() != null)
-                                    <div class="text">{{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->first_name}} {{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->last_name}}</div>
+                                @if(App\Models\Auth\User::where('id',$receiver->donor_id)->first() != null)
+                                    <div class="text">{{App\Models\Auth\User::where('id',$receiver->donor_id)->first()->first_name}}
+                                        {{App\Models\Auth\User::where('id',$receiver->donor_id)->first()->last_name}}</div>
                                 @else
                                     <p>Agent Not Found</p>
                                 @endif
@@ -251,7 +252,7 @@
                                 </div>
                             </td>
                         </tr>
-                    @endforeach                    
+                    @endforeach
                 </tbody>
             </table>
         </div>

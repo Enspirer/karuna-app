@@ -18,16 +18,21 @@ class PaymentController extends Controller
 
     public function post_getway(Request $request)
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
-        Charge::create ([
-            "amount" => 100 * 100,
-            "currency" => "usd",
-            "source" => $request->stripeToken,
-            "description" => "Test payment from itsolutionstuff.com."
-        ]);
 
-        Session::flash('success', 'Payment successful!');
+            Stripe::setApiKey(env('STRIPE_SECRET'));
+            Charge::create ([
+                "amount" => $request->package,
+                "currency" => "usd",
+                "source" => $request->stripeToken,
+                "description" => "Test payment from itsolutionstuff.com."
+            ]);
 
-        return back();
+
+            return redirect()->route('frontend.dashboard.donation_complete',$request->receiver_id);
+
+
+
+
+
     }
 }
