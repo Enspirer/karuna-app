@@ -97,6 +97,8 @@
     </div>
 </section> -->
 
+@if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Receiver')
+
 <section class="request-list-section">
     <div class="mobile-container">
         <div class="header">
@@ -170,6 +172,7 @@
         </div>
     </div>
 </section>
+@endif
 
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type != 'Receiver')
     <section class="donate-list-section">
@@ -198,7 +201,7 @@
                                     </div>
                                 </div>
                                 <div class="button-block">
-                                    <a href="{{route('frontend.mobile.donation_info')}}" class="cta-btn btn-fill">
+                                    <a href="{{route('frontend.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
                                         <div class="btn-text">Donate</div>
                                     </a>
                                     <a href="#" class="cta-link">View more</a>

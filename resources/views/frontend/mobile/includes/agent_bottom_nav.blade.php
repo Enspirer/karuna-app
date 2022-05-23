@@ -1,6 +1,6 @@
 <section class="agent-bottom-nav-section">
     <div class="inner-wrapper">
-        <a href="#" class="add-btn">
+        <a href="{{route('frontend.mobile.donation')}}" class="add-btn">
             <i class="bi bi-plus-lg"></i>
         </a>
         <div class="nav-container">

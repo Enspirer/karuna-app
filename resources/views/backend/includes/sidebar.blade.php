@@ -44,7 +44,7 @@
             <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/donate_notification'))}}" href="{{ route('admin.donate_notification.index') }}">
                 <i class="nav-icon fas fa-bell"></i>
-                    Donate Notifications
+                    Notifications <span class="notification badge">{{App\Models\Receivers::where('status','Agent Not Responded')->get()->count()}}</span>
                 </a>
             </li>
 

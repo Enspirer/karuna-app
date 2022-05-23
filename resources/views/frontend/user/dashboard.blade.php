@@ -185,8 +185,13 @@
                     </td>
                     <td class="db-td">
                         <div class="status-block">
-                            <div class="indicator orange"></div>
-                            <div class="status">Pending</div>
+                            @if($receiver->status == 'Payment Transferred to Agent')
+                                <div class="indicator green"></div>
+                                <div class="status">{{$receiver->status}}</div>
+                            @else
+                                <div class="indicator orange"></div>
+                                <div class="status">{{$receiver->status}}</div>
+                            @endif
                         </div>
                     </td>
                 </tr>
@@ -219,6 +224,7 @@
                         <th class="db-th">Date</th>
                         <th class="db-th">Package</th>
                         <th class="db-th">Donation Status</th>
+                        <th class="db-th">Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -250,6 +256,17 @@
                                     <div class="status">{{$receiver->payment_status}}</div>
                                     <!-- <i class="bi pending bi-exclamation-circle-fill"></i>
                                     <div class="status">Pending</div> -->
+                                </div>
+                            </td>
+                            <td class="db-td">
+                                <div class="status-block">
+                                    @if($receiver->status == 'Payment Transferred to Agent')
+                                        <i class="bi completed bi-check-circle-fill"></i>
+                                        <div class="status">{{$receiver->status}}</div>
+                                    @else
+                                        <i class="bi pending bi-exclamation-circle-fill"></i>
+                                        <div class="status">{{$receiver->status}}</div>
+                                    @endif
                                 </div>
                             </td>
                         </tr>

@@ -34,9 +34,9 @@ Route::get('mobile/splash', [MobileController::class, 'splash'])->name('mobile.s
 Route::get('mobile/login', [MobileController::class, 'login'])->name('mobile.login');
 Route::get('mobile/register', [MobileController::class, 'register'])->name('mobile.register');
 Route::get('mobile', [MobileController::class, 'index'])->name('mobile.index');
-Route::get('mobile/donation-info', [MobileController::class, 'donation_info'])->name('mobile.donation_info');
+Route::get('mobile/donation-info/{id}', [MobileController::class, 'donation_info'])->name('mobile.donation_info');
 Route::get('mobile/donation-list', [MobileController::class, 'donation_list'])->name('mobile.donation_list');
-Route::get('mobile/payment', [MobileController::class, 'payment'])->name('mobile.payment');
+Route::get('mobile/payment/{receiver_id}', [MobileController::class, 'payment'])->name('mobile.payment');
 Route::get('mobile/success', [MobileController::class, 'success'])->name('mobile.success');
 Route::get('mobile/profile-menu', [MobileController::class, 'profile_menu'])->name('mobile.profile_menu');
 Route::get('mobile/donation', [MobileController::class, 'donation'])->name('mobile.donation');

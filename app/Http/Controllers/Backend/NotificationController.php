@@ -21,7 +21,7 @@ class NotificationController extends Controller
     {
         if($request->ajax())
         {
-            $data = Receivers::where('payment_status','Payment Completed')->get();
+            $data = Receivers::where('status','!=','Approved')->get();
             return DataTables::of($data)
 
             ->addColumn('action', function($data){                       
@@ -30,7 +30,7 @@ class NotificationController extends Controller
             })
 
             ->addColumn('status', function($data){
-                if($data->status == 'Approved'){
+                if($data->status == 'Agent Not Responded'){
                     $status = '<span class="badge badge-warning">Not Transferred</span>';
                 }
                 else{

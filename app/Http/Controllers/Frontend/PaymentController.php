@@ -21,26 +21,27 @@ class PaymentController extends Controller
     public function post_getway(Request $request)
     {
 
-            Stripe::setApiKey(env('STRIPE_SECRET'));
-            Charge::create ([
-                "amount" => $request->package,
-                "currency" => "usd",
-                "source" => $request->stripeToken,
-                "description" => "Test payment from itsolutionstuff.com."
-            ]);
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+        Charge::create ([
+            "amount" => $request->package,
+            "currency" => "usd",
+            "source" => $request->stripeToken,
+            "description" => "Test payment from itsolutionstuff.com."
+        ]);
 
+        $receiver = Receivers::where('id',$request->receiver_id)->first();
 
-            $receiver = Receivers::where('id',$request->receiver_id)->first();
+        $update = new Receivers;        
+        $update->paid_at = Carbon::now();
+        $update->donor_id = auth()->user()->id;            
+        $update->amount = $request->package;
+        $update->payment_status = 'Payment Completed';
+        $update->statud = 'Agent Not Responded';
+        Receivers::whereId($receiver->id)->update($update->toArray());
 
-            $update = new Receivers;        
-            $update->paid_at = Carbon::now();
-            $update->donor_id = auth()->user()->id;            
-            $update->amount = $request->package;
-            $update->payment_status = 'Payment Completed';
-            Receivers::whereId($receiver->id)->update($update->toArray());
+        return redirect()->route('frontend.dashboard.donation_complete',$request->receiver_id);
 
-
-            return redirect()->route('frontend.dashboard.donation_complete',$request->receiver_id);
+        $receiver = Receivers::where('id',$request->receiver_id)->first();
 
 
     }

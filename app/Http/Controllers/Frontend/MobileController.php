@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Receivers;
+use App\Models\Packages;
+use App\Models\Auth\User;
 
 class MobileController extends Controller
 {
@@ -39,9 +42,15 @@ class MobileController extends Controller
         return view('frontend.mobile.index');
     }
 
-    public function donation_info()
+    public function donation_info($id)
     {
-        return view('frontend.mobile.donation_info');
+        $receiver = Receivers::where('id',$id)->first();
+        $agent = User::where('id',$receiver->assigned_agent)->first();
+
+        return view('frontend.mobile.donation_info',[
+            'receiver' => $receiver,
+            'agent' => $agent
+        ]);
     }
 
     public function donation_list()
@@ -49,9 +58,23 @@ class MobileController extends Controller
         return view('frontend.mobile.donation_list');
     }
 
-    public function payment()
+    public function payment($receiver_id)
     {
-        return view('frontend.mobile.payment');
+        $receiverDetails = Receivers::where('id',$receiver_id)->first();
+        $agentDetails = User::where('id',$receiverDetails->assigned_agent)->first();
+
+
+        if($receiverDetails->requirement == 'Other'){
+            $packageDetails = null;
+        }else{
+            $packageDetails = Packages::where('id',$receiverDetails->requirement)->first();
+        }
+
+        return view('frontend.mobile.payment',[
+            'agentDetails' => $agentDetails,
+            'packageDetails' => $packageDetails,
+            'receiverDetails' => $receiverDetails
+        ]);
     }
 
     public function success()
@@ -66,6 +89,7 @@ class MobileController extends Controller
 
     public function donation()
     {
+        
         return view('frontend.mobile.donation');
     }
 

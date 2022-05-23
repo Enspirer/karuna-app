@@ -16,20 +16,22 @@
                     <ul>
                         <li>
                             <span class="th">Name :</span>
-                            <span class="td">Kamal</span>
+                            <span class="td">{{$agent->first_name}} {{$agent->lasst_name}}</span>
                         </li>
                         <li>
                             <span class="th">Area :</span>
-                            <span class="td">Colombo</span>
+                            <span class="td">{{$agent->city}} {{$agent->country}}</span>
                         </li>
                         <li>
-                            <span class="th">ID :</span>
-                            <span class="td">45784154545</span>
+                            <span class="th">NIC :</span>
+                            <span class="td">{{$agent->nic_number}}</span>
                         </li>
                     </ul>
                 </div>
                 <a class="cta-link" href="#">View  History of this Agent</a>
             </div>
+
+            
             <div class="profile-block">
                 <div class="title">Receiver's Profile</div>
                 <div class="profile-info">
@@ -37,21 +39,28 @@
                     <ul>
                         <li>
                             <span class="th">Name :</span>
-                            <span class="td">Kamal</span>
+                            <span class="td">{{$receiver->name}}</span>
                         </li>
                         <li>
                             <span class="th">Area :</span>
-                            <span class="td">Colombo</span>
+                            <span class="td">{{$receiver->city}} {{$receiver->country}}</span>
                         </li>
                         <li>
-                            <span class="th">ID :</span>
-                            <span class="td">45784154545</span>
+                            <span class="th">NIC :</span>
+                            <span class="td">{{$receiver->nic_number}}</span>
                         </li>
                     </ul>
                 </div>
                 <a class="cta-link" href="#">View  History of this Receiver</a>
-                <div class="cat-icon blue">S</div>
-                <a href="{{route('frontend.mobile.payment')}}" class="cta-btn btn-fill">
+                @if($receiver->requirement == 'Other')
+                    <div class="cat-icon blue">O</div>
+                @else
+                    @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
+                    <p><img src="{{uploaded_asset(App\Models\Packages::where('id',$receiver->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" class="ml-4 mt-3 mb-3" alt="">
+                        {{App\Models\Packages::where('id',$receiver->requirement)->first()->name}}</p>
+                    @endif
+                @endif
+                <a href="{{route('frontend.mobile.payment',$receiver->id)}}" class="cta-btn btn-fill">
                     <div class="btn-text">Donate Now</div>
                 </a>
             </div>
