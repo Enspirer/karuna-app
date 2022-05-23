@@ -55,7 +55,11 @@ class MobileController extends Controller
 
     public function donation_list()
     {
-        return view('frontend.mobile.donation_list');
+        $receivers = Receivers::where('assigned_agent',auth()->user()->id)->orderBy('id','desc')->paginate(6);
+
+        return view('frontend.mobile.donation_list',[
+            'receivers' => $receivers
+        ]);
     }
 
     public function payment($receiver_id)
@@ -89,7 +93,6 @@ class MobileController extends Controller
 
     public function donation()
     {
-        
         return view('frontend.mobile.donation');
     }
 

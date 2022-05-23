@@ -9,77 +9,50 @@
 <section class="donate-list-section">
     <div class="mobile-container">
         <ul class="list-group">
-            <li class="list-group-item">
-                <div class="receiver">
-                    <div class="content-block">
-                        <div class="icon blue">F</div>
-                        <div class="text-block">
-                            <div class="name">Amila Nandiak</div>
-                            <div class="location">Ampara</div>
+
+        @if(count($receivers) == 0)
+			@include('frontend.includes.not_found',[
+				'not_found_title' => 'No any receivers found',
+				'not_found_description' => null,
+				'not_found_button_caption' => null
+			])
+        @else
+            @foreach($receivers as $key => $receiver)
+                <li class="list-group-item">
+                    <div class="receiver">
+                        <div class="content-block">
+                            @if($receiver->requirement == 'Other')
+                                <div class="icon blue">O</div>
+                            @else
+                                @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
+                                    <img src="{{uploaded_asset(App\Models\Packages::where('id',$receiver->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" class="ml-4 mt-3 mb-3" alt="">
+                                @endif
+                            @endif
+                            <div class="text-block">
+                                <div class="name">{{$receiver->name}}</div>
+                                <div class="location">{{$receiver->city}} {{$receiver->country}}</div>
+                            </div>
+                        </div>
+                        <div class="button-block">
+                            <a href="{{route('frontend.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
+                                <div class="btn-text">Donate</div>
+                            </a>
+                            <!-- <a href="{{route('frontend.mobile.payment',$receiver->id)}}" class="cta-link">View more</a> -->
                         </div>
                     </div>
-                    <div class="button-block">
-                        <a href="{{route('frontend.mobile.donation_info')}}" class="cta-btn btn-fill">
-                            <div class="btn-text">Donate</div>
-                        </a>
-                        <a href="#" class="cta-link">View more</a>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="receiver">
-                    <div class="content-block">
-                        <div class="icon purple">M</div>
-                        <div class="text-block">
-                            <div class="name">Amila Nandiak</div>
-                            <div class="location">Ampara</div>
-                        </div>
-                    </div>
-                    <div class="button-block">
-                        <a href="#" class="cta-btn btn-fill">
-                            <div class="btn-text">Donate</div>
-                        </a>
-                        <a href="#" class="cta-link">View more</a>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="receiver">
-                    <div class="content-block">
-                        <div class="icon green">S</div>
-                        <div class="text-block">
-                            <div class="name">Amila Nandiak</div>
-                            <div class="location">Ampara</div>
-                        </div>
-                    </div>
-                    <div class="button-block">
-                        <a href="#" class="cta-btn btn-fill">
-                            <div class="btn-text">Donate</div>
-                        </a>
-                        <a href="#" class="cta-link">View more</a>
-                    </div>
-                </div>
-            </li>
+                </li>
+           @endforeach
+        @endif
+
+
         </ul>
     </div>
 </section>
 
 <nav class="pagination-nav">
     <ul class="pagination">
-        <li class="page-item disabled">
-            <a class="page-link">Previous</a>
-        </li>
-        <li class="page-item disabled">
-            <a class="page-link">1</a>
-        </li>
-        <li class="page-item active">
-            <a class="page-link" href="#">2</a>
-        </li>
         <li class="page-item">
-            <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">Next</a>
+            {{ $receivers->links() }}
         </li>
     </ul>
 </nav>

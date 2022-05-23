@@ -36,8 +36,12 @@ class PaymentController extends Controller
         $update->donor_id = auth()->user()->id;            
         $update->amount = $request->package;
         $update->payment_status = 'Payment Completed';
-        $update->statud = 'Agent Not Responded';
+        $update->status = 'Agent Not Responded';
         Receivers::whereId($receiver->id)->update($update->toArray());
+
+        if(is_mobile(request()->header('user-agent')) == true){
+            return redirect()->route('frontend.mobile.index');
+        }
 
         return redirect()->route('frontend.dashboard.donation_complete',$request->receiver_id);
 

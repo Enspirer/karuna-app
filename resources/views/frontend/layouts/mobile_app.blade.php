@@ -8,6 +8,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="app-url" content="{{ getBaseURL() }}">
+        <meta name="file-base-url" content="{{ getFileBaseURL() }}"> 
         <title>@yield('title', app_name())</title>
         <meta name="description" content="@yield('meta_description', 'Laravel Boilerplate')">
         <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
@@ -35,6 +37,36 @@
 
         <!-- Custom CSS-->
         <link rel="stylesheet" href="{{url('css/mobile_main.css')}}">
+
+        <link rel="stylesheet" href="{{url('css/aiz-core.css')}}">    
+        <link rel="stylesheet" href="{{url('css/vendors.css')}}"> 
+
+
+        <script>
+            var AIZ = AIZ || {};
+            AIZ.local = {
+            nothing_selected: 'Nothing selected',
+            nothing_found: 'Nothing found',
+            choose_file: 'Choose file',
+            file_selected: 'File selected',
+            files_selected: 'Files selected',
+            add_more_files: 'Add more files',
+            adding_more_files: 'Adding more files',
+            drop_files_here_paste_or: 'Drop files here, paste or',
+            browse: 'Browse',
+            upload_complete: 'Upload complete',
+            upload_paused: 'Upload paused',
+            resume_upload: 'Resume upload',
+            pause_upload: 'Pause upload',
+            retry_upload: 'Retry upload',
+            cancel_upload: 'Cancel upload',
+            uploading: 'Uploading',
+            processing: 'Processing',
+            complete: 'Complete',
+            file: 'File',
+            files: 'Files',
+            }
+        </script>
 
         {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
         @stack('before-styles')
@@ -67,4 +99,7 @@
 
     <!-- Custom JS -->
     <script src="{{url('js/mobile_main.js')}}"></script>
+    <script src="{{url('js/vendors.js')}}"></script>
+    <script src="{{url('js/aiz-core.js')}}"></script>
+    
 </html>

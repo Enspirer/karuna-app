@@ -127,6 +127,10 @@ class DashboardController extends Controller
         $add->status='Approved';
         $add->save();
 
+        if(is_mobile(request()->header('user-agent')) == true){
+            return redirect()->route('frontend.mobile.index');
+        }
+
         return back()->withFlashSuccess('Added Successfully');
 
     }

@@ -52,27 +52,25 @@
             <div class="payment-block">
                 <div class="title">Payment Details</div>
 
-                <div class='form-row row'>
-                    <div class='col-xs-12 form-group required'>
-                        <label class='control-label'>Name on Card</label>
-                        <input class='form-control' size='4' type='text'>
-                    </div>
+                <div class='card-row'>
+                    <label class='form-label'>Name on Card</label>
+                    <input class='form-control' size='4' type='text' required>
                 </div>
                             
                 <div class="card-row">
                     <label class="form-label">Card Number</label>
-                    <input type="text" class="form-control card-number" name="card-number" size='20'>
+                    <input type="text" class="form-control card-number" name="card-number" size='20' required>
                 </div>
                 <div class="card-row">
                     <label class="form-label">CVC</label>
-                    <input type="text" name="cvc-number" class="form-control card-cvc" size='4'>
+                    <input type="text" name="cvc-number" class="form-control card-cvc" size='4' required>
                 </div>                
                 <div class="card-row">
                 <label class="form-label">Expiry Date</label>
-                    <input type="text" name="exp-month" class="form-control card-expiry-month" placeholder='MM' size='2'>
+                    <input type="text" name="exp-month" class="form-control card-expiry-month" placeholder='MM' size='2' required>
                     <span>/</span>
                     <input type="hidden" name="receiver_id" value="{{$receiverDetails->id}}">
-                    <input type="text" name="exp-year" class="form-control card-expiry-year" placeholder='YYYY' size='4'>
+                    <input type="text" name="exp-year" class="form-control card-expiry-year" placeholder='YYYY' size='4' required>
                 </div>
                 <!-- <div class="card-row">
                     <label class="form-label">Card Holder Name</label>
@@ -80,7 +78,7 @@
                 </div> -->
                 <div class="card-row">
                     <div class="form-label">Package Type : {{$packageDetails->name}}</div>
-                    <input type="text" class="form-control" name="package" value="{{$packageDetails->price}}">
+                    <input type="text" class="form-control" name="package" value="{{$packageDetails->price}}" required>
                 </div>
                 <!-- <div class="card-row">
                     <div class="form-check">
@@ -92,11 +90,12 @@
                     <div class="footer-text">Approved by Central Bank of Sri Lanka</div>
                 </div>
             </div>
+            <!-- <div class="exp-timer">14m : 52s</div> -->
+            <button type="submit" class="cta-btn btn-fill">
+                <div class="btn-text">Continue</div>
+            </button>
         </form>
-        <!-- <div class="exp-timer">14m : 52s</div> -->
-        <button type="submit" class="cta-btn btn-fill">
-            <div class="btn-text">Continue</div>
-        </button>
+
     </div>
 </section>
 
