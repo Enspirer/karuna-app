@@ -4,7 +4,18 @@
 
 @section('content')
 
-@include('frontend.mobile.includes.top_nav')
+<!-- ======== Top Nav ======== -->
+<section class="app-bar-section">
+    <div class="mobile-container">
+        <div class="inner-wrapper">
+            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="title">Completed</div>
+        </div>
+    </div>
+</section>
+<!-- ======== Top Nav End ======== -->
 
 <section class="thanks-section">
     <div class="inner-wrapper">
@@ -36,8 +47,6 @@
     </div>
   </div>
 </div>
-
-@include('frontend.mobile.includes.bottom_nav')
 
 @endsection
 

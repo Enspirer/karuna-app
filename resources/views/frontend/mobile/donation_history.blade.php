@@ -4,7 +4,18 @@
 
 @section('content')
 
-@include('frontend.mobile.includes.top_nav')
+<!-- ======== Top Nav ======== -->
+<section class="app-bar-section">
+    <div class="mobile-container">
+        <div class="inner-wrapper">
+            <a href="{{route('frontend.mobile.profile_menu')}}" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="title">Donation History</div>
+        </div>
+    </div>
+</section>
+<!-- ======== Top Nav End ======== -->
 
 <section class="donation-history-section">
     <div class="mobile-container">
@@ -40,6 +51,10 @@
                             <div class="col-6">
                                 <label>Date</label>
                                 <div class="text">22/05/2022</div>
+                            </div>
+                            <div class="col-6">
+                                <label>Amount</label>
+                                <div class="text">Rs. 5000</div>
                             </div>
                         </div>
                     </div>
@@ -77,6 +92,10 @@
                                 <label>Date</label>
                                 <div class="text">22/05/2022</div>
                             </div>
+                            <div class="col-6">
+                                <label>Amount</label>
+                                <div class="text">Rs. 5000</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -113,6 +132,10 @@
                                 <label>Date</label>
                                 <div class="text">22/05/2022</div>
                             </div>
+                            <div class="col-6">
+                                <label>Amount</label>
+                                <div class="text">Rs. 5000</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,8 +143,6 @@
             </div>
         </div>
 </section>
-
-@include('frontend.mobile.includes.bottom_nav')
 
 @endsection
 

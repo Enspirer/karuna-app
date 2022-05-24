@@ -5,16 +5,14 @@
 
 @section('content')
 
-<!-- @include('frontend.mobile.includes.top_nav') -->
-
 <!-- ======== Top Nav ======== -->
 <section class="app-bar-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
-            <a href="{{url('mobile')}}" class="back-btn">
+            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="title">Notificatoin</div>
+            <div class="title">Notification</div>
         </div>
     </div>
 </section>
@@ -24,7 +22,7 @@
     <div class="mobile-container">
         <ul class="list-group">
             <li class="list-group-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('frontend.mobile.thanks')}}" class="nav-link">
                     <img src="{{url('images/dashboard/donate.png')}}" alt="">
                     <div class="text-block">
                         <div class="subject red">Thank you for your support</div>
