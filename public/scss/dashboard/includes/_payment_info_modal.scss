@@ -1,0 +1,219 @@
+.payment-info-modal {
+    .modal-dialog {
+        .modal-content {
+            overflow: hidden;
+            border: none;
+            border-radius: 10px;
+
+            .modal-header {
+                background-color: $primary-green;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 2rem;
+                padding: 1rem 4rem;
+
+                .image-block {
+                    img {
+                        width: 80px;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+
+                .title-block {
+                    .title {
+                        font-size: 1.25rem;
+                        font-weight: 400;
+                        margin-bottom: 0.25rem;
+                        color: $white;
+                    }
+
+                    .text {
+                        font-size: .9rem;
+                        font-weight: 300;
+                        color: $white;
+                    }
+                }
+
+                .bi {
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    font-size: 2rem;
+                    color: $white;
+                    cursor: pointer;
+                }
+            }
+
+            .modal-body {
+                padding: 2rem;
+
+                .payment-info-table {
+                    width: 100%;
+                    border-collapse: collapse;
+
+                    tbody {
+                        tr {
+                            td {
+                                padding: .25rem;
+
+                                .text {
+                                    font-size: .8rem;
+                                    font-weight: 400;
+                                    color: $text-black;
+
+                                    &.gray {
+                                        color: $gray;
+                                    }
+
+                                    &.green {
+                                        color: green;
+                                    }
+
+                                    &.max-width {
+                                        width: max-content;
+                                    }
+                                }
+
+                                .header {
+                                    font-size: 1rem;
+                                    font-weight: 400;
+                                    color: $text-black;
+                                    margin-top: 1rem;
+                                }
+
+                                .image-block {
+                                    img {
+                                        width: 80px;
+                                        height: 80px;
+                                        object-fit: cover;
+                                        object-position: center;
+                                        border: 1px solid $light-gray;
+                                    }
+                                }
+
+                                .title {
+                                    font-size: .8rem;
+                                    font-weight: 400;
+                                    text-transform: uppercase;
+                                    color: $gray;
+                                }
+
+                                .name {
+                                    font-size: .9rem;
+                                    text-transform: uppercase;
+                                    font-weight: 300;
+                                    margin-bottom: 0.5rem;
+                                    color: $text-black;
+                                }
+
+                                .info {
+                                    font-size: .8rem;
+                                    font-weight: 300;
+                                    margin-bottom: 0.75rem;
+                                    color: $text-black;
+                                }
+
+                                .cat {
+                                    font-size: .8rem;
+                                    font-weight: 400;
+                                    color: $gray;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .modal-footer {
+                border: none;
+                padding: 0 2rem 2rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                gap: 2rem;
+
+                .text-block {
+                    .title {
+                        font-size: .8rem;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        color: $gray;
+                    }
+
+                    .name {
+                        font-size: .9rem;
+                        text-transform: uppercase;
+                        font-weight: 300;
+                        margin-bottom: 0.5rem;
+                        color: $text-black;
+                    }
+
+                    .text {
+                        font-size: .8rem;
+                        font-weight: 300;
+                        margin-bottom: 0.75rem;
+                        color: $text-black;
+                    }
+                }
+
+                .cta-btn {
+                    width: 250px;
+                    height: 45px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .payment-info-modal {
+        .modal-dialog {
+            .modal-content {
+                .modal-header {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 0.5rem;
+                }
+
+                .modal-body {
+                    .payment-info-table {
+                        tbody {
+                            tr {
+                                td {
+                                    display: block;
+                                    text-align: center;
+
+                                    .text {
+                                        text-align: center !important;
+
+                                        &.max-width {
+                                            width: fit-content;
+                                            margin: auto;
+                                        }
+                                    }
+                                }
+
+                                .mobile-border-none {
+                                    border: none !important;
+                                }
+
+                                .mobile-hide {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .modal-footer {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 0;
+                }
+            }
+        }
+    }
+}

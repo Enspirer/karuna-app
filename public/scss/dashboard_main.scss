@@ -17,7 +17,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
 }
 
 * {
@@ -59,3 +58,4 @@
 // Includes
 @import "dashboard/includes/nav";
 @import "dashboard/includes/header";
+@import "dashboard/includes/payment_info_modal";

@@ -77,7 +77,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
 }
 
 *::-moz-selection {
@@ -341,6 +340,7 @@
 }
 .receiver-profile-section .profile-summery-block .header {
   position: relative;
+  background: url("../../images/dashboard/receiver-back.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1221,6 +1221,167 @@
 .dashboard-header .button-block .nav-btn.active {
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #fff;
+}
+
+.payment-info-modal .modal-dialog .modal-content {
+  overflow: hidden;
+  border: none;
+  border-radius: 10px;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-header {
+  background-color: #1FC39E;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 4rem;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-header .image-block img {
+  width: 80px;
+  object-fit: cover;
+  object-position: center;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-header .title-block .title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+  color: #fff;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-header .title-block .text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #fff;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-header .bi {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body {
+  padding: 2rem;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td {
+  padding: 0.25rem;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #333;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .text.gray {
+  color: #767676;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .text.green {
+  color: green;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .text.max-width {
+  width: max-content;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .header {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  margin-top: 1rem;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .image-block img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid #ddd;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .title {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #767676;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .name {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .info {
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .cat {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #767676;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-footer {
+  border: none;
+  padding: 0 2rem 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 2rem;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-footer .text-block .title {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #767676;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-footer .text-block .name {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-footer .text-block .text {
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+.payment-info-modal .modal-dialog .modal-content .modal-footer .cta-btn {
+  width: 250px;
+  height: 45px;
+}
+
+@media screen and (max-width: 991px) {
+  .payment-info-modal .modal-dialog .modal-content .modal-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td {
+    display: block;
+    text-align: center;
+  }
+  .payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .text {
+    text-align: center !important;
+  }
+  .payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr td .text.max-width {
+    width: fit-content;
+    margin: auto;
+  }
+  .payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr .mobile-border-none {
+    border: none !important;
+  }
+  .payment-info-modal .modal-dialog .modal-content .modal-body .payment-info-table tbody tr .mobile-hide {
+    display: none;
+  }
+  .payment-info-modal .modal-dialog .modal-content .modal-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+  }
 }
 
 /*# sourceMappingURL=dashboard_main.css.map */
