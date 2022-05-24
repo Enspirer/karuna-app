@@ -56,9 +56,11 @@ class MobileController extends Controller
     public function donation_list()
     {
         $receivers = Receivers::where('assigned_agent',auth()->user()->id)->orderBy('id','desc')->paginate(6);
+        $receivers_for_donor = Receivers::orderBy('id','desc')->paginate(6);
 
         return view('frontend.mobile.donation_list',[
-            'receivers' => $receivers
+            'receivers' => $receivers,
+            'receivers_for_donor' => $receivers_for_donor
         ]);
     }
 
