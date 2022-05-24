@@ -81,9 +81,11 @@ class MobileController extends Controller
         ]);
     }
 
-    public function success()
+    public function success($amount)
     {
-        return view('frontend.mobile.success');
+        return view('frontend.mobile.success',[
+            'amount' => $amount
+        ]);
     }
 
     public function profile_menu()

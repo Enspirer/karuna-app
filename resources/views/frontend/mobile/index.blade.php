@@ -5,28 +5,32 @@
 @section('content')
 
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')
-<section class="thank-section">
-    <div class="mobile-container">
-        <div class="inner-wrapper">
-            <a href="{{route('frontend.mobile.index')}}" class="brand">
-                <img src="{{url('images/mobile/logo/karuna-logo-white.svg')}}" alt="">
-            </a>            
-            <a href="#" class="profile"> 
-                <i class="bi bi-suit-heart-fill"></i>
-                <div class="text">1578</div>
-                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
-            </a>            
-        </div>
-        <div class="title">Receive a small thank<br>for your efforts!</div>
-        <div class="thank-block">
-            <div class="text">Your package sent successfully and Saman reacted your support</div>
-            <div class="image-block">
-                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
-                <i class="bi bi-suit-heart-fill"></i>
-            </div>
-        </div>
-    </div>
-</section>
+    @if(App\Models\Receivers::where('donor_id',auth()->user()->id)->first() != null)
+        @if(App\Models\Receivers::where('donor_id',auth()->user()->id)->first()->thankyou_message != null)
+            <section class="thank-section">
+                <div class="mobile-container">
+                    <div class="inner-wrapper">
+                        <a href="{{route('frontend.mobile.index')}}" class="brand">
+                            <img src="{{url('images/mobile/logo/karuna-logo-white.svg')}}" alt="">
+                        </a>            
+                        <a href="#" class="profile"> 
+                            <i class="bi bi-suit-heart-fill"></i>
+                            <div class="text">{{count(App\Models\Receivers::where('donor_id',auth()->user()->id)->get())}}</div>
+                            <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                        </a>            
+                    </div>
+                    <div class="title">Receive a small thank<br>for your efforts!</div>
+                    <div class="thank-block">
+                        <div class="text">Your package sent successfully and Saman reacted your support</div>
+                        <div class="image-block">
+                            <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                            <i class="bi bi-suit-heart-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
+    @endif
 @endif
 
 <section class="top-nav-section">
@@ -174,7 +178,7 @@
 </section>
 @endif
 
-@if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type != 'Receiver')
+@if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Agent')
     <section class="donate-list-section">
         <div class="mobile-container">
             <div class="header">
@@ -201,10 +205,7 @@
                                     </div>
                                 </div>
                                 <div class="button-block">
-                                    <a href="{{route('frontend.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
-                                        <div class="btn-text">Donate</div>
-                                    </a>
-                                    <a href="#" class="cta-link">View more</a>
+                                    <a href="{{route('frontend.mobile.view_profile')}}" class="cta-link">View more</a>
                                 </div>
                             </div>
                         </li>
@@ -224,6 +225,62 @@
         </div>
     </section>
 @endif
+
+
+@if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')
+    <section class="donate-list-section">
+        <div class="mobile-container">
+            <div class="header">
+                <div class="title">Donate List</div>
+                <a href="{{route('frontend.mobile.donation_list')}}">See All <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <ul class="list-group">
+
+                @if(count(App\Models\Receivers::get()) != 0)
+                    @foreach(App\Models\Receivers::take(3)->latest()->get() as $receiver)
+                        <li class="list-group-item">
+                            <div class="receiver">
+                                <div class="content-block">
+                                    @if($receiver->requirement == 'Other')
+                                        <div class="icon blue">O</div>
+                                    @else
+                                        @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
+                                            <img src="{{uploaded_asset(App\Models\Packages::where('id',$receiver->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
+                                        @endif
+                                    @endif
+                                    <div class="text-block">
+                                        <div class="name">{{$receiver->name}}</div>
+                                        <div class="location">{{$receiver->city}}</div>
+                                    </div>
+                                </div>
+                                <div class="button-block">
+                                    <a href="{{route('frontend.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
+                                        <div class="btn-text">Donate</div>
+                                    </a>
+                                    <a href="{{route('frontend.mobile.view_profile')}}" class="cta-link">View more</a>
+                                </div>
+                            </div>
+                        </li>
+                    @endforeach
+                @else
+                    <section class="section-no-data">
+                        <div class="mobile-container">
+                            <div class="inner-wrapper">
+                                <img src="{{url('images/not-found.png')}}" alt="">
+                                <div class="text">No data foud</div>
+                            </div>
+                        </div>
+                    </section>
+                @endif
+               
+            </ul>
+        </div>
+    </section>
+@endif
+
+
+
+
 
 @endsection
 

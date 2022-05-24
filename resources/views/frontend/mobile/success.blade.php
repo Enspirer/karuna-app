@@ -10,9 +10,9 @@
     <div class="inner-wrapper">
         <i class="bi bi-check-circle-fill"></i>
         <div class="title">Payment Successful</div>
-        <div class="amount"><span>Rs.</span> 5000</div>
+        <div class="amount"><span>USD</span> {{$amount}}</div>
         <div class="text">Transaction successfully processed and you will be notified when the your parcel is received to agent or receiver</div>
-        <a href="#" class="cta-btn btn-fill">
+        <a href="{{route('frontend.mobile.index')}}" class="cta-btn btn-fill">
             <div class="btn-text">Ok</div>
         </a>
     </div>

@@ -40,7 +40,7 @@ class PaymentController extends Controller
         Receivers::whereId($receiver->id)->update($update->toArray());
 
         if(is_mobile(request()->header('user-agent')) == true){
-            return redirect()->route('frontend.mobile.index');
+            return redirect()->route('frontend.mobile.success',$request->package);
         }
 
         return redirect()->route('frontend.dashboard.donation_complete',$request->receiver_id);
