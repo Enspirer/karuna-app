@@ -225,14 +225,6 @@
     </section>
 @endif
 
-
-
-@if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Agent')
-    @include('frontend.mobile.includes.agent_bottom_nav')
-@else
-    @include('frontend.mobile.includes.bottom_nav')
-@endif
-
 @endsection
 
 @push('after-scripts')

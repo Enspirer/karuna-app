@@ -84,6 +84,7 @@
             <section class="mobile-body">
                 @include('includes.partials.logged-in-as')
                 @yield('content')
+                @include('frontend.mobile.includes.bottom_nav')
             </section>
         </div><!-- #app -->
 
