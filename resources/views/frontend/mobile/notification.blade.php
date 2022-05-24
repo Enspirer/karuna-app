@@ -32,10 +32,9 @@
                 </a>
             </li>
             <li class="list-group-item">
-                <a href="#" class="nav-link">
-                    <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                <a href="{{route('frontend.mobile.confirmation')}}" class="nav-link">
                     <div class="text-block">
-                        <div class="subject green">Thank you for your support</div>
+                        <div class="subject red">Waiting for you confirmation</div>
                         <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
                     </div>
                     <i class="bi bi-bookmark"></i>

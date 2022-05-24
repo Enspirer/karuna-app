@@ -38,6 +38,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('frontend.mobile.receivers_list')}}" class="nav-link">
+                        <i class="bi bi-people"></i>
+                        <div class="text">My Receivers</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('frontend.mobile.receiver_request_list')}}" class="nav-link">
+                        <i class="bi bi-person-plus"></i>
+                        <div class="text">Receiver Requests</div>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('frontend.mobile.profile')}}" class="nav-link">
                         <i class="bi bi-person"></i>
                         <div class="text">Profile</div>

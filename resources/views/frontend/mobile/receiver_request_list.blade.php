@@ -4,13 +4,24 @@
 
 @section('content')
 
-@include('frontend.mobile.includes.top_nav')
+<!-- ======== Top Nav ======== -->
+<section class="app-bar-section">
+    <div class="mobile-container">
+        <div class="inner-wrapper">
+            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="title">Receivers Request</div>
+        </div>
+    </div>
+</section>
+<!-- ======== Top Nav End ======== -->
 
 <section class="table-section">
     <div class="mobile-container">
         <table class="mobile-table payment-history-table">
             <tbody>
-                <tr class="m-tr clickable-tr" data-href="#">
+                <tr class="m-tr clickable-tr" data-href="{{route('frontend.mobile.receiver_request_approve')}}">
                     <td class="m-td">
                         <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
                     </td>
@@ -50,8 +61,6 @@
         </table>
     </div>
 </section>
-
-@include('frontend.mobile.includes.agent_bottom_nav')
 
 @endsection
 
