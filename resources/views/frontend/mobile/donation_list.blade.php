@@ -4,7 +4,18 @@
 
 @section('content')
 
-@include('frontend.mobile.includes.top_nav')
+<!-- ======== Top Nav ======== -->
+<section class="app-bar-section">
+    <div class="mobile-container">
+        <div class="inner-wrapper">
+            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="title">Donation List</div>
+        </div>
+    </div>
+</section>
+<!-- ======== Top Nav End ======== -->
 
 <section class="donate-list-section">
     <div class="mobile-container">
@@ -56,8 +67,6 @@
         </li>
     </ul>
 </nav>
-
-@include('frontend.mobile.includes.bottom_nav')
 
 @endsection
 

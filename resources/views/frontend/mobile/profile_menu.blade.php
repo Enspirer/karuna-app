@@ -4,7 +4,18 @@
 
 @section('content')
 
-@include('frontend.mobile.includes.top_nav')
+<!-- ======== Top Nav ======== -->
+<section class="app-bar-section">
+    <div class="mobile-container">
+        <div class="inner-wrapper">
+            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="title">Menu</div>
+        </div>
+    </div>
+</section>
+<!-- ======== Top Nav End ======== -->
 
 <section class="profile-menu-section">
     <div class="mobile-container">
@@ -21,31 +32,31 @@
             </div>
             <ul class="profile-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('frontend.mobile.donation_history')}}" class="nav-link">
                         <i class="bi bi-arrow-left-right"></i>
                         <div class="text">Donation History</div>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('frontend.mobile.profile')}}" class="nav-link">
                         <i class="bi bi-person"></i>
                         <div class="text">Profile</div>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('frontend.mobile.notification')}}" class="nav-link">
                         <i class="bi bi-bell"></i>
                         <div class="text">Notification</div>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="bi bi-credit-card"></i>
                         <div class="text">Payment History</div>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('frontend.mobile.profile')}}" class="nav-link">
                         <i class="bi bi-gear"></i>
                         <div class="text">Settings</div>
                     </a>
@@ -58,8 +69,6 @@
         </div>
     </div>
 </section>
-
-@include('frontend.mobile.includes.bottom_nav')
 
 @endsection
 
