@@ -21,7 +21,7 @@
     <div class="mobile-container">
         <table class="mobile-table payment-history-table">
             <tbody>
-                <tr class="m-tr clickable-tr" data-href="{{route('frontend.mobile.receiver')}}">
+                <tr class="m-tr clickable-tr" data-href="{{route('frontend.mobile.receiver_agent')}}">
                     <td class="m-td">
                         <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
                     </td>

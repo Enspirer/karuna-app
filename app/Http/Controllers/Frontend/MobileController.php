@@ -135,9 +135,19 @@ class MobileController extends Controller
         return view('frontend.mobile.receiver');
     }
 
+    public function receiver_agent()
+    {
+        return view('frontend.mobile.receiver_agent');
+    }
+
     public function receiver_edit()
     {
         return view('frontend.mobile.receiver_edit');
+    }
+
+    public function receiver_edit_agent()
+    {
+        return view('frontend.mobile.receiver_edit_agent');
     }
 
     public function receiver_request_list()
@@ -150,13 +160,28 @@ class MobileController extends Controller
         return view('frontend.mobile.receiver_request_approve');
     }
 
-    public function confirmation()
+    public function agent_confirmation()
     {
-        return view('frontend.mobile.confirmation');
+        return view('frontend.mobile.agent_confirmation');
     }
 
-    public function view_profile()
+    public function receiver_confirmation()
+    {
+        return view('frontend.mobile.receiver_confirmation');
+    }
+
+    public function view_profile_agent()
     {
         return view('frontend.mobile.view_profile');
+    }
+
+    public function view_profile_donor()
+    {
+        return view('frontend.mobile.view_profile_donor');
+    }
+
+    public function view_profile_receiver()
+    {
+        return view('frontend.mobile.view_profile_receiver');
     }
 }

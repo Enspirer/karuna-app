@@ -31,7 +31,7 @@
                 <i class="bi bi-star-half"></i>
                 <i class="bi bi-star"></i>
             </div>
-            <div class="status maroon">Agent</div>
+            <div class="status green">Donor</div>
             <div class="profile-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident optio atque quibusdam, excepturi laboriosam mollitia quos sequi nobis quidem ex!</div>
             <div class="info-table-wrapper">
                 <table class="info-table">

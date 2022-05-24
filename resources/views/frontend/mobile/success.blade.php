@@ -4,7 +4,18 @@
 
 @section('content')
 
-@include('frontend.mobile.includes.top_nav')
+<!-- ======== Top Nav ======== -->
+<section class="app-bar-section">
+    <div class="mobile-container">
+        <div class="inner-wrapper">
+            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="title">Notification</div>
+        </div>
+    </div>
+</section>
+<!-- ======== Top Nav End ======== -->
 
 <section class="success-msg-section">
     <div class="inner-wrapper">
@@ -18,7 +29,17 @@
     </div>
 </section>
 
-@include('frontend.mobile.includes.bottom_nav')
+<!-- <section class="success-msg-section">
+    <div class="inner-wrapper">
+        <i class="bi bi-check-circle-fill"></i>
+        <div class="title">Payment Successful</div>
+        <div class="amount"><span>USD</span> {{$amount}}</div>
+        <div class="text">Transaction successfully processed and you will be notified when the your parcel is received to agent or receiver</div>
+        <a href="{{route('frontend.mobile.index')}}" class="cta-btn btn-fill">
+            <div class="btn-text">Ok</div>
+        </a>
+    </div>
+</section> -->
 
 @endsection
 
