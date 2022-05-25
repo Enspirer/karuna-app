@@ -117,9 +117,14 @@ class MobileController extends Controller
         return view('frontend.mobile.notification');
     }
 
-    public function thanks()
+    public function thanks($id)
     {
-        return view('frontend.mobile.thanks');
+        // dd($id);
+        $receiver = Receivers::where('id',$id)->first();
+
+        return view('frontend.mobile.thanks',[
+            'receiver' => $receiver
+        ]);
     }
 
     public function payment_history()
@@ -162,9 +167,13 @@ class MobileController extends Controller
         return view('frontend.mobile.receiver_request_approve');
     }
 
-    public function agent_confirmation()
+    public function agent_confirmation($id)
     {
-        return view('frontend.mobile.agent_confirmation');
+        $receiver = Receivers::where('id',$id)->first();
+
+        return view('frontend.mobile.agent_confirmation',[
+            'receiver' => $receiver
+        ]);
     }
 
     public function receiver_confirmation()

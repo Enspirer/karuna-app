@@ -22,7 +22,7 @@
                 <ul class="list-group list-group-flush">
                     @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->get() as $notificatiosn)
                         <li class="list-group-item">
-                            <a href="{{$notificatiosn->link}}" class="not-item">
+                            <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->link)}}" class="not-item">
                                 <i class="bi bi-x-circle-fill"></i>
                                 <div class="image-block">
                                     <img src="{{url('images/dashboard/donate.png')}}" alt="">
@@ -76,7 +76,7 @@
                 <ul class="list-group list-group-flush">
                     @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->get() as $notificatiosn)
                         <li class="list-group-item">
-                            <a href="{{$notificatiosn->link}}" class="not-item">
+                            <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->link)}}" class="not-item">
                                 <i class="bi bi-x-circle-fill"></i>
                                 <div class="text-block">
                                     <div class="subject red">{{$notificatiosn->title}}</div>

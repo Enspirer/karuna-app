@@ -20,17 +20,32 @@
 <section class="thanks-section">
     <div class="inner-wrapper">
         <div class="title">Thank you For your support</div>
-        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, amet quas! Neque facere ad fugit aut! Aliquid, earum placeat soluta deserunt magni velit ut omnis accusantium, perspiciatis, hic dolore recusandae!</div>
+        <!-- <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, amet quas! Neque facere ad fugit aut! Aliquid, earum placeat soluta deserunt magni velit ut omnis accusantium, perspiciatis, hic dolore recusandae!</div> -->
         <div class="media">
-            <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
-            <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
-            <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
-            <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
-            <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
-            <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
+            @if($receiver->images != null)
+                @php
+                    $req_images = preg_split ("/\,/", $receiver->images);
+                @endphp
+                <div class="row">
+                    @foreach($req_images as $key=> $req_image)
+                        <div class="col-4">
+                            <img src="{{uploaded_asset($req_image)}}" style="height:100px; object-fit:cover" width="100%" alt="">
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
+   
 </section>
+
+    <div class="px-3">
+        <label>Special Note</label>
+        <textarea class="form-control" rows="7" name="thankyou_message" readonly>{{$receiver->thankyou_message}}</textarea>
+    </div>
+    
+        
+            
 
 <!-- Thanks Modal -->
 <div class="modal fade thanks-modal" id="thanksModal" tabindex="-1" aria-labelledby="thanksModalLabel" aria-hidden="true">

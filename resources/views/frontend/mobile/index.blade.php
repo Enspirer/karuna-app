@@ -266,9 +266,15 @@
                                     </div>
                                 </div>
                                 <div class="button-block">
-                                    <a href="{{route('frontend.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
-                                        <div class="btn-text">Donate</div>
-                                    </a>
+                                    @if($receiver->requirement != 'Other')
+                                        <a href="{{route('frontend.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
+                                            <div class="btn-text">Donate</div>
+                                        </a>
+                                    @else
+                                        <button href="{{route('frontend.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill" disabled>
+                                            <div class="btn-text">Donate</div>
+                                        </button>
+                                    @endif
                                     <a href="{{route('frontend.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
                                 </div>
                             </div>

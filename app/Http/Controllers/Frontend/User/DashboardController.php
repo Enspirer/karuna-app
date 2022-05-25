@@ -279,7 +279,11 @@ class DashboardController extends Controller
         $rec = Receivers::where('id',$request->hidden_id)->first();
         $donor = User::where('id',$rec->donor_id)->first();
     
-        create_notification($rec->donor_id, 'Donation Successful. Thanks for your support', $donor->first_name.' '.$donor->last_name.' donated USD '.$rec->amount.' to '.$rec->name, url('dashboard/notification/submit',$rec->id));
+        create_notification($rec->donor_id, 'Donation Successful. Thanks for your support', $donor->first_name.' '.$donor->last_name.' donated USD '.$rec->amount.' to '.$rec->name, $rec->id);
+
+        if(is_mobile(request()->header('user-agent')) == true){
+            return redirect()->route('frontend.mobile.index');
+        }
 
         return redirect()->route('frontend.dashboard.notification');
         

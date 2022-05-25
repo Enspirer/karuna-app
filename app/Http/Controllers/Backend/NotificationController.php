@@ -72,7 +72,7 @@ class NotificationController extends Controller
             $rec = Receivers::where('id',$request->hidden_id)->first();
             $donor = User::where('id',$rec->donor_id)->first();
     
-            create_notification($rec->assigned_agent, 'Donation Transferred to your account', $donor->first_name.' '.$donor->last_name.' donated USD '.$rec->amount.' to '.$rec->name, url('dashboard/notification/submit',$rec->id));
+            create_notification($rec->assigned_agent, 'Donation Transferred to your account', $donor->first_name.' '.$donor->last_name.' donated USD '.$rec->amount.' to '.$rec->name, $rec->id);
         }
       
         return redirect()->route('admin.donate_notification.index')->withFlashSuccess('Updated Successfully');                      

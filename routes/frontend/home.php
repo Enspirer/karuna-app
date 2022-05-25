@@ -44,13 +44,13 @@ Route::get('mobile/donation', [MobileController::class, 'donation'])->name('mobi
 Route::get('mobile/profile', [MobileController::class, 'profile'])->name('mobile.profile');
 Route::get('mobile/donation-history', [MobileController::class, 'donation_history'])->name('mobile.donation_history');
 Route::get('mobile/notification', [MobileController::class, 'notification'])->name('mobile.notification');
-Route::get('mobile/thanks', [MobileController::class, 'thanks'])->name('mobile.thanks');
+Route::get('mobile/thanks/{id}', [MobileController::class, 'thanks'])->name('mobile.thanks');
 Route::get('mobile/receivers-list', [MobileController::class, 'receivers_list'])->name('mobile.receivers_list');
 Route::get('mobile/receiver', [MobileController::class, 'receiver'])->name('mobile.receiver');
 Route::get('mobile/receiver-agent', [MobileController::class, 'receiver_agent'])->name('mobile.receiver_agent');
 Route::get('mobile/receiver-request-list', [MobileController::class, 'receiver_request_list'])->name('mobile.receiver_request_list');
 Route::get('mobile/receiver-request-approve', [MobileController::class, 'receiver_request_approve'])->name('mobile.receiver_request_approve');
-Route::get('mobile/agent-confirmation', [MobileController::class, 'agent_confirmation'])->name('mobile.agent_confirmation');
+Route::get('mobile/agent-confirmation/{id}', [MobileController::class, 'agent_confirmation'])->name('mobile.agent_confirmation');
 Route::get('mobile/receiver-confirmation', [MobileController::class, 'receiver_confirmation'])->name('mobile.receiver_confirmation');
 Route::get('mobile/receiver-edit', [MobileController::class, 'receiver_edit'])->name('mobile.receiver_edit');
 Route::get('mobile/receiver-edit-agent', [MobileController::class, 'receiver_edit_agent'])->name('mobile.receiver_edit_agent');

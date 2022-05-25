@@ -21,35 +21,63 @@
 <section class="notification-section">
     <div class="mobile-container">
         <ul class="list-group">
-            <li class="list-group-item">
-                <a href="{{route('frontend.mobile.thanks')}}" class="nav-link">
-                    <img src="{{url('images/dashboard/donate.png')}}" alt="">
-                    <div class="text-block">
-                        <div class="subject red">Thank you for your support</div>
-                        <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+
+            @if(auth()->user()->user_type == 'Donor')
+                @if(\App\Models\Notification::where('user_id',auth()->user()->id)->count() == 0)
+                    <div class="table-container">
+                        <div class="row" style="margin: 50px 0px;">
+                            <div class="container">
+                                <div style="text-align: center;">
+                                    <div style="background-image: url(&quot;http://localhost:8000/img/no_data.png&quot;); height: 300px; background-position: center center; background-repeat: no-repeat; background-size: contain;"></div>
+                                    <h3>No any Notification found</h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <i class="bi bi-bookmark-fill"></i>
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="{{route('frontend.mobile.agent_confirmation')}}" class="nav-link">
-                    <div class="text-block">
-                        <div class="subject red">Waiting for you confirmation</div>
-                        <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+                @else
+                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->get() as $notificatiosn)
+                        <li class="list-group-item">
+                            <a href="{{route('frontend.mobile.thanks',$notificatiosn->link)}}" class="nav-link">
+                                <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                <div class="text-block">
+                                    <div class="subject red">{{$notificatiosn->title}}</div>
+                                    <div class="text">{{$notificatiosn->content}}</div>
+                                </div>
+                                <i class="bi bi-bookmark-fill"></i>
+                            </a>
+                        </li>
+                    @endforeach
+                @endif
+            @endif
+
+            @if(auth()->user()->user_type == 'Agent')
+                @if(\App\Models\Notification::where('user_id',auth()->user()->id)->count() == 0)
+                    <div class="table-container">
+                        <div class="row" style="margin: 50px 0px;">
+                            <div class="container">
+                                <div style="text-align: center;">
+                                    <div style="background-image: url(&quot;http://localhost:8000/img/no_data.png&quot;); height: 300px; background-position: center center; background-repeat: no-repeat; background-size: contain;"></div>
+                                    <h3>No any Notification found</h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <i class="bi bi-bookmark"></i>
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="#" class="nav-link">
-                    <img src="{{url('images/dashboard/donate.png')}}" alt="">
-                    <div class="text-block">
-                        <div class="subject green">Thank you for your support</div>
-                        <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
-                    </div>
-                    <i class="bi bi-bookmark"></i>
-                </a>
-            </li>
+                @else
+                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->get() as $notificatiosn)
+                        <li class="list-group-item">
+                            <a href="{{route('frontend.mobile.agent_confirmation',$notificatiosn->link)}}" class="nav-link">
+                                <div class="text-block">
+                                    <div class="subject red">{{$notificatiosn->title}}</div>
+                                    <div class="text">{{$notificatiosn->content}}</div>
+                                </div>
+                                <i class="bi bi-bookmark"></i>
+                            </a>
+                        </li>
+                    @endforeach
+                @endif
+            @endif
+
+           
         </ul>
     </div>
 </section>

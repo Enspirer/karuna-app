@@ -19,7 +19,8 @@
 
 <section class="form-section">
     <div class="mobile-container">
-        <form action="">
+        <form action="{{route('frontend.user.notification.submit.store')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
             <div class="frm-row">
                 <div class="frm-col">
                     <div class="title red">Confirm Your Service</div>
@@ -31,20 +32,20 @@
                 <div class="border-wrappre">
                     <label class="form-label">Proof Images <span>(Optional)</span></label>
                     <div class="form-group">
-                        <div class="input-group" data-toggle="aizuploader" data-type="image">
+                        <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="true">
                             <div class="input-group-prepend">
                                 <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                             </div>
                             <div class="form-control file-amount">Choose File</div>
-                            <input type="hidden" name="cover_image" class="selected-files" >
+                            <input type="hidden" name="images" class="selected-files" >
                         </div>
                         <div class="file-preview box sm">
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
             <!-- Proof video -->
-            <div class="frm-row">
+            <!-- <div class="frm-row">
                 <div class="border-wrappre">
                     <label class="form-label">Proof Video <span>(Optional)</span></label>
                     <div class="form-group">
@@ -60,30 +61,31 @@
                     </div>
                 </div>
             </div>
-            <!-- Proof Voice -->
+
             <div class="frm-row">
                 <div class="border-wrappre">
                     <label class="form-label">Proof Voice <span>(Optional)</span></label>
                     <div class="form-group">
-                        <div class="input-group" data-toggle="aizuploader" data-type="image">
+                        <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="true">
                             <div class="input-group-prepend">
                                 <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                             </div>
                             <div class="form-control file-amount">Choose File</div>
-                            <input type="hidden" name="cover_image" class="selected-files" >
+                            <input type="hidden" name="images" class="selected-files" >
                         </div>
                         <div class="file-preview box sm">
                         </div>
-                    </div>
+                    </div> 
                 </div>
-            </div>
+            </div> -->
             <!-- Special Note -->
-            <div class="frm-row">
+            <div class="frm-row mt-3">
                 <label class="form-label">Special Note</label>
-                <textarea class="form-control" name="donation_about" rows="3"></textarea>
+                <textarea class="form-control" rows="3" name="thankyou_message" required></textarea>
             </div>
             <!-- Submit Button -->
             <div class="frm-row">
+                <input type="hidden" value="7" name="hidden_id">
                 <button type="submit" class="cta-btn btn-fill">
                     <div class="btn-text">Submit</div>
                 </button>
