@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 use App\Http\Controllers\Frontend\MobileController;
 use App\Http\Controllers\Frontend\PaymentController;
+use App\Http\Controllers\Frontend\MobileProfileController;
 
 /*
  * Frontend Controllers
@@ -101,6 +102,10 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
     
         Route::post('notification/submit/store', [DashboardController::class, 'notification_store'])->name('notification.submit.store');
 
+        Route::post('update_donor_mobile', [MobileProfileController::class, 'update_donor_mobile'])->name('update_donor_mobile');
+        Route::post('update_agent_mobile', [MobileProfileController::class, 'update_agent_mobile'])->name('update_agent_mobile');
+
+        
         
     });
 });

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Receivers;
 use App\Models\Packages;
 use App\Models\Auth\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class MobileController extends Controller
 {

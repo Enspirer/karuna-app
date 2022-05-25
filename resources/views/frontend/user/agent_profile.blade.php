@@ -24,37 +24,13 @@
             <table class="info-table">
                 <tbody>
                     <tr>
-                        <td>Nick Name</td>
+                        <td>Name</td>
                         <td>{{auth()->user()->first_name}} {{auth()->user()->last_name}}</td>
                     </tr>
                     <tr>
                         <td>Email</td>
                         <td>{{auth()->user()->email}}</td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td>{{auth()->user()->address}}</td>
-                    </tr>
-                    <tr>
-                        <td>Phone Number</td>
-                        <td>{{auth()->user()->contact_number}}</td>
-                    </tr>
-                    <tr>
-                        <td>Referral Name</td>
-                        <td>{{auth()->user()->referral_name}}</td>
-                    </tr>
-                    <tr>
-                        <td>City</td>
-                        <td>{{auth()->user()->city}}</td>
-                    </tr>
-                    <tr>
-                        <td>Country</td>
-                        <td>{{auth()->user()->country}}</td>
-                    </tr>
-                    <tr>
-                        <td>NIC</td>
-                        <td>{{auth()->user()->nic_number}}</td>
-                    </tr>
+                    </tr>                   
                 </tbody>
             </table>
         </div>

@@ -11,7 +11,7 @@
             <a href="{{route('frontend.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="title">Kamani's Profile</div>
+            <div class="title">{{auth()->user()->first_name}}'s Profile</div>
         </div>
     </div>
 </section>
@@ -20,131 +20,89 @@
 <section class="profile-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
-            <div class="dp-block">
-                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
-            </div>
-            <div class="name">Mis. Kamani Jayathilaka</div>
-            <div class="star-rating">
+
+            @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->profile_picture != null)
+                <div class="dp-block">
+                    <img src="{{uploaded_asset(auth()->user()->profile_picture)}}" alt="">
+                </div>
+            @else
+                <div class="dp-block">
+                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                </div>
+            @endif
+
+            <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
+            <!-- <div class="star-rating">
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-half"></i>
                 <i class="bi bi-star"></i>
-            </div>
+            </div> -->
             <div class="status green">Donor</div>
-            <div class="profile-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident optio atque quibusdam, excepturi laboriosam mollitia quos sequi nobis quidem ex!</div>
+            <!-- <div class="profile-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident optio atque quibusdam, excepturi laboriosam mollitia quos sequi nobis quidem ex!</div> -->
             <div class="info-table-wrapper">
                 <table class="info-table">
                     <tbody>
                         <tr>
-                            <td>Nick Name</td>
-                            <td>Kamani Jayanthi</td>
+                            <td>Name</td>
+                            <td>{{auth()->user()->first_name}} {{auth()->user()->last_name}}</td>
                         </tr>
                         <tr>
-                            <td>Age</td>
-                            <td>50</td>
-                        </tr>
-                        <tr>
-                            <td>Gender</td>
-                            <td>Female</td>
-                        </tr>
-                        <tr>
-                            <td>Address</td>
-                            <td>584/C, Colombo Rd, Wattala.</td>
-                        </tr>
-                        <tr>
-                            <td>Phone Number</td>
-                            <td>+94 77 44 25 235</td>
-                        </tr>
-                        <tr>
-                            <td>Account Number</td>
-                            <td>*************584</td>
-                        </tr>
-                        <tr>
-                            <td>City</td>
-                            <td>Waththala</td>
-                        </tr>
-                        <tr>
-                            <td>ID</td>
-                            <td>541248742#</td>
+                            <td>Email</td>
+                            <td>{{auth()->user()->email}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="gallery">
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
+                @if(App\Models\Receivers::where('donor_id',auth()->user()->id)->first() != null)
+                    @if(App\Models\Receivers::where('donor_id',auth()->user()->id)->latest()->first()->images != null)
+                        @php
+                            $req_images = preg_split ("/\,/", App\Models\Receivers::where('donor_id',auth()->user()->id)->latest()->first()->images);
+                        @endphp
+                        <div class="row">
+                            @foreach($req_images as $key=> $req_image)
+                                <div class="col-4">
+                                    <img src="{{uploaded_asset($req_image)}}" style="height:70px; object-fit:cover" width="100%" alt="">
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
+                @endif
             </div>
             <div class="charity-block">
                 <div class="title">Donate List</div>
                 <div class="accordion" id="charityList">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="charHead1">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#char1"
-                                aria-expanded="true" aria-controls="char1">
-                                <div class="header-block">
-                                    <div class="no">1</div>
-                                    <div class="text">Pending Request</div>
-                                    <div class="indicator orange"></div>
+                    @if(count(App\Models\Receivers::where('donor_id',auth()->user()->id)->get()) != 0)
+                        @foreach(App\Models\Receivers::where('donor_id',auth()->user()->id)->orderby('id','desc')->get() as $key => $donor)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="charHead1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#char{{$donor->id}}"
+                                        aria-expanded="true" aria-controls="char1">
+                                        <div class="header-block">
+                                            <div class="no">{{$key+1}}</div>
+                                            @if($donor->status == 'Agent Not Responded')
+                                                <div class="text">Pending</div>
+                                                <div class="indicator orange"></div>
+                                            @elseif($donor->status == 'Payment Transferred to Agent')
+                                                <div class="text">Payment Transferred</div>
+                                                <div class="indicator green"></div>
+                                            @endif
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="char{{$donor->id}}" class="accordion-collapse collapse show" aria-labelledby="charHead1"
+                                    data-bs-parent="#charityList">
+                                    <div class="accordion-body">
+                                        <div class="title">Description</div>
+                                        <div class="text">{{$donor->thankyou_message}}</div>
+                                    </div>
                                 </div>
-                            </button>
-                        </h2>
-                        <div id="char1" class="accordion-collapse collapse show" aria-labelledby="charHead1"
-                            data-bs-parent="#charityList">
-                            <div class="accordion-body">
-                                <div class="title">Description</div>
-                                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
-                                    exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
-                                    reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="charHead2">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#char2" aria-expanded="false" aria-controls="char2">
-                                <div class="header-block">
-                                    <div class="no">2</div>
-                                    <div class="text">Approved Request</div>
-                                    <div class="indicator green"></div>
-                                </div>
-                            </button>
-                        </h2>
-                        <div id="char2" class="accordion-collapse collapse" aria-labelledby="charHead2"
-                            data-bs-parent="#charityList">
-                            <div class="accordion-body">
-                                <div class="title">Description</div>
-                                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
-                                    exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
-                                    reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="charHead3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#char3" aria-expanded="false" aria-controls="char3">
-                                <div class="header-block">
-                                    <div class="no">3</div>
-                                    <div class="text">Canceled Request</div>
-                                    <div class="indicator red"></div>
-                                </div>
-                            </button>
-                        </h2>
-                        <div id="char3" class="accordion-collapse collapse" aria-labelledby="charHead3"
-                            data-bs-parent="#charityList">
-                            <div class="accordion-body">
-                                <div class="title">Description</div>
-                                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
-                                    exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
-                                    reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
+                   
                 </div>
             </div>
             <a href="#" class="cta-btn btn-fill">
