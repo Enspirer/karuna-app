@@ -180,8 +180,12 @@ class MobileController extends Controller
         return view('frontend.mobile.view_profile_donor');
     }
 
-    public function view_profile_receiver()
+    public function view_profile_receiver($id)
     {
-        return view('frontend.mobile.view_profile_receiver');
+        $receiver = Receivers::where('id',$id)->first();
+        
+        return view('frontend.mobile.view_profile_receiver',[
+            'receiver' => $receiver
+        ]);
     }
 }

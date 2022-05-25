@@ -200,12 +200,18 @@
                                         @endif
                                     @endif
                                     <div class="text-block">
-                                        <div class="name">{{$receiver->name}}</div>
+                                        <div class="name">
+                                            @if($receiver->name_toggle == 'yes')
+                                                {{$receiver->nick_name}}
+                                            @else
+                                                {{$receiver->name}}
+                                            @endif
+                                        </div>
                                         <div class="location">{{$receiver->city}}</div>
                                     </div>
                                 </div>
                                 <div class="button-block">
-                                    <a href="{{route('frontend.mobile.view_profile')}}" class="cta-link">View more</a>
+                                    <a href="{{route('frontend.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
                                 </div>
                             </div>
                         </li>
@@ -249,7 +255,13 @@
                                         @endif
                                     @endif
                                     <div class="text-block">
-                                        <div class="name">{{$receiver->name}}</div>
+                                        <div class="name">
+                                            @if($receiver->name_toggle == 'yes')
+                                                {{$receiver->nick_name}}
+                                            @else
+                                                {{$receiver->name}}
+                                            @endif
+                                        </div>
                                         <div class="location">{{$receiver->city}}</div>
                                     </div>
                                 </div>
@@ -257,7 +269,7 @@
                                     <a href="{{route('frontend.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
                                         <div class="btn-text">Donate</div>
                                     </a>
-                                    <a href="{{route('frontend.mobile.view_profile')}}" class="cta-link">View more</a>
+                                    <a href="{{route('frontend.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
                                 </div>
                             </div>
                         </li>

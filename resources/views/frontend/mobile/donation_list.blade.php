@@ -43,12 +43,18 @@
                                     @endif
                                 @endif
                                 <div class="text-block">
-                                    <div class="name">{{$receiver->name}}</div>
+                                    <div class="name">
+                                        @if($receiver->name_toggle == 'yes')
+                                            {{$receiver->nick_name}}
+                                        @else
+                                            {{$receiver->name}}
+                                        @endif
+                                    </div>
                                     <div class="location">{{$receiver->city}} {{$receiver->country}}</div>
                                 </div>
                             </div>
                             <div class="button-block">
-                                <a href="{{route('frontend.mobile.view_profile')}}" class="cta-link">View more</a>
+                                <a href="{{route('frontend.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
                             </div>
                         </div>
                     </li>
@@ -93,7 +99,13 @@
                                     @endif
                                 @endif
                                 <div class="text-block">
-                                    <div class="name">{{$receivers_for_don->name}}</div>
+                                    <div class="name">
+                                        @if($receivers_for_don->name_toggle == 'yes')
+                                            {{$receivers_for_don->nick_name}}
+                                        @else
+                                            {{$receivers_for_don->name}}
+                                        @endif
+                                    </div>                                   
                                     <div class="location">{{$receivers_for_don->city}} {{$receivers_for_don->country}}</div>
                                 </div>
                             </div>
@@ -101,11 +113,11 @@
                                 <a href="{{route('frontend.mobile.donation_info',$receivers_for_don->id)}}" class="cta-btn btn-fill">
                                     <div class="btn-text">Donate</div>
                                 </a>
-                                <a href="{{route('frontend.mobile.view_profile')}}" class="cta-link">View more</a>
+                                <a href="{{route('frontend.mobile.view_profile_receiver',$receivers_for_don->id)}}" class="cta-link">View more</a>
                             </div>
                         </div>
                     </li>
-            @endforeach
+                @endforeach
             @endif
 
 

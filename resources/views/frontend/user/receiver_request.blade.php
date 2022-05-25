@@ -282,13 +282,15 @@
                     </div>
                 </div>
                 <div class="g-0 mb-3">
-                    @php
-                        $req_images = preg_split ("/\,/", $receiver_request->images);
-                    @endphp
+                    @if($receiver_request->images != null)
+                        @php
+                            $req_images = preg_split ("/\,/", $receiver_request->images);
+                        @endphp
 
-                    @foreach($req_images as $key=> $req_image)
-                            <img src="{{uploaded_asset($req_image)}}" style="height:100px; object-fit:cover" width="25%" alt="">
-                    @endforeach
+                        @foreach($req_images as $key=> $req_image)
+                                <img src="{{uploaded_asset($req_image)}}" style="height:100px; object-fit:cover" width="25%" alt="">
+                        @endforeach
+                    @endif
                 </div>
                 <!-- Add videos -->
                 <div class="row g-0">

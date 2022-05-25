@@ -26,16 +26,19 @@
                     </div>
 
                     <div class="body">
-                        @php
-                            $req_images = preg_split ("/\,/", $receiver->images);
-                        @endphp
-                        <div class="row">
-                            @foreach($req_images as $key=> $req_image)
-                                <div class="col-4">
-                                    <img src="{{uploaded_asset($req_image)}}" style="height:100px; object-fit:cover" width="100%" alt="">
-                                </div>
-                            @endforeach
-                        </div>
+                        @if($receiver->images != null)
+                            @php
+                                $req_images = preg_split ("/\,/", $receiver->images);
+                            @endphp
+                            <div class="row">
+                                @foreach($req_images as $key=> $req_image)
+                                    <div class="col-4">
+                                        <img src="{{uploaded_asset($req_image)}}" style="height:100px; object-fit:cover" width="100%" alt="">
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+
                     </div>
 
                 </div>            
