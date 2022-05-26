@@ -151,9 +151,13 @@ class MobileController extends Controller
         return view('frontend.mobile.receiver');
     }
 
-    public function receiver_agent()
+    public function receiver_agent($id)
     {
-        return view('frontend.mobile.receiver_agent');
+        $receiver = Receivers::where('id',$id)->first();
+
+        return view('frontend.mobile.receiver_agent',[
+            'receiver' => $receiver
+        ]);
     }
 
     public function receiver_edit()
@@ -161,9 +165,13 @@ class MobileController extends Controller
         return view('frontend.mobile.receiver_edit');
     }
 
-    public function receiver_edit_agent()
+    public function receiver_edit_agent($id)
     {
-        return view('frontend.mobile.receiver_edit_agent');
+        $receiver = Receivers::where('id',$id)->first();
+
+        return view('frontend.mobile.receiver_edit_agent',[
+            'receiver' => $receiver
+        ]);
     }
 
     public function receiver_request_list()

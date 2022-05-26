@@ -11,7 +11,7 @@
             <a href="{{route('frontend.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="title">Kamani's profile</div>
+            <div class="title">{{$receiver->name}}'s profile</div>
         </div>
     </div>
 </section>
@@ -20,20 +20,15 @@
 <section class="profile-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
-            <div class="header">
-                <a href="#" class="back-edit">
-                    <i class="bi bi-camera"></i>
-                </a>
+            <div class="header" style="background-image: url('{{uploaded_asset($receiver->cover_image)}}');">
+
                 <div class="dp-block">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
-                    <a href="#" class="dp-edit">
-                        <i class="bi bi-camera"></i>
-                    </a>
+                    <img src="{{ uploaded_asset($receiver->profile_image) }}" alt="">
                 </div>
             </div>
-            <div class="name">Mis. Kamani Jayathilaka</div>
+            <div class="name">{{$receiver->name}}</div>
             <div class="status yellow">Receiver</div>
-            <a href="{{route('frontend.mobile.receiver_edit_agent')}}" class="btn-edit">
+            <a href="{{route('frontend.mobile.receiver_edit_agent',$receiver->id)}}" class="btn-edit">
                 <i class="bi bi-pencil-fill"></i>
                 Edit
             </a>
@@ -42,46 +37,54 @@
                     <tbody>
                         <tr>
                             <td>Nick Name</td>
-                            <td>Kamani Jayanthi</td>
+                            <td>{{$receiver->nick_name}}</td>
                         </tr>
                         <tr>
                             <td>Age</td>
-                            <td>50</td>
+                            <td>{{$receiver->age}}</td>
                         </tr>
                         <tr>
                             <td>Gender</td>
-                            <td>Female</td>
+                            <td>{{$receiver->gender}}</td>
                         </tr>
                         <tr>
                             <td>Address</td>
-                            <td>584/C, Colombo Rd, Wattala.</td>
+                            <td>{{$receiver->address}}</td>
                         </tr>
                         <tr>
                             <td>Phone Number</td>
-                            <td>+94 77 44 25 235</td>
+                            <td>{{$receiver->phone_number}}</td>
                         </tr>
-                        <tr>
-                            <td>Account Number</td>
-                            <td>*************584</td>
-                        </tr>
+                        @if($receiver->requirement == 'Other')
+                            <tr>
+                                <td>Account Number</td>
+                                <td>{{json_decode($receiver->account_details)->account_number}}</td>
+                            </tr>
+                        @endif
                         <tr>
                             <td>City</td>
-                            <td>Waththala</td>
+                            <td>{{$receiver->city}}</td>
                         </tr>
                         <tr>
-                            <td>ID</td>
-                            <td>541248742#</td>
+                            <td>NIC</td>
+                            <td>{{$receiver->nic_number}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="gallery">
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
+                @if($receiver->images != null)
+                    @php
+                        $req_images = preg_split ("/\,/", $receiver->images);
+                    @endphp
+                    <div class="row">
+                        @foreach($req_images as $key=> $req_image)
+                            <div class="col-4">
+                                <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:80px; object-fit:cover" width="100%" alt="">
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
             </div>
         </div>
     </div>

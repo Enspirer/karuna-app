@@ -31,30 +31,34 @@
                 </a>
             </div>
             <ul class="profile-menu">
-                <li class="nav-item">
-                    <a href="{{route('frontend.mobile.donation_history')}}" class="nav-link">
-                        <i class="bi bi-arrow-left-right"></i>
-                        <div class="text">Donation History</div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('frontend.mobile.receivers_list')}}" class="nav-link">
-                        <i class="bi bi-people"></i>
-                        <div class="text">My Receivers</div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('frontend.mobile.receiver_request_list')}}" class="nav-link">
-                        <i class="bi bi-person-plus"></i>
-                        <div class="text">Receiver Requests</div>
-                    </a>
-                </li>
-                <li class="nav-item">
+                @if(auth()->user()->user_type == 'Donor')
+                    <li class="nav-item">
+                        <a href="{{route('frontend.mobile.donation_history')}}" class="nav-link">
+                            <i class="bi bi-arrow-left-right"></i>
+                            <div class="text">Donation History</div>
+                        </a>
+                    </li>
+                @endif
+                @if(auth()->user()->user_type == 'Agent')
+                    <li class="nav-item">
+                        <a href="{{route('frontend.mobile.receivers_list')}}" class="nav-link">
+                            <i class="bi bi-people"></i>
+                            <div class="text">My Receivers</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('frontend.mobile.receiver_request_list')}}" class="nav-link">
+                            <i class="bi bi-person-plus"></i>
+                            <div class="text">Receiver Requests</div>
+                        </a>
+                    </li>
+                @endif
+                <!-- <li class="nav-item">
                     <a href="{{route('frontend.mobile.profile')}}" class="nav-link">
                         <i class="bi bi-person"></i>
                         <div class="text">Profile</div>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="{{route('frontend.mobile.notification')}}" class="nav-link">
                         <i class="bi bi-bell"></i>

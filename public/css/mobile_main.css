@@ -1702,7 +1702,6 @@ body .mobile-body {
 }
 .profile-section .inner-wrapper .header {
   position: relative;
-  background: url("../../images/dashboard/receiver-back.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

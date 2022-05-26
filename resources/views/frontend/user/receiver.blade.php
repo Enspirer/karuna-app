@@ -420,8 +420,8 @@
 
                 <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; display: none;" id="account_details_edit">
                     <h5 class="card-header">Account Details</h5>
-                    @if($receiver->account_details != null)
-                        <div class="card-body">
+                    <div class="card-body">
+                        @if($receiver->account_details != null)
                             <div class="row g-0 mb-4">
                                 <div class="col-md-6">
                                     <label class="pro-label">Account Number</label>
@@ -438,8 +438,25 @@
                                     <input type="text" class="form-control" name="branch_name" value="{{json_decode($receiver->account_details)->branch_name}}">
                                 </div>
                             </div>
-                        </div>
-                    @endif
+                        @else
+                            <div class="row g-0 mb-4">
+                                <div class="col-md-6">
+                                    <label class="pro-label">Account Number</label>
+                                    <input type="text" class="form-control" name="account_number">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="pro-label">Bank Name</label>
+                                    <input type="text" class="form-control" name="bank_name">
+                                </div>
+                            </div>
+                            <div class="row g-0 mb-5">
+                                <div class="col-md-11">
+                                    <label class="pro-label">Branch Name</label>
+                                    <input type="text" class="form-control" name="branch_name">
+                                </div>
+                            </div>
+                        @endif
+                    </div>
                 </div>
 
                 <div class="row g-0">

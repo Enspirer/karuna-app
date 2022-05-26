@@ -20,127 +20,71 @@
 <section class="donation-history-section">
     <div class="mobile-container">
         <div class="accordion" id="donationHistory">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="donationHead1">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#donation1" aria-expanded="true" aria-controls="donation1">
-                    <div class="header-block">
-                        <div class="no">1</div>
-                        <div class="text">Kamala's Packages</div>
+
+            @if(count(App\Models\Receivers::where('donor_id',auth()->user()->id)->get()) == 0)
+                <section class="section-no-data">
+                    <div class="mobile-container">
+                        <div class="inner-wrapper">
+                            <img src="{{url('images/not-found.png')}}" alt="">
+                            <div class="text">No data foud</div>
+                        </div>
                     </div>
-                </button>
-                </h2>
-                <div id="donation1" class="accordion-collapse collapse show" aria-labelledby="donationHead1" data-bs-parent="#donationHistory">
-                    <div class="accordion-body">
-                        <div class="row g-0">
-                            <div class="col-6">
-                                <label>Agent Name</label>
-                                <div class="text">Mr. Kamal Kusum</div>
+                </section>
+            @else
+                @foreach(App\Models\Receivers::where('donor_id',auth()->user()->id)->orderBy('id','desc')->get() as $key => $donation)
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="donationHead{{$donation->id}}">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#donation{{$donation->id}}" aria-expanded="true" aria-controls="donation1">
+                            <div class="header-block">
+                                <div class="no">{{$key + 1}}</div>
+                                <div class="text">{{$donation->name}}'s Packages</div>
                             </div>
-                            <div class="col-6">
-                                <label>Package</label>
-                                <div class="text">School Items</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Receiver Name</label>
-                                <div class="text">Mr. Amila Nandika </div>
-                            </div>
-                            <div class="col-6">
-                                <label>Donation Status</label>
-                                <div class="text completed"><i class="bi bi-check-circle-fill"></i> Completed</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Date</label>
-                                <div class="text">22/05/2022</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Amount</label>
-                                <div class="text">Rs. 5000</div>
+                        </button>
+                        </h2>
+                        <div id="donation{{$donation->id}}" class="accordion-collapse collapse" aria-labelledby="donationHead{{$donation->id}}" data-bs-parent="#donationHistory">
+                            <div class="accordion-body">
+                                <div class="row g-0">
+                                    <div class="col-6">
+                                        <label>Agent Name</label>
+                                        <div class="text">{{App\Models\Auth\User::where('id',$donation->assigned_agent)->first()->first_name}} {{App\Models\Auth\User::where('id',$donation->assigned_agent)->first()->last_name}}</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Package</label>
+                                        @if($donation->requirement == 'Other')
+                                            <div class="text">Other</div>
+                                        @else
+                                            @if(App\Models\Packages::where('id',$donation->requirement)->first() != null)
+                                                <div class="text">{{App\Models\Packages::where('id',$donation->requirement)->first()->name}}</div>
+                                            @endif
+                                        @endif
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Receiver Name</label>
+                                        <div class="text">{{$donation->name}} </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Donation Status</label>
+                                        @if($donation->status == 'Task Success')
+                                            <div class="text completed"><i class="bi bi-check-circle-fill"></i> Task Success</div>
+                                        @else
+                                            <div class="text completed">{{$donation->status}}</div>
+                                        @endif
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Date</label>
+                                        <div class="text">{{ $donation->created_at->format('d M Y') }}</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Amount</label>
+                                        <div class="text">USD {{$donation->amount}}</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="donationHead2">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#donation2" aria-expanded="false" aria-controls="donation2">
-                    <div class="header-block">
-                        <div class="no">2</div>
-                        <div class="text">Kamala's Packages</div>
-                    </div>
-                </button>
-                </h2>
-                <div id="donation2" class="accordion-collapse collapse" aria-labelledby="donationHead2" data-bs-parent="#donationHistory">
-                    <div class="accordion-body">
-                        <div class="row g-0">
-                            <div class="col-6">
-                                <label>Agent Name</label>
-                                <div class="text">Mr. Kamal Kusum</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Package</label>
-                                <div class="text">School Items</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Receiver Name</label>
-                                <div class="text">Mr. Amila Nandika </div>
-                            </div>
-                            <div class="col-6">
-                                <label>Donation Status</label>
-                                <div class="text pending"><i class="bi bi-exclamation-circle-fill"></i> Pending</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Date</label>
-                                <div class="text">22/05/2022</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Amount</label>
-                                <div class="text">Rs. 5000</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="donationHead3">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#donation3" aria-expanded="false" aria-controls="donation3">
-                    <div class="header-block">
-                        <div class="no">3</div>
-                        <div class="text">Kamala's Packages</div>
-                    </div>
-                </button>
-                </h2>
-                <div id="donation3" class="accordion-collapse collapse" aria-labelledby="donationHead3" data-bs-parent="#donationHistory">
-                    <div class="accordion-body">
-                        <div class="row g-0">
-                            <div class="col-6">
-                                <label>Agent Name</label>
-                                <div class="text">Mr. Kamal Kusum</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Package</label>
-                                <div class="text">School Items</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Receiver Name</label>
-                                <div class="text">Mr. Amila Nandika </div>
-                            </div>
-                            <div class="col-6">
-                                <label>Donation Status</label>
-                                <div class="text pending"><i class="bi bi-exclamation-circle-fill"></i> Pending</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Date</label>
-                                <div class="text">22/05/2022</div>
-                            </div>
-                            <div class="col-6">
-                                <label>Amount</label>
-                                <div class="text">Rs. 5000</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
+                @endforeach
+            @endif
+            
         </div>
 </section>
 

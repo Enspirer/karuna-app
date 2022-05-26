@@ -225,6 +225,10 @@ class DashboardController extends Controller
 
         Receivers::whereId($request->hidden_id)->update($update->toArray());
 
+        if(is_mobile(request()->header('user-agent')) == true){
+            return redirect()->route('frontend.mobile.receiver_agent',$request->hidden_id);
+        }
+
         return back();
 
 
