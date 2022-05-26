@@ -24,9 +24,23 @@
           <a class="nav-link {{ Request::segment(1) == 'contact' ? 'active' : null }}" href="#">Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link cta-btn btn-fill" href="#">
+          @auth
+            @if(auth()->user()->user_type == 'Agent')
+              <a class="nav-link cta-btn btn-fill" href="{{route('frontend.user.dashboard')}}">
+                <div class="btn-text">Let's Support them</div>
+              </a>
+            @elseif(auth()->user()->user_type == 'Donor')
+              <a class="nav-link cta-btn btn-fill" href="{{route('frontend.receivers')}}">
+                <div class="btn-text">Donate Now</div>
+              </a>
+            @endif
+          @else
+            <a class="nav-link cta-btn btn-fill" href="{{route('frontend.auth.register')}}">
               <div class="btn-text">Donate Now</div>
-          </a>
+            </a>
+          @endauth
+
+
         </li>
         <li class="nav-item dropdown nav-drop">
           <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
