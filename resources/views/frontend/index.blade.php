@@ -52,9 +52,22 @@
                             </div>
                             <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
                             <div class="button-block">
-                                <a href="#" class="cta-btn btn-fill">
-                                    <div class="btn-text">Donate Now</div>
-                                </a>
+                                @auth
+                                    @if(auth()->user()->user_type == 'Agent')
+                                        <a href="{{route('frontend.user.dashboard')}}" class="cta-btn btn-fill">
+                                            <div class="btn-text">Visit Dashboard</div>
+                                        </a>
+                                    @elseif(auth()->user()->user_type == 'Donor')
+                                        <a href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
+                                            <div class="btn-text">Donate Now</div>
+                                        </a>
+                                    @endif
+                                @else
+                                    <a href="{{route('frontend.auth.register')}}" class="cta-btn btn-fill">
+                                        <div class="btn-text">Donate Now</div>
+                                    </a>
+                                @endauth
+
                                 <a href="#" class="cta-btn btn-outline">
                                     <div class="btn-text">Discover More</div>
                                     <i class="bi bi-arrow-down"></i>
