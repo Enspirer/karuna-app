@@ -42,7 +42,7 @@
 
 
         </li>
-        <li class="nav-item dropdown nav-drop">
+        <!-- <li class="nav-item dropdown nav-drop">
           <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
             <img src="{{url('images/landing-page/nav/notification.png')}}" alt="">
           </a>
@@ -52,7 +52,7 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
-        </li>
+        </li> -->
         @auth()
           <li class="nav-item dropdown nav-drop">
             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">

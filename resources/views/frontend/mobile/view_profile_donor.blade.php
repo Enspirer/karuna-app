@@ -64,7 +64,7 @@
                         <div class="row">
                             @foreach($req_images as $key=> $req_image)
                                 <div class="col-4">
-                                    <img src="{{uploaded_asset($req_image)}}" style="height:70px; object-fit:cover" width="100%" alt="">
+                                    <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:70px; object-fit:cover" width="100%" alt="">
                                 </div>
                             @endforeach
                         </div>

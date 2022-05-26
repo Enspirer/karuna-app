@@ -56,12 +56,18 @@
             </table>
         </div>
         <div class="gallery">
-            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
+            @if($receiver->images != null)
+                @php
+                    $req_images = preg_split ("/\,/", $receiver->images);
+                @endphp
+                <div class="row">
+                    @foreach($req_images as $key=> $req_image)
+                        <div class="col-4">
+                            <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:80px; object-fit:cover" width="100%" alt="">
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
     <div class="edit-profile-block">
@@ -288,7 +294,7 @@
                         @endphp
 
                         @foreach($req_images as $key=> $req_image)
-                                <img src="{{uploaded_asset($req_image)}}" style="height:100px; object-fit:cover" width="25%" alt="">
+                                <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:100px; object-fit:cover" width="25%" alt="">
                         @endforeach
                     @endif
                 </div>

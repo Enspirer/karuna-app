@@ -5,7 +5,7 @@
 @section('content')
 
     @if(auth()->user()->user_type == 'Donor')
-
+    
         @if(\App\Models\Notification::where('user_id',auth()->user()->id)->count() == 0)
             <div class="table-container">
                 <div class="row" style="margin: 50px 0px;">
@@ -20,14 +20,14 @@
         @else
             <section class="notification-section">
                 <ul class="list-group list-group-flush">
-                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
+                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->first()->get() as $notificatiosn)
                         @if($notificatiosn->status == 'Pending')
                             <li class="list-group-item">
                                 <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
                                     <i class="bi bi-x-circle-fill"></i>
                                     <div class="image-block">
                                         @if(auth()->user()->profile_image != null)
-                                            <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                            <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="" width="140px">
                                         @else
                                             <img src="{{url('images/dashboard/donate.png')}}" alt="">
                                         @endif
@@ -47,7 +47,11 @@
                                 <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
                                     <i class="bi bi-x-circle-fill"></i>
                                     <div class="image-block">
-                                        <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                        @if(auth()->user()->profile_image != null)
+                                            <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="" width="140px">
+                                        @else
+                                            <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                        @endif
                                     </div>
                                     <div class="text-block">
                                         <div class="subject text-secondary">{{$notificatiosn->title}}</div>

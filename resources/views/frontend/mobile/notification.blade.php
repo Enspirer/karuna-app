@@ -39,7 +39,11 @@
                         @if($notificatiosn->status == 'Pending')
                             <li class="list-group-item">
                                 <a href="{{route('frontend.mobile.thanks',$notificatiosn->id)}}" class="nav-link">
-                                    <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                    @if(auth()->user()->profile_image != null)
+                                        <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="" width="140px">
+                                    @else
+                                        <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                    @endif
                                     <div class="text-block">
                                         <div class="subject red">{{$notificatiosn->title}}</div>
                                         <div class="text">{{$notificatiosn->content}}</div>
@@ -50,7 +54,11 @@
                         @else
                             <li class="list-group-item">
                                 <a href="{{route('frontend.mobile.thanks',$notificatiosn->id)}}" class="nav-link">
-                                    <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                    @if(auth()->user()->profile_image != null)
+                                        <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="" width="140px">
+                                    @else
+                                        <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                    @endif
                                     <div class="text-block">
                                         <div class="subject text-secondary">{{$notificatiosn->title}}</div>
                                         <div class="text text-secondary">{{$notificatiosn->content}}</div>

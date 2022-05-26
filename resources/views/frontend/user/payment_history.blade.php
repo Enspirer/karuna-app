@@ -61,7 +61,7 @@
                             </td>
                             <td class="db-td">
                                 <div class="status-block">
-                                    @if($receiver->status == 'Payment Transferred to Agent')
+                                    @if($receiver->status == 'Task Success')
                                         <i class="bi completed bi-check-circle-fill"></i>
                                         <div class="status">{{$receiver->status}}</div>
                                     @else

@@ -282,6 +282,7 @@ class DashboardController extends Controller
         $update = new Receivers;
         $update->thankyou_message=$request->thankyou_message;
         $update->images=$request->images;
+        $update->status='Task Success';
         Receivers::whereId($request->hidden_id)->update($update->toArray());
 
 

@@ -24,9 +24,9 @@
                 <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
                 <div class="text-block">
                     <div class="text">Welcome</div>
-                    <div class="name">Mis. Inoka Perera</div>
+                    <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
                 </div>
-                <a href="#" class="btn-sign-out">
+                <a href="{{url('logout')}}" class="btn-sign-out">
                     <i class="bi bi-box-arrow-right"></i>
                 </a>
             </div>
