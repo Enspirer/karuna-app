@@ -150,6 +150,7 @@ if (! function_exists('create_notification')) {
         $notification->title = $title;
         $notification->link = $link;
         $notification->content =$content;
+        $notification->status = 'Pending';
         $notification->save();
         return 'notification_created';
     }

@@ -37,7 +37,7 @@
                                 <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                             </div>
                             <div class="form-control file-amount">Choose File</div>
-                            <input type="hidden" name="images" class="selected-files" >
+                            <input type="hidden" name="images" value="{{App\Models\Receivers::where('assigned_agent',auth()->user()->id)->first()->images}}" class="selected-files" >
                         </div>
                         <div class="file-preview box sm">
                         </div>
@@ -81,7 +81,7 @@
             <!-- Special Note -->
             <div class="frm-row mt-3">
                 <label class="form-label">Special Note</label>
-                <textarea class="form-control" rows="3" name="thankyou_message" required></textarea>
+                <textarea class="form-control" rows="3" name="thankyou_message" required>{{App\Models\Receivers::where('assigned_agent',auth()->user()->id)->first()->thankyou_message}}</textarea>
             </div>
             <!-- Submit Button -->
             <div class="frm-row">

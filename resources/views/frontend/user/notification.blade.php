@@ -20,23 +20,46 @@
         @else
             <section class="notification-section">
                 <ul class="list-group list-group-flush">
-                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->get() as $notificatiosn)
-                        <li class="list-group-item">
-                            <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->link)}}" class="not-item">
-                                <i class="bi bi-x-circle-fill"></i>
-                                <div class="image-block">
-                                    <img src="{{url('images/dashboard/donate.png')}}" alt="">
-                                </div>
-                                <div class="text-block">
-                                    <div class="subject red">{{$notificatiosn->title}}</div>
-                                    <div class="text">{{$notificatiosn->content}}</div>
-                                </div>
-                                <div class="time-block">
-                                    <i class="bi bi-clock"></i>
-                                    <div class="text">{{$notificatiosn->created_at}}</div>
-                                </div>
-                            </a>
-                        </li>
+                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
+                        @if($notificatiosn->status == 'Pending')
+                            <li class="list-group-item">
+                                <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
+                                    <i class="bi bi-x-circle-fill"></i>
+                                    <div class="image-block">
+                                        @if(auth()->user()->profile_image != null)
+                                            <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                        @else
+                                            <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                        @endif
+                                    </div>
+                                    <div class="text-block">
+                                        <div class="subject red">{{$notificatiosn->title}}</div>
+                                        <div class="text">{{$notificatiosn->content}}</div>
+                                    </div>
+                                    <div class="time-block">
+                                        <i class="bi bi-clock"></i>
+                                        <div class="text">{{$notificatiosn->created_at}}</div>
+                                    </div>
+                                </a>
+                            </li>
+                        @else
+                            <li class="list-group-item">
+                                <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
+                                    <i class="bi bi-x-circle-fill"></i>
+                                    <div class="image-block">
+                                        <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                    </div>
+                                    <div class="text-block">
+                                        <div class="subject text-secondary">{{$notificatiosn->title}}</div>
+                                        <div class="text text-secondary">{{$notificatiosn->content}}</div>
+                                    </div>
+                                    <div class="time-block">
+                                        <i class="bi bi-clock"></i>
+                                        <div class="text">{{$notificatiosn->created_at}}</div>
+                                    </div>
+                                </a>
+                            </li>
+                        @endif
                     @endforeach
 {{--                    <li class="list-group-item">--}}
 {{--                        <a href="#" class="not-item">--}}
@@ -74,20 +97,36 @@
                 </div>
             @else
                 <ul class="list-group list-group-flush">
-                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->get() as $notificatiosn)
-                        <li class="list-group-item">
-                            <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->link)}}" class="not-item">
-                                <i class="bi bi-x-circle-fill"></i>
-                                <div class="text-block">
-                                    <div class="subject red">{{$notificatiosn->title}}</div>
-                                    <div class="text">{{$notificatiosn->content}}</div>
-                                </div>
-                                <div class="time-block">
-                                    <i class="bi bi-clock"></i>
-                                    <div class="text">{{$notificatiosn->created_at}}</div>
-                                </div>
-                            </a>
-                        </li>
+                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
+                        @if($notificatiosn->status == 'Pending')
+                            <li class="list-group-item">
+                                <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
+                                    <i class="bi bi-x-circle-fill"></i>
+                                    <div class="text-block">
+                                        <div class="subject red">{{$notificatiosn->title}}</div>
+                                        <div class="text">{{$notificatiosn->content}}</div>
+                                    </div>
+                                    <div class="time-block">
+                                        <i class="bi bi-clock"></i>
+                                        <div class="text">{{$notificatiosn->created_at}}</div>
+                                    </div>
+                                </a>
+                            </li>
+                            @else
+                                <li class="list-group-item">
+                                    <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
+                                        <i class="bi bi-x-circle-fill"></i>
+                                        <div class="text-block">
+                                            <div class="subject text-secondary">{{$notificatiosn->title}}</div>
+                                            <div class="text text-secondary">{{$notificatiosn->content}}</div>
+                                        </div>
+                                        <div class="time-block">
+                                            <i class="bi bi-clock"></i>
+                                            <div class="text">{{$notificatiosn->created_at}}</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endif
                     @endforeach
 
 

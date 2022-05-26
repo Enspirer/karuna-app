@@ -35,17 +35,30 @@
                         </div>
                     </div>
                 @else
-                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->get() as $notificatiosn)
-                        <li class="list-group-item">
-                            <a href="{{route('frontend.mobile.thanks',$notificatiosn->link)}}" class="nav-link">
-                                <img src="{{url('images/dashboard/donate.png')}}" alt="">
-                                <div class="text-block">
-                                    <div class="subject red">{{$notificatiosn->title}}</div>
-                                    <div class="text">{{$notificatiosn->content}}</div>
-                                </div>
-                                <i class="bi bi-bookmark-fill"></i>
-                            </a>
-                        </li>
+                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
+                        @if($notificatiosn->status == 'Pending')
+                            <li class="list-group-item">
+                                <a href="{{route('frontend.mobile.thanks',$notificatiosn->id)}}" class="nav-link">
+                                    <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                    <div class="text-block">
+                                        <div class="subject red">{{$notificatiosn->title}}</div>
+                                        <div class="text">{{$notificatiosn->content}}</div>
+                                    </div>
+                                    <i class="bi bi-bookmark-fill"></i>
+                                </a>
+                            </li>
+                        @else
+                            <li class="list-group-item">
+                                <a href="{{route('frontend.mobile.thanks',$notificatiosn->id)}}" class="nav-link">
+                                    <img src="{{url('images/dashboard/donate.png')}}" alt="">
+                                    <div class="text-block">
+                                        <div class="subject text-secondary">{{$notificatiosn->title}}</div>
+                                        <div class="text text-secondary">{{$notificatiosn->content}}</div>
+                                    </div>
+                                    <i class="bi bi-bookmark-fill"></i>
+                                </a>
+                            </li>
+                        @endif
                     @endforeach
                 @endif
             @endif
@@ -63,16 +76,28 @@
                         </div>
                     </div>
                 @else
-                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->get() as $notificatiosn)
-                        <li class="list-group-item">
-                            <a href="{{route('frontend.mobile.agent_confirmation',$notificatiosn->link)}}" class="nav-link">
-                                <div class="text-block">
-                                    <div class="subject red">{{$notificatiosn->title}}</div>
-                                    <div class="text">{{$notificatiosn->content}}</div>
-                                </div>
-                                <i class="bi bi-bookmark"></i>
-                            </a>
-                        </li>
+                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
+                        @if($notificatiosn->status == 'Pending')
+                            <li class="list-group-item">
+                                <a href="{{route('frontend.mobile.agent_confirmation',$notificatiosn->id)}}" class="nav-link">
+                                    <div class="text-block">
+                                        <div class="subject red">{{$notificatiosn->title}}</div>
+                                        <div class="text">{{$notificatiosn->content}}</div>
+                                    </div>
+                                    <i class="bi bi-bookmark"></i>
+                                </a>
+                            </li>
+                        @else
+                            <li class="list-group-item">
+                                <a href="{{route('frontend.mobile.agent_confirmation',$notificatiosn->id)}}" class="nav-link">
+                                    <div class="text-block">
+                                        <div class="subject text-secondary">{{$notificatiosn->title}}</div>
+                                        <div class="text text-secondary">{{$notificatiosn->content}}</div>
+                                    </div>
+                                    <i class="bi bi-bookmark"></i>
+                                </a>
+                            </li>
+                        @endif
                     @endforeach
                 @endif
             @endif

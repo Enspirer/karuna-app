@@ -15,7 +15,7 @@
                 </div>
                 <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
                 <div class="button-block">
-                    <a href="{{route('frontend.payment')}}" class="cta-btn btn-fill">
+                    <a href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
                         <div class="btn-text">Donate Now</div>
                     </a>
                     <a href="#" class="cta-btn btn-outline">

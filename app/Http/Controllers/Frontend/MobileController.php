@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Receivers;
 use App\Models\Packages;
+use App\Models\Notification;
 use App\Models\Auth\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -119,8 +120,16 @@ class MobileController extends Controller
 
     public function thanks($id)
     {
-        // dd($id);
-        $receiver = Receivers::where('id',$id)->first();
+        $notification = Notification::where('id',$id)->first();
+        // dd($notification);
+
+        $receiver = Receivers::where('id',$notification->link)->first();
+        // dd($receiver);
+
+        $update = new Notification;        
+        $update->status = 'Seen';
+        Notification::whereId($notification->id)->update($update->toArray());
+
 
         return view('frontend.mobile.thanks',[
             'receiver' => $receiver
@@ -169,7 +178,15 @@ class MobileController extends Controller
 
     public function agent_confirmation($id)
     {
-        $receiver = Receivers::where('id',$id)->first();
+        $notification = Notification::where('id',$id)->first();
+        // dd($notification);
+
+        $receiver = Receivers::where('id',$notification->link)->first();
+        // dd($receiver);
+
+        $update = new Notification;        
+        $update->status = 'Seen';
+        Notification::whereId($notification->id)->update($update->toArray());
 
         return view('frontend.mobile.agent_confirmation',[
             'receiver' => $receiver

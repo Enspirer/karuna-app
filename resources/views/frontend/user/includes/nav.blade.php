@@ -43,7 +43,7 @@
                         <i class="bi bi-bell"></i>
                         <i class="bi active bi-bell-fill"></i>
                         <div class="text">Notification</div>
-                        <div class="status">{{\App\Models\Notification::where('user_id',auth()->user()->id)->count()}}</div>
+                        <div class="status">{{\App\Models\Notification::where('user_id',auth()->user()->id)->where('status','Pending')->count()}}</div>
                         <i class="bi flx active bi-chevron-right"></i>
                     </div>
                 </a>
