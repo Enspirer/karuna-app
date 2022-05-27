@@ -6,7 +6,7 @@
 
 <section class="join-header-section">
     <div class="mobile-container">
-        <img src="{{url('images/mobile/logo/karuna-logo.svg')}}" alt="" class="logo">
+        <img src="{{url('images/mobile/logo/karuna-logo-english.svg')}}" alt="" class="logo">
         <div class="title">Hello Newcomer !</div>
         <div class="text">Welcome to the Karuna. Please register.</div>
     </div>

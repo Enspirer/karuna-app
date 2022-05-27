@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-xl fixed-top navbar-light navigation-bar">
   <div class="container">
     <a class="navbar-brand" href="#">
-        <img src="{{url('images/logo/logo.svg')}}" alt="" class="logo">
+        <img src="{{url('images/logo/karuna-logo-english.svg')}}" alt="" class="logo">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>

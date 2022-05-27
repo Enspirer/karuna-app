@@ -105,7 +105,7 @@ class ListController extends Controller
             ->addColumn('action', function($data){
                 $button = '<a href="'.route('admin.donate_gigs',$data->id).'" name="donate_gigs" id="'.$data->id.'" class="edit btn btn-success btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-funnel-dollar"></i> Donate Gigs ('.count(DonateGigs::where('agent_id',$data->id)->get()).')</a>';
                 $button .= '<a href="'.route('admin.agent.show',$data->id).'" name="show" id="'.$data->id.'" class="edit btn btn-primary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
-                $button .= '<a href="'.route('admin.receivers_list',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm ml-3 mr-3"><i class="fas fa-user-friends"></i> Receivers ('.count(User::where('assigned_agent_id',$data->id)->where('user_type','Receiver')->get()).')</a>';
+                $button .= '<a href="'.route('admin.receivers_list',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm ml-3 mr-3"><i class="fas fa-user-friends"></i> Receivers ('.count(Receivers::where('assigned_agent',$data->id)->get()).')</a>';
                 return $button;
             })
             ->addColumn('name', function($data){
@@ -307,7 +307,9 @@ class ListController extends Controller
 
     public function receivers_create($id)
     {
+        // dd($id);
         $agent = User::where('user_type','Agent')->where('id',$id)->first();
+        // dd($agent);
 
         return view('backend.user_list.receivers.create',[
             'agent' => $agent
@@ -316,8 +318,8 @@ class ListController extends Controller
 
     public function receivers_edit($id)
     {
-        $receiver = User::where('id',$id)->first();
-        $agent = User::where('id',$receiver->assigned_agent_id)->first();
+        $receiver = Receivers::where('id',$id)->first();
+        $agent = User::where('id',$receiver->assigned_agent)->first();
 
         return view('backend.user_list.receivers.edit',[
             'receiver' => $receiver,
@@ -326,77 +328,99 @@ class ListController extends Controller
     }
 
 
-    public function register(RegisterRequest $request)
+    public function register(Request $request)
     {
         // dd($request);
 
-        $password = $request->password;
-        $password_confirmation = $request->password_confirmation;
+        $account_details = [
+            'account_number' => $request->account_number,
+            'bank_name' => $request->bank_name,
+            'branch_name' => $request->branch_name
+        ];
 
-        if($password != $password_confirmation){
-            return back()->withErrors('The password confirmation does not match.');
-        }
+        $add = new Receivers;
 
-        $password_count = strlen($password);
-
-        if($password_count < 8){
-            return back()->withErrors('The password must be at least 8 characters.');
-        }
-
-        $hashed_password = Hash::make($password);
-
-        $add = new User;
-
-        $add->first_name=$request->first_name;
-        $add->last_name=$request->last_name;
-        $add->email=$request->email;
-        $add->user_type=$request->user_type;
+        $add->profile_image=$request->profile_image;
+        $add->cover_image=$request->cover_image;
+        $add->name=$request->name;
+        $add->name_toggle=$request->name_toggle;
+        $add->nick_name=$request->nick_name;
+        $add->age=$request->age;
+        $add->gender=$request->gender;
         $add->country=$request->country;
         $add->city=$request->city;
-        $add->assigned_agent_id=$request->assigned_agent_id;
-        $add->password=$hashed_password;
-        $add->confirmed=1;
-
+        $add->nic_number=$request->nic_number;
+        $add->address=$request->address;
+        $add->phone_number=$request->phone_number;
+        $add->occupation=$request->occupation;
+        $add->bio=$request->bio;
+        $add->images=$request->images;
+        $add->videos=$request->videos;
+        $add->audios=$request->audios;
+        $add->about_donation=$request->about_donation;
+        $add->account_number=$request->account_number;
+        $add->requirement=$request->requirement;
+        $add->other_description=$request->other_description;
+        if($request->account_number != null){
+            $add->account_details=json_encode($account_details);
+        }
+        $add->assigned_agent = $request->assigned_agent;
+        $add->featured = $request->featured;        
+        $add->status='Approved';
         $add->save();
 
-        return redirect()->route('admin.receivers_list',$request->assigned_agent_id)->withFlashSuccess('Added Successfully');
+
+        return redirect()->route('admin.receivers_list',$request->assigned_agent)->withFlashSuccess('Added Successfully');
     }
 
     public function receivers_update(Request $request) {
 
-        $email = $request->email;
-        $hidden_id = $request->hidden_id;
+        // dd($request);
 
-        $user = User::where('id',$hidden_id)->first();
-        // dd($user);
+        $account_details = [
+            'account_number' => $request->account_number,
+            'bank_name' => $request->bank_name,
+            'branch_name' => $request->branch_name
+        ];
 
-        if($user == null){
-            return back()->withErrors('No any record.');
+        $update = new Receivers;
+
+        $update->profile_image=$request->profile_image;
+        $update->cover_image=$request->cover_image;
+        $update->name=$request->name;
+        if(isset($request->name_toggle)){
+            $update->name_toggle=$request->name_toggle;
+        }else{
+            $update->name_toggle='no';
         }
-        else{
-
-            if($request->city != null){
-                $city = $request->city;
-            }
-            else{
-                $city = $user->city;
-            }
-
-            $users = DB::table('users') ->where('id', '=', $user->id)->update(
-                [
-                    'first_name' => $request->first_name,
-                    'last_name' => $request->last_name,
-                    'email' => $request->email,
-                    'country' => $request->country,
-                    'city' => $city,
-                    'confirmed' => $request->confirmed
-                ]
-            );
-
-            return redirect()->route('admin.receivers_list',$request->agent_hidden_id)->withFlashSuccess('Updated Successfully');
-
+        $update->nick_name=$request->nick_name;
+        $update->age=$request->age;
+        $update->gender=$request->gender;
+        $update->country=$request->country;
+        $update->city=$request->city;
+        $update->nic_number=$request->nic_number;
+        $update->address=$request->address;
+        $update->phone_number=$request->phone_number;
+        $update->occupation=$request->occupation;
+        $update->bio=$request->bio;
+        $update->images=$request->images;
+        $update->videos=$request->videos;
+        $update->audios=$request->audios;
+        $update->about_donation=$request->about_donation;
+        $update->account_number=$request->account_number;
+        $update->requirement=$request->requirement;
+        $update->other_description=$request->other_description;
+        if($request->account_number != null){
+            $update->account_details=json_encode($account_details);
         }
+        $update->assigned_agent = $request->assigned_agent;
+        $update->featured = $request->featured;        
+        $update->status='Approved';
 
+        Receivers::whereId($request->hidden_id)->update($update->toArray());
+
+        return redirect()->route('admin.receivers_list',$request->assigned_agent)->withFlashSuccess('Updated Successfully');
+      
     }
 
 

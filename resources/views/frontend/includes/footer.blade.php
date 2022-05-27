@@ -2,7 +2,7 @@
     <div class="container">
     <div class="content-block">
         <div class="footer-col">
-            <img src="{{url('images/logo/footer-logo.svg')}}" alt="" class="footer-logo">
+            <img src="{{url('images/logo/karuna-logo-english.svg')}}" alt="" class="footer-logo">
             <div class="title">GET IN TOUCH</div>
             <ul class="contact-info">
                 <li>

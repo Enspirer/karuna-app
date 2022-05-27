@@ -94,7 +94,7 @@
     <div class="container">
         <div class="inner-wrapper">
             <div class="content-block">
-                <img src="{{url('images/logo/logo.svg')}}" alt="" class="logo">
+                <img src="{{url('images/logo/karuna-logo-english.svg')}}" alt="" class="logo">
                 {{ html()->form('POST', route('frontend.auth.login.post'))->open() }}
                     <div class="join-form">
                         <div class="join-form-row">

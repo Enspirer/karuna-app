@@ -19,7 +19,7 @@
                             <div class="icon purple">{{substr( $receivers->requirement, 0, 1)}}</div>
                             <div class="name">{{$receivers->name}}</div>
                             <div class="location">{{$receivers->city}}</div>
-                            <div class="text">{{$receivers->bio}}</div>
+                            <div class="text">{{$receivers->about_donation}}</div>
                             @auth()
                                 <button href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill" disabled>
                                     <div class="btn-text">Donate Now</div>
@@ -39,7 +39,7 @@
                             @endif
                             <div class="name">{{$receivers->name}}</div>
                             <div class="location">{{$receivers->city}}</div>
-                            <div class="text">{{$receivers->bio}}</div>
+                            <div class="text">{{$receivers->about_donation}}</div>
                             @auth()
                                 <a href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill">
                                     <div class="btn-text">Donate Now</div>

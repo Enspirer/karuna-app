@@ -146,76 +146,69 @@
     </div>
 </section>
 
-<section class="kindness-section">
-    <div class="container">
-        <div class="title-block">
-            <div class="title">lreKdfõ flakaøh</div>
-            <div class="subtitle">The Center for <span>Kindness</span></div>
-            <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
-        </div>
-        <div class="card-block">
-            <div class="card">
-                <div class="icon purple">M</div>
-                <div class="name">Kasun Jayathilaka</div>
-                <div class="location">Anuradapura</div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's</div>
-                <a href="#" class="btn-fill">
-                    <div class="btn-text">Donate Now</div>
-                </a>
+@if(count(App\Models\Receivers::where('featured','Enabled')->get()) != 0)
+    <section class="kindness-section">
+        <div class="container">
+            <div class="title-block">
+                <div class="title">lreKdfõ flakaøh</div>
+                <div class="subtitle">The Center for <span>Kindness</span></div>
+                <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
             </div>
-            <div class="card active">
-                <div class="icon blue">F</div>
-                <div class="name">Kasun Jayathilaka</div>
-                <div class="location">Anuradapura</div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's</div>
-                <a href="#" class="btn-fill">
-                    <div class="btn-text">Donate Now</div>
-                </a>
+            <div class="card-block">
+            
+                @foreach(App\Models\Receivers::where('featured','Enabled')->get() as $receivers)
+                    @if($receivers->payment_status != 'Payment Completed')
+                        @if($receivers->requirement == 'Other')
+                            <div class="card">
+                                <div class="icon purple">{{substr( $receivers->requirement, 0, 1)}}</div>
+                                <div class="name">{{$receivers->name}}</div>
+                                <div class="location">{{$receivers->city}}</div>
+                                <div class="text">{{$receivers->about_donation}}</div>
+                                @auth()
+                                    <button href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill" disabled>
+                                        <div class="btn-text">Donate Now</div>
+                                    </button>
+                                @else
+                                    <button href="{{route('frontend.auth.register')}}" class="btn-fill" disabled>
+                                        <div class="btn-text">Donate Now</div>
+                                    </button>
+                                @endauth
+                            </div>
+                        @else
+                            <div class="card">
+                                @if(App\Models\Packages::where('id',$receivers->requirement)->first() != null)
+                                    <div class="icon purple">{{substr( App\Models\Packages::where('id',$receivers->requirement)->first()->name, 0, 1)}}</div>
+                                @else
+                                    <div class="name">Package not found</div>
+                                @endif
+                                <div class="name">{{$receivers->name}}</div>
+                                <div class="location">{{$receivers->city}}</div>
+                                <div class="text">{{$receivers->about_donation}}</div>
+                                @auth()
+                                    <a href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill">
+                                        <div class="btn-text">Donate Now</div>
+                                    </a>
+                                @else
+                                    <a href="{{route('frontend.auth.register')}}" class="btn-fill">
+                                        <div class="btn-text">Donate Now</div>
+                                    </a>
+                                @endauth
+                            </div>
+                        @endif
+                    @endif
+                @endforeach
+                
             </div>
-            <div class="card">
-                <div class="icon green">S</div>
-                <div class="name">Kasun Jayathilaka</div>
-                <div class="location">Anuradapura</div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's</div>
-                <a href="#" class="btn-fill">
-                    <div class="btn-text">Donate Now</div>
-                </a>
-            </div>
-            <div class="card">
-                <div class="icon purple">M</div>
-                <div class="name">Kasun Jayathilaka</div>
-                <div class="location">Anuradapura</div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's</div>
-                <a href="#" class="btn-fill">
-                    <div class="btn-text">Donate Now</div>
-                </a>
-            </div>
-            <div class="card">
-                <div class="icon blue">F</div>
-                <div class="name">Kasun Jayathilaka</div>
-                <div class="location">Anuradapura</div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's</div>
-                <a href="#" class="btn-fill">
-                    <div class="btn-text">Donate Now</div>
-                </a>
-            </div>
-            <div class="card">
-                <div class="icon green">S</div>
-                <div class="name">Kasun Jayathilaka</div>
-                <div class="location">Anuradapura</div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's</div>
-                <a href="#" class="btn-fill">
-                    <div class="btn-text">Donate Now</div>
+            <div class="button-block">
+                <a href="{{route('frontend.receivers')}}" class="cta-btn btn-outline">
+                    <div class="btn-text">View All</div>
                 </a>
             </div>
         </div>
-        <div class="button-block">
-            <a href="{{route('frontend.receivers')}}" class="cta-btn btn-outline">
-                <div class="btn-text">View All</div>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
+@endif
+
+
 
 <section class="news-section">
     <div class="container">
