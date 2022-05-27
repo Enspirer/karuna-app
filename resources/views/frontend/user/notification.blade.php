@@ -20,7 +20,7 @@
         @else
             <section class="notification-section">
                 <ul class="list-group list-group-flush">
-                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->first()->get() as $notificatiosn)
+                    @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
                         @if($notificatiosn->status == 'Pending')
                             <li class="list-group-item">
                                 <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
