@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Receivers;
 use App\Models\Packages;
 use App\Models\Notification;
+use App\Models\ReceiversRequest;
 use App\Models\Auth\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -179,9 +180,15 @@ class MobileController extends Controller
         return view('frontend.mobile.receiver_request_list');
     }
 
-    public function receiver_request_approve()
+    public function receiver_request_approve($id)
     {
-        return view('frontend.mobile.receiver_request_approve');
+        $receiver_request = ReceiversRequest::where('id',$id)->first();
+        $receiver = Receivers::where('id',$receiver_request->receiver_id)->first();
+
+        return view('frontend.mobile.receiver_request_approve',[
+            'receiver' => $receiver,
+            'receiver_request' => $receiver_request
+        ]);
     }
 
     public function agent_confirmation($id)
@@ -224,4 +231,56 @@ class MobileController extends Controller
             'receiver' => $receiver
         ]);
     }
+
+
+    public function mobile_receiver_request_update(Request $request)
+    {
+        $update = new ReceiversRequest;
+        $update->status=$request->status;
+        ReceiversRequest::whereId($request->hidden_id)->update($update->toArray());
+
+        if($request->status == 'Approved'){
+
+            $rec_req = ReceiversRequest::where('id',$request->hidden_id)->first();
+
+            $update = new Receivers;
+            $update->profile_image=$rec_req->profile_image;
+            $update->cover_image=$rec_req->cover_image;
+            $update->name=$rec_req->name;
+            if(isset($rec_req->name_toggle)){
+                $update->name_toggle=$rec_req->name_toggle;
+            }
+            $update->nick_name=$rec_req->nick_name;
+            $update->age=$rec_req->age;
+            $update->gender=$rec_req->gender;
+            $update->country=$rec_req->country;
+            $update->city=$rec_req->city;
+            $update->nic_number=$rec_req->nic_number;
+            $update->address=$rec_req->address;
+            $update->phone_number=$rec_req->phone_number;
+            $update->occupation=$rec_req->occupation;
+            $update->bio=$rec_req->bio;
+            $update->images=$rec_req->images;
+            $update->videos=$rec_req->videos;
+            $update->audios=$rec_req->audios;
+            $update->about_donation=$rec_req->about_donation;
+            $update->account_number=$rec_req->account_number;
+            $update->requirement=$rec_req->requirement;
+            $update->other_description=$rec_req->other_description;
+            $update->account_details=$rec_req->account_details;
+            $update->assigned_agent = auth()->user()->id;
+            $update->status='Approved';
+            Receivers::whereId($rec_req->receiver_id)->update($update->toArray());
+
+        }
+
+        return redirect()->route('frontend.mobile.receiver_request_list');
+
+    }
+
+
+
+
+
+    
 }

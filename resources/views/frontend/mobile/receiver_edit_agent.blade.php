@@ -48,7 +48,19 @@
             <!-- Age, Gender, City -->
             <div class="frm-row">
                 <label class="form-label">Age</label>
-                <input type="number" class="form-control" value="{{$receiver->age}}" name="age" min="10" max="100" required>
+                <select class="form-select" name="age" required>
+                    <option selected disabled>Choose...</option>
+                    <option value="15 - 18" {{$receiver->age == '15 - 18' ? "selected" : ""}}>15 - 18</option>
+                    <option value="18 - 25" {{$receiver->age == '18 - 25' ? "selected" : ""}}>18 - 25</option>
+                    <option value="25 - 30" {{$receiver->age == '25 - 30' ? "selected" : ""}}>25 - 30</option>
+                    <option value="30 - 35" {{$receiver->age == '30 - 35' ? "selected" : ""}}>30 - 35</option>
+                    <option value="35 - 45" {{$receiver->age == '35 - 45' ? "selected" : ""}}>35 - 45</option>
+                    <option value="45 - 55" {{$receiver->age == '45 - 55' ? "selected" : ""}}>45 - 55</option>
+                    <option value="55 - 60" {{$receiver->age == '55 - 60' ? "selected" : ""}}>55 - 60</option>
+                    <option value="65 - 70" {{$receiver->age == '65 - 70' ? "selected" : ""}}>65 - 70</option>
+                    <option value="70 - 75" {{$receiver->age == '70 - 75' ? "selected" : ""}}>70 - 75</option>
+                    <option value="75 - 18" {{$receiver->age == '75 - 18' ? "selected" : ""}}>75 - 18</option>
+                </select>
             </div>
             
             <div class="frm-row">

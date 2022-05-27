@@ -27,7 +27,11 @@
                 @foreach(App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->orderBy('id','desc')->get() as $key => $receiver)
                     <tr class="db-tr">
                         <td class="db-td">
-                            <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
+                            @if($receiver->profile_image == null)
+                                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                            @else
+                                <img src="{{uploaded_asset($receiver->profile_image)}}" alt="">
+                            @endif
                         </td>
                         <td class="db-td">
                             <div class="text">{{$receiver->name}}</div>

@@ -155,9 +155,33 @@
                     <div class="col-md-6">
                         <label class="pro-label">Age</label>
                         @if($receiver_request->age == $receiver->age)
-                            <input type="number" class="form-control" value="{{$receiver_request->age}}" name="age" min="10" max="100" disabled>
+                            <select class="form-select" name="age" disabled>
+                                <option selected disabled>Choose...</option>
+                                <option value="15 - 18" {{$receiver_request->age == '15 - 18' ? "selected" : ""}}>15 - 18</option>
+                                <option value="18 - 25" {{$receiver_request->age == '18 - 25' ? "selected" : ""}}>18 - 25</option>
+                                <option value="25 - 30" {{$receiver_request->age == '25 - 30' ? "selected" : ""}}>25 - 30</option>
+                                <option value="30 - 35" {{$receiver_request->age == '30 - 35' ? "selected" : ""}}>30 - 35</option>
+                                <option value="35 - 45" {{$receiver_request->age == '35 - 45' ? "selected" : ""}}>35 - 45</option>
+                                <option value="45 - 55" {{$receiver_request->age == '45 - 55' ? "selected" : ""}}>45 - 55</option>
+                                <option value="55 - 60" {{$receiver_request->age == '55 - 60' ? "selected" : ""}}>55 - 60</option>
+                                <option value="65 - 70" {{$receiver_request->age == '65 - 70' ? "selected" : ""}}>65 - 70</option>
+                                <option value="70 - 75" {{$receiver_request->age == '70 - 75' ? "selected" : ""}}>70 - 75</option>
+                                <option value="75 - 18" {{$receiver_request->age == '75 - 18' ? "selected" : ""}}>75 - 18</option>
+                            </select>
                         @else
-                            <input type="number" class="form-control" value="{{$receiver_request->age}}" style="border-color:red;" name="age" min="10" max="100" disabled>
+                            <select class="form-select" name="age" style="border-color:red;" disabled>
+                                <option selected disabled>Choose...</option>
+                                <option value="15 - 18" {{$receiver_request->age == '15 - 18' ? "selected" : ""}}>15 - 18</option>
+                                <option value="18 - 25" {{$receiver_request->age == '18 - 25' ? "selected" : ""}}>18 - 25</option>
+                                <option value="25 - 30" {{$receiver_request->age == '25 - 30' ? "selected" : ""}}>25 - 30</option>
+                                <option value="30 - 35" {{$receiver_request->age == '30 - 35' ? "selected" : ""}}>30 - 35</option>
+                                <option value="35 - 45" {{$receiver_request->age == '35 - 45' ? "selected" : ""}}>35 - 45</option>
+                                <option value="45 - 55" {{$receiver_request->age == '45 - 55' ? "selected" : ""}}>45 - 55</option>
+                                <option value="55 - 60" {{$receiver_request->age == '55 - 60' ? "selected" : ""}}>55 - 60</option>
+                                <option value="65 - 70" {{$receiver_request->age == '65 - 70' ? "selected" : ""}}>65 - 70</option>
+                                <option value="70 - 75" {{$receiver_request->age == '70 - 75' ? "selected" : ""}}>70 - 75</option>
+                                <option value="75 - 18" {{$receiver_request->age == '75 - 18' ? "selected" : ""}}>75 - 18</option>
+                            </select>
                         @endif
                     </div>
                     <!-- Gender -->
@@ -439,38 +463,48 @@
 
                 <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; display: none;" id="account_details_edit">
                     <h5 class="card-header">Account Details</h5>
-                    @if($receiver->account_details != null)
-                        <div class="card-body">
-                            <div class="row g-0 mb-4">
-                                <div class="col-md-6">
-                                    <label class="pro-label">Account Number</label>
+                    <div class="card-body">
+                        <div class="row g-0 mb-4">
+                            <div class="col-md-6">
+                                <label class="pro-label">Account Number</label>
+                                @if($receiver_request->account_details != null && $receiver->account_details != null)
                                     @if(json_decode($receiver_request->account_details)->account_number == json_decode($receiver->account_details)->account_number)
                                         <input type="text" class="form-control" name="account_number" value="{{json_decode($receiver_request->account_details)->account_number}}" disabled>
                                     @else
                                         <input type="text" class="form-control" style="border-color:red;" name="account_number" value="{{json_decode($receiver_request->account_details)->account_number}}" disabled>
                                     @endif
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="pro-label">Bank Name</label>
+                                @else
+                                    <input type="text" class="form-control" name="account_number" value="{{json_decode($receiver_request->account_details)->account_number}}" disabled>
+                                @endif
+                            </div>
+                            <div class="col-md-4">
+                                <label class="pro-label">Bank Name</label>
+                                @if($receiver_request->account_details != null && $receiver->account_details != null)
                                     @if(json_decode($receiver_request->account_details)->bank_name == json_decode($receiver->account_details)->bank_name)
                                         <input type="text" class="form-control" name="bank_name" value="{{json_decode($receiver_request->account_details)->bank_name}}" disabled>
                                     @else
                                         <input type="text" class="form-control" style="border-color:red;" name="bank_name" value="{{json_decode($receiver_request->account_details)->bank_name}}" disabled>
                                     @endif
-                                </div>
+                                @else
+                                    <input type="text" class="form-control" name="bank_name" value="{{json_decode($receiver_request->account_details)->bank_name}}" disabled>
+                                @endif
                             </div>
-                            <div class="row g-0 mb-5">
-                                <div class="col-md-11">
-                                    <label class="pro-label">Branch Name</label>
+                        </div>
+                        <div class="row g-0 mb-5">
+                            <div class="col-md-11">
+                                <label class="pro-label">Branch Name</label>
+                                @if($receiver_request->account_details != null && $receiver->account_details != null)
                                     @if(json_decode($receiver_request->account_details)->branch_name == json_decode($receiver->account_details)->branch_name)
                                         <input type="text" class="form-control" name="branch_name" value="{{json_decode($receiver_request->account_details)->branch_name}}" disabled>
                                     @else
                                         <input type="text" class="form-control" style="border-color:red;" name="branch_name" value="{{json_decode($receiver_request->account_details)->branch_name}}" disabled>
                                     @endif
-                                </div>
+                                @else
+                                    <input type="text" class="form-control" name="branch_name" value="{{json_decode($receiver_request->account_details)->branch_name}}" disabled>
+                                @endif
                             </div>
                         </div>
-                    @endif
+                    </div>
                 </div>
 
                 <!-- <div class="row g-0">

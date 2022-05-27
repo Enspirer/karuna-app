@@ -153,7 +153,19 @@
                             <!-- Age -->
                             <div class="col-md-6">
                                 <label class="pro-label">Age</label>
-                                <input type="number" class="form-control" name="age" min="10" max="100" required>
+                                <select class="form-select" name="age" required>
+                                    <option selected disabled>Choose...</option>
+                                    <option value="15 - 18">15 - 18</option>
+                                    <option value="18 - 25">18 - 25</option>
+                                    <option value="25 - 30">25 - 30</option>
+                                    <option value="30 - 35">30 - 35</option>
+                                    <option value="35 - 45">35 - 45</option>
+                                    <option value="45 - 55">45 - 55</option>
+                                    <option value="55 - 60">55 - 60</option>
+                                    <option value="65 - 70">65 - 70</option>
+                                    <option value="70 - 75">70 - 75</option>
+                                    <option value="75 - 18">75 - 18</option>
+                                </select>
                             </div>
                             <!-- Gender -->
                             <div class="col-md-5">

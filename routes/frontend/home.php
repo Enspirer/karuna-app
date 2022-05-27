@@ -49,7 +49,7 @@ Route::get('mobile/receivers-list', [MobileController::class, 'receivers_list'])
 Route::get('mobile/receiver', [MobileController::class, 'receiver'])->name('mobile.receiver');
 Route::get('mobile/receiver-agent/{id}', [MobileController::class, 'receiver_agent'])->name('mobile.receiver_agent');
 Route::get('mobile/receiver-request-list', [MobileController::class, 'receiver_request_list'])->name('mobile.receiver_request_list');
-Route::get('mobile/receiver-request-approve', [MobileController::class, 'receiver_request_approve'])->name('mobile.receiver_request_approve');
+Route::get('mobile/receiver-request-approve/{id}', [MobileController::class, 'receiver_request_approve'])->name('mobile.receiver_request_approve');
 Route::get('mobile/agent-confirmation/{id}', [MobileController::class, 'agent_confirmation'])->name('mobile.agent_confirmation');
 Route::get('mobile/receiver-confirmation', [MobileController::class, 'receiver_confirmation'])->name('mobile.receiver_confirmation');
 Route::get('mobile/receiver-edit', [MobileController::class, 'receiver_edit'])->name('mobile.receiver_edit');
@@ -104,6 +104,8 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
 
         Route::post('update_donor_mobile', [MobileProfileController::class, 'update_donor_mobile'])->name('update_donor_mobile');
         Route::post('update_agent_mobile', [MobileProfileController::class, 'update_agent_mobile'])->name('update_agent_mobile');
+
+        Route::post('mobile_receiver_request_update', [MobileController::class, 'mobile_receiver_request_update'])->name('mobile_receiver_request_update');
 
         
         
