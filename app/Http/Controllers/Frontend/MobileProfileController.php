@@ -20,36 +20,38 @@ class MobileProfileController extends Controller
         $last_name = request('last_name');
         $profile_image = request('profile_image');
         $email = request('email');
-        $pw = request('password');
-        $password_confirmation = request('password_confirmation');        
+        $bio = request('bio');
+        // $pw = request('password');
+        // $password_confirmation = request('password_confirmation');        
 
-        if($pw == null){
-            $password = auth()->user()->password;
-        }
-        else{
+        // if($pw == null){
+        //     $password = auth()->user()->password;
+        // }
+        // else{
 
-            if($pw != $password_confirmation){
-                return back()->with([
-                    'error_pw' => 'Password does not match'
-                ]);             
-            }
+        //     if($pw != $password_confirmation){
+        //         return back()->with([
+        //             'error_pw' => 'Password does not match'
+        //         ]);             
+        //     }
 
-            $password_count = strlen($pw);
-            if($password_count < 8){
-                return back()->with([
-                    'error_pw' => 'The password must be at least 8 characters.'
-                ]);             
-            }
-            $password = Hash::make($pw);        
-        }
+        //     $password_count = strlen($pw);
+        //     if($password_count < 8){
+        //         return back()->with([
+        //             'error_pw' => 'The password must be at least 8 characters.'
+        //         ]);             
+        //     }
+        //     $password = Hash::make($pw);        
+        // }
         
         $users = DB::table('users')->where('id', '=', request('hidden_id'))->update(
             [
                 'first_name' => $first_name,
                 'last_name' => $last_name,
                 'email' => $email,
-                'profile_image' => $profile_image,                
-                'password' => $password
+                'profile_image' => $profile_image, 
+                'bio' => $bio,
+                // 'password' => $password
             ]
         );
 
@@ -87,7 +89,8 @@ class MobileProfileController extends Controller
                 'contact_number' => $request->contact_number,
                 'contact_number_two' => $request->contact_number_two,
                 'address' => $request->address,
-                'profile_image' => $request->profile_image
+                'profile_image' => $request->profile_image,
+                'bio' => $request->bio
             ]
         );
 

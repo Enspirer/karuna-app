@@ -63,7 +63,7 @@ Route::get('mobile/view-profile-receiver/{id}', [MobileController::class, 'view_
 Route::get('dashboard/receiver/{id}', [DashboardController::class, 'receiver'])->name('dashboard.receiver');
 Route::get('dashboard/receiver-request-list', [DashboardController::class, 'receiver_request_list'])->name('dashboard.receiver_request_list');
 Route::get('dashboard/receiver-request/{id}', [DashboardController::class, 'receiver_request'])->name('dashboard.receiver_request');
-Route::get('dashboard/profile/agent', [DashboardController::class, 'agent_profile'])->name('dashboard.agent_profile');
+Route::get('dashboard/profile/edit', [DashboardController::class, 'profile_edit'])->name('dashboard.profile_edit');
 Route::get('dashboard/notification', [DashboardController::class, 'notification'])->name('dashboard.notification');
 Route::get('dashboard/notification/submit/{id}', [DashboardController::class, 'notification_submit'])->name('dashboard.notification_submit');
 Route::get('dashboard/payment-history', [DashboardController::class, 'payment_history'])->name('dashboard.payment_history');

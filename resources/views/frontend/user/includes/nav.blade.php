@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('frontend.dashboard.agent_profile')}}" class="nav-link {{Request::segment(3)=='agent' ? 'active' :null }}">
+                <a href="{{route('frontend.dashboard.profile_edit')}}" class="nav-link {{Request::segment(3)=='edit' ? 'active' :null }}">
                     <div class="nav-nav">
                         <i class="bi bi-person"></i>
                         <i class="bi active bi-person-fill"></i>

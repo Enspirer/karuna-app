@@ -49,7 +49,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function agent_profile()
+    public function profile_edit()
     {
         return view('frontend.user.agent_profile');
     }
@@ -171,11 +171,15 @@ class DashboardController extends Controller
                 'occupation' => $request->occupation,
                 'contact_number' => $request->contact_number,
                 'contact_number_two' => $request->contact_number_two,
-                'address' => $request->address
+                'address' => $request->address,
+                'profile_image' => $request->profile_image,
+                'bio' => $request->bio
             ]
         );
 
-        return back()->withFlashSuccess('Updated Successfully');
+        return back()->with([
+            'success' => 'Updated Successfully.'
+        ]); 
 
     }
 

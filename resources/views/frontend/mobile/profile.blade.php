@@ -80,14 +80,19 @@
                 </div> 
             </div>
 
-            <div class="frm-row">
+            <div class="frm-row">  
+                <label class="form-label">Bio</label>
+                <textarea name="bio" id="bio" class="form-control" style="height:180px">{{auth()->user()->bio}}</textarea>
+            </div>   
+
+            <!-- <div class="frm-row">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" id="password">
             </div>
             <div class="frm-row">
                 <label for="password_confirmation" class="form-label">Confirm Password</label>
                 <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" >
-            </div>
+            </div> -->
 
             <!-- Submit Button -->
             <div class="frm-row">
@@ -425,6 +430,11 @@
                         </div>
                     </div> 
                 </div>
+
+                <div class="frm-row">  
+                    <label class="form-label">Bio</label>
+                    <textarea name="bio" id="bio" class="form-control" style="height:180px">{{auth()->user()->bio}}</textarea>
+                </div> 
                 
                 <div class="frm-row">
                     <label class="form-label">NIC Number</label>
