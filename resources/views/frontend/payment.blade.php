@@ -90,7 +90,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="#">View  History of this Agent</a>
+                            <a href="{{route('frontend.user.agent_profile',$agentDetails->id)}}">View  History of this Agent</a>
                         </div>
                         <div class="profile-block">
                             <div class="title">Receiver's Profile</div>
@@ -111,8 +111,18 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="#">View  History of this Receiver</a>
-                            <div class="cat-icon blue">S</div>
+                            <a href="{{route('frontend.user.receiver_profile',$receiverDetails->id)}}">View  History of this Receiver</a>
+                            <div class="cat-icon blue">
+                                @if($receiverDetails->requirement != 'Other')
+                                    @if(App\Models\Packages::where('id',$receiverDetails->requirement)->first() != null)
+                                        <div class="icon purple">{{substr( App\Models\Packages::where('id',$receiverDetails->requirement)->first()->name, 0, 1)}}</div>                                     
+                                    @else
+                                        <div class="name">Package not found</div>
+                                    @endif
+                                @else
+                                    <div class="icon purple">O</div>
+                                @endif
+                            </div>
                         </div>
                         <div class="footer">
                             <div class="text-block">

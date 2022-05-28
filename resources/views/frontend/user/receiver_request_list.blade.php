@@ -30,7 +30,7 @@
                             @if($receiver->profile_image == null)
                                 <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
                             @else
-                                <img src="{{uploaded_asset($receiver->profile_image)}}" alt="">
+                                <img src="{{uploaded_asset($receiver->profile_image)}}" alt="" style="width:110px;">
                             @endif
                         </td>
                         <td class="db-td">

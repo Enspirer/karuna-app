@@ -9,118 +9,107 @@
         <div class="inner-wrapper">
             <div class="info-block">
                 <div class="header">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
-                    <div class="title">Mrs. Inoka Perera</div>
+                    @if($agent->profile_image == null)
+                        <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
+                    @else
+                        <img src="{{ uploaded_asset($agent->profile_image) }}" alt="" class="dp">
+                    @endif
+                    <div class="title">{{$agent->first_name}} {{$agent->last_name}}</div>
                     <div class="star-rating">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star"></i>
+                        @if($agent->level == 'Level 1')
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                        @elseif($agent->level == 'Level 2')
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                        @elseif($agent->level == 'Level 3')
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        @elseif($agent->level == 'Level 4')
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        @endif
                     </div>
                     <div class="status agent">Agent</div>
-                    <div class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita ex dolore veniam libero atque</div>
+                    <div class="text">{{$agent->bio}}</div>
                 </div>
                 <div class="info">
                     <div class="row g-0">
                         <div class="col-sm-6">
-                            <div class="label">Nick Name</div>
-                            <div class="text">Inoka Perera</div>
+                            <div class="label">Name</div>
+                            <div class="text">{{$agent->first_name}} {{$agent->last_name}}</div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="label">Age</div>
-                            <div class="text">50 Years Old</div>
+                            <div class="label">Email</div>
+                            <div class="text">{{$agent->email}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Address</div>
-                            <div class="text">54/B Kadana, Kotugoda.</div>
+                            <div class="text">{{$agent->address}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">City</div>
-                            <div class="text">Ja-Ela</div>
+                            <div class="text">{{$agent->city}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Phone Number</div>
-                            <div class="text">+94 77 44 25 235</div>
+                            <div class="text">{{$agent->contact_number}}</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="content-block">
-                <div class="header">
-                    <div class="title">Her Charity Works</div>
-                    <a href="#" class="cta-link">Back to Dashboard</a>
-                </div>
-                <div class="accordion" id="charityList">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="charHead1">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#char1"
-                                aria-expanded="true" aria-controls="char1">
-                                <div class="header-block">
-                                    <div class="no">1</div>
-                                    <div class="text">Donation Title here</div>
-                                    <div class="indicator orange"></div>
-                                </div>
-                            </button>
-                        </h2>
-                        <div id="char1" class="accordion-collapse collapse show" aria-labelledby="charHead1"
-                            data-bs-parent="#charityList">
-                            <div class="accordion-body">
-                                <div class="title">Description</div>
-                                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
-                                    exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
-                                    reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
-                            </div>
-                        </div>
+                @if(count(App\Models\Receivers::where('assigned_agent',$agent->id)->get()) == 0)                  
+                    <img src="{{url('images/not-found.png')}}" alt="">
+                    <div class="text" style="margin-left: 100px;">No data foud</div>
+                @else
+                    <div class="header">
+                        <div class="title">Her Charity Works</div>
+                        <a href="#" class="cta-link">Back to Dashboard</a>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="charHead2">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#char2" aria-expanded="false" aria-controls="char2">
-                                <div class="header-block">
-                                    <div class="no">2</div>
-                                    <div class="text">Donation Title here</div>
-                                    <div class="indicator green"></div>
-                                </div>
-                            </button>
-                        </h2>
-                        <div id="char2" class="accordion-collapse collapse" aria-labelledby="charHead2"
-                            data-bs-parent="#charityList">
-                            <div class="accordion-body">
-                                <div class="title">Description</div>
-                                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
-                                    exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
-                                    reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="charHead3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#char3" aria-expanded="false" aria-controls="char3">
-                                <div class="header-block">
-                                    <div class="no">3</div>
-                                    <div class="text">Donation Title here</div>
-                                    <div class="indicator red"></div>
-                                </div>
-                            </button>
-                        </h2>
-                        <div id="char3" class="accordion-collapse collapse" aria-labelledby="charHead3"
-                            data-bs-parent="#charityList">
-                            <div class="accordion-body">
-                                <div class="title">Description</div>
-                                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
-                                    exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
-                                    reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
-                                <div class="media">
-                                    <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
-                                    <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
-                                    <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
+                    <div class="accordion" id="charityList">
+
+                        @foreach(App\Models\Receivers::where('assigned_agent',$agent->id)->orderby('id','desc')->get() as $key => $receiver)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="charHead{{$receiver->id}}">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#char{{$receiver->id}}"
+                                        aria-expanded="true" aria-controls="char1">
+                                        <div class="header-block">
+                                            <div class="no">{{$key + 1}}</div>
+                                            <div class="text">
+                                                @if($receiver->requirement != 'Other')
+                                                    @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
+                                                        <div class="icon purple">{{App\Models\Packages::where('id',$receiver->requirement)->first()->name }}</div>                                     
+                                                    @else
+                                                        <div class="name">Package not found</div>
+                                                    @endif
+                                                @else
+                                                    <div class="icon purple">Other Requirements</div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="char{{$receiver->id}}" class="accordion-collapse collapse" aria-labelledby="charHead{{$receiver->id}}"
+                                    data-bs-parent="#charityList">
+                                    <div class="accordion-body">
+                                        <div class="title">Description</div>
+                                        <div class="text">{{$receiver->about_donation}}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach                   
+
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>

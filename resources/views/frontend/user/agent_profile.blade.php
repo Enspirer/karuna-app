@@ -15,13 +15,27 @@
           
         </div>
         <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
-        <!-- <div class="star-rating">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-half"></i>
-            <i class="bi bi-star"></i>
-        </div> -->
+            @if(auth()->user()->level == 'Level 1')
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+            @elseif(auth()->user()->level == 'Level 2')
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+            @elseif(auth()->user()->level == 'Level 3')
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+            @elseif(auth()->user()->level == 'Level 4')
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            @endif
         <div class="info-table-wrapper">
             <table class="info-table">
                 <tbody>

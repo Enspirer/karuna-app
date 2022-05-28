@@ -20,9 +20,6 @@ Route::get('support', [HomeController::class, 'support'])->name('support');
 Route::get('payment/{receiver_id}', [HomeController::class, 'payment'])->name('payment');
 Route::get('campaigns', [HomeController::class, 'campaigns'])->name('campaigns');
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us');
-Route::get('profile/donor', [HomeController::class, 'donor_profile'])->name('donor_profile');
-Route::get('profile/agent', [HomeController::class, 'agent_profile'])->name('agent_profile');
-Route::get('profile/receiver', [HomeController::class, 'receiver_profile'])->name('receiver_profile');
 Route::get('payment/payment-status', [HomeController::class, 'payment_status'])->name('payment_status');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
@@ -108,6 +105,9 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::post('mobile_receiver_request_update', [MobileController::class, 'mobile_receiver_request_update'])->name('mobile_receiver_request_update');
 
         
+        Route::get('profile/donor/{id}', [HomeController::class, 'donor_profile'])->name('donor_profile');
+        Route::get('profile/agent/{id}', [HomeController::class, 'agent_profile'])->name('agent_profile');
+        Route::get('profile/receiver/{id}', [HomeController::class, 'receiver_profile'])->name('receiver_profile');
         
     });
 });

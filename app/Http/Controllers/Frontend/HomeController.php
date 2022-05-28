@@ -70,19 +70,31 @@ class HomeController extends Controller
         return view('frontend.about_us');
     }
 
-    public function donor_profile()
+    public function donor_profile($id)
     {
-        return view('frontend.donor_profile');
+        $donor = User::where('id',$id)->first();
+
+        return view('frontend.donor_profile',[
+            'donor' => $donor
+        ]);
     }
 
-    public function agent_profile()
+    public function agent_profile($id)
     {
-        return view('frontend.agent_profile');
+        $agent = User::where('id',$id)->first();
+
+        return view('frontend.agent_profile',[
+            'agent' => $agent
+        ]);
     }
 
-    public function receiver_profile()
+    public function receiver_profile($id)
     {
-        return view('frontend.receiver_profile');
+        $receiver = Receivers::where('id',$id)->first();
+
+        return view('frontend.receiver_profile',[
+            'receiver' => $receiver
+        ]);
     }
 
     public function find_agent_details($city)

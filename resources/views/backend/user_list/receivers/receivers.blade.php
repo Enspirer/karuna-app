@@ -51,6 +51,7 @@
                                 <th scope="col">Country</th>
                                 <th scope="col">City</th>
                                 <th scope="col">Requirement/Package</th>
+                                <th scope="col">Featured</th>                                
                                 <th scope="col">Options</th>
                             </tr>
                         </thead>
@@ -107,6 +108,7 @@
                     {data: 'country', name: 'country'},
                     {data: 'city', name: 'city'},
                     {data: 'requirement', name: 'requirement'},
+                    {data: 'featured', name: 'featured'},                    
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

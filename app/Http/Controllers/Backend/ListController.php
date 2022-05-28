@@ -299,7 +299,16 @@ class ListController extends Controller
                 $button = '<a href="'.route('admin.receiver.edit',$data->id).'" name="donate_gigs" id="'.$data->id.'" class="edit btn btn-info btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> View </a>';
                 return $button;
             })
-            ->rawColumns(['action','confirmed'])
+            ->addColumn('featured', function($data){
+                if($data->featured == 'Enabled'){
+                    $featured = '<span class="badge badge-success">Enabled</span>';
+                }
+                else{
+                    $featured = '<span class="badge badge-warning">Disabled</span>';
+                }
+                return $featured;
+            })
+            ->rawColumns(['action','featured'])
             ->make(true);
         }
         return back();
