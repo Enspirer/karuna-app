@@ -23,10 +23,10 @@ class PaymentController extends Controller
 
         Stripe::setApiKey(env('STRIPE_SECRET'));
         Charge::create ([
-            "amount" => $request->package,
+            "amount" => $request->package * 100,
             "currency" => "usd",
             "source" => $request->stripeToken,
-            "description" => "Test payment from itsolutionstuff.com."
+            "description" => "Donation Payment."
         ]);
 
         $receiver = Receivers::where('id',$request->receiver_id)->first();
