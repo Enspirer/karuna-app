@@ -243,7 +243,7 @@
             <ul class="list-group">
 
                 @if(count(App\Models\Receivers::get()) != 0)
-                    @foreach(App\Models\Receivers::take(3)->where('payment_status','!=','Payment Completed')->latest()->get() as $receiver)
+                    @foreach(App\Models\Receivers::take(3)->where('payment_status',null)->latest()->get() as $receiver)
                         <li class="list-group-item">
                             <div class="receiver">
                                 <div class="content-block">
