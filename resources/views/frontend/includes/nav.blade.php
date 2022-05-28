@@ -12,16 +12,16 @@
           <a class="nav-link {{ Request::segment(1) == '' ? 'active' : null }}" href="{{route('frontend.index')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::segment(1) == 'about' ? 'active' : null }}" href="#">About</a>
+          <a class="nav-link {{ Request::segment(1) == 'about' ? 'active' : null }}" href="{{route('frontend.about_us')}}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::segment(1) == 'works' ? 'active' : null }}" href="#">Our Works</a>
+          <a class="nav-link {{ Request::segment(1) == 'works' ? 'active' : null }}" href="{{route('frontend.campaigns')}}">Our Works</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ Request::segment(1) == 'support' ? 'active' : null }}" href="{{route('frontend.support')}}">Support Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::segment(1) == 'contact' ? 'active' : null }}" href="#">Contact Us</a>
+          <a class="nav-link {{ Request::segment(1) == 'contact' ? 'active' : null }}" href="{{route('frontend.contact')}}">Contact Us</a>
         </li>
         <li class="nav-item">
           @auth

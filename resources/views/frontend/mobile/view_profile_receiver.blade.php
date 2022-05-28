@@ -86,13 +86,9 @@
                     @php
                         $req_images = preg_split ("/\,/", $receiver->images);
                     @endphp
-                    <div class="row">
                         @foreach($req_images as $key=> $req_image)
-                            <div class="col-4">
-                                <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:70px; object-fit:cover" width="100px" alt="">
-                            </div>
+                                <img src="{{uploaded_asset($req_image)}}">
                         @endforeach
-                    </div>
                 @endif
             </div>
 

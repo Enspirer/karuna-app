@@ -39,11 +39,11 @@
         <div class="footer-col">
             <div class="title">Quick links</div>
             <ul class="footer-list">
-                <li><a href="#" class="footer-link">Home</a></li>
-                <li><a href="#" class="footer-link">About Us</a></li>
-                <li><a href="#" class="footer-link">Our Works</a></li>
-                <li><a href="#" class="footer-link">Support Us</a></li>
-                <li><a href="#" class="footer-link">Contact Us</a></li>
+                <li><a href="{{route('frontend.index')}}" class="footer-link">Home</a></li>
+                <li><a href="{{route('frontend.about_us')}}" class="footer-link">About Us</a></li>
+                <li><a href="{{route('frontend.campaigns')}}" class="footer-link">Our Works</a></li>
+                <li><a href="{{route('frontend.support')}}" class="footer-link">Support Us</a></li>
+                <li><a href="{{route('frontend.contact')}}" class="footer-link">Contact Us</a></li>
             </ul>
         </div>
         <div class="footer-col">

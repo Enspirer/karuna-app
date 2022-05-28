@@ -100,7 +100,7 @@ body .mobile-body {
 
 .splash-hero-section .splash-slider .splide__slide .slide {
   width: 100%;
-  height: 50vh;
+  height: 45vh;
   background-position: bottom center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -194,7 +194,7 @@ body .mobile-body {
   padding: 3rem 0 2rem;
 }
 .join-header-section .logo {
-  width: 200px;
+  width: 140px;
   margin-bottom: 1rem;
 }
 .join-header-section .title {
@@ -326,7 +326,7 @@ body .mobile-body {
   font-size: 0.75rem;
   font-weight: 300;
   text-align: center;
-  margin: 5rem 0;
+  margin: 3rem 0 2rem;
   color: #333;
 }
 .join-form-section .not-join a {
@@ -1702,6 +1702,7 @@ body .mobile-body {
 }
 .profile-section .inner-wrapper .header {
   position: relative;
+  background: url("../../images/dashboard/receiver-back.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1885,8 +1886,14 @@ body .mobile-body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
+}
+.profile-section .inner-wrapper .gallery img {
+  width: 100px;
+  height: 75px;
+  object-fit: cover;
+  object-position: center;
 }
 .profile-section .inner-wrapper .charity-block {
   margin: 2rem 0;
