@@ -287,9 +287,11 @@ class DashboardController extends Controller
 
     public function notification_store(Request $request)
     {
+        // dd($request);
+
         $update = new Receivers;
         $update->thankyou_message=$request->thankyou_message;
-        $update->images=$request->images;
+        $update->proof_images=$request->proof_images;
         $update->status='Task Success';
         Receivers::whereId($request->hidden_id)->update($update->toArray());
 

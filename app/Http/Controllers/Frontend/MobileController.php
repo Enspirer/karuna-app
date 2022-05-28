@@ -213,9 +213,13 @@ class MobileController extends Controller
         return view('frontend.mobile.receiver_confirmation');
     }
 
-    public function view_profile_agent()
+    public function view_profile_agent($id)
     {
-        return view('frontend.mobile.view_profile');
+        $agent = User::where('id',$id)->first();
+
+        return view('frontend.mobile.view_profile',[
+            'agent' => $agent
+        ]);
     }
 
     public function view_profile_donor()

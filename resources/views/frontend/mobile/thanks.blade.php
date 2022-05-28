@@ -22,14 +22,14 @@
         <div class="title">Thank you For your support</div>
         <!-- <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, amet quas! Neque facere ad fugit aut! Aliquid, earum placeat soluta deserunt magni velit ut omnis accusantium, perspiciatis, hic dolore recusandae!</div> -->
         <div class="media">
-            @if($receiver->images != null)
+            @if($receiver->proof_images != null)
                 @php
-                    $req_images = preg_split ("/\,/", $receiver->images);
+                    $req_images = preg_split ("/\,/", $receiver->proof_images);
                 @endphp
                 <div class="row">
                     @foreach($req_images as $key=> $req_image)
                         <div class="col-4">
-                            <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:100px; object-fit:cover" width="100%" alt="">
+                            <img src="{{uploaded_asset($req_image)}}" class="" style="height:100px; object-fit:cover" width="110px" alt="">
                         </div>
                     @endforeach
                 </div>

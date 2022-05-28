@@ -72,8 +72,8 @@
                     <div class="text" style="margin-left: 100px;">No data foud</div>
                 @else
                     <div class="header">
-                        <div class="title">Her Charity Works</div>
-                        <a href="#" class="cta-link">Back to Dashboard</a>
+                        <div class="title">Charity Works</div>
+                        <a href="{{'/'}}" class="cta-link">Back</a>
                     </div>
                     <div class="accordion" id="charityList">
 

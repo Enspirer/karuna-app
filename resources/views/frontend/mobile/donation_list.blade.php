@@ -39,7 +39,7 @@
                                     <div class="icon blue">O</div>
                                 @else
                                     @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
-                                        <img src="{{uploaded_asset(App\Models\Packages::where('id',$receiver->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" class="ml-4 mt-3 mb-3" alt="">
+                                        <img src="{{uploaded_asset(App\Models\Packages::where('id',$receiver->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
                                     @endif
                                 @endif
                                 <div class="text-block">
@@ -95,7 +95,7 @@
                                     <div class="icon blue">O</div>
                                 @else
                                     @if(App\Models\Packages::where('id',$receivers_for_don->requirement)->first() != null)
-                                        <img src="{{uploaded_asset(App\Models\Packages::where('id',$receivers_for_don->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" class="ml-4 mt-3 mb-3" alt="">
+                                        <img src="{{uploaded_asset(App\Models\Packages::where('id',$receivers_for_don->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
                                     @endif
                                 @endif
                                 <div class="text-block">

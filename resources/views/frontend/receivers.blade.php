@@ -12,7 +12,7 @@
             <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
         </div>
         <div class="card-block">
-            @foreach(App\Models\Receivers::get() as $receivers)
+            @foreach(App\Models\Receivers::orderby('id','desc')->get() as $receivers)
                 @if($receivers->payment_status != 'Payment Completed')
                     @if($receivers->requirement == 'Other')
                         <div class="card">

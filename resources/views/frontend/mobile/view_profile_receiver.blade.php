@@ -89,15 +89,20 @@
                     <div class="row">
                         @foreach($req_images as $key=> $req_image)
                             <div class="col-4">
-                                <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:70px; object-fit:cover" width="100%" alt="">
+                                <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:70px; object-fit:cover" width="100px" alt="">
                             </div>
                         @endforeach
                     </div>
                 @endif
             </div>
-            <a href="#" class="cta-btn btn-fill mt-3">
-                <div class="btn-text">Donate Now</div>
-            </a>
+
+            @auth                
+                @if(auth()->user()->user_type == 'Donor')
+                    <a href="{{url('mobile/payment',$receiver->id)}}" class="cta-btn btn-fill mt-3">
+                        <div class="btn-text">Donate Now</div>
+                    </a>
+                @endif
+            @endauth
         </div>
     </div>
 </section>

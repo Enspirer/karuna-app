@@ -26,14 +26,14 @@
                     </div>
 
                     <div class="body">
-                        @if($receiver->images != null)
+                        @if($receiver->proof_images != null)
                             @php
-                                $req_images = preg_split ("/\,/", $receiver->images);
+                                $req_images = preg_split ("/\,/", $receiver->proof_images);
                             @endphp
                             <div class="row">
                                 @foreach($req_images as $key=> $req_image)
                                     <div class="col-4">
-                                        <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:100px; object-fit:cover" width="100%" alt="">
+                                        <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:100px; object-fit:cover" width="150px" alt="">
                                     </div>
                                 @endforeach
                             </div>
@@ -83,7 +83,7 @@
                                     <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                                 </div>
                                 <div class="form-control file-amount">Choose File</div>
-                                <input type="hidden" name="images" value="{{App\Models\Receivers::where('assigned_agent',auth()->user()->id)->first()->images}}" class="selected-files" >
+                                <input type="hidden" name="proof_images" value="{{$receiver->proof_images}}" class="selected-files" >
                             </div>
                             <div class="file-preview box sm">
                             </div>
@@ -96,7 +96,7 @@
             <div class="comment-block">
                 <div class="comment-input">
                     <label>Special Note</label>
-                    <textarea class="form-control" rows="5" name="thankyou_message" required>{{App\Models\Receivers::where('assigned_agent',auth()->user()->id)->first()->thankyou_message}}</textarea>
+                    <textarea class="form-control" rows="5" name="thankyou_message" required>{{$receiver->thankyou_message}}</textarea>
                 </div>
                 <input type="hidden" value="{{$receiver->id}}" name="hidden_id">
                 <button type="submit" class="cta-btn btn-fill">

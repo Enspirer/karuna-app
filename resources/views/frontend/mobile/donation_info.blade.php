@@ -28,7 +28,7 @@
                         </li>
                     </ul>
                 </div>
-                <a class="cta-link" href="#">View  History of this Agent</a>
+                <a class="cta-link" href="{{route('frontend.mobile.view_profile',$agent->id)}}">View  History of this Agent</a>
             </div>
 
             
@@ -51,7 +51,7 @@
                         </li>
                     </ul>
                 </div>
-                <a class="cta-link" href="#">View  History of this Receiver</a>
+                <a class="cta-link" href="{{route('frontend.mobile.view_profile_receiver',$receiver->id)}}">View  History of this Receiver</a>
                 @if($receiver->requirement == 'Other')
                     <div class="cat-icon blue">O</div>
                 @else
