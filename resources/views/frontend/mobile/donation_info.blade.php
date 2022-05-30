@@ -28,7 +28,7 @@
                         </li>
                     </ul>
                 </div>
-                <a class="cta-link" href="{{route('frontend.mobile.view_profile',$agent->id)}}">View  History of this Agent</a>
+                <a class="cta-link" href="{{route('frontend.user.mobile.view_profile',$agent->id)}}">View  History of this Agent</a>
             </div>
 
             
@@ -51,7 +51,7 @@
                         </li>
                     </ul>
                 </div>
-                <a class="cta-link" href="{{route('frontend.mobile.view_profile_receiver',$receiver->id)}}">View  History of this Receiver</a>
+                <a class="cta-link" href="{{route('frontend.user.mobile.view_profile_receiver',$receiver->id)}}">View  History of this Receiver</a>
                 @if($receiver->requirement == 'Other')
                     <div class="cat-icon blue">O</div>
                 @else
@@ -60,7 +60,7 @@
                         {{App\Models\Packages::where('id',$receiver->requirement)->first()->name}}</p>
                     @endif
                 @endif
-                <a href="{{route('frontend.mobile.payment',$receiver->id)}}" class="cta-btn btn-fill">
+                <a href="{{route('frontend.user.mobile.payment',$receiver->id)}}" class="cta-btn btn-fill">
                     <div class="btn-text">Donate Now</div>
                 </a>
             </div>

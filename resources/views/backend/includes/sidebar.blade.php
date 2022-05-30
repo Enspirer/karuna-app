@@ -123,6 +123,12 @@
                 @endif
             @endif
 
+            <li class="nav-item">
+                <a class="nav-link {{active_class(Route::is('admin/contact_us'))}}" href="{{ route('admin.contact_us.index') }}">
+                    <i class="nav-icon fas fa-comments"></i>
+                    Contact Us <span class="notification badge">{{App\Models\ContactUs::where('status','Pending')->get()->count()}}</span>
+                </a>
+            </li>
 
 
             @if ($logged_in_user->isAdmin())

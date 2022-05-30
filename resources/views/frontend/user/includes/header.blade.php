@@ -29,7 +29,7 @@
             <a href="{{url('dashboard/index')}}" class="nav-btn active">
                 <div class="btn-text">My Receivers</div>
             </a>
-            <a href="{{route('frontend.dashboard.receiver_request_list')}}" class="nav-btn">
+            <a href="{{route('frontend.user.dashboard.receiver_request_list')}}" class="nav-btn">
                 <div class="btn-text">Receivers Request</div>
                 <div class="status">{{App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->count()}}</div>
             </a>

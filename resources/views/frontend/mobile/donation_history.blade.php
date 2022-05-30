@@ -8,7 +8,7 @@
 <section class="app-bar-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
-            <a href="{{route('frontend.mobile.profile_menu')}}" class="back-btn">
+            <a href="{{route('frontend.user.mobile.profile_menu')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
             <div class="title">Donation History</div>

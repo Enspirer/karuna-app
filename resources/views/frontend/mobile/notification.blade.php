@@ -9,7 +9,7 @@
 <section class="app-bar-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
-            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
+            <a href="{{route('frontend.user.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
             <div class="title">Notification</div>
@@ -38,7 +38,7 @@
                     @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
                         @if($notificatiosn->status == 'Pending')
                             <li class="list-group-item">
-                                <a href="{{route('frontend.mobile.thanks',$notificatiosn->id)}}" class="nav-link">
+                                <a href="{{route('frontend.user.mobile.thanks',$notificatiosn->id)}}" class="nav-link">
                                     @if(auth()->user()->profile_image != null)
                                         <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="" width="140px">
                                     @else
@@ -53,7 +53,7 @@
                             </li>
                         @else
                             <li class="list-group-item">
-                                <a href="{{route('frontend.mobile.thanks',$notificatiosn->id)}}" class="nav-link">
+                                <a href="{{route('frontend.user.mobile.thanks',$notificatiosn->id)}}" class="nav-link">
                                     @if(auth()->user()->profile_image != null)
                                         <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="" width="140px">
                                     @else
@@ -87,7 +87,7 @@
                     @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
                         @if($notificatiosn->status == 'Pending')
                             <li class="list-group-item">
-                                <a href="{{route('frontend.mobile.agent_confirmation',$notificatiosn->id)}}" class="nav-link">
+                                <a href="{{route('frontend.user.mobile.agent_confirmation',$notificatiosn->id)}}" class="nav-link">
                                     <div class="text-block">
                                         <div class="subject red">{{$notificatiosn->title}}</div>
                                         <div class="text">{{$notificatiosn->content}}</div>
@@ -97,7 +97,7 @@
                             </li>
                         @else
                             <li class="list-group-item">
-                                <a href="{{route('frontend.mobile.agent_confirmation',$notificatiosn->id)}}" class="nav-link">
+                                <a href="{{route('frontend.user.mobile.agent_confirmation',$notificatiosn->id)}}" class="nav-link">
                                     <div class="text-block">
                                         <div class="subject text-secondary">{{$notificatiosn->title}}</div>
                                         <div class="text text-secondary">{{$notificatiosn->content}}</div>

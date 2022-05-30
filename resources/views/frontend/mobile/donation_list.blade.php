@@ -8,7 +8,7 @@
 <section class="app-bar-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
-            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
+            <a href="{{route('frontend.user.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
             <div class="title">Donation List</div>
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                             <div class="button-block">
-                                <a href="{{route('frontend.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
+                                <a href="{{route('frontend.user.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
                             </div>
                         </div>
                     </li>
@@ -110,10 +110,10 @@
                                 </div>
                             </div>
                             <div class="button-block">
-                                <a href="{{route('frontend.mobile.donation_info',$receivers_for_don->id)}}" class="cta-btn btn-fill">
+                                <a href="{{route('frontend.user.mobile.donation_info',$receivers_for_don->id)}}" class="cta-btn btn-fill">
                                     <div class="btn-text">Donate</div>
                                 </a>
-                                <a href="{{route('frontend.mobile.view_profile_receiver',$receivers_for_don->id)}}" class="cta-link">View more</a>
+                                <a href="{{route('frontend.user.mobile.view_profile_receiver',$receivers_for_don->id)}}" class="cta-link">View more</a>
                             </div>
                         </div>
                     </li>

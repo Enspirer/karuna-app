@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('frontend.dashboard.profile_edit')}}" class="nav-link {{Request::segment(3)=='edit' ? 'active' :null }}">
+                <a href="{{route('frontend.user.dashboard.profile_edit')}}" class="nav-link {{Request::segment(3)=='edit' ? 'active' :null }}">
                     <div class="nav-nav">
                         <i class="bi bi-person"></i>
                         <i class="bi active bi-person-fill"></i>
@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('frontend.dashboard.notification')}}" class="nav-link {{Request::segment(2)=='notification' ? 'active' :null }}">
+                <a href="{{route('frontend.user.dashboard.notification')}}" class="nav-link {{Request::segment(2)=='notification' ? 'active' :null }}">
                     <div class="nav-nav">
                         <i class="bi bi-bell"></i>
                         <i class="bi active bi-bell-fill"></i>
@@ -50,7 +50,7 @@
             </li>
             @if(auth()->user()->user_type == 'Donor')
             <li class="nav-item">
-                <a href="{{route('frontend.dashboard.payment_history')}}" class="nav-link {{Request::segment(2)=='payment-history' ? 'active' :null }}">
+                <a href="{{route('frontend.user.dashboard.payment_history')}}" class="nav-link {{Request::segment(2)=='payment-history' ? 'active' :null }}">
                     <div class="nav-nav">
                         <i class="bi bi-credit-card"></i>
                         <i class="bi active bi-credit-card-fill"></i>
@@ -61,7 +61,7 @@
             </li>
             @elseif(auth()->user()->user_type == 'Agent')
             <li class="nav-item">
-                <a href="{{route('frontend.dashboard.payment_history')}}" class="nav-link {{Request::segment(2)=='payment-history' ? 'active' :null }}">
+                <a href="{{route('frontend.user.dashboard.payment_history')}}" class="nav-link {{Request::segment(2)=='payment-history' ? 'active' :null }}">
                     <div class="nav-nav">
                         <i class="bi bi-credit-card"></i>
                         <i class="bi active bi-credit-card-fill"></i>

@@ -40,7 +40,7 @@
                             <div class="text">{{$receiver->request}}</div>
                         </td>
                         <td class="db-td">
-                            <a href="{{route('frontend.dashboard.receiver_request',$receiver->id)}}" class="db-tlink">View Changes</a>
+                            <a href="{{route('frontend.user.dashboard.receiver_request',$receiver->id)}}" class="db-tlink">View Changes</a>
                         </td>
 
                         @if($receiver->status != 'Approved')

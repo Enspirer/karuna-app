@@ -8,7 +8,7 @@
 <section class="app-bar-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
-            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
+            <a href="{{route('frontend.user.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
             <div class="title">My Receivers</div>
@@ -33,7 +33,7 @@
                     </section>
                 @else
                     @foreach(App\Models\Receivers::where('assigned_agent',auth()->user()->id)->orderBy('id','desc')->get() as $key => $receiver)                       
-                        <tr class="m-tr clickable-tr" data-href="{{route('frontend.mobile.receiver_agent',$receiver->id)}}">
+                        <tr class="m-tr clickable-tr" data-href="{{route('frontend.user.mobile.receiver_agent',$receiver->id)}}">
                             <td class="m-td">
                                 @if($receiver->profile_image == null)
                                     <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">

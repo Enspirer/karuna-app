@@ -8,7 +8,7 @@
 <section class="app-bar-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
-            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
+            <a href="{{route('frontend.user.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
             <div class="title">
@@ -94,7 +94,7 @@
 
             @auth                
                 @if(auth()->user()->user_type == 'Donor')
-                    <a href="{{url('mobile/payment',$receiver->id)}}" class="cta-btn btn-fill mt-3">
+                    <a href="{{route('frontend.user.mobile.payment',$receiver->id)}}" class="cta-btn btn-fill mt-3">
                         <div class="btn-text">Donate Now</div>
                     </a>
                 @endif

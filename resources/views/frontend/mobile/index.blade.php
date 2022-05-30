@@ -10,7 +10,7 @@
             <section class="thank-section">
                 <div class="mobile-container">
                     <div class="inner-wrapper">
-                        <a href="{{route('frontend.mobile.index')}}" class="brand">
+                        <a href="{{route('frontend.user.mobile.index')}}" class="brand">
                             <img src="{{url('images/mobile/logo/karuna-logo-white.svg')}}" alt="">
                         </a>            
                         <a href="#" class="profile"> 
@@ -36,7 +36,7 @@
 <section class="top-nav-section">
     <div class="mobile-container">
       <div class="inner-wrapper">
-            <a href="{{route('frontend.mobile.index')}}" class="brand">
+            <a href="{{route('frontend.user.mobile.index')}}" class="brand">
                 <img src="{{url('images/mobile/logo/karuna-logo-english.svg')}}" alt="">
             </a>
             <a href="#" class="profile">
@@ -183,7 +183,7 @@
         <div class="mobile-container">
             <div class="header">
                 <div class="title">Donate List</div>
-                <a href="{{route('frontend.mobile.donation_list')}}">See All <i class="bi bi-chevron-right"></i></a>
+                <a href="{{route('frontend.user.mobile.donation_list')}}">See All <i class="bi bi-chevron-right"></i></a>
             </div>
             <ul class="list-group">
 
@@ -211,7 +211,7 @@
                                     </div>
                                 </div>
                                 <div class="button-block">
-                                    <a href="{{route('frontend.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
+                                    <a href="{{route('frontend.user.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
                                 </div>
                             </div>
                         </li>
@@ -238,7 +238,7 @@
         <div class="mobile-container">
             <div class="header">
                 <div class="title">Donate List</div>
-                <a href="{{route('frontend.mobile.donation_list')}}">See All <i class="bi bi-chevron-right"></i></a>
+                <a href="{{route('frontend.user.mobile.donation_list')}}">See All <i class="bi bi-chevron-right"></i></a>
             </div>
             <ul class="list-group">
 
@@ -267,15 +267,15 @@
                                 </div>
                                 <div class="button-block">
                                     @if($receiver->requirement != 'Other')
-                                        <a href="{{route('frontend.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
+                                        <a href="{{route('frontend.user.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
                                             <div class="btn-text">Donate</div>
                                         </a>
                                     @else
-                                        <button href="{{route('frontend.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill" disabled>
+                                        <button href="{{route('frontend.user.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill" disabled>
                                             <div class="btn-text">Donate</div>
                                         </button>
                                     @endif
-                                    <a href="{{route('frontend.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
+                                    <a href="{{route('frontend.user.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
                                 </div>
                             </div>
                         </li>

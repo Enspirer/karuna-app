@@ -112,3 +112,10 @@ Breadcrumbs::for('admin.donate_notification.index', function ($trail) {
 Breadcrumbs::for('admin.donate_notification.edit', function ($trail) {
     $trail->push('Status', route('admin.donate_notification.edit',1));
 });
+
+Breadcrumbs::for('admin.contact_us.index', function ($trail) {
+    $trail->push('Contact Us', route('admin.contact_us.index'));
+});
+Breadcrumbs::for('admin.contact_us.edit', function ($trail) {
+    $trail->push('Status', route('admin.contact_us.edit',1));
+});

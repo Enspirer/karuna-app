@@ -137,7 +137,7 @@ class DashboardController extends Controller
         $add->save();
 
         if(is_mobile(request()->header('user-agent')) == true){
-            return redirect()->route('frontend.mobile.index');
+            return redirect()->route('frontend.user.mobile.index');
         }
 
         return back()->withFlashSuccess('Added Successfully');
@@ -230,7 +230,7 @@ class DashboardController extends Controller
         Receivers::whereId($request->hidden_id)->update($update->toArray());
 
         if(is_mobile(request()->header('user-agent')) == true){
-            return redirect()->route('frontend.mobile.receiver_agent',$request->hidden_id);
+            return redirect()->route('frontend.user.mobile.receiver_agent',$request->hidden_id);
         }
 
         return back();
@@ -281,7 +281,7 @@ class DashboardController extends Controller
 
         }
 
-        return redirect()->route('frontend.dashboard.receiver_request_list');
+        return redirect()->route('frontend.user.dashboard.receiver_request_list');
 
     }
 
@@ -302,10 +302,10 @@ class DashboardController extends Controller
         create_notification($rec->donor_id, 'Donation Successful. Thanks for your support', $donor->first_name.' '.$donor->last_name.' donated USD '.$rec->amount.' to '.$rec->name, $rec->id);
 
         if(is_mobile(request()->header('user-agent')) == true){
-            return redirect()->route('frontend.mobile.index');
+            return redirect()->route('frontend.user.mobile.index');
         }
 
-        return redirect()->route('frontend.dashboard.notification');
+        return redirect()->route('frontend.user.dashboard.notification');
         
     }
         

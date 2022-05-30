@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\CountryController;
 use App\Http\Controllers\Backend\CityController;
 use App\Http\Controllers\Backend\ListController;
 use App\Http\Controllers\Backend\NotificationController;
+use App\Http\Controllers\Backend\ContactUsController;
 
 
 // All route names are prefixed with 'admin.'.
@@ -40,7 +41,11 @@ Route::post('terms_and_conditions_update/update', [SettingsController::class, 't
 Route::get('contactus_thanks', [SettingsController::class, 'contactus_thanks'])->name('contactus_thanks');
 Route::post('contactus_thanks_update/update', [SettingsController::class, 'contactus_thanks_update'])->name('contactus_thanks_update');
 
-
+Route::get('contact_us', [ContactUsController::class, 'index'])->name('contact_us.index');
+Route::get('contact_us/getdetails', [ContactUsController::class, 'getDetails'])->name('contact_us.getDetails');
+Route::get('contact_us/edit/{id}', [ContactUsController::class, 'edit'])->name('contact_us.edit');
+Route::post('contact_us/update', [ContactUsController::class, 'update'])->name('contact_us.update');
+Route::get('contact_us/delete/{id}', [ContactUsController::class, 'destroy'])->name('contact_us.destroy');
 
 
 Route::get('package', [PackagesController::class, 'index'])->name('package.index');
@@ -103,8 +108,6 @@ Route::get('donate_notification', [NotificationController::class, 'index'])->nam
 Route::get('donate_notification/getdetails', [NotificationController::class, 'getdetails'])->name('donate_notification.getdetails');
 Route::get('donate_notification/edit/{id}', [NotificationController::class, 'edit'])->name('donate_notification.edit');
 Route::post('donate_notification/update', [NotificationController::class, 'update'])->name('donate_notification.update');
-
-
 
 
 Route::get('agent/getdetails', [ListController::class, 'get_agent_details'])->name('agent.getdetails');

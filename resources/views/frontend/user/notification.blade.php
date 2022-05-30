@@ -23,7 +23,7 @@
                     @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
                         @if($notificatiosn->status == 'Pending')
                             <li class="list-group-item">
-                                <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
+                                <a href="{{route('frontend.user.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
                                     <i class="bi bi-x-circle-fill"></i>
                                     <div class="image-block">
                                         @if(auth()->user()->profile_image != null)
@@ -44,7 +44,7 @@
                             </li>
                         @else
                             <li class="list-group-item">
-                                <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
+                                <a href="{{route('frontend.user.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
                                     <i class="bi bi-x-circle-fill"></i>
                                     <div class="image-block">
                                         @if(auth()->user()->profile_image != null)
@@ -104,7 +104,7 @@
                     @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
                         @if($notificatiosn->status == 'Pending')
                             <li class="list-group-item">
-                                <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
+                                <a href="{{route('frontend.user.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
                                     <i class="bi bi-x-circle-fill"></i>
                                     <div class="text-block">
                                         <div class="subject red">{{$notificatiosn->title}}</div>
@@ -118,7 +118,7 @@
                             </li>
                             @else
                                 <li class="list-group-item">
-                                    <a href="{{route('frontend.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
+                                    <a href="{{route('frontend.user.dashboard.notification_submit',$notificatiosn->id)}}" class="not-item">
                                         <i class="bi bi-x-circle-fill"></i>
                                         <div class="text-block">
                                             <div class="subject text-secondary">{{$notificatiosn->title}}</div>

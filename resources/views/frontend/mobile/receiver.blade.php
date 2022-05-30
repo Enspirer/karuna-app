@@ -8,7 +8,7 @@
 <section class="app-bar-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
-            <a href="{{route('frontend.mobile.index')}}" class="back-btn">
+            <a href="{{route('frontend.user.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
             <div class="title">Kamani's profile</div>
@@ -33,7 +33,7 @@
             </div>
             <div class="name">Mis. Kamani Jayathilaka</div>
             <div class="status yellow">Receiver</div>
-            <a href="{{route('frontend.mobile.receiver_edit')}}" class="btn-edit">
+            <a href="{{route('frontend.user.mobile.receiver_edit')}}" class="btn-edit">
                 <i class="bi bi-pencil-fill"></i>
                 Edit
             </a>

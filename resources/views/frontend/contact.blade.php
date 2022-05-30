@@ -145,7 +145,15 @@
                     <img src="{{url('images/landing-page/contact/pattern.svg')}}" alt="">
                 </div>
                 <div class="contact-form">
-                    {{ html()->form('POST', route('frontend.contact.send'))->open() }}
+                    <form action="{{route('frontend.contact_us.store')}}" method="post" class="pt-4 px-4 pb-3" style="background-color: white" enctype="multipart/form-data">
+                    {{csrf_field()}}
+
+                        @if(session()->has('error'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('error') }}
+                            </div>
+                        @endif
+
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="form-label">Your Name</label>
@@ -157,7 +165,7 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label">Your Subject</label>
-                                <input type="text" class="form-control" name="subject" required>
+                                <input type="text" class="form-control" name="title" required>
                             </div>
                             <div class="col-12">
                                 <label class="form-label message">Message</label>
@@ -167,7 +175,7 @@
                                 <div class="g-recaptcha" data-callback="checked" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" ></div>
                             </div>
                             <div class="col-12">
-                                <button class="cta-btn btn-fill form-submit-btn">
+                                <button class="cta-btn btn-fill form-submit-btn" type="submit" disabled>
                                     <div class="btn-text">Send Message</div>
                                 </button>
                             </div>
@@ -178,6 +186,32 @@
         </div>
     </div>
 </section>
+
+
+
+@if(\Session::has('success'))
+
+<div class="modal fade form-submit-modal" id="overlay" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <i class="bi bi-x-lg" data-bs-dismiss="modal"></i>
+                <div class="image-block">
+                    <img src="{{url('images/landing_page/contact_us/success.png')}}" alt="">
+                </div>
+                <div class="content-block">
+                    <div class="title">Success !</div>
+                    <p class="text">Your message submitted successfully.</p>
+                    <p class="text">One of our agents will be in touch shortly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endif
+
+
 
 @endsection
 
@@ -195,4 +229,15 @@
         $('.form-submit-btn').removeAttr('disabled');
     };
 </script>
+
+
+<script>
+    $(window).on('load', function () {
+        $('#overlay').modal('show');
+    });
+    $("#close-btn").click(function () {
+        $('#overlay').modal('hide');
+    });
+</script>
+
 @endpush
