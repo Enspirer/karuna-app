@@ -31,7 +31,7 @@ class PaymentController extends Controller
             ]);
         }catch (\Exception $exception){
             if(is_mobile(request()->header('user-agent')) == true){
-                return redirect()->route('frontend.user.dashboard');
+                return redirect()->route('frontend.user.mobile.index');
             }else{
                 return redirect()->route('frontend.user.dashboard');
             }
