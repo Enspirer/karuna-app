@@ -37,7 +37,7 @@ class PaymentController extends Controller
     {
         if($request->ajax())
         {
-            $data = Receivers::get();
+            $data = Receivers::where('payment_status','Payment Completed')->get();
             return DataTables::of($data)
                 ->addColumn('action', function($data){
 
@@ -49,7 +49,7 @@ class PaymentController extends Controller
                    return $agentDetails->first_name .' '. $agentDetails->last_name;
                 })
                 ->addColumn('donor_name',function ($data){
-                    $agentDetails = User::where('id',$data->assigned_agent)->first();
+                    $agentDetails = User::where('id',$data->donor_id)->first();
                     return $agentDetails->first_name .' '. $agentDetails->last_name;
                 })
                 ->addColumn('receiver_name', function ($data){
