@@ -25,6 +25,9 @@ Route::get('campaigns', [HomeController::class, 'campaigns'])->name('campaigns')
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us');
 Route::get('events', [HomeController::class, 'events'])->name('events');
 
+Route::get('terms_and_conditions', [HomeController::class, 'terms_and_conditions'])->name('terms_and_conditions');
+Route::get('privacy_policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
+
 Route::get('donation-payment',[PaymentController::class,'index'])->name('donation_payment');
 Route::post('donation-post-getway',[PaymentController::class,'post_getway'])->name('post_getway');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');

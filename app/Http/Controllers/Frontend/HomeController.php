@@ -74,6 +74,17 @@ class HomeController extends Controller
         return view('frontend.about_us');
     }
 
+    public function terms_and_conditions()
+    {
+        return view('frontend.terms_and_conditions');
+    }
+
+    public function privacy_policy()
+    {
+        return view('frontend.privacy_policy');
+    }
+    
+
     public function donor_profile($id)
     {
         $donor = User::where('id',$id)->first();
