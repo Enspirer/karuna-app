@@ -64,10 +64,10 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="{{route('frontend.user.dashboard')}}"><div class="profile-link"><i class="bi bi-pc-display"></i> Dashboard</div></a></li>
-              <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-arrow-left-right"></i> Donation History</div></a></li>
-              <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-credit-card"></i> My Card</div></a></li>
-              <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-person-fill"></i> Profile</div></a></li>
-              <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-gear"></i> Settings</div></a></li>
+                <li><a class="dropdown-item" href="{{url('dashboard/payment-history')}}"><div class="profile-link"><i class="bi bi-arrow-left-right"></i> Donation History</div></a></li>
+              <!-- <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-credit-card"></i> My Card</div></a></li> -->
+              <li><a class="dropdown-item" href="{{url('dashboard/profile/edit')}}"><div class="profile-link"><i class="bi bi-person-fill"></i> Profile</div></a></li>
+              <!-- <li><a class="dropdown-item" href="#"><div class="profile-link"><i class="bi bi-gear"></i> Settings</div></a></li> -->
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{{url('logout')}}"><div class="profile-link"><i class="bi bi-box-arrow-right"></i> Sign Out</div></a></li>
             </ul>

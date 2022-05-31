@@ -1,6 +1,10 @@
 <div class="dashboard-nav">
     <div class="profile-block">
-        <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
+        @if(auth()->user()->profile_image != null)
+            <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="" class="dp">
+        @else
+            <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
+        @endif
         <div class="content-block">
             <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
             @if(auth()->user()->user_type == 'Agent')
