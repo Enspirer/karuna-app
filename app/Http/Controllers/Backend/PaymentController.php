@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Auth\User;
+use App\Models\Packages;
 use App\Models\Receivers;
 use Illuminate\Http\Request;
 use DataTables;
@@ -41,7 +42,7 @@ class PaymentController extends Controller
             return DataTables::of($data)
                 ->addColumn('action', function($data){
 
-                    $button = '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>';
+                    $button = '<button type="button" name="conm"  class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> View</button>';
                     return $button;
                 })
                 ->addColumn('agent_name',function ($data){
@@ -57,6 +58,17 @@ class PaymentController extends Controller
                 })
                 ->editColumn('amount',function ($data){
                     return 'USD '.number_format($data->amount,2);
+                })
+                ->editColumn('requirement',function ($data){
+                    $packgeDetails = Packages::where('id',$data->requirement)->first();
+
+                    if($packgeDetails){
+                        return $packgeDetails->name;
+                    }else{
+                        return 'Other';
+                    }
+
+
                 })
                 ->rawColumns(['action'])
                 ->make(true);
