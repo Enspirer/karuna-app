@@ -19,13 +19,13 @@
                     <table class="table table-striped table-bordered" id="villadatatable" style="width:100%">
                         <thead>
                         <tr>
-                            <th scope="col">#ID</th>
                             <th scope="col">Donor Name</th>
                             <th scope="col">Agent Name</th>
                             <th scope="col">Receiver Name</th>
                             <th scope="col">Amount</th>
                             <th scope="col">Package</th>
-                            <th scope="col">Option</th>
+                            <th scope="col">Created At</th>
+                            <th scope="col">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -77,12 +77,12 @@
                 serverSide: true,
                 order: [[0, "desc"]],
                 columns: [
-                    {data: 'id', name: 'id'},
                     {data: 'name', name: 'donor_name'},
                     {data: 'agent_name', name: 'agent_name'},
                     {data: 'receiver_name', name: 'receiver_name'},
                     {data: 'amount', name: 'amount'},
                     {data: 'requirement', name: 'requirement'},
+                    {data: 'created_at', name: 'created_at'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
