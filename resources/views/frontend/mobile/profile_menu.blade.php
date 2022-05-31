@@ -77,8 +77,14 @@
                         <div class="text">Settings</div>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('frontend.user.mobile.events')}}" class="nav-link">
+                        <i class="bi bi-balloon-heart"></i>
+                        <div class="text">Events</div>
+                    </a>
+                </li>
             </ul>
-            <a href="#" class="help-btn">
+            <a href="{{route('frontend.user.mobile.help')}}" class="help-btn">
                 <i class="bi bi-headset"></i>
                 <div class="btn-text">How can we help you?</div>
             </a>

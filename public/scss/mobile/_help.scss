@@ -1,0 +1,188 @@
+.help-header-section {
+    height: 250px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../images/mobile/help/help.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: relative;
+    margin-bottom: 3rem;
+
+    .inner-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem 0;
+
+        .brand {
+            text-decoration: none;
+
+            img {
+                width: 100px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .profile {
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            background-color: #F7DA00;
+            padding: 5px 5px 5px 15px;
+            border-radius: 50px;
+
+            .bi {
+                font-size: 1.1rem;
+                color: #FF4747;
+            }
+
+            .text {
+                font-size: .9rem;
+                font-weight: 400;
+                color: $text-black;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $white;
+        margin: 1.5rem 0 1rem;
+        text-align: center;
+    }
+
+    .text {
+        font-size: .8rem;
+        font-weight: 300;
+        color: $white;
+        text-align: center;
+    }
+}
+
+.form-section {
+    .form-check-label {
+        font-size: .8rem;
+        font-weight: 300;
+        color: $gray;
+    }
+}
+
+.faq-section {
+    margin: 5rem 0;
+
+    .inner-wrapper {
+        width: 90%;
+        margin: auto;
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
+            color: $text-black;
+            margin-bottom: 3rem;
+        }
+
+        .faq-accordion {
+            .accordion-item {
+                background-color: $white;
+                border-radius: 10px;
+                border: none;
+                overflow: hidden;
+                box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+
+                &:not(:nth-last-child(1)) {
+                    margin-bottom: 2rem;
+                }
+
+                .accordion-header {
+                    .accordion-button {
+                        background-color: transparent;
+                        border: none;
+                        box-shadow: none;
+                        padding: 1.5rem 1rem;
+
+                        &::after {
+                            content: none;
+                        }
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+
+                        .header-block {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+
+                            .img-close {
+                                display: block;
+                            }
+
+                            .img-open {
+                                display: none;
+                            }
+
+                            img {
+                                width: 24px;
+                            }
+
+                            .text {
+                                font-size: 1rem;
+                                font-weight: 400;
+                                color: $text-black;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2;
+                                -webkit-box-orient: vertical;
+                            }
+                        }
+
+                        &.collapsed {
+                            background-color: $white;
+
+                            .header-block {
+
+                                .img-close {
+                                    display: none;
+                                }
+
+                                .img-open {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .accordion-collapse {
+                    .accordion-body {
+                        padding: 0 1rem 1rem;
+
+                        .text {
+                            font-size: .9rem;
+                            font-weight: 300;
+                            color: $text-black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

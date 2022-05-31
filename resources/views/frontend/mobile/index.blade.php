@@ -11,7 +11,7 @@
                 <div class="mobile-container">
                     <div class="inner-wrapper">
                         <a href="{{route('frontend.user.mobile.index')}}" class="brand">
-                            <img src="{{url('images/mobile/logo/karuna-logo-white.svg')}}" alt="">
+                            <img src="{{url('images/mobile/logo/karuna-logo-english.svg')}}" alt="">
                         </a>            
                         <a href="#" class="profile"> 
                             <i class="bi bi-suit-heart-fill"></i>
