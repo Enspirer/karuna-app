@@ -21,13 +21,23 @@ class PaymentController extends Controller
     public function post_getway(Request $request)
     {
 
-        Stripe::setApiKey(env('STRIPE_SECRET'));
-        Charge::create ([
-            "amount" => $request->package * 100,
-            "currency" => "usd",
-            "source" => $request->stripeToken,
-            "description" => "Donation Payment."
-        ]);
+        try{
+            Stripe::setApiKey(env('STRIPE_SECRET'));
+            Charge::create ([
+                "amount" => $request->package * 100,
+                "currency" => "usd",
+                "source" => $request->stripeToken,
+                "description" => "Donation Payment."
+            ]);
+        }catch (\Exception $exception){
+            if(is_mobile(request()->header('user-agent')) == true){
+                return redirect()->route('frontend.user.dashboard');
+            }else{
+                return redirect()->route('frontend.user.dashboard');
+            }
+
+        }
+
 
         $receiver = Receivers::where('id',$request->receiver_id)->first();
 
