@@ -42,6 +42,15 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link {{
+                    active_class(Route::is('admin/payment'))
+                }}" href="{{ route('admin.payment.index') }}">
+                    <i class="nav-icon fas fa-money-check-alt"></i>
+                    Payments
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/donate_notification'))}}" href="{{ route('admin.donate_notification.index') }}">
                 <i class="nav-icon fas fa-bell"></i>
                     Notifications <span class="notification badge">{{App\Models\Receivers::where('status','Agent Not Responded')->get()->count()}}</span>

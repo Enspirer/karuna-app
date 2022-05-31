@@ -116,6 +116,8 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::get('mobile/view-profile-agent/{id}', [MobileController::class, 'view_profile_agent'])->name('mobile.view_profile');
         Route::get('mobile/view-profile-donor', [MobileController::class, 'view_profile_donor'])->name('mobile.view_profile_donor');
         Route::get('mobile/view-profile-receiver/{id}', [MobileController::class, 'view_profile_receiver'])->name('mobile.view_profile_receiver');
+        Route::get('mobile/help', [MobileController::class, 'help'])->name('mobile.help');
+        Route::get('mobile/events', [MobileController::class, 'events'])->name('mobile.events');
         
     });
 });
