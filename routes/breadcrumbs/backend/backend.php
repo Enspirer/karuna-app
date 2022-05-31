@@ -119,3 +119,10 @@ Breadcrumbs::for('admin.contact_us.index', function ($trail) {
 Breadcrumbs::for('admin.contact_us.edit', function ($trail) {
     $trail->push('Status', route('admin.contact_us.edit',1));
 });
+Breadcrumbs::for('admin.payment.show', function ($trail) {
+    $trail->push('Status', route('admin.payment.show',1));
+});
+Breadcrumbs::for('admin.payment.index', function ($trail) {
+    $trail->push('Status', route('admin.payment.index'));
+});
+

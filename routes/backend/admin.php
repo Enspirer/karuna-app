@@ -10,11 +10,16 @@ use App\Http\Controllers\Backend\CityController;
 use App\Http\Controllers\Backend\ListController;
 use App\Http\Controllers\Backend\NotificationController;
 use App\Http\Controllers\Backend\ContactUsController;
-
+use App\Http\Controllers\Backend\PaymentController;
 
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('payment',[PaymentController::class, 'index'])->name('payment.index');
+Route::get('payment/show/{id}',[PaymentController::class, 'show'])->name('payment.show');
+Route::get('payment/delete/{id}',[PaymentController::class, 'delete'])->name('payment.delete');
+Route::get('payment/getdetails',[PaymentController::class, 'getDetails'])->name('payment.get_details');
 
 
 Route::get('file_manager', [FileManagerController::class, 'index'])->name('file_manager.index');
