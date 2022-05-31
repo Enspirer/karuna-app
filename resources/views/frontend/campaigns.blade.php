@@ -43,7 +43,7 @@
             </div> -->
             @if(count($completed_receivers) != 0)
                 @foreach($completed_receivers as $receivers)
-                    <a href="{{route('frontend.receiver_profile',$receivers->id)}}" class="campaign-card">
+                    <div class="campaign-card">
                         <div class="header">
                             @if($receivers->proof_images != null)
                                 @php
@@ -72,16 +72,20 @@
                                 </div>
                             @endif
                         </div>
-                        @if($receivers->name_toggle == 'yes')
-                            <div class="title">{{$receivers->nick_name}}</div>
-                        @else
-                            <div class="title">{{$receivers->name}}</div>
-                        @endif
-                        @if(App\Models\Auth\User::where('id',$receivers->donor_id)->first() != null)
-                            <div class="title">Donated By: {{App\Models\Auth\User::where('id',$receivers->donor_id)->first()->first_name}} {{App\Models\Auth\User::where('id',$receivers->donor_id)->first()->last_name}}</div>
-                        @endif
+                        <a href="{{route('frontend.donor_profile',$receivers->donor_id)}}">
+                            @if(App\Models\Auth\User::where('id',$receivers->donor_id)->first() != null)
+                                <div class="">Donated By: {{App\Models\Auth\User::where('id',$receivers->donor_id)->first()->first_name}} {{App\Models\Auth\User::where('id',$receivers->donor_id)->first()->last_name}}</div>
+                            @endif
+                        </a>
+                        <a href="{{route('frontend.receiver_profile',$receivers->id)}}">
+                            @if($receivers->name_toggle == 'yes')
+                                <div class="title">{{$receivers->nick_name}}</div>
+                            @else
+                                <div class="title">{{$receivers->name}}</div>
+                            @endif
+                        </a>
                         <div class="text">{{$receivers->about_donation}}</div>
-                    </a>
+                    </div>
                 @endforeach
             @endif
 
