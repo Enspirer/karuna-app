@@ -22,6 +22,7 @@ Route::get('payment/delete/{id}',[PaymentController::class, 'delete'])->name('pa
 Route::get('payment/getdetails',[PaymentController::class, 'getDetails'])->name('payment.get_details');
 
 
+
 Route::get('file_manager', [FileManagerController::class, 'index'])->name('file_manager.index');
 Route::get('file_manager/getdetails', [FileManagerController::class, 'getdetails'])->name('file_manager.getdetails');
 Route::get('file_manager/delete/{id}', [FileManagerController::class, 'destroy'])->name('file_manager.destroy');
