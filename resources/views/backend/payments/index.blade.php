@@ -77,7 +77,7 @@
                 serverSide: true,
                 order: [[0, "desc"]],
                 columns: [
-                    {data: 'name', name: 'donor_name'},
+                    {data: 'donor_name', name: 'donor_name'},
                     {data: 'agent_name', name: 'agent_name'},
                     {data: 'receiver_name', name: 'receiver_name'},
                     {data: 'amount', name: 'amount'},
