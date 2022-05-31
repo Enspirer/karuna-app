@@ -1,0 +1,115 @@
+.help-section {
+    .header {
+        padding: 8rem 0 17.5rem;
+        background-color: rgba($color: $primary-green, $alpha: 0.7);
+        position: relative;
+
+        .text-block {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+
+            .title {
+                font-size: 2.25rem;
+                margin-bottom: 0.25rem;
+                font-weight: 400;
+                color: $white;
+            }
+
+            .text {
+                font-size: 1rem;
+                font-weight: 300;
+                color: $text-black;
+            }
+        }
+
+        .grid-left {
+            position: absolute;
+            left: 5%;
+            bottom: 15%;
+        }
+
+        .grid-right {
+            position: absolute;
+            right: 1%;
+            bottom: -25%;
+        }
+    }
+
+    .body {
+        .contact-block {
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba($color: $primary-green, $alpha: 0.25);
+            display: flex;
+            flex-direction: row;
+            gap: 4rem;
+            position: relative;
+            z-index: 1;
+            background-color: $white;
+            margin-top: -12.5rem;
+            margin-bottom: 5rem;
+
+            .image-block {
+                border-radius: 10px;
+                background-color: $primary-green;
+                position: relative;
+                overflow: hidden;
+                flex: 0 0 35%;
+
+                .help-img {
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .contact-form {
+                padding: 2rem 0;
+
+                .form-label {
+                    margin-bottom: 0.25rem;
+                    font-size: .8rem;
+                    font-weight: 400;
+                    color: $gray;
+
+                    &.message {
+                        text-transform: uppercase;
+                        color: $primary-green;
+                    }
+                }
+
+                .form-control {
+                    border-radius: 0;
+                    border: none;
+                    border-bottom: 1px solid $light-gray;
+                    font-size: 1rem;
+                    color: $text-black;
+                    font-weight: 300;
+                    resize: none;
+
+                    &:focus,
+                    &:active {
+                        box-shadow: none;
+                        outline: none;
+                        border-bottom: 1px solid $primary-green;
+                    }
+
+                    &::placeholder {
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .contact-section {
+        .body {
+            .contact-block {
+                flex-direction: column;
+            }
+        }
+    }
+}

@@ -4,16 +4,13 @@
 
 @section('content')
 
-<section class="support-hero-section" style="background: url('{{url('images/landing-page/support/hero-back.png')}}');">
+<section class="terms-section">
     <div class="container">
-        <div class="inner-wrapper">
-            <div class="content-block">
-                <div class="title-block">
-                    <div class="title">Privacy <span>Policy</span></div>
-                </div>
-                <div class="text">{!!get_settings('privacy_policy_content')!!}</div>
-            </div>
+        <div class="title-block">
+            <div class="title">Privacy <span>Policy</span></div>
+            <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
         </div>
+        <div class="text-area">{!!get_settings('privacy_policy_content')!!}</div>
     </div>
 </section>
 

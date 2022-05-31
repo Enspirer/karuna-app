@@ -1,0 +1,41 @@
+.terms-section {
+    padding: 8rem 0 5rem;
+    background: url('../../../images/landing-page/support/hero-back.png');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+
+    .title-block {
+        position: relative;
+        margin-bottom: 3rem;
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: $text-black;
+            position: relative;
+            z-index: 1;
+
+            span {
+                font-size: 2.5rem;
+                font-weight: 400;
+                color: $primary-green;
+            }
+        }
+
+        img {
+            width: 225px;
+            position: absolute;
+            bottom: -20%;
+            left: 0;
+            z-index: 0;
+        }
+    }
+
+    .text-area {
+        font-size: 1rem;
+        font-weight: 300;
+        color: $text-black;
+    }
+
+}

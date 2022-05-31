@@ -139,4 +139,9 @@ class HomeController extends Controller
     {
         return view('frontend.events');
     }
+
+    public function help()
+    {
+        return view('frontend.help');
+    }
 }

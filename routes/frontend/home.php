@@ -24,6 +24,7 @@ Route::get('support', [HomeController::class, 'support'])->name('support');
 Route::get('campaigns', [HomeController::class, 'campaigns'])->name('campaigns');
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us');
 Route::get('events', [HomeController::class, 'events'])->name('events');
+Route::get('help-and-support', [HomeController::class, 'help'])->name('help');
 
 Route::get('terms_and_conditions', [HomeController::class, 'terms_and_conditions'])->name('terms_and_conditions');
 Route::get('privacy_policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
