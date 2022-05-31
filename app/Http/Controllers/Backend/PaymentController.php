@@ -55,6 +55,9 @@ class PaymentController extends Controller
                 ->addColumn('receiver_name', function ($data){
                     return $data->name;
                 })
+                ->editColumn('amount',function ($data){
+                    return 'USD '.number_format($data->amount,2);
+                })
                 ->rawColumns(['action'])
                 ->make(true);
         }
