@@ -74,16 +74,6 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <div class="nav-nav">
-                        <i class="bi bi-gear"></i>
-                        <i class="bi active bi-gear-fill"></i>
-                        <div class="text">Settings</div>
-                        <i class="bi flx active bi-chevron-right"></i>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <div class="nav-nav">
                         <i class="bi bi-question-circle"></i>
                         <i class="bi active bi-question-circle-fill"></i>
                         <div class="text">Help and Support</div>

@@ -39,6 +39,86 @@
                     </a>
                 </div>
             </div>
+            <div class="event-card">
+                <img src="{{url('images/landing-page/events/event.png')}}" alt="">
+                <div class="event-card-body">
+                    <div class="title">Event name</div>
+                    <div class="location">Colombo 05 - Nugegoda</div>
+                    <div class="info-block">
+                        <div class="date-block">
+                            <div class="date">10</div>
+                            <div class="month">Jun</div>
+                        </div>
+                        <div class="time-block">
+                            <div class="text">7:30 AM to 12.00 PM</div>
+                        </div>
+                    </div>
+                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minus ducimus excepturi inventore hic quas quos vel nisi, quaerat maxime! Veritatis quasi suscipit enim excepturi.</div>
+                    <a href="#" class="cta-btn btn-fill">
+                        <span class="btn-text">View More</span>
+                    </a>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="{{url('images/landing-page/events/event.png')}}" alt="">
+                <div class="event-card-body">
+                    <div class="title">Event name</div>
+                    <div class="location">Colombo 05 - Nugegoda</div>
+                    <div class="info-block">
+                        <div class="date-block">
+                            <div class="date">10</div>
+                            <div class="month">Jun</div>
+                        </div>
+                        <div class="time-block">
+                            <div class="text">7:30 AM to 12.00 PM</div>
+                        </div>
+                    </div>
+                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minus ducimus excepturi inventore hic quas quos vel nisi, quaerat maxime! Veritatis quasi suscipit enim excepturi.</div>
+                    <a href="#" class="cta-btn btn-fill">
+                        <span class="btn-text">View More</span>
+                    </a>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="{{url('images/landing-page/events/event.png')}}" alt="">
+                <div class="event-card-body">
+                    <div class="title">Event name</div>
+                    <div class="location">Colombo 05 - Nugegoda</div>
+                    <div class="info-block">
+                        <div class="date-block">
+                            <div class="date">10</div>
+                            <div class="month">Jun</div>
+                        </div>
+                        <div class="time-block">
+                            <div class="text">7:30 AM to 12.00 PM</div>
+                        </div>
+                    </div>
+                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minus ducimus excepturi inventore hic quas quos vel nisi, quaerat maxime! Veritatis quasi suscipit enim excepturi.</div>
+                    <a href="#" class="cta-btn btn-fill">
+                        <span class="btn-text">View More</span>
+                    </a>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="{{url('images/landing-page/events/event.png')}}" alt="">
+                <div class="event-card-body">
+                    <div class="title">Event name</div>
+                    <div class="location">Colombo 05 - Nugegoda</div>
+                    <div class="info-block">
+                        <div class="date-block">
+                            <div class="date">10</div>
+                            <div class="month">Jun</div>
+                        </div>
+                        <div class="time-block">
+                            <div class="text">7:30 AM to 12.00 PM</div>
+                        </div>
+                    </div>
+                    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minus ducimus excepturi inventore hic quas quos vel nisi, quaerat maxime! Veritatis quasi suscipit enim excepturi.</div>
+                    <a href="#" class="cta-btn btn-fill">
+                        <span class="btn-text">View More</span>
+                    </a>
+                </div>
+            </div>
         </div>
         <nav class="pagination-block">
             <ul class="pagination justify-content-end">
