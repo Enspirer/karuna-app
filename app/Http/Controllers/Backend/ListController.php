@@ -103,8 +103,7 @@ class ListController extends Controller
             return DataTables::of($data)
 
             ->addColumn('action', function($data){
-                $button = '<a href="'.route('admin.donate_gigs',$data->id).'" name="donate_gigs" id="'.$data->id.'" class="edit btn btn-success btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-funnel-dollar"></i> Donate Gigs ('.count(DonateGigs::where('agent_id',$data->id)->get()).')</a>';
-                $button .= '<a href="'.route('admin.agent.show',$data->id).'" name="show" id="'.$data->id.'" class="edit btn btn-primary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
+                $button = '<a href="'.route('admin.agent.show',$data->id).'" name="show" id="'.$data->id.'" class="edit btn btn-primary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
                 $button .= '<a href="'.route('admin.receivers_list',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm ml-3 mr-3"><i class="fas fa-user-friends"></i> Receivers ('.count(Receivers::where('assigned_agent',$data->id)->get()).')</a>';
                 return $button;
             })
