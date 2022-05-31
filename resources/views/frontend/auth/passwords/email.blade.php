@@ -3,49 +3,42 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.passwords.reset_password_box_title'))
 
 @section('content')
-    <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-6 align-self-center">
-            <div class="card">
-                <div class="card-header">
-                    <strong>
-                        @lang('labels.frontend.passwords.reset_password_box_title')
-                    </strong>
-                </div><!--card-header-->
+       
+<section class="section-join">
+    <div class="container">
+        <div class="inner-wrapper">
+            <div class="content-block">
+                <img src="{{url('images/logo/karuna-logo-english.svg')}}" alt="" class="logo">
+                {{ html()->form('POST', route('frontend.auth.password.email.post'))->open() }}
+                    <div class="join-form">
+                        <div class="join-form-row">
+                        {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
 
-                <div class="card-body">
-
-                    @if(session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
+                        {{ html()->email('email')
+                            ->class('form-control')
+                            ->placeholder(__('validation.attributes.frontend.email'))
+                            ->attribute('maxlength', 191)
+                            ->required()
+                            ->autofocus() }}
                         </div>
-                    @endif
+                        <div class="join-form-row">
+                            <button type="submit" class="cta-btn btn-fill pull-right">
+                                <div class="btn-text">Send Password Reset Link</div>
+                            </button>
+                        </div>
+                        <div class="join-form-row">
+                            @include('includes.partials.messages')
+                        </div>
+                       
+                    </div>
+                {{ html()->form()->close() }}
+            </div>
+            <div class="image-block">
+                <img src="{{url('images/landing-page/join/join.png')}}" alt="">
+            </div>                          
+        </div>
+    </div>
+</section>
 
-                    {{ html()->form('POST', route('frontend.auth.password.email.post'))->open() }}
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
 
-                                    {{ html()->email('email')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.email'))
-                                        ->attribute('maxlength', 191)
-                                        ->required()
-                                        ->autofocus() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group mb-0 clearfix">
-                                    {{ form_submit(__('labels.frontend.passwords.send_password_reset_link_button')) }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-                    {{ html()->form()->close() }}
-                </div><!-- card-body -->
-            </div><!-- card -->
-        </div><!-- col-6 -->
-    </div><!-- row -->
 @endsection

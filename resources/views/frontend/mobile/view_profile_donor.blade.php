@@ -85,9 +85,15 @@
                                             @if($donor->status == 'Agent Not Responded')
                                                 <div class="text">Pending</div>
                                                 <div class="indicator orange"></div>
+                                            @elseif($donor->status == 'Approved')
+                                                <div class="text">Pending</div>
+                                                <div class="indicator orange"></div>
+                                            @elseif($donor->status == 'Task Success')
+                                                <div class="text">Task Success</div>
+                                                <div class="indicator green"></div>
                                             @elseif($donor->status == 'Payment Transferred to Agent')
                                                 <div class="text">Payment Transferred</div>
-                                                <div class="indicator green"></div>
+                                                <div class="indicator orange"></div>
                                             @endif
                                         </div>
                                     </button>

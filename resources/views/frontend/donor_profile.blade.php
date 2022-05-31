@@ -9,117 +9,78 @@
         <div class="inner-wrapper">
             <div class="info-block">
                 <div class="header">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
-                    <div class="title">Mrs. Inoka Perera</div>
-                    <div class="star-rating">
+                    @if($donor->profile_picture != null)
+                        <img src="{{uploaded_asset($donor->profile_picture)}}" alt="" class="dp">                     
+                    @else
+                        <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">          
+                    @endif
+                    <div class="title">{{$donor->first_name}} {{$donor->last_name}}</div>
+                    <!-- <div class="star-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-half"></i>
                         <i class="bi bi-star"></i>
-                    </div>
+                    </div> -->
                     <div class="status donor">Donor</div>
-                    <div class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita ex dolore veniam libero atque</div>
+                    <div class="text">{{$donor->bio}}</div>
                 </div>
                 <div class="info">
                     <div class="row g-0">
                         <div class="col-sm-6">
-                            <div class="label">Nick Name</div>
-                            <div class="text">Inoka Perera</div>
+                            <div class="label">Name</div>
+                            <div class="text">{{$donor->first_name}} {{$donor->last_name}}</div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="label">Age</div>
-                            <div class="text">50 Years Old</div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="label">Address</div>
-                            <div class="text">54/B Kadana, Kotugoda.</div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="label">City</div>
-                            <div class="text">Ja-Ela</div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="label">Phone Number</div>
-                            <div class="text">+94 77 44 25 235</div>
+                            <div class="label">Email</div>
+                            <div class="text">{{$donor->email}}</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="content-block">
                 <div class="header">
-                    <div class="title">Her Charity Works</div>
-                    <a href="#" class="cta-link">Back to Dashboard</a>
+                    <div class="title">Charity Works</div>
+                    <a href="{{'/'}}" class="cta-link">Back</a>
                 </div>
                 <div class="accordion" id="charityList">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="charHead1">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#char1"
-                                aria-expanded="true" aria-controls="char1">
-                                <div class="header-block">
-                                    <div class="no">1</div>
-                                    <div class="text">Donation Title here</div>
-                                    <div class="indicator orange"></div>
-                                </div>
-                            </button>
-                        </h2>
-                        <div id="char1" class="accordion-collapse collapse show" aria-labelledby="charHead1"
-                            data-bs-parent="#charityList">
-                            <div class="accordion-body">
-                                <div class="title">Description</div>
-                                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
-                                    exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
-                                    reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="charHead2">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#char2" aria-expanded="false" aria-controls="char2">
-                                <div class="header-block">
-                                    <div class="no">2</div>
-                                    <div class="text">Donation Title here</div>
-                                    <div class="indicator green"></div>
-                                </div>
-                            </button>
-                        </h2>
-                        <div id="char2" class="accordion-collapse collapse" aria-labelledby="charHead2"
-                            data-bs-parent="#charityList">
-                            <div class="accordion-body">
-                                <div class="title">Description</div>
-                                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
-                                    exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
-                                    reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="charHead3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#char3" aria-expanded="false" aria-controls="char3">
-                                <div class="header-block">
-                                    <div class="no">3</div>
-                                    <div class="text">Donation Title here</div>
-                                    <div class="indicator red"></div>
-                                </div>
-                            </button>
-                        </h2>
-                        <div id="char3" class="accordion-collapse collapse" aria-labelledby="charHead3"
-                            data-bs-parent="#charityList">
-                            <div class="accordion-body">
-                                <div class="title">Description</div>
-                                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat soluta iusto
-                                    exercitationem aliquam alias aliquid, voluptatum quibusdam, ex fugit illum est praesentium
-                                    reprehenderit laudantium deserunt! Hic quia numquam atque necessitatibus.</div>
-                                <div class="media">
-                                    <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
-                                    <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
-                                    <img src="{{url('images/dashboard/placeholder.png')}}" alt="">
+
+                    @if(count(App\Models\Receivers::where('donor_id',$donor->id)->get()) != 0)
+                        @foreach(App\Models\Receivers::where('donor_id',$donor->id)->orderby('id','desc')->get() as $key => $donor)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="charHead1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#char{{$donor->id}}"
+                                        aria-expanded="true" aria-controls="char1">
+                                        <div class="header-block">
+                                            <div class="no">{{$key+1}}</div>
+                                            @if($donor->status == 'Agent Not Responded')
+                                                <div class="text">Pending</div>
+                                                <div class="indicator orange"></div>
+                                            @elseif($donor->status == 'Approved')
+                                                <div class="text">Pending</div>
+                                                <div class="indicator orange"></div>
+                                            @elseif($donor->status == 'Task Success')
+                                                <div class="text">Task Success</div>
+                                                <div class="indicator green"></div>
+                                            @elseif($donor->status == 'Payment Transferred to Agent')
+                                                <div class="text">Payment Transferred</div>
+                                                <div class="indicator orange"></div>
+                                            @endif
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="char{{$donor->id}}" class="accordion-collapse collapse" aria-labelledby="charHead1"
+                                    data-bs-parent="#charityList">
+                                    <div class="accordion-body">
+                                        <div class="title">Description</div>
+                                        <div class="text">{{$donor->thankyou_message}}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
+                    
+
                 </div>
             </div>
         </div>
