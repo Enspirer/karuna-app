@@ -172,6 +172,19 @@
                                 <textarea class="form-control" name="message" rows="3" placeholder="Write your message here" required></textarea>
                             </div>
                             <div class="col-12">
+                                <label class="form-label">Consent</label>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" name="newsletter">
+                                    <label class="form-check-label">
+                                        Acceptance * <br>
+                                        I would like to receive information & updates from Trace Solutions in relation to my enquiry. <br>
+                                        I understand that Trace will never share my information.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
                                 <div class="g-recaptcha" data-callback="checked" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" ></div>
                             </div>
                             <div class="col-12">
