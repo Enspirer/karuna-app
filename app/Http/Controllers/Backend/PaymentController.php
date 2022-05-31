@@ -49,8 +49,8 @@ class PaymentController extends Controller
                    return $agentDetails->first_name .' '. $agentDetails->last_name;
                 })
                 ->addColumn('donor_name',function ($data){
-                    $agentDetails = User::where('id',$data->donor_id)->first();
-                    return $agentDetails->first_name .' '. $agentDetails->last_name;
+                    $donorDetails = User::where('id',$data->donor_id)->first();
+                    return $donorDetails->first_name .' '. $donorDetails->last_name;
                 })
                 ->addColumn('receiver_name', function ($data){
                     return $data->name;
