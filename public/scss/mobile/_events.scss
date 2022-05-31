@@ -1,0 +1,197 @@
+.event-header-section {
+    height: 250px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../../images/mobile/help/help.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: relative;
+    margin-bottom: 3rem;
+
+    .inner-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem 0;
+
+        .brand {
+            text-decoration: none;
+
+            img {
+                width: 100px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .profile {
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            background-color: #F7DA00;
+            padding: 5px 5px 5px 15px;
+            border-radius: 50px;
+
+            .bi {
+                font-size: 1.1rem;
+                color: #FF4747;
+            }
+
+            .text {
+                font-size: .9rem;
+                font-weight: 400;
+                color: $text-black;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $white;
+        margin: 1.5rem 0 1rem;
+        text-align: center;
+    }
+
+    .text {
+        font-size: .8rem;
+        font-weight: 300;
+        color: $white;
+        text-align: center;
+    }
+}
+
+.events-section {
+    position: relative;
+
+    .events-block {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 3rem;
+
+        .event-card {
+            width: 330px;
+            box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+
+            img {
+                width: 100%;
+                height: 175px;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .event-card-body {
+                padding: 1rem;
+
+                .title {
+                    font-size: 1.25rem;
+                    font-weight: 400;
+                    color: $text-black;
+                    margin-bottom: 0.5rem;
+                }
+
+                .location {
+                    font-size: .9rem;
+                    font-weight: 300;
+                    color: $text-black;
+                    margin-bottom: 0.75rem;
+                }
+
+                .info-block {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: .75rem;
+
+                    .date-block {
+                        width: 100px;
+                        padding: .5rem;
+                        background-color: $white;
+                        border: 1px solid $primary-green;
+                        text-align: center;
+
+                        .date {
+                            font-size: 1.25rem;
+                            font-weight: 400;
+                            color: $text-black;
+                            line-height: 1;
+                        }
+
+                        .month {
+                            font-size: .9rem;
+                            font-weight: 300;
+                            color: $text-black;
+                        }
+                    }
+
+                    .time-block {
+                        flex: 1;
+                        background-color: rgba($color: $primary-green, $alpha: 0.25);
+                        padding: 0 1rem;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        .text {
+                            font-size: .9rem;
+                            font-weight: 300;
+                            color: $text-black;
+                        }
+                    }
+                }
+
+                .text {
+                    font-size: .9rem;
+                    font-weight: 300;
+                    color: $text-black;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+
+    .pagination-block {
+        margin-top: 5rem;
+
+        .pagination {
+            .page-item {
+
+                &:nth-child(1),
+                &:nth-last-child(1) {
+                    .page-link {
+                        background-color: transparent;
+                    }
+                }
+
+                .page-link {
+                    color: $primary-green;
+                }
+
+                &.disabled {
+                    .page-link {
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
+}
