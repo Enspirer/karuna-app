@@ -23,6 +23,7 @@ Route::get('receivers', [HomeController::class, 'receivers'])->name('receivers')
 Route::get('support', [HomeController::class, 'support'])->name('support');
 Route::get('campaigns', [HomeController::class, 'campaigns'])->name('campaigns');
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us');
+Route::get('events', [HomeController::class, 'events'])->name('events');
 
 Route::get('donation-payment',[PaymentController::class,'index'])->name('donation_payment');
 Route::post('donation-post-getway',[PaymentController::class,'post_getway'])->name('post_getway');

@@ -124,6 +124,8 @@ class HomeController extends Controller
 
     }
 
-
-
+    public function events()
+    {
+        return view('frontend.events');
+    }
 }
