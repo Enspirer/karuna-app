@@ -822,7 +822,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 3rem;
 }
 .campaign-section .campaign-block .campaign-card {
@@ -833,6 +833,8 @@
   position: relative;
   max-width: 330px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  display: block;
 }
 .campaign-section .campaign-block .campaign-card.feature {
   box-shadow: 1px 1px 10px rgba(31, 195, 158, 0.5);
@@ -873,7 +875,7 @@
   font-weight: 300;
   text-align: center;
   color: #333;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

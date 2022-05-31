@@ -11,12 +11,12 @@
             <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
         </div>
         <div class="campaign-block">
-            <div class="campaign-card">
+            <!-- <div class="campaign-card">
                 <div class="header">
                     <img src="{{url('images/landing-page/support/campaign.png')}}" alt="">
-                    <a class="cta-btn btn-fill">
+                    <div class="cta-btn btn-fill">
                         <div class="btn-text">Education</div>
-                    </a>
+                    </div>
                 </div>
                 <div class="title">Campaign title here</div>
                 <div class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio commodi nisi fugit molestias quidem maiores!</div>
@@ -40,20 +40,20 @@
                 <a href="#" class="btn-fill cta-btn">
                     <div class="btn-text">Donate Now</div>
                 </a>
-            </div>
-            <div class="campaign-card">
+            </div> -->
+            <a href="#" class="campaign-card">
                 <div class="header">
                     <img src="{{url('images/landing-page/support/campaign.png')}}" alt="">
-                    <a class="cta-btn btn-fill">
+                    <div class="cta-btn btn-fill">
                         <div class="btn-text">Education</div>
-                    </a>
+                    </div>
                 </div>
                 <div class="title">Campaign title here</div>
                 <div class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio commodi nisi fugit molestias quidem maiores!</div>
-                <div class="range-bar" data-width="85%">
+                <!-- <div class="range-bar" data-width="85%">
                     <div class="range"></div>
-                </div>
-                <div class="campaign-info">
+                </div> -->
+                <!-- <div class="campaign-info">
                     <div class="info-block green">
                         <div class="title">Goals</div>
                         <div class="amount"><span class="currency">Rs.</span>15000</div>
@@ -66,131 +66,11 @@
                         <div class="title">Target</div>
                         <div class="amount"><span class="currency">Rs.</span>15000</div>
                     </div>
-                </div>
-                <a href="#" class="btn-fill cta-btn">
+                </div> -->
+                <!-- <a href="#" class="btn-fill cta-btn">
                     <div class="btn-text">Donate Now</div>
-                </a>
-            </div>
-            <div class="campaign-card">
-                <div class="header">
-                    <img src="{{url('images/landing-page/support/campaign.png')}}" alt="">
-                    <a class="cta-btn btn-fill">
-                        <div class="btn-text">Education</div>
-                    </a>
-                </div>
-                <div class="title">Campaign title here</div>
-                <div class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio commodi nisi fugit molestias quidem maiores!</div>
-                <div class="range-bar" data-width="85%">
-                    <div class="range"></div>
-                </div>
-                <div class="campaign-info">
-                    <div class="info-block green">
-                        <div class="title">Goals</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                    <div class="info-block blue">
-                        <div class="title">Found</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                    <div class="info-block gray">
-                        <div class="title">Target</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                </div>
-                <a href="#" class="btn-fill cta-btn">
-                    <div class="btn-text">Donate Now</div>
-                </a>
-            </div>
-            <div class="campaign-card">
-                <div class="header">
-                    <img src="{{url('images/landing-page/support/campaign.png')}}" alt="">
-                    <a class="cta-btn btn-fill">
-                        <div class="btn-text">Education</div>
-                    </a>
-                </div>
-                <div class="title">Campaign title here</div>
-                <div class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio commodi nisi fugit molestias quidem maiores!</div>
-                <div class="range-bar" data-width="85%">
-                    <div class="range"></div>
-                </div>
-                <div class="campaign-info">
-                    <div class="info-block green">
-                        <div class="title">Goals</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                    <div class="info-block blue">
-                        <div class="title">Found</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                    <div class="info-block gray">
-                        <div class="title">Target</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                </div>
-                <a href="#" class="btn-fill cta-btn">
-                    <div class="btn-text">Donate Now</div>
-                </a>
-            </div>
-            <div class="campaign-card">
-                <div class="header">
-                    <img src="{{url('images/landing-page/support/campaign.png')}}" alt="">
-                    <a class="cta-btn btn-fill">
-                        <div class="btn-text">Education</div>
-                    </a>
-                </div>
-                <div class="title">Campaign title here</div>
-                <div class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio commodi nisi fugit molestias quidem maiores!</div>
-                <div class="range-bar" data-width="85%">
-                    <div class="range"></div>
-                </div>
-                <div class="campaign-info">
-                    <div class="info-block green">
-                        <div class="title">Goals</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                    <div class="info-block blue">
-                        <div class="title">Found</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                    <div class="info-block gray">
-                        <div class="title">Target</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                </div>
-                <a href="#" class="btn-fill cta-btn">
-                    <div class="btn-text">Donate Now</div>
-                </a>
-            </div>
-            <div class="campaign-card">
-                <div class="header">
-                    <img src="{{url('images/landing-page/support/campaign.png')}}" alt="">
-                    <a class="cta-btn btn-fill">
-                        <div class="btn-text">Education</div>
-                    </a>
-                </div>
-                <div class="title">Campaign title here</div>
-                <div class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio commodi nisi fugit molestias quidem maiores!</div>
-                <div class="range-bar" data-width="85%">
-                    <div class="range"></div>
-                </div>
-                <div class="campaign-info">
-                    <div class="info-block green">
-                        <div class="title">Goals</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                    <div class="info-block blue">
-                        <div class="title">Found</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                    <div class="info-block gray">
-                        <div class="title">Target</div>
-                        <div class="amount"><span class="currency">Rs.</span>15000</div>
-                    </div>
-                </div>
-                <a href="#" class="btn-fill cta-btn">
-                    <div class="btn-text">Donate Now</div>
-                </a>
-            </div>
+                </a> -->
+            </a>
         </div>
         <nav class="pagination-block">
             <ul class="pagination justify-content-end">
