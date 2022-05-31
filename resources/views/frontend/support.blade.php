@@ -219,9 +219,21 @@
                         <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                     </div>
                     <div class="text">Karuna project is a digital platform for collecting donations to be distributed to people in need. We build strength, stability, and self-reliance through shelter.</div>
-                    <a href="#" class="cta-btn btn-fill">
-                        <div class="btn-text">Donate Now</div>
-                    </a>
+                    @auth
+                        @if(auth()->user()->user_type == 'Agent')
+                            <a href="{{route('frontend.user.dashboard')}}" class="cta-btn btn-fill">
+                                <div class="btn-text">Visit Dashboard</div>
+                            </a>
+                        @elseif(auth()->user()->user_type == 'Donor')
+                            <a href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
+                                <div class="btn-text">Donate Now</div>
+                            </a>
+                        @endif
+                    @else
+                        <a href="{{route('frontend.auth.register')}}" class="cta-btn btn-fill">
+                            <div class="btn-text">Donate Now</div>
+                        </a>
+                    @endauth
                 </div>
             </div>
             <div class="card-block">
