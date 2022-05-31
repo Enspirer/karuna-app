@@ -170,7 +170,11 @@
                         <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
                     </td>
                     <td class="db-td">
-                        <div class="text">{{$receiver->name}}</div>
+                        @if($receiver->name_toggle == 'yes')
+                            <div class="text">{{$receiver->nick_name}}</div>
+                        @else
+                            <div class="text">{{$receiver->name}}</div>
+                        @endif
                     </td>
                     <td class="db-td">{{$receiver->age}}</td>
                     <td class="db-td">
@@ -239,7 +243,11 @@
                                 @endif
                             </td>
                             <td class="db-td">
-                                <div class="text">{{$receiver->name}}</div>
+                                @if($receiver->name_toggle == 'yes')
+                                    <div class="text">{{$receiver->nick_name}}</div>
+                                @else
+                                    <div class="text">{{$receiver->name}}</div>
+                                @endif
                             </td>
                             <td class="db-td">{{$receiver->created_at}}</td>
                             <td class="db-td">

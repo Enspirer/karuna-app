@@ -42,7 +42,11 @@
                                 @endif
                             </td>
                             <td class="m-td">
-                                <div class="name">{{$receiver->name}}</div>
+                                @if($receiver->name_toggle == 'yes')
+                                    <div class="name">{{$receiver->nick_name}}</div>
+                                @else
+                                    <div class="name">{{$receiver->name}}</div>
+                                @endif                                
                             </td>
                             <td class="m-td">
                                 <div class="name">{{$receiver->occupation}}</div>

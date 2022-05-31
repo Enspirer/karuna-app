@@ -34,7 +34,11 @@
                             @endif
                         </td>
                         <td class="db-td">
-                            <div class="text">{{$receiver->name}}</div>
+                            @if($receiver->name_toggle == 'yes')
+                                <div class="text">{{$receiver->nick_name}}</div>
+                            @else
+                                <div class="text">{{$receiver->name}}</div>
+                            @endif
                         </td>
                         <td class="db-td">
                             <div class="text">{{$receiver->request}}</div>

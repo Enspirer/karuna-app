@@ -11,7 +11,11 @@
             <a href="{{route('frontend.user.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="title">{{$receiver->name}}'s profile</div>
+            @if($receiver->name_toggle == 'yes')
+                <div class="title">{{$receiver->nick_name}}'s profile</div>
+            @else
+                <div class="title">{{$receiver->name}}'s profile</div>
+            @endif
         </div>
     </div>
 </section>
@@ -26,7 +30,11 @@
                     <img src="{{ uploaded_asset($receiver->profile_image) }}" alt="">
                 </div>
             </div>
-            <div class="name">{{$receiver->name}}</div>
+            @if($receiver->name_toggle == 'yes')
+                <div class="name">{{$receiver->nick_name}}</div>
+            @else
+                <div class="name">{{$receiver->name}}</div>
+            @endif
             <div class="status yellow">Receiver</div>
             <a href="{{route('frontend.user.mobile.receiver_edit_agent',$receiver->id)}}" class="btn-edit">
                 <i class="bi bi-pencil-fill"></i>

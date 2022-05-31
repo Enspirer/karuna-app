@@ -29,6 +29,10 @@ Route::post('donation-post-getway',[PaymentController::class,'post_getway'])->na
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 
+Route::get('profile/donor/{id}', [HomeController::class, 'donor_profile'])->name('donor_profile');
+Route::get('profile/agent/{id}', [HomeController::class, 'agent_profile'])->name('agent_profile');
+Route::get('profile/receiver/{id}', [HomeController::class, 'receiver_profile'])->name('receiver_profile');
+
 
 Route::get('payment/{receiver_id}', [HomeController::class, 'payment'])->name('payment');
 Route::get('payment/payment-status', [HomeController::class, 'payment_status'])->name('payment_status');
@@ -70,10 +74,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::post('update_donor_mobile', [MobileProfileController::class, 'update_donor_mobile'])->name('update_donor_mobile');
         Route::post('update_agent_mobile', [MobileProfileController::class, 'update_agent_mobile'])->name('update_agent_mobile');
         Route::post('mobile_receiver_request_update', [MobileController::class, 'mobile_receiver_request_update'])->name('mobile_receiver_request_update');
-        Route::get('profile/donor/{id}', [HomeController::class, 'donor_profile'])->name('donor_profile');
-        Route::get('profile/agent/{id}', [HomeController::class, 'agent_profile'])->name('agent_profile');
-        Route::get('profile/receiver/{id}', [HomeController::class, 'receiver_profile'])->name('receiver_profile');
-
+        
 
         Route::get('dashboard/receiver/{id}', [DashboardController::class, 'receiver'])->name('dashboard.receiver');
         Route::get('dashboard/receiver-request-list', [DashboardController::class, 'receiver_request_list'])->name('dashboard.receiver_request_list');

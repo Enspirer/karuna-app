@@ -39,7 +39,11 @@
                     <ul>
                         <li>
                             <span class="th">Name :</span>
-                            <span class="td">{{$receiver->name}}</span>
+                            @if($receiver->name_toggle == 'yes')
+                                <span class="td">{{$receiver->nick_name}}</span>
+                            @else
+                                <span class="td">{{$receiver->name}}</span>
+                            @endif
                         </li>
                         <li>
                             <span class="th">Area :</span>

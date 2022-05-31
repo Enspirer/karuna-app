@@ -13,7 +13,11 @@
                
             </div>
         </div>
-        <div class="name">{{$receiver->name}}</div>
+        @if($receiver->name_toggle == 'yes')
+            <div class="name">{{$receiver->nick_name}}</div>
+        @else
+            <div class="name">{{$receiver->name}}</div>
+        @endif
         <div class="status">Receiver</div>
         <div class="info-table-wrapper">
             <table class="info-table">

@@ -40,7 +40,11 @@
                                 @endif
                             </td>
                             <td class="db-td">
-                                <div class="text">{{$receiver->name}}</div>
+                                @if($receiver->name_toggle == 'yes')
+                                    <div class="text">{{$receiver->nick_name}}</div>
+                                @else
+                                    <div class="text">{{$receiver->name}}</div>
+                                @endif
                             </td>
                             <td class="db-td">{{$receiver->created_at}}</td>
                             <td class="db-td">
@@ -121,7 +125,11 @@
                                 @endif
                             </td>
                             <td class="db-td">
-                                <div class="text">{{$receiver->name}}</div>
+                                @if($receiver->name_toggle == 'yes')
+                                    <div class="text">{{$receiver->nick_name}}</div>
+                                @else
+                                    <div class="text">{{$receiver->name}}</div>
+                                @endif
                             </td>
                             <td class="db-td">{{$receiver->created_at}}</td>
                             <td class="db-td">
@@ -219,7 +227,11 @@
                                     </td>
                                     <td colspan="2" class="border-bottom mobile-border-none py-3">
                                         <div class="title">Receiver</div>
-                                        <div class="name">{{$receiver->name}}</div>
+                                        @if($receiver->name_toggle == 'yes')
+                                            <div class="name">{{$receiver->nick_name}}</div>
+                                        @else
+                                            <div class="name">{{$receiver->name}}</div>
+                                        @endif
                                         <div class="info">{{$receiver->about_donation}}</div>
                                         <div class="cat">
                                             @if($receiver->requirement == 'Other')
@@ -264,7 +276,11 @@
                     <div class="modal-footer">
                         <div class="text-block">
                             <div class="title">Receiver</div>
-                            <div class="name">{{$receiver->name}}</div>
+                            @if($receiver->name_toggle == 'yes')
+                                <div class="name">{{$receiver->nick_name}}</div>
+                            @else
+                                <div class="name">{{$receiver->name}}</div>
+                            @endif
                             <div class="text">{{$receiver->about_donation}}</div>
                         </div>
                         <a href="#" class="cta-btn btn-fill">

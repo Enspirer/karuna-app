@@ -37,7 +37,13 @@
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#donation{{$donation->id}}" aria-expanded="true" aria-controls="donation1">
                             <div class="header-block">
                                 <div class="no">{{$key + 1}}</div>
-                                <div class="text">{{$donation->name}}'s Packages</div>
+                                <div class="text">
+                                    @if($donation->name_toggle == 'yes')
+                                        {{$donation->nick_name}}'s Packages
+                                    @else
+                                        {{$donation->name}}'s Packages
+                                    @endif
+                                </div>
                             </div>
                         </button>
                         </h2>
@@ -60,7 +66,11 @@
                                     </div>
                                     <div class="col-6">
                                         <label>Receiver Name</label>
-                                        <div class="text">{{$donation->name}} </div>
+                                        @if($donation->name_toggle == 'yes')
+                                            <div class="text">{{$donation->nick_name}}</div>
+                                        @else
+                                            <div class="text">{{$donation->name}}</div>
+                                        @endif
                                     </div>
                                     <div class="col-6">
                                         <label>Donation Status</label>

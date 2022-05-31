@@ -152,7 +152,11 @@
                         @if($receivers->requirement == 'Other')
                             <div class="card">
                                 <div class="icon purple">{{substr( $receivers->requirement, 0, 1)}}</div>
-                                <div class="name">{{$receivers->name}}</div>
+                                @if($receivers->name_toggle == 'yes')
+                                    <div class="name">{{$receivers->nick_name}}</div>
+                                @else
+                                    <div class="name">{{$receivers->name}}</div>
+                                @endif
                                 <div class="location">{{$receivers->city}}</div>
                                 <div class="text">{{$receivers->about_donation}}</div>
                                 @auth()
@@ -172,7 +176,11 @@
                                 @else
                                     <div class="name">Package not found</div>
                                 @endif
-                                <div class="name">{{$receivers->name}}</div>
+                                @if($receivers->name_toggle == 'yes')
+                                    <div class="name">{{$receivers->nick_name}}</div>
+                                @else
+                                    <div class="name">{{$receivers->name}}</div>
+                                @endif
                                 <div class="location">{{$receivers->city}}</div>
                                 <div class="text">{{$receivers->about_donation}}</div>
                                 @auth()

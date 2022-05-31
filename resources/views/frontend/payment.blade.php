@@ -90,7 +90,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="{{route('frontend.user.agent_profile',$agentDetails->id)}}">View  History of this Agent</a>
+                            <a href="{{route('frontend.agent_profile',$agentDetails->id)}}">View  History of this Agent</a>
                         </div>
                         <div class="profile-block">
                             <div class="title">Receiver's Profile</div>
@@ -111,7 +111,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="{{route('frontend.user.receiver_profile',$receiverDetails->id)}}">View  History of this Receiver</a>
+                            <a href="{{route('frontend.receiver_profile',$receiverDetails->id)}}">View  History of this Receiver</a>
                             <div class="cat-icon blue">
                                 @if($receiverDetails->requirement != 'Other')
                                     @if(App\Models\Packages::where('id',$receiverDetails->requirement)->first() != null)

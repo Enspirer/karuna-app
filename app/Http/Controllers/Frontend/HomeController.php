@@ -62,7 +62,11 @@ class HomeController extends Controller
 
     public function campaigns()
     {
-        return view('frontend.campaigns');
+        $completed_receivers = Receivers::where('payment_status','Payment Completed')->orderby('id','desc')->paginate(6);
+
+        return view('frontend.campaigns',[
+            'completed_receivers' => $completed_receivers
+        ]);
     }
 
     public function about_us()

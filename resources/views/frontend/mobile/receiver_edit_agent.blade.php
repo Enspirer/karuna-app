@@ -11,7 +11,11 @@
             <a href="{{route('frontend.user.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="title"> Edit {{$receiver->name}}'s profile</div>
+            @if($receiver->name_toggle == 'yes')
+                <div class="title">Edit {{$receiver->nick_name}}'s profile</div>
+            @else
+                <div class="title">Edit {{$receiver->name}}'s profile</div>
+            @endif
         </div>
     </div>
 </section>
