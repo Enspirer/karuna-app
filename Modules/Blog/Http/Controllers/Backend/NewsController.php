@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use DataTables;
+use DB;
 use Modules\Blog\Entities\Post;
 use Modules\Blog\Entities\Category;
 
@@ -41,8 +42,27 @@ class NewsController extends Controller
                     }
                     
                     return $button;
-                })                    
-                ->rawColumns(['action'])
+                   
+                })   
+                ->editColumn('status', function($data){
+                    if($data->status == 'Enabled'){
+                        $status = '<span class="badge badge-success">Enabled</span>';
+                    }
+                    else{
+                        $status = '<span class="badge badge-warning">Disabled</span>';
+                    }   
+                    return $status;
+                })          
+                ->editColumn('featured', function($data){
+                    if($data->featured == 'Enabled'){
+                        $featured = '<span class="badge badge-success">Enabled</span>';
+                    }
+                    else{
+                        $featured = '<span class="badge badge-warning">Disabled</span>';
+                    }   
+                    return $featured;
+                })            
+                ->rawColumns(['action','status','featured'])
                 ->make(true);
         }
         return back();
@@ -72,19 +92,21 @@ class NewsController extends Controller
             return back()->withErrors('Please Fill Description Section');
         }else{
 
-            if($request->feature_image == null){
-                return back()->withErrors('Please Add Feature Image');
+            if($request->image == null){
+                return back()->withErrors('Please Add an Image');
             }else{              
-               
+
                 $add = new Post;
 
-                $add->title=$request->title; 
+                $add->name=$request->name; 
                 $add->description=$request->description;        
-                $add->category=$request->category;        
-                $add->slug=$request->slug;        
-                $add->feature_image=$request->feature_image;
-                $add->order=$request->order;
+                $add->place=$request->place;        
+                $add->date=$request->date;        
+                $add->time=$request->time;
+                $add->image=$request->image;
                 $add->status=$request->status;
+                $add->featured=$request->featured;
+                $add->order=$request->order;
                 $add->save();
 
                 return redirect()->route('admin.post.index')->withFlashSuccess('Added Successfully');  
@@ -132,23 +154,25 @@ class NewsController extends Controller
             return back()->withErrors('Please Fill Description Section');
         }else{
 
-            if($request->feature_image == null){
-                return back()->withErrors('Please Add Feature Image');
+            if($request->image == null){
+                return back()->withErrors('Please Add an Image');
             }else{              
-               
+
                 $update = new Post;
 
-                $update->title=$request->title; 
+                $update->name=$request->name; 
                 $update->description=$request->description;        
-                $update->category=$request->category;        
-                $update->slug=$request->slug;        
-                $update->feature_image=$request->feature_image;
-                $update->order=$request->order;
+                $update->place=$request->place;        
+                $update->date=$request->date;        
+                $update->time=$request->time;
+                $update->image=$request->image;
                 $update->status=$request->status;
+                $update->featured=$request->featured;
+                $update->order=$request->order;
 
                 Post::whereId($request->hidden_id)->update($update->toArray());
 
-                return redirect()->route('admin.post.index')->withFlashSuccess('Added Successfully');  
+                return redirect()->route('admin.post.index')->withFlashSuccess('Updated Successfully');  
             }
             
         }

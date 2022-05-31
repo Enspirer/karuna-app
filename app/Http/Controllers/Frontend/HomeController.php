@@ -7,6 +7,7 @@ use App\Models\Auth\User;
 use App\Models\Packages;
 use App\Models\Receivers;
 use Composer\Package\Package;
+use Modules\Blog\Entities\Post;
 
 /**
  * Class HomeController.
@@ -23,7 +24,11 @@ class HomeController extends Controller
             return redirect()->route('frontend.mobile.splash');
         }
 
-        return view('frontend.index');
+        $events = Post::where('featured','Enabled')->orderBy('order','asc')->get();
+
+        return view('frontend.index',[
+            'events' => $events
+        ]);
     }
 
     public function receivers()
@@ -137,7 +142,11 @@ class HomeController extends Controller
 
     public function events()
     {
-        return view('frontend.events');
+        $events = Post::where('status','Enabled')->orderBy('order','asc')->paginate(6);
+
+        return view('frontend.events',[
+            'events' => $events
+        ]);
     }
 
     public function help()

@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', __('Post'))
+@section('title', __('Events'))
 
 @section('content')
     
@@ -10,7 +10,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <strong>Post&nbsp;</strong>
+                    <strong>Events&nbsp;</strong>
 
                     @if(auth()->user()->can('insert blog posts'))
                         <a href="{{route('admin.post.create')}}" class="btn btn-primary pull-right ml-4">Create New</a>
@@ -23,8 +23,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">#ID</th>
-                                <th scope="col">Title</th>
+                                <th scope="col" width="50%">Name</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Featured</th>
                                 <th scope="col">Order</th>
                                 <th scope="col">Option</th>
                             </tr>
@@ -78,8 +79,9 @@
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'title', name: 'title'},
+                    {data: 'name', name: 'name'},
                     {data: 'status', name: 'status'},
+                    {data: 'featured', name: 'featured'},
                     {data: 'order', name: 'order'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
