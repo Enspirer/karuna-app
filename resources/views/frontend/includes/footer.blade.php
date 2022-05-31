@@ -50,7 +50,6 @@
             <div class="title">Resources</div>
             <ul class="footer-list">
                 <li><a href="{{route('frontend.help')}}" class="footer-link">Help &amp; Support</a></li>
-                <li><a href="#" class="footer-link">Partner with Us</a></li>
                 <li><a href="{{route('frontend.events')}}" class="footer-link">Events</a></li>
                 <li><a href="{{route('frontend.privacy_policy')}}" class="footer-link">Privacy Policy</a></li>
                 <li><a href="{{route('frontend.terms_and_conditions')}}" class="footer-link">Terms & Conditions</a></li>
