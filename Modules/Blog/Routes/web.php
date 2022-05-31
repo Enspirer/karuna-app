@@ -39,11 +39,11 @@ Breadcrumbs::for('admin.category.edit', function ($trail) {
 });
 
 Breadcrumbs::for('admin.post.index', function ($trail) {
-    $trail->push('Post', route('admin.post.index'));
+    $trail->push('Events', route('admin.post.index'));
 });
 Breadcrumbs::for('admin.post.create', function ($trail) {
-    $trail->push('Create Post', route('admin.post.create'));
+    $trail->push('Create Event', route('admin.post.create'));
 });
 Breadcrumbs::for('admin.post.edit', function ($trail) {
-    $trail->push('Edit Post', route('admin.post.edit',1));
+    $trail->push('Edit Event', route('admin.post.edit',1));
 });

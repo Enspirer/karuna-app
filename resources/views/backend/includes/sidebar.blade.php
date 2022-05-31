@@ -105,23 +105,23 @@
                     <li class="nav-item nav-dropdown ">
                         <a class="nav-link nav-dropdown-toggle " href="#">
                             <i class="nav-icon fas fa-newspaper"></i>
-                            Blog
+                            Events
                         </a>
 
                         <ul class="nav-dropdown-items">
 
-                            @if(auth()->user()->can('view blog category'))
+                            <!-- @if(auth()->user()->can('view blog category'))
                                 <li class="nav-item">
                                     <a class="nav-link {{active_class(Route::is('admin/category'))}}" href="{{ route('admin.category.index') }}">                            
                                         Category
                                     </a>
                                 </li>  
-                            @endif
+                            @endif -->
 
                             @if(auth()->user()->can('view blog posts'))
                                 <li class="nav-item">
                                     <a class="nav-link {{active_class(Route::is('admin/post'))}}" href="{{ route('admin.post.index') }}">                            
-                                        Post
+                                        Events
                                     </a>
                                 </li>  
                             @endif
