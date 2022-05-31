@@ -283,7 +283,15 @@ class MobileController extends Controller
     }
 
 
+    public function help()
+    {
+        return view('frontend.mobile.help');
+    }
 
+    public function events()
+    {
+        return view('frontend.mobile.events');
+    }
 
 
     
