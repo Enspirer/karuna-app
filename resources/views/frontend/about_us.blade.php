@@ -69,8 +69,11 @@
         </div>
         <div class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis laboriosam eveniet doloribus distinctio quae iste, neque voluptatum mollitia sequi sint, alias vitae numquam suscipit saepe!</div>
         <div class="cta-btn btn-fill">
-            <div class="btn-text">Register as an Agent</div>
+            <a href="{{route('frontend.auth.register')}}" class="btn-fill">
+                <div class="btn-text">Register as an Agent</div>
+            </a>
         </div>
+        
     </div>
 </section>
 
