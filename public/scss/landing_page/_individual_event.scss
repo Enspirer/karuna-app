@@ -19,15 +19,12 @@
         gap: 2rem;
 
         .title-block {
+            flex: 1;
+
             .title {
                 font-size: 1.75rem;
                 font-weight: 300;
                 color: $text-black;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 1;
-                -webkit-box-orient: vertical;
             }
 
             .location {

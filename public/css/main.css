@@ -2361,15 +2361,13 @@
   align-items: center;
   gap: 2rem;
 }
+.event-info .content-block .title-block {
+  flex: 1;
+}
 .event-info .content-block .title-block .title {
   font-size: 1.75rem;
   font-weight: 300;
   color: #333;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
 }
 .event-info .content-block .title-block .location {
   font-size: 0.9rem;
