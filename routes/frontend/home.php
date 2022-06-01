@@ -19,12 +19,15 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('contact-us', [ContactController::class, 'index'])->name('contact_us');
 Route::post('contact_us.store', [ContactController::class, 'store'])->name('contact_us.store');
 
+Route::get('help-and-support', [HomeController::class, 'help'])->name('help');
+Route::post('help_support.store', [HomeController::class, 'help_support_store'])->name('help_support.store');
+
+
 Route::get('receivers', [HomeController::class, 'receivers'])->name('receivers');
 Route::get('support', [HomeController::class, 'support'])->name('support');
 Route::get('campaigns', [HomeController::class, 'campaigns'])->name('campaigns');
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us');
 Route::get('events', [HomeController::class, 'events'])->name('events');
-Route::get('help-and-support', [HomeController::class, 'help'])->name('help');
 Route::get('events/event/{id}', [HomeController::class, 'individual_event'])->name('individual_event');
 
 Route::get('terms_and_conditions', [HomeController::class, 'terms_and_conditions'])->name('terms_and_conditions');

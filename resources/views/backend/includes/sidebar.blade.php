@@ -133,6 +133,13 @@
             @endif
 
             <li class="nav-item">
+                <a class="nav-link {{active_class(Route::is('admin/help_and_support'))}}" href="{{ route('admin.help_and_support.index') }}">
+                    <i class="nav-icon fas fa-hands-helping"></i>
+                    Help And Support <span class="notification badge">{{App\Models\HelpSupport::where('status','Pending')->get()->count()}}</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/contact_us'))}}" href="{{ route('admin.contact_us.index') }}">
                     <i class="nav-icon fas fa-comments"></i>
                     Contact Us <span class="notification badge">{{App\Models\ContactUs::where('status','Pending')->get()->count()}}</span>
