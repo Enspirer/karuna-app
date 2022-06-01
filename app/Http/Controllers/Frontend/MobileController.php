@@ -10,6 +10,7 @@ use App\Models\Notification;
 use App\Models\ReceiversRequest;
 use App\Models\Auth\User;
 use Illuminate\Support\Facades\Hash;
+use Modules\Blog\Entities\Post;
 
 
 class MobileController extends Controller
@@ -290,7 +291,11 @@ class MobileController extends Controller
 
     public function events()
     {
-        return view('frontend.mobile.events');
+        $events = Post::where('status','Enabled')->orderBy('order','asc')->paginate(5);
+
+        return view('frontend.mobile.events',[
+            'events' => $events
+        ]);
     }
 
 
