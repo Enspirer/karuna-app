@@ -293,6 +293,11 @@ class MobileController extends Controller
         return view('frontend.mobile.events');
     }
 
+    public function individual_event()
+    {
+        return view('frontend.mobile.individual_event');
+    }
+
 
     
 }
