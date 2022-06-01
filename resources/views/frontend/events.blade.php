@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <div class="text">{!!$event->description!!}</div>
-                            <a href="#" class="cta-btn btn-fill">
+                            <a href="{{route('frontend.individual_event')}}" class="cta-btn btn-fill">
                                 <span class="btn-text">View More</span>
                             </a>
                         </div>

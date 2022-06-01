@@ -2365,11 +2365,21 @@
   font-size: 1.75rem;
   font-weight: 300;
   color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .event-info .content-block .title-block .location {
   font-size: 0.9rem;
   font-weight: 300;
   color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .event-info .content-block .title-block .location .bi {
   margin-right: 0.5rem;
@@ -2454,7 +2464,7 @@
     height: auto;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 575px) {
   .event-gallery .inner-wrapper .event-img {
     width: 100%;
     max-width: 300px;

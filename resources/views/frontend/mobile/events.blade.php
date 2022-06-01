@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam minus ducimus excepturi inventore hic quas quos vel nisi, quaerat maxime! Veritatis quasi suscipit enim excepturi.</div>
-                    <a href="#" class="cta-btn btn-fill">
+                    <a href="{{route('frontend.user.mobile.individual_event')}}" class="cta-btn btn-fill">
                         <span class="btn-text">View More</span>
                     </a>
                 </div>
