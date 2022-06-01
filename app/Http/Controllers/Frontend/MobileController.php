@@ -298,9 +298,13 @@ class MobileController extends Controller
         ]);
     }
 
-    public function individual_event()
+    public function individual_event($id)
     {
-        return view('frontend.mobile.individual_event');
+        $event = Post::where('id',$id)->first();
+
+        return view('frontend.mobile.individual_event',[
+            'event' => $event
+        ]);
     }
 
 
