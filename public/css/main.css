@@ -2110,6 +2110,7 @@
   font-size: 0.9rem;
   font-weight: 300;
   color: #333;
+  margin: 0;
 }
 .events-section .events-block .event-card .event-card-body .text {
   font-size: 0.9rem;
@@ -2339,6 +2340,135 @@
 @media screen and (max-width: 991px) {
   .faq-section .inner-wrapper {
     max-width: 90%;
+  }
+}
+.event-hero {
+  margin: 8rem 0 3rem;
+}
+.event-hero img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.event-info {
+  margin-bottom: 4rem;
+}
+.event-info .content-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.event-info .content-block .title-block .title {
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.event-info .content-block .title-block .location {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.event-info .content-block .title-block .location .bi {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+  color: #C4004E;
+}
+.event-info .content-block .info-block {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.75rem;
+  width: 300px;
+}
+.event-info .content-block .info-block .date-block {
+  width: 100px;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #1FC39E;
+  text-align: center;
+}
+.event-info .content-block .info-block .date-block .date {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #333;
+  line-height: 1;
+}
+.event-info .content-block .info-block .date-block .month {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+}
+.event-info .content-block .info-block .time-block {
+  flex: 1;
+  background-color: rgba(31, 195, 158, 0.25);
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.event-info .content-block .info-block .time-block .text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+  margin: 0;
+}
+.event-info .info {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+}
+
+.event-gallery {
+  margin-bottom: 5rem;
+}
+.event-gallery .title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+.event-gallery .inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.event-gallery .inner-wrapper .event-img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media screen and (max-width: 991px) {
+  .event-info .content-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 767px) {
+  .event-gallery .inner-wrapper .event-img {
+    width: 225px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 575px) {
+  .event-gallery .inner-wrapper .event-img {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
   }
 }
 .footer-section {

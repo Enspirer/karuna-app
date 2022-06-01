@@ -153,4 +153,9 @@ class HomeController extends Controller
     {
         return view('frontend.help');
     }
+
+    public function individual_event()
+    {
+        return view('frontend.individual_event');
+    }
 }

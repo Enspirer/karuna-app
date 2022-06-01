@@ -298,6 +298,11 @@ class MobileController extends Controller
         ]);
     }
 
+    public function individual_event()
+    {
+        return view('frontend.mobile.individual_event');
+    }
+
 
     
 }
