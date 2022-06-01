@@ -1855,11 +1855,24 @@ body .mobile-body {
   justify-content: space-between;
   align-items: center;
 }
+.bottom-nav-section .inner-wrapper .navbar-nav .nav-item .nav-link {
+  position: relative;
+}
 .bottom-nav-section .inner-wrapper .navbar-nav .nav-item .nav-link svg path {
   fill: #b7b7b7;
 }
 .bottom-nav-section .inner-wrapper .navbar-nav .nav-item .nav-link.active svg path {
   fill: #1FC39E;
+}
+.bottom-nav-section .inner-wrapper .navbar-nav .nav-item .nav-link.unseen::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f00;
+  position: absolute;
+  top: 10px;
+  right: 15px;
 }
 
 .agent-bottom-nav-section {
@@ -1920,11 +1933,24 @@ body .mobile-body {
   align-items: center;
   width: 37.5%;
 }
+.agent-bottom-nav-section .inner-wrapper .nav-container .nav-block .navs .nav-link {
+  position: relative;
+}
 .agent-bottom-nav-section .inner-wrapper .nav-container .nav-block .navs .nav-link svg path {
   fill: #b7b7b7;
 }
 .agent-bottom-nav-section .inner-wrapper .nav-container .nav-block .navs .nav-link.active svg path {
   fill: #1FC39E;
+}
+.agent-bottom-nav-section .inner-wrapper .nav-container .nav-block .navs .nav-link.unseen::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f00;
+  position: absolute;
+  top: 10px;
+  right: 15px;
 }
 .agent-bottom-nav-section .inner-wrapper .navbar-nav {
   display: flex;
@@ -1943,11 +1969,24 @@ body .mobile-body {
   margin: -80px auto 0;
   box-shadow: 0 0 0 3000px #fff;
 }
+.agent-bottom-nav-section .inner-wrapper .navbar-nav .nav-item .nav-link {
+  position: relative;
+}
 .agent-bottom-nav-section .inner-wrapper .navbar-nav .nav-item .nav-link svg path {
   fill: #b7b7b7;
 }
 .agent-bottom-nav-section .inner-wrapper .navbar-nav .nav-item .nav-link.active svg path {
   fill: #1FC39E;
+}
+.agent-bottom-nav-section .inner-wrapper .navbar-nav .nav-item .nav-link.unseen::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f00;
+  position: absolute;
+  top: 10px;
+  right: 15px;
 }
 
 .app-bar-section {
