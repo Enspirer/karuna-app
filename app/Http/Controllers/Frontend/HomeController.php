@@ -154,8 +154,12 @@ class HomeController extends Controller
         return view('frontend.help');
     }
 
-    public function individual_event()
+    public function individual_event($id)
     {
-        return view('frontend.individual_event');
+        $event = Post::where('id',$id)->first();
+
+        return view('frontend.individual_event',[
+            'event' => $event
+        ]);
     }
 }

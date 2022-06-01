@@ -25,7 +25,7 @@ Route::get('campaigns', [HomeController::class, 'campaigns'])->name('campaigns')
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us');
 Route::get('events', [HomeController::class, 'events'])->name('events');
 Route::get('help-and-support', [HomeController::class, 'help'])->name('help');
-Route::get('events/event', [HomeController::class, 'individual_event'])->name('individual_event');
+Route::get('events/event/{id}', [HomeController::class, 'individual_event'])->name('individual_event');
 
 Route::get('terms_and_conditions', [HomeController::class, 'terms_and_conditions'])->name('terms_and_conditions');
 Route::get('privacy_policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
@@ -119,7 +119,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::get('mobile/view-profile-receiver/{id}', [MobileController::class, 'view_profile_receiver'])->name('mobile.view_profile_receiver');
         Route::get('mobile/help', [MobileController::class, 'help'])->name('mobile.help');
         Route::get('mobile/events', [MobileController::class, 'events'])->name('mobile.events');
-        Route::get('mobile/events/event', [MobileController::class, 'individual_event'])->name('mobile.individual_event');
+        Route::get('mobile/events/event/{id}', [MobileController::class, 'individual_event'])->name('mobile.individual_event');
         
     });
 });
