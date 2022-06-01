@@ -1526,6 +1526,7 @@ body .mobile-body {
   font-size: 0.9rem;
   font-weight: 300;
   color: #333;
+  margin: 0;
 }
 .events-section .events-block .event-card .event-card-body .text {
   font-size: 0.9rem;
