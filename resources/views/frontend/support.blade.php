@@ -18,9 +18,9 @@
                     <a href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
                         <div class="btn-text">Donate Now</div>
                     </a>
-                    <a href="#" class="cta-btn btn-outline">
+                    <a href="{{route('frontend.campaigns')}}" class="cta-btn btn-outline">
                         <div class="btn-text">Discover More</div>
-                        <i class="bi bi-arrow-down"></i>
+                        <!-- <i class="bi bi-arrow-down"></i> -->
                     </a>
                 </div>
             </div>

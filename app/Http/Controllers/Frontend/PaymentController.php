@@ -20,7 +20,7 @@ class PaymentController extends Controller
 
     public function post_getway(Request $request)
     {
-
+        
         try{
             Stripe::setApiKey(env('STRIPE_SECRET'));
             Charge::create ([
@@ -38,13 +38,13 @@ class PaymentController extends Controller
 
         }
 
-
+        
         $receiver = Receivers::where('id',$request->receiver_id)->first();
 
         $update = new Receivers;        
         $update->paid_at = Carbon::now();
         $update->donor_id = auth()->user()->id;            
-        $update->amount = $request->package;
+        $update->amount = number_format($request->package,2);
         $update->payment_status = 'Payment Completed';
         $update->status = 'Agent Not Responded';
         Receivers::whereId($receiver->id)->update($update->toArray());
