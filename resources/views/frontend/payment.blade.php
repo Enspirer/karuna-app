@@ -74,7 +74,7 @@
                         <div class="profile-block">
                             <div class="title">Agent Profile</div>
                             <div class="profile-info">
-                                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
+                                <img src="{{uploaded_asset($agentDetails->profile_image)}}" alt="" class="dp">
                                 <ul>
                                     <li>
                                         <span class="th">Name :</span>
@@ -95,7 +95,7 @@
                         <div class="profile-block">
                             <div class="title">Receiver's Profile</div>
                             <div class="profile-info">
-                                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
+                                <img src="{{uploaded_asset($receiverDetails->profile_image)}}" alt="" class="dp">
                                 <ul>
                                     <li>
                                         <span class="th">Name :</span>
