@@ -74,7 +74,11 @@
                         <div class="profile-block">
                             <div class="title">Agent Profile</div>
                             <div class="profile-info">
-                                <img src="{{uploaded_asset($agentDetails->profile_image)}}" alt="" class="dp">
+                                @if($agentDetails->profile_image != null)
+                                    <img src="{{uploaded_asset($agentDetails->profile_image)}}" alt="" class="dp">
+                                @else
+                                    <img src="{{url('img/default_cover.png')}}" alt="" class="dp">
+                                @endif
                                 <ul>
                                     <li>
                                         <span class="th">Name :</span>
@@ -95,7 +99,11 @@
                         <div class="profile-block">
                             <div class="title">Receiver's Profile</div>
                             <div class="profile-info">
-                                <img src="{{uploaded_asset($receiverDetails->profile_image)}}" alt="" class="dp">
+                                @if($receiverDetails->profile_image != null)
+                                    <img src="{{uploaded_asset($receiverDetails->profile_image)}}" alt="" class="dp">
+                                @else
+                                    <img src="{{url('img/default_cover.png')}}" alt="" class="dp">
+                                @endif
                                 <ul>
                                     <li>
                                         <span class="th">Name :</span>
