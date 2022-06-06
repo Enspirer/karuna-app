@@ -99,7 +99,7 @@
         <div class="container">
             <div class="text-block">
                 <div class="title">Get in Touch</div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+                <div class="text">We Love to Hear From You! Send Us Any Queries Or Suggestions, and We Will Respond To You With Love.</div>
             </div>
             <img src="{{url('images/landing-page/contact/grid.png')}}" alt="" class="grid-left">
             <img src="{{url('images/landing-page/contact/grid.png')}}" alt="" class="grid-right">
@@ -110,7 +110,7 @@
             <div class="contact-block">
                 <div class="contact-info">
                     <div class="title">Contact Information</div>
-                    <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                    <div class="text">Call Us Or Drop Us A Mail, Follow Our Social Media! </div>
                     <ul class="contact-info">
                         <li>
                             <a href="tel:+947700000" class="contact-link">

@@ -9,7 +9,7 @@
         <div class="container">
             <div class="text-block">
                 <div class="title">Help and Support</div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+                <div class="text">At Karunaa, We Take All The Help We Can Get! Fill Out The Form Below & Discover How You Can Join Our Charity.</div>
             </div>
             <img src="{{url('images/landing-page/contact/grid.png')}}" alt="" class="grid-left">
             <img src="{{url('images/landing-page/contact/grid.png')}}" alt="" class="grid-right">
@@ -85,7 +85,7 @@
                 <h2 class="accordion-header" id="faqHead1">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol1" aria-expanded="true" aria-controls="faqCol1">
                         <div class="header-block">
-                            <div class="text">How can I join as a agent ?</div>
+                            <div class="text">How Do I Join as an Agent?</div>
                             <img src="{{url('images/landing-page/help/open.svg')}}" alt="" class="img-open">
                             <img src="{{url('images/landing-page/help/close.png')}}" alt="" class="img-close">
                         </div>
@@ -93,7 +93,7 @@
                 </h2>
                 <div id="faqCol1" class="accordion-collapse collapse show" aria-labelledby="faqHead1" data-bs-parent="#faqAcc">
                     <div class="accordion-body">
-                        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium esse vitae praesentium suscipit officiis dolorum recusandae! Voluptatum est eaque delectus similique aspernatur nemo cupiditate blanditiis repellendus modi perspiciatis exercitationem laboriosam id ullam, mollitia fugiat inventore, dolore odit distinctio quo asperiores.</div>
+                        <div class="text">Fill Out Our Registration form, and under the 'User Type' select: Agent. Providing a Referral Contact is a Critical Factor for our agent selection process. Once we have received and reviewed your request, we will provide; you with the proceeding steps via email.</div>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                 <h2 class="accordion-header" id="faqHead2">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol2" aria-expanded="false" aria-controls="faqCol2">
                         <div class="header-block">
-                            <div class="text">How can I join as a agent (other question) ?</div>
+                            <div class="text">How Do I Operate Karunaa?</div>
                             <img src="{{url('images/landing-page/help/open.svg')}}" alt="" class="img-open">
                             <img src="{{url('images/landing-page/help/close.png')}}" alt="" class="img-close">
                         </div>
@@ -109,7 +109,7 @@
                 </h2>
                 <div id="faqCol2" class="accordion-collapse collapse" aria-labelledby="faqHead2" data-bs-parent="#faqAcc">
                     <div class="accordion-body">
-                        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium esse vitae praesentium suscipit officiis dolorum recusandae! Voluptatum est eaque delectus similique aspernatur nemo cupiditate blanditiis repellendus modi perspiciatis exercitationem laboriosam id ullam, mollitia fugiat inventore, dolore odit distinctio quo asperiores.</div>
+                        <div class="text">Click the 'Donate Now' Button On The top of the page and fill out the details of the generous donation. Once You have created a profile with us, you can keep track; of your donation status. </div>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                 <h2 class="accordion-header" id="faqHead3">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol3" aria-expanded="false" aria-controls="faqCol3">
                         <div class="header-block">
-                            <div class="text">How can I join as a agent (other question) ?</div>
+                            <div class="text">How Do I Encourage My Friends to use Karunaa? </div>
                             <img src="{{url('images/landing-page/help/open.svg')}}" alt="" class="img-open">
                             <img src="{{url('images/landing-page/help/close.png')}}" alt="" class="img-close">
                         </div>
@@ -125,7 +125,7 @@
                 </h2>
                 <div id="faqCol3" class="accordion-collapse collapse" aria-labelledby="faqHead3" data-bs-parent="#faqAcc">
                     <div class="accordion-body">
-                        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium esse vitae praesentium suscipit officiis dolorum recusandae! Voluptatum est eaque delectus similique aspernatur nemo cupiditate blanditiis repellendus modi perspiciatis exercitationem laboriosam id ullam, mollitia fugiat inventore, dolore odit distinctio quo asperiores.</div>
+                        <div class="text">We welcome you to follow our social media and events. In addition, we always encourage personalized words of recommendation.</div>
                     </div>
                 </div>
             </div>

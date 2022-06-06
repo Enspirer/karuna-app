@@ -45,12 +45,12 @@
                     <div class="slide slide-1" style="background: url('{{url('images/landing-page/home/hero-slide-back-1.png')}}');">
                         <div class="content-block">
                             <div class="title-block">
-                                <div class="title"><span class="dc">w</span>ms Tn fjkqfjka</div>
+                                <div class="title"><span class="dc">T</span>n fjkqfjka wms</div>
                                 <div class="subtitle subtitle-1">Helping hand to</div>
                                 <div class="subtitle subtitle-2">Sri Lankans</div>
                                 <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                             </div>
-                            <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+                            <div class="text">We Empower Kindness From Across The Globe To Our Humble Sri Lanka. To Feed, Educate & Heal The Underprivileged. </div>
                             <div class="button-block">
                                 @auth
                                     @if(auth()->user()->user_type == 'Agent')
@@ -96,7 +96,7 @@
                         <div class="title">This is Karuna <span>Packages</span><br>that you can give</div>
                         <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                     </div>
-                    <div class="text">Karuna project is a digital platform for collecting donations to be distributed to people in need. We build strength, stability, and self-reliance through shelter.</div>
+                    <div class="text">We Crowdfund, Purchase & Supply To Underpriveldged Families In Sri Lanka Through Our Agent Network. We Provide Exclusive Transparency To Your Kind Donation.</div>
                    
                     @auth
                         @if(auth()->user()->user_type == 'Agent')
@@ -119,22 +119,22 @@
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/food-icon.png')}}" alt="">
                     <div class="title">Healthy Food</div>
-                    <div class="text">The assistance provided ishealthy food used for cooking and eating</div>
+                    <div class="text">We Provide Groceries That Feed A Household Or Orphanage.</div>
                 </div>
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/medic-icon.png')}}" alt="">
                     <div class="title">Medicine</div>
-                    <div class="text">The assistance provided is some of medicine for various diseases</div>
+                    <div class="text">Essential Medicine That Are Critical For Survival of Any Age.</div>
                 </div>
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/school-icon.png')}}" alt="">
                     <div class="title">School Items</div>
-                    <div class="text">The assistance provided is School Items for poor family.</div>
+                    <div class="text">Stationaries, Books, Pens & Pencils for Children in Schools. </div>
                 </div>
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/other-icon.png')}}" alt="">
                     <div class="title">Other</div>
-                    <div class="text">The assistance provided is any other product if you can</div>
+                    <div class="text">Clothes, Or Any Specified Goods That You Suggest.</div>
                 </div>
             </div>
         </div>
@@ -153,7 +153,8 @@
                     <div class="subtitle">i,luq ,laujg</div>
                     <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                 </div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</div>
+                <div class="text">In Your Time of Need, Wherever in the World, You May be, You Always Remember the Struggles in Our Beautiful Island Home. Karunaa Focuses on Digitalizing, Simplifying & Enhancing Limpidity In Your efforts to Contribute And Be a Helping Hand to Struggling Families of Sri Lanka.</div>
+                <div class="text">We Focus on Supplying Essential Items In the Pressing Needs of The Underprivileged areas, such as Medicine, Healthy Food, Stationery & Similar Critical Items. Sri Lanka Is Home To Many and is a Mother For All. We Do Our Best To Play Our Part. </div>
             </div>
         </div>
     </div>

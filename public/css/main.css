@@ -346,6 +346,7 @@
   font-weight: 200;
   font-size: 1rem;
   color: #fff;
+  margin-bottom: 0.5rem;
 }
 
 .kindness-section {
@@ -2552,6 +2553,7 @@
   font-size: 0.8rem;
   font-weight: 300;
   color: #fff;
+  margin-bottom: 0.5rem;
 }
 .footer-section .copyright {
   text-align: right;
