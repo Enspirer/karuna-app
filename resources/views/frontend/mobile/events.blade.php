@@ -12,12 +12,12 @@
             </a>            
             <a href="#" class="profile"> 
                 <i class="bi bi-suit-heart-fill"></i>
-                <div class="text">1250</div>
+                <div class="text">0</div>
                 <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
             </a>            
         </div>
-        <div class="title">Events at Karuna</div>
-        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem architecto labore pariatur</div>
+        <div class="title">Events at Karunaa</div>
+        <div class="text">We Organize Specialised Events Focusing on Various Parts of the Country. Browse Our Event Calendar! </div>
     </div>
 </section>
 
