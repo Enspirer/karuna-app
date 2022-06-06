@@ -29,7 +29,7 @@
                         <div class="title">{{$receiver->nick_name}}</div>
                     @endif
                     <div class="status">Receiver</div>
-                    <div class="text">{{$receiver->about_donation}}</div>
+                    <div class="text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 8; -webkit-box-orient: vertical;">{{$receiver->bio}}</div>
                     <a href="{{route('frontend.payment',$receiver->id)}}" class="cta-btn btn-fill">
                         <div class="btn-text">Donate Now</div>
                     </a>
@@ -63,8 +63,12 @@
                             <div class="text">{{$receiver->phone_number}}</div>
                         </div>
                         <div class="col-12">
-                            <div class="label">About</div>
-                            <div class="text">{{$receiver->phone_number}}</div>
+                            <div class="label"><b>Bio</b></div>
+                            <div class="text">{{$receiver->bio}}</div>
+                        </div>
+                        <div class="col-12">
+                            <div class="label"><b>About Donation</b></div>
+                            <div class="text">{{$receiver->about_donation}}</div>
                         </div>
                     </div>
                 </div>
