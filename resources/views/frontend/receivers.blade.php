@@ -39,7 +39,7 @@
                                         <div class="btn-text">Donate Now</div>
                                     </button>
                                 @endauth
-                                <a href="#" class="view-more">View More</a>
+                                <a href="{{route('frontend.receiver_profile',$receivers->id)}}" class="view-more">View More</a>
                             </div>
                         @else
                             <div class="card">
@@ -69,7 +69,7 @@
                                         <div class="btn-text">Donate Now</div>
                                     </a>
                                 @endauth
-                                <a href="#" class="view-more">View More</a>
+                                <a href="{{route('frontend.receiver_profile',$receivers->id)}}" class="view-more">View More</a>
                             </div>
                         @endif
                     @endif
