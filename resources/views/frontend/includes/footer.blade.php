@@ -57,7 +57,8 @@
         </div>
         <div class="footer-col">
             <div class="title">About our organization</div>
-            <div class="footer-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also </div>
+            <div class="footer-text">We Are UK Based Charity organization which focuses on Supplying Food, Education & Medicine To Struggling Families In Sri Lanka.</div>
+            <div class="footer-text">We Provide a Digital Platform To Enhance Transparency, Impact and Contribute To The Underprivileged Children & Families In All Parts of Sri Lanka.</div>
         </div>
     </div>
     <a href="https://tallentor.com/" target="_blank" class="copyright">Copyright @ {{date('Y')}} | Tallentor Global Ltd</a>
