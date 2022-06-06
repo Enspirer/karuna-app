@@ -129,16 +129,12 @@
                     <input type="text" class="form-control" name="occupation" required>
                 </div>
             </div>
-            
-            <div class="frm-row">
-                <label class="form-label">Address</label>
-                <textarea class="form-control" style="height:150px;" name="bio" required></textarea>
-            </div>
-
+           
+         
             <!-- Bio -->
             <div class="frm-row">
                 <label class="form-label">Bio</label>
-                <textarea class="form-control" name="bio" rows="3"></textarea>
+                <textarea class="form-control" style="height:150px;" name="bio" rows="3"></textarea>
             </div>
            
             
