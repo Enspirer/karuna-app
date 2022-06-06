@@ -29,7 +29,7 @@
                         <div class="title">{{$receiver->nick_name}}</div>
                     @endif
                     <div class="status">Receiver</div>
-                    <div class="title">{{$receiver->about_donation}}</div>
+                    <div class="text">{{$receiver->about_donation}}</div>
                     <a href="{{route('frontend.payment',$receiver->id)}}" class="cta-btn btn-fill">
                         <div class="btn-text">Donate Now</div>
                     </a>
@@ -60,6 +60,10 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Phone Number</div>
+                            <div class="text">{{$receiver->phone_number}}</div>
+                        </div>
+                        <div class="col-12">
+                            <div class="label">About</div>
                             <div class="text">{{$receiver->phone_number}}</div>
                         </div>
                     </div>
