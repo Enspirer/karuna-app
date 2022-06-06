@@ -147,19 +147,20 @@
   color: #333;
 }
 .hero-section .hero-slider .splide__slide .slide .content-block .title-block .subtitle {
-  font-size: 1.75rem;
+  font-size: 3rem;
   position: absolute;
   color: #333;
   font-weight: 400;
   z-index: 1;
+  font-family: apex;
 }
 .hero-section .hero-slider .splide__slide .slide .content-block .title-block .subtitle.subtitle-1 {
-  bottom: 5%;
-  left: 18%;
+  bottom: -5%;
+  left: 44%;
 }
 .hero-section .hero-slider .splide__slide .slide .content-block .title-block .subtitle.subtitle-2 {
   color: #1FC39E;
-  bottom: 5%;
+  bottom: -5%;
   left: 67%;
 }
 .hero-section .hero-slider .splide__slide .slide .content-block .title-block img {
@@ -677,7 +678,7 @@
   .hero-section .hero-slider .splide__slide .slide .content-block .title-block .subtitle {
     position: relative;
     text-align: center;
-    font-size: 1rem;
+    line-height: 1;
     transform: translate(0, -20px);
   }
   .hero-section .hero-slider .splide__slide .slide .content-block .title-block .subtitle.subtitle-1 {

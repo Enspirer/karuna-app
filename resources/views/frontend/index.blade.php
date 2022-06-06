@@ -46,8 +46,8 @@
                         <div class="content-block">
                             <div class="title-block">
                                 <div class="title"><span class="dc">T</span>n fjkqfjka wms</div>
-                                <div class="subtitle subtitle-1">Helping hand to</div>
-                                <div class="subtitle subtitle-2">Sri Lankans</div>
+                                <div class="subtitle subtitle-1">,la uj</div>
+                                <div class="subtitle subtitle-2">fjkqfjka</div>
                                 <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                             </div>
                             <div class="text">We Empower Kindness From Across The Globe To Our Humble Sri Lanka. To Feed, Educate & Heal The Underprivileged. </div>
