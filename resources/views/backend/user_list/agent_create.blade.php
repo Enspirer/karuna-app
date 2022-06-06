@@ -19,13 +19,13 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>First Name</label>
-                                    <input type="text" name="first_name" maxlength="191" class="form-control" id="first_name" placeholder="First Name" required>
+                                    <input type="text" name="first_name" maxlength="191" value="{{old('first_name')}}" class="form-control" id="first_name" placeholder="First Name" required>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label>Last Name</label>
-                                    <input type="text" name="last_name" maxlength="191" class="form-control" id="last_name" placeholder="Last Name" required>
+                                    <input type="text" name="last_name" maxlength="191" value="{{old('last_name')}}" class="form-control" id="last_name" placeholder="Last Name" required>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" name="email" maxlength="191" class="form-control" id="email" placeholder="Email" required>
+                                    <input type="email" name="email" maxlength="191" value="{{old('email')}}" class="form-control" id="email" placeholder="Email" required>
                                 </div>
                             </div>
                         </div>
@@ -301,7 +301,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <label>City</label>
-                                    <select class="form-control areas custom-select" id="city" name="city" required></select>
+                                    <select class="form-control areas custom-select" id="city" name="city" value="{{old('city')}}" required></select>
                                 </div>
                             </div>
                         </div>
@@ -310,7 +310,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <label>NIC Number</label>
-                                    <input type="text" name="nic_number" maxlength="191" class="form-control" id="nic_number" placeholder="NIC Number" required>
+                                    <input type="text" name="nic_number" maxlength="191" class="form-control" value="{{old('nic_number')}}" id="nic_number" placeholder="NIC Number" required>
                                 </div>
                             </div>
                         </div>
@@ -319,7 +319,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <label>NIC Photo</label>
-                                    <input type="file" name="id_photo" class="form-control" id="id_photo" placeholder="NIC Photo">
+                                    <input type="file" name="id_photo" class="form-control" id="id_photo" value="{{old('id_photo')}}" placeholder="NIC Photo">
                                 </div>
                             </div>
                         </div>
@@ -329,7 +329,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <label>Occupation</label>
-                                    <input type="text" name="occupation" maxlength="191" class="form-control" id="occupation" placeholder="Occupation" required>
+                                    <input type="text" name="occupation" maxlength="191" class="form-control" value="{{old('occupation')}}" id="occupation" placeholder="Occupation" required>
                                 </div>
                             </div>
                         </div>
@@ -337,7 +337,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <label>Contact Number</label>
-                                    <input type="text" name="contact_number" maxlength="191" class="form-control" id="contact_number" placeholder="Contact Number" required>
+                                    <input type="text" name="contact_number" maxlength="191" class="form-control" value="{{old('contact_number')}}" id="contact_number" placeholder="Contact Number" required>
                                 </div>
                             </div>
                         </div>
@@ -345,7 +345,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <label>Alternative Contact Number</label>
-                                    <input type="text" name="contact_number_two" maxlength="191" class="form-control" id="contact_number_two" placeholder="Alternative Contact Number" required>
+                                    <input type="text" name="contact_number_two" maxlength="191" class="form-control" value="{{old('contact_number_two')}}" id="contact_number_two" placeholder="Alternative Contact Number" required>
                                 </div>
                             </div>
                         </div>
@@ -353,7 +353,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" name="address" maxlength="191" class="form-control" id="address" placeholder="Address" required>
+                                    <input type="text" name="address" maxlength="191" class="form-control" id="address" value="{{old('address')}}" placeholder="Address" required>
                                 </div>
                             </div>
                         </div>

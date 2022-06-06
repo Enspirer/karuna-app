@@ -17,13 +17,13 @@
         {{ html()->form('POST', route('frontend.auth.register.post'))->open() }}
             <div class="join-form">
                 <div class="join-form-row">
-                    <input type="text" name="first_name" maxlength="191" class="form-control" id="first_name" placeholder="First Name" required>
+                    <input type="text" name="first_name" maxlength="191" class="form-control" value="{{old('first_name')}}" id="first_name" placeholder="First Name" required>
                 </div>
                 <div class="join-form-row">
-                    <input type="text" name="last_name" maxlength="191" class="form-control" id="last_name" placeholder="Last Name" required>
+                    <input type="text" name="last_name" maxlength="191" class="form-control" value="{{old('last_name')}}" id="last_name" placeholder="Last Name" required>
                 </div>
                 <div class="join-form-row">
-                    <input type="email" name="email" maxlength="191" class="form-control" id="email" placeholder="Email" required>
+                    <input type="email" name="email" maxlength="191" class="form-control" value="{{old('email')}}" id="email" placeholder="Email" required>
                 </div>
                 <div class="join-form-row">
                     <select class="form-control custom-select" name="user_type" id="user_type" onchange="user_type_check(this);" required>
@@ -285,28 +285,28 @@
                     </select>
                 </div>
                 <div class="join-form-row hidden-row field-receiver field-agent" id="agent_city">
-                    <select class="form-control areas custom-select" id="city" name="city"></select>
+                    <select class="form-control areas custom-select" id="city" value="{{old('city')}}" name="city"></select>
                 </div>
                 <div class="join-form-row hidden-row field-receiver field-agent" id="receiver_assigned_agent">
-                    <select class="form-control custom-select" name="assigned_agent_id" id="assigned_agent_id"></select>
+                    <select class="form-control custom-select" name="assigned_agent_id" value="{{old('assigned_agent_id')}}" id="assigned_agent_id"></select>
                 </div>
                 <div class="join-form-row hidden-row field-agent" id="agent_nic">
-                    <input type="text" name="nic_number" maxlength="191" class="form-control" id="nic_number" placeholder="NIC Number">
+                    <input type="text" name="nic_number" maxlength="191" class="form-control" value="{{old('nic_number')}}" id="nic_number" placeholder="NIC Number">
                 </div>
                 <div class="join-form-row hidden-row field-agent" id="agent_id_photo">
-                    <input type="file" name="id_photo" maxlength="191" class="form-control" id="id_photo" placeholder="NIC Photo">
+                    <input type="file" name="id_photo" maxlength="191" class="form-control" value="{{old('id_photo')}}" id="id_photo" placeholder="NIC Photo">
                 </div>
                 <div class="join-form-row hidden-row field-agent" id="agent_occupation">
-                    <input type="text" name="occupation" maxlength="191" class="form-control" id="occupation" placeholder="Occupation">
+                    <input type="text" name="occupation" maxlength="191" class="form-control" value="{{old('occupation')}}" id="occupation" placeholder="Occupation">
                 </div>
                 <div class="join-form-row hidden-row field-agent" id="agent_contact_number">
-                    <input type="text" name="contact_number" maxlength="191" class="form-control" id="contact_number" placeholder="Contact Number">
+                    <input type="text" name="contact_number" maxlength="191" class="form-control" value="{{old('contact_number')}}" id="contact_number" placeholder="Contact Number">
                 </div>
                 <div class="join-form-row hidden-row field-agent" id="agent_contact_number_two">
-                    <input type="text" name="contact_number_two" maxlength="191" class="form-control" id="contact_number_two" placeholder="Alternative Contact Number">
+                    <input type="text" name="contact_number_two" maxlength="191" class="form-control" value="{{old('contact_number_two')}}" id="contact_number_two" placeholder="Alternative Contact Number">
                 </div>
                 <div class="join-form-row hidden-row field-agent" id="agent_address">
-                    <input type="text" name="address" maxlength="191" class="form-control" id="address" placeholder="Address">
+                    <input type="text" name="address" maxlength="191" class="form-control" value="{{old('address')}}" id="address" placeholder="Address">
                 </div>
                 <div class="join-form-row">
                     <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
@@ -320,13 +320,13 @@
                         <div class="row g-0 mb-4">
                             <div class="col-md-12">
                                 <label class="pro-label">Referral Name</label>
-                                <input type="text" class="form-control" name="referral_name">
+                                <input type="text" class="form-control" name="referral_name" value="{{old('referral_name')}}">
                             </div>                           
                         </div>
                         <div class="row g-0 mb-5">                                    
                             <div class="col-md-12">
                                 <label class="pro-label">Referral NIC Number</label>
-                                <input type="text" class="form-control" name="referral_nic_number">
+                                <input type="text" class="form-control" name="referral_nic_number" value="{{old('referral_nic_number')}}">
                             </div>                          
                         </div>                                
                     </div>

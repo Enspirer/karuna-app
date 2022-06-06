@@ -17,7 +17,7 @@
         {{ html()->form('POST', route('frontend.auth.login.post'))->open() }}
             <div class="join-form">
                 <div class="join-form-row">
-                    <input type="email" name="email" maxlength="191" class="form-control" id="email" placeholder="Enter email" required>
+                    <input type="email" name="email" maxlength="191" class="form-control" value="{{old('email')}}" id="email" placeholder="Enter email" required>
                 </div>
                 <div class="join-form-row">
                     <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>

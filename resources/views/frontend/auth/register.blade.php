@@ -486,15 +486,15 @@
                     <div class="join-form">
                         <div class="join-form-row">
                             <label for="first_name" class="form-label">First Name</label>
-                            <input type="text" name="first_name" maxlength="191" class="form-control" id="first_name" placeholder="First Name" required>
+                            <input type="text" name="first_name" maxlength="191" class="form-control" value="{{old('first_name')}}" id="first_name" placeholder="First Name" required>
                         </div>
                         <div class="join-form-row">
                             <label for="last_name" class="form-label">Last Name</label>
-                            <input type="text" name="last_name" maxlength="191" class="form-control" id="last_name" placeholder="Last Name" required>
+                            <input type="text" name="last_name" maxlength="191" class="form-control" value="{{old('last_name')}}" id="last_name" placeholder="Last Name" required>
                         </div>
                         <div class="join-form-row">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" name="email" maxlength="191" class="form-control" id="email" placeholder="Email" required>
+                            <input type="email" name="email" maxlength="191" class="form-control" value="{{old('email')}}" id="email" placeholder="Email" required>
                         </div>
                         <div class="join-form-row">
                             <label for="" class="form-label">User Type</label>
@@ -759,35 +759,35 @@
                         </div>
                         <div class="join-form-row hidden-row" id="agent_city">
                             <label for="city" class="form-label">City</label>
-                            <select class="form-control areas custom-select" id="city" name="city"></select>
+                            <select class="form-control areas custom-select" value="{{old('city')}}" id="city" name="city"></select>
                         </div>
                         <div class="join-form-row hidden-row" id="receiver_assigned_agent">
                             <label for="assigned_agent_id" class="form-label">Agent</label>
-                            <select class="form-control custom-select" name="assigned_agent_id" id="assigned_agent_id"></select>
+                            <select class="form-control custom-select" name="assigned_agent_id" value="{{old('assigned_agent_id')}}" id="assigned_agent_id"></select>
                         </div>
                         <div class="join-form-row hidden-row" id="agent_nic">
                             <label for="nic_number" class="form-label">NIC Number</label>
-                            <input type="text" name="nic_number" maxlength="191" class="form-control" id="nic_number" placeholder="NIC Number">
+                            <input type="text" name="nic_number" maxlength="191" class="form-control" value="{{old('nic_number')}}" id="nic_number" placeholder="NIC Number">
                         </div>
                         <div class="join-form-row hidden-row" id="agent_id_photo">
                             <label for="id_photo" class="form-label">NIC Photo</label>
-                            <input type="file" name="id_photo" class="form-control" id="id_photo" placeholder="NIC Photo">
+                            <input type="file" name="id_photo" class="form-control" value="{{old('id_photo')}}" id="id_photo" placeholder="NIC Photo">
                         </div>
                         <div class="join-form-row hidden-row" id="agent_occupation">
                             <label for="occupation" class="form-label">Occupation</label>
-                            <input type="text" name="occupation" maxlength="191" class="form-control" id="occupation" placeholder="Occupation">
+                            <input type="text" name="occupation" maxlength="191" class="form-control" value="{{old('occupation')}}" id="occupation" placeholder="Occupation">
                         </div>
                         <div class="join-form-row hidden-row" id="agent_contact_number">
                             <label for="contact_number" class="form-label">Contact Number</label>
-                            <input type="text" name="contact_number" maxlength="191" class="form-control" id="contact_number" placeholder="Contact Number">
+                            <input type="text" name="contact_number" maxlength="191" class="form-control" value="{{old('contact_number')}}" id="contact_number" placeholder="Contact Number">
                         </div>
                         <div class="join-form-row hidden-row" id="agent_contact_number_two">
                             <label for="contact_number_two" class="form-label">Alternative Contact Number</label>
-                            <input type="text" name="contact_number_two" maxlength="191" class="form-control" id="contact_number_two" placeholder="Alternative Contact Number">
+                            <input type="text" name="contact_number_two" maxlength="191" class="form-control" value="{{old('contact_number_two')}}" id="contact_number_two" placeholder="Alternative Contact Number">
                         </div>
                         <div class="join-form-row hidden-row" id="agent_address">
                             <label for="address" class="form-label">Address</label>
-                            <input type="text" name="address" maxlength="191" class="form-control" id="address" placeholder="Address">
+                            <input type="text" name="address" maxlength="191" class="form-control" value="{{old('address')}}" id="address" placeholder="Address">
                         </div>
                         
                         <div class="join-form-row">
@@ -805,13 +805,13 @@
                                 <div class="row g-0 mb-4">
                                     <div class="col-md-12">
                                         <label class="pro-label">Referral Name</label>
-                                        <input type="text" class="form-control" name="referral_name">
+                                        <input type="text" class="form-control" name="referral_name" value="{{old('referral_name')}}">
                                     </div>                           
                                 </div>
                                 <div class="row g-0 mb-5">                                    
                                     <div class="col-md-12">
                                         <label class="pro-label">Referral NIC Number</label>
-                                        <input type="text" class="form-control" name="referral_nic_number">
+                                        <input type="text" class="form-control" name="referral_nic_number" value="{{old('referral_nic_number')}}">
                                     </div>                          
                                 </div>                                
                             </div>

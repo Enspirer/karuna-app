@@ -15,7 +15,7 @@
                         <div class="row g-0">
                             <div class="col-md-11">
                                 <label class="pro-label">Name <span>(Optional)</span></label>
-                                <input type="text" class="form-control" name="name">
+                                <input type="text" class="form-control" name="name" value="{{old('name')}}">
                             </div>
                             <div class="col-md-1">
                                 <div class="form-check form-switch">
@@ -27,7 +27,7 @@
                         <div class="row g-0">
                             <div class="col-md-11 mt-3">
                                 <label class="pro-label">Nick Name</label>
-                                <input type="text" class="form-control" name="nick_name" required>
+                                <input type="text" class="form-control" name="nick_name" value="{{old('nick_name')}}" required>
                             </div>                            
                         </div>
                         
@@ -79,14 +79,14 @@
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
                                 <label class="pro-label">NIC</label>
-                                <input type="text" class="form-control" name="nic_number" required>
+                                <input type="text" class="form-control" name="nic_number" value="{{old('nic_number')}}" required>
                             </div>
                         </div>
                         <!-- Address -->
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
                                 <label class="pro-label">Address</label>
-                                <input type="text" class="form-control" name="address" required>
+                                <input type="text" class="form-control" name="address" value="{{old('address')}}" required>
                             </div>
                         </div>
                         <!-- Phone, Job -->
@@ -94,12 +94,12 @@
                             <!-- Phone -->
                             <div class="col-md-5">
                                 <label class="pro-label">Phone Number</label>
-                                <input type="text" class="form-control" name="phone_number" required>
+                                <input type="text" class="form-control" name="phone_number" value="{{old('phone_number')}}" required>
                             </div>
                             <!-- Job -->
                             <div class="col-md-6">
                                 <label class="pro-label">Job</label>
-                                <input type="text" class="form-control" name="occupation" required>
+                                <input type="text" class="form-control" name="occupation" value="{{old('occupation')}}" required>
                             </div>
                         </div>
                         <!-- Bio -->
@@ -110,7 +110,7 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <textarea class="form-control" style="height:150px;" name="bio" required></textarea>
+                                <textarea class="form-control" style="height:150px;" name="bio" required>{{old('bio')}}</textarea>
                             </div>
                         </div>
                         
@@ -127,7 +127,7 @@
                                             <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                                         </div>
                                         <div class="form-control file-amount">Choose File</div>
-                                        <input type="hidden" name="profile_image" class="selected-files" >
+                                        <input type="hidden" name="profile_image" value="{{old('profile_image')}}" class="selected-files" >
                                     </div>
                                     <div class="file-preview box sm">
                                     </div>
@@ -148,7 +148,7 @@
                                             <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                                         </div>
                                         <div class="form-control file-amount">Choose File</div>
-                                        <input type="hidden" name="cover_image" class="selected-files" >
+                                        <input type="hidden" name="cover_image" value="{{old('cover_image')}}" class="selected-files" >
                                     </div>
                                     <div class="file-preview box sm">
                                     </div>
@@ -173,7 +173,7 @@
                                             <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                                         </div>
                                         <div class="form-control file-amount">Choose File</div>
-                                        <input type="hidden" name="images" class="selected-files" >
+                                        <input type="hidden" name="images" value="{{old('images')}}" class="selected-files" >
                                     </div>
                                     <div class="file-preview box sm">
                                     </div>
@@ -197,7 +197,7 @@
                                             <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                                         </div>
                                         <div class="form-control file-amount">Choose File</div>
-                                        <input type="hidden" name="videos" class="selected-files" >
+                                        <input type="hidden" name="videos" value="{{old('videos')}}" class="selected-files" >
                                     </div>
                                     <div class="file-preview box sm">
                                     </div>
@@ -219,7 +219,7 @@
                                             <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
                                         </div>
                                         <div class="form-control file-amount">Choose File</div>
-                                        <input type="hidden" name="audios" class="selected-files" >
+                                        <input type="hidden" name="audios" value="{{old('audios')}}" class="selected-files" >
                                     </div>
                                     <div class="file-preview box sm">
                                     </div>
@@ -252,7 +252,7 @@
                         <div class="row g-0 mb-3" id="other_description_hide" style="display: none;">
                             <div class="col-md-11">
                                 <label class="pro-label">Other Description</label>
-                                <textarea class="form-control" style="height:150px;" name="other_description"></textarea>
+                                <textarea class="form-control" style="height:150px;" name="other_description">{{old('other_description')}}</textarea>
                             </div>
                         </div>
 
@@ -265,7 +265,7 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <textarea class="form-control" style="height:150px;" name="about_donation" required></textarea>
+                                <textarea class="form-control" style="height:150px;" name="about_donation" required>{{old('about_donation')}}</textarea>
                             </div>
                         </div>
 
@@ -275,17 +275,17 @@
                                 <div class="row g-0 mb-4">
                                     <div class="col-md-6">
                                         <label class="pro-label">Account Number</label>
-                                        <input type="text" class="form-control" name="account_number">
+                                        <input type="text" class="form-control" name="account_number" value="{{old('account_number')}}">
                                     </div>
                                     <div class="col-md-5">
                                         <label class="pro-label">Bank Name</label>
-                                        <input type="text" class="form-control" name="bank_name">
+                                        <input type="text" class="form-control" name="bank_name" value="{{old('bank_name')}}">
                                     </div>
                                 </div>
                                 <div class="row g-0 mb-5">
                                     <div class="col-md-11">
                                         <label class="pro-label">Branch Name</label>
-                                        <input type="text" class="form-control" name="branch_name">
+                                        <input type="text" class="form-control" name="branch_name" value="{{old('branch_name')}}">
                                     </div>
                                 </div>
                             </div>
