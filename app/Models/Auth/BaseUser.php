@@ -45,6 +45,7 @@ abstract class BaseUser extends Authenticatable implements Recordable
         'address',
         'occupation',
         'nic_number',
+        'id_photo',        
         'referral_name',
         'referral_nic_number',
         'avatar_type',

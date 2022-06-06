@@ -9,7 +9,7 @@
         <div class="thank-block">
             <img src="{{url('images/dashboard/thanks.png')}}" alt="">
             <div class="title">Special Thanks for You</div>
-            <div class="text">When you give joy to other people, you get more joy in return. You should give a good thought to happiness that you can give out.</div>
+            <div class="text">We appreciate you for choosing Karunaa to contribute and donate to & we will make sure your money is impactful. Enforce Kindness!</div>
             <a href="#" class="cta-btn btn-fill">
                 <div class="btn-text">Cheers</div>
             </a>

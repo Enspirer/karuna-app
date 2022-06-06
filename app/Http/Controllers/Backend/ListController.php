@@ -55,6 +55,15 @@ class ListController extends Controller
             return back()->withErrors('The password must be at least 8 characters.');
         }
 
+        if($request->file('id_photo'))
+        {            
+            $preview_file_name = time().'_'.rand(1000,10000).'.'.$request->id_photo->getClientOriginalExtension();
+            $fullurls_preview_file = $request->id_photo->move(public_path('files/agents_id'), $preview_file_name);
+            $image_url = $preview_file_name;
+        }else{
+            $image_url = null;
+        } 
+
         $hashed_password = Hash::make($password);
 
         $add = new User;
@@ -66,6 +75,7 @@ class ListController extends Controller
         $add->country=$request->country;
         $add->city=$request->city;
         $add->nic_number=$request->nic_number;
+        $add->id_photo=$image_url;
         $add->occupation=$request->occupation;
         $add->contact_number=$request->contact_number;
         $add->contact_number_two=$request->contact_number_two;

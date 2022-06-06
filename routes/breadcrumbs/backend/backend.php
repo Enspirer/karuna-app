@@ -126,3 +126,9 @@ Breadcrumbs::for('admin.payment.index', function ($trail) {
     $trail->push('Status', route('admin.payment.index'));
 });
 
+Breadcrumbs::for('admin.help_and_support.index', function ($trail) {
+    $trail->push('Help And Support', route('admin.help_and_support.index'));
+});
+Breadcrumbs::for('admin.help_and_support.edit', function ($trail) {
+    $trail->push('Status', route('admin.help_and_support.edit',1));
+});

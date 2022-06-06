@@ -4,32 +4,33 @@
 
 @section('content')
 
+
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')
-    @if(App\Models\Receivers::where('donor_id',auth()->user()->id)->first() != null)
-        @if(App\Models\Receivers::where('donor_id',auth()->user()->id)->first()->thankyou_message != null)
-            <section class="thank-section">
-                <div class="mobile-container">
-                    <div class="inner-wrapper">
-                        <a href="{{route('frontend.user.mobile.index')}}" class="brand">
-                            <img src="{{url('images/mobile/logo/karuna-logo-english.svg')}}" alt="">
-                        </a>            
-                        <a href="#" class="profile"> 
-                            <i class="bi bi-suit-heart-fill"></i>
-                            <div class="text">{{count(App\Models\Receivers::where('donor_id',auth()->user()->id)->get())}}</div>
-                            <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
-                        </a>            
-                    </div>
-                    <div class="title">Receive a small thank<br>for your efforts!</div>
-                    <div class="thank-block">
-                        <div class="text">Your package sent successfully and Saman reacted your support</div>
-                        <div class="image-block">
-                            <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
-                            <i class="bi bi-suit-heart-fill"></i>
-                        </div>
+    @if(App\Models\Notification::where('user_id',auth()->user()->id)->where('status','Pending')->first() != null)
+   
+        <section class="thank-section">
+            <div class="mobile-container">
+                <div class="inner-wrapper">
+                    <a href="{{route('frontend.user.mobile.index')}}" class="brand">
+                        <img src="{{url('images/mobile/logo/karuna-logo-english.svg')}}" alt="">
+                    </a>            
+                    <a href="#" class="profile"> 
+                        <i class="bi bi-suit-heart-fill"></i>
+                        <div class="text">{{count(App\Models\Receivers::where('donor_id',auth()->user()->id)->get())}}</div>
+                        <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                    </a>            
+                </div>
+                <div class="title">Receive a small thank<br>for your efforts!</div>
+                <div class="thank-block">
+                    <div class="text">Your package sent successfully and Saman reacted your support</div>
+                    <div class="image-block">
+                        <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                        <i class="bi bi-suit-heart-fill"></i>
                     </div>
                 </div>
-            </section>
-        @endif
+            </div>
+        </section>
+       
     @endif
 @endif
 

@@ -50,7 +50,7 @@
       <div class="modal-body">
         <img src="{{url('images/mobile/thanks/thanks.png')}}" alt="">
         <div class="title">Special Thanks for You</div>
-        <div class="text">When you give joy to other people, you get more joy in return. You should give a good thought to happiness that you can give out.</div>
+        <div class="text">We appreciate you for choosing Karunaa to contribute and donate to & we will make sure your money is impactful. Enforce Kindness!</div>
         <a href="#" class="cta-btn btn-fill" data-bs-dismiss="modal" aria-label="Close">
             <div class="btn-text">Cheers</div>
         </a>

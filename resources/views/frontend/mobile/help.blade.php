@@ -23,40 +23,50 @@
 
 <section class="form-section">
     <div class="mobile-container">
-        <div class="frm-row">
-            <label class="form-label">Your Name</label>
-            <input type="text" name="name" class="form-control">
-        </div>
-        <div class="frm-row">
-            <label class="form-label">Your Email</label>
-            <input type="email" name="email" class="form-control">
-        </div>
-        <div class="frm-row">
-            <label class="form-label">Your Subject</label>
-            <input type="text" name="subject" class="form-control">
-        </div>
-        <div class="frm-row">
-            <label class="form-label">Message</label>
-            <textarea name="message" class="form-control" style="height:100px;padding: 0.75rem;" placeholder="Write here your message"></textarea>
-        </div>
-        <div class="frm-row">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" name="newsletter">
-                <label class="form-check-label">
-                    Acceptance * <br>
-                    I would like to receive information & updates from Trace Solutions in relation to my enquiry. <br>
-                    I understand that Trace will never share my information.
-                </label>
+        <form action="{{route('frontend.help_support.store')}}" method="post" class="pt-4 px-4 pb-3" style="background-color: white" enctype="multipart/form-data">
+        {{csrf_field()}}
+
+            @if(session()->has('error'))
+                <div class="alert alert-danger">
+                    {{ session()->get('error') }}
+                </div>
+            @endif
+
+            <div class="frm-row">
+                <label class="form-label">Your Name</label>
+                <input type="text" name="name" class="form-control" required>
             </div>
-        </div>
-        <div class="frm-row">
-            <div class="g-recaptcha" data-callback="checked" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" ></div>
-        </div>
-        <div class="frm-row">
-            <button type="submit" class="cta-btn btn-fill form-submit-btn">
-                <div class="btn-text">Send Message</div>
-            </button>
-        </div>
+            <div class="frm-row">
+                <label class="form-label">Your Email</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="frm-row">
+                <label class="form-label">Your Subject</label>
+                <input type="text" name="title" class="form-control" required>
+            </div>
+            <div class="frm-row">
+                <label class="form-label">Message</label>
+                <textarea name="message" class="form-control" style="height:100px;padding: 0.75rem;" placeholder="Write here your message" required></textarea>
+            </div>
+            <div class="frm-row">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" name="newsletter" required>
+                    <label class="form-check-label">
+                        Acceptance * <br>
+                        I would like to receive information & updates from Trace Solutions in relation to my enquiry. <br>
+                        I understand that Trace will never share my information.
+                    </label>
+                </div>
+            </div>
+            <div class="frm-row">
+                <div class="g-recaptcha" data-callback="checked" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" ></div>
+            </div>
+            <div class="frm-row">
+                <button type="submit" class="cta-btn btn-fill form-submit-btn">
+                    <div class="btn-text">Send Message</div>
+                </button>
+            </div>
+        </form>
     </div>
 </section>
 

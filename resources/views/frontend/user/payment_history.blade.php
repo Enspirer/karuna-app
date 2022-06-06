@@ -267,7 +267,7 @@
                                         <div class="text">Total Donation</div>
                                     </td>
                                     <td class="border-bottom">
-                                        <div class="text text-right">Usd {{$receiver->amount}}</div>
+                                        <div class="text text-right">USD {{$receiver->amount}}</div>
                                     </td>
                                 </tr>
                             </tbody>

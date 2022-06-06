@@ -17,6 +17,8 @@
 
             .nav-item {
                 .nav-link {
+                    position: relative;
+
                     svg {
                         path {
                             fill: #b7b7b7;
@@ -28,6 +30,19 @@
                             path {
                                 fill: $primary-green;
                             }
+                        }
+                    }
+
+                    &.unseen {
+                        &::after {
+                            content: '';
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background-color: #f00;
+                            position: absolute;
+                            top: 10px;
+                            right: 15px;
                         }
                     }
                 }
@@ -97,6 +112,8 @@
                     width: 37.5%;
 
                     .nav-link {
+                        position: relative;
+
                         svg {
                             path {
                                 fill: #b7b7b7;
@@ -108,6 +125,19 @@
                                 path {
                                     fill: $primary-green;
                                 }
+                            }
+                        }
+
+                        &.unseen {
+                            &::after {
+                                content: '';
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 50%;
+                                background-color: #f00;
+                                position: absolute;
+                                top: 10px;
+                                right: 15px;
                             }
                         }
                     }
@@ -135,6 +165,8 @@
 
             .nav-item {
                 .nav-link {
+                    position: relative;
+
                     svg {
                         path {
                             fill: #b7b7b7;
@@ -146,6 +178,19 @@
                             path {
                                 fill: $primary-green;
                             }
+                        }
+                    }
+
+                    &.unseen {
+                        &::after {
+                            content: '';
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background-color: #f00;
+                            position: absolute;
+                            top: 10px;
+                            right: 15px;
                         }
                     }
                 }

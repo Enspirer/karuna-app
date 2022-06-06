@@ -110,6 +110,7 @@ class UserRepository extends BaseRepository
                     'address' => null,
                     'occupation' => null,
                     'nic_number' => null,
+                    'id_photo' => null,                    
                     'referral_name' => null,
                     'referral_nic_number' => null,
                     'confirmation_code' => md5(uniqid(mt_rand(), true)),
@@ -121,6 +122,15 @@ class UserRepository extends BaseRepository
 
             }
             elseif(isset($data['assigned_agent_id']) == null && isset($data['country']) != null){
+
+                if(isset($data['id_photo']))
+                {            
+                    $preview_file_name = time().'_'.rand(1000,10000).'.'.$data['id_photo']->getClientOriginalExtension();
+                    $fullurls_preview_file = $data['id_photo']->move(public_path('files/agents_id'), $preview_file_name);
+                    $image_url = $preview_file_name;
+                }else{
+                    $image_url = null;
+                } 
 
                 $user = $this->model::create([
                     'first_name' => $data['first_name'],
@@ -135,6 +145,7 @@ class UserRepository extends BaseRepository
                     'address' => $data['address'],
                     'occupation' => $data['occupation'],
                     'nic_number' => $data['nic_number'],
+                    'id_photo' => $image_url,                    
                     'referral_name' => $data['referral_name'],
                     'referral_nic_number' => $data['referral_nic_number'],
                     'confirmation_code' => md5(uniqid(mt_rand(), true)),
@@ -159,6 +170,7 @@ class UserRepository extends BaseRepository
                     'address' => null,
                     'occupation' => null,
                     'nic_number' => null,
+                    'id_photo' => null,                    
                     'referral_name' => null,
                     'referral_nic_number' => null,
                     'confirmation_code' => md5(uniqid(mt_rand(), true)),

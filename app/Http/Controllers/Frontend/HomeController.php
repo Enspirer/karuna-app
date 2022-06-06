@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Auth\User;
 use App\Models\Packages;
 use App\Models\Receivers;
 use Composer\Package\Package;
 use Modules\Blog\Entities\Post;
+use App\Models\HelpSupport;
 
 /**
  * Class HomeController.
@@ -153,4 +155,41 @@ class HomeController extends Controller
     {
         return view('frontend.help');
     }
+
+    public function individual_event($id)
+    {
+        $event = Post::where('id',$id)->first();
+
+        return view('frontend.individual_event',[
+            'event' => $event
+        ]);
+    }
+
+    public function help_support_store(Request $request)
+    {        
+        // dd($request); 
+
+        if($request->get('g-recaptcha-response') == null){
+            return back()->with('error', 'Error!.....Please fill reCAPTCHA!');
+        }  
+   
+        $add = new HelpSupport;
+
+        $add->name=$request->name;
+        $add->email=$request->email;
+        $add->title=$request->title;
+        $add->message=$request->message;
+        $add->status='Pending'; 
+
+        $add->save();
+
+        if(is_mobile(request()->header('user-agent')) == true){
+            return redirect()->route('frontend.user.mobile.index');
+        }
+       
+        return back()->with([
+            'success' => 'success'
+        ]);   
+    }
+
 }

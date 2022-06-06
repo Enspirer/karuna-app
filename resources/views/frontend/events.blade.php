@@ -11,7 +11,7 @@
                 <div class="title">Events<br>at Karuna</div>
                 <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
             </div>
-            <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+            <div class="text">We Organize Specialised Events Focusing on Various Parts of the Country. Browse Our Event Calendar!</div>
        </div>        
     </div>
 </section>
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <div class="text">{!!$event->description!!}</div>
-                            <a href="#" class="cta-btn btn-fill">
+                            <a href="{{route('frontend.individual_event',$event->id)}}" class="cta-btn btn-fill">
                                 <span class="btn-text">View More</span>
                             </a>
                         </div>

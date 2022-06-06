@@ -99,7 +99,7 @@
         <div class="container">
             <div class="text-block">
                 <div class="title">Get in Touch</div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+                <div class="text">We Love to Hear From You! Send Us Any Queries Or Suggestions, and We Will Respond To You With Love.</div>
             </div>
             <img src="{{url('images/landing-page/contact/grid.png')}}" alt="" class="grid-left">
             <img src="{{url('images/landing-page/contact/grid.png')}}" alt="" class="grid-right">
@@ -110,7 +110,7 @@
             <div class="contact-block">
                 <div class="contact-info">
                     <div class="title">Contact Information</div>
-                    <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                    <div class="text">Call Us Or Drop Us A Mail, Follow Our Social Media! </div>
                     <ul class="contact-info">
                         <li>
                             <a href="tel:+947700000" class="contact-link">
@@ -176,7 +176,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" name="newsletter">
+                                    <input class="form-check-input" type="checkbox" value="" name="newsletter" required>
                                     <label class="form-check-label">
                                         Acceptance * <br>
                                         I would like to receive information & updates from Trace Solutions in relation to my enquiry. <br>
@@ -193,7 +193,7 @@
                                 </button>
                             </div>
                         </div>
-                    {{ html()->form()->close() }}
+                    </form>
                 </div>
             </div>
         </div>
@@ -205,17 +205,17 @@
 @if(\Session::has('success'))
 
 <div class="modal fade form-submit-modal" id="overlay" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <i class="bi bi-x-lg" data-bs-dismiss="modal"></i>
+    <div class="modal-dialog" style="width: 90%; max-width: 600px; margin: 0; top: 50%; left: 50%; transform: translate(-50%, -50%) !important;">
+        <div class="modal-content" style="background: linear-gradient(60deg, #E4F2FB, #9ACDFF); border: 2px solid #0C75FF; border-radius: 15px;">
+            <div class="modal-body" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 30px;">
+                <i class="bi bi-x-lg" data-bs-dismiss="modal" style="position: absolute; top: -15px; right: -15px; color: #fff; font-size: 16px; background-color: rgba(255, 255, 255, 0.5); width: 35px; height: 35px; border-radius: 50%; display: flex; flex-direction: row; justify-content: center; align-items: center; backdrop-filter: blur(5px);"></i>
                 <div class="image-block">
-                    <img src="{{url('images/landing_page/contact_us/success.png')}}" alt="">
+                    <img src="{{url('images/success.png')}}" alt="">
                 </div>
                 <div class="content-block">
-                    <div class="title">Success !</div>
-                    <p class="text">Your message submitted successfully.</p>
-                    <p class="text">One of our agents will be in touch shortly.</p>
+                    <div class="title" style="font-size: 40px; color: #0C75FF; font-weight: 400; margin-bottom: 10px;">Success !</div>
+                    <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">Your message submitted successfully.</p>
+                    <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">One of our agents will be in touch shortly.</p>
                 </div>
             </div>
         </div>

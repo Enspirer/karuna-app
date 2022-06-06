@@ -9,7 +9,7 @@
         <div class="container">
             <div class="text-block">
                 <div class="title">Help and Support</div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  industry's standard dummy text ever since the 1500s</div>
+                <div class="text">At Karunaa, We Take All The Help We Can Get! Fill Out The Form Below & Discover How You Can Join Our Charity.</div>
             </div>
             <img src="{{url('images/landing-page/contact/grid.png')}}" alt="" class="grid-left">
             <img src="{{url('images/landing-page/contact/grid.png')}}" alt="" class="grid-right">
@@ -22,7 +22,7 @@
                     <img src="{{url('images/landing-page/help/help.png')}}" alt="" class="help-img">
                 </div>
                 <div class="contact-form">
-                    <form action="{{route('frontend.contact_us.store')}}" method="post" class="pt-4 px-4 pb-3" style="background-color: white" enctype="multipart/form-data">
+                    <form action="{{route('frontend.help_support.store')}}" method="post" class="pt-4 px-4 pb-3" style="background-color: white" enctype="multipart/form-data">
                     {{csrf_field()}}
 
                         @if(session()->has('error'))
@@ -53,7 +53,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" name="newsletter">
+                                    <input class="form-check-input" type="checkbox" value="" name="newsletter" required>
                                     <label class="form-check-label">
                                         Acceptance * <br>
                                         I would like to receive information & updates from Trace Solutions in relation to my enquiry. <br>
@@ -70,7 +70,7 @@
                                 </button>
                             </div>
                         </div>
-                    {{ html()->form()->close() }}
+                    </form>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
                 <h2 class="accordion-header" id="faqHead1">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol1" aria-expanded="true" aria-controls="faqCol1">
                         <div class="header-block">
-                            <div class="text">How can I join as a agent ?</div>
+                            <div class="text">How Do I Join as an Agent?</div>
                             <img src="{{url('images/landing-page/help/open.svg')}}" alt="" class="img-open">
                             <img src="{{url('images/landing-page/help/close.png')}}" alt="" class="img-close">
                         </div>
@@ -93,7 +93,7 @@
                 </h2>
                 <div id="faqCol1" class="accordion-collapse collapse show" aria-labelledby="faqHead1" data-bs-parent="#faqAcc">
                     <div class="accordion-body">
-                        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium esse vitae praesentium suscipit officiis dolorum recusandae! Voluptatum est eaque delectus similique aspernatur nemo cupiditate blanditiis repellendus modi perspiciatis exercitationem laboriosam id ullam, mollitia fugiat inventore, dolore odit distinctio quo asperiores.</div>
+                        <div class="text">Fill Out Our Registration form, and under the 'User Type' select: Agent. Providing a Referral Contact is a Critical Factor for our agent selection process. Once we have received and reviewed your request, we will provide; you with the proceeding steps via email.</div>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                 <h2 class="accordion-header" id="faqHead2">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol2" aria-expanded="false" aria-controls="faqCol2">
                         <div class="header-block">
-                            <div class="text">How can I join as a agent (other question) ?</div>
+                            <div class="text">How Do I Operate Karunaa?</div>
                             <img src="{{url('images/landing-page/help/open.svg')}}" alt="" class="img-open">
                             <img src="{{url('images/landing-page/help/close.png')}}" alt="" class="img-close">
                         </div>
@@ -109,7 +109,7 @@
                 </h2>
                 <div id="faqCol2" class="accordion-collapse collapse" aria-labelledby="faqHead2" data-bs-parent="#faqAcc">
                     <div class="accordion-body">
-                        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium esse vitae praesentium suscipit officiis dolorum recusandae! Voluptatum est eaque delectus similique aspernatur nemo cupiditate blanditiis repellendus modi perspiciatis exercitationem laboriosam id ullam, mollitia fugiat inventore, dolore odit distinctio quo asperiores.</div>
+                        <div class="text">Click the 'Donate Now' Button On The top of the page and fill out the details of the generous donation. Once You have created a profile with us, you can keep track; of your donation status. </div>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                 <h2 class="accordion-header" id="faqHead3">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol3" aria-expanded="false" aria-controls="faqCol3">
                         <div class="header-block">
-                            <div class="text">How can I join as a agent (other question) ?</div>
+                            <div class="text">How Do I Encourage My Friends to use Karunaa? </div>
                             <img src="{{url('images/landing-page/help/open.svg')}}" alt="" class="img-open">
                             <img src="{{url('images/landing-page/help/close.png')}}" alt="" class="img-close">
                         </div>
@@ -125,7 +125,7 @@
                 </h2>
                 <div id="faqCol3" class="accordion-collapse collapse" aria-labelledby="faqHead3" data-bs-parent="#faqAcc">
                     <div class="accordion-body">
-                        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium esse vitae praesentium suscipit officiis dolorum recusandae! Voluptatum est eaque delectus similique aspernatur nemo cupiditate blanditiis repellendus modi perspiciatis exercitationem laboriosam id ullam, mollitia fugiat inventore, dolore odit distinctio quo asperiores.</div>
+                        <div class="text">We welcome you to follow our social media and events. In addition, we always encourage personalized words of recommendation.</div>
                     </div>
                 </div>
             </div>
@@ -136,17 +136,17 @@
 @if(\Session::has('success'))
 
 <div class="modal fade form-submit-modal" id="overlay" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <i class="bi bi-x-lg" data-bs-dismiss="modal"></i>
+    <div class="modal-dialog" style="width: 90%; max-width: 600px; margin: 0; top: 50%; left: 50%; transform: translate(-50%, -50%) !important;">
+        <div class="modal-content" style="background: linear-gradient(60deg, #E4F2FB, #9ACDFF); border: 2px solid #0C75FF; border-radius: 15px;">
+            <div class="modal-body" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 30px;">
+                <i class="bi bi-x-lg" data-bs-dismiss="modal" style="position: absolute; top: -15px; right: -15px; color: #fff; font-size: 16px; background-color: rgba(255, 255, 255, 0.5); width: 35px; height: 35px; border-radius: 50%; display: flex; flex-direction: row; justify-content: center; align-items: center; backdrop-filter: blur(5px);"></i>
                 <div class="image-block">
-                    <img src="{{url('images/landing_page/contact_us/success.png')}}" alt="">
+                    <img src="{{url('images/success.png')}}" alt="">
                 </div>
                 <div class="content-block">
-                    <div class="title">Success !</div>
-                    <p class="text">Your message submitted successfully.</p>
-                    <p class="text">One of our agents will be in touch shortly.</p>
+                    <div class="title" style="font-size: 40px; color: #0C75FF; font-weight: 400; margin-bottom: 10px;">Success !</div>
+                    <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">Your message submitted successfully.</p>
+                    <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">One of our agents will be in touch shortly.</p>
                 </div>
             </div>
         </div>
