@@ -160,7 +160,7 @@
                                 </div>
                             </td>
                             <td class="db-td">
-                                <a href="#" class="cta-btn btn-outline" data-bs-toggle="modal" data-bs-target="#paymentInfoModalDonor">
+                                <a href="{{route('frontend.receiver_profile',$receiver->id)}}" class="cta-btn btn-outline">
                                     <div class="btn-text">View Donation</div>
                                 </a>
                             </td>

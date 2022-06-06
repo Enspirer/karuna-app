@@ -57,7 +57,7 @@
                             </div>
                             <div class="card-row">
                                 <div class="label-group">
-                                    <div class="label">Package Type : {{$packageDetails->name}}</div>
+                                    <div class="label">Package Type : {{$packageDetails->name}} (USD)</div>
                                 </div>
                                 <input type="text" class="form-control" name="package" value="{{number_format($packageDetails->price,2)}}" readonly>
                             </div>

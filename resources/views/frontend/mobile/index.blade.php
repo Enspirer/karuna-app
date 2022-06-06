@@ -198,6 +198,8 @@
                                     @else
                                         @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
                                             <img src="{{uploaded_asset(App\Models\Packages::where('id',$receiver->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
+                                        @else
+                                            <img src="{{url('img/default_cover.png')}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
                                         @endif
                                     @endif
                                     <div class="text-block">
@@ -253,6 +255,8 @@
                                     @else
                                         @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
                                             <img src="{{uploaded_asset(App\Models\Packages::where('id',$receiver->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
+                                        @else
+                                            <img src="{{url('img/default_cover.png')}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
                                         @endif
                                     @endif
                                     <div class="text-block">

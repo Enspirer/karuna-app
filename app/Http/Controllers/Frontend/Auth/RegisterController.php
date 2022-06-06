@@ -8,6 +8,8 @@ use App\Http\Requests\Frontend\Auth\RegisterRequest;
 use App\Repositories\Frontend\Auth\UserRepository;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Models\Auth\User;
+use App\Models\Country;
+use App\Models\City;
 
 /**
  * Class RegisterController.
