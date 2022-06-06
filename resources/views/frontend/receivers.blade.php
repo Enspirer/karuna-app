@@ -22,7 +22,7 @@
                                 @else
                                     <img src="{{url('img/default_cover.png')}}" alt="">
                                 @endif
-                                <div class="icon purple">{{$receivers->requirement}}</div>
+                                <div class="cta-btn btn-fill">{{$receivers->requirement}}</div>
                                 @if($receivers->name_toggle == 'yes')
                                     <div class="name">{{$receivers->nick_name}}</div>
                                 @else
@@ -48,7 +48,7 @@
                                     <img src="{{url('img/default_cover.png')}}" alt="">
                                 @endif
                                 @if(App\Models\Packages::where('id',$receivers->requirement)->first() != null)
-                                    <div class="icon purple">{{ App\Models\Packages::where('id',$receivers->requirement)->first()->name}}</div>
+                                    <div class="cta-btn btn-fill">{{ App\Models\Packages::where('id',$receivers->requirement)->first()->name}}</div>
                                 @else
                                     <div class="name">Package not found</div>
                                 @endif

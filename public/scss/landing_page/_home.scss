@@ -390,9 +390,11 @@
                 border-radius: 5px;
             }
 
-            .icon {
-                @include icon;
-                margin: -1rem auto 1rem;
+            .cta-btn {
+                margin: -1rem auto 1rem !important;
+                color: $white;
+                border: 1px solid $white;
+                background-color: $maroon;
             }
 
             .name {

@@ -420,27 +420,11 @@
   object-position: center;
   border-radius: 5px;
 }
-.kindness-section .card-block .card .icon {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  font-weight: 400;
+.kindness-section .card-block .card .cta-btn {
+  margin: -1rem auto 1rem !important;
   color: #fff;
-  margin: -1rem auto 1rem;
-}
-.kindness-section .card-block .card .icon.blue {
-  background-color: #00BDC4;
-}
-.kindness-section .card-block .card .icon.purple {
-  background-color: #C4004E;
-}
-.kindness-section .card-block .card .icon.green {
-  background-color: #3AC400;
+  border: 1px solid #fff;
+  background-color: #971930;
 }
 .kindness-section .card-block .card .name {
   font-size: 1rem;
