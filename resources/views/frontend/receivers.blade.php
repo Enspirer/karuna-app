@@ -17,7 +17,11 @@
                     @if($receivers->payment_status != 'Payment Completed')
                         @if($receivers->requirement == 'Other')
                             <div class="card">
-                                <img src="{{url('images/dashboard/receiver-back.png')}}" alt="">
+                                @if($receivers->cover_image != null)
+                                    <img src="{{uploaded_asset($receivers->cover_image)}}" alt="">
+                                @else
+                                    <img src="{{url('img/default_cover.png')}}" alt="">
+                                @endif
                                 <div class="icon purple">{{substr( $receivers->requirement, 0, 1)}}</div>
                                 @if($receivers->name_toggle == 'yes')
                                     <div class="name">{{$receivers->nick_name}}</div>
@@ -38,7 +42,11 @@
                             </div>
                         @else
                             <div class="card">
-                                <img src="{{url('images/dashboard/receiver-back.png')}}" alt="">
+                                @if($receivers->cover_image != null)
+                                    <img src="{{uploaded_asset($receivers->cover_image)}}" alt="">
+                                @else
+                                    <img src="{{url('img/default_cover.png')}}" alt="">
+                                @endif
                                 @if(App\Models\Packages::where('id',$receivers->requirement)->first() != null)
                                     <div class="icon purple">{{substr( App\Models\Packages::where('id',$receivers->requirement)->first()->name, 0, 1)}}</div>
                                 @else
