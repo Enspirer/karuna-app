@@ -197,5 +197,22 @@
     });
 </script>
 
+    <script>
+        const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
+
+        aizUploader.forEach((btn) => {
+            btn.addEventListener('click', () => {       
+
+                setTimeout(() => {
+                    const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
+
+                    aizModal.forEach((modal) => {
+                        modal.setAttribute('data-bs-toggle','modal')
+                    })
+                },1000)
+            })
+        })
+    </script>
+
 
 </html>
