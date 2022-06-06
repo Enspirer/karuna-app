@@ -438,13 +438,28 @@
   margin-bottom: 0.5rem;
 }
 .kindness-section .card-block .card .text {
+  flex: 1;
   margin-bottom: 1rem;
   font-size: 0.8rem;
   font-weight: 300;
   color: #767676;
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .kindness-section .card-block .card .btn-fill {
   margin: auto;
+}
+.kindness-section .card-block .card .view-more {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #767676;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.5rem;
 }
 .kindness-section .button-block {
   margin-top: 3rem;
