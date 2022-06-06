@@ -15,8 +15,8 @@
         </div>
     </div>
     <div class="nav-search">
-        <i class="bi bi-search"></i>
-        <input type="text" name="nav-search" class="form-control" placeholder="I'm looking for...">
+        <!-- <i class="bi bi-search"></i>
+        <input type="text" name="nav-search" class="form-control" placeholder="I'm looking for..."> -->
     </div>
     <div class="nav-block">
         <div class="title">Overview</div>
@@ -76,7 +76,7 @@
             </li>
             @endif
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('help-and-support')}}" class="nav-link">
                     <div class="nav-nav">
                         <i class="bi bi-question-circle"></i>
                         <i class="bi active bi-question-circle-fill"></i>
@@ -95,7 +95,7 @@
         <div class="title">Onboarding</div>
         
         @if(auth()->user()->user_type == 'Donor')
-            <a href="#" type="button" class="create-donation">
+            <a href="{{url('receivers')}}" type="button" class="create-donation">
                 <i class="bi bi-plus-lg"></i>
                 <div class="text">Donate Now</div>
             </a>

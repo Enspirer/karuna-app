@@ -59,7 +59,7 @@
                                 <div class="label-group">
                                     <div class="label">Package Type : {{$packageDetails->name}}</div>
                                 </div>
-                                <input type="text" class="form-control" name="package" value="{{$packageDetails->price}}">
+                                <input type="text" class="form-control" name="package" value="{{number_format($packageDetails->price,2)}}" readonly>
                             </div>
                             <div class="card-row">
                                 <button type="submit" class="cta-btn btn-fill">
@@ -74,7 +74,7 @@
                         <div class="profile-block">
                             <div class="title">Agent Profile</div>
                             <div class="profile-info">
-                                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
+                                <img src="{{uploaded_asset($agentDetails->profile_image)}}" alt="" class="dp">
                                 <ul>
                                     <li>
                                         <span class="th">Name :</span>
@@ -95,7 +95,7 @@
                         <div class="profile-block">
                             <div class="title">Receiver's Profile</div>
                             <div class="profile-info">
-                                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
+                                <img src="{{uploaded_asset($receiverDetails->profile_image)}}" alt="" class="dp">
                                 <ul>
                                     <li>
                                         <span class="th">Name :</span>
@@ -127,7 +127,7 @@
                         <div class="footer">
                             <div class="text-block">
                                 <div class="text">Your Donate amount is</div>
-                                <div class="amount">Rs.<span> {{number_format($packageDetails->price,2)}}</span></div>
+                                <div class="amount">USD<span> {{number_format($packageDetails->price,2)}}</span></div>
                             </div>
                             <img src="{{url('images/landing-page/payment/payment.svg')}}" alt="">
                         </div>
