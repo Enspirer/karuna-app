@@ -420,27 +420,11 @@
   object-position: center;
   border-radius: 5px;
 }
-.kindness-section .card-block .card .icon {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  font-weight: 400;
+.kindness-section .card-block .card .cta-btn {
+  margin: -1rem auto 1rem !important;
   color: #fff;
-  margin: -1rem auto 1rem;
-}
-.kindness-section .card-block .card .icon.blue {
-  background-color: #00BDC4;
-}
-.kindness-section .card-block .card .icon.purple {
-  background-color: #C4004E;
-}
-.kindness-section .card-block .card .icon.green {
-  background-color: #3AC400;
+  border: 1px solid #fff;
+  background-color: #971930;
 }
 .kindness-section .card-block .card .name {
   font-size: 1rem;
@@ -454,13 +438,28 @@
   margin-bottom: 0.5rem;
 }
 .kindness-section .card-block .card .text {
+  flex: 1;
   margin-bottom: 1rem;
   font-size: 0.8rem;
   font-weight: 300;
   color: #767676;
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .kindness-section .card-block .card .btn-fill {
   margin: auto;
+}
+.kindness-section .card-block .card .view-more {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #767676;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.5rem;
 }
 .kindness-section .button-block {
   margin-top: 3rem;
