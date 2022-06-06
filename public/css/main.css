@@ -413,6 +413,13 @@
   border: 2px solid #1FC39E;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
 }
+.kindness-section .card-block .card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
 .kindness-section .card-block .card .icon {
   width: 45px;
   height: 45px;
@@ -424,7 +431,7 @@
   font-size: 22px;
   font-weight: 400;
   color: #fff;
-  margin: 0 auto 1rem;
+  margin: -1rem auto 1rem;
 }
 .kindness-section .card-block .card .icon.blue {
   background-color: #00BDC4;
