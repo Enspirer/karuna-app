@@ -8,7 +8,7 @@
     <div class="container">
        <div class="inner-wrapper">
             <div class="title-block">
-                <div class="title">Events<br>at Karuna</div>
+                <div class="title">Events<br>at Karunaa</div>
                 <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
             </div>
             <div class="text">We Organize Specialised Events Focusing on Various Parts of the Country. Browse Our Event Calendar!</div>
