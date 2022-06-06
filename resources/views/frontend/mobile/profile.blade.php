@@ -464,6 +464,15 @@
                     <textarea name="bio" id="bio" class="form-control" style="height:180px">{{auth()->user()->bio}}</textarea>
                 </div> 
                 
+                <div class="frm-row">  
+                    <label class="form-label">NIC Photo</label>
+                    <input type="file" name="id_photo" value="{{auth()->user()->id_photo}}" class="form-control" id="id_photo" placeholder="NIC Photo">
+                    <br>
+                    @if(auth()->user()->id_photo != null)
+                        <img src="{{url('files/agents_id/',auth()->user()->id_photo)}}" style="width: 25%;" alt="" >
+                    @endif
+                </div> 
+
                 <div class="frm-row">
                     <label class="form-label">NIC Number</label>
                     <input type="text" name="nic_number" maxlength="191" class="form-control" value="{{auth()->user()->nic_number}}" id="nic_number" placeholder="NIC Number">

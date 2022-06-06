@@ -293,6 +293,9 @@
                 <div class="join-form-row hidden-row field-agent" id="agent_nic">
                     <input type="text" name="nic_number" maxlength="191" class="form-control" id="nic_number" placeholder="NIC Number">
                 </div>
+                <div class="join-form-row hidden-row field-agent" id="agent_id_photo">
+                    <input type="file" name="id_photo" maxlength="191" class="form-control" id="id_photo" placeholder="NIC Photo">
+                </div>
                 <div class="join-form-row hidden-row field-agent" id="agent_occupation">
                     <input type="text" name="occupation" maxlength="191" class="form-control" id="occupation" placeholder="Occupation">
                 </div>
@@ -352,6 +355,12 @@
         } else {
             document.getElementById("agent_nic").style.display = "none";
         }
+
+        if (that.value == 'Agent') {
+            document.getElementById("agent_id_photo").style.display = "block";
+        } else {
+            document.getElementById("agent_id_photo").style.display = "none";
+        }  
 
         if (that.value == 'Agent') {
             document.getElementById("referral_details").style.display = "block";

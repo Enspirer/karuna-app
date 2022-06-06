@@ -481,7 +481,8 @@
         <div class="inner-wrapper">
             <div class="content-block">
                 <img src="{{url('images/logo/karuna-logo-english.svg')}}" alt="" class="logo">
-                {{ html()->form('POST', route('frontend.auth.register.post'))->open() }}
+                <form action="{{route('frontend.auth.register.post')}}" method="post" enctype="multipart/form-data">
+                {{csrf_field()}}
                     <div class="join-form">
                         <div class="join-form-row">
                             <label for="first_name" class="form-label">First Name</label>
@@ -768,6 +769,10 @@
                             <label for="nic_number" class="form-label">NIC Number</label>
                             <input type="text" name="nic_number" maxlength="191" class="form-control" id="nic_number" placeholder="NIC Number">
                         </div>
+                        <div class="join-form-row hidden-row" id="agent_id_photo">
+                            <label for="id_photo" class="form-label">NIC Photo</label>
+                            <input type="file" name="id_photo" class="form-control" id="id_photo" placeholder="NIC Photo">
+                        </div>
                         <div class="join-form-row hidden-row" id="agent_occupation">
                             <label for="occupation" class="form-label">Occupation</label>
                             <input type="text" name="occupation" maxlength="191" class="form-control" id="occupation" placeholder="Occupation">
@@ -821,7 +826,7 @@
                             @include('includes.partials.messages')
                         </div>
                     </div>
-                {{ html()->form()->close() }}
+                </form>
                 <div class="not-join">Are you member? <a href="{{url('login')}}">Sign in now</a></div>
             </div>
             <div class="image-block">
@@ -845,6 +850,12 @@
         } else {
             document.getElementById("agent_nic").style.display = "none";
         }
+
+        if (that.value == 'Agent') {
+            document.getElementById("agent_id_photo").style.display = "block";
+        } else {
+            document.getElementById("agent_id_photo").style.display = "none";
+        }        
 
         if (that.value == 'Agent') {
             document.getElementById("referral_details").style.display = "block";

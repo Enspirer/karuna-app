@@ -11,8 +11,7 @@
         <div class="row">    
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-body">
-                        
+                    <div class="card-body">                        
                     
                         <input type="hidden" class="form-control mb-3" name="user_type" value="Agent">
                                       
@@ -315,6 +314,17 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-12 col-md-12">
+                                <div class="form-group">
+                                    <label>NIC Photo</label>
+                                    <input type="file" name="id_photo" class="form-control" id="id_photo" placeholder="NIC Photo">
+                                </div>
+                            </div>
+                        </div>
+
+                   
                         <div class="row">
                             <div class="col-12 col-md-12">
                                 <div class="form-group">

@@ -45,6 +45,12 @@
                                         <td style="font-weight: 600; font-size:16px;">NIC Number:</td>
                                         <td style="font-size:16px;">{{ $agent->nic_number }}</td>
                                     </tr>
+                                    @if($agent->id_photo != null)
+                                        <tr>
+                                            <td style="font-weight: 600;">ID Photo:</td>
+                                            <td><img src="{{url('files/agents_id/',$agent->id_photo)}}" style="width: 40%;" alt="" ></td>
+                                        </tr>
+                                    @endif
                                 </tbody>                                            
                             </table>                                                      
                             

@@ -160,6 +160,15 @@ class DashboardController extends Controller
             $city = $user->city;
         }
 
+        if($request->file('id_photo'))
+        {            
+            $preview_file_name = time().'_'.rand(1000,10000).'.'.$request->id_photo->getClientOriginalExtension();
+            $fullurls_preview_file = $request->id_photo->move(public_path('files/agents_id'), $preview_file_name);
+            $image_url = $preview_file_name;
+        }else{
+            $image_url = auth()->user()->id_photo;
+        } 
+
         $users = DB::table('users') ->where('id', '=', $user->id)->update(
             [
                 'first_name' => $request->first_name,
@@ -168,6 +177,7 @@ class DashboardController extends Controller
                 'country' => $request->country,
                 'city' => $city,
                 'nic_number' => $request->nic_number,
+                'id_photo' => $image_url,
                 'occupation' => $request->occupation,
                 'contact_number' => $request->contact_number,
                 'contact_number_two' => $request->contact_number_two,
