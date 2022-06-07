@@ -498,7 +498,7 @@
                         </div>
                         <div class="join-form-row">
                             <label for="" class="form-label">User Type</label>
-                            <select class="form-control custom-select" name="user_type" onchange="user_type_check(this);" required>
+                            <select class="form-control custom-select" id="user_type" name="user_type" onchange="user_type_check(this);" required>
                                 <option value="" selected disabled>Select...</option> 
                                 <option value="Receiver" disabled>Receiver</option>                                
                                 <option value="Agent">Agent</option>   
@@ -805,13 +805,13 @@
                                 <div class="row g-0 mb-4">
                                     <div class="col-md-12">
                                         <label class="pro-label">Referral Name</label>
-                                        <input type="text" class="form-control" name="referral_name" value="{{old('referral_name')}}">
+                                        <input type="text"  id="referral_name" class="form-control" name="referral_name" value="{{old('referral_name')}}">
                                     </div>                           
                                 </div>
                                 <div class="row g-0 mb-5">                                    
                                     <div class="col-md-12">
                                         <label class="pro-label">Referral NIC Number</label>
-                                        <input type="text" class="form-control" name="referral_nic_number" value="{{old('referral_nic_number')}}">
+                                        <input type="text" id="referral_nic_number" class="form-control" name="referral_nic_number" value="{{old('referral_nic_number')}}">
                                     </div>                          
                                 </div>                                
                             </div>
@@ -1004,6 +1004,19 @@
    const tel2 = document.getElementById("contact_number_two");
    const telInput1 = window.intlTelInput(tel1);
    const telInput2 = window.intlTelInput(tel2);
+</script>
+
+<script>
+const userType = document.getElementById('user_type')
+const agentReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
+
+userType.addEventListener('change', () => {
+    if (userType.value == 'Agent') {
+        agentReqFields.forEach((field) => {
+            document.getElementById(field).setAttribute('required', 'required')
+        })
+    }
+})
 </script>
     
 @endpush
