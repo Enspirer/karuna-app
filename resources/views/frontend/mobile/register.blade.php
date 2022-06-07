@@ -370,11 +370,11 @@
 
         if (userType.value == 'Agent') {
             agentReqFields.forEach((input) => {
-                input.style.display = 'block'
+                document.getElementById(input).style.display = 'block'
             })
         } 
     } )
-    
+
     function user_type_check(that) {
         if (that.value == 'Agent') {
             document.getElementById("agent_nic").style.display = "block";

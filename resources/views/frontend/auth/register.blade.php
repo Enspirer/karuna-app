@@ -851,7 +851,7 @@
 
         if (userType.value == 'Agent') {
             agentReqFields.forEach((input) => {
-                input.style.display = 'block'
+                document.getElementById(input).style.display = 'block'
             })
         } 
     } )
