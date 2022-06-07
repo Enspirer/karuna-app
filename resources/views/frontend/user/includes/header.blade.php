@@ -24,20 +24,6 @@
         @endif
 
     </div>
-    @if(auth()->user()->user_type == 'Agent')
-        <div class="button-block">
-            <a href="{{url('dashboard/index')}}" class="nav-btn {{Request::segment(2)=='index' ? 'active' :null }}">
-                <div class="btn-text">My Receivers</div>
-            </a>
-            <a href="{{route('frontend.user.dashboard.receiver_request_list')}}" class="nav-btn {{Request::segment(2)=='receiver-request-list' ? 'active' :null }}">
-                <div class="btn-text">Receivers Request</div>
-                <div class="status">{{App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->count()}}</div>
-            </a>
-        </div>
-    @else
-
-    @endif
-
 </div>
 
 <!-- Create Donation Modal -->

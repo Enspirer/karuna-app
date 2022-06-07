@@ -142,6 +142,20 @@
     </div>
 </div> -->
 
+@if(auth()->user()->user_type == 'Agent')
+    <div class="header-button-block">
+        <a href="{{url('dashboard/index')}}" class="nav-btn {{Request::segment(2)=='index' ? 'active' :null }}">
+            <div class="btn-text">My Receivers</div>
+        </a>
+        <a href="{{route('frontend.user.dashboard.receiver_request_list')}}" class="nav-btn {{Request::segment(2)=='receiver-request-list' ? 'active' :null }}">
+            <div class="btn-text">Receivers Request</div>
+            <div class="status">{{App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->count()}}</div>
+        </a>
+    </div>
+@else
+
+@endif
+
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Agent')
 <div class="table-container">
     @if(count(App\Models\Receivers::where('assigned_agent',auth()->user()->id)->get()) == 0)
