@@ -12,7 +12,7 @@
             <a href="#" onclick="history.back()" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="title"> Edit Kamani's profile</div>
+            <div class="title"> Edit {{$receiver->name}}'s profile</div>
         </div>
     </div>
 </section>
