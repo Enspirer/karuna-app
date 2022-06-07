@@ -779,11 +779,11 @@
                         </div>
                         <div class="join-form-row hidden-row" id="agent_contact_number">
                             <label for="contact_number" class="form-label">Contact Number</label>
-                            <input type="number" name="contact_number" maxlength="191" class="form-control" value="{{old('contact_number')}}" id="contact_number" placeholder="Contact Number">
+                            <input type="tel" name="contact_number" maxlength="191" class="form-control" value="{{old('contact_number')}}" id="contact_number" placeholder="Contact Number">
                         </div>
                         <div class="join-form-row hidden-row" id="agent_contact_number_two">
                             <label for="contact_number_two" class="form-label">Alternative Contact Number</label>
-                            <input type="number" name="contact_number_two" maxlength="191" class="form-control" value="{{old('contact_number_two')}}" id="contact_number_two" placeholder="Alternative Contact Number">
+                            <input type="tel" name="contact_number_two" maxlength="191" class="form-control" value="{{old('contact_number_two')}}" id="contact_number_two" placeholder="Alternative Contact Number">
                         </div>
                         <div class="join-form-row hidden-row" id="agent_address">
                             <label for="address" class="form-label">Address</label>
