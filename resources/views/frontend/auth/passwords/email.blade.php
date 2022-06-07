@@ -10,7 +10,7 @@
             <div class="content-block">
                 <img src="{{url('images/logo/karuna-logo-english.svg')}}" alt="" class="logo">
                 {{ html()->form('POST', route('frontend.auth.password.email.post'))->open() }}
-                    <div class="join-form">
+                    <div class="join-form no-scroll">
                         <div class="join-form-row">
                         {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
 

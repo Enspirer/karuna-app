@@ -198,7 +198,12 @@ class UserRepository extends BaseRepository
              */
             if (config('access.users.confirm_email')) {
                 // Pretty much only if account approval is off, confirm email is on, and this isn't a social account.
-                $user->notify(new UserNeedsConfirmation($user->confirmation_code));
+                try{
+                    $user->notify(new UserNeedsConfirmation($user->confirmation_code));
+                }catch (\Exception $exception){
+
+                }
+
             }
 
             // Return the user object

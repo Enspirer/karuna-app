@@ -1183,14 +1183,15 @@
   font-size: 0.8rem;
   font-weight: 400;
 }
-.dashboard-header .button-block {
+
+.header-button-block {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 2rem;
   margin: 1rem 0;
 }
-.dashboard-header .button-block .nav-btn {
+.header-button-block .nav-btn {
   text-decoration: none;
   display: flex;
   flex-direction: row;
@@ -1201,12 +1202,12 @@
   border: 2px solid #fff;
   position: relative;
 }
-.dashboard-header .button-block .nav-btn .btn-text {
+.header-button-block .nav-btn .btn-text {
   font-size: 0.8rem;
   font-weight: 400;
   color: #333;
 }
-.dashboard-header .button-block .nav-btn .status {
+.header-button-block .nav-btn .status {
   font-size: 0.7rem;
   color: #fff;
   font-weight: 400;
@@ -1218,7 +1219,7 @@
   padding: 0.4em 0.6em;
   border-radius: 10px;
 }
-.dashboard-header .button-block .nav-btn.active {
+.header-button-block .nav-btn.active {
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }

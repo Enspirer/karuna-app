@@ -4,7 +4,28 @@
 
 @section('content')
 
-<div class="table-container">
+@if(auth()->user()->user_type == 'Agent')
+    <div class="header-button-block">
+        <a href="{{url('dashboard/index')}}" class="nav-btn {{Request::segment(2)=='index' ? 'active' :null }}">
+            <div class="btn-text">My Receivers</div>
+        </a>
+        <a href="{{route('frontend.user.dashboard.receiver_request_list')}}" class="nav-btn {{Request::segment(2)=='receiver-request-list' ? 'active' :null }}">
+            <div class="btn-text">Receivers Request</div>
+            <div class="status">{{App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->count()}}</div>
+        </a>
+    </div>
+@else
+
+@endif
+
+<div class="table-container">            
+                @if(count(App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->get()) == 0)
+                    @include('frontend.includes.not_found',[
+                        'not_found_title' => 'No any request found',
+                        'not_found_description' => null,
+                        'not_found_button_caption' => null
+                    ])
+                @else
     <table class="db-table receiver-list-table">
         <thead>
             <tr class="db-tr">
@@ -16,14 +37,6 @@
             </tr>
         </thead>
         <tbody>
-            
-            @if(count(App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->get()) == 0)
-                @include('frontend.includes.not_found',[
-                    'not_found_title' => 'No any request found',
-                    'not_found_description' => null,
-                    'not_found_button_caption' => null
-                ])
-            @else
                 @foreach(App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->orderBy('id','desc')->get() as $key => $receiver)
                     <tr class="db-tr">
                         <td class="db-td">

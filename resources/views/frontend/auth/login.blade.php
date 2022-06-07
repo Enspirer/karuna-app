@@ -96,7 +96,7 @@
             <div class="content-block">
                 <img src="{{url('images/logo/karuna-logo-english.svg')}}" alt="" class="logo">
                 {{ html()->form('POST', route('frontend.auth.login.post'))->open() }}
-                    <div class="join-form">
+                    <div class="join-form no-scroll">
                         <div class="join-form-row">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" name="email" maxlength="191" class="form-control" value="{{old('email')}}" id="email" placeholder="Email" required>
