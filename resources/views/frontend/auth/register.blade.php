@@ -808,7 +808,7 @@
                             <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirm Password" required>
                         </div>
 
-                        <div class="card" id="referral_details">
+                        <div class="card" id="referral_details" style="display: none;">
                             <h5 class="card-header">Referral Details</h5>
                             <div class="card-body">
                                 <div class="row g-0 mb-4">
@@ -856,20 +856,23 @@
     window.addEventListener('DOMContentLoaded', () => {
 
         const userType = document.getElementById('user_type')
-        const agentReqFields = ['agent_country', 'agent_city', 'agent_nic', 'agent_id_photo', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details']
+        const agentReqFields = ['agent_country', 'agent_city', 'agent_nic', 'agent_id_photo', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details'];
 
-        const ReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
+        const ReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number'];
 
         if (userType.value == 'Agent') {
             agentReqFields.forEach((input) => {
+
                 document.getElementById(input).style.display = 'block'
-            })
+            });
 
             ReqFields.forEach((field) => {
-                document.getElementById(field).setAttribute('required', '')
-            })
-        } 
-    } )
+                document.getElementById(field).setAttribute('required', '');
+            });
+        } else{
+
+        }
+    } );
 
     function user_type_check(that) {
         if (that.value == 'Agent') {
