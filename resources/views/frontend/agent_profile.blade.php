@@ -101,6 +101,10 @@
                                 <div id="char{{$receiver->id}}" class="accordion-collapse collapse" aria-labelledby="charHead{{$receiver->id}}"
                                     data-bs-parent="#charityList">
                                     <div class="accordion-body">
+                                        <div>
+                                            Name: {{$receiver->name}} <br>
+                                            Agent Name: {{\App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->first_name }} {{\App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->last_name}}
+                                        </div>
                                         <div class="title">Description</div>
                                         <div class="text">{{$receiver->about_donation}}</div>
                                     </div>
