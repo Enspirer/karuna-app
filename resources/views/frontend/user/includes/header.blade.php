@@ -371,8 +371,8 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <select class="form-select" aria-label="Default select example" name="requirement" onchange="package_type(this);" required>
-                                    <option selected disabled>Choose...</option>
+                                <select class="form-select" aria-label="Default select example" id="requirement" name="requirement" onchange="package_type(this);" required>
+                                    <option value="" selected disabled>Choose...</option>
                                     @if(count(App\Models\Packages::where('status','Enabled')->get()) != 0)
                                         @foreach(App\Models\Packages::where('status','Enabled')->get() as $package)
                                             <option value="{{$package->id}}">{{$package->name}}</option>
@@ -403,7 +403,7 @@
                         <div class="row g-0 mb-3" id="other_description_hide" style="display: none;">
                             <div class="col-md-11">
                                 <label class="pro-label">Other Description</label>
-                                <textarea class="form-control" style="height:150px;" name="other_description"></textarea>
+                                <textarea class="form-control" style="height:150px;" id="other_description" name="other_description"></textarea>
                             </div>
                         </div>
 
@@ -441,17 +441,17 @@
                                 <div class="row g-0 mb-4">
                                     <div class="col-md-6">
                                         <label class="pro-label">Account Number</label>
-                                        <input type="text" class="form-control" name="account_number">
+                                        <input type="text" class="form-control" id="account_number" name="account_number">
                                     </div>
                                     <div class="col-md-4">
                                         <label class="pro-label">Bank Name</label>
-                                        <input type="text" class="form-control" name="bank_name">
+                                        <input type="text" class="form-control" id="bank_name" name="bank_name">
                                     </div>
                                 </div>
                                 <div class="row g-0 mb-5">
                                     <div class="col-md-11">
                                         <label class="pro-label">Branch Name</label>
-                                        <input type="text" class="form-control" name="branch_name">
+                                        <input type="text" class="form-control" id="branch_name" name="branch_name">
                                     </div>
                                 </div>
                             </div>

@@ -215,4 +215,18 @@
     </script>
 
 
+<script>
+const requirement = document.getElementById('requirement')
+const RecReqFields = ['other_description', 'account_number', 'bank_name', 'branch_name']
+
+requirement.addEventListener('change', () => {
+    if (requirement.value == 'Other') {
+        RecReqFields.forEach((field) => {
+            document.getElementById(field).setAttribute('required', '')
+        })
+    }
+})
+</script>
+
+
 </html>

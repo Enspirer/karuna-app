@@ -192,7 +192,7 @@
             <!-- Requirement -->
             <div class="frm-row">
                 <label class="form-label">Requirement</label>
-                <select class="form-select" aria-label="Default select example" name="requirement" onchange="package_type(this);" required>
+                <select class="form-select" aria-label="Default select example" id="requirement" name="requirement" onchange="package_type(this);" required>
                     <option selected disabled>Choose...</option>
                     @if(count(App\Models\Packages::where('status','Enabled')->get()) != 0)
                         @foreach(App\Models\Packages::where('status','Enabled')->get() as $package)
@@ -206,7 +206,7 @@
                             
             <div class="frm-row" id="other_description_hide" style="display: none;">
                 <label class="form-label">Other Description</label>
-                <textarea class="form-control" style="height:150px;" name="other_description"></textarea>
+                <textarea class="form-control" style="height:150px;" id="other_description" name="other_description"></textarea>
             </div>
 
               <!-- About the donation -->
@@ -221,15 +221,15 @@
                    
                     <div class="frm-row">
                         <label class="form-label">Account Number</label>
-                        <input type="text" class="form-control" name="account_number">
+                        <input type="text" class="form-control" id="account_number" name="account_number">
                     </div>
                     <div class="frm-row">
                         <label class="form-label">Bank Name</label>
-                        <input type="text" class="form-control" name="bank_name">
+                        <input type="text" class="form-control" id="bank_name" name="bank_name">
                     </div>
                     <div class="frm-row">
                         <label class="form-label">Branch Name</label>
-                        <input type="text" class="form-control" name="branch_name">
+                        <input type="text" class="form-control" id="branch_name" name="branch_name">
                     </div>
                 </div>
             </div>
@@ -267,5 +267,19 @@
         
     }
 </script> 
+
+<script>
+const requirement = document.getElementById('requirement')
+const RecReqFields = ['other_description', 'account_number', 'bank_name', 'branch_name']
+
+requirement.addEventListener('change', () => {
+    if (requirement.value == 'Other') {
+        RecReqFields.forEach((field) => {
+            document.getElementById(field).setAttribute('required', '')
+        })
+    }
+})
+</script>
+
 
 @endpush
