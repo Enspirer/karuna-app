@@ -10,6 +10,9 @@ use App\Models\Receivers;
 use Composer\Package\Package;
 use Modules\Blog\Entities\Post;
 use App\Models\HelpSupport;
+use App\Models\Country;
+use App\Models\City;
+
 
 /**
  * Class HomeController.
@@ -117,6 +120,27 @@ class HomeController extends Controller
         return view('frontend.receiver_profile',[
             'receiver' => $receiver
         ]);
+    }
+
+    public function find_cities($country)
+    {
+        $country = Country::where('name',$country)->first();
+        $cities = City::where('country',$country->id)->get();
+        
+        $output_array = [];
+
+        foreach($cities as $key => $city){
+
+            $array_out = [
+                'city_id' => $city->id,
+                'city_name' => $city->name
+            ];
+
+            array_push($output_array,$array_out);
+        }
+
+        return response()->json($output_array);
+
     }
 
     public function find_agent_details($city)

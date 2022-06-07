@@ -947,11 +947,24 @@
             $(".areas").html(template);
             // console.log(d);
         });
+
+
+        $.ajax({                    
+            url: "{{url('/')}}/api/find_cities/" + country,
+            method: "GET",
+            dataType: "json",
+            success:function(data) {
+                console.log(data);
+           
+
+            }
+        });
+        
     });
     
 </script>
 
-
+<!-- 
 <script>
          $(document).ready(function() {
         $('#city').on('change', function() {
@@ -984,7 +997,7 @@
             
         });
     });
-</script>
+</script> -->
 
 <script>
    const tel1 = document.getElementById("contact_number");

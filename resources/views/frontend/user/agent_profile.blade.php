@@ -426,9 +426,11 @@
                     <div class="row g-0 mb-3">
                         <div class="col-md-11">
                             <div class="join-form-row hidden-row field-receiver field-agent">
-                                <label class="pro-label">City ({{auth()->user()->city}})</label>
+                                <label class="pro-label">City</label>
                                 <select class="form-control areas custom-select" id="city" name="city" >
-
+                                    @if(auth()->user()->city)
+                                        <option value="{{auth()->user()->city}}" selected>{{auth()->user()->city}}</option>
+                                    @endif
                                 </select>
                             </div>
                         </div>

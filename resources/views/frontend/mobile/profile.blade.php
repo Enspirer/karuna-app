@@ -438,9 +438,11 @@
                 </div>
 
                 <div class="frm-row">
-                    <label class="form-label">City ({{auth()->user()->city}})</label>
+                    <label class="form-label">City</label>
                     <select class="form-control areas custom-select" id="city" name="city" >
-
+                        @if(auth()->user()->city)
+                            <option value="{{auth()->user()->city}}" selected>{{auth()->user()->city}}</option>
+                        @endif
                     </select>
                 </div>
 

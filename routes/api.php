@@ -18,5 +18,5 @@ use App\Http\Controllers\Frontend\HomeController;
     return $request->user();
 });*/
 
-Route::get('find_agent_details/{city}', [HomeController::class, 'find_agent_details'])->name('find_agent_details');
+Route::get('find_cities/{country}', [HomeController::class, 'find_cities'])->name('find_cities');
 
