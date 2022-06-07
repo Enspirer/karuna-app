@@ -297,6 +297,7 @@
                     <input type="text" name="nic_number" maxlength="191" class="form-control" value="{{old('nic_number')}}" id="nic_number" placeholder="NIC Number">
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_id_photo">
+                    <label style="font-size: 11px;padding-left: 10px;">ID Card Photo</label>
                     <input type="file" name="id_photo" maxlength="191" class="form-control" value="{{old('id_photo')}}" id="id_photo" placeholder="NIC Photo">
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }} field-agent" id="agent_occupation">
