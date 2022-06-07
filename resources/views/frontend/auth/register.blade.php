@@ -759,7 +759,11 @@
                         </div>
                         <div class="join-form-row hidden-row" id="agent_city">
                             <label for="city" class="form-label">City</label>
-                            <select class="form-control areas custom-select" value="{{old('city')}}" id="city" name="city"></select>
+                            <select class="form-control areas custom-select" value="{{old('city')}}" id="city" name="city">
+                                @if(old('city'))
+                                    <option value="{{old('city')}}" selected>{{old('city')}}</option>
+                                @endif
+                            </select>
                         </div>
                         <div class="join-form-row hidden-row" id="receiver_assigned_agent">
                             <label for="assigned_agent_id" class="form-label">Agent</label>

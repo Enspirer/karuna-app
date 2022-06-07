@@ -64,10 +64,12 @@ class RegisterController extends Controller
     {
         // dd($request);
 
-        if($request->file('id_photo') == null){
-            return redirect()->back()->withInput()->withErrors('Please add an ID Card Photo');
-            // return back()->withErrors('Please add an ID Card Photo');
-        }        
+        if($request->user_type == 'Agent'){
+            if($request->file('id_photo') == null){
+                return redirect()->back()->withInput()->withErrors('Please add an ID Card Photo');
+                // return back()->withErrors('Please add an ID Card Photo');
+            }        
+        }       
 
         $user_agent = User::where('first_name', 'like', '%'.$request->referral_name.'%')
             ->orWhere('last_name', 'like', '%'.$request->referral_name.'%')
