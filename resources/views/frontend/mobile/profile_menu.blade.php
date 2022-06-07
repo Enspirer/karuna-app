@@ -22,7 +22,11 @@
     <div class="mobile-container">
         <div class="inner-wrapper">
             <div class="header">
-                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                @if(auth()->user()->profile_image == null)
+                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                @else
+                    <img src="{{uploaded_asset(auth()->user()->profile_image)}}" width="20%" alt="">
+                @endif
                 <div class="text-block">
                     <div class="text">Welcome</div>
                     <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
