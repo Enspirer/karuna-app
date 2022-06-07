@@ -4,6 +4,21 @@
 
 @section('content')
 
+@if(session()->get('flash_success'))
+    <div class="modal fade signup-success-modal" id="signUpSuccessModal" tabindex="-1" aria-labelledby="signUpSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="inner-wrapper">
+                <i class="bi bi-x-lg" data-bs-dismiss="modal"></i>
+                <div class="title">Success !</div>
+                <p>Your account was successfully created and is pending approval.</p>
+                <p>An e-mail will be sent when your account is approved.</p>
+            </div>
+            </div>
+        </div>
+    </div>
+@endif
+
 
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')
     @if(App\Models\Notification::where('user_id',auth()->user()->id)->where('status','Pending')->first() != null)
@@ -318,6 +333,15 @@
     });
 
     homeSlider.mount();
+</script>
+
+<script>
+    $(window).on('load', function () {
+        $('#signUpSuccessModal').modal('show');
+    });
+    $("#close-btn").click(function () {
+        $('#signUpSuccessModal').modal('hide');
+    });
 </script>
 
 @endpush
