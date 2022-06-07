@@ -472,7 +472,7 @@
                         <div class="col-md-11">
                             <div class="join-form-row hidden-row field-agent" id="agent_contact_number">
                                 <label class="pro-label">Contact Number</label>
-                                <input type="text" name="contact_number" maxlength="191" class="form-control" value="{{auth()->user()->contact_number}}" id="contact_number" placeholder="Contact Number">
+                                <input type="number" name="contact_number" maxlength="191" class="form-control" value="{{auth()->user()->contact_number}}" id="contact_number" placeholder="Contact Number">
                             </div>
                         </div>
                     </div>
@@ -480,7 +480,7 @@
                         <div class="col-md-11">
                             <div class="join-form-row hidden-row field-agent" id="agent_contact_number_two">
                                 <label class="pro-label">Alternate Contact Number</label>
-                                <input type="text" name="contact_number_two" maxlength="191" class="form-control" value="{{auth()->user()->contact_number_two}}" id="contact_number_two" placeholder="Alternative Contact Number">
+                                <input type="number" name="contact_number_two" maxlength="191" class="form-control" value="{{auth()->user()->contact_number_two}}" id="contact_number_two" placeholder="Alternative Contact Number">
                             </div>
                         </div>
                     </div>
