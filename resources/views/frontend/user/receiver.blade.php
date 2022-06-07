@@ -9,8 +9,11 @@
         <div class="header" style="background-image: url('{{uploaded_asset($receiver->cover_image)}}');">
             
             <div class="dp-block">
-                <img src="{{ uploaded_asset($receiver->profile_image) }}" alt="">
-               
+                @if($receiver->profile_image == null)
+                    <img src="{{ url('img/default_cover.png') }}" alt="">
+                @else
+                    <img src="{{ uploaded_asset($receiver->profile_image) }}" alt="">
+                @endif               
             </div>
         </div>
         @if($receiver->name_toggle == 'yes')
