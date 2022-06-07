@@ -1,0 +1,42 @@
+.signup-success-modal {
+    .modal-content {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+
+        .inner-wrapper {
+            background-color: $white;
+            text-align: center;
+
+            .bi {
+                position: absolute;
+                top: 12px;
+                right: 15px;
+                font-size: 1rem;
+                color: $white;
+            }
+
+            .title {
+                background: linear-gradient(45deg, rgba(31, 195, 158), rgba(45, 113, 139));
+                padding: 1.25rem 0 1rem;
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: 300;
+                color: $white;
+                margin-bottom: 1.5rem;
+            }
+
+            p {
+                font-size: .8rem;
+                font-weight: 300;
+                color: $text-black;
+                width: 90%;
+                margin: 0 auto .5rem;
+
+                &:nth-last-child(1) {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

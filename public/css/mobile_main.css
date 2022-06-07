@@ -2496,5 +2496,40 @@ body .mobile-body {
     bottom: 0;
   }
 }
+.signup-success-modal .modal-content {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.signup-success-modal .modal-content .inner-wrapper {
+  background-color: #fff;
+  text-align: center;
+}
+.signup-success-modal .modal-content .inner-wrapper .bi {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 1rem;
+  color: #fff;
+}
+.signup-success-modal .modal-content .inner-wrapper .title {
+  background: linear-gradient(45deg, #1fc39e, #2d718b);
+  padding: 1.25rem 0 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.signup-success-modal .modal-content .inner-wrapper p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #333;
+  width: 90%;
+  margin: 0 auto 0.5rem;
+}
+.signup-success-modal .modal-content .inner-wrapper p:nth-last-child(1) {
+  margin-bottom: 1rem;
+}
 
 /*# sourceMappingURL=mobile_main.css.map */

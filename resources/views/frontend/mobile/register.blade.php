@@ -368,13 +368,19 @@
         const userType = document.getElementById('user_type')
         const agentReqFields = ['agent_country', 'agent_city', 'agent_nic', 'agent_id_photo', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details']
 
+        const ReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
+
         if (userType.value == 'Agent') {
             agentReqFields.forEach((input) => {
-                input.style.display = 'block'
+                document.getElementById(input).style.display = 'block'
+            })
+
+            ReqFields.forEach((field) => {
+                document.getElementById(field).setAttribute('required', '')
             })
         } 
     } )
-    
+
     function user_type_check(that) {
         if (that.value == 'Agent') {
             document.getElementById("agent_nic").style.display = "block";
@@ -529,7 +535,7 @@ const agentReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation
 userType.addEventListener('change', () => {
     if (userType.value == 'Agent') {
         agentReqFields.forEach((field) => {
-            document.getElementById(field).setAttribute('required', 'required')
+            document.getElementById(field).setAttribute('required', '')
         })
     }
 })

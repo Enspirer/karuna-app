@@ -803,7 +803,7 @@
                             <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirm Password" required>
                         </div>
 
-                        <div class="card" style="display: none;" id="referral_details">
+                        <div class="card" id="referral_details">
                             <h5 class="card-header">Referral Details</h5>
                             <div class="card-body">
                                 <div class="row g-0 mb-4">
@@ -853,9 +853,15 @@
         const userType = document.getElementById('user_type')
         const agentReqFields = ['agent_country', 'agent_city', 'agent_nic', 'agent_id_photo', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details']
 
+        const ReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
+
         if (userType.value == 'Agent') {
             agentReqFields.forEach((input) => {
-                input.style.display = 'block'
+                document.getElementById(input).style.display = 'block'
+            })
+
+            ReqFields.forEach((field) => {
+                document.getElementById(field).setAttribute('required', '')
             })
         } 
     } )
@@ -1025,7 +1031,7 @@ const agentReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation
 userType.addEventListener('change', () => {
     if (userType.value == 'Agent') {
         agentReqFields.forEach((field) => {
-            document.getElementById(field).setAttribute('required', 'required')
+            document.getElementById(field).setAttribute('required', '')
         })
     }
 })
