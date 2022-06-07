@@ -12,6 +12,7 @@
     </div>
 </section>
 
+
 <section class="join-form-section">
     <div class="mobile-container">
         {{ html()->form('POST', route('frontend.auth.login.post'))->open() }}
@@ -22,6 +23,7 @@
                 <div class="join-form-row">
                     <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
                 </div>
+                @include('includes.partials.messages')
                 <div class="join-form-row">
                     <button type="submit" class="cta-btn btn-fill pull-right">
                         <div class="btn-text">Sign In</div>
@@ -38,6 +40,8 @@
                 </div>
             </div>
         {{ html()->form()->close() }}
+
+
 
         <div class="devider">
             <div class="text">Or continue with</div>
