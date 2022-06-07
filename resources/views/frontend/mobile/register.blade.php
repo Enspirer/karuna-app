@@ -363,6 +363,7 @@
 
         if (that.value == 'Agent') {
             document.getElementById("agent_id_photo").style.display = "block";
+            document.getElementById("agent_id_photo").required = true;
         } else {
             document.getElementById("agent_id_photo").style.display = "none";
         }  
