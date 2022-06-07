@@ -71,16 +71,23 @@ class RegisterController extends Controller
             }        
         }       
 
-        $user_agent = User::where('first_name', 'like', '%'.$request->referral_name.'%')
-            ->orWhere('last_name', 'like', '%'.$request->referral_name.'%')
-            ->where('nic_number',$request->referral_nic_number)
-            ->first();
-        // dd($user_agent);
+        $user_agent = User::where('nic_number',$request->referral_nic_number)->first();
 
         if($user_agent == null){
-            return redirect()->back()->withInput()->withErrors('Incorrect Referrel');
-            // return back()->withErrors('Incorrect Referrel');
+               return redirect()->back()->withInput()->withErrors('Incorrect Referrel');
+        }else{
+            $full_name = $user_agent->first_name . ' '. $user_agent->last_name;
+            if($request->referral_name != $full_name){
+                return redirect()->back()->withInput()->withErrors('Incorrect Referrel');
+            }
         }
+
+
+
+
+
+
+
 
         abort_unless(config('access.registration'), 404);
 
