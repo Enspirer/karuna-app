@@ -799,7 +799,7 @@
                             <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirm Password" required>
                         </div>
 
-                        <div class="card" style="display: none;" id="referral_details">
+                        <div class="card" id="referral_details">
                             <h5 class="card-header">Referral Details</h5>
                             <div class="card-body">
                                 <div class="row g-0 mb-4">
