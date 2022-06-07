@@ -19,8 +19,6 @@
     </div>
 @endif
 
-@include('includes.partials.messages')
-
 
 <section class="splash-hero-section">
     <div class="splide splash-slider" id="splashSlider">
