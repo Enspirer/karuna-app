@@ -324,13 +324,13 @@
                         <div class="row g-0 mb-4">
                             <div class="col-md-12">
                                 <label class="pro-label">Referral Name</label>
-                                <input type="text" class="form-control" name="referral_name" value="{{old('referral_name')}}">
+                                <input type="text" class="form-control" id="referral_name" name="referral_name" value="{{old('referral_name')}}">
                             </div>                           
                         </div>
                         <div class="row g-0 mb-5">                                    
                             <div class="col-md-12">
                                 <label class="pro-label">Referral NIC Number</label>
-                                <input type="text" class="form-control" name="referral_nic_number" value="{{old('referral_nic_number')}}">
+                                <input type="text" class="form-control" id="referral_nic_number" name="referral_nic_number" value="{{old('referral_nic_number')}}">
                             </div>                          
                         </div>                                
                     </div>
@@ -498,6 +498,19 @@
             
         });
     });
+</script>
+
+<script>
+const userType = document.getElementById('user_type')
+const agentReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
+
+userType.addEventListener('change', () => {
+    if (userType.value == 'Agent') {
+        agentReqFields.forEach((field) => {
+            document.getElementById(field).setAttribute('required', 'required')
+        })
+    }
+})
 </script>
 
 
