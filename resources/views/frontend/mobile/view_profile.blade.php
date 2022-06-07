@@ -12,7 +12,7 @@
             <a href="#" onclick="history.back()" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="title">Kamani's Profile</div>
+            <div class="title">{{$agent->first_name}}'s Profile</div>
         </div>
     </div>
 </section>
