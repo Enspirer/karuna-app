@@ -131,6 +131,7 @@ class UserRepository extends BaseRepository
                 }else{
                     $image_url = null;
                 } 
+                // dd($image_url);
 
                 $user = $this->model::create([
                     'first_name' => $data['first_name'],

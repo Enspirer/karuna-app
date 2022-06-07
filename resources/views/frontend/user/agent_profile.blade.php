@@ -104,6 +104,7 @@
                     </div>
                 @endif
 
+                @include('includes.partials.messages')
 
                 <div class="row g-0">
                     <div class="col">
@@ -450,7 +451,7 @@
                     <div class="row g-0 mb-3">
                         <div class="col-md-11">
                             <div class="join-form-row hidden-row field-agent" id="agent_nic">
-                                <label class="pro-label">NIC Photo</label>
+                                <label class="pro-label">ID Card Photo</label>
                                 <input type="file" name="id_photo" value="{{auth()->user()->id_photo}}" class="form-control" id="id_photo" placeholder="NIC Photo">
                                 <br>
                                 @if(auth()->user()->id_photo != null)

@@ -64,6 +64,11 @@ class RegisterController extends Controller
     {
         // dd($request);
 
+        if($request->file('id_photo') == null){
+            return redirect()->back()->withInput()->withErrors('Please add an ID Card Photo');
+            // return back()->withErrors('Please add an ID Card Photo');
+        }        
+
         $user_agent = User::where('first_name', 'like', '%'.$request->referral_name.'%')
             ->orWhere('last_name', 'like', '%'.$request->referral_name.'%')
             ->where('nic_number',$request->referral_nic_number)
@@ -71,7 +76,8 @@ class RegisterController extends Controller
         // dd($user_agent);
 
         if($user_agent == null){
-            return back()->withErrors('Incorrect Referrel');
+            return redirect()->back()->withInput()->withErrors('Incorrect Referrel');
+            // return back()->withErrors('Incorrect Referrel');
         }
 
         abort_unless(config('access.registration'), 404);

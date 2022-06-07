@@ -137,6 +137,7 @@
                 </div>
             @endif
 
+            @include('includes.partials.messages')
 
             <form action="{{route('frontend.user.update_agent_mobile')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
@@ -471,7 +472,7 @@
                 </div> 
                 
                 <div class="frm-row">  
-                    <label class="form-label">NIC Photo</label>
+                    <label class="form-label">ID Card Photo</label>
                     <input type="file" name="id_photo" value="{{auth()->user()->id_photo}}" class="form-control" id="id_photo" placeholder="NIC Photo">
                     <br>
                     @if(auth()->user()->id_photo != null)

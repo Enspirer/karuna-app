@@ -146,6 +146,12 @@ class DashboardController extends Controller
 
     public function update_agent(Request $request) {
 
+        if($request->id_photo == null){
+            if(auth()->user()->id_photo == null){
+                return back()->withErrors('Please add an ID Card Photo');
+            }
+        }
+
         $email = $request->email;
         $hidden_id = $request->hidden_id;
 

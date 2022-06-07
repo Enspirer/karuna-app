@@ -14,7 +14,8 @@
 
 <section class="join-form-section">
     <div class="mobile-container">
-        {{ html()->form('POST', route('frontend.auth.register.post'))->open() }}
+        <form action="{{route('frontend.auth.register.post')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
             <div class="join-form">
                 <div class="join-form-row">
                     <input type="text" name="first_name" maxlength="191" class="form-control" value="{{old('first_name')}}" id="first_name" placeholder="First Name" required>
@@ -27,10 +28,10 @@
                 </div>
                 <div class="join-form-row">
                     <select class="form-control custom-select" name="user_type" id="user_type" onchange="user_type_check(this);" required>
-                        <option value="" selected disabled>User Type</option> 
+                        <!-- <option value="" selected disabled>User Type</option>  -->
                         <option value="Receiver" disabled>Receiver</option>                                
                         <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Agent</option>   
-                        <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"" }}>Donor</option>                                
+                        <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"selected" }} >Donor</option>                                
                     </select>
                 </div>
 
@@ -288,17 +289,19 @@
                     </select>
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_city">
-                    <select class="form-control areas custom-select" id="city" value="{{old('city')}}" name="city"></select>
+                    <select class="form-control areas custom-select" id="city" value="{{old('city')}}" name="city">
+                        @if(old('city'))
+                            <option value="{{old('city')}}" selected>{{old('city')}}</option>
+                        @endif
+                    </select>
                 </div>
-                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="receiver_assigned_agent">
-                    <select class="form-control custom-select" name="assigned_agent_id" value="{{old('assigned_agent_id')}}" id="assigned_agent_id"></select>
-                </div>
+           
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_nic">
                     <input type="text" name="nic_number" maxlength="191" class="form-control" value="{{old('nic_number')}}" id="nic_number" placeholder="NIC Number">
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_id_photo">
                     <label style="font-size: 11px;padding-left: 10px;">ID Card Photo</label>
-                    <input type="file" name="id_photo" maxlength="191" class="form-control" value="{{old('id_photo')}}" id="id_photo" placeholder="NIC Photo">
+                    <input type="file" name="id_photo" maxlength="191" class="form-control" value="" id="id_photo" placeholder="NIC Photo">
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }} field-agent" id="agent_occupation">
                     <input type="text" name="occupation" maxlength="191" class="form-control" value="{{old('occupation')}}" id="occupation" placeholder="Occupation">
@@ -343,7 +346,7 @@
                     </button>
                 </div>
             </div>
-        {{ html()->form()->close() }}
+        </form>
 
         <div class="not-join">Are you member? <a href="{{route('frontend.mobile.login')}}">Sign in now</a></div>
     </div>
