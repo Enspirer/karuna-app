@@ -337,7 +337,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <label>Contact Number</label>
-                                    <input type="text" name="contact_number" maxlength="191" class="form-control" value="{{old('contact_number')}}" id="contact_number" placeholder="Contact Number" required>
+                                    <input type="number" name="contact_number" maxlength="191" class="form-control" value="{{old('contact_number')}}" id="contact_number" placeholder="Contact Number" required>
                                 </div>
                             </div>
                         </div>
@@ -345,7 +345,7 @@
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
                                     <label>Alternative Contact Number</label>
-                                    <input type="text" name="contact_number_two" maxlength="191" class="form-control" value="{{old('contact_number_two')}}" id="contact_number_two" placeholder="Alternative Contact Number" required>
+                                    <input type="number" name="contact_number_two" maxlength="191" class="form-control" value="{{old('contact_number_two')}}" id="contact_number_two" placeholder="Alternative Contact Number" required>
                                 </div>
                             </div>
                         </div>
