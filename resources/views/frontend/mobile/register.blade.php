@@ -29,9 +29,15 @@
                 <div class="join-form-row">
                     <select class="form-control custom-select" name="user_type" id="user_type" onchange="user_type_check(this);" required>
                         <!-- <option value="" selected disabled>User Type</option>  -->
-                        <option value="Receiver" disabled>Receiver</option>                                
-                        <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Agent</option>   
-                        <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"selected" }} >Donor</option>                                
+                        <option value="Receiver" disabled>Receiver</option>
+                        @if(old('user_type'))
+                            <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Agent</option>
+                            <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"" }} >Donor</option>
+                        @else
+                            <option value="Agent">Agent</option>
+                            <option value="Donor" selected>Donor</option>
+                        @endif
+
                     </select>
                 </div>
 
@@ -357,6 +363,18 @@
 @push('after-scripts')
 
 <script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+        const userType = document.getElementById('user_type')
+        const agentReqFields = ['agent_country', 'agent_city', 'agent_nic', 'agent_id_photo', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details']
+
+        if (userType.value == 'Agent') {
+            agentReqFields.forEach((input) => {
+                input.style.display = 'block'
+            })
+        } 
+    } )
+    
     function user_type_check(that) {
         if (that.value == 'Agent') {
             document.getElementById("agent_nic").style.display = "block";

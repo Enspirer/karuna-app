@@ -1262,6 +1262,15 @@
   flex-direction: column;
   gap: 2rem;
 }
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .form-row .form-control {
+  border: 2px solid #E1E4EB;
+  background-color: #F4F8FF;
+  height: 50px;
+}
+.section-payment .inner-wrapper .content-block .card-block .row-wrapper .form-row .form-control:focus, .section-payment .inner-wrapper .content-block .card-block .row-wrapper .form-row .form-control:active {
+  border: 2px solid #00BDC4;
+  box-shadow: none;
+}
 .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row {
   display: flex;
   flex-direction: row;
