@@ -22,11 +22,20 @@ class HomeController extends Controller
     /**
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
         if(is_mobile(request()->header('user-agent')) == true){
+            if(session()->get('flash_success')){
+                return redirect()->route('frontend.mobile.splash')->withFlashSuccess(
+                    config('access.users.requires_approval') ?
+                        __('exceptions.frontend.auth.confirmation.created_pending') :
+                        __('exceptions.frontend.auth.confirmation.created_confirm')
+                );
+            }else{
+                return redirect()->route('frontend.mobile.splash');
+            }
 
-            return redirect()->route('frontend.mobile.splash');
+
         }
 
         $events = Post::where('featured','Enabled')->orderBy('order','asc')->get();
