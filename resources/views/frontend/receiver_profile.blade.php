@@ -64,7 +64,11 @@
                         </div>
                         <div class="col-12">
                             <div class="label"><b>Bio</b></div>
-                            <div class="text">{{$receiver->bio}}</div>
+                            @if($receiver->big)
+                                <div class="text">{{$receiver->bio}}</div>
+                            @else
+                                <div class="text" style="color:gray">Bio updated</div>
+                            @endif
                         </div>
                         <div class="col-12">
                             <div class="label"><b>About Donation</b></div>
