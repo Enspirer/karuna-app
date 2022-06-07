@@ -376,7 +376,7 @@
             })
 
             ReqFields.forEach((field) => {
-                document.getElementById(field).setAttribute('required', 'required')
+                document.getElementById(field).setAttribute('required', '')
             })
         } 
     } )
@@ -535,7 +535,7 @@ const agentReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation
 userType.addEventListener('change', () => {
     if (userType.value == 'Agent') {
         agentReqFields.forEach((field) => {
-            document.getElementById(field).setAttribute('required', 'required')
+            document.getElementById(field).setAttribute('required', '')
         })
     }
 })
