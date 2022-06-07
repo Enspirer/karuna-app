@@ -64,7 +64,7 @@
     </div>
 </section>
 
-<section class="filter-section">
+<!-- <section class="filter-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
             <i class="bi bi-search"></i>
@@ -74,7 +74,7 @@
             </a>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="home-slider-section">
     <div class="mobile-container">
