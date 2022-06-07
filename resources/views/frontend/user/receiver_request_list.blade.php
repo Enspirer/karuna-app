@@ -4,7 +4,14 @@
 
 @section('content')
 
-<div class="table-container">
+<div class="table-container">            
+                @if(count(App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->get()) == 0)
+                    @include('frontend.includes.not_found',[
+                        'not_found_title' => 'No any request found',
+                        'not_found_description' => null,
+                        'not_found_button_caption' => null
+                    ])
+                @else
     <table class="db-table receiver-list-table">
         <thead>
             <tr class="db-tr">
@@ -16,14 +23,6 @@
             </tr>
         </thead>
         <tbody>
-            
-            @if(count(App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->get()) == 0)
-                @include('frontend.includes.not_found',[
-                    'not_found_title' => 'No any request found',
-                    'not_found_description' => null,
-                    'not_found_button_caption' => null
-                ])
-            @else
                 @foreach(App\Models\ReceiversRequest::where('assigned_agent',auth()->user()->id)->orderBy('id','desc')->get() as $key => $receiver)
                     <tr class="db-tr">
                         <td class="db-td">
