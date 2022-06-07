@@ -64,7 +64,10 @@ class RegisterController extends Controller
     {
         // dd($request);
 
-        $user_agent = User::where('first_name', 'like', '%'.$request->referral_name.'%')->orWhere('last_name', 'like', '%'.$request->referral_name.'%')->where('nic_number',$request->referral_nic_number)->first();
+        $user_agent = User::where('first_name', 'like', '%'.$request->referral_name.'%')
+            ->orWhere('last_name', 'like', '%'.$request->referral_name.'%')
+            ->where('nic_number',$request->referral_nic_number)
+            ->first();
         // dd($user_agent);
 
         if($user_agent == null){

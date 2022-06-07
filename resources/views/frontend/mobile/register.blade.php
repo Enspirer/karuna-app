@@ -33,7 +33,10 @@
                         <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"" }}>Donor</option>                                
                     </select>
                 </div>
-                <div class="join-form-row hidden-row field-receiver field-agent" id="agent_country">
+
+
+
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_country">
                     <select id="country" class="form-control custom-select" name="country">
                         <option value="" selected disabled hidden>Country</option>
                         <option value="Afghanistan" {{ old('country') === "Afghanistan" ? "selected" : "" }}>Afghanistan</option>
@@ -284,28 +287,28 @@
                         <option value="Zimbabwe" {{ old('country') === "Honduras" ? "selected" : "" }}>Zimbabwe</option>
                     </select>
                 </div>
-                <div class="join-form-row hidden-row field-receiver field-agent" id="agent_city">
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_city">
                     <select class="form-control areas custom-select" id="city" value="{{old('city')}}" name="city"></select>
                 </div>
-                <div class="join-form-row hidden-row field-receiver field-agent" id="receiver_assigned_agent">
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="receiver_assigned_agent">
                     <select class="form-control custom-select" name="assigned_agent_id" value="{{old('assigned_agent_id')}}" id="assigned_agent_id"></select>
                 </div>
-                <div class="join-form-row hidden-row field-agent" id="agent_nic">
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_nic">
                     <input type="text" name="nic_number" maxlength="191" class="form-control" value="{{old('nic_number')}}" id="nic_number" placeholder="NIC Number">
                 </div>
-                <div class="join-form-row hidden-row field-agent" id="agent_id_photo">
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_id_photo">
                     <input type="file" name="id_photo" maxlength="191" class="form-control" value="{{old('id_photo')}}" id="id_photo" placeholder="NIC Photo">
                 </div>
-                <div class="join-form-row hidden-row field-agent" id="agent_occupation">
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }} field-agent" id="agent_occupation">
                     <input type="text" name="occupation" maxlength="191" class="form-control" value="{{old('occupation')}}" id="occupation" placeholder="Occupation">
                 </div>
-                <div class="join-form-row hidden-row field-agent" id="agent_contact_number">
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_contact_number">
                     <input type="number" name="contact_number" maxlength="191" class="form-control" value="{{old('contact_number')}}" id="contact_number" placeholder="Contact Number">
                 </div>
-                <div class="join-form-row hidden-row field-agent" id="agent_contact_number_two">
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_contact_number_two">
                     <input type="number" name="contact_number_two" maxlength="191" class="form-control" value="{{old('contact_number_two')}}" id="contact_number_two" placeholder="Alternative Contact Number">
                 </div>
-                <div class="join-form-row hidden-row field-agent" id="agent_address">
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }} {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_address">
                     <input type="text" name="address" maxlength="191" class="form-control" value="{{old('address')}}" id="address" placeholder="Address">
                 </div>
                 <div class="join-form-row">
