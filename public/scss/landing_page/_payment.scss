@@ -27,6 +27,20 @@
                     flex-direction: column;
                     gap: 2rem;
 
+                    .form-row {
+                        .form-control {
+                            border: 2px solid #E1E4EB;
+                            background-color: #F4F8FF;
+                            height: 50px;
+
+                            &:focus,
+                            &:active {
+                                border: 2px solid $blue;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+
                     .card-row {
                         display: flex;
                         flex-direction: row;

@@ -357,6 +357,18 @@
 @push('after-scripts')
 
 <script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+        const userType = document.getElementById('user_type')
+        const agentReqFields = ['agent_country', 'agent_city', 'agent_nic', 'agent_id_photo', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details']
+
+        if (userType.value == 'Agent') {
+            agentReqFields.forEach((input) => {
+                input.style.display = 'block'
+            })
+        } 
+    } )
+    
     function user_type_check(that) {
         if (that.value == 'Agent') {
             document.getElementById("agent_nic").style.display = "block";
