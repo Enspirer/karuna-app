@@ -1095,6 +1095,10 @@
   scrollbar-color: #f4f4f4 #ddd;
   /* Works on Chrome, Edge, and Safari */
 }
+.section-join .inner-wrapper .content-block .join-form.no-scroll {
+  max-height: unset;
+  overflow-y: unset;
+}
 .section-join .inner-wrapper .content-block .join-form::-webkit-scrollbar {
   width: 5px;
 }

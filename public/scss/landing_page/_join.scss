@@ -30,6 +30,11 @@
                 margin: auto;
                 padding: 1rem;
 
+                &.no-scroll {
+                    max-height: unset;
+                    overflow-y: unset;
+                }
+
                 /* Works on Firefox */
                 scrollbar-width: thin;
                 scrollbar-color: #f4f4f4 $light-gray;

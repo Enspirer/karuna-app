@@ -84,7 +84,7 @@
                 <img src="{{url('images/logo/karuna-logo-english.svg')}}" alt="" class="logo">
                 {{ html()->form('POST', route('frontend.auth.password.reset'))->class('form-horizontal')->open() }}
                     {{ html()->hidden('token', $token) }}
-                    <div class="join-form">
+                    <div class="join-form no-scroll">
                         <div class="join-form-row">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" name="email" maxlength="191" class="form-control" id="email" placeholder="Email" required>
