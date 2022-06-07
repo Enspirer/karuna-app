@@ -29,8 +29,8 @@
                     <select class="form-control custom-select" name="user_type" id="user_type" onchange="user_type_check(this);" required>
                         <option value="" selected disabled>User Type</option> 
                         <option value="Receiver" disabled>Receiver</option>                                
-                        <option value="Agent">Agent</option>   
-                        <option value="Donor">Donor</option>                                
+                        <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Agent</option>   
+                        <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"" }}>Donor</option>                                
                     </select>
                 </div>
                 <div class="join-form-row hidden-row field-receiver field-agent" id="agent_country">

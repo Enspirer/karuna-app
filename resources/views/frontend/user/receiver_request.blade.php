@@ -322,7 +322,11 @@
                         @endphp
 
                         @foreach($req_images as $key=> $req_image)
+                            @if($receiver_request->images == $receiver->images)
                                 <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:100px; object-fit:cover" width="25%" alt="">
+                            @else                                
+                                <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="border: 1px solid red; height:100px; object-fit:cover" width="25%" alt="">
+                            @endif
                         @endforeach
                     @endif
                 </div>
