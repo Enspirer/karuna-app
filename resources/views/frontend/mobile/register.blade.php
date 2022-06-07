@@ -331,6 +331,7 @@
                         </div>                                
                     </div>
                 </div>
+                @include('includes.partials.messages')
 
                 <div class="join-form-row">
                     <button type="submit" class="cta-btn btn-fill pull-right">
