@@ -501,8 +501,13 @@
                             <select class="form-control custom-select" id="user_type" name="user_type" onchange="user_type_check(this);" required>
                                 <!-- <option value="" selected disabled>Select...</option>  -->
                                 <option value="Receiver" disabled>Receiver</option>                                
-                                <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Agent</option>   
-                                <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"selected" }} >Donor</option>                                                              
+                                @if(old('user_type'))
+                                    <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Agent</option>
+                                    <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"" }} >Donor</option>
+                                @else
+                                    <option value="Agent">Agent</option>
+                                    <option value="Donor" selected>Donor</option>
+                                @endif   
                             </select>
                         </div>
                         <div class="join-form-row hidden-row" id="agent_country">
