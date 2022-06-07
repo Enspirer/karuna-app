@@ -88,6 +88,20 @@
                 @include('includes.partials.logged-in-as')
                 @yield('content')
                 @include('frontend.mobile.includes.bottom_nav')
+
+                <div class="modal fade mobile-cap-warning" id="mobileCapWarning" tabindex="-1" aria-labelledby="mobileCapWarningLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="inner-wrapper">
+                                <i class="bi bi-x-lg" data-bs-dismiss="modal" aria-label="Close"></i>
+                                <div class="title">Caution !</div>
+                                <img src="{{url('images/mobile/screen-rotate.png')}}" alt="" class="modal-img">
+                                <p>Please use landscape orientation ONLY if you're taking a photo from your camera, portrait will not be accepted by the system</p>
+                                <button class="btn-continue aizModalBtn">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div><!-- #app -->
 
@@ -107,20 +121,32 @@
     <script src="{{url('js/aiz-core.js')}}"></script>
 
     <script>
-        const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
+window.addEventListener('DOMContentLoaded', () => {
+    const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
+    const aizTrigger = document.querySelectorAll('.aizModalBtn')
 
-        aizUploader.forEach((btn) => {
-            btn.addEventListener('click', () => {       
+    aizUploader.forEach((btn) => {
+        btn.setAttribute('data-bs-toggle', 'modal')
+        btn.setAttribute('data-bs-target', '#mobileCapWarning')
+        btn.removeAttribute('data-toggle')
+    })
 
-                setTimeout(() => {
-                    const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
+    aizTrigger.forEach((btn) => {
+        btn.setAttribute('data-bs-toggle', 'modal')
+        btn.setAttribute('data-toggle', 'aizuploader')
 
-                    aizModal.forEach((modal) => {
-                        modal.setAttribute('data-bs-toggle','modal')
-                    })
-                },1000)
-            })
+        btn.addEventListener('click', () => {
+
+            setTimeout(() => {
+                const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
+    
+                aizModal.forEach((modal) => {
+                    modal.setAttribute('data-bs-toggle', 'modal')
+                })
+            }, 1000)
         })
+    })
+})
     </script>
     
 </html>

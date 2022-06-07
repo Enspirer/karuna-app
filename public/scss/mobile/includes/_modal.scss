@@ -40,3 +40,70 @@
         }
     }
 }
+
+.mobile-cap-warning {
+    .modal-content {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+
+        .inner-wrapper {
+            background: linear-gradient(-45deg, rgb(231, 136, 52), rgb(255, 187, 0));
+            padding: 1rem;
+
+            .bi {
+                position: absolute;
+                top: 12px;
+                right: 15px;
+                font-size: 1rem;
+                color: $white;
+            }
+
+            .title {
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: 400;
+                color: white;
+                margin-bottom: 1rem;
+            }
+
+            .modal-img {
+                width: 45px;
+                display: block;
+                margin: auto;
+                animation: imageRotate 2s ease-in-out alternate infinite;
+            }
+
+            @keyframes imageRotate {
+                0% {
+                    transform: rotateZ(45deg);
+                }
+
+                100% {
+                    transform: rotateZ(-30deg);
+                }
+            }
+
+            p {
+                margin: 0.5rem auto 1rem;
+                width: 90%;
+                text-align: center;
+                font-size: .9rem;
+                font-weight: 300;
+            }
+
+            .btn-continue {
+                background-color: $maroon;
+                color: $white;
+                border: none;
+                margin: auto;
+                display: block;
+                font-size: .9rem;
+                font-weight: 300;
+                line-height: 1;
+                padding: 0.75rem 1rem;
+                border-radius: 50px;
+            }
+        }
+    }
+}
