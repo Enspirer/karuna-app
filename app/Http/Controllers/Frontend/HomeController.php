@@ -13,7 +13,7 @@ use App\Models\HelpSupport;
 use App\Models\Country;
 use App\Models\City;
 
-
+use GuzzleHttp\Client;
 /**
  * Class HomeController.
  */
@@ -223,6 +223,40 @@ class HomeController extends Controller
         return back()->with([
             'success' => 'success'
         ]);   
+    }
+
+    public function get_cities(Request $request)
+    {
+
+        $client = new Client();
+        $response = $client->request('POST', 'https://countriesnow.space/api/v0.1/countries/cities', [
+            'form_params' => [
+                'country' => $request->country
+                ]
+        ]);
+
+       $details =  json_decode($response->getBody()->getContents());
+
+
+        $country = Country::where('name',$request->country)->first();
+
+        if($country){
+            $cities = City::where('country',$country->id)->get();
+            if(count($cities) != 0){
+                foreach ($cities as $cityItem){
+                    array_push($details->data,[
+                        $cityItem->name
+                    ]);
+                }
+            }
+        }
+
+
+
+
+
+       return response()->json($details,200);
+
     }
 
 }
