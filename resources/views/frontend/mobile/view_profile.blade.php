@@ -124,7 +124,7 @@
                                         data-bs-parent="#charityList">
                                         <div class="accordion-body">
                                             <div>
-                                                Receiver Name: <a href="{{route('frontend.user.mobile.view_profile_receiver')}}"> {{$receiver->name}}</a>
+                                                Receiver Name: <a href="{{route('frontend.user.mobile.view_profile_receiver',$receiver->id)}}"> {{$receiver->name}}</a>
                                             </div>
                                             <div class="title">Description</div>
                                             <div class="text">{{$receiver->about_donation}}</div>
