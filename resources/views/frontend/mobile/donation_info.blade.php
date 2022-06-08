@@ -35,7 +35,11 @@
             <div class="profile-block">
                 <div class="title">Receiver's Profile</div>
                 <div class="profile-info">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
+                    @if($receiver->profile_image)
+                        <img src="{{uploaded_asset($receiver->profile_image)}}" alt="" class="dp">
+                    @else
+                        <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
+                    @endif
                     <ul>
                         <li>
                             <span class="th">Name :</span>
