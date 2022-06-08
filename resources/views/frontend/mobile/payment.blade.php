@@ -78,7 +78,7 @@
                 </div> -->
                 <div class="card-row">
                     <div class="form-label">Package Type : {{$packageDetails->name}}</div>
-                    <input type="text" class="form-control" name="package" value="{{$packageDetails->price}}" required>
+                    <input type="text" class="form-control" name="package" value="{{$packageDetails->price}}" readonly required>
                 </div>
                 <!-- <div class="card-row">
                     <div class="form-check">
