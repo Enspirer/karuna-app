@@ -193,7 +193,6 @@
             <div class="frm-row">
                 <label class="form-label">Requirement</label>
                 <select class="form-select" aria-label="Default select example" id="requirement" name="requirement" onchange="package_type(this);" required>
-                    <option selected disabled>Choose...</option>
                     @if(count(App\Models\Packages::where('status','Enabled')->get()) != 0)
                         @foreach(App\Models\Packages::where('status','Enabled')->get() as $package)
                             <option value="{{$package->id}}">{{$package->name}}</option>
