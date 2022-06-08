@@ -27,7 +27,7 @@
 <section class="profile-section">
     <div class="mobile-container">
         <div class="inner-wrapper">
-            <div class="header">
+            <div class="header" style="background: url('{{uploaded_asset($receiver->cover_image)}}')">
                 <div class="dp-block">
                     @if($receiver->profile_image)
                         <img src="{{uploaded_asset($receiver->profile_image)}}" alt="">
