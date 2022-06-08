@@ -101,7 +101,7 @@
             <div class="frm-row">                
                 <div class="frm-col">
                     <label class="form-label">Phone Number</label>
-                    <input type="text" class="form-control" value="{{$receiver->phone_number}}" name="phone_number" required>
+                    <input type="number" class="form-control" value="{{$receiver->phone_number}}" name="phone_number" required>
                 </div>                
                 <div class="frm-col">
                     <label class="form-label">Job</label>

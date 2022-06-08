@@ -250,9 +250,9 @@
                     <div class="col-md-5">
                         <label class="pro-label">Phone Number</label>
                         @if($receiver_request->phone_number == $receiver->phone_number)
-                            <input type="text" class="form-control" value="{{$receiver_request->phone_number}}" name="phone_number" disabled>
+                            <input type="number" class="form-control" value="{{$receiver_request->phone_number}}" name="phone_number" disabled>
                         @else
-                            <input type="text" class="form-control" style="border-color:red;" value="{{$receiver_request->phone_number}}" name="phone_number" disabled>
+                            <input type="number" class="form-control" style="border-color:red;" value="{{$receiver_request->phone_number}}" name="phone_number" disabled>
                         @endif
                     </div>
                     <!-- Job -->

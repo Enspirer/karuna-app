@@ -121,7 +121,7 @@
                 <!-- Phone -->
                 <div class="frm-col">
                     <label class="form-label">Phone Number</label>
-                    <input type="text" class="form-control" name="phone_number" required>
+                    <input type="number" class="form-control" name="phone_number" required>
                 </div>
                 <!-- Job -->
                 <div class="frm-col">

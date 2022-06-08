@@ -99,7 +99,7 @@
                             <!-- Phone -->
                             <div class="col-md-5">
                                 <label class="pro-label">Phone Number</label>
-                                <input type="text" class="form-control" name="phone_number" value="{{$receiver->phone_number}}" required>
+                                <input type="number" class="form-control" name="phone_number" value="{{$receiver->phone_number}}" required>
                             </div>
                             <!-- Job -->
                             <div class="col-md-6">
