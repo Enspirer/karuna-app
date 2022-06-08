@@ -89,11 +89,11 @@
                 <div class="card-row">
                     <div class="footer-text">Approved by Central Bank of Sri Lanka</div>
                 </div>
+                <button type="submit" class="cta-btn btn-fill">
+                    <div class="btn-text">Continue</div>
+                </button>
             </div>
             <!-- <div class="exp-timer">14m : 52s</div> -->
-            <button type="submit" class="cta-btn btn-fill">
-                <div class="btn-text">Continue</div>
-            </button>
         </form>
 
     </div>
