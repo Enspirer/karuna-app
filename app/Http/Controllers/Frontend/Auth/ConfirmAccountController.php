@@ -36,7 +36,13 @@ class ConfirmAccountController extends Controller
     {
         $this->user->confirm($token);
 
-        return redirect()->route('frontend.auth.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.success'));
+        if(is_mobile(request()->header('user-agent')) == true){
+            return redirect()->route('frontend.mobile.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.success'));
+        }else{
+            return redirect()->route('frontend.auth.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.success'));
+        }
+
+
     }
 
     /**
