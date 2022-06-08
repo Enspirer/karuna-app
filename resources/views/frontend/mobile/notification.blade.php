@@ -23,17 +23,15 @@
         <ul class="list-group">
 
             @if(auth()->user()->user_type == 'Donor')
-                @if(\App\Models\Notification::where('user_id',auth()->user()->id)->count() == 0)
-                    <div class="table-container">
-                        <div class="row" style="margin: 50px 0px;">
-                            <div class="container">
-                                <div style="text-align: center;">
-                                    <div style="background-image: url(&quot;http://localhost:8000/img/no_data.png&quot;); height: 300px; background-position: center center; background-repeat: no-repeat; background-size: contain;"></div>
-                                    <h3>No any Notification found</h3>
-                                </div>
+                @if(\App\Models\Notification::where('user_id',auth()->user()->id)->count() == 0)                  
+                    <section class="section-no-data">
+                        <div class="mobile-container">
+                            <div class="inner-wrapper">
+                                <img src="{{url('images/not-found.png')}}" alt="">
+                                <div class="text">No data foud</div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 @else
                     @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
                         @if($notificatiosn->status == 'Pending')
@@ -73,16 +71,14 @@
 
             @if(auth()->user()->user_type == 'Agent')
                 @if(\App\Models\Notification::where('user_id',auth()->user()->id)->count() == 0)
-                    <div class="table-container">
-                        <div class="row" style="margin: 50px 0px;">
-                            <div class="container">
-                                <div style="text-align: center;">
-                                    <div style="background-image: url(&quot;http://localhost:8000/img/no_data.png&quot;); height: 300px; background-position: center center; background-repeat: no-repeat; background-size: contain;"></div>
-                                    <h3>No any Notification found</h3>
-                                </div>
+                    <section class="section-no-data">
+                        <div class="mobile-container">
+                            <div class="inner-wrapper">
+                                <img src="{{url('images/not-found.png')}}" alt="">
+                                <div class="text">No data foud</div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 @else
                     @foreach(\App\Models\Notification::where('user_id',auth()->user()->id)->orderby('id','desc')->get() as $notificatiosn)
                         @if($notificatiosn->status == 'Pending')
