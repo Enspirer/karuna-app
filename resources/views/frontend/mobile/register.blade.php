@@ -19,12 +19,21 @@
             <div class="join-form">
                 <div class="join-form-row">
                     <input type="text" name="first_name" maxlength="191" class="form-control" value="{{old('first_name')}}" id="first_name" placeholder="First Name" required>
+                    @if($errors->has('first_name'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('first_name')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row">
                     <input type="text" name="last_name" maxlength="191" class="form-control" value="{{old('last_name')}}" id="last_name" placeholder="Last Name" required>
+                    @if($errors->has('last_name'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('last_name')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row">
                     <input type="email" name="email" maxlength="191" class="form-control" value="{{old('email')}}" id="email" placeholder="Email" required>
+                    @if($errors->has('email'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('email')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row">
                     <select class="form-control custom-select" name="user_type" id="user_type" onchange="user_type_check(this);" required>
@@ -37,8 +46,10 @@
                             <option value="Agent">Agent</option>
                             <option value="Donor" selected>Donor</option>
                         @endif
-
                     </select>
+                    @if($errors->has('user_type'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('user_type')}}</p>
+                    @endif
                 </div>
 
 
@@ -48,6 +59,9 @@
                         <option value="" selected disabled>Select Here</option>
                         <option value="Sri Lanka" {{ old('country') === 'Sri Lanka' ? "selected" : "" }}>Sri Lanka</option>
                     </select>
+                    @if($errors->has('country'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('country')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_city">
                     <select class="form-control areas custom-select" id="city" value="{{old('city')}}" name="city">
@@ -55,32 +69,59 @@
                             <option value="{{old('city')}}" selected>{{old('city')}}</option>
                         @endif
                     </select>
+                    @if($errors->has('city'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('city')}}</p>
+                    @endif
                 </div>
            
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_nic">
                     <input type="text" name="nic_number" maxlength="191" class="form-control" value="{{old('nic_number')}}" id="nic_number" placeholder="NIC Number">
+                    @if($errors->has('nic_number'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('nic_number')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_id_photo">
                     <label style="font-size: 11px;padding-left: 10px;">ID Card Photo</label>
                     <input type="file" name="id_photo" maxlength="191" class="form-control" value="" id="id_photo" placeholder="NIC Photo">
+                    @if($errors->has('id_photo'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('id_photo')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }} field-agent" id="agent_occupation">
                     <input type="text" name="occupation" maxlength="191" class="form-control" value="{{old('occupation')}}" id="occupation" placeholder="Occupation">
+                    @if($errors->has('occupation'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('occupation')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_contact_number">
                     <input type="number" name="contact_number" maxlength="191" class="form-control" value="{{old('contact_number')}}" id="contact_number" placeholder="Contact Number">
+                    @if($errors->has('contact_number'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('contact_number')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_contact_number_two">
                     <input type="number" name="contact_number_two" maxlength="191" class="form-control" value="{{old('contact_number_two')}}" id="contact_number_two" placeholder="Alternative Contact Number">
+                    @if($errors->has('contact_number_two'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('contact_number_two')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }} {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_address">
                     <input type="text" name="address" maxlength="191" class="form-control" value="{{old('address')}}" id="address" placeholder="Address">
+                    @if($errors->has('address'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('address')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row">
                     <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                    @if($errors->has('password'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('password')}}</p>
+                    @endif
                 </div>
                 <div class="join-form-row">
                     <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirm Password" required>
+                    @if($errors->has('password_confirmation'))
+                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('password_confirmation')}}</p>
+                    @endif
                 </div>
                 <div class="card" style="display: none;" id="referral_details">
                     <h5 class="card-header">Referral Details</h5>
@@ -89,12 +130,18 @@
                             <div class="col-md-12">
                                 <label class="pro-label">Referral Name</label>
                                 <input type="text" class="form-control" id="referral_name" name="referral_name" value="{{old('referral_name')}}">
+                                @if($errors->has('referral_name'))
+                                    <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('referral_name')}}</p>
+                                @endif
                             </div>                           
                         </div>
                         <div class="row g-0 mb-5">                                    
                             <div class="col-md-12">
                                 <label class="pro-label">Referral NIC Number</label>
                                 <input type="text" class="form-control" id="referral_nic_number" name="referral_nic_number" value="{{old('referral_nic_number')}}">
+                                @if($errors->has('referral_nic_number'))
+                                    <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('referral_nic_number')}}</p>
+                                @endif
                             </div>                          
                         </div>                                
                     </div>
@@ -203,12 +250,12 @@
     }
 </script> 
 
-<script>
+<!-- <script>
    const tel1 = document.getElementById("contact_number");
    const tel2 = document.getElementById("contact_number_two");
    const telInput1 = window.intlTelInput(tel1);
    const telInput2 = window.intlTelInput(tel2);
-</script>   
+</script>    -->
 
 
 <script>

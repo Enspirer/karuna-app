@@ -831,12 +831,12 @@
     });
 </script> -->
 
-<script>
+<!-- <script>
    const tel1 = document.getElementById("contact_number");
    const tel2 = document.getElementById("contact_number_two");
    const telInput1 = window.intlTelInput(tel1);
    const telInput2 = window.intlTelInput(tel2);
-</script>
+</script> -->
 
 <script>
 const userType = document.getElementById('user_type')
