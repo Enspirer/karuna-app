@@ -8,7 +8,7 @@
 
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Agent')
 
-    @if(count(App\Models\Receivers::orderBy('id','desc')->where('assigned_agent',auth()->user()->id)->get()) == 0)
+    @if(count(App\Models\Receivers::orderBy('id','desc')->where('donor_id','!=',null)->where('assigned_agent',auth()->user()->id)->get()) == 0)
         @include('frontend.includes.not_found',[
             'not_found_title' => 'No any receivers found',
             'not_found_description' => null,
@@ -29,7 +29,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(App\Models\Receivers::orderBy('id','desc')->where('assigned_agent',auth()->user()->id)->get() as $key => $receiver)
+                    @foreach(App\Models\Receivers::orderBy('id','desc')->where('donor_id','!=',null)->where('assigned_agent',auth()->user()->id)->get() as $key => $receiver)
                         <tr class="db-tr">
                             <td class="db-td">
                                 @if(App\Models\Auth\User::where('id',$receiver->assigned_agent)->first() != null)
