@@ -38,6 +38,10 @@
         
         <!-- Custom CSS-->
         <link rel="stylesheet" href="{{url('css/main.css')}}">
+        
+        <!-- ACH image viewer-->
+        <link rel="stylesheet" href="{{url('css/ach_img_viewer.css')}}">
+        <script src="{{url('js/ach-img-viewer.js')}}"></script>
 
         {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
         @stack('before-styles')
@@ -56,6 +60,12 @@
             @include('frontend.includes.nav')
             @yield('content')
             @include('frontend.includes.footer')
+            
+                <!-- Image viewer -->
+                <div id="achImgViewer">
+                    <button class="img-close">&#10005;</button>
+                    <img>
+                </div>
         </div><!-- #app -->
 
         <!-- Scripts -->

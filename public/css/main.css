@@ -2936,11 +2936,19 @@
   font-weight: 300;
   margin-bottom: 0.75rem;
 }
-.profile-section .inner-wrapper .content-block .profile-slider {
+.profile-section .inner-wrapper .content-block .gallery {
   margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
 }
-.profile-section .inner-wrapper .content-block .profile-slider .splide__slide .slider-link {
-  padding: 0.5rem;
+.profile-section .inner-wrapper .content-block .gallery img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media screen and (max-width: 991px) {

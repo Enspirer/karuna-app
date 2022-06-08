@@ -80,24 +80,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="splide profile-slider" id="profileSlider">
+                <!-- <div class="splide profile-slider" id="profileSlider">
                     <div class="splide__track">
                         <ul class="splide__list">
                             @if($receiver->images != null)
                                 @php
                                     $req_images = preg_split ("/\,/", $receiver->images);
                                 @endphp
-                                <div class="row">
                                     @foreach($req_images as $key=> $req_image)
-                                        <div class="col-4">
-                                            <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:100px; object-fit:cover" width="100%" alt="">
-                                        </div>
+                                        <li class="splide__slide">
+                                            <img src="{{uploaded_asset($req_image)}}" ach-img-view="true">
+                                        </li>
                                     @endforeach
-                                </div>
-                            @endif
+                            @endif                            
                         </ul>
                     </div>
-                </div>
+                </div> -->
+                <div class="gallery">
+            @if($receiver->images != null)
+                @php
+                    $req_images = preg_split ("/\,/", $receiver->images);
+                @endphp
+                    @foreach($req_images as $key=> $req_image)
+                            <img src="{{uploaded_asset($req_image)}}" ach-img-view="true">
+                    @endforeach
+            @endif
+        </div>
             </div>
         </div>
     </div>
@@ -106,19 +114,5 @@
 @endsection
 
 @push('after-scripts')
-
-<script>
-    // Hero Slider
-    var profileSlider = new Splide('#profileSlider', {
-        arrows: false,
-        pagination: false,
-        perPage: 3,
-        rewind : true,
-        perMove: 1,
-        autoWidth: true,
-    });
-
-    profileSlider.mount();
-</script>
 
 @endpush

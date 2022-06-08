@@ -62,13 +62,9 @@
                         @php
                             $req_images = preg_split ("/\,/", App\Models\Receivers::where('donor_id',auth()->user()->id)->latest()->first()->images);
                         @endphp
-                        <div class="row">
                             @foreach($req_images as $key=> $req_image)
-                                <div class="col-4">
-                                    <img src="{{uploaded_asset($req_image)}}" class="mb-3" style="height:70px; object-fit:cover" width="100%" alt="">
-                                </div>
+                                    <img src="{{uploaded_asset($req_image)}}" ach-img-view="true">
                             @endforeach
-                        </div>
                     @endif
                 @endif
             </div>

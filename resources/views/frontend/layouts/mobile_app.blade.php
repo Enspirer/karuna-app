@@ -41,6 +41,10 @@
         <!-- Custom CSS-->
         <link rel="stylesheet" href="{{url('css/mobile_main.css')}}">
 
+        <!-- ACH image viewer-->
+        <link rel="stylesheet" href="{{url('css/ach_img_viewer.css')}}">
+        <script src="{{url('js/ach-img-viewer.js')}}"></script>
+
         <link rel="stylesheet" href="{{url('css/aiz-core.css')}}">    
         <link rel="stylesheet" href="{{url('css/vendors.css')}}"> 
 
@@ -102,7 +106,7 @@
                         </div>
                     </div>
                 </div> -->
-
+                <!-- Mobile Cam warning -->
                 <div class="mobile-cap-warning" id="mobileCapWarning">
                     <div class="content-block">
                         <div class="inner-wrapper">
@@ -113,6 +117,12 @@
                             <button class="btn-continue modal-close">Continue</button>
                         </div>
                     </div>
+                </div>
+
+                <!-- Image viewer -->
+                <div id="achImgViewer">
+                    <button class="img-close">&#10005;</button>
+                    <img>
                 </div>
             </section>
         </div><!-- #app -->
@@ -132,35 +142,36 @@
     <script src="{{url('js/vendors.js')}}"></script>
     <script src="{{url('js/aiz-core.js')}}"></script>
 
+    <!-- FIle Uploader warning modal & close button -->
     <script>
-const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
+        const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
 
-aizUploader.forEach((btn) => {
-    btn.addEventListener('click', () => {
+        aizUploader.forEach((btn) => {
+            btn.addEventListener('click', () => {
 
-        setTimeout(() => {
-            const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
-            const warningTrigger = document.querySelector('#aizUploaderModal .uppy-modal-nav .nav-tabs .nav-item:nth-child(2)')
-            const warningModal = document.getElementById('mobileCapWarning')
-            const modalClose = warningModal.querySelectorAll('.modal-close')
+                setTimeout(() => {
+                    const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
+                    const warningTrigger = document.querySelector('#aizUploaderModal .uppy-modal-nav .nav-tabs .nav-item:nth-child(2)')
+                    const warningModal = document.getElementById('mobileCapWarning')
+                    const modalClose = warningModal.querySelectorAll('.modal-close')
 
-            aizModal.forEach((modal) => {
-                modal.setAttribute('data-bs-dismiss', 'modal')
-                modal.removeAttribute('data-dismiss')
+                    aizModal.forEach((modal) => {
+                        modal.setAttribute('data-bs-dismiss', 'modal')
+                        modal.removeAttribute('data-dismiss')
+                    })
+
+                    warningTrigger.addEventListener('click', () => {
+                        warningModal.style.display = 'block'
+                    } , {once : true})
+
+                    modalClose.forEach((btn) => {
+                        btn.addEventListener('click', () => {
+                            warningModal.style.display = 'none'
+                        })
+                    })
+                }, 1000)
             })
-
-            warningTrigger.addEventListener('click', () => {
-                warningModal.style.display = 'block'
-            } , {once : true})
-
-            modalClose.forEach((btn) => {
-                btn.addEventListener('click', () => {
-                    warningModal.style.display = 'none'
-                })
-            })
-        }, 1000)
-    })
-})
+        })
     </script>
     
 </html>

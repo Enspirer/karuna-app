@@ -87,7 +87,7 @@
                         $req_images = preg_split ("/\,/", $receiver->images);
                     @endphp
                         @foreach($req_images as $key=> $req_image)
-                                <img src="{{uploaded_asset($req_image)}}" alt="">
+                                <img src="{{uploaded_asset($req_image)}}" ach-img-view="true" alt="">
                         @endforeach
                 @endif
             </div>
