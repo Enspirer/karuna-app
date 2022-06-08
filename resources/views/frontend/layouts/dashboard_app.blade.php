@@ -37,6 +37,10 @@
 
         <!-- Custom CSS-->
         <link rel="stylesheet" href="{{url('css/dashboard_main.css')}}">
+                
+        <!-- ACH image viewer-->
+        <link rel="stylesheet" href="{{url('css/ach_img_viewer.css')}}">
+        <script src="{{url('js/ach-img-viewer.js')}}"></script>
 
         <link rel="stylesheet" href="{{url('css/aiz-core.css')}}">    
         <link rel="stylesheet" href="{{url('css/vendors.css')}}"> 
@@ -90,6 +94,13 @@
                         @include('frontend.user.includes.header')
                         @include('includes.partials.logged-in-as')
                         @yield('content')
+
+                                    
+                        <!-- Image viewer -->
+                        <div id="achImgViewer">
+                            <button class="img-close">&#10005;</button>
+                            <img>
+                        </div>
                     </div>
                 </div>
             </div>
