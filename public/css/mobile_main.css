@@ -2532,30 +2532,46 @@ body .mobile-body {
   margin-bottom: 1rem;
 }
 
-.mobile-cap-warning .modal-content {
+.mobile-cap-warning {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(34, 34, 34, 0.5);
+  z-index: 9999;
+}
+.mobile-cap-warning .content-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border: none;
   border-radius: 12px;
   overflow: hidden;
+  width: 90%;
+  max-width: 300px;
 }
-.mobile-cap-warning .modal-content .inner-wrapper {
+.mobile-cap-warning .content-block .inner-wrapper {
   background: linear-gradient(-45deg, #e78834, #ffbb00);
   padding: 1rem;
 }
-.mobile-cap-warning .modal-content .inner-wrapper .bi {
+.mobile-cap-warning .content-block .inner-wrapper .bi {
   position: absolute;
   top: 12px;
   right: 15px;
   font-size: 1rem;
   color: #fff;
 }
-.mobile-cap-warning .modal-content .inner-wrapper .title {
+.mobile-cap-warning .content-block .inner-wrapper .title {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 400;
   color: white;
   margin-bottom: 1rem;
 }
-.mobile-cap-warning .modal-content .inner-wrapper .modal-img {
+.mobile-cap-warning .content-block .inner-wrapper .modal-img {
   width: 45px;
   display: block;
   margin: auto;
@@ -2569,14 +2585,14 @@ body .mobile-body {
     transform: rotateZ(-30deg);
   }
 }
-.mobile-cap-warning .modal-content .inner-wrapper p {
+.mobile-cap-warning .content-block .inner-wrapper p {
   margin: 0.5rem auto 1rem;
   width: 90%;
   text-align: center;
   font-size: 0.9rem;
   font-weight: 300;
 }
-.mobile-cap-warning .modal-content .inner-wrapper .btn-continue {
+.mobile-cap-warning .content-block .inner-wrapper .btn-continue {
   background-color: #971930;
   color: #fff;
   border: none;

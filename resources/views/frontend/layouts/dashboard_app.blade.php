@@ -197,22 +197,23 @@
     });
 </script>
 
-    <script>
-        const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
+<script>
+    const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
 
-        aizUploader.forEach((btn) => {
-            btn.addEventListener('click', () => {       
+    aizUploader.forEach((btn) => {
+        btn.addEventListener('click', () => {       
 
-                setTimeout(() => {
-                    const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
+            setTimeout(() => {
+                const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
 
-                    aizModal.forEach((modal) => {
-                        modal.setAttribute('data-bs-toggle','modal')
-                    })
-                },1000)
-            })
+                aizModal.forEach((modal) => {
+                    modal.setAttribute('data-bs-dismiss','modal')
+                    modal.removeAttribute('data-dismiss')
+                })
+            },1000)
         })
-    </script>
+    })
+</script>
 
 
 <script>

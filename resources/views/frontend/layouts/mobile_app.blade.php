@@ -89,7 +89,7 @@
                 @yield('content')
                 @include('frontend.mobile.includes.bottom_nav')
 
-                <div class="modal fade mobile-cap-warning" id="mobileCapWarning" tabindex="-1" aria-labelledby="mobileCapWarningLabel" aria-hidden="true">
+                <!-- <div class="modal fade mobile-cap-warning" id="mobileCapWarning" tabindex="-1" aria-labelledby="mobileCapWarningLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="inner-wrapper">
@@ -99,6 +99,18 @@
                                 <p>Please use landscape orientation ONLY if you're taking a photo from your camera, portrait will not be accepted by the system</p>
                                 <button class="btn-continue aizModalBtn">Continue</button>
                             </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="mobile-cap-warning" id="mobileCapWarning">
+                    <div class="content-block">
+                        <div class="inner-wrapper">
+                            <i class="bi bi-x-lg modal-close"></i>
+                            <div class="title">Caution !</div>
+                            <img src="{{url('images/mobile/screen-rotate.png')}}" alt="" class="modal-img">
+                            <p>Please use landscape orientation ONLY if you're taking a photo from your camera, portrait will not be accepted by the system</p>
+                            <button class="btn-continue modal-close">Continue</button>
                         </div>
                     </div>
                 </div>
@@ -121,30 +133,32 @@
     <script src="{{url('js/aiz-core.js')}}"></script>
 
     <script>
-window.addEventListener('DOMContentLoaded', () => {
-    const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
-    const aizTrigger = document.querySelectorAll('.aizModalBtn')
+const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
 
-    aizUploader.forEach((btn) => {
-        btn.setAttribute('data-bs-toggle', 'modal')
-        btn.setAttribute('data-bs-target', '#mobileCapWarning')
-        btn.removeAttribute('data-toggle')
-    })
+aizUploader.forEach((btn) => {
+    btn.addEventListener('click', () => {
 
-    aizTrigger.forEach((btn) => {
-        btn.setAttribute('data-bs-toggle', 'modal')
-        btn.setAttribute('data-toggle', 'aizuploader')
+        setTimeout(() => {
+            const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
+            const warningTrigger = document.querySelector('#aizUploaderModal .uppy-modal-nav .nav-tabs .nav-item:nth-child(2)')
+            const warningModal = document.getElementById('mobileCapWarning')
+            const modalClose = warningModal.querySelectorAll('.modal-close')
 
-        btn.addEventListener('click', () => {
+            aizModal.forEach((modal) => {
+                modal.setAttribute('data-bs-dismiss', 'modal')
+                modal.removeAttribute('data-dismiss')
+            })
 
-            setTimeout(() => {
-                const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
-    
-                aizModal.forEach((modal) => {
-                    modal.setAttribute('data-bs-toggle', 'modal')
+            warningTrigger.addEventListener('click', () => {
+                warningModal.style.display = 'block'
+            } , {once : true})
+
+            modalClose.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    warningModal.style.display = 'none'
                 })
-            }, 1000)
-        })
+            })
+        }, 1000)
     })
 })
     </script>
