@@ -62,7 +62,6 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request)
     {
-        // dd($request);
 
         if($request->user_type == 'Agent'){
             if($request->file('id_photo') == null){
