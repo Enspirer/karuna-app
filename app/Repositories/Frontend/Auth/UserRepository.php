@@ -309,7 +309,12 @@ class UserRepository extends BaseRepository
         $user = $this->findByConfirmationCode($code);
 
         if ($user->confirmed === true) {
-            throw new GeneralException(__('exceptions.frontend.auth.confirmation.already_confirmed'));
+            if(is_mobile(request()->header('user-agent')) == true){
+                return redirect()->route('frontend.mobile.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.already_confirmed'));
+            }else{
+                throw new GeneralException(__('exceptions.frontend.auth.confirmation.already_confirmed'));
+            }
+
         }
 
         if ($user->confirmation_code === $code) {
@@ -319,8 +324,12 @@ class UserRepository extends BaseRepository
 
             return $user->save();
         }
+        if(is_mobile(request()->header('user-agent')) == true){
+            return redirect()->route('frontend.mobile.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.mismatch'));
+        }else{
+            throw new GeneralException(__('exceptions.frontend.auth.confirmation.mismatch'));
+        }
 
-        throw new GeneralException(__('exceptions.frontend.auth.confirmation.mismatch'));
     }
 
     /**

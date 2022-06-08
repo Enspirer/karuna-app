@@ -34,8 +34,7 @@ class ConfirmAccountController extends Controller
      */
     public function confirm($token)
     {
-        dd(request()->header('user-agent'));
-        
+
         $this->user->confirm($token);
 
 
