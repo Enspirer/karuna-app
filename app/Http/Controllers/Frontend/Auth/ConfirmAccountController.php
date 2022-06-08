@@ -56,11 +56,23 @@ class ConfirmAccountController extends Controller
         $user = $this->user->findByUuid($uuid);
 
         if ($user->isConfirmed()) {
-            return redirect()->route('frontend.auth.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.already_confirmed'));
+
+            if(is_mobile(request()->header('user-agent')) == true){
+                return redirect()->route('frontend.mobile.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.already_confirmed'));
+            }else{
+                return redirect()->route('frontend.auth.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.already_confirmed'));
+            }
+
+
         }
 
         $user->notify(new UserNeedsConfirmation($user->confirmation_code));
 
-        return redirect()->route('frontend.auth.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.resent'));
+        if(is_mobile(request()->header('user-agent')) == true){
+            return redirect()->route('frontend.mobile.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.resent'));
+        }else{
+            return redirect()->route('frontend.auth.login')->withFlashSuccess(__('exceptions.frontend.auth.confirmation.resent'));
+
+        }
     }
 }
