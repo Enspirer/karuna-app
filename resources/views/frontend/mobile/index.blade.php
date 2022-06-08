@@ -45,8 +45,12 @@
             </a>
             <a href="#" class="profile">
                 <i class="bi bi-suit-heart-fill"></i>
-                <div class="text">1578</div>
-                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                <div class="text">0</div>
+                @if(auth()->user()->profile_image != null)
+                    <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="">
+                @else
+                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                @endif
             </a>
       </div>
     </div>

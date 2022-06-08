@@ -193,7 +193,8 @@
                 <div class="frm-row">
                     <label class="form-label">Country</label>
                     <select id="countries" class="form-control custom-select" name="country" required>
-                        <option value="Sri Lanka" {{ auth()->user()->city === 'Sri Lanka' ? "selected" : "" }}>Sri Lanka</option>
+                        <option value="" selected disabled>Select Here</option>
+                        <option value="Sri Lanka" {{ auth()->user()->country === 'Sri Lanka' ? "selected" : "" }}>Sri Lanka</option>
                     </select>
                 </div>
 
@@ -313,6 +314,53 @@
         });
     });
     
+</script>
+
+<script>
+
+    $(document).ready(function(){
+       
+        let country = $('#countries').val();
+            // alert(country);
+
+        let name;
+        let template;
+       
+        if(country.includes('-')){
+            name = country.replace("-", " ");
+        } else {
+            name = country;
+        }
+        
+        $.ajax({
+            "type": "POST",
+            "url": "{{url('api/get_cities_function')}}",
+            "data": {
+                "country": name
+            }
+        }).done(function (d) {
+
+            for(let i = 0; i < d['data'].length; i++) {
+                
+                if(d['data'][i] == '{{auth()->user()->city}}'){
+                    template+= `
+                        <option value="${d['data'][i]}" selected>${d['data'][i]}</option>
+                    `
+                }
+                else{
+                    template+= `
+                        <option value="${d['data'][i]}">${d['data'][i]}</option>
+                    `
+                }
+            }
+
+            $(".areas").html(template);
+            
+        });        
+
+    });
+
+
 </script>
 
 <script>
