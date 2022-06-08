@@ -180,7 +180,13 @@
     @foreach(App\Models\Receivers::where('assigned_agent',auth()->user()->id)->orderBy('id','desc')->get() as $key => $receiver)
             <tr class="db-tr clickable-tr" data-href="{{route('frontend.user.dashboard.receiver',$receiver->id)}}">
                 <td class="db-td">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
+                    @if($receiver->profile_image)
+                        <img src="{{uploaded_asset($receiver->profile_image)}}" alt="" class="db-timg">
+
+                    @else
+                        <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="db-timg">
+
+                    @endif
                 </td>
                 <td class="db-td">
                     @if($receiver->name_toggle == 'yes')
