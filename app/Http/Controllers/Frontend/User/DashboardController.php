@@ -146,18 +146,22 @@ class DashboardController extends Controller
 
     public function update_agent(Request $request) {
 
-        dd($request);
-        if($request->id_photo == null){
-            if(auth()->user()->id_photo == null){
-                return back()->withErrors('Please add an ID Card Photo');
-            }
-        }
+
 
         $email = $request->email;
         $hidden_id = $request->hidden_id;
 
         $user = User::where('id',$hidden_id)->first();
         // dd($user);
+
+        if($user->user_type == 'Agent'){
+            if($request->id_photo == null){
+                if(auth()->user()->id_photo == null){
+                    return back()->withErrors('Please add an ID Card Photo');
+                }
+            }
+        }
+
 
 
         if($request->city != null){
