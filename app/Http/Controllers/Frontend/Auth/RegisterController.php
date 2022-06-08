@@ -69,18 +69,21 @@ class RegisterController extends Controller
                 return redirect()->back()->withInput()->withErrors('Please add an ID Card Photo');
                 // return back()->withErrors('Please add an ID Card Photo');
             }        
-        }       
+        }
 
-        $user_agent = User::where('nic_number',$request->referral_nic_number)->first();
+        if($request->user_type == 'Agent'){
+            $user_agent = User::where('nic_number',$request->referral_nic_number)->first();
 
-        if($user_agent == null){
-               return redirect()->back()->withInput()->withErrors('Incorrect Referrel');
-        }else{
-            $full_name = $user_agent->first_name . ' '. $user_agent->last_name;
-            if($request->referral_name != $full_name){
+            if($user_agent == null){
                 return redirect()->back()->withInput()->withErrors('Incorrect Referrel');
+            }else{
+                $full_name = $user_agent->first_name . ' '. $user_agent->last_name;
+                if($request->referral_name != $full_name){
+                    return redirect()->back()->withInput()->withErrors('Incorrect Referrel');
+                }
             }
         }
+
 
 
 
