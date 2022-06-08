@@ -1392,6 +1392,7 @@
 .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .cta-btn.disabled {
   filter: grayscale(1);
   opacity: 0.5;
+  pointer-events: none;
 }
 .section-payment .inner-wrapper .content-block .info-block {
   flex: 1;

@@ -25,7 +25,7 @@
                             <div class='form-row row'>
                                 <div class='col-xs-12 form-group required'>
                                     <label class='label'>Name on Card</label>
-                                    <input class='form-control' data-this="This" size='4' type='text'>
+                                    <input class='form-control' name="card-name" size='4' type='text'>
                                 </div>
                             </div>
 
@@ -62,7 +62,7 @@
                                 <input type="text" class="form-control" name="package" value="{{number_format($packageDetails->price,2)}}" readonly>
                             </div>
                             <div class="card-row">
-                                <button type="button" class="cta-btn disabled btn-fill">
+                                <button type="submit" class="cta-btn btn-fill">
                                     <div class="btn-text">Donate Now</div>
                                 </button>
                             </div>
@@ -220,29 +220,54 @@
 </script>
 
 <script>
-
-const paymentBlock = document.getElementById('paymentBlock')
-const subtBtn = paymentBlock.querySelector('button')
-
-subtBtn.addEventListener('click', () => {
+window.addEventListener('DOMContentLoaded', () => {
+    const paymentBlock = document.getElementById('paymentBlock')
+    const subtBtn = paymentBlock.querySelector('button')
     const inputs = paymentBlock.querySelectorAll('input')
-    const values = []
 
     inputs.forEach((input) => {
-        if (input.value == '') {
-            input.classList.add('invalid')
-            values.push(false)
-        } else {
-            input.classList.remove('invalid')
-        }
+
+        input.addEventListener('keyup', function () {
+            if (this.value == '') {
+                this.classList.add('invalid')
+            } else {
+                this.classList.remove('invalid')
+            } 
+        })
+
+        input.addEventListener('change', function () {
+            if (this.value == '') {
+                this.classList.add('invalid')
+            } else {
+                this.classList.remove('invalid')
+            }   
+        })
+
+        input.addEventListener('focus', function () {
+            if (this.value == '') {
+                this.classList.add('invalid')
+            } else {
+                this.classList.remove('invalid')
+            }  
+        })
     })
 
-    if (!values.length) {
-        subtBtn.classList.remove('disabled')
-        subtBtn.setAttribute('type', 'submit')
-    }
-})
+    setInterval(() => {
+        const values = []
 
+        inputs.forEach((input) => {
+            if(input.value) {
+                values.push('true')
+            }
+        })
+
+        if(values.length == 7) {
+            subtBtn.classList.remove('disabled')
+        } else {
+            subtBtn.classList.add('disabled')
+        }
+    },10)
+})
 </script>
 
 @endpush
