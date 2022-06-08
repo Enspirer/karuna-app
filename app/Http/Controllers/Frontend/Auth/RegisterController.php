@@ -77,6 +77,7 @@ class RegisterController extends Controller
                return redirect()->back()->withInput()->withErrors('Incorrect Referrel');
         }else{
             $full_name = $user_agent->first_name . ' '. $user_agent->last_name;
+            dd($full_name);
             if($request->referral_name != $full_name){
                 return redirect()->back()->withInput()->withErrors('Incorrect Referrel');
             }
