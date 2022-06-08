@@ -263,6 +263,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if(values.length == 7) {
             subtBtn.classList.remove('disabled')
+            subtBtn.removeAttribute('disabled')
         } else {
             subtBtn.classList.add('disabled')
         }

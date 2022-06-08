@@ -49,12 +49,12 @@
                     </div>
                 </div>
             </div> -->
-            <div class="payment-block">
+            <div class="payment-block" id="paymentBlock">
                 <div class="title">Payment Details</div>
 
                 <div class='card-row'>
                     <label class='form-label'>Name on Card</label>
-                    <input class='form-control' size='4' type='text' required>
+                    <input class='form-control' name="card-name" size='4' type='text' required>
                 </div>
                             
                 <div class="card-row">
@@ -172,6 +172,58 @@
         }
 
     });
+</script>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    const paymentBlock = document.getElementById('paymentBlock')
+    const subtBtn = paymentBlock.querySelector('button')
+    const inputs = paymentBlock.querySelectorAll('input')
+
+    inputs.forEach((input) => {
+
+        input.addEventListener('keyup', function () {
+            if (this.value == '') {
+                this.classList.add('invalid')
+            } else {
+                this.classList.remove('invalid')
+            } 
+        })
+
+        input.addEventListener('change', function () {
+            if (this.value == '') {
+                this.classList.add('invalid')
+            } else {
+                this.classList.remove('invalid')
+            }   
+        })
+
+        input.addEventListener('focus', function () {
+            if (this.value == '') {
+                this.classList.add('invalid')
+            } else {
+                this.classList.remove('invalid')
+            }  
+        })
+    })
+
+    setInterval(() => {
+        const values = []
+
+        inputs.forEach((input) => {
+            if(input.value) {
+                values.push('true')
+            }
+        })
+
+        if(values.length == 7) {
+            subtBtn.classList.remove('disabled')
+            subtBtn.removeAttribute('disabled')
+        } else {
+            subtBtn.classList.add('disabled')
+        }
+    },10)
+})
 </script>
 
 
