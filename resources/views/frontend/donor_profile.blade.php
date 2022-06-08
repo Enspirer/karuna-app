@@ -72,7 +72,7 @@
                                 <div id="char{{$donor->id}}" class="accordion-collapse collapse" aria-labelledby="charHead1"
                                     data-bs-parent="#charityList">
                                     <div class="accordion-body">
-                                        <div class="title">Description</div>
+                                        <div class="title">Receiver Name: <a href="{{url('profile/receiver',$donor->id)}}">{{$donor->name}}</a> </div>
                                         <div class="text">{{$donor->thankyou_message}}</div>
                                     </div>
                                 </div>
