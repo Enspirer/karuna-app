@@ -193,7 +193,6 @@
                 <div class="frm-row">
                     <label class="form-label">Country</label>
                     <select id="countries" class="form-control custom-select" name="country" required>
-                        <option value="" selected disabled hidden>Country</option>
                         <option value="Sri Lanka" {{ auth()->user()->city === 'Sri Lanka' ? "selected" : "" }}>Sri Lanka</option>
                     </select>
                 </div>
