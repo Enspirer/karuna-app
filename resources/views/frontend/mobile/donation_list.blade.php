@@ -26,11 +26,14 @@
             <ul class="list-group">
 
             @if(count($receivers) == 0)
-                @include('frontend.includes.not_found',[
-                    'not_found_title' => 'No any receivers found',
-                    'not_found_description' => null,
-                    'not_found_button_caption' => null
-                ])
+                <section class="section-no-data">
+                    <div class="mobile-container">
+                        <div class="inner-wrapper">
+                            <img src="{{url('images/not-found.png')}}" alt="">
+                            <div class="text">No data foud</div>
+                        </div>
+                    </div>
+                </section>
             @else
                 @foreach($receivers as $key => $receiver)
                     <li class="list-group-item">
@@ -82,11 +85,14 @@
             <ul class="list-group">
 
             @if(count($receivers_for_donor) == 0)
-                @include('frontend.includes.not_found',[
-                    'not_found_title' => 'No any receivers found',
-                    'not_found_description' => null,
-                    'not_found_button_caption' => null
-                ])
+                <section class="section-no-data">
+                    <div class="mobile-container">
+                        <div class="inner-wrapper">
+                            <img src="{{url('images/not-found.png')}}" alt="">
+                            <div class="text">No data foud</div>
+                        </div>
+                    </div>
+                </section>
             @else
                 @foreach($receivers_for_donor as $key => $receivers_for_don)
                     <li class="list-group-item">
