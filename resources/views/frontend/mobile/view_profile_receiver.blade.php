@@ -29,7 +29,11 @@
         <div class="inner-wrapper">
             <div class="header">
                 <div class="dp-block">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                    @if($receiver->profile_image)
+                        <img src="{{uploaded_asset($receiver->profile_image)}}" alt="">
+                    @else
+                        <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                    @endif
                 </div>
             </div>
             <div class="name">
