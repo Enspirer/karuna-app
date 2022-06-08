@@ -21,7 +21,7 @@
   right: 18px;
 }
 #achImgViewer img {
-  width: 90%;
+  max-width: 90%;
   margin: auto;
   display: block;
   border-radius: 10px;
@@ -32,13 +32,8 @@
 }
 
 @media screen and (min-width: 1299px) {
-  #achImgViewer .img-close {
-    font-size: 1.5rem;
-    top: 20px;
-    right: 30px;
-  }
   #achImgViewer img {
-    width: 60%;
+    max-width: 100%;
   }
 }
 
