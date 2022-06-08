@@ -27,7 +27,21 @@
                     flex-direction: column;
                     gap: 2rem;
 
+                    input {
+                        position: relative;
+
+                        &.invalid {
+                            border-color: $red !important;
+                        }
+                    }
+
                     .form-row {
+                        .label {
+                            font-size: 1rem;
+                            font-weight: 300;
+                            color: $text-black;
+                        }
+
                         .form-control {
                             border: 2px solid #E1E4EB;
                             background-color: #F4F8FF;
@@ -172,6 +186,11 @@
                         .cta-btn {
                             width: 100%;
                             height: 50px;
+
+                            &.disabled {
+                                filter: grayscale(1);
+                                opacity: 0.5;
+                            }
                         }
                     }
                 }

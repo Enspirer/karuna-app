@@ -21,11 +21,11 @@
                           data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
                           id="payment-form">
                         {{csrf_field()}}
-                        <div class="row-wrapper">
+                        <div class="row-wrapper" id="paymentBlock">
                             <div class='form-row row'>
                                 <div class='col-xs-12 form-group required'>
-                                    <label class='control-label'>Name on Card</label>
-                                    <input class='form-control' size='4' type='text'>
+                                    <label class='label'>Name on Card</label>
+                                    <input class='form-control' data-this="This" size='4' type='text'>
                                 </div>
                             </div>
 
@@ -62,7 +62,7 @@
                                 <input type="text" class="form-control" name="package" value="{{number_format($packageDetails->price,2)}}" readonly>
                             </div>
                             <div class="card-row">
-                                <button type="submit" class="cta-btn btn-fill">
+                                <button type="button" class="cta-btn disabled btn-fill">
                                     <div class="btn-text">Donate Now</div>
                                 </button>
                             </div>
@@ -217,6 +217,32 @@
         }
 
     });
+</script>
+
+<script>
+
+const paymentBlock = document.getElementById('paymentBlock')
+const subtBtn = paymentBlock.querySelector('button')
+
+subtBtn.addEventListener('click', () => {
+    const inputs = paymentBlock.querySelectorAll('input')
+    const values = []
+
+    inputs.forEach((input) => {
+        if (input.value == '') {
+            input.classList.add('invalid')
+            values.push(false)
+        } else {
+            input.classList.remove('invalid')
+        }
+    })
+
+    if (!values.length) {
+        subtBtn.classList.remove('disabled')
+        subtBtn.setAttribute('type', 'submit')
+    }
+})
+
 </script>
 
 @endpush
