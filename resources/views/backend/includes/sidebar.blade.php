@@ -73,7 +73,7 @@
 
             <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/package'))}}" href="{{ route('admin.package.index') }}">
-                <i class="nav-icon fas fa-box"></i>
+                <i class="nav-icon fas fa-archive"></i>
                     Packages
                 </a>
             </li>
