@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Upload;
 use Image;
-
+use File;
+use Response;
+use Storage;
 class AizUploadController extends Controller
 {
     
@@ -134,6 +136,9 @@ class AizUploadController extends Controller
                     }
                 }
 
+
+
+
                 if (env('FILESYSTEM_DRIVER') == 's3') {
                     Storage::disk('s3')->put($path, file_get_contents(base_path('public/').$path));
                     unlink(base_path('public/').$path);
@@ -225,7 +230,23 @@ class AizUploadController extends Controller
 
     public function get_image_content($file_name)
     {
-        dd('sss');
+        $inplment = 'uploads/all/'.$file_name;
+        $efile = Upload::where('file_name',$inplment)->first();
+//        $file = File::get('storage/app/uploads/all'.$file_name);
+//        $storagefucntion = Storage::url($file);
+
+
+        $storagePath  = Storage::disk('local')->getDriver()->getAdapter()->getPathPrefix();
+        $fullpath = $storagePath.'uploads\all\\'.$file_name;
+
+        $file = File::get($fullpath);
+
+
+        $response = Response::make($file, 200);
+        $response->header('Content-Type', 'application/'.$efile->extension);
+        return $response;
+
+
     }
 
 
