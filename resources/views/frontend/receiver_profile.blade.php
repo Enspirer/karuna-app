@@ -97,15 +97,27 @@
                     </div>
                 </div> -->
                 <div class="gallery">
-            @if($receiver->images != null)
-                @php
-                    $req_images = preg_split ("/\,/", $receiver->images);
-                @endphp
-                    @foreach($req_images as $key=> $req_image)
-                            <img src="{{uploaded_asset($req_image)}}" ach-img-view="true">
-                    @endforeach
-            @endif
-        </div>
+                    @if($receiver->images != null)
+                        @php
+                            $req_images = preg_split ("/\,/", $receiver->images);
+                        @endphp
+                            @foreach($req_images as $key=> $req_image)
+                                    <img src="{{uploaded_asset($req_image)}}" ach-img-view="true">
+                            @endforeach
+                    @endif
+
+                    @if($receiver->videos != null)
+                    <div class="ach-video-thumbnail">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+                        </svg>
+                        <video>
+                            <source src="{{uploaded_asset($receiver->videos)}}" ach-video-view="true" type="video/mp4">
+                        </video>
+                    </div>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

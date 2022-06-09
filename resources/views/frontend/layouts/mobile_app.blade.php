@@ -45,6 +45,10 @@
         <link rel="stylesheet" href="{{url('css/ach_img_viewer.css')}}">
         <script src="{{url('js/ach-img-viewer.js')}}"></script>
 
+        <!-- ACH video viewer-->
+        <link rel="stylesheet" href="{{url('css/ach_video_viewer.css')}}">
+        <script src="{{url('js/ach-video-viewer.js')}}"></script>
+
         <link rel="stylesheet" href="{{url('css/aiz-core.css')}}">    
         <link rel="stylesheet" href="{{url('css/vendors.css')}}"> 
 
@@ -123,6 +127,10 @@
                 <div id="achImgViewer">
                     <button class="img-close">&#10005;</button>
                     <img>
+                </div>
+
+                <!-- video viewer -->
+                <div id="achVideoViewer">                    
                 </div>
             </section>
         </div><!-- #app -->
