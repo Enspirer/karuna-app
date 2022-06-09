@@ -240,7 +240,7 @@ class AizUploadController extends Controller
 
 
         $storagePath  = Storage::disk('local')->getDriver()->getAdapter()->getPathPrefix();
-        $fullpath = $storagePath.'uploads\all\\'.$file_name;
+        $fullpath = $storagePath.'uploads/all/'.$file_name;
 
 
         $file = File::get($fullpath);
