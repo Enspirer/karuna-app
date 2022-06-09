@@ -241,10 +241,10 @@ class AizUploadController extends Controller
 
         $storagePath  = Storage::disk('local')->getDriver()->getAdapter()->getPathPrefix();
         $fullpath = $storagePath.'uploads\all\\'.$file_name;
-        dd($fullpath);
+
 
         $file = File::get($fullpath);
-
+        dd($file);
 
         $response = Response::make($file, 200);
         $response->header('Content-Type', 'application/'.$efile->extension);
