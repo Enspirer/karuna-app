@@ -244,7 +244,6 @@ class AizUploadController extends Controller
 
 
         $file = File::get($fullpath);
-        dd($file);
 
         $response = Response::make($file, 200);
         $response->header('Content-Type', 'application/'.$efile->extension);
