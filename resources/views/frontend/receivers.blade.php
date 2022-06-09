@@ -31,13 +31,13 @@
                                 <div class="location">{{$receivers->city}}</div>
                                 <div class="text">{{$receivers->about_donation}}</div>
                                 @auth()
-                                    <button href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill" disabled>
+                                    <a href="{{route('frontend.payment_other',$receivers->id)}}" class="btn-fill">
                                         <div class="btn-text">Donate Now</div>
-                                    </button>
+                                    </a>
                                 @else
-                                    <button href="{{route('frontend.auth.register')}}" class="btn-fill" disabled>
+                                    <a href="{{route('frontend.auth.register')}}" class="btn-fill">
                                         <div class="btn-text">Donate Now</div>
-                                    </button>
+                                    </a>
                                 @endauth
                                 <a href="{{route('frontend.receiver_profile',$receivers->id)}}" class="view-more">View More</a>
                             </div>

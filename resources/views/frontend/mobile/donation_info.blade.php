@@ -68,9 +68,17 @@
                         {{App\Models\Packages::where('id',$receiver->requirement)->first()->name}}</p>
                     @endif
                 @endif
-                <a href="{{route('frontend.user.mobile.payment',$receiver->id)}}" class="cta-btn btn-fill">
-                    <div class="btn-text">Donate Now</div>
-                </a>
+
+                @if($receiver->requirement != 'Other')
+                    <a href="{{route('frontend.user.mobile.payment',$receiver->id)}}" class="cta-btn btn-fill">
+                        <div class="btn-text">Donate Now</div>
+                    </a>
+                @else
+                    <a href="{{route('frontend.user.mobile.payment_other',$receiver->id)}}" class="cta-btn btn-fill">
+                        <div class="btn-text">Donate Now</div>
+                    </a>
+                @endif
+               
             </div>
         </div>
     </div>
