@@ -231,6 +231,8 @@ class AizUploadController extends Controller
     public function get_image_content($file_name)
     {
         $inplment = 'uploads/all/'.$file_name;
+        dd($inplment);
+
         $efile = Upload::where('file_name',$inplment)->first();
 //        $file = File::get('storage/app/uploads/all'.$file_name);
 //        $storagefucntion = Storage::url($file);
