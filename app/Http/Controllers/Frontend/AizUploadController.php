@@ -234,7 +234,6 @@ class AizUploadController extends Controller
 
         $efile = Upload::where('file_name',$inplment)->first();
 
-        dd($efile);
 
 //        $file = File::get('storage/app/uploads/all'.$file_name);
 //        $storagefucntion = Storage::url($file);
@@ -242,6 +241,7 @@ class AizUploadController extends Controller
 
         $storagePath  = Storage::disk('local')->getDriver()->getAdapter()->getPathPrefix();
         $fullpath = $storagePath.'uploads\all\\'.$file_name;
+        dd($fullpath);
 
         $file = File::get($fullpath);
 
