@@ -10,25 +10,29 @@
     <div class="mobile-container">
         <div class="inner-wrapper">
             <div class="profile-block">
-                <div class="title">Agent Profile</div>
-                <div class="profile-info">
-                    <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
-                    <ul>
-                        <li>
-                            <span class="th">Name :</span>
-                            <span class="td">{{$agent->first_name}} {{$agent->lasst_name}}</span>
-                        </li>
-                        <li>
-                            <span class="th">Area :</span>
-                            <span class="td">{{$agent->city}} {{$agent->country}}</span>
-                        </li>
-                        <li>
-                            <span class="th">NIC :</span>
-                            <span class="td">{{$agent->nic_number}}</span>
-                        </li>
-                    </ul>
-                </div>
-                <a class="cta-link" href="{{route('frontend.user.mobile.view_profile',$agent->id)}}">View  History of this Agent</a>
+                @if($agent != null)
+                    <div class="title">Agent Profile</div>
+                    <div class="profile-info">
+                        <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
+                        <ul>
+                            <li>
+                                <span class="th">Name :</span>
+                                <span class="td">{{$agent->first_name}} {{$agent->lasst_name}}</span>
+                            </li>
+                            <li>
+                                <span class="th">Area :</span>
+                                <span class="td">{{$agent->city}} {{$agent->country}}</span>
+                            </li>
+                            <li>
+                                <span class="th">NIC :</span>
+                                <span class="td">{{$agent->nic_number}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="cta-link" href="{{route('frontend.user.mobile.view_profile',$agent->id)}}">View  History of this Agent</a>
+                @else
+                    <div class="title">Deleted Account</div>
+                @endif
             </div>
 
             

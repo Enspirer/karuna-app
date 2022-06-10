@@ -87,29 +87,33 @@
                 <div class="info-block">
                     <div class="info-card">
                         <div class="profile-block">
-                            <div class="title">Agent Profile</div>
-                            <div class="profile-info">
-                                @if($agentDetails->profile_image != null)
-                                    <img src="{{uploaded_asset($agentDetails->profile_image)}}" alt="" class="dp">
-                                @else
-                                    <img src="{{url('img/default_cover.png')}}" alt="" class="dp">
-                                @endif
-                                <ul>
-                                    <li>
-                                        <span class="th">Name :</span>
-                                        <span class="td">{{$agentDetails->name}}</span>
-                                    </li>
-                                    <li>
-                                        <span class="th">Area :</span>
-                                        <span class="td">{{$agentDetails->city}}</span>
-                                    </li>
-                                    <li>
-                                        <span class="th">ID :</span>
-                                        <span class="td">{{$agentDetails->nic_number}}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="{{route('frontend.agent_profile',$agentDetails->id)}}">View  History of this Agent</a>
+                            @if($agentDetails != null)
+                                <div class="title">Agent Profile</div>
+                                <div class="profile-info">
+                                    @if($agentDetails->profile_image != null)
+                                        <img src="{{uploaded_asset($agentDetails->profile_image)}}" alt="" class="dp">
+                                    @else
+                                        <img src="{{url('img/default_cover.png')}}" alt="" class="dp">
+                                    @endif
+                                    <ul>
+                                        <li>
+                                            <span class="th">Name :</span>
+                                            <span class="td">{{$agentDetails->name}}</span>
+                                        </li>
+                                        <li>
+                                            <span class="th">Area :</span>
+                                            <span class="td">{{$agentDetails->city}}</span>
+                                        </li>
+                                        <li>
+                                            <span class="th">ID :</span>
+                                            <span class="td">{{$agentDetails->nic_number}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="{{route('frontend.agent_profile',$agentDetails->id)}}">View  History of this Agent</a>
+                            @else
+                                <div class="title">Deleted Account</div>
+                            @endif
                         </div>
                         <div class="profile-block">
                             <div class="title">Receiver's Profile</div>

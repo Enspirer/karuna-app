@@ -95,35 +95,37 @@
                 </section>
             @else
                 @foreach($receivers_for_donor as $key => $receivers_for_don)
-                    <li class="list-group-item">
-                        <div class="receiver">
-                            <div class="content-block">
-                                @if($receivers_for_don->requirement == 'Other')
-                                    <div class="icon blue">O</div>
-                                @else
-                                    @if(App\Models\Packages::where('id',$receivers_for_don->requirement)->first() != null)
-                                        <img src="{{uploaded_asset(App\Models\Packages::where('id',$receivers_for_don->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
-                                    @endif
-                                @endif
-                                <div class="text-block">
-                                    <div class="name">
-                                        @if($receivers_for_don->name_toggle == 'yes')
-                                            {{$receivers_for_don->nick_name}}
-                                        @else
-                                            {{$receivers_for_don->name}}
+                    @if(App\Models\Auth\User::where('id',$receivers_for_don->assigned_agent)->first() != null)
+                        <li class="list-group-item">
+                            <div class="receiver">
+                                <div class="content-block">
+                                    @if($receivers_for_don->requirement == 'Other')
+                                        <div class="icon blue">O</div>
+                                    @else
+                                        @if(App\Models\Packages::where('id',$receivers_for_don->requirement)->first() != null)
+                                            <img src="{{uploaded_asset(App\Models\Packages::where('id',$receivers_for_don->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
                                         @endif
-                                    </div>                                   
-                                    <div class="location">{{$receivers_for_don->city}} {{$receivers_for_don->country}}</div>
+                                    @endif
+                                    <div class="text-block">
+                                        <div class="name">
+                                            @if($receivers_for_don->name_toggle == 'yes')
+                                                {{$receivers_for_don->nick_name}}
+                                            @else
+                                                {{$receivers_for_don->name}}
+                                            @endif
+                                        </div>                                   
+                                        <div class="location">{{$receivers_for_don->city}} {{$receivers_for_don->country}}</div>
+                                    </div>
+                                </div>
+                                <div class="button-block">
+                                    <a href="{{route('frontend.user.mobile.donation_info',$receivers_for_don->id)}}" class="cta-btn btn-fill">
+                                        <div class="btn-text">Donate</div>
+                                    </a>
+                                    <a href="{{route('frontend.user.mobile.view_profile_receiver',$receivers_for_don->id)}}" class="cta-link">View more</a>
                                 </div>
                             </div>
-                            <div class="button-block">
-                                <a href="{{route('frontend.user.mobile.donation_info',$receivers_for_don->id)}}" class="cta-btn btn-fill">
-                                    <div class="btn-text">Donate</div>
-                                </a>
-                                <a href="{{route('frontend.user.mobile.view_profile_receiver',$receivers_for_don->id)}}" class="cta-link">View more</a>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    @endif
                 @endforeach
             @endif
 

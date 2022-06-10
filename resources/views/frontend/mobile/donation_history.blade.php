@@ -52,8 +52,13 @@
                             <div class="accordion-body">
                                 <div class="row g-0">
                                     <div class="col-6">
-                                        <label>Agent Name</label>
-                                        <div class="text">{{App\Models\Auth\User::where('id',$donation->assigned_agent)->first()->first_name}} {{App\Models\Auth\User::where('id',$donation->assigned_agent)->first()->last_name}}</div>
+                                        @if(App\Models\Auth\User::where('id',$donation->assigned_agent)->first() != null)                                        
+                                            <label>Agent Name</label>
+                                            <div class="text">{{App\Models\Auth\User::where('id',$donation->assigned_agent)->first()->first_name}} {{App\Models\Auth\User::where('id',$donation->assigned_agent)->first()->last_name}}</div>
+                                        @else
+                                            <label>Agent Name</label>
+                                            <div class="text">Deleted Account</div>
+                                        @endif
                                     </div>
                                     <div class="col-6">
                                         <label>Package</label>

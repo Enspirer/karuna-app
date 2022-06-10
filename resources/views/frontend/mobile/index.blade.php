@@ -254,37 +254,39 @@
 
                 @if(count(App\Models\Receivers::get()) != 0)
                     @foreach(App\Models\Receivers::take(3)->where('payment_status',null)->latest()->get() as $receiver)
-                        <li class="list-group-item">
-                            <div class="receiver">
-                                <div class="content-block">
-                                    @if($receiver->requirement == 'Other')
-                                        <div class="icon blue">O</div>
-                                    @else
-                                        @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
-                                            <img src="{{uploaded_asset(App\Models\Packages::where('id',$receiver->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
+                        @if(App\Models\Auth\User::where('id',$receiver->assigned_agent)->first() != null)
+                            <li class="list-group-item">
+                                <div class="receiver">
+                                    <div class="content-block">
+                                        @if($receiver->requirement == 'Other')
+                                            <div class="icon blue">O</div>
                                         @else
-                                            <img src="{{url('img/default_cover.png')}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
-                                        @endif
-                                    @endif
-                                    <div class="text-block">
-                                        <div class="name">
-                                            @if($receiver->name_toggle == 'yes')
-                                                {{$receiver->nick_name}}
+                                            @if(App\Models\Packages::where('id',$receiver->requirement)->first() != null)
+                                                <img src="{{uploaded_asset(App\Models\Packages::where('id',$receiver->requirement)->first()->image)}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
                                             @else
-                                                {{$receiver->name}}
+                                                <img src="{{url('img/default_cover.png')}}" width="35px" style="border-radius: 50%; height: 35px;" alt="">
                                             @endif
+                                        @endif
+                                        <div class="text-block">
+                                            <div class="name">
+                                                @if($receiver->name_toggle == 'yes')
+                                                    {{$receiver->nick_name}}
+                                                @else
+                                                    {{$receiver->name}}
+                                                @endif
+                                            </div>
+                                            <div class="location">{{$receiver->city}}</div>
                                         </div>
-                                        <div class="location">{{$receiver->city}}</div>
+                                    </div>
+                                    <div class="button-block">
+                                        <a href="{{route('frontend.user.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
+                                            <div class="btn-text">Donate</div>
+                                        </a>
+                                        <a href="{{route('frontend.user.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
                                     </div>
                                 </div>
-                                <div class="button-block">
-                                    <a href="{{route('frontend.user.mobile.donation_info',$receiver->id)}}" class="cta-btn btn-fill">
-                                        <div class="btn-text">Donate</div>
-                                    </a>
-                                    <a href="{{route('frontend.user.mobile.view_profile_receiver',$receiver->id)}}" class="cta-link">View more</a>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        @endif
                     @endforeach
                 @else
                     <section class="section-no-data">
