@@ -88,6 +88,27 @@ class MobileController extends Controller
         ]);
     }
 
+    public function payment_other($receiver_id)
+    {
+        $receiverDetails = Receivers::where('id',$receiver_id)->first();
+        $agentDetails = User::where('id',$receiverDetails->assigned_agent)->first();
+
+
+        if($receiverDetails->requirement == 'Other'){
+            $packageDetails = null;
+        }else{
+            $packageDetails = Packages::where('id',$receiverDetails->requirement)->first();
+        }
+
+        return view('frontend.mobile.payment_other',[
+            'agentDetails' => $agentDetails,
+            'packageDetails' => $packageDetails,
+            'receiverDetails' => $receiverDetails
+        ]);
+    }
+
+    
+
     public function success($amount)
     {
         return view('frontend.mobile.success',[

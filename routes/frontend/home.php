@@ -44,6 +44,8 @@ Route::get('profile/receiver/{id}', [HomeController::class, 'receiver_profile'])
 
 
 Route::get('payment/{receiver_id}', [HomeController::class, 'payment'])->name('payment');
+Route::get('payment_other/{receiver_id}', [HomeController::class, 'payment_other'])->name('payment_other');
+
 Route::get('payment/payment-status', [HomeController::class, 'payment_status'])->name('payment_status');
 
 
@@ -101,6 +103,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::get('mobile/donation-info/{id}', [MobileController::class, 'donation_info'])->name('mobile.donation_info');
         Route::get('mobile/donation-list', [MobileController::class, 'donation_list'])->name('mobile.donation_list');
         Route::get('mobile/payment/{receiver_id}', [MobileController::class, 'payment'])->name('mobile.payment');
+        Route::get('mobile/payment_other/{receiver_id}', [MobileController::class, 'payment_other'])->name('mobile.payment_other');
         Route::get('mobile/success/{amount}', [MobileController::class, 'success'])->name('mobile.success');
         Route::get('mobile/profile-menu', [MobileController::class, 'profile_menu'])->name('mobile.profile_menu');
         Route::get('mobile/donation', [MobileController::class, 'donation'])->name('mobile.donation');
