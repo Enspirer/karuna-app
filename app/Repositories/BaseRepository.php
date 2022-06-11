@@ -168,6 +168,7 @@ abstract class BaseRepository implements RepositoryContract
         $this->unsetClauses();
 
         return $this->getById($id)->delete();
+
     }
 
     /**
