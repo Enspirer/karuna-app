@@ -222,18 +222,18 @@ class DashboardController extends Controller
                 'id_photo' => $image_url,
             ]
         );
-        
+
         if(is_mobile(request()->header('user-agent')) == true){
-            return redirect()->route('frontend.user.mobile.index');
+            return redirect()->route('frontend.user.mobile.index')->with([
+                'success_nic' => 'Updated Successfully.'
+            ]);
         }
 
         return back()->with([
-            'success' => 'Updated Successfully.'
+            'success_nic' => 'Updated Successfully.'
         ]); 
 
     }
-
-
     
 
     public function update_receiver(Request $request)
