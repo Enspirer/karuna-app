@@ -312,7 +312,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="title">Modal Title</div>
+                <div class="title">Update NIC Details</div>
                 <p>Please enter your NIC details to continue</p>
             </div>
             <form action="{{route('frontend.user.update_nic_details')}}" method="post" enctype="multipart/form-data">
