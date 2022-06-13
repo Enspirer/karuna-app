@@ -94,34 +94,8 @@ class UserRepository extends BaseRepository
     {
         // dd($data);
         return DB::transaction(function () use ($data) {
-
-            if(isset($data['assigned_agent_id']) != null){
-
-                $user = $this->model::create([
-                    'first_name' => $data['first_name'],
-                    'last_name' => $data['last_name'],
-                    'email' => $data['email'],
-                    'user_type' => $data['user_type'],
-                    'country' => $data['country'],
-                    'city' => $data['city'],
-                    'assigned_agent_id' => $data['assigned_agent_id'],                
-                    'contact_number' => null,
-                    'contact_number_two' => null,
-                    'address' => null,
-                    'occupation' => null,
-                    'nic_number' => null,
-                    'id_photo' => null,                    
-                    'referral_name' => null,
-                    'referral_nic_number' => null,
-                    'confirmation_code' => md5(uniqid(mt_rand(), true)),
-                    'active' => true,
-                    'password' => $data['password'],
-                    // If users require approval or needs to confirm email
-                    'confirmed' => ! (config('access.users.requires_approval') || config('access.users.confirm_email')),
-                ]);
-
-            }
-            elseif(isset($data['assigned_agent_id']) == null && isset($data['country']) != null){
+       
+            if( isset($data['country']) != null){
 
                 // if(isset($data['id_photo']))
                 // {            
@@ -133,11 +107,21 @@ class UserRepository extends BaseRepository
                 // } 
                 // dd($image_url);
 
+                $user_number = User::where('user_type','Agent')->where('agent_number','!=',null)->latest()->first();
+
+                if($user_number == null){
+                    $user_agent_number = 1;
+                }
+                else{
+                    $user_agent_number = $user_number->agent_number + 1;
+                }
+
                 $user = $this->model::create([
                     'first_name' => $data['first_name'],
                     'last_name' => $data['last_name'],
                     'email' => $data['email'],
                     'user_type' => $data['user_type'],
+                    'agent_number' => sprintf('%03d', $user_agent_number),
                     'country' => $data['country'],
                     'city' => $data['city'],
                     'assigned_agent_id' => null,                
@@ -147,8 +131,8 @@ class UserRepository extends BaseRepository
                     'occupation' => $data['occupation'],
                     'nic_number' => null,
                     'id_photo' => null,                    
-                    'referral_name' => $data['referral_name'],
-                    'referral_nic_number' => $data['referral_nic_number'],
+                    'referral_name' => $data['referral_email'],
+                    'referral_nic_number' => $data['referral_agent_number'],
                     'confirmation_code' => md5(uniqid(mt_rand(), true)),
                     'active' => true,
                     'password' => $data['password'],
@@ -163,6 +147,7 @@ class UserRepository extends BaseRepository
                     'last_name' => $data['last_name'],
                     'email' => $data['email'],
                     'user_type' => $data['user_type'],
+                    'agent_number' => null,
                     'country' => null,
                     'city' => null,
                     'assigned_agent_id' => null,                

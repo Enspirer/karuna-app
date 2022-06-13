@@ -35,7 +35,7 @@
                         <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('email')}}</p>
                     @endif
                 </div>
-                
+
                 <div class="join-form-row">
                     <select class="form-control custom-select" name="user_type" id="user_type" onchange="user_type_check(this);" required>
                         <!-- <option value="" selected disabled>User Type</option>  -->
@@ -114,24 +114,24 @@
                     <div class="card-body">
                         <div class="row g-0 mb-4">
                             <div class="col-md-12">
-                                <label class="pro-label">Referral Name</label>
-                                <input type="text" class="form-control" id="referral_name" name="referral_name" value="{{old('referral_name')}}">
-                                @if($errors->has('referral_name'))
-                                    <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('referral_name')}}</p>
-                                @endif
+                                <label class="pro-label">Referral Email</label>
+                                <input type="email" class="form-control" id="referral_email" name="referral_email" value="{{old('referral_email')}}">
                             </div>                           
                         </div>
                         <div class="row g-0 mb-5">                                    
                             <div class="col-md-12">
-                                <label class="pro-label">Referral NIC Number</label>
-                                <input type="text" class="form-control" id="referral_nic_number" name="referral_nic_number" value="{{old('referral_nic_number')}}">
-                                @if($errors->has('referral_nic_number'))
-                                    <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('referral_nic_number')}}</p>
-                                @endif
+                                <label class="pro-label">Referral Agent Number</label>
+                                <input type="text" class="form-control" id="referral_agent_number" name="referral_agent_number" value="{{old('referral_agent_number')}}">
                             </div>                          
                         </div>                                
                     </div>
                 </div>
+
+                @if(session()->has('error_incorrect_referrel'))
+                    <div class="alert alert-danger">
+                        {{ session()->get('error_incorrect_referrel') }}
+                    </div>
+                @endif
 
                 <div class="join-form-row">
                     <button type="submit" class="cta-btn btn-fill pull-right">
