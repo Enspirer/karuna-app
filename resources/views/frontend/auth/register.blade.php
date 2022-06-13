@@ -645,9 +645,9 @@
     window.addEventListener('DOMContentLoaded', () => {
 
         const userType = document.getElementById('user_type')
-        const agentReqFields = ['agent_country', 'agent_city', 'agent_nic', 'agent_id_photo', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details'];
+        const agentReqFields = ['agent_country', 'agent_city', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details'];
 
-        const ReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number'];
+        const ReqFields = ['country', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_email', 'referral_agent_number'];
 
         if (userType.value == 'Agent') {
             agentReqFields.forEach((input) => {
@@ -823,7 +823,7 @@
 
 <script>
 const userType = document.getElementById('user_type')
-const agentReqFields = ['country', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
+const agentReqFields = ['country', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_email', 'referral_agent_number']
 
 userType.addEventListener('change', () => {
     if (userType.value == 'Agent') {
