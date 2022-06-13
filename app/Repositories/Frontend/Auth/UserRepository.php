@@ -123,14 +123,14 @@ class UserRepository extends BaseRepository
             }
             elseif(isset($data['assigned_agent_id']) == null && isset($data['country']) != null){
 
-                if(isset($data['id_photo']))
-                {            
-                    $preview_file_name = time().'_'.rand(1000,10000).'.'.$data['id_photo']->getClientOriginalExtension();
-                    $fullurls_preview_file = $data['id_photo']->move(public_path('files/agents_id'), $preview_file_name);
-                    $image_url = $preview_file_name;
-                }else{
-                    $image_url = null;
-                } 
+                // if(isset($data['id_photo']))
+                // {            
+                //     $preview_file_name = time().'_'.rand(1000,10000).'.'.$data['id_photo']->getClientOriginalExtension();
+                //     $fullurls_preview_file = $data['id_photo']->move(public_path('files/agents_id'), $preview_file_name);
+                //     $image_url = $preview_file_name;
+                // }else{
+                //     $image_url = null;
+                // } 
                 // dd($image_url);
 
                 $user = $this->model::create([
@@ -145,8 +145,8 @@ class UserRepository extends BaseRepository
                     'contact_number_two' => $data['contact_number_two'],
                     'address' => $data['address'],
                     'occupation' => $data['occupation'],
-                    'nic_number' => $data['nic_number'],
-                    'id_photo' => $image_url,                    
+                    'nic_number' => null,
+                    'id_photo' => null,                    
                     'referral_name' => $data['referral_name'],
                     'referral_nic_number' => $data['referral_nic_number'],
                     'confirmation_code' => md5(uniqid(mt_rand(), true)),

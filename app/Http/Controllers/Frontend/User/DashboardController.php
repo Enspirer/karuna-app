@@ -205,6 +205,37 @@ class DashboardController extends Controller
     }
 
 
+    public function update_nic_details(Request $request) 
+    {
+        if($request->file('id_photo'))
+        {            
+            $preview_file_name = time().'_'.rand(1000,10000).'.'.$request->id_photo->getClientOriginalExtension();
+            $fullurls_preview_file = $request->id_photo->move(public_path('files/agents_id'), $preview_file_name);
+            $image_url = $preview_file_name;
+        }else{
+            $image_url = auth()->user()->id_photo;
+        } 
+
+        $users = DB::table('users') ->where('id', '=', auth()->user()->id)->update(
+            [
+                'nic_number' => $request->nic_number,
+                'id_photo' => $image_url,
+            ]
+        );
+        
+        if(is_mobile(request()->header('user-agent')) == true){
+            return redirect()->route('frontend.user.mobile.index');
+        }
+
+        return back()->with([
+            'success' => 'Updated Successfully.'
+        ]); 
+
+    }
+
+
+    
+
     public function update_receiver(Request $request)
     {
         // dd($request);

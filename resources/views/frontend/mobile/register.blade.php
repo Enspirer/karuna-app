@@ -35,6 +35,7 @@
                         <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('email')}}</p>
                     @endif
                 </div>
+                
                 <div class="join-form-row">
                     <select class="form-control custom-select" name="user_type" id="user_type" onchange="user_type_check(this);" required>
                         <!-- <option value="" selected disabled>User Type</option>  -->
@@ -51,8 +52,6 @@
                         <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('user_type')}}</p>
                     @endif
                 </div>
-
-
 
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_country">
                     <select id="country" class="form-control custom-select" name="country">
@@ -74,19 +73,6 @@
                     @endif
                 </div>
            
-                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_nic">
-                    <input type="text" name="nic_number" maxlength="191" class="form-control" value="{{old('nic_number')}}" id="nic_number" placeholder="NIC Number">
-                    @if($errors->has('nic_number'))
-                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('nic_number')}}</p>
-                    @endif
-                </div>
-                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-agent" id="agent_id_photo">
-                    <label style="font-size: 11px;padding-left: 10px;">ID Card Photo</label>
-                    <input type="file" name="id_photo" maxlength="191" class="form-control" value="" id="id_photo" placeholder="NIC Photo">
-                    @if($errors->has('id_photo'))
-                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('id_photo')}}</p>
-                    @endif
-                </div>
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }} field-agent" id="agent_occupation">
                     <input type="text" name="occupation" maxlength="191" class="form-control" value="{{old('occupation')}}" id="occupation" placeholder="Occupation">
                     @if($errors->has('occupation'))
@@ -169,7 +155,7 @@
         const userType = document.getElementById('user_type')
         const agentReqFields = ['agent_country', 'agent_city', 'agent_nic', 'agent_id_photo', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details']
 
-        const ReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
+        const ReqFields = ['country', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
 
         if (userType.value == 'Agent') {
             agentReqFields.forEach((input) => {
@@ -183,18 +169,18 @@
     } )
 
     function user_type_check(that) {
-        if (that.value == 'Agent') {
-            document.getElementById("agent_nic").style.display = "block";
-        } else {
-            document.getElementById("agent_nic").style.display = "none";
-        }
+        // if (that.value == 'Agent') {
+        //     document.getElementById("agent_nic").style.display = "block";
+        // } else {
+        //     document.getElementById("agent_nic").style.display = "none";
+        // }
 
-        if (that.value == 'Agent') {
-            document.getElementById("agent_id_photo").style.display = "block";
-            document.getElementById("agent_id_photo").required = true;
-        } else {
-            document.getElementById("agent_id_photo").style.display = "none";
-        }  
+        // if (that.value == 'Agent') {
+        //     document.getElementById("agent_id_photo").style.display = "block";
+        //     document.getElementById("agent_id_photo").required = true;
+        // } else {
+        //     document.getElementById("agent_id_photo").style.display = "none";
+        // }  
 
         if (that.value == 'Agent') {
             document.getElementById("referral_details").style.display = "block";
@@ -331,7 +317,7 @@
 
 <script>
 const userType = document.getElementById('user_type')
-const agentReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
+const agentReqFields = ['country', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
 
 userType.addEventListener('change', () => {
     if (userType.value == 'Agent') {

@@ -544,24 +544,7 @@
                                 <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('city')}}</p>
                             @endif
                         </div>
-                        <div class="join-form-row hidden-row" id="receiver_assigned_agent">
-                            <label for="assigned_agent_id" class="form-label">Agent</label>
-                            <select class="form-control custom-select" name="assigned_agent_id" value="{{old('assigned_agent_id')}}" id="assigned_agent_id"></select>
-                        </div>
-                        <div class="join-form-row hidden-row" id="agent_nic">
-                            <label for="nic_number" class="form-label">NIC Number</label>
-                            <input type="text" name="nic_number" maxlength="191" class="form-control" value="{{old('nic_number')}}" id="nic_number" placeholder="NIC Number">
-                            @if($errors->has('nic_number'))
-                                <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('nic_number')}}</p>
-                            @endif
-                        </div>
-                        <div class="join-form-row hidden-row" id="agent_id_photo">
-                            <label for="id_photo" class="form-label">NIC Photo</label>
-                            <input type="file" name="id_photo" class="form-control" value="{{old('id_photo')}}" id="id_photo" placeholder="NIC Photo">
-                            @if($errors->has('id_photo'))
-                                <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('id_photo')}}</p>
-                            @endif
-                        </div>
+                        
                         <div class="join-form-row hidden-row" id="agent_occupation">
                             <label for="occupation" class="form-label">Occupation</label>
                             <input type="text" name="occupation" maxlength="191" class="form-control" value="{{old('occupation')}}" id="occupation" placeholder="Occupation">
@@ -681,17 +664,17 @@
     } );
 
     function user_type_check(that) {
-        if (that.value == 'Agent') {
-            document.getElementById("agent_nic").style.display = "block";
-        } else {
-            document.getElementById("agent_nic").style.display = "none";
-        }
+        // if (that.value == 'Agent') {
+        //     document.getElementById("agent_nic").style.display = "block";
+        // } else {
+        //     document.getElementById("agent_nic").style.display = "none";
+        // }
 
-        if (that.value == 'Agent') {
-            document.getElementById("agent_id_photo").style.display = "block";
-        } else {
-            document.getElementById("agent_id_photo").style.display = "none";
-        }        
+        // if (that.value == 'Agent') {
+        //     document.getElementById("agent_id_photo").style.display = "block";
+        // } else {
+        //     document.getElementById("agent_id_photo").style.display = "none";
+        // }        
 
         if (that.value == 'Agent') {
             document.getElementById("referral_details").style.display = "block";
@@ -840,7 +823,7 @@
 
 <script>
 const userType = document.getElementById('user_type')
-const agentReqFields = ['country', 'city', 'nic_number', 'id_photo', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
+const agentReqFields = ['country', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_name', 'referral_nic_number']
 
 userType.addEventListener('change', () => {
     if (userType.value == 'Agent') {

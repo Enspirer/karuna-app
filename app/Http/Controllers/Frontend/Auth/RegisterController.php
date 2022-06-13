@@ -63,12 +63,11 @@ class RegisterController extends Controller
     public function register(RegisterRequest $request)
     {
 
-        if($request->user_type == 'Agent'){
-            if($request->file('id_photo') == null){
-                return redirect()->back()->withInput()->withErrors(['id_photo' => 'Please add an ID Card Photo']);
-                // return back()->withErrors('Please add an ID Card Photo');
-            }        
-        }
+        // if($request->user_type == 'Agent'){
+        //     if($request->file('id_photo') == null){
+        //         return redirect()->back()->withInput()->withErrors(['id_photo' => 'Please add an ID Card Photo']);
+        //     }        
+        // }
 
         if($request->user_type == 'Agent'){
             $user_agent = User::where('nic_number',$request->referral_nic_number)->first();
@@ -82,13 +81,6 @@ class RegisterController extends Controller
                 }
             }
         }
-
-
-
-
-
-
-
 
 
         abort_unless(config('access.registration'), 404);

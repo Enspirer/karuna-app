@@ -80,6 +80,8 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::post('create_receiver', [DashboardController::class, 'create_receiver'])->name('create_receiver');
         Route::post('update_receiver', [DashboardController::class, 'update_receiver'])->name('update_receiver');
         Route::post('update_agent', [DashboardController::class, 'update_agent'])->name('update_agent');
+        Route::post('update_nic_details', [DashboardController::class, 'update_nic_details'])->name('update_nic_details');
+        
         Route::post('receiver_request_update', [DashboardController::class, 'receiver_request_update'])->name('receiver_request_update');
         Route::post('notification/submit/store', [DashboardController::class, 'notification_store'])->name('notification.submit.store');
         Route::post('update_donor_mobile', [MobileProfileController::class, 'update_donor_mobile'])->name('update_donor_mobile');
