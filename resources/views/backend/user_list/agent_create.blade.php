@@ -382,7 +382,7 @@
 
                 <div class="mt-5 mb-4 text-right">
                     <a href="{{url('admin/agent')}}" type="button" class="btn rounded-pill px-4 py-2 me-2 btn-warning">Back</a>    
-                    <input type="submit" class="btn rounded-pill text-light px-4 py-2 ml-2 ms-2 btn-success" value="Update" />
+                    <input type="submit" class="btn rounded-pill text-light px-4 py-2 ml-2 ms-2 btn-success" value="Submit" />
                 </div>
                 
         </div><br> 

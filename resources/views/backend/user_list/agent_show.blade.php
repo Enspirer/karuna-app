@@ -43,7 +43,11 @@
                                     </tr>
                                     <tr>
                                         <td style="font-weight: 600; font-size:16px;">NIC Number:</td>
-                                        <td style="font-size:16px;">{{ $agent->nic_number }}</td>
+                                        @if($agent->nic_number == null)
+                                            <td style="font-size:16px;"><span class="badge badge-warning">Not Set</span></td>
+                                        @else
+                                            <td style="font-size:16px;">{{ $agent->nic_number }}</td>
+                                        @endif
                                     </tr>
                                     @if($agent->id_photo != null)
                                         <tr>
@@ -60,6 +64,52 @@
             </div>
 
             <div class="col-6 p-1">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="" style="border-style: ridge;border-width: 3px;padding: 20px;">                            
+                        
+                            <table class="table table-hover table-borderless">
+                                <tbody>
+                                    <h4 class="text-center">Referrel Details</h4>
+                                    <tr>
+                                        <td width="40%" style="font-weight: 600; font-size:16px;">Referrel Email:</td>
+                                        <td style="font-size:16px;">{{ $agent->email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="40%" style="font-weight: 600; font-size:16px;">Referrel Agent Number:</td>
+                                        <td style="font-size:16px;">{{ sprintf("%03d",$agent->agent_number) }}</td>
+                                    </tr>
+                                </tbody>                                            
+                            </table>  
+                            
+                        </div>
+                    </div>
+                </div>
+
+                @if($agent->referral_name != null)
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="" style="border-style: ridge;border-width: 3px;padding: 20px;">                            
+                            
+                                <table class="table table-hover table-borderless">
+                                    <tbody>
+                                        <h4 class="text-center">Agent Referrel Details</h4>
+                                        <tr>
+                                            <td width="40%" style="font-weight: 600; font-size:16px;">Referrel Email:</td>
+                                            <td style="font-size:16px;">{{ $agent->referral_name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40%" style="font-weight: 600; font-size:16px;">Referrel Agent Number:</td>
+                                            <td style="font-size:16px;">{{  sprintf("%03d",$agent->referral_nic_number) }}</td>
+                                        </tr>
+                                    </tbody>                                            
+                                </table>  
+                                
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="card">
                     <div class="card-body">
                         <div class="" style="border-style: ridge;border-width: 3px;padding: 20px;">                            
@@ -100,6 +150,7 @@
                     </div>
                 </div>
             </div>
+
 
 
         </div>

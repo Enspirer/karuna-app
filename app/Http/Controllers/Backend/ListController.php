@@ -66,6 +66,14 @@ class ListController extends Controller
 
         $hashed_password = Hash::make($password);
 
+        $user_number = User::where('user_type','Agent')->where('agent_number','!=',null)->latest()->first();
+        if($user_number == null){
+            $user_agent_number = 1;
+        }
+        else{
+            $user_agent_number = $user_number->agent_number + 1;
+        }
+
         $add = new User;
 
         $add->first_name=$request->first_name;
@@ -79,6 +87,7 @@ class ListController extends Controller
         $add->occupation=$request->occupation;
         $add->contact_number=$request->contact_number;
         $add->contact_number_two=$request->contact_number_two;
+        $add->agent_number=$request->user_agent_number;
         $add->level='Level 1';
         $add->address=$request->address;
         $add->password=$hashed_password;
