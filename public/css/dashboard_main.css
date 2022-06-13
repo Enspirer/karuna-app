@@ -1391,5 +1391,55 @@
     gap: 0;
   }
 }
+.nic-modal .modal-content {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.nic-modal .modal-content .modal-header {
+  flex-direction: column;
+  background-color: #1FC39E;
+}
+.nic-modal .modal-content .modal-header .title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fff;
+}
+.nic-modal .modal-content .modal-header p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #fff;
+  margin: 0;
+}
+.nic-modal .modal-content .modal-body {
+  padding: 2rem 1.5rem;
+}
+.nic-modal .modal-content .modal-body .form-label {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+}
+.nic-modal .modal-content .modal-body .form-control {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+  height: 40px;
+}
+.nic-modal .modal-content .modal-body .form-control::-webkit-file-upload-button {
+  height: 40px;
+}
+.nic-modal .modal-content .modal-body .form-control:focus {
+  box-shadow: none;
+  outline: none;
+}
+.nic-modal .modal-content .modal-footer {
+  justify-content: center;
+}
+.nic-modal .modal-content .modal-footer .cta-btn {
+  margin: auto;
+  width: 150px;
+  height: 40px;
+  border-radius: 50px;
+}
 
 /*# sourceMappingURL=dashboard_main.css.map */
