@@ -87,7 +87,7 @@
                     </div>
                 </div> -->
                 <div class="card-row">
-                    <div class="footer-text">Approved by Central Bank of Sri Lanka</div>
+                    {{--<div class="footer-text">Approved by Central Bank of Sri Lanka</div>--}}
                 </div>
                 <button type="submit" class="cta-btn btn-fill">
                     <div class="btn-text">Continue</div>

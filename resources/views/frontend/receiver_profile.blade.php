@@ -58,10 +58,10 @@
                             <div class="label">City</div>
                             <div class="text">{{$receiver->city}}</div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="label">Phone Number</div>
-                            <div class="text">{{$receiver->phone_number}}</div>
-                        </div>
+                        {{--<div class="col-sm-6">--}}
+                            {{--<div class="label">Phone Number</div>--}}
+                            {{--<div class="text">{{$receiver->phone_number}}</div>--}}
+                        {{--</div>--}}
                         <div class="col-12">
                             <div class="label"><b>Bio</b></div>
                             @if($receiver->big)
