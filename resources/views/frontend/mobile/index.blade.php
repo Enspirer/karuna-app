@@ -306,55 +306,58 @@
 
 
 @if(auth()->user()->nic_number == null || auth()->user()->id_photo == null)
+    @if(auth()->user()->user_type == 'Agent')
 
-<!-- NIC modal -->
-<div class="modal fade nic-modal" id="nicModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="nicModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="title">Update NIC Details</div>
-                <p>Please enter your NIC details to continue</p>
-            </div>
-            <form action="{{route('frontend.user.update_nic_details')}}" method="post" enctype="multipart/form-data">
-            {{csrf_field()}}
-                <div class="modal-body">                
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <label for="nic_no" class="form-label">NIC Number</label>
-                            <input type="text" class="form-control" value="{{auth()->user()->nic_number}}" name="nic_number" id="nic_number" required>
-                        </div>
-                        <div class="col-12">
-                            <label for="nic_img" class="form-label">NIC Photo</label>
-                            <div class="input-group">
-                                @if(auth()->user()->id_photo != null)
-                                    <div class="row">
-                                        <div class="col-10">
+        <!-- NIC modal -->
+        <div class="modal fade nic-modal" id="nicModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="nicModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="title">Update NIC Details</div>
+                        <p>Please enter your NIC details to continue</p>
+                    </div>
+                    <form action="{{route('frontend.user.update_nic_details')}}" method="post" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        <div class="modal-body">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label for="nic_no" class="form-label">NIC Number</label>
+                                    <input type="text" class="form-control" value="{{auth()->user()->nic_number}}" name="nic_number" id="nic_number" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="nic_img" class="form-label">NIC Photo</label>
+                                    <div class="input-group">
+                                        @if(auth()->user()->id_photo != null)
+                                            <div class="row">
+                                                <div class="col-10">
+                                                    <input type="file" class="form-control" name="id_photo" id="id_photo" accept="image/png, image/jpeg"  multiple="multiple" required>
+                                                </div>
+                                                <div class="col-2">
+                                                    <img src="{{url('files/agents_id/',auth()->user()->id_photo)}}" style="width: 100%;" alt="" >
+                                                </div>
+                                            </div>
+                                        @else
                                             <input type="file" class="form-control" name="id_photo" id="id_photo" accept="image/png, image/jpeg"  multiple="multiple" required>
-                                        </div>
-                                        <div class="col-2">
-                                            <img src="{{url('files/agents_id/',auth()->user()->id_photo)}}" style="width: 100%;" alt="" >
-                                        </div>
+                                        @endif
                                     </div>
-                                @else
-                                    <input type="file" class="form-control" name="id_photo" id="id_photo" accept="image/png, image/jpeg"  multiple="multiple" required>
-                                @endif  
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="row">
-                        <div class="col-12">
-                            <button type="submit" class="cta-btn btn-fill">
-                                <div class="btn-text">Submit</div>
-                            </button>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="cta-btn btn-fill">
+                                        <div class="btn-text">Submit</div>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </form>        
+            </div>
         </div>
-    </div>
-</div>
+    @endif
+
 @endif
 
 
