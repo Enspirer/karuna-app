@@ -71,18 +71,18 @@
                             <td>Address</td>
                             <td>{{$receiver->address}}</td>
                         </tr>
-                        <tr>
-                            <td>Phone Number</td>
-                            <td>{{$receiver->phone_number}}</td>
-                        </tr>
+                        {{--<tr>--}}
+                            {{--<td>Phone Number</td>--}}
+                            {{--<td>{{$receiver->phone_number}}</td>--}}
+                        {{--</tr>--}}
                         <tr>
                             <td>City</td>
                             <td>{{$receiver->city}}</td>
                         </tr>
-                        <tr>
-                            <td>NIC</td>
-                            <td>{{$receiver->nic_number}}</td>
-                        </tr>
+                        {{--<tr>--}}
+                            {{--<td>NIC</td>--}}
+                            {{--<td>{{$receiver->nic_number}}</td>--}}
+                        {{--</tr>--}}
                     </tbody>
                 </table>
             </div>
