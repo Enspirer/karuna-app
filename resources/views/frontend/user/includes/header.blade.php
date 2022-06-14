@@ -12,7 +12,7 @@
         </li>
     </ul>
     <div class="greating-block">
-        <div class="message">Good Morning, {{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
+        <div class="message">{{geetings()}}, {{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
         @if(auth()->user()->user_type == "Donor")
             <a  type="button" href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
                 <div class="btn-text">Donate Now</div>

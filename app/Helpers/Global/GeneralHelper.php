@@ -154,6 +154,29 @@ if (! function_exists('create_notification')) {
         $notification->save();
         return 'notification_created';
     }
+
+    function geetings()
+    {
+        $greetings = "";
+        $time = date("H");
+        $timezone = date("e");
+        if ($time < "12") {
+            $greetings = "Good Morning";
+        } else
+            if ($time >= "12" && $time < "17") {
+                $greetings = "Good Afternoon";
+            } else
+
+                if ($time >= "17" && $time < "19") {
+                    $greetings = "Good Evening";
+                } else
+                    if ($time >= "19") {
+                        $greetings = "Good Night";
+                    }
+
+        return $greetings;
+
+    }
 }
 
 
