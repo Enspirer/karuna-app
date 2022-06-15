@@ -179,8 +179,8 @@
                                     <input class="form-check-input" type="checkbox" value="" name="newsletter" required>
                                     <label class="form-check-label">
                                         Acceptance * <br>
-                                        I would like to receive information & updates from Trace Solutions in relation to my enquiry. <br>
-                                        I understand that Trace will never share my information.
+                                        I would like to receive information & updates from Karuna in relation to my enquiry. <br>
+                                        I understand that Karuna will never share my information.
                                     </label>
                                 </div>
                             </div>
