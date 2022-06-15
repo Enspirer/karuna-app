@@ -18,25 +18,14 @@
                     <div class="title">{{$agent->first_name}} {{$agent->last_name}}</div>
                     <div class="star-rating">
                         @if($agent->level == 'Level 1')
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
+                            <div style="background: #ffba0c;padding: 2px;">Level 1</div>
+
                         @elseif($agent->level == 'Level 2')
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
+                            <div style="background: #ffba0c;padding: 2px;">Level 2</div>
                         @elseif($agent->level == 'Level 3')
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star"></i>
+                            <div style="background: #ffba0c;padding: 2px;">Level 2</div>
                         @elseif($agent->level == 'Level 4')
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
+                            <div style="background: #ffba0c;padding: 2px;">Level 4</div>
                         @endif
                     </div>
                     <div class="status agent">Agent</div>
