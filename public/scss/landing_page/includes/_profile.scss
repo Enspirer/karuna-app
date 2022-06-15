@@ -308,6 +308,8 @@
                 flex-wrap: wrap;
                 justify-content: flex-start;
                 gap: 10px;
+                max-width: 100%;
+                overflow: hidden;
 
                 img {
                     width: 150px;
