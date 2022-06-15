@@ -71,8 +71,11 @@
                     <img>
                 </div>
 
-                   <!-- video viewer -->
-                   <div id="achVideoViewer">                    
+                <!-- video viewer -->
+                <div id="achVideoViewer">                    
+                </div>
+                <!-- audio viewer -->
+                <div id="achAudioViewer">                    
                 </div>
         </div><!-- #app -->
 

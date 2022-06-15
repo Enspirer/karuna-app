@@ -101,6 +101,14 @@
                             <button class="img-close">&#10005;</button>
                             <img>
                         </div>
+
+                         <!-- video viewer -->
+                        <div id="achVideoViewer">                    
+                        </div>
+
+                        <!-- audio viewer -->
+                        <div id="achAudioViewer">                    
+                        </div>
                     </div>
                 </div>
             </div>

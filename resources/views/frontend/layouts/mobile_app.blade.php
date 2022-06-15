@@ -132,6 +132,10 @@
                 <!-- video viewer -->
                 <div id="achVideoViewer">                    
                 </div>
+
+                <!-- audio viewer -->
+                <div id="achAudioViewer">                    
+                </div>
             </section>
         </div><!-- #app -->
 

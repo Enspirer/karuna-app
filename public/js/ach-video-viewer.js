@@ -16,3 +16,22 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     })
 })
+
+window.addEventListener('DOMContentLoaded', () => {
+    const viewAudios = document.querySelectorAll('.ach-audio-thumbnail')
+    const audioViewer = document.getElementById('achAudioViewer')
+
+    audioViewer.addEventListener('click', () => {
+        audioViewer.classList.remove('show')
+    })
+
+    viewAudios.forEach((audio) => {
+        const audioSource = audio.querySelector('[ach-audio-view="true"]')
+        const audioSrc = audioSource.getAttribute('src')
+
+        audio.addEventListener('click', () => {
+            audioViewer.innerHTML = `<audio controls><source src="${audioSrc}" type="audio/mpeg"></audio>`
+            audioViewer.classList.add('show')
+        })
+    })
+})
