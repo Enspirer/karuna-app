@@ -2959,6 +2959,8 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 10px;
+  max-width: 100%;
+  overflow: hidden;
 }
 .profile-section .inner-wrapper .content-block .gallery img {
   width: 150px;
