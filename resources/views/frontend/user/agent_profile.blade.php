@@ -15,29 +15,19 @@
           
         </div>
         <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
-        <div class="star-rating">
-            @if(auth()->user()->level == 'Level 1')
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star"></i>
-                <i class="bi bi-star"></i>
-                <i class="bi bi-star"></i>
-            @elseif(auth()->user()->level == 'Level 2')
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star"></i>
-                <i class="bi bi-star"></i>
-            @elseif(auth()->user()->level == 'Level 3')
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star"></i>
-            @elseif(auth()->user()->level == 'Level 4')
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-            @endif
-        </div>            
+        @if(auth()->user()->level != null)
+            <div class="star-rating">
+                @if(auth()->user()->level == 'Level 1')
+                    <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 1</div>
+                @elseif(auth()->user()->level == 'Level 2')
+                    <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 2</div>
+                @elseif(auth()->user()->level == 'Level 3')
+                    <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 2</div>
+                @elseif(auth()->user()->level == 'Level 4')
+                    <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 4</div>
+                @endif
+            </div>
+        @endif    
         <div class="info-table-wrapper">
             <table class="info-table">
                 <tbody>

@@ -16,18 +16,19 @@
                         <img src="{{ uploaded_asset($agent->profile_image) }}" alt="" class="dp">
                     @endif
                     <div class="title">{{$agent->first_name}} {{$agent->last_name}}</div>
-                    <div class="star-rating">
-                        @if($agent->level == 'Level 1')
-                            <div style="background: rgb(255, 186, 12);padding: 2px;margin-top: 10px;/* width: 90px; */border-radius: 40px;/* width: 100px; */margin-left: 100px;margin-right: 100px;">Level 1</div>
-
-                        @elseif($agent->level == 'Level 2')
-                            <div style="background: rgb(255, 186, 12);padding: 2px;margin-top: 10px;/* width: 90px; */border-radius: 40px;/* width: 100px; */margin-left: 100px;margin-right: 100px;">Level 2</div>
-                        @elseif($agent->level == 'Level 3')
-                            <div style="background: rgb(255, 186, 12);padding: 2px;margin-top: 10px;/* width: 90px; */border-radius: 40px;/* width: 100px; */margin-left: 100px;margin-right: 100px;">Level 2</div>
-                        @elseif($agent->level == 'Level 4')
-                            <div style="background: rgb(255, 186, 12);padding: 2px;margin-top: 10px;/* width: 90px; */border-radius: 40px;/* width: 100px; */margin-left: 100px;margin-right: 100px;">Level 4</div>
-                        @endif
-                    </div>
+                    @if($agent->level != null)
+                        <div class="star-rating">
+                            @if($agent->level == 'Level 1')
+                                <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 1</div>
+                            @elseif($agent->level == 'Level 2')
+                                <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 2</div>
+                            @elseif($agent->level == 'Level 3')
+                                <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 2</div>
+                            @elseif($agent->level == 'Level 4')
+                                <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 4</div>
+                            @endif
+                        </div>
+                    @endif
                     <div class="status agent">Agent</div>
                     <div class="text">{{$agent->bio}}</div>
                 </div>
@@ -35,23 +36,27 @@
                     <div class="row g-0">
                         <div class="col-sm-6">
                             <div class="label">Name</div>
-                            <div class="text">{{$agent->first_name}} {{$agent->last_name}}</div>
+                            <div class="text" style="font-size:0.8rem;">{{$agent->first_name}} {{$agent->last_name}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Email</div>
-                            <div class="text">{{$agent->email}}</div>
+                            <div class="text" style="font-size:0.8rem;">{{$agent->email}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Address</div>
-                            <div class="text">{{$agent->address}}</div>
+                            <div class="text" style="font-size:0.8rem;">{{$agent->address}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">City</div>
-                            <div class="text">{{$agent->city}}</div>
+                            <div class="text" style="font-size:0.8rem;">{{$agent->city}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Phone Number</div>
-                            <div class="text">{{$agent->contact_number}}</div>
+                            <div class="text" style="font-size:0.8rem;">{{$agent->contact_number}}</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="label">Occupation</div>
+                            <div class="text" style="font-size:0.8rem;">{{$agent->occupation}}</div>
                         </div>
                     </div>
                 </div>

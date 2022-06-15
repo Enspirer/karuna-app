@@ -29,29 +29,19 @@
                 @endif
             </div>
             <div class="name">{{$agent->first_name}} {{$agent->last_name}}</div>
-            <div class="star-rating">
-                @if($agent->level == 'Level 1')
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                @elseif($agent->level == 'Level 2')
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                @elseif($agent->level == 'Level 3')
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                @elseif($agent->level == 'Level 4')
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                @endif
-            </div>
+            @if($agent->level != null)
+                <div class="star-rating">
+                    @if($agent->level == 'Level 1')
+                        <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 1</div>
+                    @elseif($agent->level == 'Level 2')
+                        <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 2</div>
+                    @elseif($agent->level == 'Level 3')
+                        <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 2</div>
+                    @elseif($agent->level == 'Level 4')
+                        <div style="background: rgb(255, 186, 12); padding:5px 20px 5px 20px; width:fit-content; margin: 10px auto 0; border-radius: 40px;">Level 4</div>
+                    @endif
+                </div>
+            @endif
             <div class="status maroon">Agent</div>
             <div class="profile-info">{{$agent->about_donation}}</div>
             <div class="info-table-wrapper">
