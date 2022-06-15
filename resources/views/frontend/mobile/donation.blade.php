@@ -10,36 +10,6 @@
     <div class="mobile-container">
         <form action="{{route('frontend.user.create_receiver')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
-            <!-- Profile Picture -->
-            <div class="frm-row">
-                <label class="form-label">Upload Profile Picture <span>(Optional)</span></label>                
-                <div class="form-group">
-                    <div class="input-group" data-toggle="aizuploader" data-type="image">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
-                        </div>
-                        <div class="form-control file-amount">Choose File</div>
-                        <input type="hidden" name="profile_image" class="selected-files" >
-                    </div>
-                    <div class="file-preview box sm">                                     
-                    </div>
-                </div>                 
-            </div>        
-            <!-- Cover Photo -->
-            <div class="frm-row">
-                <label class="form-label">Upload Cover Photo <span>(Optional)</span></label>
-                <div class="form-group">
-                    <div class="input-group" data-toggle="aizuploader" data-type="image">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
-                        </div>
-                        <div class="form-control file-amount">Choose File</div>
-                        <input type="hidden" name="cover_image" class="selected-files" >
-                    </div>
-                    <div class="file-preview box sm">                                     
-                    </div>
-                </div>
-            </div>
             <!-- Name -->
             <div class="frm-row">
                 <div class="frm-col-10">
@@ -60,7 +30,6 @@
             </div>
             
             <!-- Age, Gender -->
-
             <div class="frm-row">
                 <div class="frm-col">
                     <label class="form-label">Age</label>
@@ -87,6 +56,37 @@
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
+                </div>
+            </div>
+
+            <!-- Profile Picture -->
+            <div class="frm-row mt-5">
+                <label class="form-label">Upload Profile Picture <span>(Optional)</span></label>                
+                <div class="form-group">
+                    <div class="input-group" data-toggle="aizuploader" data-type="image">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                        </div>
+                        <div class="form-control file-amount">Choose File</div>
+                        <input type="hidden" name="profile_image" class="selected-files" >
+                    </div>
+                    <div class="file-preview box sm">                                     
+                    </div>
+                </div>                 
+            </div>        
+            <!-- Cover Photo -->
+            <div class="frm-row">
+                <label class="form-label">Upload Cover Photo <span>(Optional)</span></label>
+                <div class="form-group">
+                    <div class="input-group" data-toggle="aizuploader" data-type="image">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                        </div>
+                        <div class="form-control file-amount">Choose File</div>
+                        <input type="hidden" name="cover_image" class="selected-files" >
+                    </div>
+                    <div class="file-preview box sm">                                     
+                    </div>
                 </div>
             </div>
 
