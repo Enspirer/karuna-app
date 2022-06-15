@@ -2666,4 +2666,27 @@ body .mobile-body {
   border-radius: 50px;
 }
 
+#aizUploaderModal {
+  font-size: 0.9rem;
+}
+#aizUploaderModal .aiz-uploader-filter .title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+#aizUploaderModal .aiz-uploader-filter .aiz-list {
+  padding: 0 0 0 1rem;
+  margin: 0;
+}
+#aizUploaderModal .aiz-uploader-filter .aiz-list li {
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #333;
+}
+#aizUploaderModal .aiz-uploader-filter .aiz-list li span {
+  font-weight: 700;
+}
+
 /*# sourceMappingURL=mobile_main.css.map */

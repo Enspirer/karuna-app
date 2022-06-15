@@ -252,3 +252,32 @@
         }
     }
 }
+
+#aizUploaderModal {
+    font-size: .9rem;
+
+    .aiz-uploader-filter {
+        .title {
+            font-size: .9rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: .25rem;
+        }
+
+        .aiz-list {
+            padding: 0 0 0 1rem;
+            margin: 0;
+
+            li {
+                margin-bottom: .25rem;
+                font-size: .8rem;
+                font-weight: 400;
+                color: #333;
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

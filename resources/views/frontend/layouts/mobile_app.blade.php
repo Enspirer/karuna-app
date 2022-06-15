@@ -185,5 +185,33 @@
             })
         })
     </script>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+
+const AIZBtn = document.querySelectorAll('[data-toggle="aizuploader"]')
+
+    AIZBtn.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            setTimeout(() => {
+
+                const AIZUploader = document.querySelectorAll('#aizUploaderModal')
+
+                AIZUploader.forEach((fileManager) => {
+                    const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
+
+                    selectHeader.innerHTML = `
+                    <div class="title">Follow the guides below</div>
+                    <ol class="aiz-list">
+                        <li>To upload a new file, click "<span>Upload</span>" window</li>
+                        <li>After finishig upload come back to "<span>Select File</span>" window and select your desired file</li>
+                        <li>Finally click the "<span>Add Files</span>" button to continue</li>
+                    </ol>`
+                })
+            }, 500)
+        })
+    })
+})
+</script>
     
 </html>
