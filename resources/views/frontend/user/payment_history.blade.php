@@ -19,7 +19,7 @@
             <table class="db-table doner-table">
                 <thead>
                     <tr class="db-tr">
-                        <th class="db-th">Agent Name</th>
+                        <th class="db-th">Volunteer Name</th>
                         <th class="db-th">Receiver Name</th>
                         <th class="db-th">Date</th>
                         <th class="db-th">Package</th>
@@ -36,7 +36,7 @@
                                     <div class="text">{{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->first_name}}
                                         {{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->last_name}}</div>
                                 @else
-                                    <div class="text">Agent Not Found</div>
+                                    <div class="text">Volunteer Not Found</div>
                                 @endif
                             </td>
                             <td class="db-td">
@@ -104,7 +104,7 @@
             <table class="db-table doner-table">
                 <thead>
                     <tr class="db-tr">
-                        <th class="db-th">Agent Name</th>
+                        <th class="db-th">Volunteer Name</th>
                         <th class="db-th">Receiver Name</th>
                         <th class="db-th">Date</th>
                         <th class="db-th">Package</th>
@@ -121,7 +121,7 @@
                                     <div class="text">{{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->first_name}}
                                         {{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->last_name}}</div>
                                 @else
-                                    <div class="text">Agent Not Found</div>
+                                    <div class="text">Volunteer Not Found</div>
                                 @endif
                             </td>
                             <td class="db-td">
@@ -190,7 +190,7 @@
                         </div>
                         <div class="title-block">
                             <div class="title">Thank you for your support</div>
-                            <div class="text">Transaction successfully processed and you will be notified when the your parcel is received to agent or receiver</div>
+                            <div class="text">Transaction successfully processed and you will be notified when the your parcel is received to volunteer or receiver</div>
                         </div>
                         <i class="bi bi-x" data-bs-dismiss="modal" aria-label="Close"></i>
                     </div>
@@ -284,7 +284,7 @@
                             <div class="text">{{$receiver->about_donation}}</div>
                         </div>
                         <a href="#" class="cta-btn btn-fill">
-                            <div class="btn-text">Contact Agent</div>
+                            <div class="btn-text">Contact Volunteer</div>
                         </a>
                     </div>
                     </div>

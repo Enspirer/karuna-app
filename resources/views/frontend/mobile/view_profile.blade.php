@@ -42,7 +42,7 @@
                     @endif
                 </div>
             @endif
-            <div class="status maroon">Agent</div>
+            <div class="status maroon">Volunteer</div>
             <div class="profile-info">{{$agent->about_donation}}</div>
             <div class="info-table-wrapper">
                 <table class="info-table">

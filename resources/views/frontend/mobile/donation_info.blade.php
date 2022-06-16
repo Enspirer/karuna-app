@@ -11,7 +11,7 @@
         <div class="inner-wrapper">
             <div class="profile-block">
                 @if($agent != null)
-                    <div class="title">Agent Profile</div>
+                    <div class="title">Volunteer Profile</div>
                     <div class="profile-info">
                         <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="dp">
                         <ul>
@@ -29,7 +29,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a class="cta-link" href="{{route('frontend.user.mobile.view_profile',$agent->id)}}">View  History of this Agent</a>
+                    <a class="cta-link" href="{{route('frontend.user.mobile.view_profile',$agent->id)}}">View  History of this Volunteer</a>
                 @else
                     <div class="title">Deleted Account</div>
                 @endif

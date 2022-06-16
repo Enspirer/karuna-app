@@ -218,7 +218,7 @@
                         <div class="title">This is Karuna <span>Packages</span><br>that you can give</div>
                         <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                     </div>
-                    <div class="text">We Crowdfund, Purchase & Supply To Underpriveldged Families In Sri Lanka Through Our Agent Network. We Provide Exclusive Transparency To Your Kind Donation.</div>
+                    <div class="text">We Crowdfund, Purchase & Supply To Underpriveldged Families In Sri Lanka Through Our Volunteer Network. We Provide Exclusive Transparency To Your Kind Donation.</div>
                     @auth
                         @if(auth()->user()->user_type == 'Agent')
                             <a href="{{route('frontend.user.dashboard')}}" class="cta-btn btn-fill">

@@ -238,7 +238,7 @@
     <table class="db-table doner-table">
         <thead>
             <tr class="db-tr">
-                <th class="db-th">Agent Name</th>
+                <th class="db-th">Volunteer Name</th>
                 <th class="db-th">Receiver Name</th>
                 <th class="db-th">Date</th>
                 <th class="db-th">Package</th>
@@ -254,7 +254,7 @@
                         <div class="text">{{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->first_name}}
                             {{App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->last_name}}</div>
                     @else
-                        <div class="text">Agent Not Found</div>
+                        <div class="text">Volunteer Not Found</div>
                     @endif
                 </td>
                 <td class="db-td">
