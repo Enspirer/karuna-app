@@ -154,6 +154,57 @@
     <script src="{{url('js/vendors.js')}}"></script>
     <script src="{{url('js/aiz-core.js')}}"></script>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+
+const AIZBtn = document.querySelectorAll('[data-toggle="aizuploader"]')
+
+AIZBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        setTimeout(() => {
+
+            const AIZUploader = document.querySelectorAll('#aizUploaderModal')
+
+            AIZUploader.forEach((fileManager) => {
+                const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
+                const uploadNew = fileManager.querySelector('#aiz-upload-new')
+
+                selectHeader.innerHTML = `
+                <div class="upload-msg-wrapper">
+                    <div class="title">Follow the guides below</div>
+                    <ol class="aiz-list">
+                        <li>To upload a new file, click the "<span>Upload New</span>" window</li>
+                        <li>After finishing the upload come back to the "<span>Select File</span>" window and select your desired files
+                        </li>
+                        <li>Finally, click the "<span>Add Files</span>" button to continue</li>
+                    </ol>
+                    <button type="button" class="cta-btn" onclick="closeNotice()">Continue</button>
+                </div>`
+
+                uploadNew.insertAdjacentHTML('afterbegin', '<div class="upload-msg-wrapper"><div class="title">Follow the guides below</div><ul class="aiz-list"><li>Now, choose your desired files from your device</li></ul></div>')
+
+                uploadNew.addEventListener('change', () => {
+                    const li = uploadNew.querySelector('.aiz-list li')
+
+                    li.innerHTML = 'Now, click the "<span>Select File</span>" window and select your files'
+                })
+            })
+        }, 500)
+    })
+})
+})
+
+const closeNotice = () => {
+const AIZUploader = document.querySelectorAll('#aizUploaderModal')
+
+AIZUploader.forEach((fileManager) => {
+    const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
+    
+    selectHeader.style.display = 'none'
+})
+}
+</script>
+
     <!-- FIle Uploader warning modal & close button -->
     <script>
         const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
@@ -181,60 +232,9 @@
                             warningModal.style.display = 'none'
                         })
                     })
-                }, 1000)
+                }, 500)
             })
         })
     </script>
-
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-
-const AIZBtn = document.querySelectorAll('[data-toggle="aizuploader"]')
-
-AIZBtn.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        setTimeout(() => {
-
-            const AIZUploader = document.querySelectorAll('#aizUploaderModal')
-
-            AIZUploader.forEach((fileManager) => {
-                const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
-                const uploadNew = fileManager.querySelector('#aiz-upload-new')
-
-                selectHeader.innerHTML = `
-                <div class="upload-msg-wrapper">
-                    <div class="title">Follow the guides below</div>
-                    <ol class="aiz-list">
-                        <li>To upload a new file, click the "<span>Upload</span>" window</li>
-                        <li>After finishing the upload come back to the "<span>Select File</span>" window and select your desired files
-                        </li>
-                        <li>Finally, click the "<span>Add Files</span>" button to continue</li>
-                    </ol>
-                    <button type="button" class="cta-btn" onclick="closeNotice()">Continue</button>
-                </div>`
-
-                uploadNew.insertAdjacentHTML('afterbegin', '<div class="upload-msg-wrapper"><div class="title">Follow the guides below</div><ul class="aiz-list"><li>Now, choose your desired files from your device</li></ul></div>')
-
-                uploadNew.addEventListener('change', () => {
-                    const li = uploadNew.querySelector('.aiz-list li')
-
-                    li.innerHTML = 'Now, click the "<span>Select File</span>" window and select your files'
-                })
-            })
-        }, 1000)
-    })
-})
-})
-
-const closeNotice = () => {
-const AIZUploader = document.querySelectorAll('#aizUploaderModal')
-
-AIZUploader.forEach((fileManager) => {
-    const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
-    
-    selectHeader.style.display = 'none'
-})
-}
-</script>
     
 </html>
