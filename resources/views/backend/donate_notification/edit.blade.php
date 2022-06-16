@@ -68,7 +68,7 @@
                             <label>Status <span style="color:red">*<span></label>
                             <select class="form-control custom-select" name="status" required>
                                 <option value="Approved" {{$receiver->status == 'Not transferred' ? "selected":"" }}>Not transferred</option>   
-                                <option value="Payment Transferred to Agent" {{$receiver->status == 'Payment Transferred to Agent' ? "selected":"" }}>Payment Transferred to Agent</option>                                
+                                <option value="Payment Transferred to Agent" {{$receiver->status == 'Payment Transferred to Agent' ? "selected":"" }}>Payment Transferred to Volunteer</option>                                
                             </select>
                         </div>
                             

@@ -29,7 +29,7 @@
                             @endif
                         </div>
                     @endif
-                    <div class="status agent">Agent</div>
+                    <div class="status agent">Volunteer</div>
                     <div class="text">{{$agent->bio}}</div>
                 </div>
                 <div class="info">
@@ -115,7 +115,7 @@
 @else
     <section>
         <div style="padding-top: 200px;padding-bottom: 100px;">
-            <h3 style="text-align: center">Your Agent Profile Not Available </h3>
+            <h3 style="text-align: center">Your Volunteer Profile is Not Available </h3>
         </div>
     </section>
 @endif

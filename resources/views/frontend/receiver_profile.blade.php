@@ -38,7 +38,7 @@
             <div class="content-block">
                 <div class="header">
                     <div class="title">Receiver Information</div>
-                    <a href="{{route('frontend.agent_profile',$receiver->assigned_agent)}}" class="cta-link">Go Agent Details</a>
+                    <a href="{{route('frontend.agent_profile',$receiver->assigned_agent)}}" class="cta-link">Go to Volunteer Details</a>
                 </div>
                 <div class="info">
                     <div class="row g-0">

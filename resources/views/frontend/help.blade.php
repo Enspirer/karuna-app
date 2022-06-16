@@ -85,7 +85,7 @@
                 <h2 class="accordion-header" id="faqHead1">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol1" aria-expanded="true" aria-controls="faqCol1">
                         <div class="header-block">
-                            <div class="text">How Do I Join as an Agent?</div>
+                            <div class="text">How Do I Join as an Volunteer?</div>
                             <img src="{{url('images/landing-page/help/open.svg')}}" alt="" class="img-open">
                             <img src="{{url('images/landing-page/help/close.png')}}" alt="" class="img-close">
                         </div>
@@ -93,7 +93,7 @@
                 </h2>
                 <div id="faqCol1" class="accordion-collapse collapse show" aria-labelledby="faqHead1" data-bs-parent="#faqAcc">
                     <div class="accordion-body">
-                        <div class="text">Fill Out Our Registration form, and under the 'User Type' select: Agent. Providing a Referral Contact is a Critical Factor for our agent selection process. Once we have received and reviewed your request, we will provide; you with the proceeding steps via email.</div>
+                        <div class="text">Fill Out Our Registration form, and under the 'User Type' select: Volunteer. Providing a Referral Contact is a Critical Factor for our volunteer selection process. Once we have received and reviewed your request, we will provide; you with the proceeding steps via email.</div>
                     </div>
                 </div>
             </div>
@@ -146,7 +146,7 @@
                 <div class="content-block">
                     <div class="title" style="font-size: 40px; color: #0C75FF; font-weight: 400; margin-bottom: 10px;">Success !</div>
                     <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">Your message submitted successfully.</p>
-                    <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">One of our agents will be in touch shortly.</p>
+                    <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">One of our vlunteers will be in touch shortly.</p>
                 </div>
             </div>
         </div>
