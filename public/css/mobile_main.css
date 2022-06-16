@@ -2676,26 +2676,29 @@ body .mobile-body {
   align-items: center;
   height: 100%;
 }
-#aizUploaderModal .aiz-uploader-filter .title {
+#aizUploaderModal .upload-msg-wrapper {
+  margin-bottom: 1rem;
+}
+#aizUploaderModal .upload-msg-wrapper .title {
   font-size: 1rem;
   font-weight: 500;
   color: #333;
   margin-bottom: 1rem;
 }
-#aizUploaderModal .aiz-uploader-filter .aiz-list {
+#aizUploaderModal .upload-msg-wrapper .aiz-list {
   padding: 0 0 0 1rem;
   margin: 0;
 }
-#aizUploaderModal .aiz-uploader-filter .aiz-list li {
+#aizUploaderModal .upload-msg-wrapper .aiz-list li {
   margin-bottom: 0.5rem;
   font-size: 0.8rem;
   font-weight: 400;
   color: #333;
 }
-#aizUploaderModal .aiz-uploader-filter .aiz-list li span {
+#aizUploaderModal .upload-msg-wrapper .aiz-list li span {
   font-weight: 700;
 }
-#aizUploaderModal .aiz-uploader-filter .cta-btn {
+#aizUploaderModal .upload-msg-wrapper .cta-btn {
   background-color: #2699FB;
   color: #fff;
   border: none;
