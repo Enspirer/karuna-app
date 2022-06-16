@@ -221,7 +221,7 @@ AIZBtn.forEach((btn) => {
                     li.innerHTML = 'Now, click the "<span>Select File</span>" window and select your files'
                 })
             })
-        }, 500)
+        }, 1000)
     })
 })
 })
