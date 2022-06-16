@@ -155,8 +155,6 @@
     <script src="{{url('js/aiz-core.js')}}"></script>
 
 <script>
-window.addEventListener('DOMContentLoaded', () => {
-
 const AIZBtn = document.querySelectorAll('[data-toggle="aizuploader"]')
 
 AIZBtn.forEach((btn) => {
@@ -170,16 +168,16 @@ AIZBtn.forEach((btn) => {
                 const uploadNew = fileManager.querySelector('#aiz-upload-new')
 
                 selectHeader.innerHTML = `
-                <div class="upload-msg-wrapper">
-                    <div class="title">Follow the guides below</div>
-                    <ol class="aiz-list">
-                        <li>To upload a new file, click the "<span>Upload New</span>" window</li>
-                        <li>After finishing the upload come back to the "<span>Select File</span>" window and select your desired files
-                        </li>
-                        <li>Finally, click the "<span>Add Files</span>" button to continue</li>
-                    </ol>
-                    <button type="button" class="cta-btn" onclick="closeNotice()">Continue</button>
-                </div>`
+                    <div class="upload-msg-wrapper">
+                        <div class="title">Follow the guides below</div>
+                        <ol class="aiz-list">
+                            <li>To upload a new file, click the "<span>Upload New</span>" window</li>
+                            <li>After finishing the upload come back to the "<span>Select File</span>" window and select your desired files
+                            </li>
+                            <li>Finally, click the "<span>Add Files</span>" button to continue</li>
+                        </ol>
+                        <button type="button" class="cta-btn" onclick="closeNotice()">Continue</button>
+                    </div>`
 
                 uploadNew.insertAdjacentHTML('afterbegin', '<div class="upload-msg-wrapper"><div class="title">Follow the guides below</div><ul class="aiz-list"><li>Now, choose your desired files from your device</li></ul></div>')
 
@@ -192,16 +190,15 @@ AIZBtn.forEach((btn) => {
         }, 500)
     })
 })
-})
 
 const closeNotice = () => {
-const AIZUploader = document.querySelectorAll('#aizUploaderModal')
+    const AIZUploader = document.querySelectorAll('#aizUploaderModal')
 
-AIZUploader.forEach((fileManager) => {
-    const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
-    
-    selectHeader.style.display = 'none'
-})
+    AIZUploader.forEach((fileManager) => {
+        const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
+
+        selectHeader.style.display = 'none'
+    })
 }
 </script>
 
