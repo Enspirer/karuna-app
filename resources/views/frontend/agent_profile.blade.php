@@ -34,29 +34,25 @@
                 </div>
                 <div class="info">
                     <div class="row g-0">
-                        <div class="col-sm-6">
-                            <div class="label">Name</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->first_name}} {{$agent->last_name}}</div>
-                        </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="label">Email</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->email}}</div>
+                            <div class="text">{{$agent->email}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Address</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->address}}</div>
+                            <div class="text">{{$agent->address}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">City</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->city}}</div>
+                            <div class="text">{{$agent->city}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Phone Number</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->contact_number}}</div>
+                            <div class="text">{{$agent->contact_number}}</div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Occupation</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->occupation}}</div>
+                            <div class="text">{{$agent->occupation}}</div>
                         </div>
                     </div>
                 </div>

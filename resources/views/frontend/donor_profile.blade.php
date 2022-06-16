@@ -28,11 +28,7 @@
                     </div>
                     <div class="info">
                         <div class="row g-0">
-                            <div class="col-sm-6">
-                                <div class="label">Name</div>
-                                <div class="text">{{$donor->first_name}} {{$donor->last_name}}</div>
-                            </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <div class="label">Email</div>
                                 <div class="text">{{$donor->email}}</div>
                             </div>
