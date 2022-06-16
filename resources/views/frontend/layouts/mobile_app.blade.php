@@ -189,7 +189,7 @@
 <script>
 window.addEventListener('DOMContentLoaded', () => {
 
-const AIZBtn = document.querySelectorAll('[data-toggle="aizuploader"]')
+    const AIZBtn = document.querySelectorAll('[data-toggle="aizuploader"]')
 
     AIZBtn.forEach((btn) => {
         btn.addEventListener('click', () => {
@@ -201,17 +201,32 @@ const AIZBtn = document.querySelectorAll('[data-toggle="aizuploader"]')
                     const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
 
                     selectHeader.innerHTML = `
-                    <div class="title">Follow the guides below</div>
-                    <ol class="aiz-list">
-                        <li>To upload a new file, click "<span>Upload</span>" window</li>
-                        <li>After finishig upload come back to "<span>Select File</span>" window and select your desired file</li>
-                        <li>Finally click the "<span>Add Files</span>" button to continue</li>
-                    </ol>`
+                        <div class="wrapper">
+                            <div class="title">Follow the guides below</div>
+                            <ol class="aiz-list">
+                                <li>To upload a new file, click the "<span>Upload</span>" window</li>
+                                <li>After finishing the upload come back to the "<span>Select File</span>" window and select your desired files
+                                </li>
+                                <li>Finally, click the "<span>Add Files</span>" button to continue</li>
+                            </ol>
+                            <button type="button" class="cta-btn" onclick="closeNotice()">Continue</button>
+                        </div>`
                 })
             }, 500)
         })
     })
 })
+
+const closeNotice = () => {
+    const AIZUploader = document.querySelectorAll('#aizUploaderModal')
+
+    AIZUploader.forEach((fileManager) => {
+        const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
+
+        selectHeader.style.display = 'none'
+        fileManager.querySelector('.uppy-modal-nav .nav-item:nth-child(2)').click()
+    })
+}
 </script>
     
 </html>

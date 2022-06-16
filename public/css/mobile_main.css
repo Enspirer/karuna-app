@@ -2669,24 +2669,43 @@ body .mobile-body {
 #aizUploaderModal {
   font-size: 0.9rem;
 }
+#aizUploaderModal .aiz-uploader-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 #aizUploaderModal .aiz-uploader-filter .title {
-  font-size: 0.9rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
   color: #333;
-  margin-bottom: 0.25rem;
+  margin-bottom: 1rem;
 }
 #aizUploaderModal .aiz-uploader-filter .aiz-list {
   padding: 0 0 0 1rem;
   margin: 0;
 }
 #aizUploaderModal .aiz-uploader-filter .aiz-list li {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   font-size: 0.8rem;
   font-weight: 400;
   color: #333;
 }
 #aizUploaderModal .aiz-uploader-filter .aiz-list li span {
   font-weight: 700;
+}
+#aizUploaderModal .aiz-uploader-filter .cta-btn {
+  background-color: #2699FB;
+  color: #fff;
+  border: none;
+  margin: 2rem auto 0;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
 }
 
 /*# sourceMappingURL=mobile_main.css.map */

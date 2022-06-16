@@ -257,11 +257,17 @@
     font-size: .9rem;
 
     .aiz-uploader-filter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
         .title {
-            font-size: .9rem;
-            font-weight: 400;
+            font-size: 1rem;
+            font-weight: 500;
             color: #333;
-            margin-bottom: .25rem;
+            margin-bottom: 1rem;
         }
 
         .aiz-list {
@@ -269,7 +275,7 @@
             margin: 0;
 
             li {
-                margin-bottom: .25rem;
+                margin-bottom: .5rem;
                 font-size: .8rem;
                 font-weight: 400;
                 color: #333;
@@ -278,6 +284,19 @@
                     font-weight: 700;
                 }
             }
+        }
+
+        .cta-btn {
+            background-color: #2699FB;
+            color: #fff;
+            border: none;
+            margin: 2rem auto 0;
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1;
+            padding: 0.75rem 1rem;
+            border-radius: 50px;
         }
     }
 }
