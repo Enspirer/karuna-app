@@ -49,16 +49,6 @@
                 <textarea name="message" class="form-control" style="height:100px;padding: 0.75rem;" placeholder="Write here your message" required></textarea>
             </div>
             <div class="frm-row">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" name="newsletter" required>
-                    <label class="form-check-label">
-                        Acceptance * <br>
-                        I would like to receive information & updates from Trace Solutions in relation to my enquiry. <br>
-                        I understand that Trace will never share my information.
-                    </label>
-                </div>
-            </div>
-            <div class="frm-row">
                 <div class="g-recaptcha" data-callback="checked" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR" ></div>
             </div>
             <div class="frm-row">

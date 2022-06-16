@@ -178,7 +178,7 @@
 
 @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Agent')
     @if(count(App\Models\Receivers::orderBy('id','desc')->where('assigned_agent',auth()->user()->id)->get()) != 0)
-        @foreach(App\Models\Receivers::orderBy('id','desc')->where('assigned_agent',auth()->user()->id)->get() as $key => $receiver)
+        @foreach(App\Models\Receivers::orderBy('id','desc')->where('assigned_agent',auth()->user()->id)->where('payment_status','Payment Completed')->get() as $key => $receiver)
 
             <!-- Payment Info Modal -->
             <div class="modal fade payment-info-modal" id="paymentInfoModal{{$receiver->id}}" tabindex="-1" aria-labelledby="paymentInfoModalLabel" aria-hidden="true">
@@ -198,9 +198,6 @@
                         <table class="payment-info-table">
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <div class="text max-width">Donation Number:</div>
-                                    </td>
                                     <td>
                                         <div class="text">NI2345627245</div>
                                     </td>
@@ -222,7 +219,13 @@
                                 <tr>
                                     <td class="border-bottom mobile-border-none">
                                         <div class="image-block">
-                                            <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+                                            @if($receiver->profile_image)
+                                                <img src="{{uploaded_asset($receiver->profile_image)}}" alt="">
+
+                                            @else
+                                                <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
+
+                                            @endif
                                         </div>
                                     </td>
                                     <td colspan="2" class="border-bottom mobile-border-none py-3">
@@ -283,9 +286,15 @@
                             @endif
                             <div class="text">{{$receiver->about_donation}}</div>
                         </div>
-                        <a href="#" class="cta-btn btn-fill">
-                            <div class="btn-text">Contact Volunteer</div>
-                        </a>
+
+                        @if(auth()->user()->user_type == 'Agent')
+
+                        @else
+                            <a href="#" class="cta-btn btn-fill">
+                                <div class="btn-text">Contact Volunteer</div>
+                            </a>
+                        @endif
+
                     </div>
                     </div>
                 </div>
