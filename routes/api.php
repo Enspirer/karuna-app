@@ -21,3 +21,6 @@ use App\Http\Controllers\Frontend\HomeController;
 Route::get('find_cities/{country}', [HomeController::class, 'find_cities'])->name('find_cities');
 Route::post('get_cities_function', [HomeController::class, 'get_cities'])->name('get_cities');
 
+Route::get('find_district_front/{id}', [HomeController::class, 'find_district_front'])->name('find_district_front');
+Route::get('find_city_front/{id}', [HomeController::class, 'find_city_front'])->name('find_city_front');
+

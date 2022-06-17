@@ -80,11 +80,11 @@
             <div class="frm-row">
                 <div class="frm-col">
                     <label class="form-label">Country</label>
-                    <input type="text" name="country" maxlength="191" class="form-control" value="{{auth()->user()->country}}" id="country" readonly>
+                    <input type="text" name="country" maxlength="191" class="form-control" value="{{App\Models\Country::where('id',auth()->user()->country)->first()->name}}" id="country" readonly>
                 </div>
                 <div class="frm-col">
                     <label class="form-label">City</label>
-                    <input type="text" name="city" maxlength="191" class="form-control" value="{{auth()->user()->city}}" id="city" readonly>
+                    <input type="text" name="city" maxlength="191" class="form-control" value="{{App\Models\City::where('id',auth()->user()->city)->first()->name}}" id="city" readonly>
                 </div>               
             </div>
                         

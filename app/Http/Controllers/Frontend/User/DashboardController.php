@@ -144,10 +144,8 @@ class DashboardController extends Controller
 
     }
 
-    public function update_agent(Request $request) {
-
-
-
+    public function update_agent(Request $request) 
+    {
         $email = $request->email;
         $hidden_id = $request->hidden_id;
 
@@ -162,10 +160,8 @@ class DashboardController extends Controller
             }
         }
 
-
-
-        if($request->city != null){
-            $city = $request->city;
+        if($request->test_city != null){
+            $city = $request->test_city;
         }
         else{
             $city = $user->city;
@@ -186,6 +182,7 @@ class DashboardController extends Controller
                 'last_name' => $request->last_name,
                 'email' => $request->email,
                 'country' => $request->country,
+                'district' => $request->district,
                 'city' => $city,
                 'nic_number' => $request->nic_number,
                 'id_photo' => $image_url,

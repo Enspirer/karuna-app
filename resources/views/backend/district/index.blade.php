@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', __('City'))
+@section('title', __('District'))
 
 @section('content')
     
@@ -10,9 +10,9 @@
 
             <div class="card">
                 <div class="card-header">
-                    <strong>City&nbsp;</strong>
+                    <strong>District&nbsp;</strong>
 
-                    <a href="{{route('admin.city.create')}}" class="btn btn-primary pull-right ml-4">Create New</a>
+                    <a href="{{route('admin.district.create')}}" class="btn btn-primary pull-right ml-4">Create New</a>
                    
                 </div><!--card-header-->
 
@@ -23,8 +23,6 @@
                                 <th scope="col">#ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Country</th>
-                                <th scope="col">District</th>                                
-                                <th scope="col">Status</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -72,15 +70,13 @@
         $(function () {
             var table = $('#villadatatable').DataTable({
                 processing: true,
-                ajax: "{{route('admin.city.getdetails')}}",
+                ajax: "{{route('admin.district.getdetails')}}",
                 serverSide: true,
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
                     {data: 'country', name: 'country'},
-                    {data: 'district', name: 'district'},                    
-                    {data: 'status', name: 'status'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
@@ -95,7 +91,7 @@
 
             $('#ok_button').click(function(){
             $.ajax({
-            url:"city/delete/"+user_id,
+            url:"district/delete/"+user_id,
             
             success:function(data)
             {

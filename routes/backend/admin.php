@@ -12,6 +12,9 @@ use App\Http\Controllers\Backend\NotificationController;
 use App\Http\Controllers\Backend\ContactUsController;
 use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\HelpSupportController;
+use App\Http\Controllers\Backend\DistrictController;
+
+
 
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
@@ -80,6 +83,14 @@ Route::get('country/edit/{id}', [CountryController::class, 'edit'])->name('count
 Route::post('country/update', [CountryController::class, 'update'])->name('country.update');
 Route::get('country/delete/{id}', [CountryController::class, 'destroy'])->name('country.destroy');
 
+Route::get('district', [DistrictController::class, 'index'])->name('district.index');
+Route::get('district/create', [DistrictController::class, 'create'])->name('district.create');
+Route::post('district/store', [DistrictController::class, 'store'])->name('district.store');
+Route::get('district/getdetails', [DistrictController::class, 'getdetails'])->name('district.getdetails');
+Route::get('district/edit/{id}', [DistrictController::class, 'edit'])->name('district.edit');
+Route::post('district/update', [DistrictController::class, 'update'])->name('district.update');
+Route::get('district/delete/{id}', [DistrictController::class, 'destroy'])->name('district.destroy');
+
 Route::get('city', [CityController::class, 'index'])->name('city.index');
 Route::get('city/create', [CityController::class, 'create'])->name('city.create');
 Route::post('city/store', [CityController::class, 'store'])->name('city.store');
@@ -87,6 +98,8 @@ Route::get('city/getdetails', [CityController::class, 'getdetails'])->name('city
 Route::get('city/edit/{id}', [CityController::class, 'edit'])->name('city.edit');
 Route::post('city/update', [CityController::class, 'update'])->name('city.update');
 Route::get('city/delete/{id}', [CityController::class, 'destroy'])->name('city.destroy');
+Route::get('find_district_back/{id}', [CityController::class, 'find_district_back'])->name('find_district_back');
+
 
 
 Route::get('agent', [ListController::class, 'agent'])->name('agent.index');

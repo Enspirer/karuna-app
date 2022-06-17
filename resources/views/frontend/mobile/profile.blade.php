@@ -178,7 +178,7 @@
                     <input type="email" name="email" maxlength="191" class="form-control" value="{{auth()->user()->email}}">
                 </div>
 
-                <div class="frm-row">
+                <!-- <div class="frm-row">
                     <label class="form-label">Country</label>
                     <select id="countries" class="form-control custom-select" name="country" required>
                         <option value="" selected disabled>Select Here</option>
@@ -193,7 +193,34 @@
                             <option value="{{auth()->user()->city}}" selected>{{auth()->user()->city}}</option>
                         @endif
                     </select>
+                </div> -->
+
+                <div class="frm-row">
+                    <label class="form-label">Country</label>
+                    <select name="country" class="form-control custom-select" id="country" required>
+                        <option value="" selected disabled>-- Select Country --</option>
+                        @foreach(App\Models\Country::where('status','Enabled')->get() as $country)
+                            <option value="{{ $country->id }}" {{ auth()->user()->country == $country->id ? "selected" : "" }}>{{ $country->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
+
+                <input type="hidden" class="form-control" value="{{ auth()->user()->district }}" id="district_received" >
+                <input type="hidden" class="form-control" value="{{ auth()->user()->city }}" id="city_received" >
+                
+                <div class="frm-row">
+                    <label class="form-label">District</label>
+                    <select name="district" class="form-control custom-select" id="district" required>
+                        
+                    </select>
+                </div> 
+                    
+                <div class="frm-row">
+                    <label class="form-label">City</label>
+                    <select name="test_city" class="form-control custom-select" id="test_city" required>
+                    
+                    </select>
+                </div> 
 
                 <div class="frm-row">
                     <label class="form-label">Upload Profile Picture <span>(Optional)</span></label>
@@ -266,7 +293,167 @@
 
 
 
+
 <script>
+    $(document).ready(function() {
+        $('#country').on('change', function() {
+            var country_id = $(this).val();
+            // console.log(country_id);
+
+            $.ajax({
+                
+                url: "{{url('/')}}/api/find_district_front/" + country_id,
+                method: "GET",
+                dataType: "json",
+                success:function(data) {
+                    // console.log(data);
+                if(data){
+                    $('#district').empty();
+                    $('#district').focus;
+                    $('#district').append('<option value="" selected disabled>-- Select District --</option>'); 
+                    $.each(data, function(key, value){
+                        // console.log(value);
+                    $('select[name="district"]').append('<option value="'+ value.district_id +'">' + value.district_name+ '</option>');
+                    
+                });
+
+                }else{
+                    $('#district').empty();
+                }
+                }
+            });            
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        // $('#category').on('change', function() {
+
+            var country_id = $('#country').val();
+            // console.log(country_id);
+            var DisID = $('#district_received').val();
+            // console.log(DisID);
+            
+
+                $.ajax({
+                    
+                    url: "{{url('/')}}/api/find_district_front/" + country_id,
+                    method: "GET",
+                    dataType: "json",
+                    success:function(data) {
+                        // console.log(data);
+                    if(data){
+                        $('#district').empty();
+                        $('#district').focus;
+                        // $('#district').append('<option value="" selected disabled>-- Select District --</option>'); 
+                        $.each(data, function(key, value){
+                            // console.log(value);
+                            if(DisID == value.district_id){                                       
+                                $('#district').append('<option value="'+ value.district_id +'" selected>' + value.district_name+ '</option>');
+                            }
+                            else{
+                                $('#district').append('<option value="'+ value.district_id +'">' + value.district_name+ '</option>');
+                            }
+                        
+                        });
+
+                    }else{
+                        $('#district').empty();
+                    }
+                }
+                });
+            
+        // });
+    });
+
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#district').on('change', function() {
+            var district_id = $(this).val();
+            // console.log(district_id);
+
+            $.ajax({
+                
+                url: "{{url('/')}}/api/find_city_front/" + district_id,
+                method: "GET",
+                dataType: "json",
+                success:function(data) {
+                    // console.log(data);
+                if(data){
+                    $('#city').empty();
+                    $('#city').focus;
+                    $('#city').append('<option value="" selected disabled>-- Select City --</option>'); 
+                    $.each(data, function(key, value){
+                        // console.log(value);
+                    $('select[name="city"]').append('<option value="'+ value.city_id +'">' + value.city_name+ '</option>');
+                    
+                });
+
+                }else{
+                    $('#city').empty();
+                }
+                }
+            });            
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function() {
+        // $('#category').on('change', function() {
+
+            setTimeout(() => {
+
+                var district_id = $('#district').val();
+                // console.log(district_id);
+
+                var city_id_normal = $('#city_received').val();
+                // console.log(city_id_normal);            
+
+                    $.ajax({
+                        
+                        url: "{{url('/')}}/api/find_city_front/" + district_id,
+                        method: "GET",
+                        dataType: "json",
+                        success:function(data) {
+                            // console.log(data);
+                        if(data){
+                            $('#test_city').empty();
+                            $('#test_city').focus;
+                            // $('#city').append('<option value="" selected disabled>-- Select City --</option>'); 
+                            $.each(data, function(key, value){
+                                // console.log(value);
+
+                                if(city_id_normal == value.city_id){                                       
+                                    $('#test_city').append('<option value="'+ value.city_id +'" selected>' + value.city_name+ '</option>');
+                                }
+                                else{
+                                    $('#test_city').append('<option value="'+ value.city_id +'">' + value.city_name+ '</option>');
+                                }
+                            
+                            });
+
+                        }else{
+                            $('#test_city').empty();
+                        }
+                    }
+                    });
+                
+            }, 3000);
+
+           
+            
+        // });
+    });
+
+</script>
+
+
+<!-- <script>
 
     $(document).on('change','#countries',function(){
 
@@ -349,20 +536,8 @@
     });
 
 
-</script>
+</script> -->
 
-<script>
-    $(document).ready(function() {
-        let country = <?php echo json_encode (auth()->user()->country) ?>
-
-        $('#countries option').each(function(i){
-            if($(this).val() == country) {
-                $(this).attr('selected', 'selected');
-            }
-        });                      
-
-    });
-</script>
 
 
 @endpush

@@ -522,7 +522,8 @@
                                 <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('user_type')}}</p>
                             @endif
                         </div>
-                        <div class="join-form-row hidden-row" id="agent_country">
+
+                        <!-- <div class="join-form-row hidden-row" id="agent_country">
                             <label for="country" class="form-label">Country</label>
                             <select id="country" class="form-control custom-select" name="country">
                                 <option value="" selected disabled>Select Here</option>
@@ -543,7 +544,44 @@
                             @if($errors->has('city'))
                                 <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('city')}}</p>
                             @endif
+                        </div> -->
+
+                        <div class="join-form-row hidden-row" id="agent_country">
+                            <label>Country <span class="text-danger">*</span></label>
+                            <select name="country" class="form-control custom-select" id="country" required>
+                                <option value="" selected disabled>-- Select Country --</option>
+                                @foreach(App\Models\Country::where('status','Enabled')->get() as $country)
+                                    <option value="{{ $country->id }}" {{ old('country') == $country->id ? "selected" : "" }}>{{ $country->name }}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('country'))
+                                <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('country')}}</p>
+                            @endif
                         </div>
+
+                        <div class="join-form-row hidden-row" id="agent_district">
+                            <label>District</label>
+                            <select name="district" class="form-control custom-select" id="district" required>
+                                @if(old('district'))
+                                    <option value="{{old('district')}}" selected>{{old('district')}}</option>
+                                @endif
+                            </select>
+                            @if($errors->has('district'))
+                                <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('district')}}</p>
+                            @endif
+                        </div> 
+
+                        <div class="join-form-row hidden-row" id="agent_city">
+                            <label>City</label>
+                            <select name="city" class="form-control custom-select" id="city" required>
+                                @if(old('city'))
+                                    <option value="{{old('city')}}" selected>{{old('city')}}</option>
+                                @endif
+                            </select>
+                            @if($errors->has('city'))
+                                <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('city')}}</p>
+                            @endif
+                        </div> 
                         
                         <div class="join-form-row hidden-row" id="agent_occupation">
                             <label for="occupation" class="form-label">Occupation</label>
@@ -642,12 +680,76 @@
     @endif
 
 <script>
+    $(document).ready(function() {
+        $('#country').on('change', function() {
+            var country_id = $(this).val();
+            // console.log(country_id);
+
+            $.ajax({
+                
+                url: "{{url('/')}}/api/find_district_front/" + country_id,
+                method: "GET",
+                dataType: "json",
+                success:function(data) {
+                    // console.log(data);
+                if(data){
+                    $('#district').empty();
+                    $('#district').focus;
+                    $('#district').append('<option value="" selected disabled>-- Select District --</option>'); 
+                    $.each(data, function(key, value){
+                        // console.log(value);
+                    $('select[name="district"]').append('<option value="'+ value.district_id +'">' + value.district_name+ '</option>');
+                    
+                });
+
+                }else{
+                    $('#district').empty();
+                }
+                }
+            });            
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#district').on('change', function() {
+            var district_id = $(this).val();
+            // console.log(district_id);
+
+            $.ajax({
+                
+                url: "{{url('/')}}/api/find_city_front/" + district_id,
+                method: "GET",
+                dataType: "json",
+                success:function(data) {
+                    // console.log(data);
+                if(data){
+                    $('#city').empty();
+                    $('#city').focus;
+                    $('#city').append('<option value="" selected disabled>-- Select City --</option>'); 
+                    $.each(data, function(key, value){
+                        // console.log(value);
+                    $('select[name="city"]').append('<option value="'+ value.city_id +'">' + value.city_name+ '</option>');
+                    
+                });
+
+                }else{
+                    $('#city').empty();
+                }
+                }
+            });            
+        });
+    });
+</script>
+
+<script>
     window.addEventListener('DOMContentLoaded', () => {
 
         const userType = document.getElementById('user_type')
-        const agentReqFields = ['agent_country', 'agent_city', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details'];
+        const agentReqFields = ['agent_country', 'agent_district', 'agent_city', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details'];
 
-        const ReqFields = ['country', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_email', 'referral_agent_number'];
+        const ReqFields = ['country', 'district', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_email', 'referral_agent_number'];
 
         if (userType.value == 'Agent') {
             agentReqFields.forEach((input) => {
@@ -688,13 +790,19 @@
             document.getElementById("agent_contact_number").style.display = "none";
         }
 
-        if (that.value == 'Agent' || that.value == 'Receiver') {
+        if (that.value == 'Agent') {
             document.getElementById("agent_country").style.display = "block";
         } else {
             document.getElementById("agent_country").style.display = "none";
         }
 
-        if (that.value == 'Agent' || that.value == 'Receiver') {
+        if (that.value == 'Agent') {
+            document.getElementById("agent_district").style.display = "block";
+        } else {
+            document.getElementById("agent_district").style.display = "none";
+        }        
+
+        if (that.value == 'Agent') {
             document.getElementById("agent_city").style.display = "block";
         } else {
             document.getElementById("agent_city").style.display = "none";
@@ -729,7 +837,7 @@
 </script> 
 
 
-<script>
+<!-- <script>
 
     $(document).on('change','#country',function(){
 
@@ -777,7 +885,7 @@
         
     });
     
-</script>
+</script> -->
 
 <!-- 
 <script>
@@ -823,7 +931,7 @@
 
 <script>
 const userType = document.getElementById('user_type')
-const agentReqFields = ['country', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_email', 'referral_agent_number']
+const agentReqFields = ['country', 'district', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_email', 'referral_agent_number']
 
 userType.addEventListener('change', () => {
     if (userType.value == 'Agent') {

@@ -11,12 +11,7 @@
         <div class="row">    
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-body">
-                        
-                        <div class="form-group">
-                            <label>Name <span style="color:red">*</span></label>
-                            <input type="text" class="form-control" name="name" required>
-                        </div>
+                    <div class="card-body">                                              
 
                         <div class="form-group">
                             <label>Country <span class="text-danger">*</span></label>
@@ -26,6 +21,18 @@
                                     <option value="{{ $country->id }}">{{ $country->name }}</option>
                                 @endforeach
                             </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>District</label>
+                            <select name="district" class="form-control" id="district" required>
+
+                            </select>
+                        </div> 
+
+                        <div class="form-group">
+                            <label>Name <span style="color:red">*</span></label>
+                            <input type="text" class="form-control" name="name" required>
                         </div>
                     
                         <div class="form-group">
@@ -50,4 +57,38 @@
 
 
 <br><br>
+
+
+<script>
+    $(document).ready(function() {
+        $('#country').on('change', function() {
+            var country_id = $(this).val();
+            // console.log(country_id);
+
+            $.ajax({
+                
+                url: "{{url('/')}}/admin/find_district_back/" + country_id,
+                method: "GET",
+                dataType: "json",
+                success:function(data) {
+                    // console.log(data);
+                if(data){
+                    $('#district').empty();
+                    $('#district').focus;
+                    $('#district').append('<option value="" selected disabled>-- Select District --</option>'); 
+                    $.each(data, function(key, value){
+                        // console.log(value);
+                    $('select[name="district"]').append('<option value="'+ value.district_id +'">' + value.district_name+ '</option>');
+                    
+                });
+
+                }else{
+                    $('#district').empty();
+                }
+                }
+            });            
+        });
+    });
+</script>
+    
 @endsection

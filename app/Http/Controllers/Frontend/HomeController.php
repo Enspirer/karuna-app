@@ -12,7 +12,7 @@ use Modules\Blog\Entities\Post;
 use App\Models\HelpSupport;
 use App\Models\Country;
 use App\Models\City;
-
+use App\Models\District;
 use GuzzleHttp\Client;
 /**
  * Class HomeController.
@@ -271,12 +271,56 @@ class HomeController extends Controller
             }
         }
 
-
-
-
-
        return response()->json($details,200);
 
     }
 
+
+    public function find_district_front($country_id)
+    {
+        // dd($country_id);
+        $districts = District::where('country',$country_id)->get();
+
+        $output_array = [];
+
+        foreach($districts as $key => $district){
+
+            $array_out = [
+                'district_id' => $district->id,
+                'district_name' => $district->name
+            ];
+
+            array_push($output_array,$array_out);
+        }
+
+        // dd($output_array);
+
+        return response()->json($output_array);
+
+    }
+
+    public function find_city_front($district_id)
+    {
+        // dd($district_id);
+        $cities = City::where('district',$district_id)->get();
+
+        $output_array = [];
+
+        foreach($cities as $key => $city){
+
+            $array_out = [
+                'city_id' => $city->id,
+                'city_name' => $city->name
+            ];
+
+            array_push($output_array,$array_out);
+        }
+
+        // dd($output_array);
+
+        return response()->json($output_array);
+
+    }
+
+    
 }

@@ -56,6 +56,16 @@ Breadcrumbs::for('admin.country.edit', function ($trail) {
     $trail->push('Edit Country', route('admin.country.edit',1));
 });
 
+Breadcrumbs::for('admin.district.index', function ($trail) {
+    $trail->push('District', route('admin.district.index'));
+});
+Breadcrumbs::for('admin.district.create', function ($trail) {
+    $trail->push('Create District', route('admin.district.create'));
+});
+Breadcrumbs::for('admin.district.edit', function ($trail) {
+    $trail->push('Edit District', route('admin.district.edit',1));
+});
+
 Breadcrumbs::for('admin.city.index', function ($trail) {
     $trail->push('City', route('admin.city.index'));
 });
@@ -132,3 +142,9 @@ Breadcrumbs::for('admin.help_and_support.index', function ($trail) {
 Breadcrumbs::for('admin.help_and_support.edit', function ($trail) {
     $trail->push('Status', route('admin.help_and_support.edit',1));
 });
+
+
+
+
+
+

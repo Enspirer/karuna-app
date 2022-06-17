@@ -90,7 +90,12 @@
                         <a class="nav-link {{active_class(Route::is('admin/country'))}}" href="{{ route('admin.country.index') }}">
                             Countries
                         </a>
-                    </li>      
+                    </li>     
+                    <li class="nav-item">
+                        <a class="nav-link {{active_class(Route::is('admin/district'))}}" href="{{ route('admin.district.index') }}">
+                            District
+                        </a>
+                    </li>   
                     <li class="nav-item">
                         <a class="nav-link {{active_class(Route::is('admin/city'))}}" href="{{ route('admin.city.index') }}">
                             City

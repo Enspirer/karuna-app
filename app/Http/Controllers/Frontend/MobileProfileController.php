@@ -79,8 +79,8 @@ class MobileProfileController extends Controller
         $user = User::where('id',$hidden_id)->first();
         // dd($user);
 
-        if($request->city != null){
-            $city = $request->city;
+        if($request->test_city != null){
+            $city = $request->test_city;
         }
         else{
             $city = $user->city;
@@ -101,6 +101,7 @@ class MobileProfileController extends Controller
                 'last_name' => $request->last_name,
                 'email' => $request->email,
                 'country' => $request->country,
+                'district' => $request->district,
                 'city' => $city,
                 'nic_number' => $request->nic_number,
                 'id_photo' => $image_url,

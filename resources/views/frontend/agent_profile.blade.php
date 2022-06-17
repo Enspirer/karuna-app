@@ -46,10 +46,12 @@
                             <div class="label">Address</div>
                             <div class="text" style="font-size:0.8rem;">{{$agent->address}}</div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="label">City</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->city}}</div>
-                        </div>
+                        @if(App\Models\City::where('id',$agent->city)->first() != null)
+                            <div class="col-sm-6">
+                                <div class="label">City</div>
+                                <div class="text" style="font-size:0.8rem;">{{App\Models\City::where('id',$agent->city)->first()->name}}</div>
+                            </div>
+                        @endif
                         <div class="col-sm-6">
                             <div class="label">Phone Number</div>
                             <div class="text" style="font-size:0.8rem;">{{$agent->contact_number}}</div>
