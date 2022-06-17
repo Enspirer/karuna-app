@@ -175,8 +175,63 @@ if (! function_exists('create_notification')) {
                     }
 
         return $greetings;
-
     }
+
+
+
+    if (! function_exists('get_city_details')) {
+        /**
+         * Agent Function By Sanjaya Senevirathne - Enspirer
+         *
+         */
+        function get_city_details($user_id,$relign=null)
+        {
+            $getUserDetails = \App\Models\Auth\User::where('id',$user_id)->first();
+
+
+            if($relign == 'city'){
+
+                if($getUserDetails){
+                    $cityDetails = \App\Models\City::where('id',$getUserDetails->city)->first();
+                    if($cityDetails){
+                        return $cityDetails->name;
+                    }else{
+                        return null;
+                    }
+
+                }else{
+                    return null;
+                }
+            }elseif($relign == 'district'){
+                if($getUserDetails){
+                    $districtDetails = \App\Models\District::where('id',$getUserDetails->district)->first();
+                    if($districtDetails){
+                        return $getUserDetails->name;
+                    }else{
+                        return null;
+                    }
+                }else{
+                    return null;
+                }
+            }elseif($relign == 'country'){
+                if($getUserDetails){
+                    $countryDetails = \App\Models\Country::where('id',$getUserDetails->country)->first();
+                    if($countryDetails){
+                        return $getUserDetails->name;
+                    }else{
+                        return null;
+                    }
+                }else{
+                    return null;
+                }
+
+            }
+
+
+        }
+    }
+
+
 }
 
 

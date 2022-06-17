@@ -151,6 +151,8 @@ class AizUploadController extends Controller
                 $upload->file_size = $size;
                 $upload->save();
             }
+
+            $getFileDetails = Upload::where('id',$upload->id)->first();
             return json_encode($upload->id);
         }
     }
