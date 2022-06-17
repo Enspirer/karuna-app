@@ -181,7 +181,7 @@ class DashboardController extends Controller
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
                 'email' => $request->email,
-                'country' => $request->country,
+                'country' => $request->test_country,
                 'district' => $request->district,
                 'city' => $city,
                 'nic_number' => $request->nic_number,

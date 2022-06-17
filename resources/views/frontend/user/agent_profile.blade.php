@@ -48,11 +48,11 @@
                     @if(auth()->user()->user_type == 'Agent')  
                         <tr>
                             <td>Country</td>
-                            <td>{{get_city_details( auth()->user()->id,'country')}}</td>
+                            <td>{{auth()->user()->country}}</td>
                         </tr>   
                         <tr>
                             <td>City</td>
-                            <td>{{get_city_details( auth()->user()->id,'city')}}</td>
+                            <td>{{auth()->user()->city}}</td>
                         </tr>   
                         <tr>
                             <td>Contact Number</td>
@@ -164,7 +164,7 @@
                         <div class="col-md-11">
                             <div class="join-form-row hidden-row field-receiver field-agent" >
                                 <label class="pro-label">Country</label>
-                                <select name="country" class="form-control custom-select" id="country" required>
+                                <select name="test_country" class="form-control custom-select" id="test_country" required>
                                     <option value="" selected disabled>-- Select Country --</option>
                                     @foreach(App\Models\Country::where('status','Enabled')->get() as $country)
                                         <option value="{{ $country->id }}" {{ auth()->user()->country == $country->id ? "selected" : "" }}>{{ $country->name }}</option>
@@ -278,7 +278,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#country').on('change', function() {
+        $('#test_country').on('change', function() {
             var country_id = $(this).val();
             // console.log(country_id);
 
@@ -312,7 +312,7 @@
     $(document).ready(function() {
         // $('#category').on('change', function() {
 
-            var country_id = $('#country').val();
+            var country_id = $('#test_country').val();
             // console.log(country_id);
             var DisID = $('#district_received').val();
             // console.log(DisID);

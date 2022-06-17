@@ -744,12 +744,14 @@
 </script>
 
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
+
+    // on load
+    window.addEventListener('load', () => {
 
         const userType = document.getElementById('user_type')
         const agentReqFields = ['agent_country', 'agent_district', 'agent_city', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details'];
 
-        const ReqFields = ['country', 'district', 'agent_district', 'agent_city', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_email', 'referral_agent_number'];
+        const ReqFields = ['country', 'district', 'city', 'occupation', 'contact_number', 'contact_number_two', 'address', 'referral_email', 'referral_agent_number'];
 
         if (userType.value == 'Agent') {
             agentReqFields.forEach((input) => {

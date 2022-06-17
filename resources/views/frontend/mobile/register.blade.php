@@ -253,7 +253,8 @@
 
 
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
+    // on load
+    window.addEventListener('load', () => {
 
         const userType = document.getElementById('user_type')
         const agentReqFields = ['agent_country', 'agent_district', 'agent_city', 'agent_occupation', 'agent_contact_number', 'agent_contact_number_two', 'agent_address', 'referral_details']
