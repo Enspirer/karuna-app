@@ -49,11 +49,15 @@
                     @if(auth()->user()->user_type == 'Agent')  
                         <tr>
                             <td>Country</td>
-                            <td>{{auth()->user()->country}}</td>
-                        </tr>   
+                            <td>{{get_city_details(auth()->user()->id,'country')}}</td>
+                        </tr>
+                        <tr>
+                            <td>District</td>
+                            <td>{{get_city_details(auth()->user()->id,'district')}}</td>
+                        </tr>
                         <tr>
                             <td>City</td>
-                            <td>{{auth()->user()->city}}</td>
+                            <td>{{get_city_details(auth()->user()->id,'city')}}</td>
                         </tr>   
                         <tr>
                             <td>Contact Number</td>
