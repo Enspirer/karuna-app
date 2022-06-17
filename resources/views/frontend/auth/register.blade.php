@@ -514,7 +514,7 @@
                                     <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Volunteer</option>
                                     <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"" }} >Donor</option>
                                 @else
-                                    <option value="Agent">Agent</option>
+                                    <option value="Agent">Volunteer</option>
                                     <option value="Donor" selected>Donor</option>
                                 @endif   
                             </select>
