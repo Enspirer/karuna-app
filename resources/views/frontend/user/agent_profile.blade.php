@@ -40,10 +40,11 @@
                         <td>{{auth()->user()->email}}</td>
                     </tr>   
                     @if(auth()->user()->user_type == 'Donor')  
-                        <tr>
-                            <td>Bio</td>
-                            <td>{{auth()->user()->bio}}</td>
-                        </tr>  
+                            <tr>
+                                <p style="text-align: left;font-size: 11px;overflow: hidden;height: 80px;">
+                                    {{auth()->user()->bio}}
+                                </p>
+                            </tr>
                     @endif
                     @if(auth()->user()->user_type == 'Agent')  
                         <tr>
