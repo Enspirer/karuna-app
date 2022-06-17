@@ -128,7 +128,7 @@
 @else
     <section>
         <div style="padding-top: 200px;padding-bottom: 100px;">
-            <h3 style="text-align: center">Your Agent Profile Not Available </h3>
+            <h3 style="text-align: center">Your Volunteer Profile Not Available </h3>
         </div>
     </section>
 @endif
