@@ -52,7 +52,7 @@
                             <td>{{get_city_details(auth()->user()->id,'country')}}</td>
                         </tr>
                         <tr>
-                            <td>City</td>
+                            <td>District</td>
                             <td>{{get_city_details(auth()->user()->id,'district')}}</td>
                         </tr>
                         <tr>
