@@ -81,6 +81,7 @@ class ListController extends Controller
         $add->email=$request->email;
         $add->user_type=$request->user_type;
         $add->country=$request->country;
+        $add->district=$request->district;
         $add->city=$request->city;
         $add->nic_number=$request->nic_number;
         $add->id_photo=$image_url;
@@ -139,7 +140,7 @@ class ListController extends Controller
                 }
                 return $confirmed;
             })
-
+          
             ->rawColumns(['action','name','confirmed'])
             ->make(true);
         }

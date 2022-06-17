@@ -21,14 +21,25 @@
                                         <td width="14%" style="font-weight: 600; font-size:16px;">Email:</td>
                                         <td style="font-size:16px;">{{ $agent->email }}</td>
                                     </tr>
-                                    <tr>
-                                        <td style="font-weight: 600; font-size:16px;">Country:</td>
-                                        <td style="font-size:16px;">{{ $agent->country }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-weight: 600; font-size:16px;">City:</td>
-                                        <td style="font-size:16px;">{{ $agent->city }}</td>
-                                    </tr>
+                                    
+                                    @if(App\Models\Country::where('id',$agent->country)->first() != null)
+                                        <tr>
+                                            <td style="font-weight: 600; font-size:16px;">Country:</td>
+                                            <td style="font-size:16px;">{{App\Models\Country::where('id',$agent->country)->first()->name}}</td>
+                                        </tr>
+                                    @endif
+                                    @if(App\Models\District::where('id',$agent->district)->first() != null)
+                                        <tr>
+                                            <td style="font-weight: 600; font-size:16px;">District:</td>
+                                            <td style="font-size:16px;">{{App\Models\District::where('id',$agent->district)->first()->name}}</td>
+                                        </tr>
+                                    @endif
+                                    @if(App\Models\City::where('id',$agent->city)->first() != null)
+                                        <tr>
+                                            <td style="font-weight: 600; font-size:16px;">City:</td>
+                                            <td style="font-size:16px;">{{App\Models\City::where('id',$agent->city)->first()->name}}</td>
+                                        </tr>
+                                    @endif                                    
                                     <tr>
                                         <td style="font-weight: 600; font-size:16px;">Contact Number:</td>
                                         <td style="font-size:16px;">{{ $agent->contact_number }} / {{ $agent->contact_number_two }}</td>

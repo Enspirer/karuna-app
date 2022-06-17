@@ -23,8 +23,6 @@
                                 <th scope="col">#ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Country</th>
-                                <th scope="col">City</th>
                                 <th scope="col">Contact Number</th>
                                 <th scope="col">Confirmed</th>
                                 <th scope="col">Option</th>
@@ -81,8 +79,6 @@
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
                     {data: 'email', name: 'email'},
-                    {data: 'country', name: 'country'},
-                    {data: 'city', name: 'city'},
                     {data: 'contact_number', name: 'contact_number'},
                     {data: 'confirmed', name: 'confirmed'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
