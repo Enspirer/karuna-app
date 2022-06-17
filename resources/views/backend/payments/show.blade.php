@@ -22,8 +22,8 @@
                         <div class="col-md-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4>Agent Details</h4>
-                                    <b>Agent Name: </b> <a href="{{url('')}}">{{$agent_details->first_name}} {{$agent_details->last_name}}</a><br>
+                                    <h4>Volunteer Details</h4>
+                                    <b>Volunteer Name: </b> <a href="{{url('')}}">{{$agent_details->first_name}} {{$agent_details->last_name}}</a><br>
                                     <b>Email: </b> <a href="{{url('')}}">{{$agent_details->email}}</a>
                                 </div>
                             </div>

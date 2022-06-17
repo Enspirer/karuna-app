@@ -10,7 +10,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mt-3 fw-600">Agent Informations&nbsp;</h5>
+                    <h5 class="mt-3 fw-600">Volunteer Informations&nbsp;</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">

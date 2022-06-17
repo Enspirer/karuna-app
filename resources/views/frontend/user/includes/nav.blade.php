@@ -8,7 +8,7 @@
         <div class="content-block">
             <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
             @if(auth()->user()->user_type == 'Agent')
-                <div class="status agent">{{auth()->user()->user_type}}</div>
+                <div class="status agent">Volunteer</div>
             @elseif(auth()->user()->user_type == 'Donor')
                 <div class="status donor">{{auth()->user()->user_type}}</div>
             @endif

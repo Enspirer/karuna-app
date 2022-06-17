@@ -73,7 +73,7 @@
                     <div class="info-card">
                         <div class="profile-block">
                             @if($agentDetails != null)
-                                <div class="title">Agent Profile</div>
+                                <div class="title">Volunteer Profile</div>
                                     <div class="profile-info">
                                     @if($agentDetails->profile_image != null)
                                         <img src="{{uploaded_asset($agentDetails->profile_image)}}" alt="" class="dp">
@@ -95,7 +95,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <a href="{{route('frontend.agent_profile',$agentDetails->id)}}">View  History of this Agent</a>
+                                <a href="{{route('frontend.agent_profile',$agentDetails->id)}}">View  History of this Volunteer</a>
                             @else
                                 <div class="title">Deleted Account</div>
                             @endif

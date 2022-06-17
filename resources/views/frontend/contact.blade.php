@@ -215,7 +215,7 @@
                 <div class="content-block">
                     <div class="title" style="font-size: 40px; color: #0C75FF; font-weight: 400; margin-bottom: 10px;">Success !</div>
                     <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">Your message submitted successfully.</p>
-                    <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">One of our agents will be in touch shortly.</p>
+                    <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">One of our volunteers will be in touch shortly.</p>
                 </div>
             </div>
         </div>

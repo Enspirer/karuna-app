@@ -229,7 +229,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link {{active_class(Route::is('admin/agent'))}}" href="{{ route('admin.agent.index') }}">                        
-                                Agent List <span class="notification badge">{{App\Models\Auth\User::where('user_type','Agent')->get()->count()}}</span>
+                            Volunteer List <span class="notification badge">{{App\Models\Auth\User::where('user_type','Agent')->get()->count()}}</span>
                             </a>  
                         </li>  
                         <li class="nav-item">

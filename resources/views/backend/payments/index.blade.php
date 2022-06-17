@@ -20,7 +20,7 @@
                         <thead>
                         <tr>
                             <th scope="col">Donor Name</th>
-                            <th scope="col">Agent Name</th>
+                            <th scope="col">Volunteer Name</th>
                             <th scope="col">Receiver Name</th>
                             <th scope="col">Amount</th>
                             <th scope="col">Package</th>

@@ -76,7 +76,7 @@
                 <div class="card-box" style="background-color: #055147; border-radius: 15px 15px 15px 15px;">
                     <div class="inner">
                         <h3>{{$agent}}</h3>
-                        <p>Agents</p>
+                        <p>Volunteers</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-user-tie mb-4 mr-2" aria-hidden="true"></i>

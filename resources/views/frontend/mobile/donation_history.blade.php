@@ -53,10 +53,10 @@
                                 <div class="row g-0">
                                     <div class="col-6">
                                         @if(App\Models\Auth\User::where('id',$donation->assigned_agent)->first() != null)                                        
-                                            <label>Agent Name</label>
+                                            <label>Volunteer Name</label>
                                             <div class="text">{{App\Models\Auth\User::where('id',$donation->assigned_agent)->first()->first_name}} {{App\Models\Auth\User::where('id',$donation->assigned_agent)->first()->last_name}}</div>
                                         @else
-                                            <label>Agent Name</label>
+                                            <label>Volunteer Name</label>
                                             <div class="text">Deleted Account</div>
                                         @endif
                                     </div>
