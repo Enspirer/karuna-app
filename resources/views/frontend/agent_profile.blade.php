@@ -66,7 +66,7 @@
             <div class="content-block">
                 @if(count(App\Models\Receivers::where('assigned_agent',$agent->id)->get()) == 0)                  
                     <img src="{{url('images/not-found.png')}}" alt="">
-                    <div class="text" style="margin-left: 100px;">No data foud</div>
+                    <div class="text" style="margin-left: 100px;">No data found</div>
                 @else
                     <div class="header">
                         <div class="title">Charity Works</div>
