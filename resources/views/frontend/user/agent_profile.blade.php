@@ -37,7 +37,9 @@
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td>{{auth()->user()->email}}</td>
+                        <td>
+                            <a href="mailto:{{auth()->user()->email}}"> {{auth()->user()->email}}</a>
+                        </td>
                     </tr>   
                     @if(auth()->user()->user_type == 'Donor')  
                             <tr>

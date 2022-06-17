@@ -19,7 +19,9 @@
                                     </tr>
                                     <tr>
                                         <td width="16%" style="font-weight: 600; font-size:16px;">Email:</td>
-                                        <td style="font-size:16px;">{{ $donor_details->email }}</td>
+                                        <td style="font-size:16px;">
+                                            <a href="mailto:{{$donor_details->email}}">{{ $donor_details->email }}</a>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td width="16%" style="font-weight: 600; font-size:16px;">User Type:</td>
