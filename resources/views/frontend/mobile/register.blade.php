@@ -41,10 +41,10 @@
                         <!-- <option value="" selected disabled>User Type</option>  -->
                         <option value="Receiver" disabled>Receiver</option>
                         @if(old('user_type'))
-                            <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Volunteer</option>
+                            <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Agent</option>
                             <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"" }} >Donor</option>
                         @else
-                            <option value="Agent">Volunteer</option>
+                            <option value="Agent">Agent</option>
                             <option value="Donor" selected>Donor</option>
                         @endif
                     </select>
@@ -75,7 +75,7 @@
 
 
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_country">
-                   <select name="country" class="form-control custom-select" id="country" required>
+                   <select name="country" class="form-control custom-select" id="country">
                         <option value="" selected disabled>-- Select Country --</option>
                         @foreach(App\Models\Country::where('status','Enabled')->get() as $country)
                             <option value="{{ $country->id }}" {{ old('country') == $country->id ? "selected" : "" }}>{{ $country->name }}</option>
@@ -88,7 +88,7 @@
 
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_district">
                     <label>District</label>
-                    <select name="district" class="form-control custom-select" id="district" required>
+                    <select name="district" class="form-control custom-select" id="district">
                         @if(old('district'))
                             <option value="{{old('district')}}" selected>{{old('district')}}</option>
                         @endif
@@ -100,7 +100,7 @@
 
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_city">
                     <label>City</label>
-                    <select name="city" class="form-control custom-select" id="city" required>
+                    <select name="city" class="form-control custom-select" id="city">
                         @if(old('city'))
                             <option value="{{old('city')}}" selected>{{old('city')}}</option>
                         @endif
