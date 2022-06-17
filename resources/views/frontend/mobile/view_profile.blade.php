@@ -60,12 +60,8 @@
                             <td>{{$agent->address}}td>
                         </tr>
                         <tr>
-                            <td>Phone Number</td>
-                            <td>{{$agent->contact_number}}</td>
-                        </tr>
-                        <tr>
                             <td>City</td>
-                            <td>{{$agent->city}}</td>
+                            <td>{{get_city_details($agent->id,'city')}}</td>
                         </tr>
                         <tr>
                             <td>NIC Number</td>
