@@ -366,17 +366,17 @@
                 success:function(data) {
                     // console.log(data);
                 if(data){
-                    $('#city').empty();
-                    $('#city').focus;
-                    $('#city').append('<option value="" selected disabled>-- Select City --</option>'); 
+                    $('#test_city').empty();
+                    $('#test_city').focus;
+                    $('#test_city').append('<option value="" selected disabled>-- Select City --</option>'); 
                     $.each(data, function(key, value){
                         // console.log(value);
-                    $('select[name="city"]').append('<option value="'+ value.city_id +'">' + value.city_name+ '</option>');
+                    $('select[name="test_city"]').append('<option value="'+ value.city_id +'">' + value.city_name+ '</option>');
                     
                 });
 
                 }else{
-                    $('#city').empty();
+                    $('#test_city').empty();
                 }
                 }
             });            

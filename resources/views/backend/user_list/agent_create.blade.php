@@ -175,7 +175,7 @@
 
             $.ajax({
                 
-                url: "{{url('/')}}/api/find_district_front/" + country_id,
+                url: "{{url('/')}}/admin/find_district_back/" + country_id,
                 method: "GET",
                 dataType: "json",
                 success:function(data) {
