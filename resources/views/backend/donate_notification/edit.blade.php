@@ -45,7 +45,7 @@
                                 @endif
                                 @if(App\Models\Auth\User::where('id',$receiver->assigned_agent)->first() != null)
                                     <tr>
-                                        <td style="font-weight: 600; font-size:16px;">Agent Name:</td>
+                                        <td style="font-weight: 600; font-size:16px;">Volunteer Name:</td>
                                         <td style="font-size:16px;">{{ App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->first_name }} {{ App\Models\Auth\User::where('id',$receiver->assigned_agent)->first()->last_name }}</td>
                                     </tr>
                                 @endif
