@@ -27,7 +27,7 @@
                     <div class="mobile-container">
                         <div class="inner-wrapper">
                             <img src="{{url('images/not-found.png')}}" alt="">
-                            <div class="text">No data foud</div>
+                            <div class="text">No data found</div>
                         </div>
                     </div>
                 </section>
