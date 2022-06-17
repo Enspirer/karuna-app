@@ -77,7 +77,7 @@ Breadcrumbs::for('admin.city.edit', function ($trail) {
 });
 
 Breadcrumbs::for('admin.agent.index', function ($trail) {
-    $trail->push('Agent List', route('admin.agent.index'));
+    $trail->push('Volunteer List', route('admin.agent.index'));
 });
 
 Breadcrumbs::for('admin.donor.index', function ($trail) {

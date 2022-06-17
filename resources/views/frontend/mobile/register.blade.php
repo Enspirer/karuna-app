@@ -41,10 +41,10 @@
                         <!-- <option value="" selected disabled>User Type</option>  -->
                         <option value="Receiver" disabled>Receiver</option>
                         @if(old('user_type'))
-                            <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Agent</option>
+                            <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Volunteer</option>
                             <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"" }} >Donor</option>
                         @else
-                            <option value="Agent">Agent</option>
+                            <option value="Agent">Volunteer</option>
                             <option value="Donor" selected>Donor</option>
                         @endif
                     </select>

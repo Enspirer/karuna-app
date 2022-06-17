@@ -514,7 +514,7 @@
                                     <option value="Agent" {{ old('user_type') == 'Agent' ? "selected":"" }}>Volunteer</option>
                                     <option value="Donor" {{ old('user_type') == 'Donor' ? "selected":"" }} >Donor</option>
                                 @else
-                                    <option value="Agent">Agent</option>
+                                    <option value="Agent">Volunteer</option>
                                     <option value="Donor" selected>Donor</option>
                                 @endif   
                             </select>
@@ -638,7 +638,7 @@
                                 </div>
                                 <div class="row g-0 mb-5">                                    
                                     <div class="col-md-12">
-                                        <label class="pro-label">Referral Agent Number</label>
+                                        <label class="pro-label">Referral Volunteer Number</label>
                                         <input type="text" id="referral_agent_number" class="form-control" name="referral_agent_number" value="{{old('referral_agent_number')}}">
                                      </div>
                                 </div>                                
