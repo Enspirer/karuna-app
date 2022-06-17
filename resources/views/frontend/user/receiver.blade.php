@@ -169,13 +169,13 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label class="pro-label">Country</label>
-                            <input type="text" name="country" maxlength="191" class="form-control" value="{{App\Models\Country::where('id',auth()->user()->country)->first()->name}}" id="country" readonly>
+                            <input type="text" name="country" maxlength="191" class="form-control" value="{{get_city_details(auth()->user()->id,'country')}}" id="country" readonly>
                         </div>
                     </div>
                     <div class="col-12 col-md-5">
                         <div class="form-group">
                             <label class="pro-label">City</label>
-                            <input type="text" name="city" maxlength="191" class="form-control" value="{{App\Models\City::where('id',auth()->user()->city)->first()->name}}" id="city" readonly>
+                            <input type="text" name="city" maxlength="191" class="form-control" value="{{get_city_details(auth()->user()->id,'city')}}" id="city" readonly>
                         </div>
                     </div>
                 </div>
