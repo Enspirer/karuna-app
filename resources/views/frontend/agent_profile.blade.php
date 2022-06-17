@@ -29,8 +29,6 @@
                             @endif
                         </div>
                     @endif
-                    <div class="status agent">Agent</div>
-                    <div class="text">{{$agent->bio}}</div>
                 </div>
                 <div class="info">
                     <div class="row g-0">
@@ -40,22 +38,29 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Email</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->email}}</div>
+                            <div class="text" style="font-size:0.8rem;">
+                                <a href="mailto:{{$agent->email}}">{{$agent->email}}</a>
+                            </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="label">Address</div>
                             <div class="text" style="font-size:0.8rem;">{{$agent->address}}</div>
                         </div>
                         @if(App\Models\City::where('id',$agent->city)->first() != null)
+
+                            <div class="col-sm-6">
+                                <div class="label">District</div>
+                                <div class="text" style="font-size:0.8rem;">{{get_city_details($agent->id,'district')}}</div>
+                            </div>
                             <div class="col-sm-6">
                                 <div class="label">City</div>
-                                <div class="text" style="font-size:0.8rem;">{{App\Models\City::where('id',$agent->city)->first()->name}}</div>
+                                <div class="text" style="font-size:0.8rem;">{{get_city_details($agent->id,'city')}}</div>
                             </div>
                         @endif
-                        <div class="col-sm-6">
-                            <div class="label">Phone Number</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->contact_number}}</div>
-                        </div>
+                        {{--<div class="col-sm-6">--}}
+                            {{--<div class="label">Phone Number</div>--}}
+                            {{--<div class="text" style="font-size:0.8rem;">{{$agent->contact_number}}</div>--}}
+                        {{--</div>--}}
                         <div class="col-sm-6">
                             <div class="label">Occupation</div>
                             <div class="text" style="font-size:0.8rem;">{{$agent->occupation}}</div>
@@ -64,6 +69,12 @@
                 </div>
             </div>
             <div class="content-block">
+                <div class="header">
+                    <div class="title">About Me</div>
+
+                </div>
+                <p style="font-size: 12px;">{{$agent->bio}}</p>
+                <br>
                 @if(count(App\Models\Receivers::where('assigned_agent',$agent->id)->get()) == 0)                  
                     <img src="{{url('images/not-found.png')}}" alt="">
                     <div class="text" style="margin-left: 100px;">No data found</div>
