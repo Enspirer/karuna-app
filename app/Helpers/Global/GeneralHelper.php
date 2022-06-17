@@ -206,7 +206,7 @@ if (! function_exists('create_notification')) {
                 if($getUserDetails){
                     $districtDetails = \App\Models\District::where('id',$getUserDetails->district)->first();
                     if($districtDetails){
-                        return $getUserDetails->name;
+                        return $districtDetails->name;
                     }else{
                         return null;
                     }
@@ -217,7 +217,7 @@ if (! function_exists('create_notification')) {
                 if($getUserDetails){
                     $countryDetails = \App\Models\Country::where('id',$getUserDetails->country)->first();
                     if($countryDetails){
-                        return $getUserDetails->name;
+                        return $countryDetails->name;
                     }else{
                         return null;
                     }
