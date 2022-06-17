@@ -88,6 +88,62 @@
   background: #1FC39E;
 }
 
+.cookies-policy {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  max-width: 365px;
+  background: #fff;
+  padding: 25px 25px 30px 25px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 999;
+}
+.cookies-policy.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+.cookies-policy .content {
+  margin-top: 10px;
+}
+.cookies-policy .content header {
+  font-size: 25px;
+  font-weight: 600;
+}
+.cookies-policy .content p {
+  color: #858585;
+  margin: 5px 0 20px 0;
+}
+.cookies-policy .content .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cookies-policy .content .buttons button {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: #E78834;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.cookies-policy .content .buttons button:hover {
+  transform: scale(0.97);
+}
+.cookies-policy .content .buttons .item {
+  margin: 0 10px;
+}
+.cookies-policy .content .buttons a {
+  color: #E78834;
+}
+
 .hero-section .hero-slider .slide-arrows .slide-arrow {
   background-color: #1FC39E;
   height: 2.5em;
