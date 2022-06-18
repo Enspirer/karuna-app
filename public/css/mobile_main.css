@@ -114,7 +114,8 @@ body .mobile-body {
 .cookies-policy.hide {
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.8);
+  transform: translate(-50%, 0) scale(0.8);
+  transform-origin: center;
   transition: all 0.3s ease;
 }
 .cookies-policy .content {
