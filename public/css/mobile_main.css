@@ -98,6 +98,65 @@ body .mobile-body {
   position: relative;
 }
 
+.cookies-policy {
+  position: fixed;
+  bottom: 6rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 90%;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 999;
+}
+.cookies-policy.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+.cookies-policy .content {
+  margin-top: 10px;
+}
+.cookies-policy .content header {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.cookies-policy .content p {
+  color: #858585;
+  margin: 5px 0 20px 0;
+  font-size: 0.8rem;
+}
+.cookies-policy .content .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cookies-policy .content .buttons button {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 50px;
+  background: #E78834;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.cookies-policy .content .buttons button:hover {
+  transform: scale(0.97);
+}
+.cookies-policy .content .buttons .item {
+  margin: 0 10px;
+}
+.cookies-policy .content .buttons a {
+  color: #E78834;
+  font-size: 0.9rem;
+}
+
 .splash-hero-section .splash-slider .splide__slide .slide {
   width: 100%;
   height: 45vh;

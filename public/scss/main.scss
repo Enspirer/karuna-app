@@ -97,6 +97,14 @@
     }
 }
 
+@media screen and (max-width: 575px) {
+    .cookies-policy {
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+    }
+}
+
 // Pages
 @import "landing_page/home";
 @import "landing_page/support";

@@ -136,6 +136,18 @@
                 <!-- audio viewer -->
                 <div id="achAudioViewer">                    
                 </div>
+
+                <!-- Cookies Policy -->
+                <div class="cookies-policy hide">
+                    <div class="content">
+                        <header>Cookies Consent</header>
+                        <p>This website use cookies to ensure you get the best experience on our website.</p>
+                        <div class="buttons">
+                            <button class="item">I understand</button>
+                            <a href="{{url('privacy_policy')}}" class="item">Learn more</a>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div><!-- #app -->
 
@@ -202,36 +214,54 @@ const closeNotice = () => {
 }
 </script>
 
-    <!-- FIle Uploader warning modal & close button -->
-    <script>
-        const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
+<!-- FIle Uploader warning modal & close button -->
+<script>
+    const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
 
-        aizUploader.forEach((btn) => {
-            btn.addEventListener('click', () => {
+    aizUploader.forEach((btn) => {
+        btn.addEventListener('click', () => {
 
-                setTimeout(() => {
-                    const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
-                    const warningTrigger = document.querySelector('#aizUploaderModal .uppy-modal-nav .nav-tabs .nav-item:nth-child(2)')
-                    const warningModal = document.getElementById('mobileCapWarning')
-                    const modalClose = warningModal.querySelectorAll('.modal-close')
+            setTimeout(() => {
+                const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
+                const warningTrigger = document.querySelector('#aizUploaderModal .uppy-modal-nav .nav-tabs .nav-item:nth-child(2)')
+                const warningModal = document.getElementById('mobileCapWarning')
+                const modalClose = warningModal.querySelectorAll('.modal-close')
 
-                    aizModal.forEach((modal) => {
-                        modal.setAttribute('data-bs-dismiss', 'modal')
-                        modal.removeAttribute('data-dismiss')
+                aizModal.forEach((modal) => {
+                    modal.setAttribute('data-bs-dismiss', 'modal')
+                    modal.removeAttribute('data-dismiss')
+                })
+
+                warningTrigger.addEventListener('click', () => {
+                    warningModal.style.display = 'block'
+                } , {once : true})
+
+                modalClose.forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        warningModal.style.display = 'none'
                     })
-
-                    warningTrigger.addEventListener('click', () => {
-                        warningModal.style.display = 'block'
-                    } , {once : true})
-
-                    modalClose.forEach((btn) => {
-                        btn.addEventListener('click', () => {
-                            warningModal.style.display = 'none'
-                        })
-                    })
-                }, 500)
-            })
+                })
+            }, 500)
         })
-    </script>
+    })
+</script>
+
+<script>
+    const cookieBox = document.querySelector(".cookies-policy"),
+    acceptBtn = cookieBox.querySelector("button");
+
+    acceptBtn.onclick = () => {
+    //setting cookie for 1 month, after one month it'll be expired automatically
+    document.cookie = "CookieBy=Karunaa; max-age=" + 60 * 60 * 24 * 30;
+    if (document.cookie) { //if cookie is set
+        cookieBox.classList.add("hide"); //hide cookie box
+    } else { //if cookie not set then alert an error
+        alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");
+    }
+    }
+    let checkCookie = document.cookie.indexOf("CookieBy=Karunaa"); //checking our cookie
+    //if cookie is set then hide the cookie box else show it
+    checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");
+</script>
     
 </html>

@@ -144,6 +144,13 @@
   color: #E78834;
 }
 
+@media screen and (max-width: 575px) {
+  .cookies-policy {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+  }
+}
 .hero-section .hero-slider .slide-arrows .slide-arrow {
   background-color: #1FC39E;
   height: 2.5em;
