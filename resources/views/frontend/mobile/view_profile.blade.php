@@ -53,7 +53,9 @@
                         </tr>
                         <tr>
                             <td>Age</td>
-                            <td>{{$agent->email}}</td>
+                            <td>
+                                <a href="mailto:{{$agent->email}}"> {{$agent->email}}</a>
+                            </td>
                         </tr>
                         <tr>
                             <td>Address</td>

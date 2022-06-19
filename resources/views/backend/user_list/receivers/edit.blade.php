@@ -68,13 +68,13 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label class="pro-label">Country</label>
-                                    <input type="text" name="country" maxlength="191" class="form-control" value="{{$agent->country}}" id="country" readonly>
+                                    <input type="text" name="country" maxlength="191" class="form-control" value="{{$agent->country}}" id="country">
                                 </div>
                             </div>
                             <div class="col-12 col-md-5">
                                 <div class="form-group">
                                     <label class="pro-label">City</label>
-                                    <input type="text" name="city" maxlength="191" class="form-control" value="{{$agent->city}}" id="city" readonly>
+                                    <input type="text" name="city" maxlength="191" class="form-control" value="{{$agent->city}}" id="city">
                                 </div>
                             </div>
                         </div>

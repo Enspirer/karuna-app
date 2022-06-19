@@ -94,13 +94,13 @@
                 <div class="frm-col">
                     <div class="form-group">
                         <label class="form-label">Country</label>
-                        <input type="text" name="country" maxlength="191" class="form-control" value="{{get_city_details(auth()->user()->id,'country')}}" id="country" readonly>
+                        <input type="text" name="country" maxlength="191" class="form-control" value="{{get_city_details(auth()->user()->id,'country')}}" id="country">
                     </div>
                 </div>
                 <div class="frm-col">
                     <div class="form-group">
                         <label class="form-label">City</label>
-                        <input type="text" name="city" maxlength="191" class="form-control" value="{{get_city_details(auth()->user()->id,'city')}}" id="city" readonly>
+                        <input type="text" name="city" maxlength="191" class="form-control" value="{{get_city_details(auth()->user()->id,'city')}}" id="city">
                     </div>
                 </div>
             </div>
