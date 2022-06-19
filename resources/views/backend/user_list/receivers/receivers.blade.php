@@ -17,10 +17,10 @@
                         <div class="col-3">
                             <h6 > Name: {{$agent->first_name}} {{$agent->last_name}}</h6>
                             <h6 > Email: {{$agent->email}}</h6>
-                            <h6 > Country: {{$agent->country}}</h6>
+                            <h6 > Country: {{get_city_details($agent->id,'country')}}</h6>
                         </div>
                         <div class="col-3">
-                            <h6 > City: {{$agent->city}}</h6>
+                            <h6 > City: {{get_city_details($agent->id,'city')}}</h6>
                             <h6 > Contact Number: {{$agent->contact_number}}</h6>
                             <h6 > Alternate Contact Number: {{$agent->contact_number_two}}</h6>
                         </div>
