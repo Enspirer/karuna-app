@@ -648,6 +648,9 @@
   font-weight: 400;
   color: #333;
 }
+.db-form .form-control::-webkit-file-upload-button {
+  height: 40px;
+}
 .db-form .form-control:active, .db-form .form-control:focus {
   box-shadow: none;
   outline: none;
@@ -657,6 +660,9 @@
   font-size: 0.9rem;
   font-weight: 400;
   color: #333;
+}
+.db-form .form-select::-webkit-file-upload-button {
+  height: 40px;
 }
 .db-form .form-select:active, .db-form .form-select:focus {
   box-shadow: none;

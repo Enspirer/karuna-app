@@ -335,6 +335,10 @@
         font-weight: 400;
         color: $text-black;
 
+        &::-webkit-file-upload-button {
+            height: 40px;
+        }
+
         &:active,
         &:focus {
             box-shadow: none;
@@ -347,6 +351,10 @@
         font-size: .9rem;
         font-weight: 400;
         color: $text-black;
+
+        &::-webkit-file-upload-button {
+            height: 40px;
+        }
 
         &:active,
         &:focus {

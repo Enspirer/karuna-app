@@ -80,6 +80,10 @@
             background-color: $white;
             border: 1px solid transparent;
 
+            &::-webkit-file-upload-button {
+                height: 40px;
+            }
+
             &::placeholder {
                 font-size: .9rem;
                 font-weight: 300;

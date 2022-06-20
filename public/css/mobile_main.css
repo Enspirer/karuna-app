@@ -470,6 +470,9 @@ body .mobile-body {
   background-color: #fff;
   border: 1px solid transparent;
 }
+.filter-section .inner-wrapper .form-control::-webkit-file-upload-button {
+  height: 40px;
+}
 .filter-section .inner-wrapper .form-control::placeholder {
   font-size: 0.9rem;
   font-weight: 300;
