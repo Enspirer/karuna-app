@@ -309,11 +309,7 @@
                 </div>
                 <div class="row g-0 mb-3">
                     <div class="col-md-11">
-                        <div class="media-block">
-                            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                            <a href="#"><img src="{{url('images/dashboard/placeholder.png')}}" alt=""></a>
-                        </div>
+                        
                         <div class="form-group">
                             <div class="input-group" data-toggle="aizuploader" data-type="video">
                                 <div class="input-group-prepend">
