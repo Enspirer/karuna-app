@@ -25,7 +25,7 @@
                                     <div class="">
                                         <!-- Input -->
                                         <select class="form-control form-control-xs aiz-selectpicker" name="aiz-uploader-sort">
-                                            <option value="newest" selected>Sory by newsed</option>
+                                            <option value="newest" selected>Sort by newest</option>
                                             <option value="oldest">Sort by oldest</option>
                                             <option value="smallest">Sort by smallest</option>
                                             <option value="largest">Sort by largest</option>
