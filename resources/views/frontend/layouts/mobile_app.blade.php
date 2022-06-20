@@ -178,6 +178,23 @@ AIZBtn.forEach((btn) => {
             AIZUploader.forEach((fileManager) => {
                 const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
                 const uploadNew = fileManager.querySelector('#aiz-upload-new')
+                const aizModal = fileManager.querySelector('[data-dismiss="modal"]')
+                const warningTrigger = fileManager.querySelector('.uppy-modal-nav .nav-tabs .nav-item:nth-child(2)')
+                const warningModal = document.getElementById('mobileCapWarning')
+                const modalClose = warningModal.querySelectorAll('.modal-close')
+
+                aizModal.setAttribute('data-bs-dismiss', 'modal')
+                aizModal.removeAttribute('data-dismiss')
+
+                warningTrigger.addEventListener('click', () => {
+                    warningModal.style.display = 'block'
+                } , {once : true})
+
+                modalClose.forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        warningModal.style.display = 'none'
+                    })
+                })
 
                 selectHeader.innerHTML = `
                     <div class="upload-msg-wrapper">
@@ -212,10 +229,11 @@ const closeNotice = () => {
         selectHeader.style.display = 'none'
     })
 }
+
 </script>
 
 <!-- FIle Uploader warning modal & close button -->
-<script>
+<!-- <script>
     const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
 
     aizUploader.forEach((btn) => {
@@ -244,7 +262,7 @@ const closeNotice = () => {
             }, 500)
         })
     })
-</script>
+</script> -->
 
 <script>
     const cookieBox = document.querySelector(".cookies-policy"),
