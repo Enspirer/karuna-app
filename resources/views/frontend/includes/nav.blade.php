@@ -56,8 +56,8 @@
         @auth()
           <li class="nav-item dropdown nav-drop">
             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-              <div class="drop-profile">
-                <img src="{{auth()->user()->picture}}" alt="">
+              <div class="drop-profile" >
+                <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="">
                 <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
