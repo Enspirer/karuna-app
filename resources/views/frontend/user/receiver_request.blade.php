@@ -207,13 +207,13 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group">
                             <label class="pro-label">Country</label>
-                            <input type="text" name="country" maxlength="191" class="form-control" value="{{auth()->user()->country}}" id="country" disabled>
+                            <input type="text" name="country" maxlength="191" class="form-control" value="{{get_city_details(auth()->user()->id,'country')}}" id="country" disabled>
                         </div>
                     </div>
                     <div class="col-12 col-md-5">
                         <div class="form-group">
                             <label class="pro-label">City</label>
-                            <input type="text" name="city" maxlength="191" class="form-control" value="{{auth()->user()->city}}" id="city" disabled>                                                 
+                            <input type="text" name="city" maxlength="191" class="form-control" value="{{get_city_details(auth()->user()->id,'city')}}" id="city" disabled>                                                 
                         </div>
                     </div>
                 </div>
