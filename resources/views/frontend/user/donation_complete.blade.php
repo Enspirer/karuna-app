@@ -1,6 +1,6 @@
 @extends('frontend.layouts.dashboard_app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', app_name() . ' | ' . 'Donation Complete')
 
 @section('content')
 

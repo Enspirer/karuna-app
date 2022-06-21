@@ -1,6 +1,6 @@
 @extends('frontend.layouts.mobile_app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', app_name() . ' | ' . '')
 
 @section('content')
 
