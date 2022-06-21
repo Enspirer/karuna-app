@@ -108,6 +108,8 @@ Route::post('agent/store', [ListController::class, 'agent_store'])->name('agent.
 Route::get('agent/show/{id}', [ListController::class, 'agent_show'])->name('agent.show');
 Route::post('agent_status/update', [ListController::class, 'agent_status_update'])->name('agent_status.update');
 Route::get('donor', [ListController::class, 'donor'])->name('donor.index');
+Route::get('donor_edit/{id}', [ListController::class, 'donor_edit'])->name('donor_edit');
+Route::post('donor_update', [ListController::class, 'donor_update'])->name('donor_update');
 Route::get('donor_status/edit/{id}', [ListController::class, 'donor_status_edit'])->name('donor_status.edit');
 Route::post('donor_status/update', [ListController::class, 'donor_status_update'])->name('donor_status.update');
 Route::get('donate_gigs/{id}', [ListController::class, 'donate_gigs'])->name('donate_gigs');

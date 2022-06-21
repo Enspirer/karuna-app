@@ -104,6 +104,10 @@ Breadcrumbs::for('admin.donor_status.edit', function ($trail) {
     $trail->push('Donor Status', route('admin.donor_status.edit',1));
 });
 
+Breadcrumbs::for('admin.donor_edit', function ($trail) {
+    $trail->push('Donor Edit', route('admin.donor_edit',1));
+});
+
 Breadcrumbs::for('admin.receiver.create', function ($trail) {
     $trail->push('Create', route('admin.receiver.create',1));
 });

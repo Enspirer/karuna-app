@@ -156,7 +156,15 @@ class ListController extends Controller
         return view('backend.user_list.donor');
     }
 
+    public function donor_edit($id)
+    {
+        $donor_edit = User::where('id',$id)->first();
 
+        return view('backend.user_list.donor_edit',[
+            'donor_edit' => $donor_edit
+        ]);
+
+    }
 
     public function donor_status_edit($id)
     {
@@ -182,6 +190,24 @@ class ListController extends Controller
 
     }
 
+    public function donor_update(Request $request)
+    {
+        // dd($request);
+
+        $users = DB::table('users') ->where('id', '=', $request->hidden_id)->update(
+            [
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'profile_image' => $request->profile_image,
+                'bio' => $request->bio
+            ]
+        );
+
+        return redirect()->route('admin.donor.index')->withFlashSuccess('Updated Successfully');
+
+    }
+
     public function get_donor_details(Request $request)
     {
         if($request->ajax())
@@ -191,6 +217,7 @@ class ListController extends Controller
 
             ->addColumn('action', function($data){
                 $button = '<a href="'.route('admin.donor_status.edit',$data->id).'" name="donate_gigs" id="'.$data->id.'" class="edit btn btn-info btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
+                $button .= '<a href="'.route('admin.donor_edit',$data->id).'" name="donor_edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
                 return $button;
             })
             ->addColumn('confirmed', function($data){
