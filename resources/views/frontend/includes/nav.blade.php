@@ -57,7 +57,11 @@
           <li class="nav-item dropdown nav-drop">
             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
               <div class="drop-profile" >
-                <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="">
+                @if(auth()->user()->profile_image != null)
+                    <img src="{{uploaded_asset(auth()->user()->profile_image)}}" alt="">
+                @else
+                    <img src="{{url('img/default_cover.png')}}" alt="">
+                @endif
                 <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
                 <i class="fa-solid fa-chevron-down"></i>
               </div>

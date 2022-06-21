@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', app_name() . ' | ' . 'Support Us')
 
 @section('content')
 
@@ -151,7 +151,12 @@
                     @if($receivers->payment_status != 'Payment Completed')
                         @if($receivers->requirement == 'Other')
                             <div class="card">
-                                <div class="icon purple">{{substr( $receivers->requirement, 0, 1)}}</div>
+                                @if($receivers->cover_image != null)
+                                    <img src="{{uploaded_asset($receivers->cover_image)}}" alt="">
+                                @else
+                                    <img src="{{url('img/default_cover.png')}}" alt="">
+                                @endif
+                                <div class="cta-btn btn-fill">{{$receivers->requirement}}</div>
                                 @if($receivers->name_toggle == 'yes')
                                     <div class="name">{{$receivers->nick_name}}</div>
                                 @else
@@ -160,19 +165,25 @@
                                 <div class="location">{{$receivers->city}}</div>
                                 <div class="text">{{$receivers->about_donation}}</div>
                                 @auth()
-                                    <button href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill" disabled>
-                                        <div class="btn-text">Donate Now</div>
-                                    </button>
+                                <a href="{{route('frontend.payment_other',$receivers->id)}}" class="btn-fill">
+                                    <div class="btn-text">Donate Now</div>
+                                </a>
                                 @else
-                                    <button href="{{route('frontend.auth.register')}}" class="btn-fill" disabled>
+                                    <a href="{{route('frontend.auth.register')}}" class="btn-fill">
                                         <div class="btn-text">Donate Now</div>
-                                    </button>
-                                @endauth
+                                    </a>
+                                    @endauth
+                                    <a href="{{route('frontend.receiver_profile',$receivers->id)}}" class="view-more">View More</a>
                             </div>
                         @else
                             <div class="card">
+                                @if($receivers->cover_image != null)
+                                    <img src="{{uploaded_asset($receivers->cover_image)}}" alt="">
+                                @else
+                                    <img src="{{url('img/default_cover.png')}}" alt="">
+                                @endif
                                 @if(App\Models\Packages::where('id',$receivers->requirement)->first() != null)
-                                    <div class="icon purple">{{substr( App\Models\Packages::where('id',$receivers->requirement)->first()->name, 0, 1)}}</div>
+                                    <div class="cta-btn btn-fill">{{ App\Models\Packages::where('id',$receivers->requirement)->first()->name}}</div>
                                 @else
                                     <div class="name">Package not found</div>
                                 @endif
@@ -184,14 +195,15 @@
                                 <div class="location">{{$receivers->city}}</div>
                                 <div class="text">{{$receivers->about_donation}}</div>
                                 @auth()
-                                    <a href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill">
-                                        <div class="btn-text">Donate Now</div>
-                                    </a>
+                                <a href="{{route('frontend.payment',$receivers->id)}}" class="btn-fill">
+                                    <div class="btn-text">Donate Now</div>
+                                </a>
                                 @else
                                     <a href="{{route('frontend.auth.register')}}" class="btn-fill">
                                         <div class="btn-text">Donate Now</div>
                                     </a>
-                                @endauth
+                                    @endauth
+                                    <a href="{{route('frontend.receiver_profile',$receivers->id)}}" class="view-more">View More</a>
                             </div>
                         @endif
                     @endif
