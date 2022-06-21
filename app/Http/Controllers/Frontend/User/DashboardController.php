@@ -111,7 +111,12 @@ class DashboardController extends Controller
         $add->profile_image=$request->profile_image;
         $add->cover_image=$request->cover_image;
         $add->name=$request->name;
-        $add->name_toggle=$request->name_toggle;
+        if($request->name_toggle == null){
+            $add->name_toggle='no';
+        }
+        else{
+            $add->name_toggle=$request->name_toggle;
+        }
         $add->nick_name=$request->nick_name;
         $add->age=$request->age;
         $add->gender=$request->gender;
