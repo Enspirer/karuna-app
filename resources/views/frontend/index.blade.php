@@ -160,7 +160,7 @@
     </div>
 </section>
 
-@if(count(App\Models\Receivers::where('featured','Enabled')->get()) != 0)
+@if(count(App\Models\Receivers::where('status','!=','Pending')->where('featured','Enabled')->get()) != 0)
     <section class="kindness-section">
         <div class="container">
             <div class="title-block">
@@ -170,7 +170,7 @@
             </div>
             <div class="card-block">
             
-                @foreach(App\Models\Receivers::where('featured','Enabled')->get() as $receivers)
+                @foreach(App\Models\Receivers::where('status','!=','Pending')->where('featured','Enabled')->get() as $receivers)
                     @if($receivers->payment_status != 'Payment Completed')
                         @if(App\Models\Auth\User::where('id',$receivers->assigned_agent)->first() != null)
                             @if($receivers->requirement == 'Other')
