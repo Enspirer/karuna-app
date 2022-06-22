@@ -137,7 +137,7 @@
     </div>
 </section> -->
 
-@if(count(App\Models\Receivers::where('featured','Enabled')->get()) != 0)
+@if(count(App\Models\Receivers::where('status','!=','Pending')->orderby('id','desc')->get()) != 0)
     <section class="kindness-section">
         <div class="container">
             <div class="title-block">
@@ -147,7 +147,7 @@
             </div>
             <div class="card-block">
             
-                @foreach(App\Models\Receivers::where('featured','Enabled')->get() as $receivers)
+                @foreach(App\Models\Receivers::where('status','!=','Pending')->orderby('id','desc')->get() as $receivers)
                     @if($receivers->payment_status != 'Payment Completed')
                         @if($receivers->requirement == 'Other')
                             <div class="card">

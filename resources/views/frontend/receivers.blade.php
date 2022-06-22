@@ -12,8 +12,8 @@
             <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
         </div>
         <div class="card-block">
-            @if(count(App\Models\Receivers::orderby('id','desc')->get()) != 0)
-                @foreach(App\Models\Receivers::orderby('id','desc')->get() as $receivers)
+            @if(count(App\Models\Receivers::where('status','!=','Pending')->orderby('id','desc')->get()) != 0)
+                @foreach(App\Models\Receivers::where('status','!=','Pending')->orderby('id','desc')->get() as $receivers)
                     @if(\App\Models\Auth\User::where('id',$receivers->assigned_agent)->first())
                         @if($receivers->payment_status != 'Payment Completed')
                             @if($receivers->requirement == 'Other')
