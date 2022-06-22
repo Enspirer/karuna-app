@@ -81,13 +81,13 @@
                         
                             <table class="table table-hover table-borderless">
                                 <tbody>
-                                    <h4 class="text-center">Referrel Details</h4>
+                                    <h4 class="text-center">Referral Details</h4>
                                     <tr>
-                                        <td width="40%" style="font-weight: 600; font-size:16px;">Referrel Email:</td>
+                                        <td width="40%" style="font-weight: 600; font-size:16px;">Referral Email:</td>
                                         <td style="font-size:16px;">{{ $agent->email }}</td>
                                     </tr>
                                     <tr>
-                                        <td width="40%" style="font-weight: 600; font-size:16px;">Referrel Volunteer Number:</td>
+                                        <td width="40%" style="font-weight: 600; font-size:16px;">Referral Volunteer Number:</td>
                                         <td style="font-size:16px;">{{ sprintf("%03d",$agent->agent_number) }}</td>
                                     </tr>
                                 </tbody>                                            
@@ -104,13 +104,13 @@
                             
                                 <table class="table table-hover table-borderless">
                                     <tbody>
-                                        <h4 class="text-center">Volunteer Referrel Details</h4>
+                                        <h4 class="text-center">Volunteer Referral Details</h4>
                                         <tr>
-                                            <td width="40%" style="font-weight: 600; font-size:16px;">Referrel Email:</td>
+                                            <td width="40%" style="font-weight: 600; font-size:16px;">Referral Email:</td>
                                             <td style="font-size:16px;">{{ $agent->referral_name }}</td>
                                         </tr>
                                         <tr>
-                                            <td width="40%" style="font-weight: 600; font-size:16px;">Referrel Volunteer Number:</td>
+                                            <td width="40%" style="font-weight: 600; font-size:16px;">Referral Volunteer Number:</td>
                                             <td style="font-size:16px;">{{  sprintf("%03d",$agent->referral_nic_number) }}</td>
                                         </tr>
                                     </tbody>                                            

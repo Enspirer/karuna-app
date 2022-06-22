@@ -71,12 +71,12 @@ class RegisterController extends Controller
     
             if($user_agent == null){
                 return back()->withInput()->with([
-                    'error_incorrect_referrel' => 'Incorrect referrel'
+                    'error_incorrect_referrel' => 'Incorrect Referral'
                 ]);
             }          
             elseif(sprintf("%03d",$user_agent->agent_number) != $request->referral_agent_number){
                 return back()->withInput()->with([
-                    'error_incorrect_referrel' => 'Incorrect referrel'
+                    'error_incorrect_referrel' => 'Incorrect Referral'
                 ]);
             }
         }
