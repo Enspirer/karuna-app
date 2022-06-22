@@ -195,8 +195,8 @@
             </div>
             <ul class="list-group">
 
-                @if(count(App\Models\Receivers::where('assigned_agent',auth()->user()->id)->get()) != 0)
-                    @foreach(App\Models\Receivers::where('assigned_agent',auth()->user()->id)->take(3)->latest()->get() as $receiver)
+                @if(count(App\Models\Receivers::where('status','!=','Pending')->where('assigned_agent',auth()->user()->id)->get()) != 0)
+                    @foreach(App\Models\Receivers::where('status','!=','Pending')->where('assigned_agent',auth()->user()->id)->take(3)->latest()->get() as $receiver)
                         <li class="list-group-item">
                             <div class="receiver">
                                 <div class="content-block">
@@ -252,8 +252,8 @@
             </div>
             <ul class="list-group">
 
-                @if(count(App\Models\Receivers::get()) != 0)
-                    @foreach(App\Models\Receivers::take(3)->where('payment_status',null)->latest()->get() as $receiver)
+                @if(count(App\Models\Receivers::where('status','!=','Pending')->get()) != 0)
+                    @foreach(App\Models\Receivers::take(3)->where('payment_status',null)->where('status','!=','Pending')->latest()->get() as $receiver)
                         @if(App\Models\Auth\User::where('id',$receiver->assigned_agent)->first() != null)
                             <li class="list-group-item">
                                 <div class="receiver">
