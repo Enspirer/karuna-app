@@ -138,7 +138,7 @@ class DashboardController extends Controller
             $add->account_details=json_encode($account_details);
         }
         $add->assigned_agent = auth()->user()->id;
-        $add->status='Approved';
+        $add->status='Pending';
         $add->save();
 
         if(is_mobile(request()->header('user-agent')) == true){
@@ -279,7 +279,7 @@ class DashboardController extends Controller
             $update->account_details=json_encode($account_details);
         }
         $update->assigned_agent = auth()->user()->id;
-        $update->status='Approved';
+        $update->status='Pending';
 
         Receivers::whereId($request->hidden_id)->update($update->toArray());
 
@@ -330,7 +330,7 @@ class DashboardController extends Controller
             $update->other_description=$rec_req->other_description;
             $update->account_details=$rec_req->account_details;
             $update->assigned_agent = auth()->user()->id;
-            $update->status='Approved';
+            $update->status='Pending';
             Receivers::whereId($rec_req->receiver_id)->update($update->toArray());
 
         }

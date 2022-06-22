@@ -29,6 +29,15 @@ class ListController extends Controller
         return view('backend.user_list.agent_create');
     }
 
+    public function agent_edit($id)
+    {
+        $agent = User::where('user_type','Agent')->where('id',$id)->first();
+
+        return view('backend.user_list.agent_edit',[
+            'agent' => $agent
+        ]);
+    }
+
     public function agent_show($id)
     {
         $agent = User::where('user_type','Agent')->where('id',$id)->first();
@@ -79,6 +88,8 @@ class ListController extends Controller
         $add->first_name=$request->first_name;
         $add->last_name=$request->last_name;
         $add->email=$request->email;
+        $add->bio=$request->bio;
+        $add->profile_image=$request->profile_image;
         $add->user_type=$request->user_type;
         $add->country=$request->country;
         $add->district=$request->district;
@@ -97,6 +108,60 @@ class ListController extends Controller
         $add->save();
 
         return redirect()->route('admin.agent.index')->withFlashSuccess('Added Successfully');
+    }
+
+    
+    public function agent_update(Request $request) 
+    {
+        $email = $request->email;
+        $hidden_id = $request->hidden_id;
+
+        $user = User::where('id',$hidden_id)->first();
+        // dd($user);
+
+        if($request->id_photo == null){
+            if(auth()->user()->id_photo == null){
+                return back()->withErrors('Please add an ID Card Photo');
+            }
+        }
+      
+        if($request->city != null){
+            $city = $request->city;
+        }
+        else{
+            $city = $user->city;
+        }
+
+        if($request->file('id_photo'))
+        {            
+            $preview_file_name = time().'_'.rand(1000,10000).'.'.$request->id_photo->getClientOriginalExtension();
+            $fullurls_preview_file = $request->id_photo->move(public_path('files/agents_id'), $preview_file_name);
+            $image_url = $preview_file_name;
+        }else{
+            $image_url = auth()->user()->id_photo;
+        } 
+
+        $users = DB::table('users') ->where('id', '=', $user->id)->update(
+            [
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'country' => $request->country,
+                'district' => $request->district,
+                'city' => $city,
+                'nic_number' => $request->nic_number,
+                'id_photo' => $image_url,
+                'occupation' => $request->occupation,
+                'contact_number' => $request->contact_number,
+                'contact_number_two' => $request->contact_number_two,
+                'address' => $request->address,
+                'profile_image' => $request->profile_image,
+                'bio' => $request->bio
+            ]
+        );
+
+        return redirect()->route('admin.agent.index')->withFlashSuccess('Updated Successfully');
+
     }
 
 
@@ -124,6 +189,7 @@ class ListController extends Controller
 
             ->addColumn('action', function($data){
                 $button = '<a href="'.route('admin.agent.show',$data->id).'" name="show" id="'.$data->id.'" class="edit btn btn-primary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
+                $button .= '<a href="'.route('admin.agent_edit',$data->id).'" name="agent_edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
                 $button .= '<a href="'.route('admin.receivers_list',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm ml-3 mr-3"><i class="fas fa-user-friends"></i> Receivers ('.count(Receivers::where('assigned_agent',$data->id)->get()).')</a>';
                 return $button;
             })
@@ -354,7 +420,16 @@ class ListController extends Controller
                 }
                 return $featured;
             })
-            ->rawColumns(['action','featured'])
+            ->addColumn('status', function($data){
+                if($data->status == 'Approved'){
+                    $status = '<span class="badge badge-success">Approved</span>';
+                }
+                else{
+                    $status = '<span class="badge badge-warning">Pending</span>';
+                }
+                return $status;
+            })
+            ->rawColumns(['action','featured','status'])
             ->make(true);
         }
         return back();
@@ -421,7 +496,7 @@ class ListController extends Controller
         }
         $add->assigned_agent = $request->assigned_agent;
         $add->featured = $request->featured;        
-        $add->status='Approved';
+        $add->status=$request->status;
         $add->save();
 
 
@@ -470,7 +545,7 @@ class ListController extends Controller
         }
         $update->assigned_agent = $request->assigned_agent;
         $update->featured = $request->featured;        
-        $update->status='Approved';
+        $update->status=$request->status;
 
         Receivers::whereId($request->hidden_id)->update($update->toArray());
 

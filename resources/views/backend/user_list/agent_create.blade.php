@@ -38,7 +38,24 @@
                                 </div>
                             </div>
                         </div>
-                   
+
+                        <div class="form-group">
+                            <label>Bio</label>
+                            <textarea name="bio" id="bio" class="form-control" style="height:150px"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Profile Image</label>
+                            <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="profile_image" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
+                        </div>                    
 
                         <div class="row">
                             <div class="col-12 col-md-12">

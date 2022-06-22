@@ -63,13 +63,13 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label class="pro-label">Country</label>
-                                    <input type="text" name="country" maxlength="191" class="form-control" value="{{$agent->country}}" id="country">
+                                    <input type="text" name="country" maxlength="191" class="form-control" value="{{get_city_details($agent->id,'country')}}" id="country" readonly>
                                 </div>
                             </div>
                             <div class="col-12 col-md-5">
                                 <div class="form-group">
                                     <label class="pro-label">City</label>
-                                    <input type="text" name="city" maxlength="191" class="form-control" value="{{$agent->city}}" id="city">
+                                    <input type="text" name="city" maxlength="191" class="form-control" value="{{get_city_details($agent->id,'city')}}" id="city" readonly>
                                 </div>
                             </div>
                         </div>
@@ -308,6 +308,15 @@
                                 </select>
                             </div>
                         @endif
+
+                        <div class="form-group">
+                            <label>Status <span style="color:red">*<span></label>
+                            <select class="form-control" name="status" required>
+                                <option value="Approved">Approve</option>   
+                                <option value="Pending">Pending</option>                                
+                            </select>
+                        </div>
+                        
                     </div>
                 </div>
                 
