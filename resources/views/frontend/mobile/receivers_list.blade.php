@@ -50,7 +50,7 @@
                                 @endif                                
                             </td>
                             <td class="m-td">
-                                <div class="name">{{$receiver->occupation}}</div>
+                                <div class="name">{{$receiver->status}}</div>
                             </td>
                         </tr>
                     @endforeach
