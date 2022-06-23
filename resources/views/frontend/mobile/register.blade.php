@@ -16,14 +16,16 @@
     <div class="mobile-container">
         <form action="{{route('frontend.auth.register.post')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
-
-            @if(session()->has('error_incorrect_referrel'))
-                <div class="alert alert-danger">
-                    {{ session()->get('error_incorrect_referrel') }}
-                </div>
-            @endif
+          
 
             <div class="join-form">
+
+                @if(session()->has('error_incorrect_referrel'))
+                    <div class="alert alert-danger">
+                        {{ session()->get('error_incorrect_referrel') }}
+                    </div>
+                @endif
+
                 <div class="join-form-row">
                     <input type="text" name="first_name" maxlength="191" class="form-control" value="{{old('first_name')}}" id="first_name" placeholder="First Name" required>
                     @if($errors->has('first_name'))
@@ -80,6 +82,9 @@
                     @endif
                 </div> -->
 
+                <input type="hidden" class="form-control" value="{{ old('district') }}" id="district_received" >
+                <input type="hidden" class="form-control" value="{{ old('city') }}" id="city_received" >
+
 
                 <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_country">
                    <select name="country" class="form-control custom-select" id="country">
@@ -97,7 +102,7 @@
                     <select name="district" class="form-control custom-select" id="district">
                         <option value="" selected disabled>-- Select District --</option>                        
                         @if(old('district'))
-                            <option value="{{old('district')}}" selected>{{old('district')}}</option>
+                            <option value="{{App\Models\District::where('id',old('district'))->first()->name}}" selected>{{App\Models\District::where('id',old('district'))->first()->name}}</option>
                         @endif
                     </select>
                     @if($errors->has('district'))
@@ -109,7 +114,7 @@
                     <select name="city" class="form-control custom-select" id="city">
                         <option value="" selected disabled>-- Select City --</option>                        
                         @if(old('city'))
-                            <option value="{{old('city')}}" selected>{{old('city')}}</option>
+                            <option value="{{App\Models\City::where('id',old('city'))->first()->name}}" selected>{{App\Models\City::where('id',old('city'))->first()->name}}</option>
                         @endif
                     </select>
                     @if($errors->has('city'))
@@ -252,6 +257,102 @@
         });
     });
 </script>
+
+
+<script>
+    $(document).ready(function() {
+        // $('#category').on('change', function() {
+
+            var country_id = $('#country').val();
+            // console.log(country_id);
+            var DisID = $('#district_received').val();
+            // console.log(DisID);
+            
+
+                $.ajax({
+                    
+                    url: "{{url('/')}}/api/find_district_front/" + country_id,
+                    method: "GET",
+                    dataType: "json",
+                    success:function(data) {
+                        // console.log(data);
+                    if(data){
+                        $('#district').empty();
+                        $('#district').focus;
+                        // $('#district').append('<option value="" selected disabled>-- Select District --</option>'); 
+                        $.each(data, function(key, value){
+                            // console.log(value);
+                            if(DisID == value.district_id){                                       
+                                $('#district').append('<option value="'+ value.district_id +'" selected>' + value.district_name+ '</option>');
+                            }
+                            else{
+                                $('#district').append('<option value="'+ value.district_id +'">' + value.district_name+ '</option>');
+                            }
+                        
+                        });
+
+                    }else{
+                        $('#district').empty();
+                    }
+                }
+                });
+            
+        // });
+    });
+
+</script>
+
+
+<script>
+    $(document).ready(function() {
+        // $('#category').on('change', function() {
+
+            setTimeout(() => {
+
+                var district_id = $('#district').val();
+                // console.log(district_id);
+
+                var city_id_normal = $('#city_received').val();
+                // console.log(city_id_normal);            
+
+                    $.ajax({
+                        
+                        url: "{{url('/')}}/api/find_city_front/" + district_id,
+                        method: "GET",
+                        dataType: "json",
+                        success:function(data) {
+                            // console.log(data);
+                        if(data){
+                            $('#city').empty();
+                            $('#city').focus;
+                            // $('#city').append('<option value="" selected disabled>-- Select City --</option>'); 
+                            $.each(data, function(key, value){
+                                // console.log(value);
+
+                                if(city_id_normal == value.city_id){                                       
+                                    $('#city').append('<option value="'+ value.city_id +'" selected>' + value.city_name+ '</option>');
+                                }
+                                else{
+                                    $('#city').append('<option value="'+ value.city_id +'">' + value.city_name+ '</option>');
+                                }
+                            
+                            });
+
+                        }else{
+                            $('#city').empty();
+                        }
+                    }
+                    });
+                
+            }, 3000);
+
+           
+            
+        // });
+    });
+
+</script>
+
 
 
 <script>

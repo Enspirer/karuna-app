@@ -99,7 +99,7 @@ class ListController extends Controller
         $add->occupation=$request->occupation;
         $add->contact_number=$request->contact_number;
         $add->contact_number_two=$request->contact_number_two;
-        $add->agent_number=$request->user_agent_number;
+        $add->agent_number=sprintf('%03d', $user_agent_number);
         $add->level='Level 1';
         $add->address=$request->address;
         $add->password=$hashed_password;

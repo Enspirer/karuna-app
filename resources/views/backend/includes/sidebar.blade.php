@@ -53,7 +53,10 @@
             <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/donate_notification'))}}" href="{{ route('admin.donate_notification.index') }}">
                 <i class="nav-icon fas fa-bell"></i>
-                    Notifications <span class="notification badge">{{App\Models\Receivers::where('status','Agent Not Responded')->get()->count()}}</span>
+                    Notifications 
+                    @if(count(App\Models\Receivers::where('status','Agent Not Responded')->get()) != 0)
+                        <span class="notification badge">{{App\Models\Receivers::where('status','Agent Not Responded')->get()->count()}}</span>
+                    @endif
                 </a>
             </li>
 
@@ -140,14 +143,20 @@
             <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/help_and_support'))}}" href="{{ route('admin.help_and_support.index') }}">
                     <i class="nav-icon fas fa-hands-helping"></i>
-                    Help And Support <span class="notification badge">{{App\Models\HelpSupport::where('status','Pending')->get()->count()}}</span>
+                    Help And Support
+                    @if(count(App\Models\HelpSupport::where('status','Pending')->get()) != 0)
+                       <span class="notification badge">{{App\Models\HelpSupport::where('status','Pending')->get()->count()}}</span>
+                    @endif
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/contact_us'))}}" href="{{ route('admin.contact_us.index') }}">
                     <i class="nav-icon fas fa-comments"></i>
-                    Contact Us <span class="notification badge">{{App\Models\ContactUs::where('status','Pending')->get()->count()}}</span>
+                    Contact Us 
+                    @if(count(App\Models\ContactUs::where('status','Pending')->get()) != 0)                    
+                        <span class="notification badge">{{App\Models\ContactUs::where('status','Pending')->get()->count()}}</span>
+                    @endif               
                 </a>
             </li>
 
@@ -229,12 +238,18 @@
 
                         <li class="nav-item">
                             <a class="nav-link {{active_class(Route::is('admin/agent'))}}" href="{{ route('admin.agent.index') }}">                        
-                            Volunteer List <span class="notification badge">{{App\Models\Auth\User::where('user_type','Agent')->get()->count()}}</span>
+                                Volunteer List 
+                                @if(count(App\Models\Auth\User::where('user_type','Agent')->get()) != 0) 
+                                    <span class="notification badge">{{App\Models\Auth\User::where('user_type','Agent')->get()->count()}}</span>
+                                @endif                           
                             </a>  
                         </li>  
                         <li class="nav-item">
                             <a class="nav-link {{active_class(Route::is('admin/donor'))}}" href="{{ route('admin.donor.index') }}">
-                                Donar List <span class="notification badge">{{App\Models\Auth\User::where('user_type','Donor')->get()->count()}}</span>
+                                Donar List 
+                                @if(count(App\Models\Auth\User::where('user_type','Donor')->get()) != 0)   
+                                    <span class="notification badge">{{App\Models\Auth\User::where('user_type','Donor')->get()->count()}}</span>
+                                @endif
                             </a>
                         </li>    
 
