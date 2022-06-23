@@ -1155,7 +1155,7 @@
   padding: 1rem;
   /* Works on Firefox */
   scrollbar-width: thin;
-  scrollbar-color: #f4f4f4 #ddd;
+  scrollbar-color: #ccc #1FC39E;
   /* Works on Chrome, Edge, and Safari */
 }
 .section-join .inner-wrapper .content-block .join-form.no-scroll {
@@ -1166,10 +1166,10 @@
   width: 5px;
 }
 .section-join .inner-wrapper .content-block .join-form::-webkit-scrollbar-track {
-  background: #f4f4f4;
+  background: #ccc;
 }
 .section-join .inner-wrapper .content-block .join-form::-webkit-scrollbar-thumb {
-  background-color: #ddd;
+  background-color: #1FC39E;
 }
 .section-join .inner-wrapper .content-block .join-form .join-form-row.hidden-row {
   display: none;

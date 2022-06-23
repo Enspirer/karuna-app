@@ -37,7 +37,7 @@
 
                 /* Works on Firefox */
                 scrollbar-width: thin;
-                scrollbar-color: #f4f4f4 $light-gray;
+                scrollbar-color: #ccc $primary-green;
 
                 /* Works on Chrome, Edge, and Safari */
                 &::-webkit-scrollbar {
@@ -45,11 +45,11 @@
                 }
 
                 &::-webkit-scrollbar-track {
-                    background: #f4f4f4;
+                    background: #ccc;
                 }
 
                 &::-webkit-scrollbar-thumb {
-                    background-color: $light-gray;
+                    background-color: $primary-green;
                 }
 
                 .join-form-row {
