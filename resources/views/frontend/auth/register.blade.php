@@ -483,6 +483,13 @@
                 <img src="{{url('images/logo/karuna-logo-english.svg')}}" alt="" class="logo">
                 <form action="{{route('frontend.auth.register.post')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
+
+                    @if(session()->has('error_incorrect_referrel'))
+                        <div class="alert alert-danger">
+                            {{ session()->get('error_incorrect_referrel') }}
+                        </div>
+                    @endif
+
                     <div class="join-form">
                         <div class="join-form-row">
                             <label for="first_name" class="form-label">First Name</label>
@@ -645,14 +652,7 @@
                             </div>
                         </div>
 
-                        @if(session()->has('error_incorrect_referrel'))
-                            <div class="alert alert-danger">
-                                {{ session()->get('error_incorrect_referrel') }}
-                            </div>
-                        @endif
-
-
-
+                        
                         <div class="join-form-row">
                             <button type="submit" class="cta-btn btn-fill pull-right">
                                 <div class="btn-text">Sign Up</div>

@@ -16,6 +16,13 @@
     <div class="mobile-container">
         <form action="{{route('frontend.auth.register.post')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
+
+            @if(session()->has('error_incorrect_referrel'))
+                <div class="alert alert-danger">
+                    {{ session()->get('error_incorrect_referrel') }}
+                </div>
+            @endif
+
             <div class="join-form">
                 <div class="join-form-row">
                     <input type="text" name="first_name" maxlength="191" class="form-control" value="{{old('first_name')}}" id="first_name" placeholder="First Name" required>
@@ -86,9 +93,9 @@
                     @endif
                 </div>
 
-                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_district">
-                    <label>District</label>
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_district">              
                     <select name="district" class="form-control custom-select" id="district">
+                        <option value="" selected disabled>-- Select District --</option>                        
                         @if(old('district'))
                             <option value="{{old('district')}}" selected>{{old('district')}}</option>
                         @endif
@@ -98,9 +105,9 @@
                     @endif
                 </div> 
 
-                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_city">
-                    <label>City</label>
+                <div class="join-form-row {{ old('user_type') == 'Agent' ? "":"hidden-row" }}  field-receiver field-agent" id="agent_city">                   
                     <select name="city" class="form-control custom-select" id="city">
+                        <option value="" selected disabled>-- Select City --</option>                        
                         @if(old('city'))
                             <option value="{{old('city')}}" selected>{{old('city')}}</option>
                         @endif
@@ -164,12 +171,7 @@
                         </div>                                
                     </div>
                 </div>
-
-                @if(session()->has('error_incorrect_referrel'))
-                    <div class="alert alert-danger">
-                        {{ session()->get('error_incorrect_referrel') }}
-                    </div>
-                @endif
+               
 
                 <div class="join-form-row">
                     <button type="submit" class="cta-btn btn-fill pull-right">
