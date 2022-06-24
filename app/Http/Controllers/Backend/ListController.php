@@ -120,7 +120,7 @@ class ListController extends Controller
         // dd($user);
 
         if($request->id_photo == null){
-            if(auth()->user()->id_photo == null){
+            if($user->id_photo == null){
                 return back()->withErrors('Please add an ID Card Photo');
             }
         }
@@ -138,7 +138,7 @@ class ListController extends Controller
             $fullurls_preview_file = $request->id_photo->move(public_path('files/agents_id'), $preview_file_name);
             $image_url = $preview_file_name;
         }else{
-            $image_url = auth()->user()->id_photo;
+            $image_url = $user->id_photo;
         } 
 
         $users = DB::table('users') ->where('id', '=', $user->id)->update(

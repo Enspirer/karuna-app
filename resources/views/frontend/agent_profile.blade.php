@@ -65,6 +65,17 @@
                             <div class="label">Occupation</div>
                             <div class="text" style="font-size:0.8rem;">{{$agent->occupation}}</div>
                         </div>
+                        @if(!empty( auth()->user()->id) === true ) 
+                            @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')   
+                                @if($agent->id_photo != null)
+                                    <div class="col-sm-12">
+                                        <div class="label">NIC Photo</div>
+                                        <img src="{{url('files/agents_id/',$agent->id_photo)}}" style="width: 45%;" alt="" >
+                                    </div>
+                                @endif
+                            @endif
+                        @endif                       
+
                     </div>
                 </div>
             </div>
