@@ -18,6 +18,8 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('contact-us', [ContactController::class, 'index'])->name('contact_us');
 Route::post('contact_us/store', [ContactController::class, 'store'])->name('contact_us.store');
+Route::post('contact_now', [ContactController::class, 'contact_now'])->name('contact_now');
+
 
 Route::get('help-and-support', [HomeController::class, 'help'])->name('help');
 Route::post('help_support/store', [HomeController::class, 'help_support_store'])->name('help_support.store');

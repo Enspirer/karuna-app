@@ -77,6 +77,15 @@
                         @endif                       
 
                     </div>
+
+                    <div class="row mt-4">
+                        <div class="col-sm-12">
+                            <button class="cta-btn btn-fill w-100" data-bs-toggle="modal" data-bs-target="#contact_now_Modal">
+                                <div class="btn-text">Contact Now</div>
+                            </button>
+                        </div>  
+                    </div>
+
                 </div>
             </div>
             <div class="content-block">
@@ -143,8 +152,73 @@
         </div>
     </section>
 @endif
+
+<div class="modal fade" id="contact_now_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Contact Now</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <form action="{{route('frontend.contact_now')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
+            <div class="modal-body">
+                <div class="row g-0 mb-3">
+                    <div class="col-md-11">
+                        <label class="pro-label">Email</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" style="height:150px;" name="message" required></textarea>
+                    </div>
+                </div>    
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="hidden_id_contact" value="{{$agent->id}}">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+@if(\Session::has('success'))
+
+<div class="modal fade form-submit-modal" id="overlay_contact_now" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog" style="width: 90%; max-width: 600px; margin: 0; top: 50%; left: 50%; transform: translate(-50%, -50%) !important;">
+        <div class="modal-content" style="background: linear-gradient(60deg, #E4F2FB, #9ACDFF); border: 2px solid #0C75FF; border-radius: 15px;">
+            <div class="modal-body" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 30px;">
+                <i class="bi bi-x-lg" data-bs-dismiss="modal" style="position: absolute; top: -15px; right: -15px; color: #fff; font-size: 16px; background-color: rgba(255, 255, 255, 0.5); width: 35px; height: 35px; border-radius: 50%; display: flex; flex-direction: row; justify-content: center; align-items: center; backdrop-filter: blur(5px);"></i>
+                <div class="image-block">
+                    <img src="{{url('images/success.png')}}" alt="">
+                </div>
+                <div class="content-block">
+                    <div class="title" style="font-size: 28px; color: #0C75FF; font-weight: 400; margin-bottom: 10px;">Submitted Successfully !</div>
+                    <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">You will get an email.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endif
+
 @endsection
 
 @push('after-scripts')
+
+<script>
+    $(window).on('load', function () {
+        $('#overlay_contact_now').modal('show');
+    });
+    $("#close-btn").click(function () {
+        $('#overlay_contact_now').modal('hide');
+    });
+</script>
 
 @endpush

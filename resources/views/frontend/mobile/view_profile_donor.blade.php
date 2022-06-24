@@ -108,9 +108,6 @@
                    
                 </div>
             </div>
-            <a href="#" class="cta-btn btn-fill">
-                <div class="btn-text">Contact Now</div>
-            </a>
         </div>
     </div>
 </section>

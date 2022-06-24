@@ -9,6 +9,7 @@ use App\Mail\Frontend\Contact\SendContact;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\ContactUs;
+use App\Models\ContactNow;
 use Mail;
 use \App\Mail\ContactUsMail;
 use App\Models\Auth\User;
@@ -61,6 +62,27 @@ class ContactController extends Controller
         ]);   
     }
 
+    public function contact_now(Request $request)
+    {        
+        // dd($request); 
+
+        // if($request->get('g-recaptcha-response') == null){
+        //     return back()->with('error', 'Error!.....Please fill reCAPTCHA!');
+        // }  
+   
+        $add = new ContactNow;
+
+        $add->email=$request->email;
+        $add->message=$request->message;
+        $add->user_id=$request->hidden_id_contact;
+        $add->status='Pending'; 
+
+        $add->save();
+
+        return back()->with([
+            'success' => 'success'
+        ]);   
+    }
 
     /**
      * @param SendContactRequest $request

@@ -151,6 +151,16 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link {{active_class(Route::is('admin/contact_users'))}}" href="{{ route('admin.contact_users.index') }}">
+                    <i class="nav-icon fas fa-comment"></i>
+                    Contact Users
+                    @if(count(App\Models\ContactNow::where('status','Pending')->get()) != 0)                    
+                        <span class="notification badge">{{App\Models\ContactNow::where('status','Pending')->get()->count()}}</span>
+                    @endif               
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/contact_us'))}}" href="{{ route('admin.contact_us.index') }}">
                     <i class="nav-icon fas fa-comments"></i>
                     Contact Us 
@@ -160,6 +170,7 @@
                 </a>
             </li>
 
+            
 
             @if ($logged_in_user->isAdmin())
                 <li class="nav-title">

@@ -13,7 +13,7 @@ use App\Http\Controllers\Backend\ContactUsController;
 use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\HelpSupportController;
 use App\Http\Controllers\Backend\DistrictController;
-
+use App\Http\Controllers\Backend\ContactUsersController;
 
 
 // All route names are prefixed with 'admin.'.
@@ -56,6 +56,12 @@ Route::get('contact_us/getdetails', [ContactUsController::class, 'getDetails'])-
 Route::get('contact_us/edit/{id}', [ContactUsController::class, 'edit'])->name('contact_us.edit');
 Route::post('contact_us/update', [ContactUsController::class, 'update'])->name('contact_us.update');
 Route::get('contact_us/delete/{id}', [ContactUsController::class, 'destroy'])->name('contact_us.destroy');
+
+Route::get('contact_users', [ContactUsersController::class, 'index'])->name('contact_users.index');
+Route::get('contact_users/getdetails', [ContactUsersController::class, 'getDetails'])->name('contact_users.getDetails');
+Route::get('contact_users/edit/{id}', [ContactUsersController::class, 'edit'])->name('contact_users.edit');
+Route::post('contact_users/update', [ContactUsersController::class, 'update'])->name('contact_users.update');
+Route::get('contact_users/delete/{id}', [ContactUsersController::class, 'destroy'])->name('contact_users.destroy');
 
 
 Route::get('help_and_support', [HelpSupportController::class, 'index'])->name('help_and_support.index');

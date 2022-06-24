@@ -136,6 +136,14 @@ Breadcrumbs::for('admin.contact_us.index', function ($trail) {
 Breadcrumbs::for('admin.contact_us.edit', function ($trail) {
     $trail->push('Status', route('admin.contact_us.edit',1));
 });
+
+Breadcrumbs::for('admin.contact_users.index', function ($trail) {
+    $trail->push('Contact Users', route('admin.contact_users.index'));
+});
+Breadcrumbs::for('admin.contact_users.edit', function ($trail) {
+    $trail->push('Send Email', route('admin.contact_users.edit',1));
+});
+
 Breadcrumbs::for('admin.payment.show', function ($trail) {
     $trail->push('Status', route('admin.payment.show',1));
 });

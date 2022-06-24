@@ -75,14 +75,17 @@
                             </div>
 
                             @if(App\Models\Auth\User::where('id',$receivers->donor_id)->first() != null)
-                            <a href="{{route('frontend.donor_profile',$receivers->donor_id)}}" class="info-link"><span>Donated By:</span> {{App\Models\Auth\User::where('id',$receivers->donor_id)->first()->first_name}} {{App\Models\Auth\User::where('id',$receivers->donor_id)->first()->last_name}}</a>
+                                <a class="info-link"><span>Donated By:</span> {{App\Models\Auth\User::where('id',$receivers->donor_id)->first()->first_name}}</a>
                             @endif
 
                             @if($receivers->name_toggle == 'yes')
-                            <a href="{{route('frontend.receiver_profile',$receivers->id)}}" class="info-link"><span>Received By:</span>{{$receivers->nick_name}}</a>
+                            <a href="{{route('frontend.receiver_profile',$receivers->id)}}" class="info-link"><span>Received By:</span> {{$receivers->nick_name}}</a>
                             @else
-                            <a href="{{route('frontend.receiver_profile',$receivers->id)}}" class="info-link"><span>Received By:</span>{{$receivers->name}}</a>
+                            <a href="{{route('frontend.receiver_profile',$receivers->id)}}" class="info-link"><span>Received By:</span> {{$receivers->name}}</a>
                             @endif
+
+                            <a class="info-link"><span>Date:</span> {{ $receivers->updated_at->format('d M Y') }}</a>
+
                             <div class="text">{{$receivers->about_donation}}</div>
                         </div>
                     @endif
