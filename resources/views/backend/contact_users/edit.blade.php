@@ -19,6 +19,10 @@
                                         <table class="table table-hover table-borderless">
                                             <tbody>
                                                 <tr>
+                                                    <td width="14%" style="font-weight: 600; font-size:16px;">Agent Name:</td>
+                                                    <td style="font-size:16px;">{{ App\Models\Auth\User::where('id',$contact_users->user_id)->first()->name }}</td>
+                                                </tr>
+                                                <tr>
                                                     <td width="14%" style="font-weight: 600; font-size:16px;">Email:</td>
                                                     <td style="font-size:16px;">{{ $contact_users->email }}</td>
                                                 </tr>
@@ -57,10 +61,7 @@
                                 <input type="hidden" name="hidden_id" value="{{ $contact_users->id }}"/>
                                 <input type="hidden" name="email" value="{{ $contact_users->email }}"/>
                                 <a href="{{route('admin.contact_users.index')}}" type="button" class="btn rounded-pill text-light px-4 py-2 me-2 btn-primary">Back</a>
-                                @if($contact_users->status == 'Seen')
-                                @else
                                 <input type="submit" class="btn rounded-pill text-light px-4 py-2 ms-2 btn-success" value="Send Email" />
-                                @endif
                             </div>
                         </div>
                     </div>
