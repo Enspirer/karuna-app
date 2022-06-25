@@ -19,7 +19,7 @@
                                         <table class="table table-hover table-borderless">
                                             <tbody>
                                                 <tr>
-                                                    <td width="14%" style="font-weight: 600; font-size:16px;">Agent Name:</td>
+                                                    <td width="14%" style="font-weight: 600; font-size:16px;">Volunteer Name:</td>
                                                     <td style="font-size:16px;">{{ App\Models\Auth\User::where('id',$contact_users->user_id)->first()->name }}</td>
                                                 </tr>
                                                 <tr>
