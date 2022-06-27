@@ -252,22 +252,22 @@
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/food-icon.png')}}" alt="">
                     <div class="title">Healthy Food</div>
-                    <div class="text">We Provide Groceries That Feed A Household Or Orphanage.</div>
+                    <div class="text">Groceries to feed a household.</div>
                 </div>
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/medic-icon.png')}}" alt="">
                     <div class="title">Medicine</div>
-                    <div class="text">Essential Medicine That Are Critical For Survival of Any Age.</div>
+                    <div class="text">Essential critical medicine for survival of any age.</div>
                 </div>
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/school-icon.png')}}" alt="">
                     <div class="title">School Items</div>
-                    <div class="text">Stationaries, Books, Pens & Pencils for Children in Schools.</div>
+                    <div class="text">Stationaries, books, pens & pencils for children in schools as a basic package.</div>
                 </div>
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/other-icon.png')}}" alt="">
                     <div class="title">Other</div>
-                    <div class="text">Clothes, Or Any Specified Goods That You Suggest.</div>
+                    <div class="text">Clothes or any specified goods that you suggest.</div>
                 </div>
             </div>
         </div>

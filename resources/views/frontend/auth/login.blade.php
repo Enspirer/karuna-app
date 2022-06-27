@@ -124,7 +124,7 @@
                         </div>
                     </div>
                 {{ html()->form()->close() }}
-                <div class="not-join">Are you member? <a href="{{url('register')}}">Sign up now</a></div>
+                <div class="not-join">New to Karunaa? <a href="{{url('register')}}">Sign up now</a></div>
             </div>
             <div class="image-block">
                 <img src="{{url('images/landing-page/join/join.png')}}" alt="">

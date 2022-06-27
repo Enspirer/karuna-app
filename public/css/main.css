@@ -1733,7 +1733,7 @@
 }
 .about-hero-section .inner-wrapper {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 20%;
   transform: translate(0, -50%);
   width: 35%;
@@ -1789,20 +1789,14 @@
 .mission-section .inner-wrapper {
   text-align: center;
   width: 70%;
-  margin: auto;
+  margin: 0 auto 3rem;
 }
 .mission-section .inner-wrapper .title {
-  font-size: 0.9rem;
+  font-size: 2rem;
   font-weight: 500;
   text-transform: uppercase;
   color: #1FC39E;
   margin-bottom: 0.25rem;
-}
-.mission-section .inner-wrapper .subtitle {
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-bottom: 0.1rem;
-  color: #333;
 }
 .mission-section .inner-wrapper .text {
   font-size: 1rem;
@@ -1813,10 +1807,6 @@
 .text-section {
   position: relative;
   margin-bottom: 5rem;
-}
-.text-section .inner-wrapper {
-  width: 50%;
-  margin-left: auto;
 }
 .text-section .inner-wrapper .title {
   font-size: 1.5rem;
@@ -1914,6 +1904,11 @@
   margin: auto;
 }
 
+@media screen and (max-width: 991px) {
+  .about-hero-section .inner-wrapper {
+    top: 50%;
+  }
+}
 @media screen and (max-width: 767px) {
   .about-hero-section .inner-wrapper {
     left: 50%;

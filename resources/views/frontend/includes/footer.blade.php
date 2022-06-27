@@ -57,8 +57,7 @@
         </div>
         <div class="footer-col">
             <div class="title">About our organization</div>
-            <div class="footer-text">We Are UK Based Charity organization which focuses on Supplying Food, Education & Medicine To Struggling Families In Sri Lanka.</div>
-            <div class="footer-text">We Provide a Digital Platform To Enhance Transparency, Impact and Contribute To The Underprivileged Children & Families In All Parts of Sri Lanka.</div>
+            <div class="footer-text">We are a UK based non for profit charitable organization, providing you an easy, transparent technical pathway for supplying food, education & medicine to the needy children and families in all parts of Sri Lanka.</div>
         </div>
     </div>
     <a href="https://tallentor.com/" target="_blank" class="copyright">Copyright @ {{date('Y')}} | Tallentor Global Ltd</a>

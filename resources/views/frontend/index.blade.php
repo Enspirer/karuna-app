@@ -50,7 +50,7 @@
                                 <div class="subtitle subtitle-2">fjkqfjka</div>
                                 <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                             </div>
-                            <div class="text">We Empower Kindness From Across The Globe To Our Humble Sri Lanka. To Feed, Educate & Heal The Underprivileged. </div>
+                            <div class="text">We are opening a door for your loving kindness to flow over the needy Sri Lankans. You will be the reason for an innocent smile.</div>
                             <div class="button-block">
                                 @auth
                                     @if(auth()->user()->user_type == 'Agent')
@@ -119,22 +119,22 @@
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/food-icon.png')}}" alt="">
                     <div class="title">Healthy Food</div>
-                    <div class="text">We Provide Groceries That Feed A Household Or Orphanage.</div>
+                    <div class="text">Groceries to feed a household.</div>
                 </div>
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/medic-icon.png')}}" alt="">
                     <div class="title">Medicine</div>
-                    <div class="text">Essential Medicine That Are Critical For Survival of Any Age.</div>
+                    <div class="text">Essential critical medicine for survival of any age.</div>
                 </div>
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/school-icon.png')}}" alt="">
                     <div class="title">School Items</div>
-                    <div class="text">Stationaries, Books, Pens & Pencils for Children in Schools. </div>
+                    <div class="text">Stationaries, books, pens & pencils for children in schools as a basic package.</div>
                 </div>
                 <div class="package-card">
                     <img src="{{url('images/landing-page/home/other-icon.png')}}" alt="">
                     <div class="title">Other</div>
-                    <div class="text">Clothes, Or Any Specified Goods That You Suggest.</div>
+                    <div class="text">Clothes or any specified goods that you suggest.</div>
                 </div>
             </div>
         </div>
@@ -153,8 +153,9 @@
                     <div class="subtitle">i,luq ,laujg</div>
                     <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                 </div>
-                <div class="text">In Your Time of Need, Wherever in the World, You May be, You Always Remember the Struggles in Our Beautiful Island Home. Karunaa Focuses on Digitalizing, Simplifying & Enhancing Limpidity In Your efforts to Contribute And Be a Helping Hand to Struggling Families of Sri Lanka.</div>
-                <div class="text">We Focus on Supplying Essential Items In the Pressing Needs of The Underprivileged areas, such as Medicine, Healthy Food, Stationery & Similar Critical Items. Sri Lanka Is Home To Many and is a Mother For All. We Do Our Best To Play Our Part. </div>
+                <div class="text">Wherever in the world you reside, you may always remember the struggling innocent people at our beautiful home island. Karunaa focuses on digitalizing, simplifying & enhancing limpidity in your efforts to contribute and be a helping hand to struggling families of Sri Lanka.</div>
+                <div class="text">We focus on providing the pressing needs, such as medicine, healthy food, stationery & similar critical items for the identified disadvantaged people.</div>
+                <div class="text">Crying hearts of many children and families in Sri Lanka are in need of our support. Join with us to heal the hearts.. bring smiles and spread the kindness…</div>
             </div>
         </div>
     </div>
