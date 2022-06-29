@@ -24,7 +24,7 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Contact Number</th>
-                                <th scope="col">Confirmed</th>
+                                <th scope="col">Account Status</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>

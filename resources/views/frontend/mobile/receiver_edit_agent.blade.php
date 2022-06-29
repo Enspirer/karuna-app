@@ -116,11 +116,10 @@
             </div>
             
 
-
             <!-- Add Images -->
             <div class="frm-row">
                 <div class="border-wrappre">
-                    <label class="pro-label">Add Profile Image</label>
+                    <label class="form-label">Add Profile Image</label>
                     <div class="form-group">
                         <div class="input-group" data-toggle="aizuploader" data-type="image">
                             <div class="input-group-prepend">
@@ -137,7 +136,7 @@
             <!-- Add short video clips -->
             <div class="frm-row">
                 <div class="border-wrappre">
-                    <label class="pro-label">Add Cover Image</label>
+                    <label class="form-label">Add Cover Image</label>
                     <div class="form-group">
                         <div class="input-group" data-toggle="aizuploader" data-type="image">
                             <div class="input-group-prepend">
@@ -152,6 +151,7 @@
                 </div>
             </div>
 
+            <h6 class="mb-5 text-center">Donation related media files</h6>
 
             <!-- Add Images -->
             <div class="frm-row">

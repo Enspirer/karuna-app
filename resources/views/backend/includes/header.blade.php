@@ -30,7 +30,7 @@
         @endif -->
     </ul>
 
-    <ul class="nav navbar-nav ml-auto">
+    <ul class="nav navbar-nav ml-auto mr-5">
         <!-- <li class="nav-item d-md-down-none">
             <a class="nav-link" href="#">
                 <i class="fas fa-bell"></i>
@@ -62,10 +62,10 @@
         </li>
     </ul>
 
-    <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+    <!-- <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
         <span class="navbar-toggler-icon"></span>
     </button>
     <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
         <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
 </header>

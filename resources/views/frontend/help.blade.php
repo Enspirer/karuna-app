@@ -138,6 +138,7 @@
                     <div class="title" style="font-size: 40px; color: #0C75FF; font-weight: 400; margin-bottom: 10px;">Success !</div>
                     <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">Your message submitted successfully.</p>
                     <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">One of our vlunteers will be in touch shortly.</p>
+                    <button type="button" class="btn btn-primary px-4 mt-4 me-4" style="margin-left:auto; display: block" data-bs-dismiss="modal">OK</button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.mobile_app')
 
-@section('title', app_name() . ' | ' . 'Profile'))
+@section('title', app_name() . ' | ' . 'Profile')
 
 @section('content')
 
@@ -261,11 +261,11 @@
                 </div>
                 <div class="frm-row">
                     <label class="form-label">Contact Number</label>
-                    <input type="number" name="contact_number" maxlength="191" class="form-control" value="{{auth()->user()->contact_number}}" id="contact_number" placeholder="Contact Number">
+                    <input type="text" name="contact_number" maxlength="191" class="form-control" value="{{auth()->user()->contact_number}}" id="contact_number" placeholder="Contact Number">
                 </div>
                 <div class="frm-row">
                     <label class="form-label">Alternate Contact Number</label>
-                    <input type="number" name="contact_number_two" maxlength="191" class="form-control" value="{{auth()->user()->contact_number_two}}" id="contact_number_two" placeholder="Alternative Contact Number">
+                    <input type="text" name="contact_number_two" maxlength="191" class="form-control" value="{{auth()->user()->contact_number_two}}" id="contact_number_two" placeholder="Alternative Contact Number">
                 </div>
                 <div class="frm-row">
                     <label class="form-label">Address</label>

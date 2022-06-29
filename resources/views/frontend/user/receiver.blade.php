@@ -106,9 +106,7 @@
                             <i class="bi bi-question-circle"></i>
                             <div class="pro-tooltip">
                                 <div class="header">About toggle</div>
-                                <div class="body">You can choose whether your name display everyone or not. If you want
-                                    to hide your name and profile picture you must tick this toggle. After you tick this
-                                    toggle your profile picture and name will hide from your listing.</div>
+                                <div class="body">If the receiver is not willing to disclose their name and photos to public - click the toggle</div>
                             </div>
                         </div>
                     </div>
@@ -123,17 +121,7 @@
                     <div class="col-md-11">                        
                         <input type="text" class="form-control" name="nick_name" value="{{$receiver->nick_name}}" required>
                     </div>
-                    <div class="col-md-1">
-                        <div class="tooltip-block">
-                            <i class="bi bi-question-circle"></i>
-                            <div class="pro-tooltip">
-                                <div class="header">About toggle</div>
-                                <div class="body">You can choose whether your name display everyone or not. If you want
-                                    to hide your name and profile picture you must tick this toggle. After you tick this
-                                    toggle your profile picture and name will hide from your listing.</div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <!-- Age, Gender, City -->
                 <div class="row g-3 mb-3">
@@ -262,6 +250,7 @@
                     </div>
                 </div>
 
+                <h4 class="mb-5 text-center">Donation related media files</h4>
 
                 <!-- Add Images -->
                 <div class="row g-0">
@@ -482,6 +471,8 @@
         </form>
     </div>
 </section>
+
+
 
 @endsection
 

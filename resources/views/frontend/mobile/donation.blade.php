@@ -137,6 +137,7 @@
                 <textarea class="form-control" style="height:150px;" name="bio" rows="3"></textarea>
             </div>
            
+            <h6 class="py-4 text-center">Donation related media files</h6>
             
             <!-- Add Images -->
             <div class="frm-row">

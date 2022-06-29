@@ -180,6 +180,7 @@
                 <div class="content-block">
                     <div class="title" style="font-size: 18px; color: #0C75FF; font-weight: 400; margin-bottom: 10px;">Submitted Successfully !</div>
                     <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">You will get an email.</p>
+                    <button type="button" class="btn btn-primary px-4 mt-4" style="margin-left:60px;" data-bs-dismiss="modal">OK</button>
                 </div>
             </div>
         </div>

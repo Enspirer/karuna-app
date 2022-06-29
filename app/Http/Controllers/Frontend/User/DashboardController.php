@@ -287,8 +287,9 @@ class DashboardController extends Controller
             return redirect()->route('frontend.user.mobile.receiver_agent',$request->hidden_id);
         }
 
-        return back();
-
+        return redirect()->route('frontend.user.dashboard')->with([
+            'receiver_update_success' => 'receiver_update_success'
+        ]); 
 
     }
 

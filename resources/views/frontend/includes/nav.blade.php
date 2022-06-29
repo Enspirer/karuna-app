@@ -62,7 +62,7 @@
                 @else
                     <img src="{{url('img/default_cover.png')}}" alt="">
                 @endif
-                <div class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
+                <div class="name">{{auth()->user()->first_name}}</div>
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
             </a>

@@ -81,7 +81,7 @@
                         
                             <table class="table table-hover table-borderless">
                                 <tbody>
-                                    <h4 class="text-center">Referral Details</h4>
+                                    <h4 class="text-center">Volunteer ID</h4>
                                     <tr>
                                         <td width="40%" style="font-weight: 600; font-size:16px;">Referral Email:</td>
                                         <td style="font-size:16px;">{{ $agent->email }}</td>

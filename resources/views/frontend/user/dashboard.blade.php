@@ -426,6 +426,30 @@
                 <div class="content-block">
                     <div class="title" style="font-size: 40px; color: #0C75FF; font-weight: 400; margin-bottom: 10px;">Success !</div>
                     <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">Submitted Successfully.</p>
+                    <button type="button" class="btn btn-primary px-4 mt-4" style="margin-left:60px;" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endif
+
+
+@if(\Session::has('receiver_update_success'))
+
+<div class="modal fade form-submit-modal" id="receiver_update_popup" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog" style="width: 90%; max-width: 600px; margin: 0; top: 50%; left: 50%; transform: translate(-50%, -50%) !important;">
+        <div class="modal-content" style="background: linear-gradient(60deg, #E4F2FB, #9ACDFF); border: 2px solid #0C75FF; border-radius: 15px;">
+            <div class="modal-body" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 30px;">
+                <i class="bi bi-x-lg" data-bs-dismiss="modal" style="position: absolute; top: 5px; right: 5px; color: #fff; font-size: 16px; background-color: rgba(255, 255, 255, 0.5); width: 35px; height: 35px; border-radius: 50%; display: flex; flex-direction: row; justify-content: center; align-items: center; backdrop-filter: blur(5px);"></i>
+                <!-- <div class="image-block">
+                    <img src="{{url('images/success.png')}}" alt="">
+                </div> -->
+                <div class="content-block">
+                    <div class="title" style="font-size: 40px; color: #0C75FF; font-weight: 400; margin-bottom: 10px;">Success !</div>
+                    <p class="text" style="font-size: 16px; ont-weight 300; margin: 0; color: #333;">Receiver Details Updated Successfully.</p>
+                    <button type="button" class="btn btn-primary px-4 mt-4" style="margin-left:100px;" data-bs-dismiss="modal">OK</button>
                 </div>
             </div>
         </div>
@@ -454,6 +478,15 @@
     });
     $("#close-btn").click(function () {
         $('#overlay').modal('hide');
+    });
+</script>
+
+<script>
+    $(window).on('load', function () {
+        $('#receiver_update_popup').modal('show');
+    });
+    $("#close-btn").click(function () {
+        $('#receiver_update_popup').modal('hide');
     });
 </script>
 

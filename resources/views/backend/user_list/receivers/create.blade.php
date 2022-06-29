@@ -156,6 +156,7 @@
                             </div>
                         </div>
 
+                        <h4 class="py-4 text-center">Donation related media files</h4>
 
                         <div class="row g-0">
                             <div class="col-md-6">
@@ -309,13 +310,23 @@
                             </div>
                         @endif
 
-                        <div class="form-group">
-                            <label>Status <span style="color:red">*<span></label>
-                            <select class="form-control" name="status" required>
-                                <option value="Approved">Approve</option>   
-                                <option value="Pending">Pending</option>                                
-                            </select>
+                        <div class="row">
+                            <div class="col-6">
+
+                                <div class="form-group">
+                                    <label>Status <span style="color:red">*<span></label>
+                                    <select class="form-control" name="status" required>
+                                        <option value="Approved">Approve</option>   
+                                        <option value="Pending">Pending</option>                                
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="col-6">
+                                <h5 class="text-danger" style="margin-top:37px;">* Please approve the receiver to be active on the system.</h5>
+                            </div>
                         </div>
+                       
                         
                     </div>
                 </div>

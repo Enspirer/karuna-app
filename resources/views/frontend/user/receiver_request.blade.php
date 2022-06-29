@@ -114,9 +114,7 @@
                             <i class="bi bi-question-circle"></i>
                             <div class="pro-tooltip">
                                 <div class="header">About toggle</div>
-                                <div class="body">You can choose whether your name display everyone or not. If you want
-                                    to hide your name and profile picture you must tick this toggle. After you tick this
-                                    toggle your profile picture and name will hide from your listing.</div>
+                                <div class="body">If the receiver is not willing to disclose their name and photos to public - click the toggle.</div>
                             </div>
                         </div>
                     </div>
@@ -304,6 +302,7 @@
                     @endif
                 </div>
 
+                <h5 class="py-4 text-center">Donation related media files</h5>
 
                 <!-- Add Images -->
                 <div class="row g-0">

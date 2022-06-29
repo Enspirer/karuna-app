@@ -199,10 +199,10 @@ class ListController extends Controller
             })
             ->addColumn('confirmed', function($data){
                 if($data->confirmed == 'true'){
-                    $confirmed = '<span class="badge badge-success">Enabled</span>';
+                    $confirmed = '<span class="badge badge-success">Approved</span>';
                 }
                 else{
-                    $confirmed = '<span class="badge badge-danger">Disabled</span>';
+                    $confirmed = '<span class="badge badge-warning">Pending</span>';
                 }
                 return $confirmed;
             })

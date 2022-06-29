@@ -98,6 +98,9 @@
                 <label class="form-label">ID</label>
                 <input type="text" class="form-control" name="nic" value="541248742#" readonly>
             </div>
+
+            <h6 class="mb-5 text-center">Donation related media files</h6>
+            
             <!-- Add Images -->
             <div class="frm-row">
                 <div class="border-wrappre">

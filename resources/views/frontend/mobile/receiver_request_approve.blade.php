@@ -197,6 +197,7 @@
                 @endif
             </div>
 
+            <h6 class="mb-5 text-center">Donation related media files</h6>
             
             <div class="row g-0">
                 <div class="col-md-6">

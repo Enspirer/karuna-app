@@ -75,6 +75,9 @@
                         <button type="button" class="btn btn-sm btn-primary" id="uploader_next_btn">Next</button>
                     </div>
                 </div>
+                @if(is_mobile(request()->header('user-agent')) == false)
+                    <h4 class="mr-4 mt-1" style="color:red">Go to select file and choose your file</h4>
+                @endif
                 <button type="button" class="btn btn-sm btn-primary" data-toggle="aizUploaderAddSelected" disabled>Add Files</button>
             </div>
         </div>
