@@ -75,7 +75,7 @@
                         <button type="button" class="btn btn-sm btn-primary" id="uploader_next_btn">Next</button>
                     </div>
                 </div>
-                <button type="button" class="btn btn-sm btn-primary" data-toggle="aizUploaderAddSelected">Add Files</button>
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="aizUploaderAddSelected" disabled>Add Files</button>
             </div>
         </div>
     </div>
