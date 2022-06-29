@@ -68,7 +68,7 @@
                                     </a>
                                 @endauth
 
-                                <a href="{{route('frontend.campaigns')}}" class="cta-btn btn-outline">
+                                <a href="{{route('frontend.about_us')}}" class="cta-btn btn-outline">
                                     <div class="btn-text">Discover More</div>
                                     <!-- <i class="bi bi-arrow-down"></i> -->
                                 </a>
@@ -93,10 +93,13 @@
                 <div class="content-wrapper">
                     <div class="title-block">
                         <div class="subtitle">Packages</div>
-                        <div class="title">This is Karuna <span>Packages</span><br>that you can give</div>
+                        <div class="title">Pick your <span>Karunaa Packages</span><br>that you can give</div>
                         <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                     </div>
-                    <div class="text">We Crowdfund, Purchase & Supply To Underpriveldged Families In Sri Lanka Through Our Volunteer Network. We Provide Exclusive Transparency To Your Kind Donation.</div>
+                    <div class="text">
+                        <p>Loving kindness, generosity will no longer be only words echoing in your hearts… but a reality brining a smile to another…</p>
+                        <p>We empower donations to underprivileged families in Sri Lanka through our digital platform. We provide transparency in transactions, effective distribution and assurance through our trusted network of agents.</p>
+                    </div>
                    
                     @auth
                         @if(auth()->user()->user_type == 'Agent')
@@ -117,24 +120,32 @@
             </div>
             <div class="card-block">
                 <div class="package-card">
+                    <a href="{{route('frontend.campaigns')}}">
                     <img src="{{url('images/landing-page/home/food-icon.png')}}" alt="">
-                    <div class="title">Healthy Food</div>
+                    <div class="title">Medical Package</div>
                     <div class="text">Groceries to feed a household.</div>
+                    </a>
                 </div>
                 <div class="package-card">
+                    <a href="{{route('frontend.campaigns')}}">
                     <img src="{{url('images/landing-page/home/medic-icon.png')}}" alt="">
-                    <div class="title">Medicine</div>
+                    <div class="title">School Items</div>
                     <div class="text">Essential critical medicine for survival of any age.</div>
+                    </a>
                 </div>
                 <div class="package-card">
+                    <a href="{{route('frontend.campaigns')}}">
                     <img src="{{url('images/landing-page/home/school-icon.png')}}" alt="">
                     <div class="title">School Items</div>
                     <div class="text">Stationaries, books, pens & pencils for children in schools as a basic package.</div>
+                    </a>
                 </div>
                 <div class="package-card">
+                    <a href="{{route('frontend.campaigns')}}">
                     <img src="{{url('images/landing-page/home/other-icon.png')}}" alt="">
-                    <div class="title">Other</div>
+                    <div class="title">Other Essentials</div>
                     <div class="text">Clothes or any specified goods that you suggest.</div>
+                    </a>
                 </div>
             </div>
         </div>

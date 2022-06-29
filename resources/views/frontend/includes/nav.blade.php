@@ -15,7 +15,7 @@
           <a class="nav-link {{ Request::segment(1) == 'about-us' ? 'active' : null }}" href="{{route('frontend.about_us')}}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::segment(1) == 'campaigns' ? 'active' : null }}" href="{{route('frontend.campaigns')}}">Our Works</a>
+          <a class="nav-link {{ Request::segment(1) == 'campaigns' ? 'active' : null }}" href="{{route('frontend.campaigns')}}">Our Stories</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ Request::segment(1) == 'support' ? 'active' : null }}" href="{{route('frontend.support')}}">Support Us</a>

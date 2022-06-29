@@ -219,60 +219,23 @@
     </section>
 @endif
 
-
-<section class="feature-section">
+<div class="campaign-section">
     <div class="container">
-        <div class="inner-wrapper">
-            <div class="content-block">
-                <div class="content-wrapper">
-                    <div class="title-block">
-                        <div class="subtitle">Packages</div>
-                        <div class="title">This is Karuna <span>Packages</span><br>that you can give</div>
-                        <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
-                    </div>
-                    <div class="text">We Crowdfund, Purchase & Supply To Underpriveldged Families In Sri Lanka Through Our Volunteer Network. We Provide Exclusive Transparency To Your Kind Donation.</div>
-                    @auth
-                        @if(auth()->user()->user_type == 'Agent')
-                            <a href="{{route('frontend.user.dashboard')}}" class="cta-btn btn-fill">
-                                <div class="btn-text">Visit Dashboard</div>
-                            </a>
-                        @elseif(auth()->user()->user_type == 'Donor')
-                            <a href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
-                                <div class="btn-text">Donate Now</div>
-                            </a>
-                        @endif
-                    @else
-                        <a href="{{route('frontend.auth.register')}}" class="cta-btn btn-fill">
-                            <div class="btn-text">Donate Now</div>
-                        </a>
-                    @endauth
-                </div>
-            </div>
-            <div class="card-block">
-                <div class="package-card">
-                    <img src="{{url('images/landing-page/home/food-icon.png')}}" alt="">
-                    <div class="title">Healthy Food</div>
-                    <div class="text">Groceries to feed a household.</div>
-                </div>
-                <div class="package-card">
-                    <img src="{{url('images/landing-page/home/medic-icon.png')}}" alt="">
-                    <div class="title">Medicine</div>
-                    <div class="text">Essential critical medicine for survival of any age.</div>
-                </div>
-                <div class="package-card">
-                    <img src="{{url('images/landing-page/home/school-icon.png')}}" alt="">
-                    <div class="title">School Items</div>
-                    <div class="text">Stationaries, books, pens & pencils for children in schools as a basic package.</div>
-                </div>
-                <div class="package-card">
-                    <img src="{{url('images/landing-page/home/other-icon.png')}}" alt="">
-                    <div class="title">Other</div>
-                    <div class="text">Clothes or any specified goods that you suggest.</div>
-                </div>
-            </div>
-        </div>
+        <nav class="pagination-block">
+            <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item disabled"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-</section>
+</div>
 
 @endsection
 

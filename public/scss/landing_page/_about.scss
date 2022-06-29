@@ -1,6 +1,6 @@
 .about-hero-section {
     height: 100vh;
-    background: url('../../images/landing-page/about/about-back.png');
+    background: url("../../images/landing-page/about/about-back.png");
     background-size: cover;
     background-position: bottom left;
     background-repeat: no-repeat;
@@ -8,7 +8,7 @@
 
     .inner-wrapper {
         position: absolute;
-        top: 35%;
+        top: 40%;
         left: 20%;
         transform: translate(0, -50%);
         width: 35%;
@@ -22,6 +22,7 @@
                 font-weight: 400;
                 color: $text-black;
                 position: relative;
+                line-height: 1.2;
                 z-index: 1;
             }
 
@@ -82,6 +83,10 @@
             text-transform: uppercase;
             color: $primary-green;
             margin-bottom: 0.25rem;
+
+            span {
+                color: #333;
+            }
         }
 
         .text {
@@ -105,7 +110,7 @@
         }
 
         .text {
-            font-size: .9rem;
+            font-size: 0.9rem;
             font-weight: 300;
             color: $text-black;
             margin-bottom: 1rem;
@@ -161,7 +166,7 @@
             }
 
             .text {
-                font-size: .9rem;
+                font-size: 0.9rem;
                 font-weight: 300;
                 color: $text-black;
                 margin-bottom: 1rem;
@@ -212,7 +217,6 @@
 
 @media screen and (max-width: 991px) {
     .about-hero-section {
-
         .inner-wrapper {
             top: 50%;
         }
