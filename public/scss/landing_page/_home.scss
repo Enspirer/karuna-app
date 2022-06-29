@@ -149,7 +149,7 @@
 
 .feature-section {
     padding: 5rem 0 10rem;
-    background: url('../../images/landing-page/home/feature-back.png');
+    background: url("../../images/landing-page/home/feature-back.png");
     background-size: cover;
     background-position: bottom center;
     background-repeat: repeat;
@@ -163,7 +163,7 @@
             flex: 1;
 
             .content-wrapper {
-                width: 80%;
+                width: 90%;
 
                 .title-block {
                     position: relative;
@@ -195,17 +195,20 @@
                     img {
                         position: absolute;
                         width: 175px;
-                        right: 5%;
+                        right: 20%;
                         top: 40%;
                         z-index: 0;
                     }
                 }
 
                 .text {
-                    font-size: 1rem;
-                    font-weight: 300;
-                    color: $text-black;
                     margin-bottom: 2rem;
+
+                    p {
+                        font-size: 1rem;
+                        font-weight: 300;
+                        color: $text-black;
+                    }
                 }
             }
         }
@@ -218,24 +221,30 @@
             gap: 3rem;
 
             .package-card {
-                padding: 1rem;
                 background-color: $white;
                 border-radius: 3px;
-                text-align: center;
                 box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
                 flex: 0 0 45%;
+                overflow: hidden;
 
-                .title {
-                    font-size: 1rem;
-                    font-weight: 400;
-                    margin: 1rem 0 0.25rem;
-                    color: $text-black;
-                }
+                a {
+                    padding: 1rem;
+                    text-decoration: none;
+                    display: block;
+                    text-align: center;
 
-                .text {
-                    font-size: .9rem;
-                    font-weight: 300;
-                    color: $gray;
+                    .title {
+                        font-size: 1rem;
+                        font-weight: 400;
+                        margin: 1rem 0 0.25rem;
+                        color: $text-black;
+                    }
+
+                    .text {
+                        font-size: 0.9rem;
+                        font-weight: 300;
+                        color: $gray;
+                    }
                 }
             }
         }
@@ -244,7 +253,12 @@
 
 .gratitude-section {
     padding: 5rem 0;
-    background: linear-gradient(to bottom, rgba(36, 38, 50, .92), rgba(36, 38, 50, .92)), url('../../images/landing-page/home/gratitude-back.png');
+    background: linear-gradient(
+            to bottom,
+            rgba(36, 38, 50, 0.92),
+            rgba(36, 38, 50, 0.92)
+        ),
+        url("../../images/landing-page/home/gratitude-back.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -270,7 +284,7 @@
                 margin-bottom: 5rem;
 
                 .title {
-                    font-family: 'Apex';
+                    font-family: "Apex";
                     font-size: 100px;
                     text-align: right;
                     margin-right: 5rem;
@@ -284,7 +298,7 @@
                 }
 
                 .subtitle {
-                    font-family: 'Apex';
+                    font-family: "Apex";
                     font-size: 65px;
                     text-align: right;
                     color: $white;
@@ -307,7 +321,7 @@
                 font-weight: 200;
                 font-size: 1rem;
                 color: $white;
-                margin-bottom: .5rem;
+                margin-bottom: 0.5rem;
             }
         }
     }
@@ -322,7 +336,7 @@
         width: fit-content;
 
         .title {
-            font-family: 'Apex';
+            font-family: "Apex";
             font-size: 50px;
             color: $text-black;
             line-height: 1;
@@ -404,16 +418,16 @@
             }
 
             .location {
-                font-size: .9rem;
+                font-size: 0.9rem;
                 font-weight: 300;
                 color: $text-black;
-                margin-bottom: .5rem;
+                margin-bottom: 0.5rem;
             }
 
             .text {
                 flex: 1;
                 margin-bottom: 1rem;
-                font-size: .8rem;
+                font-size: 0.8rem;
                 font-weight: 300;
                 color: $gray;
                 max-height: 80px;
@@ -429,7 +443,7 @@
             }
 
             .view-more {
-                font-size: .8rem;
+                font-size: 0.8rem;
                 font-weight: 300;
                 color: $gray;
                 text-decoration: none;
@@ -472,7 +486,7 @@
     position: relative;
 
     &::before {
-        content: '';
+        content: "";
         width: 65%;
         height: 2px;
         background-color: $orange;
@@ -487,7 +501,7 @@
         margin: 0 auto 5rem;
 
         .title {
-            font-family: 'Apex';
+            font-family: "Apex";
             font-size: 50px;
             text-align: center;
             line-height: 1;
@@ -541,7 +555,10 @@
 
                             .content {
                                 position: absolute;
-                                background-color: rgba($color: #fff, $alpha: .9);
+                                background-color: rgba(
+                                    $color: #fff,
+                                    $alpha: 0.9
+                                );
                                 padding: 10px 20px;
                                 width: 95%;
                                 bottom: 3%;
@@ -598,7 +615,6 @@
                     text-align: center;
 
                     .title-block {
-
                         img {
                             right: 15%;
                         }
@@ -624,7 +640,7 @@
                 .slide {
                     .content-block {
                         position: absolute;
-                        background-color: rgba(255, 255, 255, .9);
+                        background-color: rgba(255, 255, 255, 0.9);
                         padding: 2rem 1rem;
                         text-align: center;
 
@@ -716,7 +732,6 @@
 
     .feature-section {
         .inner-wrapper {
-
             .content-block {
                 .content-wrapper {
                     width: 100%;

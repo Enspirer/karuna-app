@@ -126,7 +126,8 @@
             display: block;
 
             &.feature {
-                box-shadow: 1px 1px 10px rgba($color: $primary-green, $alpha: 0.5);
+                box-shadow: 1px 1px 10px
+                    rgba($color: $primary-green, $alpha: 0.5);
             }
 
             .header {
@@ -155,7 +156,7 @@
             .info-link {
                 text-decoration: none;
                 display: block;
-                font-size: .9rem;
+                font-size: 0.9rem;
                 font-weight: 300;
                 color: $text-black;
                 overflow: hidden;
@@ -165,7 +166,7 @@
                 -webkit-box-orient: vertical;
 
                 span {
-                    font-size: .9rem;
+                    font-size: 0.9rem;
                     font-weight: 500;
                     color: $text-black;
                     display: inline-block;
@@ -187,11 +188,11 @@
             }
 
             .text {
-                font-size: .8rem;
+                font-size: 0.8rem;
                 font-weight: 300;
                 text-align: center;
                 color: $text-black;
-                margin-top: .5rem;
+                margin-top: 0.5rem;
                 margin-bottom: 1rem;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -214,8 +215,8 @@
                     position: relative;
 
                     &::before {
-                        content: '85%';
-                        font-size: .7rem;
+                        content: "85%";
+                        font-size: 0.7rem;
                         font-weight: 400;
                         color: $text-black;
                         position: absolute;
@@ -224,7 +225,7 @@
                     }
 
                     &::after {
-                        content: '';
+                        content: "";
                         position: absolute;
                         right: 0;
                         top: 50%;
@@ -251,15 +252,15 @@
                         border-right: 1px solid $light-gray;
                     }
 
-                    &.green>* {
+                    &.green > * {
                         color: $primary-green;
                     }
 
-                    &.blue>* {
+                    &.blue > * {
                         color: $blue;
                     }
 
-                    &.gray>* {
+                    &.gray > * {
                         color: $gray;
                     }
 
@@ -277,7 +278,7 @@
                         .currency {
                             font-size: 0.7rem;
                             font-weight: 300;
-                            margin-right: .5em;
+                            margin-right: 0.5em;
                         }
                     }
                 }
@@ -369,7 +370,8 @@
     }
 }
 
-@media screen and (max-width: 767px) {}
+@media screen and (max-width: 767px) {
+}
 
 @media screen and (max-width: 540px) {
     .support-hero-section {
