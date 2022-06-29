@@ -113,15 +113,21 @@
                     <div class="text">Call Us Or Drop Us A Mail, Follow Our Social Media! </div>
                     <ul class="contact-info">
                         <li>
-                            <a href="tel:+947700000" class="contact-link">
+                            <a href="tel:+447700000" class="contact-link">
                                 <i class="fa-solid fa-phone"></i>
-                                +94 77 00000
+                                +44 77 00000
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:info@karuna.com" class="contact-link">
-                                <i class="fa-solid fa-at"></i>
-                                info@karuna.com
+                            <a href="mailto:info@karunaa.org.uk" class="contact-link green">
+                                <i class="fa-solid fa-envelope"></i>
+                                info@karunaa.org.uk
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="contact-link green">
+                                <i class="fa-solid fa-house"></i>
+                                Solar House , Suit 46, 915 High Road, <br> London , N12 8QJ, United Kingdom
                             </a>
                         </li>
                     </ul>
@@ -138,7 +144,12 @@
                         </li>
                         <li>
                             <a href="#" class="social-link">
-                                <i class="fa-brands fa-google-plus-g"></i>
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="social-link">
+                                <i class="fa-brands fa-instagram"></i>
                             </a>
                         </li>
                     </ul>

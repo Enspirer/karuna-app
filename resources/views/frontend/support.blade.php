@@ -15,10 +15,10 @@
                 </div>
                 <div class="text">You Can Help Our Humble Sri Lanka In Many Essential Avenues.</div>
                 <div class="button-block">
-                    <a href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
+                    <a href="#" class="cta-btn btn-fill" onClick="window.scroll(0, 900)">
                         <div class="btn-text">Donate Now</div>
                     </a>
-                    <a href="{{route('frontend.campaigns')}}" class="cta-btn btn-outline">
+                    <a href="{{route('frontend.about_us')}}" class="cta-btn btn-outline">
                         <div class="btn-text">Discover More</div>
                         <!-- <i class="bi bi-arrow-down"></i> -->
                     </a>
