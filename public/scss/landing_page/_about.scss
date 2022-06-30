@@ -20,10 +20,14 @@
             .title {
                 font-size: 3rem;
                 font-weight: 400;
-                color: $text-black;
+                color: $primary-green;
                 position: relative;
                 line-height: 1.2;
                 z-index: 1;
+
+                span {
+                    color: #333;
+                }
             }
 
             img {
@@ -73,26 +77,35 @@
     border-bottom: 1px solid $light-gray;
 
     .inner-wrapper {
-        text-align: center;
-        width: 70%;
-        margin: 0 auto 3rem;
+        display: flex;
+        gap: 2rem;
 
-        .title {
-            font-size: 2rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            color: $primary-green;
-            margin-bottom: 0.25rem;
+        .content-block {
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            overflow: hidden;
+            text-align: center;
+            flex: 1;
 
-            span {
-                color: #333;
+            .title {
+                font-size: 2rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: $primary-green;
+                margin-bottom: 0.5rem;
+                position: relative;
+
+                span {
+                    color: #333;
+                }
             }
-        }
 
-        .text {
-            font-size: 1rem;
-            font-weight: 300;
-            color: $text-black;
+            .text {
+                font-size: 1rem;
+                font-weight: 300;
+                color: $text-black;
+            }
         }
     }
 }
@@ -102,16 +115,25 @@
     margin-bottom: 5rem;
 
     .inner-wrapper {
+        width: 80%;
+        margin: auto;
+
         .title {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 400;
             margin-bottom: 1.25rem;
-            color: $text-black;
+            color: $primary-green;
+            text-align: center;
+
+            span {
+                color: #333;
+            }
         }
 
         .text {
             font-size: 0.9rem;
             font-weight: 300;
+            text-align: justify;
             color: $text-black;
             margin-bottom: 1rem;
         }
@@ -159,10 +181,14 @@
             margin: auto;
 
             .title {
-                font-size: 1.5rem;
+                font-size: 2rem;
                 font-weight: 400;
                 margin-bottom: 1.25rem;
-                color: $text-black;
+                color: $primary-green;
+
+                span {
+                    color: #333;
+                }
             }
 
             .text {
@@ -186,9 +212,13 @@
             font-size: 2rem;
             text-align: center;
             font-weight: 400;
-            color: $text-black;
+            color: $primary-green;
             position: relative;
             z-index: 1;
+
+            span {
+                color: #333;
+            }
         }
 
         img {
@@ -219,6 +249,12 @@
     .about-hero-section {
         .inner-wrapper {
             top: 50%;
+        }
+    }
+
+    .mission-section {
+        .inner-wrapper {
+            flex-direction: column;
         }
     }
 }

@@ -314,8 +314,8 @@
 .feature-section .inner-wrapper .content-block .content-wrapper .title-block img {
   position: absolute;
   width: 175px;
-  right: 20%;
-  top: 40%;
+  left: 10%;
+  top: 25%;
   z-index: 0;
 }
 .feature-section .inner-wrapper .content-block .content-wrapper .text {
@@ -702,7 +702,7 @@
     text-align: center;
   }
   .feature-section .inner-wrapper .content-block .content-wrapper .title-block img {
-    right: 15%;
+    left: 47.5%;
   }
   .feature-section .inner-wrapper .content-block .content-wrapper .cta-btn {
     margin: auto;
@@ -1752,10 +1752,13 @@
 .about-hero-section .inner-wrapper .title-block .title {
   font-size: 3rem;
   font-weight: 400;
-  color: #333;
+  color: #1FC39E;
   position: relative;
   line-height: 1.2;
   z-index: 1;
+}
+.about-hero-section .inner-wrapper .title-block .title span {
+  color: #333;
 }
 .about-hero-section .inner-wrapper .title-block img {
   position: absolute;
@@ -1795,21 +1798,29 @@
   border-bottom: 1px solid #ddd;
 }
 .mission-section .inner-wrapper {
-  text-align: center;
-  width: 70%;
-  margin: 0 auto 3rem;
+  display: flex;
+  gap: 2rem;
 }
-.mission-section .inner-wrapper .title {
+.mission-section .inner-wrapper .content-block {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  overflow: hidden;
+  text-align: center;
+  flex: 1;
+}
+.mission-section .inner-wrapper .content-block .title {
   font-size: 2rem;
   font-weight: 500;
   text-transform: uppercase;
   color: #1FC39E;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  position: relative;
 }
-.mission-section .inner-wrapper .title span {
+.mission-section .inner-wrapper .content-block .title span {
   color: #333;
 }
-.mission-section .inner-wrapper .text {
+.mission-section .inner-wrapper .content-block .text {
   font-size: 1rem;
   font-weight: 300;
   color: #333;
@@ -1819,15 +1830,24 @@
   position: relative;
   margin-bottom: 5rem;
 }
+.text-section .inner-wrapper {
+  width: 80%;
+  margin: auto;
+}
 .text-section .inner-wrapper .title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 400;
   margin-bottom: 1.25rem;
+  color: #1FC39E;
+  text-align: center;
+}
+.text-section .inner-wrapper .title span {
   color: #333;
 }
 .text-section .inner-wrapper .text {
   font-size: 0.9rem;
   font-weight: 300;
+  text-align: justify;
   color: #333;
   margin-bottom: 1rem;
 }
@@ -1868,9 +1888,12 @@
   margin: auto;
 }
 .about-feature-section .content-block .content-wrapper .title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 400;
   margin-bottom: 1.25rem;
+  color: #1FC39E;
+}
+.about-feature-section .content-block .content-wrapper .title span {
   color: #333;
 }
 .about-feature-section .content-block .content-wrapper .text {
@@ -1891,9 +1914,12 @@
   font-size: 2rem;
   text-align: center;
   font-weight: 400;
-  color: #333;
+  color: #1FC39E;
   position: relative;
   z-index: 1;
+}
+.agent-section .title-block .title span {
+  color: #333;
 }
 .agent-section .title-block img {
   position: absolute;
@@ -1918,6 +1944,10 @@
 @media screen and (max-width: 991px) {
   .about-hero-section .inner-wrapper {
     top: 50%;
+  }
+
+  .mission-section .inner-wrapper {
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 767px) {
@@ -2038,7 +2068,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   position: relative;
   z-index: 1;
 }
@@ -2677,6 +2707,9 @@
   color: #fff;
   font-size: 0.8rem;
   font-weight: 300;
+}
+.footer-section .copyright span a.tallentor {
+  color: #1FC39E;
 }
 
 @media screen and (max-width: 991px) {

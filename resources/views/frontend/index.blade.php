@@ -93,12 +93,11 @@
             <div class="content-block">
                 <div class="content-wrapper">
                     <div class="title-block">
-                        <div class="subtitle">Packages</div>
-                        <div class="title">Pick your <span>Karunaa Packages</span><br>that you can give</div>
+                        <div class="title">Pick your <br><span>Karunaa Package</span></div>
                         <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                     </div>
                     <div class="text">
-                        <p>Loving kindness, generosity will no longer be only words echoing in your hearts… but a reality brining a smile to another…</p>
+                        <p>Loving kindness, generosity will no longer be only words echoing in your hearts… but a reality bringing a smile to another…</p>
                         <p>We empower donations to underprivileged families in Sri Lanka through our digital platform. We provide transparency in transactions, effective distribution and assurance through our trusted network of agents.</p>
                     </div>
                    
@@ -123,14 +122,14 @@
                 <div class="package-card">
                     <a href="{{route('frontend.campaigns')}}">
                     <img src="{{url('images/landing-page/home/food-icon.png')}}" alt="">
-                    <div class="title">Medical Package</div>
+                    <div class="title">Food Package</div>
                     <div class="text">Groceries to feed a household.</div>
                     </a>
                 </div>
                 <div class="package-card">
                     <a href="{{route('frontend.campaigns')}}">
                     <img src="{{url('images/landing-page/home/medic-icon.png')}}" alt="">
-                    <div class="title">School Items</div>
+                    <div class="title">Medical Package</div>
                     <div class="text">Essential critical medicine for survival of any age.</div>
                     </a>
                 </div>
