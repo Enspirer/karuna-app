@@ -2851,7 +2851,6 @@
   object-fit: cover;
   object-position: center;
   border: 2px solid white;
-  border-radius: 50%;
   position: absolute;
   bottom: -70px;
   left: 50%;
