@@ -8,7 +8,7 @@
                             <a class="nav-link active font-weight-medium text-dark" data-toggle="tab" href="#aiz-select-file">Select File</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link font-weight-medium text-dark" data-toggle="tab" href="#aiz-upload-new">Upload New</a>
+                            <a class="nav-link font-weight-medium text-dark" data-toggle="tab" cam-warning-trigger href="#aiz-upload-new">Upload New</a>
                         </li>
                     </ul>
                 </div>
@@ -104,4 +104,34 @@
             </div>
         </div>
     </div>
+
+    <!-- Mobile Cam warning -->
+    <div class="mobile-cap-warning" id="mobileCapWarning">
+        <div class="content-block">
+            <div class="inner-wrapper">
+                <i class="bi bi-x-lg modal-close"></i>
+                <div class="title">Caution !</div>
+                <img src="{{url('images/mobile/screen-rotate.png')}}" alt="" class="modal-img">
+                <p>Please use landscape orientation ONLY if you're taking a photo from your camera, portrait will not be accepted by the system</p>
+                <button class="btn-continue modal-close">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.querySelector('#aiz-upload-new').addEventListener('change', () => {
+        document.querySelector('[aiz-new-upload-msg] .aiz-list li').innerHTML =
+        'Now, click the "<span>Select File</span>" window and select your files'
+    })
+
+    document.querySelector('[cam-warning-trigger]').addEventListener('click', () => {
+        document.querySelector('#mobileCapWarning').style.display = 'block'
+    }, {once : true})
+
+    document.querySelectorAll('#mobileCapWarning .modal-close').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            document.querySelector('#mobileCapWarning').style.display = 'none'
+        })
+    })
+    </script>
 </div>
