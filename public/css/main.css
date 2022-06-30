@@ -2846,14 +2846,14 @@
   border-radius: 10px;
 }
 .profile-section .inner-wrapper .info-block .receiver-header .image-block .dp {
-  width: 90px;
-  height: 90px;
+  width: 160px;
+  height: 160px;  
   object-fit: cover;
   object-position: center;
   border: 2px solid white;
   border-radius: 50%;
   position: absolute;
-  bottom: -35px;
+  bottom: -70px;
   left: 50%;
   transform: translate(-50%, 0);
 }
