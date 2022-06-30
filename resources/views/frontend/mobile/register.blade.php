@@ -186,7 +186,7 @@
             </div>
         </form>
 
-        <div class="not-join">Are you member? <a href="{{route('frontend.mobile.login')}}">Sign in now</a></div>
+        <div class="not-join">Are you a member? <a href="{{route('frontend.mobile.login')}}">Sign in now</a></div>
     </div>
 </section>
 
