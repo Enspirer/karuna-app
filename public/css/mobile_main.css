@@ -2605,6 +2605,19 @@ body .mobile-body {
   border: none;
   padding: 0.5rem 1rem;
 }
+#aizUploaderModal .aiz-new-upload-msg .title {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+#aizUploaderModal .aiz-new-upload-msg .aiz-list li {
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+#aizUploaderModal .aiz-new-upload-msg .aiz-list li span {
+  font-weight: 600;
+}
 
 .signup-success-modal .modal-content {
   border: none;

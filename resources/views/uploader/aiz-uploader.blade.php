@@ -75,6 +75,12 @@
                     </div>
 
                     <div class="tab-pane h-100" id="aiz-upload-new">
+                        <div class="aiz-new-upload-msg" aiz-new-upload-msg>
+                            <div class="title">Follow the guides below</div>
+                            <ul class="aiz-list">
+                                <li>Now, choose your desired files from your device</li>
+                            </ul>
+                        </div>
                         <div id="aiz-upload-files" class="h-100">
                         </div>
                     </div>
