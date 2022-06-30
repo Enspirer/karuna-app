@@ -2849,10 +2849,11 @@
   width: 160px;
   height: 160px;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
   border: 2px solid white;
+  border-radius: 50%;
   position: absolute;
-  bottom: -35px;
+  bottom: -70px;
   left: 50%;
   transform: translate(-50%, 0);
 }
