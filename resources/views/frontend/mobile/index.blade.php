@@ -17,7 +17,7 @@
                     <a href="{{route('frontend.user.mobile.index')}}" class="brand">
                         <img src="{{url('images/mobile/logo/karuna-logo-english.svg')}}" alt="">
                     </a>            
-                    <a href="#" class="profile"> 
+                    <a href="{{route('frontend.user.mobile.profile_menu')}}" class="profile"> 
                         <i class="bi bi-suit-heart-fill"></i>
                         <div class="text">{{count(App\Models\Receivers::where('donor_id',auth()->user()->id)->get())}}</div>
                         <img src="{{url('images/landing-page/nav/profile.png')}}" alt="">
@@ -43,7 +43,7 @@
             <a href="{{route('frontend.user.mobile.index')}}" class="brand">
                 <img src="{{url('images/mobile/logo/karuna-logo-english.svg')}}" alt="">
             </a>
-            <a href="#" class="profile">
+            <a href="{{route('frontend.user.mobile.profile_menu')}}" class="profile">
                 <i class="bi bi-suit-heart-fill"></i>
                 <div class="text">0</div>
                 @if(auth()->user()->profile_image != null)
@@ -114,7 +114,7 @@
 <section class="request-list-section">
     <div class="mobile-container">
         <div class="header">
-            <div class="title">Donate List</div>
+            <div class="title">Receiver List</div>
             <a href="#">See All <i class="bi bi-chevron-right"></i></a>
         </div>
         <div class="accordion" id="requestList">
@@ -190,7 +190,7 @@
     <section class="donate-list-section">
         <div class="mobile-container">
             <div class="header">
-                <div class="title">Donate List</div>
+                <div class="title">Receiver List</div>
                 <a href="{{route('frontend.user.mobile.donation_list')}}">See All <i class="bi bi-chevron-right"></i></a>
             </div>
             <ul class="list-group">
@@ -247,7 +247,7 @@
     <section class="donate-list-section">
         <div class="mobile-container">
             <div class="header">
-                <div class="title">Donate List</div>
+                <div class="title">Receiver List</div>
                 <a href="{{route('frontend.user.mobile.donation_list')}}">See All <i class="bi bi-chevron-right"></i></a>
             </div>
             <ul class="list-group">

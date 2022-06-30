@@ -1308,7 +1308,7 @@
   padding: 10rem 0;
 }
 .section-payment .inner-wrapper {
-  background-color: #F4F8FF;
+  background-color: #f4f8ff;
   padding: 2rem 3rem;
   border-radius: 10px;
 }
@@ -1344,8 +1344,8 @@
   color: #333;
 }
 .section-payment .inner-wrapper .content-block .card-block .row-wrapper .form-row .form-control {
-  border: 2px solid #E1E4EB;
-  background-color: #F4F8FF;
+  border: 2px solid #e1e4eb;
+  background-color: #f4f8ff;
   height: 50px;
 }
 .section-payment .inner-wrapper .content-block .card-block .row-wrapper .form-row .form-control:focus, .section-payment .inner-wrapper .content-block .card-block .row-wrapper .form-row .form-control:active {
@@ -1388,8 +1388,8 @@
   width: 50%;
 }
 .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .form-control {
-  border: 2px solid #E1E4EB;
-  background-color: #F4F8FF;
+  border: 2px solid #e1e4eb;
+  background-color: #f4f8ff;
   height: 50px;
 }
 .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .form-control:focus, .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .form-control:active {
@@ -1435,7 +1435,7 @@
   box-shadow: none;
 }
 .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .package-slider .splide__slide .package .header {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   padding: 1.25rem 1rem 0.5rem;
 }
 .section-payment .inner-wrapper .content-block .card-block .row-wrapper .card-row .package-slider .splide__slide .package .header .amount {
@@ -1480,7 +1480,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #F4F8FF;
+  background-color: #f4f8ff;
   position: absolute;
   bottom: 115px;
   left: -25px;
@@ -1491,7 +1491,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #F4F8FF;
+  background-color: #f4f8ff;
   position: absolute;
   bottom: 115px;
   right: -25px;
@@ -1502,10 +1502,10 @@
   padding-bottom: 1.5rem;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block:nth-child(1) {
-  border-bottom: 2px solid #E6E6FF;
+  border-bottom: 2px solid #e6e6ff;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block:nth-child(2) {
-  border-bottom: 2px dashed #E6E6FF;
+  border-bottom: 2px dashed #e6e6ff;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block .title {
   font-size: 1rem;
@@ -2847,7 +2847,7 @@
 }
 .profile-section .inner-wrapper .info-block .receiver-header .image-block .dp {
   width: 160px;
-  height: 160px;  
+  height: 160px;
   object-fit: cover;
   object-position: center;
   border: 2px solid white;

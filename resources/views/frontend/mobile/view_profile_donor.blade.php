@@ -69,7 +69,7 @@
                 @endif
             </div>
             <div class="charity-block">
-                <div class="title">Donate List</div>
+                <div class="title">Receiver List</div>
                 <div class="accordion" id="charityList">
                     @if(count(App\Models\Receivers::where('donor_id',auth()->user()->id)->get()) != 0)
                         @foreach(App\Models\Receivers::where('donor_id',auth()->user()->id)->orderby('id','desc')->get() as $key => $donor)

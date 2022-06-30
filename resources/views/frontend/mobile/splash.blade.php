@@ -56,9 +56,9 @@
 <section class="splash-body-section">
     <div class="mobile-container">
         <div class="text-block">
-            <div class="subtitle">Discover your</div>
-            <div class="title">Donor and Receiver</div>
-            <div class="text">Explore all the existing donor lists and receivers based on your interest.</div>
+            <div class="subtitle">Choose your package and</div>
+            <div class="title">Make a donation</div>
+            <div class="text">Become a donor to help Sri Lankans <br> or a Karunaa Angel to find receivers</div>
         </div>
         <div class="button-block">
             <a href="{{route('frontend.mobile.login')}}" class="cta-btn btn-fill">

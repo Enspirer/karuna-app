@@ -984,13 +984,13 @@
   border-radius: 20px;
 }
 .dashboard-nav .profile-block .content-block .status.agent {
-  background-color: #C40000;
+  background-color: #c40000;
 }
 .dashboard-nav .profile-block .content-block .status.donor {
-  background-color: #38A40A;
+  background-color: #38a40a;
 }
 .dashboard-nav .profile-block .content-block .status.receiver {
-  background-color: #FFBB00;
+  background-color: #ffbb00;
 }
 .dashboard-nav .nav-search {
   position: relative;
@@ -1071,7 +1071,7 @@
 }
 .dashboard-nav .nav-block .navbar-nav .nav-item .nav-link .nav-nav .status {
   font-size: 0.75rem;
-  background-color: #C40000;
+  background-color: #c40000;
   padding: 0.35em 0.75em;
   border-radius: 10px;
   line-height: 1;
@@ -1112,7 +1112,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 2rem 0;
-  background-color: #1C1E1F;
+  background-color: #1c1e1f;
 }
 .dashboard-nav .nav-footer .create-donation .bi {
   background-color: #1FC39E;

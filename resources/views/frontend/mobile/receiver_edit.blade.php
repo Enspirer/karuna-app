@@ -138,7 +138,7 @@
             <!-- Add Voice Out -->
             <div class="frm-row">
                 <div class="border-wrappre">
-                    <label class="form-label">Add Voice Out <span>(Optional)</span></label>
+                    <label class="form-label">Add Voice Cut - Audio <span>(Optional)</span></label>
                     <div class="form-group">
                         <div class="input-group" data-toggle="aizuploader" data-type="image">
                             <div class="input-group-prepend">

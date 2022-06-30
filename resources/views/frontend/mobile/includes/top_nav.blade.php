@@ -5,7 +5,7 @@
             <a href="{{route('frontend.user.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="title">Donate List</div>
+            <div class="title">Add new receiver</div>
         </div>
     </div>
 </section>

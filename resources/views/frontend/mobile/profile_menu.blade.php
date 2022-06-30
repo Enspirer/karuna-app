@@ -88,6 +88,12 @@
                         <div class="text">Events</div>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{url('logout')}}" class="nav-link">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <div class="text">Logout</div>
+                    </a>
+                </li>
             </ul>
             <a href="{{route('frontend.user.mobile.help')}}" class="help-btn">
                 <i class="bi bi-headset"></i>

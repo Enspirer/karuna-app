@@ -7,9 +7,8 @@
         background-color: $white;
 
         .profile-block {
-
             &:nth-child(1) {
-                border-bottom: 2px solid #E6E6FF;
+                border-bottom: 2px solid #e6e6ff;
                 margin-bottom: 1.5rem;
                 padding-bottom: 1.5rem;
             }
@@ -49,16 +48,15 @@
                         align-items: center;
 
                         &:nth-child(1) {
-
                             span {
-                                font-size: .9rem;
+                                font-size: 0.9rem;
                                 font-weight: 500;
                                 color: $text-black;
                             }
                         }
 
                         span {
-                            font-size: .8rem;
+                            font-size: 0.8rem;
                             font-weight: 300;
                             color: $text-black;
                         }
@@ -81,7 +79,7 @@
 
             .cta-link {
                 text-align: center;
-                font-size: .8rem;
+                font-size: 0.8rem;
                 font-weight: 300;
                 text-decoration: underline;
                 color: $dark-blue;

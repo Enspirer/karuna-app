@@ -2,7 +2,7 @@
     padding: 10rem 0;
 
     .inner-wrapper {
-        background-color: #F4F8FF;
+        background-color: #f4f8ff;
         padding: 2rem 3rem;
         border-radius: 10px;
 
@@ -43,8 +43,8 @@
                         }
 
                         .form-control {
-                            border: 2px solid #E1E4EB;
-                            background-color: #F4F8FF;
+                            border: 2px solid #e1e4eb;
+                            background-color: #f4f8ff;
                             height: 50px;
 
                             &:focus,
@@ -85,7 +85,7 @@
                             }
 
                             .sub-label {
-                                font-size: .8rem;
+                                font-size: 0.8rem;
                                 font-weight: 300;
                                 color: $text-black;
                             }
@@ -98,8 +98,8 @@
                         }
 
                         .form-control {
-                            border: 2px solid #E1E4EB;
-                            background-color: #F4F8FF;
+                            border: 2px solid #e1e4eb;
+                            background-color: #f4f8ff;
                             height: 50px;
 
                             &:focus,
@@ -156,7 +156,7 @@
                                     }
 
                                     .header {
-                                        background-color: #F8F8F8;
+                                        background-color: #f8f8f8;
                                         padding: 1.25rem 1rem 0.5rem;
 
                                         .amount {
@@ -165,7 +165,7 @@
                                             color: $text-black;
 
                                             span {
-                                                font-size: .8rem;
+                                                font-size: 0.8rem;
                                                 font-weight: 300;
                                                 color: $text-black;
                                             }
@@ -175,7 +175,7 @@
                                     .body {
                                         padding: 0.35rem 1rem 0.7rem;
                                         text-align: center;
-                                        font-size: .8rem;
+                                        font-size: 0.8rem;
                                         font-weight: 400;
                                         color: $primary-green;
                                     }
@@ -213,7 +213,7 @@
                         width: 50px;
                         height: 50px;
                         border-radius: 50%;
-                        background-color: #F4F8FF;
+                        background-color: #f4f8ff;
                         position: absolute;
                         bottom: 115px;
                         left: -25px;
@@ -225,7 +225,7 @@
                         width: 50px;
                         height: 50px;
                         border-radius: 50%;
-                        background-color: #F4F8FF;
+                        background-color: #f4f8ff;
                         position: absolute;
                         bottom: 115px;
                         right: -25px;
@@ -237,11 +237,11 @@
                         padding-bottom: 1.5rem;
 
                         &:nth-child(1) {
-                            border-bottom: 2px solid #E6E6FF;
+                            border-bottom: 2px solid #e6e6ff;
                         }
 
                         &:nth-child(2) {
-                            border-bottom: 2px dashed #E6E6FF;
+                            border-bottom: 2px dashed #e6e6ff;
                         }
 
                         .title {
@@ -279,16 +279,15 @@
                                     align-items: center;
 
                                     &:nth-child(1) {
-
                                         span {
-                                            font-size: .9rem;
+                                            font-size: 0.9rem;
                                             font-weight: 500;
                                             color: $text-black;
                                         }
                                     }
 
                                     span {
-                                        font-size: .8rem;
+                                        font-size: 0.8rem;
                                         font-weight: 300;
                                         color: $text-black;
                                     }
@@ -311,7 +310,7 @@
 
                         a {
                             text-align: center;
-                            font-size: .8rem;
+                            font-size: 0.8rem;
                             font-weight: 300;
                             text-decoration: underline;
                             color: $dark-blue;
@@ -354,7 +353,7 @@
 
                         .text-block {
                             .text {
-                                font-size: .8rem;
+                                font-size: 0.8rem;
                                 font-weight: 400;
                                 color: $dark-gray;
                             }
@@ -417,7 +416,6 @@
                 flex-direction: column;
 
                 .card-block {
-
                     .row-wrapper {
                         .card-row {
                             flex-direction: column;

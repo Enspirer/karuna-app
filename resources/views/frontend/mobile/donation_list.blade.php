@@ -12,7 +12,7 @@
             <a href="{{route('frontend.user.mobile.index')}}" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="title">Donation List</div>
+            <div class="title">Receiver List</div>
         </div>
     </div>
 </section>

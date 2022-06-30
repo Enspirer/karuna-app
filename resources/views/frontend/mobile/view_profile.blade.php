@@ -85,7 +85,7 @@
                     <img src="{{url('images/not-found.png')}}" alt="">
                     <div class="text" style="margin-left: 100px;">No data found</div>
                 @else
-                    <div class="title">Donate List</div>
+                    <div class="title">Receiver List</div>
                         <div class="accordion" id="charityList">
                             @foreach(App\Models\Receivers::where('assigned_agent',$agent->id)->orderby('id','desc')->get() as $key => $receiver)
                                 <div class="accordion-item">

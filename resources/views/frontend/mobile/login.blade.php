@@ -8,7 +8,7 @@
     <div class="mobile-container">
         <img src="{{url('images/mobile/logo/karuna-logo-english.svg')}}" alt="" class="logo">
         <div class="title">Hello Again !</div>
-        <div class="text">Welcome back you've been missed!</div>
+        <div class="text">Welcome back to Karunaa</div>
     </div>
 </section>
 
@@ -43,7 +43,7 @@
 
 
 
-        <div class="devider">
+        <!-- <div class="devider">
             <div class="text">Or continue with</div>
         </div>
         <div class="social-login">
@@ -55,7 +55,7 @@
                 <img src="{{url('images/mobile/join/google.png')}}" alt="">
                 <div class="text">Google</div>
             </a>
-        </div>
+        </div> -->
         <div class="not-join">Not a member? <a href="{{route('frontend.mobile.register')}}">Register now</a></div>
     </div>
 </section>

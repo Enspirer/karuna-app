@@ -21,14 +21,11 @@
                     <div class="tab-pane active h-100" id="aiz-select-file">
                         <div class="aiz-upload-msg" aiz-upload-msg>
                             <div class="inner-wrapper">
-                                <div class="title">Follow the guides below</div>
+                                <div class="title">Please follow the guidelines</div>
                                 <ol class="aiz-list">
-                                    <li>To upload a new file, click the "<span>Upload New</span>" window</li>
-                                    <li>
-                                    After finishing the upload come back to the "<span>Select File</span>"
-                                    window and select your desired files
-                                    </li>
-                                    <li>Finally, click the "<span>Add Files</span>" button to continue</li>
+                                    <li>To upload a new file, click "<span>Upload New</span>" button</li>
+                                    <li>Once the file uploaded, click "<span>Select File</span>" button and select the file</li>
+                                    <li>Then "<span>Add Files</span>" to continue</li>
                                 </ol>
                                 <button type="button" class="cta-btn" onclick="document.querySelector('[aiz-upload-msg]').style.display = 'none'">
                                     Continue
@@ -76,7 +73,7 @@
 
                     <div class="tab-pane h-100" id="aiz-upload-new">
                         <div class="aiz-new-upload-msg" aiz-new-upload-msg>
-                            <div class="title">Follow the guides below</div>
+                            <div class="title">Please follow the guidelines</div>
                             <ul class="aiz-list">
                                 <li>Now, choose your desired files from your device</li>
                             </ul>
