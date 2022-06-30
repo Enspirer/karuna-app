@@ -8,6 +8,9 @@ use App\Http\Requests\Frontend\Auth\RegisterRequest;
 use App\Repositories\Frontend\Auth\UserRepository;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Models\Auth\User;
+use Mail;
+use \App\Mail\UserRegisterAdminMail;
+use \App\Mail\UserRegisterUserMail;
 
 
 /**
@@ -92,6 +95,17 @@ class RegisterController extends Controller
         if (config('access.users.confirm_email') || config('access.users.requires_approval')) {
             event(new UserRegistered($user));
 
+            $details_admin = [
+                'name' => $request->first_name
+            ];    
+            $details_user = [
+                'name' => $request->first_name
+            ];
+    
+            \Mail::to('nihsaan.enspirer@gmail.com')->send(new UserRegisterAdminMail($details_admin));
+            \Mail::to($request->email)->send(new UserRegisterUserMail($details_user));
+    
+
             return redirect($this->redirectPath())->withFlashSuccess(
                 config('access.users.requires_approval') ?
                     __('exceptions.frontend.auth.confirmation.created_pending') :
@@ -99,6 +113,7 @@ class RegisterController extends Controller
             );
         }
 
+        
         auth()->login($user);
 
         event(new UserRegistered($user));
