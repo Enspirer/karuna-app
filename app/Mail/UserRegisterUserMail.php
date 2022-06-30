@@ -33,6 +33,6 @@ class UserRegisterUserMail extends Mailable
     public function build()
     {
         
-        return $this->subject('Karuna - Contact Us')->view('frontend.mail.user_register_user_mail');
+        return $this->subject('Karuna - User Register')->view('frontend.mail.user_register_user_mail');
     }
 }

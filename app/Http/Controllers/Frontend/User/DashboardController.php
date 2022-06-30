@@ -9,6 +9,8 @@ use App\Models\Notification;
 use App\Models\ReceiversRequest;
 use App\Models\Auth\User;
 use DB;
+use \App\Mail\ReceiverRegisterMail;
+
 
 /**
  * Class DashboardController.
@@ -141,11 +143,23 @@ class DashboardController extends Controller
         $add->status='Pending';
         $add->save();
 
+
+        $agent_name_for_email = User::where('id',auth()->user()->id)->first();
+
+        $details = [
+            'name' => $agent_name_for_email->name
+        ];
+
+        \Mail::to('nihsaan.enspirer@gmail.com')->send(new ReceiverRegisterMail($details));
+
+
         if(is_mobile(request()->header('user-agent')) == true){
             return redirect()->route('frontend.user.mobile.index');
         }
 
-        return back()->withFlashSuccess('Added Successfully');
+        return redirect()->route('frontend.user.dashboard')->with([
+            'receiver_added_success' => 'receiver_added_success'
+        ]); 
 
     }
 

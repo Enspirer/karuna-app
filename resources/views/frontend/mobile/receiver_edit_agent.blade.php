@@ -101,18 +101,18 @@
             <div class="frm-row">                
                 <div class="frm-col">
                     <label class="form-label">Phone Number</label>
-                    <input type="number" class="form-control" value="{{$receiver->phone_number}}" name="phone_number" required>
+                    <input type="number" class="form-control" value="{{$receiver->phone_number}}" name="phone_number">
                 </div>                
                 <div class="frm-col">
                     <label class="form-label">Job</label>
-                    <input type="text" class="form-control" value="{{$receiver->occupation}}" name="occupation" required>
+                    <input type="text" class="form-control" value="{{$receiver->occupation}}" name="occupation">
                 </div>
             </div>
 
             <!-- Bio -->
             <div class="frm-row">
                 <label class="form-label">Bio</label>
-                <textarea class="form-control" style="height:150px;" name="bio" required>{{$receiver->bio}}</textarea>
+                <textarea class="form-control" style="height:150px;" name="bio">{{$receiver->bio}}</textarea>
             </div>
             
 

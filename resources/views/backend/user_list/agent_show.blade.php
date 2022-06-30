@@ -14,6 +14,10 @@
                             <table class="table table-hover table-borderless">
                                 <tbody>
                                     <tr>
+                                        <td width="14%" style="font-weight: 600; font-size:16px;">Profile Image:</td>
+                                        <td><img src="{{uploaded_asset($agent->profile_image)}}" style="width: 45%;" alt="" ></td>
+                                    </tr>
+                                    <tr>
                                         <td width="14%" style="font-weight: 600; font-size:16px;">Name:</td>
                                         <td style="font-size:16px;">{{ $agent->first_name }} {{ $agent->last_name }}</td>
                                     </tr>

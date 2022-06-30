@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class UserRegisterAdminMail extends Mailable
+class ReceiverRegisterMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,12 +17,12 @@ class UserRegisterAdminMail extends Mailable
      * @return void
      */
 
-    public $details_admin;
+    public $details;
 
-    public function __construct($details_admin)
+    public function __construct($details)
     {
         // $this->id = $id;
-        $this->details_admin = $details_admin;
+        $this->details = $details;
     }
 
     /**
@@ -33,6 +33,6 @@ class UserRegisterAdminMail extends Mailable
     public function build()
     {
         
-        return $this->subject('Karuna - User Register')->view('frontend.mail.user_register_admin_mail');
+        return $this->subject('Karuna - Receiver Register')->view('frontend.mail.receiver_register_mail');
     }
 }

@@ -94,12 +94,12 @@
                             <!-- Phone -->
                             <div class="col-md-5">
                                 <label class="pro-label">Phone Number</label>
-                                <input type="number" class="form-control" name="phone_number" value="{{old('phone_number')}}" required>
+                                <input type="number" class="form-control" name="phone_number" value="{{old('phone_number')}}">
                             </div>
                             <!-- Job -->
                             <div class="col-md-6">
                                 <label class="pro-label">Job</label>
-                                <input type="text" class="form-control" name="occupation" value="{{old('occupation')}}" required>
+                                <input type="text" class="form-control" name="occupation" value="{{old('occupation')}}">
                             </div>
                         </div>
                         <!-- Bio -->
@@ -110,7 +110,7 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <textarea class="form-control" style="height:150px;" name="bio" required>{{old('bio')}}</textarea>
+                                <textarea class="form-control" style="height:150px;" name="bio">{{old('bio')}}</textarea>
                             </div>
                         </div>
                         

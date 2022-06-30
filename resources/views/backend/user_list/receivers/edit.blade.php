@@ -99,12 +99,12 @@
                             <!-- Phone -->
                             <div class="col-md-5">
                                 <label class="pro-label">Phone Number</label>
-                                <input type="number" class="form-control" name="phone_number" value="{{$receiver->phone_number}}" required>
+                                <input type="number" class="form-control" name="phone_number" value="{{$receiver->phone_number}}">
                             </div>
                             <!-- Job -->
                             <div class="col-md-6">
                                 <label class="pro-label">Job</label>
-                                <input type="text" class="form-control" name="occupation" value="{{$receiver->occupation}}" required>
+                                <input type="text" class="form-control" name="occupation" value="{{$receiver->occupation}}">
                             </div>
                         </div>
                         <!-- Bio -->
@@ -115,7 +115,7 @@
                         </div>
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
-                                <textarea class="form-control" style="height:150px;" name="bio" required>{{$receiver->bio}}</textarea>
+                                <textarea class="form-control" style="height:150px;" name="bio">{{$receiver->bio}}</textarea>
                             </div>
                         </div>
                         
