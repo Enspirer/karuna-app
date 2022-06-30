@@ -110,18 +110,6 @@
                         </div>
                     </div>
                 </div> -->
-                <!-- Mobile Cam warning -->
-                <div class="mobile-cap-warning" id="mobileCapWarning">
-                    <div class="content-block">
-                        <div class="inner-wrapper">
-                            <i class="bi bi-x-lg modal-close"></i>
-                            <div class="title">Caution !</div>
-                            <img src="{{url('images/mobile/screen-rotate.png')}}" alt="" class="modal-img">
-                            <p>Please use landscape orientation ONLY if you're taking a photo from your camera, portrait will not be accepted by the system</p>
-                            <button class="btn-continue modal-close">Continue</button>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Image viewer -->
                 <div id="achImgViewer">
@@ -165,104 +153,6 @@
     <script src="{{url('js/mobile_main.js')}}"></script>
     <script src="{{url('js/vendors.js')}}"></script>
     <script src="{{url('js/aiz-core.js')}}"></script>
-
-<script>
-const AIZBtn = document.querySelectorAll('[data-toggle="aizuploader"]')
-
-AIZBtn.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        setTimeout(() => {
-
-            const AIZUploader = document.querySelectorAll('#aizUploaderModal')
-
-            AIZUploader.forEach((fileManager) => {
-                const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
-                const uploadNew = fileManager.querySelector('#aiz-upload-new')
-                const aizModal = fileManager.querySelector('[data-dismiss="modal"]')
-                const warningTrigger = fileManager.querySelector('.uppy-modal-nav .nav-tabs .nav-item:nth-child(2)')
-                const warningModal = document.getElementById('mobileCapWarning')
-                const modalClose = warningModal.querySelectorAll('.modal-close')
-
-                aizModal.setAttribute('data-bs-dismiss', 'modal')
-                aizModal.removeAttribute('data-dismiss')
-
-                warningTrigger.addEventListener('click', () => {
-                    warningModal.style.display = 'block'
-                } , {once : true})
-
-                modalClose.forEach((btn) => {
-                    btn.addEventListener('click', () => {
-                        warningModal.style.display = 'none'
-                    })
-                })
-
-                selectHeader.innerHTML = `
-                    <div class="upload-msg-wrapper">
-                        <div class="title">Follow the guides below</div>
-                        <ol class="aiz-list">
-                            <li>To upload a new file, click the "<span>Upload New</span>" window</li>
-                            <li>After finishing the upload come back to the "<span>Select File</span>" window and select your desired files
-                            </li>
-                            <li>Finally, click the "<span>Add Files</span>" button to continue</li>
-                        </ol>
-                        <button type="button" class="cta-btn" onclick="closeNotice()">Continue</button>
-                    </div>`
-
-                uploadNew.insertAdjacentHTML('afterbegin', '<div class="upload-msg-wrapper"><div class="title">Follow the guides below</div><ul class="aiz-list"><li>Now, choose your desired files from your device</li></ul></div>')
-
-                uploadNew.addEventListener('change', () => {
-                    const li = uploadNew.querySelector('.aiz-list li')
-
-                    li.innerHTML = 'Now, click the "<span>Select File</span>" window and select your files'
-                })
-            })
-        }, 500)
-    })
-})
-
-const closeNotice = () => {
-    const AIZUploader = document.querySelectorAll('#aizUploaderModal')
-
-    AIZUploader.forEach((fileManager) => {
-        const selectHeader = fileManager.querySelector('.aiz-uploader-filter')
-
-        selectHeader.style.display = 'none'
-    })
-}
-
-</script>
-
-<!-- FIle Uploader warning modal & close button -->
-<!-- <script>
-    const aizUploader = document.querySelectorAll('[data-toggle="aizuploader"]')
-
-    aizUploader.forEach((btn) => {
-        btn.addEventListener('click', () => {
-
-            setTimeout(() => {
-                const aizModal = document.querySelectorAll('[data-dismiss="modal"]')
-                const warningTrigger = document.querySelector('#aizUploaderModal .uppy-modal-nav .nav-tabs .nav-item:nth-child(2)')
-                const warningModal = document.getElementById('mobileCapWarning')
-                const modalClose = warningModal.querySelectorAll('.modal-close')
-
-                aizModal.forEach((modal) => {
-                    modal.setAttribute('data-bs-dismiss', 'modal')
-                    modal.removeAttribute('data-dismiss')
-                })
-
-                warningTrigger.addEventListener('click', () => {
-                    warningModal.style.display = 'block'
-                } , {once : true})
-
-                modalClose.forEach((btn) => {
-                    btn.addEventListener('click', () => {
-                        warningModal.style.display = 'none'
-                    })
-                })
-            }, 500)
-        })
-    })
-</script> -->
 
 <script>
     const cookieBox = document.querySelector(".cookies-policy"),
