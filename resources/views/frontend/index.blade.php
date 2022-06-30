@@ -93,11 +93,11 @@
             <div class="content-block">
                 <div class="content-wrapper">
                     <div class="title-block">
-                        <div class="title">Pick your <br><span>Karunaa Packages</span></div>
+                        <div class="title">Pick your <br><span>Karunaa Package</span></div>
                         <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                     </div>
                     <div class="text">
-                        <p>Loving kindness, generosity will no longer be only words echoing in your hearts… but a reality brining a smile to another…</p>
+                        <p>Loving kindness, generosity will no longer be only words echoing in your hearts… but a reality bringing a smile to another…</p>
                         <p>We empower donations to underprivileged families in Sri Lanka through our digital platform. We provide transparency in transactions, effective distribution and assurance through our trusted network of agents.</p>
                     </div>
                    

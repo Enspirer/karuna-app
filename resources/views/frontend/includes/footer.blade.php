@@ -67,7 +67,7 @@
     </div>
     <div class="copyright">
         <span>&copy; <a href="http://karunaa.org.uk/" target="_blank" rel="noopener noreferrer">karunaa.org.uk</a> {{date('Y')}} | All rights reserved</span>
-        <span>Website developed by: <a href="http://tallentordigital.com/" target="_blank" rel="noopener noreferrer">Tallentor Digital</a></span>
+        <span>Website developed by <a href="http://tallentordigital.com/" class="tallentor" target="_blank" rel="noopener noreferrer">Tallentor Digital</a></span>
     </div>
     </div>
 </footer>

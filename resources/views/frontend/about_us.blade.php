@@ -8,7 +8,7 @@
     <div class="container">
        <div class="inner-wrapper">
             <div class="title-block">
-                <div class="title">About<br>Karunaa</div>
+                <div class="title"><span>About</span><br>Karunaa</div>
                 <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
             </div>
             <div class="text">We are a UK-based non for profit  organization that links the neediest Sri Lankans & expat donors through a digitalized donation process with transparency & efficiency. We are in the process of becoming a registered charity in England and Wales.</div>
@@ -28,12 +28,14 @@
 <section class="mission-section">
     <div class="container">
         <div class="inner-wrapper">
-            <div class="title"><span>Our</span> Vision</div>
-            <div class="text">Provide a light of hope to needy Sri Lankans.</div>
-        </div>
-        <div class="inner-wrapper">
-            <div class="title"><span>Our</span> Mission</div>
-            <div class="text">Encourage donation through enhanced visibility, stability in the process to empower self-reliance in Sri Lanka.</div>
+            <div class="content-block">
+                <div class="title"><span>Our</span> Vision</div>
+                <div class="text">Provide a light of hope to needy Sri Lankans.</div>
+            </div>
+            <div class="content-block">
+                <div class="title"><span>Our</span> Mission</div>
+                <div class="text">Encourage donation through enhanced visibility, stability in the process to empower self-reliance in Sri Lanka.</div>
+            </div>
         </div>
     </div>
 </section>
