@@ -2545,30 +2545,67 @@ body .mobile-body {
   height: 45px;
 }
 
-@media screen and (max-width: 495px) {
-  #aizUploaderModal .modal-dialog .modal-content .modal-header {
-    flex-direction: column-reverse;
-    gap: 0.5rem;
-  }
-  #aizUploaderModal .modal-dialog .modal-content .modal-body .tab-content .tab-pane .aiz-uploader-filter .row {
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-start !important;
-    gap: 0.5rem;
-    margin: 0;
-  }
-  #aizUploaderModal .modal-dialog .modal-content .modal-body .tab-content .tab-pane .aiz-uploader-filter .row .col-5,
-#aizUploaderModal .modal-dialog .modal-content .modal-body .tab-content .tab-pane .aiz-uploader-filter .row .col-2 {
-    width: 100% !important;
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  #aizUploaderModal .modal-dialog .modal-content .modal-body .tab-content .tab-pane .aiz-uploader-filter .row .aiz-uploader-search .form-control {
-    height: 38px;
-    top: unset;
-    bottom: 0;
-  }
+#aizUploaderModal .modal-header {
+  min-height: unset;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
 }
+#aizUploaderModal .nav-tabs-mobile {
+  flex-wrap: nowrap;
+}
+#aizUploaderModal .nav-tabs-mobile .nav-link {
+  padding: 0.5rem 0.75rem;
+  white-space: nowrap;
+}
+#aizUploaderModal .mobile-filters {
+  flex-direction: column;
+  gap: 0.75rem;
+}
+#aizUploaderModal .mobile-filters .filter-col {
+  width: 100%;
+  flex: 0 0 100%;
+  max-width: unset;
+}
+#aizUploaderModal .mobile-filters .filter-col .aiz-uploader-search input {
+  height: auto;
+  top: unset;
+  bottom: 0;
+}
+#aizUploaderModal .aiz-upload-msg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 99;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#aizUploaderModal .aiz-upload-msg .inner-wrapper .title {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+#aizUploaderModal .aiz-upload-msg .inner-wrapper .aiz-list li {
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+#aizUploaderModal .aiz-upload-msg .inner-wrapper .aiz-list li span {
+  font-weight: 600;
+}
+#aizUploaderModal .aiz-upload-msg .inner-wrapper .cta-btn {
+  border-radius: 50px;
+  background-color: #1a7ee9;
+  color: #fff;
+  font-size: 0.9rem;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
 .signup-success-modal .modal-content {
   border: none;
   border-radius: 12px;
@@ -2726,51 +2763,6 @@ body .mobile-body {
   margin: auto;
   width: 150px;
   height: 40px;
-  border-radius: 50px;
-}
-
-#aizUploaderModal {
-  font-size: 0.9rem;
-}
-#aizUploaderModal .aiz-uploader-filter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-#aizUploaderModal .upload-msg-wrapper {
-  margin-bottom: 1rem;
-}
-#aizUploaderModal .upload-msg-wrapper .title {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 1rem;
-}
-#aizUploaderModal .upload-msg-wrapper .aiz-list {
-  padding: 0 0 0 1rem;
-  margin: 0;
-}
-#aizUploaderModal .upload-msg-wrapper .aiz-list li {
-  margin-bottom: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: #333;
-}
-#aizUploaderModal .upload-msg-wrapper .aiz-list li span {
-  font-weight: 700;
-}
-#aizUploaderModal .upload-msg-wrapper .cta-btn {
-  background-color: #2699FB;
-  color: #fff;
-  border: none;
-  margin: 2rem auto 0;
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 300;
-  line-height: 1;
-  padding: 0.75rem 1rem;
   border-radius: 50px;
 }
 

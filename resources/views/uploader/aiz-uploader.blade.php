@@ -3,7 +3,7 @@
         <div class="modal-content h-100">
             <div class="modal-header pb-0 bg-light">
                 <div class="uppy-modal-nav">
-                    <ul class="nav nav-tabs border-0">
+                    <ul class="nav nav-tabs nav-tabs-mobile border-0">
                         <li class="nav-item">
                             <a class="nav-link active font-weight-medium text-dark" data-toggle="tab" href="#aiz-select-file">Select File</a>
                         </li>
@@ -12,16 +12,32 @@
                         </li>
                     </ul>
                 </div>
-                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"></span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="tab-content h-100">
                     <div class="tab-pane active h-100" id="aiz-select-file">
+                        <div class="aiz-upload-msg" aiz-upload-msg>
+                            <div class="inner-wrapper">
+                                <div class="title">Follow the guides below</div>
+                                <ol class="aiz-list">
+                                    <li>To upload a new file, click the "<span>Upload New</span>" window</li>
+                                    <li>
+                                    After finishing the upload come back to the "<span>Select File</span>"
+                                    window and select your desired files
+                                    </li>
+                                    <li>Finally, click the "<span>Add Files</span>" button to continue</li>
+                                </ol>
+                                <button type="button" class="cta-btn" onclick="document.querySelector('[aiz-upload-msg]').style.display = 'none'">
+                                    Continue
+                                </button>
+                            </div>
+                        </div>
                         <div class="aiz-uploader-filter pt-1 pb-3 border-bottom mb-4">
-                            <div class="row align-items-center gutters-5 gutters-md-10 position-relative">
-                                <div class="col-xl-2 col-md-3 col-5">
+                            <div class="row mobile-filters align-items-center gutters-5 gutters-md-10 position-relative">
+                                <div class="col-xl-2 col-md-3 col-5 filter-col">
                                     <div class="">
                                         <!-- Input -->
                                         <select class="form-control form-control-xs aiz-selectpicker" name="aiz-uploader-sort">
@@ -33,7 +49,7 @@
                                         <!-- End Input -->
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-5">
+                                <div class="col-md-3 col-5 filter-col">
                                     <div class="custom-control custom-radio">
                                         <input type="checkbox" class="custom-control-input" name="aiz-show-selected" id="aiz-show-selected" name="stylishRadio">
                                         <label class="custom-control-label" for="aiz-show-selected">
@@ -41,7 +57,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-md-4 col-xl-3 ml-auto mr-0 col-2 position-static">
+                                <div class="col-md-4 col-xl-3 ml-auto mr-0 col-2 position-static filter-col">
                                     <div class="aiz-uploader-search text-right">
                                         <input type="text" class="form-control form-control-xs" name="aiz-uploader-search" placeholder="Search your files">
                                         <i class="search-icon d-md-none"><span></span></i>
