@@ -33,48 +33,35 @@
                 <div class="info">
                     <div class="row g-0">
                         <div class="col-sm-6">
-                            <div class="label">Name</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->first_name}} {{$agent->last_name}}</div>
+                            <div class="label">Address</div>
+                            <div class="text" style="font-size:0.8rem;">{{$agent->address}}</div>
                         </div>
+
+                        @if(App\Models\City::where('id',$agent->city)->first() != null)
+                            <div class="col-sm-6">
+                                <div class="label">District</div>
+                                <div class="text" style="font-size:0.8rem;">{{get_city_details($agent->id,'district')}}</div>
+                            </div>
+                        @endif
+
                         <div class="col-sm-6">
                             <div class="label">Email</div>
                             <div class="text" style="font-size:0.8rem;">
                                 <a href="mailto:{{$agent->email}}">{{$agent->email}}</a>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="label">Address</div>
-                            <div class="text" style="font-size:0.8rem;">{{$agent->address}}</div>
-                        </div>
+                        
                         @if(App\Models\City::where('id',$agent->city)->first() != null)
-
-                            <div class="col-sm-6">
-                                <div class="label">District</div>
-                                <div class="text" style="font-size:0.8rem;">{{get_city_details($agent->id,'district')}}</div>
-                            </div>
                             <div class="col-sm-6">
                                 <div class="label">City</div>
                                 <div class="text" style="font-size:0.8rem;">{{get_city_details($agent->id,'city')}}</div>
                             </div>
                         @endif
-                        {{--<div class="col-sm-6">--}}
-                            {{--<div class="label">Phone Number</div>--}}
-                            {{--<div class="text" style="font-size:0.8rem;">{{$agent->contact_number}}</div>--}}
-                        {{--</div>--}}
+                        
                         <div class="col-sm-6">
                             <div class="label">Occupation</div>
                             <div class="text" style="font-size:0.8rem;">{{$agent->occupation}}</div>
-                        </div>
-                        @if(!empty( auth()->user()->id) === true ) 
-                            @if(App\Models\Auth\User::where('id',auth()->user()->id)->first()->user_type == 'Donor')   
-                                @if($agent->id_photo != null)
-                                    <div class="col-sm-12">
-                                        <div class="label">NIC Photo</div>
-                                        <img src="{{url('files/agents_id/',$agent->id_photo)}}" style="width: 45%;" alt="" >
-                                    </div>
-                                @endif
-                            @endif
-                        @endif                       
+                        </div>             
 
                     </div>
 

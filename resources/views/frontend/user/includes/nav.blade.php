@@ -58,7 +58,7 @@
                     <div class="nav-nav">
                         <i class="bi bi-credit-card"></i>
                         <i class="bi active bi-credit-card-fill"></i>
-                        <div class="text">My Donate History</div>
+                        <div class="text">My Donations</div>
                         <i class="bi flx active bi-chevron-right"></i>
                     </div>
                 </a>
