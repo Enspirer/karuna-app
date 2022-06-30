@@ -113,6 +113,12 @@
                     <div class="text">Call Us Or Drop Us A Mail, Follow Our Social Media! </div>
                     <ul class="contact-info">
                         <li>
+                            <a href="" class="contact-link green">
+                                <i class="fa-solid fa-house"></i>
+                                Solar House , Suit 46, 915 High Road, <br> London , N12 8QJ, United Kingdom
+                            </a>
+                        </li>
+                        <li>
                             <a href="tel:+447700000" class="contact-link">
                                 <i class="fa-solid fa-phone"></i>
                                 +44 77 00000
@@ -122,12 +128,6 @@
                             <a href="mailto:info@karunaa.org.uk" class="contact-link green">
                                 <i class="fa-solid fa-envelope"></i>
                                 info@karunaa.org.uk
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="contact-link green">
-                                <i class="fa-solid fa-house"></i>
-                                Solar House , Suit 46, 915 High Road, <br> London , N12 8QJ, United Kingdom
                             </a>
                         </li>
                     </ul>

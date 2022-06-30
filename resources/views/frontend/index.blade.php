@@ -123,14 +123,14 @@
                 <div class="package-card">
                     <a href="{{route('frontend.campaigns')}}">
                     <img src="{{url('images/landing-page/home/food-icon.png')}}" alt="">
-                    <div class="title">Medical Package</div>
+                    <div class="title">Food Package</div>
                     <div class="text">Groceries to feed a household.</div>
                     </a>
                 </div>
                 <div class="package-card">
                     <a href="{{route('frontend.campaigns')}}">
                     <img src="{{url('images/landing-page/home/medic-icon.png')}}" alt="">
-                    <div class="title">School Items</div>
+                    <div class="title">Medical Package</div>
                     <div class="text">Essential critical medicine for survival of any age.</div>
                     </a>
                 </div>
