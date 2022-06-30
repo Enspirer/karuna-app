@@ -93,8 +93,7 @@
             <div class="content-block">
                 <div class="content-wrapper">
                     <div class="title-block">
-                        <div class="subtitle">Packages</div>
-                        <div class="title">Pick your <span>Karunaa Packages</span><br>that you can give</div>
+                        <div class="title">Pick your <br><span>Karunaa Packages</span></div>
                         <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
                     </div>
                     <div class="text">

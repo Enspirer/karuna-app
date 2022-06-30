@@ -314,8 +314,8 @@
 .feature-section .inner-wrapper .content-block .content-wrapper .title-block img {
   position: absolute;
   width: 175px;
-  right: 20%;
-  top: 40%;
+  left: 10%;
+  top: 25%;
   z-index: 0;
 }
 .feature-section .inner-wrapper .content-block .content-wrapper .text {
@@ -702,7 +702,7 @@
     text-align: center;
   }
   .feature-section .inner-wrapper .content-block .content-wrapper .title-block img {
-    right: 15%;
+    left: 47.5%;
   }
   .feature-section .inner-wrapper .content-block .content-wrapper .cta-btn {
     margin: auto;
