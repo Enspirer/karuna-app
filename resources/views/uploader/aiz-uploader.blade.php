@@ -19,19 +19,21 @@
             <div class="modal-body">
                 <div class="tab-content h-100">
                     <div class="tab-pane active h-100" id="aiz-select-file">
-                        <div class="aiz-upload-msg" aiz-upload-msg>
-                            <div class="inner-wrapper">
-                                <div class="title">Please follow the guidelines</div>
-                                <ol class="aiz-list">
-                                    <li>To upload a new file, click "<span>Upload New</span>" button</li>
-                                    <li>Once the file uploaded, click "<span>Select File</span>" button and select the file</li>
-                                    <li>Then "<span>Add Files</span>" to continue</li>
-                                </ol>
-                                <button type="button" class="cta-btn" onclick="document.querySelector('[aiz-upload-msg]').style.display = 'none'">
-                                    Continue
-                                </button>
+                        @if(is_mobile(request()->header('user-agent')) == true)
+                            <div class="aiz-upload-msg" aiz-upload-msg>
+                                <div class="inner-wrapper">
+                                    <div class="title">Please follow the guidelines</div>
+                                    <ol class="aiz-list">
+                                        <li>To upload a new file, click "<span>Upload New</span>" button</li>
+                                        <li>Once the file uploaded, click "<span>Select File</span>" button and select the file</li>
+                                        <li>Then "<span>Add Files</span>" to continue</li>
+                                    </ol>
+                                    <button type="button" class="cta-btn" onclick="document.querySelector('[aiz-upload-msg]').style.display = 'none'">
+                                        Continue
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="aiz-uploader-filter pt-1 pb-3 border-bottom mb-4">
                             <div class="row mobile-filters align-items-center gutters-5 gutters-md-10 position-relative">
                                 <div class="col-xl-2 col-md-3 col-5 filter-col">
@@ -72,12 +74,14 @@
                     </div>
 
                     <div class="tab-pane h-100" id="aiz-upload-new">
-                        <div class="aiz-new-upload-msg" aiz-new-upload-msg>
-                            <div class="title">Please follow the guidelines</div>
-                            <ul class="aiz-list">
-                                <li>Now, choose your desired files from your device</li>
-                            </ul>
-                        </div>
+                        @if(is_mobile(request()->header('user-agent')) == true)
+                            <div class="aiz-new-upload-msg" aiz-new-upload-msg>
+                                <div class="title">Please follow the guidelines</div>
+                                <ul class="aiz-list">
+                                    <li>Now, choose your desired files from your device</li>
+                                </ul>
+                            </div>
+                        @endif
                         <div id="aiz-upload-files" class="h-100">
                         </div>
                     </div>
@@ -102,33 +106,35 @@
         </div>
     </div>
 
-    <!-- Mobile Cam warning -->
-    <div class="mobile-cap-warning" id="mobileCapWarning">
-        <div class="content-block">
-            <div class="inner-wrapper">
-                <i class="bi bi-x-lg modal-close"></i>
-                <div class="title">Caution !</div>
-                <img src="{{url('images/mobile/screen-rotate.png')}}" alt="" class="modal-img">
-                <p>Please use landscape orientation ONLY if you're taking a photo from your camera, portrait will not be accepted by the system</p>
-                <button class="btn-continue modal-close">Continue</button>
+    @if(is_mobile(request()->header('user-agent')) == true)
+        <!-- Mobile Cam warning -->
+        <div class="mobile-cap-warning" id="mobileCapWarning">
+            <div class="content-block">
+                <div class="inner-wrapper">
+                    <i class="bi bi-x-lg modal-close"></i>
+                    <div class="title">Caution !</div>
+                    <img src="{{url('images/mobile/screen-rotate.png')}}" alt="" class="modal-img">
+                    <p>Please use landscape orientation ONLY if you're taking a photo from your camera, portrait will not be accepted by the system</p>
+                    <button class="btn-continue modal-close">Continue</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script>
-    document.querySelector('#aiz-upload-new').addEventListener('change', () => {
-        document.querySelector('[aiz-new-upload-msg] .aiz-list li').innerHTML =
-        'Now, click the "<span>Select File</span>" window and select your files'
-    })
-
-    document.querySelector('[cam-warning-trigger]').addEventListener('click', () => {
-        document.querySelector('#mobileCapWarning').style.display = 'block'
-    }, {once : true})
-
-    document.querySelectorAll('#mobileCapWarning .modal-close').forEach((btn) => {
-        btn.addEventListener('click', () => {
-            document.querySelector('#mobileCapWarning').style.display = 'none'
+        <script>
+        document.querySelector('#aiz-upload-new').addEventListener('change', () => {
+            document.querySelector('[aiz-new-upload-msg] .aiz-list li').innerHTML =
+            'Now, click the "<span>Select File</span>" window and select your files'
         })
-    })
-    </script>
+
+        document.querySelector('[cam-warning-trigger]').addEventListener('click', () => {
+            document.querySelector('#mobileCapWarning').style.display = 'block'
+        }, {once : true})
+
+        document.querySelectorAll('#mobileCapWarning .modal-close').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelector('#mobileCapWarning').style.display = 'none'
+            })
+        })
+        </script>
+    @endif
 </div>
