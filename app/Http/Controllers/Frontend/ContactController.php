@@ -53,7 +53,7 @@ class ContactController extends Controller
             'message' => $request->message
         ];
 
-        \Mail::to([$request->email,'nihsaan.enspirer@gmail.com'])->send(new ContactUsMail($details));
+        \Mail::to([$request->email,'admin@karunaa.org.uk'])->send(new ContactUsMail($details));
        
         session()->flash('message','Thanks!');
 

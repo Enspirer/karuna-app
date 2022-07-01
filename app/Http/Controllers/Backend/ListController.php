@@ -190,7 +190,12 @@ class ListController extends Controller
             ->addColumn('action', function($data){
                 $button = '<a href="'.route('admin.agent.show',$data->id).'" name="show" id="'.$data->id.'" class="edit btn btn-primary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
                 $button .= '<a href="'.route('admin.agent_edit',$data->id).'" name="agent_edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
-                $button .= '<a href="'.route('admin.receivers_list',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm ml-3 mr-3"><i class="fas fa-user-friends"></i> Receivers ('.count(Receivers::where('assigned_agent',$data->id)->get()).')</a>';
+                if(Receivers::where('assigned_agent',$data->id)->where('status','Pending')->get()->count() != 0){
+                    $button .= '<a href="'.route('admin.receivers_list',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm ml-3 mr-3"><i class="fas fa-user-friends"></i> Receivers ('.count(Receivers::where('assigned_agent',$data->id)->get()).') &nbsp;<i class="fas fa-circle" style="font-size:9px; color:red"></i></a>';
+                }
+                else{
+                    $button .= '<a href="'.route('admin.receivers_list',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm ml-3 mr-3"><i class="fas fa-user-friends"></i> Receivers ('.count(Receivers::where('assigned_agent',$data->id)->get()).')</a>';
+                }
                 return $button;
             })
             ->addColumn('name', function($data){

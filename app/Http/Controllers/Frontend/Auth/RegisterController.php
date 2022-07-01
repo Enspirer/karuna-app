@@ -102,7 +102,7 @@ class RegisterController extends Controller
                 'name' => $request->first_name
             ];
     
-            \Mail::to('nihsaan.enspirer@gmail.com')->send(new UserRegisterAdminMail($details_admin));
+            \Mail::to('admin@karunaa.org.uk')->send(new UserRegisterAdminMail($details_admin));
             \Mail::to($request->email)->send(new UserRegisterUserMail($details_user));
     
 

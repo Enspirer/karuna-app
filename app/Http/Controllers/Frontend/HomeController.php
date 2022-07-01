@@ -14,6 +14,9 @@ use App\Models\Country;
 use App\Models\City;
 use App\Models\District;
 use GuzzleHttp\Client;
+use DB;
+
+
 /**
  * Class HomeController.
  */
@@ -52,7 +55,19 @@ class HomeController extends Controller
 
     public function support()
     {
-        return view('frontend.support');
+      
+        $receivers_list = DB::table('receivers')
+        ->orderBy('receivers.id', 'desc')
+        ->where('status','!=','Pending')
+        ->where('payment_status',null)
+        ->join('users','users.id','=','receivers.assigned_agent')
+        ->paginate(9);
+
+        // dd($receivers_list);
+
+        return view('frontend.support',[
+            'receivers_list' => $receivers_list
+        ]);
     }
 
     public function payment($receiver_id)

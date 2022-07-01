@@ -150,7 +150,7 @@ class DashboardController extends Controller
             'name' => $agent_name_for_email->name
         ];
 
-        \Mail::to('nihsaan.enspirer@gmail.com')->send(new ReceiverRegisterMail($details));
+        \Mail::to('admin@karunaa.org.uk')->send(new ReceiverRegisterMail($details));
 
 
         if(is_mobile(request()->header('user-agent')) == true){

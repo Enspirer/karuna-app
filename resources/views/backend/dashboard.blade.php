@@ -68,12 +68,79 @@
 .bg-red {
     background-color: #d9534f !important;
 }
+
+
+
+
+.blinking {
+  -webkit-animation: 1s blink ease infinite;
+  -moz-animation: 1s blink ease infinite;
+  -ms-animation: 1s blink ease infinite;
+  -o-animation: 1s blink ease infinite;
+  animation: 1s blink ease infinite;  
+}
+@keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 </style>
     <div class="container">
-        <div class="row">      
+        <div class="row"> 
+
+        <!-- <span style=" height: 20px; width: 0.5rem; background-color: red; border-radius: 50%; display: inline-block;"></span> -->
+
+            
 
             <div class="col-lg-3 col-sm-6">
+
                 <div class="card-box" style="background-color: #055147; border-radius: 15px 15px 15px 15px;">
+                
+                    @if(count(App\Models\Auth\User::where('user_type','Agent')->where('confirmed',0)->get()) != 0)
+                        <svg height="16" width="16" class="blinking" style="position: absolute; top: 10px; right: 10px;">
+                            <circle cx="8" cy="8" r="6" fill="red"/>
+                        </svg>  
+                    @endif
+
                     <div class="inner">
                         <h3>{{$agent}}</h3>
                         <p>Volunteers</p>
@@ -84,8 +151,16 @@
                     <a href="{{url('admin/agent')}}" class="card-box-footer" style="border-radius: 0px 0px 15px 15px;">View More <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+
             <div class="col-lg-3 col-sm-6">
                 <div class="card-box" style="background-color: #487662; border-radius: 15px 15px 15px 15px;">
+
+                    @if(count(App\Models\Auth\User::where('user_type','Donor')->where('confirmed',0)->get()) != 0)
+                        <svg height="16" width="16" class="blinking" style="position: absolute; top: 10px; right: 10px;">
+                            <circle cx="8" cy="8" r="6" fill="red"/>  
+                        </svg>  
+                    @endif
+
                     <div class="inner">
                         <h3>{{$donor}}</h3>
                         <p>Donors</p>
