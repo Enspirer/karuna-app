@@ -33,7 +33,7 @@
               <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
                 <tr>
                   <td style="padding:0 0 30px 0;color:#153643;" align="left">
-                    <h1 style="font-size:20px;margin:0 0 20px 0;font-family:Arial,sans-serif;">Karuna - User Register</h1>
+                    <h1 style="font-size:20px;margin:0 0 20px 0;font-family:Arial,sans-serif;">Karunaa - User Register</h1>
                   </td>
                   <td style="padding:0 0 30px 0;color:#153643;" align="right">
                     <img src="{{url('images/logo/karuna-logo-english.svg')}}" style="max-width:60px; margin:0 0 20px 0;">                    
@@ -54,7 +54,7 @@
                 <tr>
                   <td style="padding:0;width:50%;" align="center">
                     <p style="margin:0;font-size:20px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;">
-                        Karuna - User Register &reg;
+                        Karunaa - User Register &reg;
                     </p>
                   </td>
                   <!-- <td style="padding:0;width:50%;" align="right">
