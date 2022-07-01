@@ -18,7 +18,7 @@
             <div class="message">Hello, {{auth()->user()->first_name}} {{auth()->user()->last_name}}</div>
         @endif
         @if(auth()->user()->user_type == "Donor")
-            <a  type="button" href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
+            <a  type="button" href="{{route('frontend.support')}}" class="cta-btn btn-fill">
                 <div class="btn-text">Donate Now</div>
             </a>
         @elseif(auth()->user()->user_type == "Agent")

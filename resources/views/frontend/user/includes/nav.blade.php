@@ -95,7 +95,7 @@
         <div class="title">Onboarding</div>
         
         @if(auth()->user()->user_type == 'Donor')
-            <a href="{{url('receivers')}}" type="button" class="create-donation">
+            <a href="{{url('support')}}" type="button" class="create-donation">
                 <i class="bi bi-plus-lg"></i>
                 <div class="text">Donate Now</div>
             </a>

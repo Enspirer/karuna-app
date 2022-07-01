@@ -30,7 +30,7 @@
                 <div class="btn-text">Add Receivers</div>
               </a>
             @elseif(auth()->user()->user_type == 'Donor')
-              <a class="nav-link cta-btn btn-fill" href="{{route('frontend.receivers')}}">
+              <a class="nav-link cta-btn btn-fill" href="{{route('frontend.support')}}">
                 <div class="btn-text">Donate Now</div>
               </a>
             @endif

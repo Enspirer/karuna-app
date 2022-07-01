@@ -58,7 +58,7 @@
                                             <div class="btn-text">Visit Dashboard</div>
                                         </a>
                                     @elseif(auth()->user()->user_type == 'Donor')
-                                        <a href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
+                                        <a href="{{route('frontend.support')}}" class="cta-btn btn-fill">
                                             <div class="btn-text">Donate Now</div>
                                         </a>
                                     @endif
@@ -106,7 +106,7 @@
                                 <div class="btn-text">Visit Dashboard</div>
                             </a>
                         @elseif(auth()->user()->user_type == 'Donor')
-                            <a href="{{route('frontend.receivers')}}" class="cta-btn btn-fill">
+                            <a href="{{route('frontend.support')}}" class="cta-btn btn-fill">
                                 <div class="btn-text">Donate Now</div>
                             </a>
                         @endif
@@ -248,7 +248,7 @@
                 
             </div>
             <div class="button-block">
-                <a href="{{route('frontend.receivers')}}" class="cta-btn btn-outline">
+                <a href="{{route('frontend.support')}}" class="cta-btn btn-outline">
                     <div class="btn-text">View All</div>
                 </a>
             </div>
