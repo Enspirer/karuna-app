@@ -179,6 +179,7 @@
                 <div class="subtitle">The Center for <span>Kindness</span></div>
                 <img src="{{url('images/landing-page/home/brush.svg')}}" alt="">
             </div>
+            <p class="caption">Here are the requests from our receivers, please select and make a donation to needy Sri Lankans.</p>
             <div class="card-block">
             
                 @foreach(App\Models\Receivers::where('status','!=','Pending')->where('featured','Enabled')->get() as $receivers)
