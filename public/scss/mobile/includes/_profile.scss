@@ -2,16 +2,15 @@
     margin: 1rem 0;
 
     .inner-wrapper {
-
         .header {
             position: relative;
-            background: url('../../images/dashboard/receiver-back.png');
+            background: url("../../images/dashboard/receiver-back.png");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             border-radius: 10px;
             height: 150px;
-            margin-bottom: 3rem;
+            margin-bottom: 6rem;
 
             .back-edit {
                 @include edit-image;
@@ -22,17 +21,17 @@
             .dp-block {
                 width: fit-content;
                 position: absolute;
-                bottom: -50px;
+                bottom: -90px;
                 left: 50%;
                 transform: translate(-50%, 0);
 
                 img {
-                    width: 90px;
-                    height: 90px;
-                    object-position: center;
+                    width: 150px;
+                    height: 150px;
+                    object-position: top;
                     object-fit: cover;
                     border-radius: 50%;
-                    border: 2px solid $white;
+                    border: 2px solid #fff;
                 }
 
                 .dp-edit {
@@ -71,10 +70,10 @@
             justify-content: center;
             align-items: center;
             gap: 5px;
-            margin-bottom: .5rem;
+            margin-bottom: 0.5rem;
 
             .bi {
-                color: #FFC400;
+                color: #ffc400;
             }
         }
 
@@ -88,7 +87,7 @@
 
         .status {
             width: fit-content;
-            font-size: .7rem;
+            font-size: 0.7rem;
             font-weight: 400;
             color: white;
             line-height: 1;
@@ -110,11 +109,11 @@
         }
 
         .profile-info {
-            font-size: .8rem;
+            font-size: 0.8rem;
             font-weight: 300;
             color: $gray;
             text-align: center;
-            margin-top: .75rem;
+            margin-top: 0.75rem;
         }
 
         .btn-edit {
@@ -128,7 +127,7 @@
             font-weight: 300;
 
             .bi {
-                margin-right: .25rem;
+                margin-right: 0.25rem;
             }
         }
 
@@ -175,7 +174,7 @@
             }
 
             .btn-text {
-                font-size: .9rem;
+                font-size: 0.9rem;
                 font-weight: 300;
                 color: $text-black;
             }
@@ -202,7 +201,7 @@
             margin: 2rem 0;
 
             .title {
-                font-size: .9rem;
+                font-size: 0.9rem;
                 font-weight: 400;
                 color: $text-black;
                 margin-bottom: 1rem;
@@ -214,11 +213,10 @@
                     border-radius: 10px;
 
                     &:not(:nth-last-child(1)) {
-                        margin-bottom: .75rem;
+                        margin-bottom: 0.75rem;
                     }
 
                     .accordion-header {
-
                         .accordion-button {
                             border: none;
                             box-shadow: none;
@@ -262,7 +260,7 @@
 
                                 .text {
                                     flex: 1;
-                                    font-size: .9rem;
+                                    font-size: 0.9rem;
                                     font-weight: 300;
                                     color: $text-black;
                                 }
@@ -293,14 +291,14 @@
                             border-top: 1px solid $light-gray;
 
                             .title {
-                                font-size: .9rem;
+                                font-size: 0.9rem;
                                 font-weight: 400;
                                 margin-bottom: 0.25rem;
                                 color: $text-black;
                             }
 
                             .text {
-                                font-size: .8rem;
+                                font-size: 0.8rem;
                                 font-weight: 300;
                                 color: $gray;
                             }

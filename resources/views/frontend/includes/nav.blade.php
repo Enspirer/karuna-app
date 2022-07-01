@@ -27,7 +27,7 @@
           @auth
             @if(auth()->user()->user_type == 'Agent')
               <a class="nav-link cta-btn btn-fill" href="{{route('frontend.user.dashboard')}}">
-                <div class="btn-text">Let's Support them</div>
+                <div class="btn-text">Add Receivers</div>
               </a>
             @elseif(auth()->user()->user_type == 'Donor')
               <a class="nav-link cta-btn btn-fill" href="{{route('frontend.receivers')}}">

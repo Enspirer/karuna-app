@@ -2265,7 +2265,7 @@ body .mobile-body {
   background-repeat: no-repeat;
   border-radius: 10px;
   height: 150px;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 .profile-section .inner-wrapper .header .back-edit {
   text-decoration: none;
@@ -2286,14 +2286,14 @@ body .mobile-body {
 .profile-section .inner-wrapper .header .dp-block {
   width: fit-content;
   position: absolute;
-  bottom: -50px;
+  bottom: -90px;
   left: 50%;
   transform: translate(-50%, 0);
 }
 .profile-section .inner-wrapper .header .dp-block img {
-  width: 90px;
-  height: 90px;
-  object-position: center;
+  width: 150px;
+  height: 150px;
+  object-position: top;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #fff;
@@ -2353,7 +2353,7 @@ body .mobile-body {
   margin-bottom: 0.5rem;
 }
 .profile-section .inner-wrapper .star-rating .bi {
-  color: #FFC400;
+  color: #ffc400;
 }
 .profile-section .inner-wrapper .name {
   text-align: center;
