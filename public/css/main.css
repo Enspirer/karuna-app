@@ -2836,7 +2836,7 @@
 }
 .profile-section .inner-wrapper .info-block .receiver-header .image-block {
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 .profile-section .inner-wrapper .info-block .receiver-header .image-block .cover {
   width: 100%;
@@ -2846,15 +2846,16 @@
   border-radius: 10px;
 }
 .profile-section .inner-wrapper .info-block .receiver-header .image-block .dp {
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
   border: 2px solid white;
   position: absolute;
   bottom: -70px;
   left: 50%;
   transform: translate(-50%, 0);
+  border-radius: 50%;
 }
 .profile-section .inner-wrapper .info-block .receiver-header .title {
   font-size: 1rem;

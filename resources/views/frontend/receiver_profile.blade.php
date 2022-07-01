@@ -9,7 +9,7 @@
         <div class="inner-wrapper">
             <div class="info-block">
                 <div class="receiver-header">
-                    <div class="image-block" style="margin-bottom:100px">
+                    <div class="image-block">
 
                         @if($receiver->cover_image == null)
                             <img src="{{url('images/landing-page/nav/profile.png')}}" alt="" class="cover">
