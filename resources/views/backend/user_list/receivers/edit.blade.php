@@ -334,7 +334,7 @@
                                             </div>
                                         </div>                                
                                         <div class="col-6">
-                                            <h5 class="text-danger" style="margin-top:37px;">* Maximum 6 Featured Receivers only.</h5>
+                                            <h5 class="text-danger" style="margin-top:37px;">* Maximum 6 featured receivers only.</h5>
                                         </div>
                                     </div>
                                 @endif
