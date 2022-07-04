@@ -292,41 +292,57 @@
                             </div>
                         </div>
                         
-                        @if(count(App\Models\Receivers::where('featured','Enabled')->get()) < 6 )
-                            <div class="form-group">
-                                <label>Featured <span style="color:red">*<span></label>
-                                <select class="form-control" name="featured" required>
-                                    <option value="Enabled">Enable</option>   
-                                    <option value="Disabled" selected>Disable</option>                                
-                                </select>
-                            </div>
-                        @else
-                            <div class="form-group">
-                                <label>Featured <span style="color:red">*<span></label>
-                                <select class="form-control" name="featured" required>
-                                    <option value="Enabled" disabled>Enable</option>   
-                                    <option value="Disabled">Disable</option>                                
-                                </select>
-                            </div>
-                        @endif
 
-                        <div class="row">
-                            <div class="col-6">
-
-                                <div class="form-group">
-                                    <label>Status <span style="color:red">*<span></label>
-                                    <select class="form-control" name="status" required>
-                                        <option value="Approved">Approve</option>   
-                                        <option value="Pending">Pending</option>                                
-                                    </select>
-                                </div>
-                                
-                            </div>
-                            <div class="col-6">
-                                <h5 class="text-danger" style="margin-top:37px;">* Please approve the receiver to be active on the system.</h5>
+                        <div class="row g-0">
+                            <div class="col-md-11">
+                                @if(count(App\Models\Receivers::where('featured','Enabled')->get()) < 6 )
+                                    <div class="form-group">
+                                        <label>Featured <span style="color:red">*<span></label>
+                                        <select class="form-control custom-select" name="featured" required>
+                                            <option value="Enabled">Enable</option>   
+                                            <option value="Disabled" selected>Disable</option>                                
+                                        </select>
+                                    </div>
+                                @else
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label>Featured <span style="color:red">*<span></label>
+                                                <select class="form-control custom-select" name="featured" required>
+                                                    <option value="Enabled" disabled>Enable</option>   
+                                                    <option value="Disabled">Disable</option>                                
+                                                </select>
+                                            </div>
+                                        </div>                                
+                                        <div class="col-6">
+                                            <h5 class="text-danger" style="margin-top:37px;">* Maximum 6 Featured Receivers only.</h5>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                         </div>
-                       
+
+
+                        <div class="row g-0">
+                            <div class="col-md-11">
+                                <div class="row">
+                                    <div class="col-6">
+
+                                        <div class="form-group">
+                                            <label>Status <span style="color:red">*<span></label>
+                                            <select class="form-control custom-select" name="status" required>
+                                                <option value="Approved">Approve</option>   
+                                                <option value="Pending">Pending</option>                                
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-6">
+                                        <h5 class="text-danger" style="margin-top:37px;">* Please approve the receiver to be active on the system.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
                     </div>
                 </div>
