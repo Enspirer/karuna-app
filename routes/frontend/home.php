@@ -25,7 +25,7 @@ Route::get('help-and-support', [HomeController::class, 'help'])->name('help');
 Route::post('help_support/store', [HomeController::class, 'help_support_store'])->name('help_support.store');
 
 
-Route::get('receivers', [HomeController::class, 'receivers'])->name('receivers');
+// Route::get('receivers', [HomeController::class, 'receivers'])->name('receivers');
 Route::get('support', [HomeController::class, 'support'])->name('support');
 Route::get('campaigns', [HomeController::class, 'campaigns'])->name('campaigns');
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us');

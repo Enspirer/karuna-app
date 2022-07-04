@@ -61,6 +61,7 @@ class HomeController extends Controller
         ->where('status','!=','Pending')
         ->where('payment_status',null)
         ->join('users','users.id','=','receivers.assigned_agent')
+        ->select('receivers.id', 'receivers.featured', 'receivers.assigned_agent', 'receivers.name', 'receivers.is_feature', 'receivers.thankyou_message', 'receivers.amount', 'receivers.paid_at', 'receivers.payment_status', 'receivers.donor_id', 'receivers.name_toggle', 'receivers.nick_name', 'receivers.age', 'receivers.gender', 'receivers.country', 'receivers.city', 'receivers.nic_number', 'receivers.address', 'receivers.phone_number', 'receivers.occupation', 'receivers.bio', 'receivers.images', 'receivers.proof_images', 'receivers.videos', 'receivers.audios', 'receivers.requirement', 'receivers.about_donation', 'receivers.account_number', 'receivers.profile_image', 'receivers.cover_image', 'receivers.other_description', 'receivers.account_details', 'receivers.email', 'receivers.status', 'receivers.created_at', 'receivers.updated_at')
         ->paginate(9);
 
         // dd($receivers_list);
