@@ -1561,7 +1561,7 @@
   color: #333;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block .profile-info ul li .th {
-  min-width: 60px;
+  margin-right: 0.5rem;
   display: inline-block;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block a {

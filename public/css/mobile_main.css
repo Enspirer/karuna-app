@@ -936,8 +936,8 @@ body .mobile-body {
   color: #333;
 }
 .donation-info-section .inner-wrapper .profile-block .profile-info ul li .th {
-  min-width: 60px;
   display: inline-block;
+  margin-right: 0.5rem;
 }
 .donation-info-section .inner-wrapper .profile-block .cta-link {
   text-align: center;
