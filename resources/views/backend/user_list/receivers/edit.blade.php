@@ -87,6 +87,18 @@
                                 <input type="text" class="form-control" name="nic_number" value="{{$receiver->nic_number}}" required>
                             </div>
                         </div>
+
+                        <div class="row g-0 mb-3">
+                            <div class="col-md-11">
+                                <label class="pro-label">NIC Photo</label>
+                                <input type="file" name="nic_photo" value="{{$receiver->nic_photo}}" class="form-control" id="nic_photo" placeholder="NIC Photo">
+                                <br>
+                                @if($receiver->nic_photo != null)
+                                    <img src="{{url('files/receiver_id/',$receiver->nic_photo)}}" style="width: 25%;" alt="" >
+                                @endif
+                            </div>
+                        </div>
+
                         <!-- Address -->
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
@@ -275,11 +287,20 @@
                             </div>
                         </div>
 
-                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; display: none;" id="account_details">
+                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; " id="account_details">
                             <h5 class="card-header">Account Details</h5>
                             <div class="card-body">
                                 <div class="row g-0 mb-4">
                                     <div class="col-md-6">
+                                        @if($receiver->account_details != null)
+                                            <label class="pro-label">Account Name</label>
+                                            <input type="text" class="form-control" name="account_name" value="{{json_decode($receiver->account_details)->account_name}}">
+                                        @else
+                                            <label class="pro-label">Account Name</label>
+                                            <input type="text" class="form-control" name="account_name">
+                                        @endif
+                                    </div>
+                                    <div class="col-md-5">
                                         @if($receiver->account_details != null)
                                             <label class="pro-label">Account Number</label>
                                             <input type="text" class="form-control" name="account_number" value="{{json_decode($receiver->account_details)->account_number}}">
@@ -288,7 +309,9 @@
                                             <input type="text" class="form-control" name="account_number">
                                         @endif
                                     </div>
-                                    <div class="col-md-5">
+                                </div>
+                                <div class="row g-0 mb-5">                                   
+                                    <div class="col-md-6">
                                         @if($receiver->account_details != null)
                                             <label class="pro-label">Bank Name</label>
                                             <input type="text" class="form-control" name="bank_name" value="{{json_decode($receiver->account_details)->bank_name}}">
@@ -296,10 +319,8 @@
                                             <label class="pro-label">Bank Name</label>
                                             <input type="text" class="form-control" name="bank_name">
                                         @endif
-                                    </div>
-                                </div>
-                                <div class="row g-0 mb-5">
-                                    <div class="col-md-11">
+                                    </div>                                    
+                                    <div class="col-md-5">
                                         @if($receiver->account_details != null)
                                             <label class="pro-label">Branch Name</label>
                                             <input type="text" class="form-control" name="branch_name" value="{{json_decode($receiver->account_details)->branch_name}}">
@@ -307,14 +328,14 @@
                                             <label class="pro-label">Branch Name</label>
                                             <input type="text" class="form-control" name="branch_name">
                                         @endif
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
                         </div>
 
                         <div class="row g-0">
                             <div class="col-md-11">
-                                @if(count(App\Models\Receivers::where('featured','Enabled')->get()) < 6 )
+                                @if(count(App\Models\Receivers::where('featured','Enabled')->where('payment_status',null)->get()) < 6 )
                                     <div class="form-group">
                                         <label>Featured <span style="color:red">*<span></label>
                                         <select class="form-control custom-select" name="featured" required>
@@ -440,11 +461,11 @@
             document.getElementById("other_description_hide").style.display = "none";
         }
     
-        if (that.value == 'Other') {
-            document.getElementById("account_details").style.display = "block";
-        } else {
-            document.getElementById("account_details").style.display = "none";
-        }
+        // if (that.value == 'Other') {
+        //     document.getElementById("account_details").style.display = "block";
+        // } else {
+        //     document.getElementById("account_details").style.display = "none";
+        // }
         
     }
 </script> 
@@ -453,11 +474,11 @@
     $(document).ready(function(){
         if($('#requirement').val() == 'Other'){
             $('#other_description_hide').css('display','block');
-            $('#account_details').css('display','block');
+            // $('#account_details').css('display','block');
         }
         else{
             $('#other_description_hide').css('display','none');
-            $('#account_details').css('display','none');
+            // $('#account_details').css('display','none');
         }            
     });
 </script>

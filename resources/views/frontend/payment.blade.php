@@ -7,7 +7,7 @@
 <section class="section-payment">
     <div class="container">
         <div class="inner-wrapper">
-            <div class="title">Payment Details</div>
+            <div class="title" style="font-size: 2rem; font-weight: 300; margin-bottom: 2rem; color: #333;">To make a donation - please enter payment details and proceed</div>
             @if (Session::has('success'))
                 <div class="alert alert-success text-center">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -71,37 +71,9 @@
                 </div>
                 <div class="info-block">
                     <div class="info-card">
+                        
                         <div class="profile-block">
-                            @if($agentDetails != null)
-                                <div class="title">Volunteer Profile</div>
-                                    <div class="profile-info">
-                                    @if($agentDetails->profile_image != null)
-                                        <img src="{{uploaded_asset($agentDetails->profile_image)}}" alt="" class="dp">
-                                    @else
-                                        <img src="{{url('img/default_cover.png')}}" alt="" class="dp">
-                                    @endif
-                                    <ul>
-                                        <li>
-                                            <span class="th">Name :</span>
-                                            <span class="td">{{$agentDetails->name}}</span>
-                                        </li>
-                                        <li>
-                                            <span class="th">Area :</span>
-                                            <span class="td">{{$agentDetails->city}}</span>
-                                        </li>
-                                        <li>
-                                            <span class="th">ID :</span>
-                                            <span class="td">{{$agentDetails->nic_number}}</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="{{route('frontend.agent_profile',$agentDetails->id)}}">View  History of this Volunteer</a>
-                            @else
-                                <div class="title">Deleted Account</div>
-                            @endif
-                        </div>
-                        <div class="profile-block">
-                            <div class="title">Receiver's Profile</div>
+                            <div class="title" style="font-size: 1.8rem; font-weight: 300; margin-bottom: 2rem; color: #333;">Receiver's Profile</div>
                             <div class="profile-info">
                                 @if($receiverDetails->profile_image != null)
                                     <img src="{{uploaded_asset($receiverDetails->profile_image)}}" alt="" class="dp">
@@ -115,11 +87,11 @@
                                     </li>
                                     <li>
                                         <span class="th">Area :</span>
-                                        <span class="td">{{$receiverDetails->city}}</span>
+                                        <span class="td">{{$receiverDetails->city}} {{$receiverDetails->country}}</span>
                                     </li>
                                     <li>
-                                        <span class="th">ID :</span>
-                                        <span class="td">{{$receiverDetails->nic_number}}</span>
+                                        <span class="th">Occupation :</span>
+                                        <span class="td">{{$receiverDetails->occupation}}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -136,6 +108,37 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="profile-block">
+                            @if($agentDetails != null)
+                                <div class="title">Volunteer Profile</div>
+                                    <div class="profile-info">
+                                    @if($agentDetails->profile_image != null)
+                                        <img src="{{uploaded_asset($agentDetails->profile_image)}}" alt="" class="dp">
+                                    @else
+                                        <img src="{{url('img/default_cover.png')}}" alt="" class="dp">
+                                    @endif
+                                    <ul>
+                                        <li>
+                                            <span class="th">Name :</span>
+                                            <span class="td">{{$agentDetails->name}}</span>
+                                        </li>
+                                        <li>
+                                            <span class="th">Area :</span>
+                                            <span class="td">{{get_city_details($agentDetails->id,'city')}} {{get_city_details($agentDetails->id,'country')}}</span>
+                                        </li>
+                                        <li>
+                                            <span class="th">Occupation :</span>
+                                            <span class="td">{{$agentDetails->occupation}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="{{route('frontend.agent_profile',$agentDetails->id)}}">View  History of this Volunteer</a>
+                            @else
+                                <div class="title">Deleted Account</div>
+                            @endif
+                        </div>
+                        
                         <div class="footer">
                             <div class="text-block">
                                 <div class="text">Your Donate amount is</div>

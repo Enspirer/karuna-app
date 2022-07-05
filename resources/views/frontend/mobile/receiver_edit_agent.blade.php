@@ -92,6 +92,15 @@
                 <label class="form-label">NIC</label>
                 <input type="text" class="form-control" value="{{$receiver->nic_number}}" name="nic_number" required>
             </div>
+
+            <div class="frm-row">
+                <label class="form-label">NIC Photo</label>
+                <input type="file" name="nic_photo" value="{{$receiver->nic_photo}}" class="form-control" id="nic_photo" placeholder="NIC Photo">
+                <br>
+                @if($receiver->nic_photo != null)
+                    <img src="{{url('files/receiver_id/',$receiver->nic_photo)}}" style="width: 25%;" alt="" >
+                @endif
+            </div>
             
             <div class="frm-row">
                 <label class="form-label">Address</label>
@@ -230,25 +239,31 @@
                 <textarea class="form-control" style="height:150px;" name="about_donation" required>{{$receiver->about_donation}}</textarea>
             </div>
 
-            <div class="card" style="border-style: dotted;border-width: 3px; padding: 5px; display: none;" id="account_details_edit">
+            <div class="card" style="border-style: dotted;border-width: 3px; padding: 5px; " id="account_details_edit">
                 <h5 class="card-header">Account Details</h5>
                 <div class="card-body">
                     @if($receiver->account_details != null)
                         <div class="frm-row">
-                            <div class="frm-col">
-                                <label class="form-label">Account Number</label>
-                                <input type="text" class="form-control" name="account_number" value="{{json_decode($receiver->account_details)->account_number}}">
-                            </div>
-                            <div class="frm-col">
-                                <label class="form-label">Bank Name</label>
-                                <input type="text" class="form-control" name="bank_name" value="{{json_decode($receiver->account_details)->bank_name}}">
-                            </div>
+                            <label class="form-label">Account Name</label>
+                            <input type="text" class="form-control" name="account_name" value="{{json_decode($receiver->account_details)->account_name}}">
                         </div>
                         <div class="frm-row">
-                            <label class="pro-label">Branch Name</label>
+                            <label class="form-label">Account Number</label>
+                            <input type="text" class="form-control" name="account_number" value="{{json_decode($receiver->account_details)->account_number}}">
+                        </div>
+                        <div class="frm-row">
+                            <label class="form-label">Bank Name</label>
+                            <input type="text" class="form-control" name="bank_name" value="{{json_decode($receiver->account_details)->bank_name}}">
+                        </div>
+                        <div class="frm-row">
+                            <label class="form-label">Branch Name</label>
                             <input type="text" class="form-control" name="branch_name" value="{{json_decode($receiver->account_details)->branch_name}}">
                         </div>
                     @else
+                        <div class="frm-row">
+                            <label class="form-label">Account Name</label>
+                            <input type="text" class="form-control" name="account_name">
+                        </div>
                         <div class="frm-row">
                             <label class="form-label">Account Number</label>
                             <input type="text" class="form-control" name="account_number">
@@ -290,11 +305,11 @@
             document.getElementById("other_description_hide_edit").style.display = "none";
         }
     
-        if (that.value == 'Other') {
-            document.getElementById("account_details_edit").style.display = "block";
-        } else {
-            document.getElementById("account_details_edit").style.display = "none";
-        }
+        // if (that.value == 'Other') {
+        //     document.getElementById("account_details_edit").style.display = "block";
+        // } else {
+        //     document.getElementById("account_details_edit").style.display = "none";
+        // }
         
     }
 </script> 
@@ -303,11 +318,11 @@
     $(document).ready(function(){
         if($('#requirement_edit').val() == 'Other'){
             $('#other_description_hide_edit').css('display','block');
-            $('#account_details_edit').css('display','block');
+            // $('#account_details_edit').css('display','block');
         }
         else{
             $('#other_description_hide_edit').css('display','none');
-            $('#account_details_edit').css('display','none');
+            // $('#account_details_edit').css('display','none');
         }            
     });
 </script>

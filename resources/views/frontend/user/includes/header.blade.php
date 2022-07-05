@@ -170,6 +170,14 @@
                                 <input type="text" class="form-control" name="nic_number" required>
                             </div>
                         </div>
+
+                        <div class="row g-0 mb-3">
+                            <div class="col-md-11">
+                                <label class="pro-label">NIC Photo</label>
+                                <input type="file" name="nic_photo" class="form-control" id="nic_photo" placeholder="NIC Photo">
+                            </div>
+                        </div>
+
                         <!-- Address -->
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
@@ -421,21 +429,25 @@
                         </div>
 
 
-                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; display: none;" id="account_details">
+                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; " id="account_details">
                             <h5 class="card-header">Account Details</h5>
                             <div class="card-body">
                                 <div class="row g-0 mb-4">
                                     <div class="col-md-6">
+                                        <label class="pro-label">Account Name</label>
+                                        <input type="text" class="form-control" id="account_name" name="account_name">
+                                    </div>
+                                    <div class="col-md-5">
                                         <label class="pro-label">Account Number</label>
                                         <input type="text" class="form-control" id="account_number" name="account_number">
                                     </div>
-                                    <div class="col-md-4">
+                                </div>
+                                <div class="row g-0 mb-4">
+                                    <div class="col-md-6">
                                         <label class="pro-label">Bank Name</label>
                                         <input type="text" class="form-control" id="bank_name" name="bank_name">
                                     </div>
-                                </div>
-                                <div class="row g-0 mb-5">
-                                    <div class="col-md-11">
+                                    <div class="col-md-5">
                                         <label class="pro-label">Branch Name</label>
                                         <input type="text" class="form-control" id="branch_name" name="branch_name">
                                     </div>

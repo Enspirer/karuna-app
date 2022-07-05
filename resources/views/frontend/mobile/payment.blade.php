@@ -50,7 +50,7 @@
                 </div>
             </div> -->
             <div class="payment-block" id="paymentBlock">
-                <div class="title">Payment Details</div>
+                <div class="title mb-5 text-center">To make a donation - please enter payment details and proceed</div>
 
                 <div class='card-row'>
                     <label class='form-label'>Name on Card</label>

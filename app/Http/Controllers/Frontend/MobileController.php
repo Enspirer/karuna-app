@@ -300,7 +300,7 @@ class MobileController extends Controller
 
         }
 
-        return redirect()->route('frontend.mobile.receiver_request_list');
+        return redirect()->route('frontend.user.mobile.receiver_request_list');
 
     }
 

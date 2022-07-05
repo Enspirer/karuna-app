@@ -176,11 +176,11 @@
             document.getElementById("other_description_hide").style.display = "none";
         }
     
-        if (that.value == 'Other') {
-            document.getElementById("account_details").style.display = "block";
-        } else {
-            document.getElementById("account_details").style.display = "none";
-        }
+        // if (that.value == 'Other') {
+        //     document.getElementById("account_details").style.display = "block";
+        // } else {
+        //     document.getElementById("account_details").style.display = "none";
+        // }
         
     }
 </script> 
@@ -194,11 +194,11 @@
             document.getElementById("other_description_hide_edit").style.display = "none";
         }
     
-        if (that.value == 'Other') {
-            document.getElementById("account_details_edit").style.display = "block";
-        } else {
-            document.getElementById("account_details_edit").style.display = "none";
-        }
+        // if (that.value == 'Other') {
+        //     document.getElementById("account_details_edit").style.display = "block";
+        // } else {
+        //     document.getElementById("account_details_edit").style.display = "none";
+        // }
         
     }
 </script> 
@@ -207,11 +207,11 @@
     $(document).ready(function(){
         if($('#requirement_edit').val() == 'Other'){
             $('#other_description_hide_edit').css('display','block');
-            $('#account_details_edit').css('display','block');
+            // $('#account_details_edit').css('display','block');
         }
         else{
             $('#other_description_hide_edit').css('display','none');
-            $('#account_details_edit').css('display','none');
+            // $('#account_details_edit').css('display','none');
         }            
     });
 </script>

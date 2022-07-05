@@ -82,6 +82,14 @@
                                 <input type="text" class="form-control" name="nic_number" value="{{old('nic_number')}}" required>
                             </div>
                         </div>
+
+                        <div class="row g-0 mb-3">
+                            <div class="col-md-11">
+                                <label class="pro-label">NIC Photo</label>
+                                <input type="file" name="nic_photo" class="form-control" id="nic_photo" placeholder="NIC Photo">
+                            </div>
+                        </div>
+                        
                         <!-- Address -->
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
@@ -237,7 +245,7 @@
                         <div class="row g-0 mb-3">
                             <div class="col-md-11">
                                 <select class="form-select" aria-label="Default select example" name="requirement" onchange="package_type(this);" required>
-                                    <option selected disabled>Choose...</option>
+                                    <option value="" selected disabled>Choose...</option>
                                     @if(count(App\Models\Packages::where('status','Enabled')->get()) != 0)
                                         @foreach(App\Models\Packages::where('status','Enabled')->get() as $package)
                                             <option value="{{$package->id}}">{{$package->name}}</option>
@@ -270,23 +278,27 @@
                             </div>
                         </div>
 
-                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; display: none;" id="account_details">
+                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; " id="account_details">
                             <h5 class="card-header">Account Details</h5>
                             <div class="card-body">
                                 <div class="row g-0 mb-4">
                                     <div class="col-md-6">
-                                        <label class="pro-label">Account Number</label>
-                                        <input type="text" class="form-control" name="account_number" value="{{old('account_number')}}">
+                                        <label class="pro-label">Account Name</label>
+                                        <input type="text" class="form-control" id="account_name" name="account_name">
                                     </div>
                                     <div class="col-md-5">
-                                        <label class="pro-label">Bank Name</label>
-                                        <input type="text" class="form-control" name="bank_name" value="{{old('bank_name')}}">
+                                        <label class="pro-label">Account Number</label>
+                                        <input type="text" class="form-control" id="account_number" name="account_number">
                                     </div>
                                 </div>
-                                <div class="row g-0 mb-5">
-                                    <div class="col-md-11">
+                                <div class="row g-0 mb-4">
+                                    <div class="col-md-6">
+                                        <label class="pro-label">Bank Name</label>
+                                        <input type="text" class="form-control" id="bank_name" name="bank_name">
+                                    </div>
+                                    <div class="col-md-5">
                                         <label class="pro-label">Branch Name</label>
-                                        <input type="text" class="form-control" name="branch_name" value="{{old('branch_name')}}">
+                                        <input type="text" class="form-control" id="branch_name" name="branch_name">
                                     </div>
                                 </div>
                             </div>
@@ -295,7 +307,7 @@
 
                         <div class="row g-0">
                             <div class="col-md-11">
-                                @if(count(App\Models\Receivers::where('featured','Enabled')->get()) < 6 )
+                                @if(count(App\Models\Receivers::where('featured','Enabled')->where('payment_status',null)->get()) < 6 )
                                     <div class="form-group">
                                         <label>Featured <span style="color:red">*<span></label>
                                         <select class="form-control custom-select" name="featured" required>
@@ -406,11 +418,11 @@
             document.getElementById("other_description_hide").style.display = "none";
         }
     
-        if (that.value == 'Other') {
-            document.getElementById("account_details").style.display = "block";
-        } else {
-            document.getElementById("account_details").style.display = "none";
-        }
+        // if (that.value == 'Other') {
+        //     document.getElementById("account_details").style.display = "block";
+        // } else {
+        //     document.getElementById("account_details").style.display = "none";
+        // }
         
     }
 </script> 

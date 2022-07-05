@@ -11,6 +11,7 @@ use App\Models\Auth\User;
 use Mail;
 use \App\Mail\UserRegisterAdminMail;
 use \App\Mail\UserRegisterUserMail;
+use \App\Mail\UserRegisterVolunteerMail;
 
 
 /**
@@ -99,11 +100,21 @@ class RegisterController extends Controller
                 'name' => $request->first_name
             ];    
             $details_user = [
+                'name' => $request->first_name,
+                'confirmation_code' => $user->confirmation_code
+            ];
+            $details_volunteer_user = [
                 'name' => $request->first_name
             ];
     
             \Mail::to('admin@karunaa.org.uk')->send(new UserRegisterAdminMail($details_admin));
-            \Mail::to($request->email)->send(new UserRegisterUserMail($details_user));
+
+            if($request->user_type == 'Donor'){
+                \Mail::to($request->email)->send(new UserRegisterUserMail($details_user));
+            }
+            elseif($request->user_type == 'Agent'){
+                \Mail::to($request->email)->send(new UserRegisterVolunteerMail($details_volunteer_user));
+            }           
     
 
             return redirect($this->redirectPath())->withFlashSuccess(

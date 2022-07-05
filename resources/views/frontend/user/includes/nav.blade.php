@@ -75,7 +75,7 @@
                 </a>
             </li>
             @endif
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="{{url('help-and-support')}}" class="nav-link">
                     <div class="nav-nav">
                         <i class="bi bi-question-circle"></i>
@@ -84,7 +84,7 @@
                         <i class="bi flx active bi-chevron-right"></i>
                     </div>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
     <div class="nav-footer">

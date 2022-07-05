@@ -41,18 +41,13 @@
                 </tr>
                 <tr>
                   <td style="padding:0 0 30px 0;color:#153643;">
-                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Dear {{ $details_user['name'] }},</p>
-                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Click here to confirm your account. Have a great day!</p>
+                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Dear {{ $details_volunteer_user['name'] }},</p>
+                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Your request has been sent. Admin will approve your account. Verify your email address. Have a great day!</p>
                   </td>
                 </tr>
                 <tr>
                   <td style="padding:0 0 30px 0;color:#153643;" align="center">
-                      <a href="{{url('account/confirm',$details_user['confirmation_code'])}}" style="text-decoration: none; display: block; width: 115px; height: 25px; background: #4E9CAF; padding: 10px; text-align: center; border-radius: 5px; color: white; font-weight: bold; line-height: 25px;">Confirm Account</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding:10px 0 20px 0;color:#153643;">
-                    <p style="color: black; margin:20px 0 12px 0;font-size:12px;line-height:24px;font-family:Arial,sans-serif;">If you’re having trouble clicking the "Confirm Account" button, copy and paste the URL below into your web browser: {{url('account/confirm',$details_user['confirmation_code'])}}</p>
+                      <a href="{{url('login')}}" style="text-decoration: none; display: block; width: 115px; height: 25px; background: #4E9CAF; padding: 10px; text-align: center; border-radius: 5px; color: white; font-weight: bold; line-height: 25px;">Verify Email</a>
                   </td>
                 </tr>
 

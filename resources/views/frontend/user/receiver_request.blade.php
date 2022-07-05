@@ -480,7 +480,21 @@
                                     <input type="text" class="form-control" name="account_number" value="{{json_decode($receiver_request->account_details)->account_number}}" disabled>
                                 @endif
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
+                                <label class="pro-label">Account Name</label>
+                                @if($receiver_request->account_details != null && $receiver->account_details != null)
+                                    @if(json_decode($receiver_request->account_details)->account_name == json_decode($receiver->account_details)->account_name)
+                                        <input type="text" class="form-control" name="account_name" value="{{json_decode($receiver_request->account_details)->account_name}}" disabled>
+                                    @else
+                                        <input type="text" class="form-control" style="border-color:red;" name="account_name" value="{{json_decode($receiver_request->account_details)->account_name}}" disabled>
+                                    @endif
+                                @else
+                                    <input type="text" class="form-control" name="account_name" value="{{json_decode($receiver_request->account_details)->account_name}}" disabled>
+                                @endif
+                            </div>                            
+                        </div>
+                        <div class="row g-0 mb-5">
+                            <div class="col-md-6">
                                 <label class="pro-label">Bank Name</label>
                                 @if($receiver_request->account_details != null && $receiver->account_details != null)
                                     @if(json_decode($receiver_request->account_details)->bank_name == json_decode($receiver->account_details)->bank_name)
@@ -492,9 +506,7 @@
                                     <input type="text" class="form-control" name="bank_name" value="{{json_decode($receiver_request->account_details)->bank_name}}" disabled>
                                 @endif
                             </div>
-                        </div>
-                        <div class="row g-0 mb-5">
-                            <div class="col-md-11">
+                            <div class="col-md-5">
                                 <label class="pro-label">Branch Name</label>
                                 @if($receiver_request->account_details != null && $receiver->account_details != null)
                                     @if(json_decode($receiver_request->account_details)->branch_name == json_decode($receiver->account_details)->branch_name)

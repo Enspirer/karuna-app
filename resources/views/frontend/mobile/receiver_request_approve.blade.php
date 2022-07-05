@@ -305,6 +305,18 @@
                 <h5 class="card-header">Account Details</h5>
                 <div class="card-body">
                     <div class="frm-row">
+                        <label class="form-label">Account Name</label>
+                        @if($receiver_request->account_details != null && $receiver->account_details != null)
+                            @if(json_decode($receiver_request->account_details)->account_name == json_decode($receiver->account_details)->account_name)
+                                <input type="text" class="form-control" name="account_name" value="{{json_decode($receiver_request->account_details)->account_name}}" disabled>
+                            @else
+                                <input type="text" class="form-control" style="border-color:red;" name="account_name" value="{{json_decode($receiver_request->account_details)->account_name}}" disabled>
+                            @endif
+                        @else
+                            <input type="text" class="form-control" name="account_name" value="{{json_decode($receiver_request->account_details)->account_name}}" disabled>
+                        @endif
+                    </div>
+                    <div class="frm-row">
                         <label class="form-label">Account Number</label>
                         @if($receiver_request->account_details != null && $receiver->account_details != null)
                             @if(json_decode($receiver_request->account_details)->account_number == json_decode($receiver->account_details)->account_number)

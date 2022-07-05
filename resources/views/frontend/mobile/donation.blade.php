@@ -110,6 +110,13 @@
                 <label class="form-label">NIC</label>
                 <input type="text" class="form-control" name="nic_number" required>
             </div>
+
+            <div class="frm-row">
+                <label class="form-label">NIC Photo</label>
+                <input type="file" name="nic_photo" class="form-control" id="nic_photo" placeholder="NIC Photo">
+            </div>
+
+
             <!-- Address -->
             <div class="frm-row">
                 <label class="form-label">Address</label>
@@ -215,10 +222,14 @@
                 <textarea class="form-control" style="height:150px;" name="about_donation" required></textarea>
             </div>
 
-            <div class="card" style="border-style: dotted;border-width: 3px; padding: 8px; display: none;" id="account_details">
+            <div class="card" style="border-style: dotted;border-width: 3px; padding: 8px; " id="account_details">
                 <h5 class="card-header">Account Details</h5>
                 <div class="card-body">
                    
+                    <div class="frm-row">
+                        <label class="form-label">Account Name</label>
+                        <input type="text" class="form-control" id="account_name" name="account_name">
+                    </div>
                     <div class="frm-row">
                         <label class="form-label">Account Number</label>
                         <input type="text" class="form-control" id="account_number" name="account_number">
@@ -259,11 +270,11 @@
             document.getElementById("other_description_hide").style.display = "none";
         }
     
-        if (that.value == 'Other') {
-            document.getElementById("account_details").style.display = "block";
-        } else {
-            document.getElementById("account_details").style.display = "none";
-        }
+        // if (that.value == 'Other') {
+        //     document.getElementById("account_details").style.display = "block";
+        // } else {
+        //     document.getElementById("account_details").style.display = "none";
+        // }
         
     }
 </script> 

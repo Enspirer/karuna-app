@@ -287,8 +287,8 @@ class ListController extends Controller
             return DataTables::of($data)
 
             ->addColumn('action', function($data){
-                $button = '<a href="'.route('admin.donor_status.edit',$data->id).'" name="donate_gigs" id="'.$data->id.'" class="edit btn btn-info btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
-                $button .= '<a href="'.route('admin.donor_edit',$data->id).'" name="donor_edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
+                // $button = '<a href="'.route('admin.donor_status.edit',$data->id).'" name="donate_gigs" id="'.$data->id.'" class="edit btn btn-info btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-list"></i> View </a>';
+                $button = '<a href="'.route('admin.donor_edit',$data->id).'" name="donor_edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
                 return $button;
             })
             ->addColumn('confirmed', function($data){
@@ -467,7 +467,17 @@ class ListController extends Controller
     {
         // dd($request);
 
+        if($request->file('nic_photo'))
+        {            
+            $preview_file_name = time().'_'.rand(1000,10000).'.'.$request->nic_photo->getClientOriginalExtension();
+            $fullurls_preview_file = $request->nic_photo->move(public_path('files/receiver_id'), $preview_file_name);
+            $image_url = $preview_file_name;
+        }else{
+            $image_url = null;
+        } 
+
         $account_details = [
+            'account_name' => $request->account_name,
             'account_number' => $request->account_number,
             'bank_name' => $request->bank_name,
             'branch_name' => $request->branch_name
@@ -485,6 +495,7 @@ class ListController extends Controller
         $add->country=$request->country;
         $add->city=$request->city;
         $add->nic_number=$request->nic_number;
+        $add->nic_photo=$image_url;
         $add->address=$request->address;
         $add->phone_number=$request->phone_number;
         $add->occupation=$request->occupation;
@@ -512,7 +523,17 @@ class ListController extends Controller
 
         // dd($request);
 
+        if($request->file('nic_photo'))
+        {            
+            $preview_file_name = time().'_'.rand(1000,10000).'.'.$request->nic_photo->getClientOriginalExtension();
+            $fullurls_preview_file = $request->nic_photo->move(public_path('files/receiver_id'), $preview_file_name);
+            $image_url = $preview_file_name;
+        }else{
+            $image_url = Receivers::where('id',$request->hidden_id)->first()->nic_photo;
+        } 
+
         $account_details = [
+            'account_name' => $request->account_name,
             'account_number' => $request->account_number,
             'bank_name' => $request->bank_name,
             'branch_name' => $request->branch_name
@@ -534,6 +555,7 @@ class ListController extends Controller
         $update->country=$request->country;
         $update->city=$request->city;
         $update->nic_number=$request->nic_number;
+        $update->nic_photo=$image_url;
         $update->address=$request->address;
         $update->phone_number=$request->phone_number;
         $update->occupation=$request->occupation;
