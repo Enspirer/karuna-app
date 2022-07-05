@@ -30,9 +30,16 @@
                     @endif
                     <div class="status">Receiver</div>
                     <div class="text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 8; -webkit-box-orient: vertical;">{{$receiver->bio}}</div>
-                    <a href="{{route('frontend.payment',$receiver->id)}}" class="cta-btn btn-fill">
-                        <div class="btn-text">Donate Now</div>
-                    </a>
+                    
+                    @auth()
+                        <a href="{{route('frontend.payment',$receiver->id)}}" class="cta-btn btn-fill">
+                            <div class="btn-text">Donate Now</div>
+                        </a>
+                    @else
+                        <a href="{{route('frontend.auth.register')}}" class="cta-btn btn-fill">
+                            <div class="btn-text">Donate Now</div>
+                        </a>
+                    @endauth
                 </div>
             </div>
             <div class="content-block">

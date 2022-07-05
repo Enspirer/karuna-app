@@ -51,6 +51,13 @@
                   </td>
                 </tr>
 
+                <tr>
+                  <td style="padding:0 0 30px 0;color:#153643;">
+                    <p style="color: black; margin:0 0 8px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Please wait for admin to approve your account once you verify your email address.</p>
+                  </td>
+                </tr>
+                
+
               </table>
             </td>
           </tr>
