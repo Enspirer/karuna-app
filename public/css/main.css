@@ -1329,7 +1329,7 @@
 .section-payment .inner-wrapper .content-block {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 4rem;
 }
 .section-payment .inner-wrapper .content-block .card-block {
@@ -1524,14 +1524,14 @@
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block .profile-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block .profile-info .dp {
-  width: 45px;
-  height: 45px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
@@ -1541,11 +1541,14 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  width: 100%;
+  padding-left: 2rem;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block .profile-info ul li {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 0.25rem;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block .profile-info ul li:nth-child(1) span {
   font-size: 0.9rem;
@@ -1558,15 +1561,8 @@
   color: #333;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block .profile-info ul li .th {
-  width: 60px;
+  min-width: 60px;
   display: inline-block;
-}
-.section-payment .inner-wrapper .content-block .info-block .info-card .profile-block .profile-info ul li .td {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block a {
   text-align: center;
@@ -1574,7 +1570,7 @@
   font-weight: 300;
   text-decoration: underline;
   color: #2699FB;
-  margin: 1rem 0 1rem calc(45px + 3rem);
+  display: block;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block .cat-icon {
   width: 45px;
@@ -1587,7 +1583,7 @@
   font-size: 22px;
   font-weight: 400;
   color: #fff;
-  margin: 1rem 0 1rem calc(45px + 3rem);
+  margin: 1rem auto;
 }
 .section-payment .inner-wrapper .content-block .info-block .info-card .profile-block .cat-icon.blue {
   background-color: #00BDC4;

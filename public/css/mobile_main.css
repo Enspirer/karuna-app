@@ -900,14 +900,14 @@ body .mobile-body {
 }
 .donation-info-section .inner-wrapper .profile-block .profile-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 .donation-info-section .inner-wrapper .profile-block .profile-info .dp {
-  width: 45px;
-  height: 45px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
@@ -917,11 +917,13 @@ body .mobile-body {
   margin: 0;
   padding: 0;
   list-style: none;
+  width: 100%;
+  padding-left: 2rem;
 }
 .donation-info-section .inner-wrapper .profile-block .profile-info ul li {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
 }
 .donation-info-section .inner-wrapper .profile-block .profile-info ul li:nth-child(1) span {
   font-size: 0.9rem;
@@ -934,15 +936,8 @@ body .mobile-body {
   color: #333;
 }
 .donation-info-section .inner-wrapper .profile-block .profile-info ul li .th {
-  width: 60px;
+  min-width: 60px;
   display: inline-block;
-}
-.donation-info-section .inner-wrapper .profile-block .profile-info ul li .td {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
 }
 .donation-info-section .inner-wrapper .profile-block .cta-link {
   text-align: center;
@@ -950,7 +945,8 @@ body .mobile-body {
   font-weight: 300;
   text-decoration: underline;
   color: #2699FB;
-  margin: 1rem 0 1rem calc(45px + 3rem);
+  margin: 1rem auto;
+  display: block;
 }
 .donation-info-section .inner-wrapper .profile-block .cat-icon {
   width: 45px;

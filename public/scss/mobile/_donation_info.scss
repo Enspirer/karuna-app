@@ -23,14 +23,14 @@
 
             .profile-info {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
                 gap: 1rem;
                 margin-bottom: 1rem;
 
                 .dp {
-                    width: 45px;
-                    height: 45px;
+                    width: 100px;
+                    height: 100px;
                     object-fit: cover;
                     object-position: center;
                     border-radius: 50%;
@@ -41,11 +41,13 @@
                     margin: 0;
                     padding: 0;
                     list-style: none;
+                    width: 100%;
+                    padding-left: 2rem;
 
                     li {
                         display: flex;
                         flex-direction: row;
-                        align-items: center;
+                        align-items: flex-start;
 
                         &:nth-child(1) {
                             span {
@@ -62,16 +64,8 @@
                         }
 
                         .th {
-                            width: 60px;
+                            min-width: 60px;
                             display: inline-block;
-                        }
-
-                        .td {
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            display: -webkit-box;
-                            -webkit-line-clamp: 1;
-                            -webkit-box-orient: vertical;
                         }
                     }
                 }
@@ -83,7 +77,8 @@
                 font-weight: 300;
                 text-decoration: underline;
                 color: $dark-blue;
-                margin: 1rem 0 1rem calc(45px + 3rem);
+                margin: 1rem auto;
+                display: block;
             }
 
             .cat-icon {
