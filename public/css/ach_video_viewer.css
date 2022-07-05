@@ -24,7 +24,8 @@
 }
 .gallery .ach-video-thumbnail video {
   width: 100px;
-  height: 75px;
+  height: 100%;
+  min-height: 100px;
   object-fit: cover;
   object-position: center;
 }
