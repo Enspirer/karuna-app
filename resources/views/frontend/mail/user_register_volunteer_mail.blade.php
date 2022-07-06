@@ -42,21 +42,14 @@
                 <tr>
                   <td style="padding:0 0 30px 0;color:#153643;">
                     <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Dear {{ $details_volunteer_user['name'] }},</p>
-                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Your request has been sent. Admin will approve your account. Verify your email address. Have a great day!</p>
+                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Your account is successfully created, Please verify your email and wait for the admin to approve your account.</p>
                   </td>
                 </tr>
                 <tr>
                   <td style="padding:0 0 30px 0;color:#153643;" align="center">
                       <a href="{{url('login')}}" style="text-decoration: none; display: block; width: 115px; height: 25px; background: #4E9CAF; padding: 10px; text-align: center; border-radius: 5px; color: white; font-weight: bold; line-height: 25px;">Verify Email</a>
                   </td>
-                </tr>
-
-                <tr>
-                  <td style="padding:0 0 30px 0;color:#153643;">
-                    <p style="color: black; margin:0 0 8px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Please wait for admin to approve your account once you verify your email address.</p>
-                  </td>
-                </tr>
-                
+                </tr>               
 
               </table>
             </td>

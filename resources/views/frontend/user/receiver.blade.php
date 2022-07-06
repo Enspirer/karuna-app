@@ -219,6 +219,54 @@
                     </div>                    
                 </div>
 
+                <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; " id="account_details_edit">
+                    <h5 class="card-header">Account Details</h5>
+                    <div class="card-body">
+                        @if($receiver->account_details != null)                            
+                            <div class="row g-0 mb-4">
+                                <div class="col-md-6">
+                                    <label class="pro-label">Account Name</label>
+                                    <input type="text" class="form-control" id="account_name" name="account_name" value="{{json_decode($receiver->account_details)->account_name}}">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="pro-label">Account Number</label>
+                                    <input type="text" class="form-control" id="account_number" name="account_number" value="{{json_decode($receiver->account_details)->account_number}}">
+                                </div>
+                            </div>
+                            <div class="row g-0 mb-4">
+                                <div class="col-md-6">
+                                    <label class="pro-label">Bank Name</label>
+                                    <input type="text" class="form-control" id="bank_name" name="bank_name" value="{{json_decode($receiver->account_details)->bank_name}}">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="pro-label">Branch Name</label>
+                                    <input type="text" class="form-control" id="branch_name" name="branch_name" value="{{json_decode($receiver->account_details)->branch_name}}">
+                                </div>
+                            </div>
+                        @else
+                            <div class="row g-0 mb-4">
+                                <div class="col-md-6">
+                                    <label class="pro-label">Account Name</label>
+                                    <input type="text" class="form-control" id="account_name" name="account_name">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="pro-label">Account Number</label>
+                                    <input type="text" class="form-control" id="account_number" name="account_number">
+                                </div>
+                            </div>
+                            <div class="row g-0 mb-4">
+                                <div class="col-md-6">
+                                    <label class="pro-label">Bank Name</label>
+                                    <input type="text" class="form-control" id="bank_name" name="bank_name">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="pro-label">Branch Name</label>
+                                    <input type="text" class="form-control" id="branch_name" name="branch_name">
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                </div>
 
                 <div class="row g-0">
                     <div class="col-md-6">
@@ -430,54 +478,7 @@
                 </div>
                 
 
-                <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; " id="account_details_edit">
-                    <h5 class="card-header">Account Details</h5>
-                    <div class="card-body">
-                        @if($receiver->account_details != null)                            
-                            <div class="row g-0 mb-4">
-                                <div class="col-md-6">
-                                    <label class="pro-label">Account Name</label>
-                                    <input type="text" class="form-control" id="account_name" name="account_name" value="{{json_decode($receiver->account_details)->account_name}}">
-                                </div>
-                                <div class="col-md-5">
-                                    <label class="pro-label">Account Number</label>
-                                    <input type="text" class="form-control" id="account_number" name="account_number" value="{{json_decode($receiver->account_details)->account_number}}">
-                                </div>
-                            </div>
-                            <div class="row g-0 mb-4">
-                                <div class="col-md-6">
-                                    <label class="pro-label">Bank Name</label>
-                                    <input type="text" class="form-control" id="bank_name" name="bank_name" value="{{json_decode($receiver->account_details)->bank_name}}">
-                                </div>
-                                <div class="col-md-5">
-                                    <label class="pro-label">Branch Name</label>
-                                    <input type="text" class="form-control" id="branch_name" name="branch_name" value="{{json_decode($receiver->account_details)->branch_name}}">
-                                </div>
-                            </div>
-                        @else
-                            <div class="row g-0 mb-4">
-                                <div class="col-md-6">
-                                    <label class="pro-label">Account Name</label>
-                                    <input type="text" class="form-control" id="account_name" name="account_name">
-                                </div>
-                                <div class="col-md-5">
-                                    <label class="pro-label">Account Number</label>
-                                    <input type="text" class="form-control" id="account_number" name="account_number">
-                                </div>
-                            </div>
-                            <div class="row g-0 mb-4">
-                                <div class="col-md-6">
-                                    <label class="pro-label">Bank Name</label>
-                                    <input type="text" class="form-control" id="bank_name" name="bank_name">
-                                </div>
-                                <div class="col-md-5">
-                                    <label class="pro-label">Branch Name</label>
-                                    <input type="text" class="form-control" id="branch_name" name="branch_name">
-                                </div>
-                            </div>
-                        @endif
-                    </div>
-                </div>
+                
 
                 <div class="row g-0">
                     <div class="col-md-11">

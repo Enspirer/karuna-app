@@ -121,6 +121,33 @@
                                 <textarea class="form-control" style="height:150px;" name="bio">{{old('bio')}}</textarea>
                             </div>
                         </div>
+
+
+                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; " id="account_details">
+                            <h5 class="card-header">Account Details</h5>
+                            <div class="card-body">
+                                <div class="row g-0 mb-4">
+                                    <div class="col-md-6">
+                                        <label class="pro-label">Account Name</label>
+                                        <input type="text" class="form-control" id="account_name" name="account_name">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label class="pro-label">Account Number</label>
+                                        <input type="text" class="form-control" id="account_number" name="account_number">
+                                    </div>
+                                </div>
+                                <div class="row g-0 mb-4">
+                                    <div class="col-md-6">
+                                        <label class="pro-label">Bank Name</label>
+                                        <input type="text" class="form-control" id="bank_name" name="bank_name">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label class="pro-label">Branch Name</label>
+                                        <input type="text" class="form-control" id="branch_name" name="branch_name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
                         <div class="row g-0">
                             <div class="col-md-6">
@@ -278,36 +305,12 @@
                             </div>
                         </div>
 
-                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; " id="account_details">
-                            <h5 class="card-header">Account Details</h5>
-                            <div class="card-body">
-                                <div class="row g-0 mb-4">
-                                    <div class="col-md-6">
-                                        <label class="pro-label">Account Name</label>
-                                        <input type="text" class="form-control" id="account_name" name="account_name">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <label class="pro-label">Account Number</label>
-                                        <input type="text" class="form-control" id="account_number" name="account_number">
-                                    </div>
-                                </div>
-                                <div class="row g-0 mb-4">
-                                    <div class="col-md-6">
-                                        <label class="pro-label">Bank Name</label>
-                                        <input type="text" class="form-control" id="bank_name" name="bank_name">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <label class="pro-label">Branch Name</label>
-                                        <input type="text" class="form-control" id="branch_name" name="branch_name">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         
 
                         <div class="row g-0">
                             <div class="col-md-11">
-                                @if(count(App\Models\Receivers::where('featured','Enabled')->where('payment_status',null)->get()) < 6 )
+                                @if(count($receivers_list) < 6 )
                                     <div class="form-group">
                                         <label>Featured <span style="color:red">*<span></label>
                                         <select class="form-control custom-select" name="featured" required>
@@ -321,7 +324,7 @@
                                             <div class="form-group">
                                                 <label>Featured <span style="color:red">*<span></label>
                                                 <select class="form-control custom-select" name="featured" required>
-                                                    <option value="Enabled" disabled>Enable</option>   
+                                                    <option value="Enabled" style="color:red" disabled>Enable</option>   
                                                     <option value="Disabled">Disable</option>                                
                                                 </select>
                                             </div>

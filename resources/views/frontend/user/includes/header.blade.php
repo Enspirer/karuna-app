@@ -23,13 +23,13 @@
             </a>
         @elseif(auth()->user()->user_type == "Agent")
             <a  type="button" href="#" class="cta-btn btn-fill" data-bs-toggle="modal" data-bs-target="#createDonation">
-                <div class="btn-text">Create Donation</div>
+                <div class="btn-text">Create Receiver</div>
             </a>
         @endif
     </div>
 </div>
 
-<!-- Create Donation Modal -->
+<!-- Create Receiver Modal -->
 <div class="modal fade" id="createDonation" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -39,7 +39,7 @@
                     <div class="inner-wrapper db-form">
                         <div class="row g-0">
                             <div class="col">
-                                <div class="title">Create new Donation</div>
+                                <div class="title">Create new receiver</div>
                             </div>
                         </div>
                         <!-- DP & Cover -->
@@ -220,6 +220,33 @@
                                             tick
                                             this
                                             toggle your profile picture and name will hide from your listing.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; " id="account_details">
+                            <h5 class="card-header">Account Details</h5>
+                            <div class="card-body">
+                                <div class="row g-0 mb-4">
+                                    <div class="col-md-6">
+                                        <label class="pro-label">Account Name</label>
+                                        <input type="text" class="form-control" id="account_name" name="account_name">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label class="pro-label">Account Number</label>
+                                        <input type="text" class="form-control" id="account_number" name="account_number">
+                                    </div>
+                                </div>
+                                <div class="row g-0 mb-4">
+                                    <div class="col-md-6">
+                                        <label class="pro-label">Bank Name</label>
+                                        <input type="text" class="form-control" id="bank_name" name="bank_name">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label class="pro-label">Branch Name</label>
+                                        <input type="text" class="form-control" id="branch_name" name="branch_name">
                                     </div>
                                 </div>
                             </div>
@@ -429,31 +456,7 @@
                         </div>
 
 
-                        <div class="card" style="border-style: dotted;border-width: 3px; padding: 20px; " id="account_details">
-                            <h5 class="card-header">Account Details</h5>
-                            <div class="card-body">
-                                <div class="row g-0 mb-4">
-                                    <div class="col-md-6">
-                                        <label class="pro-label">Account Name</label>
-                                        <input type="text" class="form-control" id="account_name" name="account_name">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <label class="pro-label">Account Number</label>
-                                        <input type="text" class="form-control" id="account_number" name="account_number">
-                                    </div>
-                                </div>
-                                <div class="row g-0 mb-4">
-                                    <div class="col-md-6">
-                                        <label class="pro-label">Bank Name</label>
-                                        <input type="text" class="form-control" id="bank_name" name="bank_name">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <label class="pro-label">Branch Name</label>
-                                        <input type="text" class="form-control" id="branch_name" name="branch_name">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
 
                         <div class="row g-0">
                             <div class="col-md-11">

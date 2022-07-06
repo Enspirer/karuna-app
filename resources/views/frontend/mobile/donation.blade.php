@@ -143,6 +143,30 @@
                 <label class="form-label">Bio</label>
                 <textarea class="form-control" style="height:150px;" name="bio" rows="3"></textarea>
             </div>
+
+
+            <div class="card" style="border-style: dotted;border-width: 3px; padding: 8px; " id="account_details">
+                <h5 class="card-header">Account Details</h5>
+                <div class="card-body">
+                   
+                    <div class="frm-row">
+                        <label class="form-label">Account Name</label>
+                        <input type="text" class="form-control" id="account_name" name="account_name">
+                    </div>
+                    <div class="frm-row">
+                        <label class="form-label">Account Number</label>
+                        <input type="text" class="form-control" id="account_number" name="account_number">
+                    </div>
+                    <div class="frm-row">
+                        <label class="form-label">Bank Name</label>
+                        <input type="text" class="form-control" id="bank_name" name="bank_name">
+                    </div>
+                    <div class="frm-row">
+                        <label class="form-label">Branch Name</label>
+                        <input type="text" class="form-control" id="branch_name" name="branch_name">
+                    </div>
+                </div>
+            </div>
            
             <h6 class="py-4 text-center">Donation related media files</h6>
             
@@ -222,28 +246,7 @@
                 <textarea class="form-control" style="height:150px;" name="about_donation" required></textarea>
             </div>
 
-            <div class="card" style="border-style: dotted;border-width: 3px; padding: 8px; " id="account_details">
-                <h5 class="card-header">Account Details</h5>
-                <div class="card-body">
-                   
-                    <div class="frm-row">
-                        <label class="form-label">Account Name</label>
-                        <input type="text" class="form-control" id="account_name" name="account_name">
-                    </div>
-                    <div class="frm-row">
-                        <label class="form-label">Account Number</label>
-                        <input type="text" class="form-control" id="account_number" name="account_number">
-                    </div>
-                    <div class="frm-row">
-                        <label class="form-label">Bank Name</label>
-                        <input type="text" class="form-control" id="bank_name" name="bank_name">
-                    </div>
-                    <div class="frm-row">
-                        <label class="form-label">Branch Name</label>
-                        <input type="text" class="form-control" id="branch_name" name="branch_name">
-                    </div>
-                </div>
-            </div>
+            
 
             <!-- Submit Button -->
             <div class="frm-row">

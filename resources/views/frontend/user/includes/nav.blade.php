@@ -102,7 +102,7 @@
         @elseif (auth()->user()->user_type == 'Agent')
             <a href="#" type="button" class="create-donation" data-bs-toggle="modal" data-bs-target="#createDonation">
                 <i class="bi bi-plus-lg"></i>
-                <div class="text">Create Donation</div>
+                <div class="text">Create Receiver</div>
             </a>
         @endif
 

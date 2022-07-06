@@ -123,6 +123,48 @@
                 <label class="form-label">Bio</label>
                 <textarea class="form-control" style="height:150px;" name="bio">{{$receiver->bio}}</textarea>
             </div>
+
+
+            <div class="card" style="border-style: dotted;border-width: 3px; padding: 5px; " id="account_details_edit">
+                <h5 class="card-header">Account Details</h5>
+                <div class="card-body">
+                    @if($receiver->account_details != null)
+                        <div class="frm-row">
+                            <label class="form-label">Account Name</label>
+                            <input type="text" class="form-control" name="account_name" value="{{json_decode($receiver->account_details)->account_name}}">
+                        </div>
+                        <div class="frm-row">
+                            <label class="form-label">Account Number</label>
+                            <input type="text" class="form-control" name="account_number" value="{{json_decode($receiver->account_details)->account_number}}">
+                        </div>
+                        <div class="frm-row">
+                            <label class="form-label">Bank Name</label>
+                            <input type="text" class="form-control" name="bank_name" value="{{json_decode($receiver->account_details)->bank_name}}">
+                        </div>
+                        <div class="frm-row">
+                            <label class="form-label">Branch Name</label>
+                            <input type="text" class="form-control" name="branch_name" value="{{json_decode($receiver->account_details)->branch_name}}">
+                        </div>
+                    @else
+                        <div class="frm-row">
+                            <label class="form-label">Account Name</label>
+                            <input type="text" class="form-control" name="account_name">
+                        </div>
+                        <div class="frm-row">
+                            <label class="form-label">Account Number</label>
+                            <input type="text" class="form-control" name="account_number">
+                        </div>
+                        <div class="frm-row">
+                            <label class="form-label">Bank Name</label>
+                            <input type="text" class="form-control" name="bank_name">
+                        </div>
+                        <div class="frm-row">
+                            <label class="form-label">Branch Name</label>
+                            <input type="text" class="form-control" name="branch_name">
+                        </div>
+                    @endif
+                </div>
+            </div>
             
 
             <!-- Add Images -->
@@ -239,46 +281,7 @@
                 <textarea class="form-control" style="height:150px;" name="about_donation" required>{{$receiver->about_donation}}</textarea>
             </div>
 
-            <div class="card" style="border-style: dotted;border-width: 3px; padding: 5px; " id="account_details_edit">
-                <h5 class="card-header">Account Details</h5>
-                <div class="card-body">
-                    @if($receiver->account_details != null)
-                        <div class="frm-row">
-                            <label class="form-label">Account Name</label>
-                            <input type="text" class="form-control" name="account_name" value="{{json_decode($receiver->account_details)->account_name}}">
-                        </div>
-                        <div class="frm-row">
-                            <label class="form-label">Account Number</label>
-                            <input type="text" class="form-control" name="account_number" value="{{json_decode($receiver->account_details)->account_number}}">
-                        </div>
-                        <div class="frm-row">
-                            <label class="form-label">Bank Name</label>
-                            <input type="text" class="form-control" name="bank_name" value="{{json_decode($receiver->account_details)->bank_name}}">
-                        </div>
-                        <div class="frm-row">
-                            <label class="form-label">Branch Name</label>
-                            <input type="text" class="form-control" name="branch_name" value="{{json_decode($receiver->account_details)->branch_name}}">
-                        </div>
-                    @else
-                        <div class="frm-row">
-                            <label class="form-label">Account Name</label>
-                            <input type="text" class="form-control" name="account_name">
-                        </div>
-                        <div class="frm-row">
-                            <label class="form-label">Account Number</label>
-                            <input type="text" class="form-control" name="account_number">
-                        </div>
-                        <div class="frm-row">
-                            <label class="form-label">Bank Name</label>
-                            <input type="text" class="form-control" name="bank_name">
-                        </div>
-                        <div class="frm-row">
-                            <label class="form-label">Branch Name</label>
-                            <input type="text" class="form-control" name="branch_name">
-                        </div>
-                    @endif
-                </div>
-            </div>
+            
 
             <!-- Submit Button -->
             <div class="frm-row">
