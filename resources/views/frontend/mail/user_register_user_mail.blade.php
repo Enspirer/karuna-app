@@ -55,8 +55,7 @@
                 </tr>
                 <tr>
                   <td style="padding:10px 0 20px 0;color:#153643;" colspan="2">
-                    <p style="color: black; margin:20px 0 12px 0;font-size:12px;line-height:24px;font-family:Arial,sans-serif;">If you’re having trouble clicking the "Confirm Account" button, copy and paste the URL below into your web browser:</p>
-                    <p style="color: black; margin:10px 0 8px 0;font-size:12px;line-height:24px;font-family:Arial,sans-serif;">{{url('account/confirm',$details_user['confirmation_code'])}}</p>
+                    <p style="color: black; margin:20px 0 12px 0;font-size:12px;line-height:24px;font-family:Arial,sans-serif;">If you’re having trouble clicking the "Confirm Account" button, copy and paste the URL below into your web browser: {{url('account/confirm',$details_user['confirmation_code'])}}</p>
                   </td>
                 </tr>
 
