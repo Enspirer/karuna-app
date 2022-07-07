@@ -36,18 +36,21 @@
                     <h1 style="font-size:20px;margin:0 0 20px 0;font-family:Arial,sans-serif;">Karunaa - User Register</h1>
                   </td>
                   <td style="padding:0 0 30px 0;color:#153643;" align="right">
-                    <img src="{{url('images/logo/karuna-logo-english.svg')}}" style="max-width:60px; margin:0 0 20px 0;">                    
+                    <img src="{{url('images/logo/karuna-logo-english.png')}}" style="max-width:60px; margin:0 0 20px 0;">                    
                   </td>
                 </tr>
                 <tr>
                   <td style="padding:0 0 30px 0;color:#153643;">
                     <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Dear {{ $details_user['name'] }},</p>
-                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Click here to confirm your account. Have a great day!</p>
+                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Thank you for registering with Karunaa.</p>
+                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Please click below to verify your account.</p>
+                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Regards,</p>
+                    <p style="color: black; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">Team Karuna</p>
                   </td>
                 </tr>
                 <tr>
                   <td style="padding:0 0 30px 0;color:#153643;" align="center">
-                      <a href="{{url('account/confirm',$details_user['confirmation_code'])}}" style="text-decoration: none; display: block; width: 115px; height: 25px; background: #4E9CAF; padding: 10px; text-align: center; border-radius: 5px; color: white; font-weight: bold; line-height: 25px;">Confirm Account</a>
+                      <a href="{{url('account/confirm',$details_user['confirmation_code'])}}" style="text-decoration: none; display: block; width:fit-content; margin:auto; background: #4E9CAF; padding: 0.5rem 1rem; text-align: center; border-radius: 5px; color: white; font-weight: bold; line-height: 25px;">Confirm Account</a>
                   </td>
                 </tr>
                 <tr>
