@@ -253,7 +253,7 @@
             <ul class="list-group">
 
                 @if(count(App\Models\Receivers::where('status','!=','Pending')->get()) != 0)
-                    @foreach(App\Models\Receivers::take(3)->where('payment_status',null)->where('status','!=','Pending')->latest()->get() as $receiver)
+                    @foreach(App\Models\Receivers::where('payment_status',null)->where('status','!=','Pending')->where('featured','Enabled')->get() as $receiver)
                         @if(App\Models\Auth\User::where('id',$receiver->assigned_agent)->first() != null)
                             <li class="list-group-item">
                                 <div class="receiver">
